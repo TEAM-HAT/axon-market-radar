@@ -54,6 +54,8 @@ REG_RULES = [
     (r"FINCEN", "FinCEN"), (r"CFTC", "CFTC"), (r"\bSEC\b|SECURITIES AND EXCHANGE COMMISSION", "SEC"),
     (r"TREASURY|OFAC", "US Treasury"), (r"FINTRAC", "FINTRAC"), (r"\bFCAC\b", "FCAC"), (r"BANK OF CANADA", "Bank of Canada"),
     (r"\bOSC\b|ONTARIO SECURITIES", "OSC"), (r"\bCSA\b|CANADIAN SECURITIES ADMINISTRATORS", "CSA"), (r"\bCIRO\b", "CIRO"),
+    (r"CENTRAL BANK OF IRELAND|\bCBI\b", "CBI"), (r"BANK OF LITHUANIA|LIETUVOS BANKAS", "Bank of Lithuania"),
+    (r"AUTORIT[EÉ] DES MARCH[EÉ]S FINANCIERS", "AMF"),
 ]
 REG_WHERE = {
     "VARA": "Dubai", "ADGM FSRA": "Abu Dhabi", "DFSA": "Dubai, DIFC", "CBUAE": "UAE", "CBB": "Bahrain", "SAMA": "Saudi Arabia",
@@ -62,6 +64,8 @@ REG_WHERE = {
     "NYDFS": "New York", "OCC": "United States", "Federal Reserve": "United States", "FDIC": "United States",
     "FinCEN": "United States", "SEC": "United States", "CFTC": "United States", "US Treasury": "United States",
     "FINTRAC": "Canada", "FCAC": "Canada", "Bank of Canada": "Canada", "OSC": "Ontario", "CSA": "Canada", "CIRO": "Canada",
+    "AMF": "France", "FIN-FSA": "Finland", "CBI": "Ireland", "CONSOB": "Italy", "CNMV": "Spain", "CySEC": "Cyprus",
+    "Bank of Lithuania": "Lithuania", "FSMA": "Belgium", "KNF": "Poland", "BMA": "Bermuda", "JFSC": "Jersey",
 }
 
 

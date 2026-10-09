@@ -138,8 +138,10 @@ write("widget_brief.xml", f'''
                     {tv("count", "6", "60sp", "white", family="sans-serif-condensed-light", lines=0, extra='android:includeFontPadding="false"')}
                     {tv("count_label", "Moves\\nin 7 days", "16sp", "white", caps=True, lines=2, extra='android:layout_marginStart="9dp" android:layout_marginBottom="5dp" android:lineSpacingMultiplier="0.88"')}
                 </LinearLayout>
-                {eyebrow("dates", "3–9 Oct", "on_blue_2", size="9.5sp", extra='android:layout_marginTop="6dp" android:letterSpacing="0.1"')}
-                {eyebrow("chip", "+2 new", "blue", size="9sp", extra='android:layout_marginTop="5dp" android:background="@drawable/bg_chip" android:paddingStart="5dp" android:paddingEnd="5dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:letterSpacing="0.1"')}
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    {eyebrow("dates", "3–9 Oct", "on_blue_2", size="9.5sp", extra='android:letterSpacing="0.1"')}
+                    {eyebrow("chip", "+2 new", "blue", size="9sp", extra='android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:paddingStart="5dp" android:paddingEnd="5dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:letterSpacing="0.1"')}
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
                 {tv("headline", "Dubai gave Rain a full exchange licence and tightened reserve audits. Europe set a three-month deadline for licensed firms to unwind unauthorised stablecoins.", "13sp", "on_blue_2", family="sans-serif", lines=6, w="match_parent", extra='android:lineSpacingMultiplier="1.08"')}

@@ -175,7 +175,9 @@ class BriefWidget : RadarWidget() {
         v.setTextViewText(R.id.headline, if (head != null) Fmt.headline(head) else Fmt.html(Fmt.escape("A quiet week. Nothing new passed the source check.")))
         val mix = brief.str("mix_text")
         v.setViewVisibility(R.id.mix, if (mix != null && d.h >= 200) View.VISIBLE else View.GONE)
-        v.setTextViewText(R.id.mix, mix?.replace(Regex("(\\d) "), "$1\u00A0") ?: "")
+        // At most three kinds, numbers kept with their words, and line breaks after a dot rather than before it.
+        val parts = mix?.split(" · ")?.take(3)?.map { it.replace(Regex("(\\d) "), "$1\u00A0") }.orEmpty()
+        v.setTextViewText(R.id.mix, parts.joinToString("\u00A0· "))
         return v
     }
 }
