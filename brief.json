@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "updated_at": "2026-10-09T09:00:00+03:00",
+ "next_run": "2026-10-11T06:54:00+03:00",
+ "week": 41,
+ "window_start": "2026-10-03",
+ "window_end": "2026-10-09",
+ "count": 6,
+ "headline": "Dubai gave **Rain a full exchange licence** and tightened reserve audits. Europe set **a three-month deadline** for licensed firms to unwind unauthorised stablecoins.",
+ "mix": [
+  {
+   "type": "Regulation",
+   "n": 4,
+   "label": "regulatory actions"
+  },
+  {
+   "type": "Partnership",
+   "n": 1,
+   "label": "partnership"
+  },
+  {
+   "type": "License",
+   "n": 1,
+   "label": "licence"
+  }
+ ],
+ "mix_text": "4 regulatory actions · 1 partnership · 1 licence",
+ "moves": [
+  {
+   "date": "2026-10-08",
+   "type": "Partnership",
+   "type_label": "Partnership",
+   "regulator": null,
+   "company": "Visa",
+   "title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
+   "source_name": "The Paypers",
+   "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
+  },
+  {
+   "date": "2026-10-08",
+   "type": "Regulation",
+   "type_label": "Regulation",
+   "regulator": "ESMA",
+   "company": "ESMA",
+   "title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
+   "source_name": "ESMA",
+   "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
+  },
+  {
+   "date": "2026-10-06",
+   "type": "Regulation",
+   "type_label": "Regulation",
+   "regulator": "VARA",
+   "company": "VARA",
+   "title": "VARA sets tougher standards for audits of VASP reserves",
+   "source_name": "VARA",
+   "source_url": "https://media.umbraco.io/dwtc/p1zdm1ig/circular-regarding-reserve-assets-audit-report.pdf"
+  },
+  {
+   "date": "2026-10-06",
+   "type": "Regulation",
+   "type_label": "Regulation",
+   "regulator": "ADGM FSRA",
+   "company": "ADGM FSRA",
+   "title": "ADGM FSRA consults on DeFi risk management guidance",
+   "source_name": "ADGM",
+   "source_url": "https://www.adgm.com/media/announcements/adgm-fsra-invites-industry-feedback-on-proposed-defi-risk-management-guidance"
+  },
+  {
+   "date": "2026-10-05",
+   "type": "Regulation",
+   "type_label": "Regulation",
+   "regulator": "VARA",
+   "company": "VARA / UAE FIU",
+   "title": "VARA and UAE Financial Intelligence Unit sign crypto-crime MoU",
+   "source_name": "Unlock Blockchain",
+   "source_url": "https://www.unlock-bc.com/en/uae-virtual-asset-financial-crime-fiu-and-vara-join-forces"
+  },
+  {
+   "date": "2026-10-05",
+   "type": "License",
+   "type_label": "Licence",
+   "regulator": "VARA",
+   "company": "Rain",
+   "title": "Rain MENA FZE receives full VARA licence for exchange and brokerage",
+   "source_name": "VARA public register",
+   "source_url": "https://www.vara.ae/en/licenses-and-register/public-register/rain-mena-fze/"
+  }
+ ],
+ "radar_url": "https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei"
+}

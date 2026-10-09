@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Market Radar</string>
+    <string name="widget_brief">Weekly brief</string>
+    <string name="widget_moves">Brief and top moves</string>
+    <string name="widget_brief_desc">This week\'s move count and headline from the AXON Market Radar.</string>
+    <string name="widget_moves_desc">This week\'s headline and the latest moves, each opening its source.</string>
+</resources>

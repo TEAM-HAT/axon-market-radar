@@ -1,0 +1,11 @@
+<resources>
+    <color name="blue">#2852EA</color>
+    <color name="blue_wedge">#4C71F2</color>
+    <color name="sky">#77A1FD</color>
+    <color name="pale">#CDD9FF</color>
+    <color name="on_blue_2">#DCE5FF</color>
+    <color name="ink">#101325</color>
+    <color name="ink_3">#646A80</color>
+    <color name="line">#E3E6EF</color>
+    <color name="white">#FFFFFF</color>
+</resources>

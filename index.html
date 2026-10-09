@@ -34,6 +34,10 @@ h1{font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:500
 .btn:focus-visible{outline:2px solid var(--white);outline-offset:3px}
 .how{font-size:14px;line-height:1.55;color:var(--soft);margin:18px 0 0;padding-top:16px;border-top:1px solid var(--sky)}
 .how b{color:var(--white);font-weight:500}
+.widget{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:14px 16px;border-radius:4px;background:#1F45D8;color:var(--white);text-decoration:none}
+.widget span{font-size:14px;line-height:1.4;color:var(--soft)}
+.widget b{display:block;font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:2px}
+.widget i{font-style:normal;font-size:20px;color:var(--white)}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion: reduce){.sweep{animation:none}}
 </style>
@@ -53,6 +57,7 @@ h1{font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:500
   </svg>
   <p class="status" id="status">Stablecoin payments moves in Europe and the Middle East, each checked against its source every Sunday.</p>
   <a class="btn" id="open" href="https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei">Open the radar</a>
+  <a class="widget" id="widget" href="download/market-radar.apk" download><span><b>Android widget app</b>Adds the weekly brief to your home screen.</span><i aria-hidden="true">&#8595;</i></a>
   <p class="how" id="how">To keep it on your home screen: on Android, open the <b>&#8942;</b> menu in Chrome and tap <b>Install app</b> (on some phones it says <b>Add to Home screen</b>). On iPhone, tap <b>Share</b>, then <b>Add to Home Screen</b>.</p>
 </main>
 <script>
@@ -63,6 +68,7 @@ h1{font-family:"Barlow Semi Condensed","Arial Narrow",sans-serif;font-weight:500
   if (standalone) {
     document.getElementById('status').textContent = 'Opening your radar…';
     document.getElementById('how').hidden = true;
+    document.getElementById('widget').hidden = true;
     setTimeout(function () { location.replace(RADAR); }, 400);
   }
 })();
