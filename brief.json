@@ -1,43 +1,82 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-09T09:00:00+03:00",
+  "updated_at": "2026-10-09T23:44:15+03:00",
   "next_run": "2026-10-10T06:54:00+03:00",
   "window_start": "2026-10-03",
   "window_end": "2026-10-09",
   "week": 41,
-  "count": 6,
-  "new_today": 0,
-  "headline": "Dubai gave **Rain a full exchange licence** and tightened reserve audits. Europe set **a three-month deadline** for licensed firms to unwind unauthorised stablecoins.",
+  "count": 21,
+  "new_today": 15,
+  "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users as Anchorage bought Routable and Rain and Modern Treasury sought OCC trust charters. Europe gave licensed firms **three months to unwind unauthorised stablecoins**.",
   "mix": [
     {
       "type": "Regulation",
-      "n": 4,
+      "n": 6,
       "label": "regulatory actions"
     },
     {
-      "type": "License",
-      "n": 1,
-      "label": "licence"
+      "type": "Launch",
+      "n": 5,
+      "label": "launches"
     },
     {
       "type": "Partnership",
+      "n": 4,
+      "label": "partnerships"
+    },
+    {
+      "type": "License",
+      "n": 3,
+      "label": "licences"
+    },
+    {
+      "type": "Funding",
+      "n": 2,
+      "label": "funding rounds"
+    },
+    {
+      "type": "M&A",
       "n": 1,
-      "label": "partnership"
+      "label": "M&A deal"
     }
   ],
-  "mix_text": "4 regulatory actions · 1 licence · 1 partnership",
+  "mix_text": "6 regulatory actions · 5 launches · 4 partnerships · 3 licences · 2 funding rounds · 1 M&A deal",
   "regions": {
-    "Europe": 1,
-    "Middle East": 5,
-    "North America": 0,
-    "Global": 0
+    "Europe": 6,
+    "Middle East": 7,
+    "North America": 7,
+    "Global": 1
   },
   "groups": {
-    "regulatory": 5,
-    "capital": 0,
-    "commercial": 1
+    "regulatory": 9,
+    "capital": 3,
+    "commercial": 9
   },
   "moves": [
+    {
+      "id": "immix-funding-2026-10-08",
+      "date": "2026-10-08",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Europe",
+      "regulator": null,
+      "company": "IMMIX",
+      "title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
+      "source_name": "EU-Startups",
+      "source_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
+    },
+    {
+      "id": "bringin-business-beta-2026-10-08",
+      "date": "2026-10-08",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Bringin",
+      "title": "Bringin opens beta of euro business accounts taking stablecoins",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/bringin-opens-beta-for-bitcoin-and-stablecoin-business-accounts"
+    },
     {
       "id": "visa-adi-foundation-2026-10-08",
       "date": "2026-10-08",
@@ -63,56 +102,56 @@
       "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     },
     {
-      "id": "vara-reserve-audit-circular-2026-10-06",
-      "date": "2026-10-06",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "VARA",
-      "title": "VARA sets tougher standards for audits of VASP reserves",
-      "source_name": "VARA",
-      "source_url": "https://media.umbraco.io/dwtc/p1zdm1ig/circular-regarding-reserve-assets-audit-report.pdf"
+      "id": "samsung-wallet-usdc-2026-10-07",
+      "date": "2026-10-07",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "Samsung",
+      "title": "Samsung Wallet to add USDC transfers for 82m US Galaxy devices",
+      "source_name": "Unchained",
+      "source_url": "https://unchainedcrypto.com/samsung-wallet-brings-usdc-transfers-to-82-million-us-galaxy-devices-in-late-october/"
     },
     {
-      "id": "adgm-defi-guidance-consultation-2026-10-06",
-      "date": "2026-10-06",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "ADGM FSRA",
-      "company": "ADGM FSRA",
-      "title": "ADGM FSRA consults on DeFi risk management guidance",
-      "source_name": "ADGM",
-      "source_url": "https://www.adgm.com/media/announcements/adgm-fsra-invites-industry-feedback-on-proposed-defi-risk-management-guidance"
-    },
-    {
-      "id": "uae-fiu-vara-mou-2026-10-05",
-      "date": "2026-10-05",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "VARA / UAE FIU",
-      "title": "VARA and UAE Financial Intelligence Unit sign crypto-crime MoU",
-      "source_name": "Unlock Blockchain",
-      "source_url": "https://www.unlock-bc.com/en/uae-virtual-asset-financial-crime-fiu-and-vara-join-forces"
-    },
-    {
-      "id": "rain-bahrain-vara-licence-2026-10-05",
-      "date": "2026-10-05",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "Rain",
-      "title": "Rain MENA FZE receives full VARA licence for exchange and brokerage",
-      "source_name": "VARA public register",
-      "source_url": "https://www.vara.ae/en/licenses-and-register/public-register/rain-mena-fze/"
+      "id": "noah-seed-2026-10-07",
+      "date": "2026-10-07",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Noah",
+      "title": "London's Noah adds $16m, taking stablecoin payments seed to $38m",
+      "source_name": "Tech.eu",
+      "source_url": "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round"
     }
   ],
   "latest": [
     {
+      "id": "immix-funding-2026-10-08",
+      "date": "2026-10-08",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Europe",
+      "regulator": null,
+      "company": "IMMIX",
+      "title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
+      "source_name": "EU-Startups",
+      "source_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
+    },
+    {
+      "id": "bringin-business-beta-2026-10-08",
+      "date": "2026-10-08",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Bringin",
+      "title": "Bringin opens beta of euro business accounts taking stablecoins",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/bringin-opens-beta-for-bitcoin-and-stablecoin-business-accounts"
+    },
+    {
       "id": "visa-adi-foundation-2026-10-08",
       "date": "2026-10-08",
       "type": "Partnership",
@@ -137,76 +176,52 @@
       "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     },
     {
-      "id": "vara-reserve-audit-circular-2026-10-06",
-      "date": "2026-10-06",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "VARA",
-      "title": "VARA sets tougher standards for audits of VASP reserves",
-      "source_name": "VARA",
-      "source_url": "https://media.umbraco.io/dwtc/p1zdm1ig/circular-regarding-reserve-assets-audit-report.pdf"
-    },
-    {
-      "id": "adgm-defi-guidance-consultation-2026-10-06",
-      "date": "2026-10-06",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "ADGM FSRA",
-      "company": "ADGM FSRA",
-      "title": "ADGM FSRA consults on DeFi risk management guidance",
-      "source_name": "ADGM",
-      "source_url": "https://www.adgm.com/media/announcements/adgm-fsra-invites-industry-feedback-on-proposed-defi-risk-management-guidance"
-    },
-    {
-      "id": "uae-fiu-vara-mou-2026-10-05",
-      "date": "2026-10-05",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "VARA / UAE FIU",
-      "title": "VARA and UAE Financial Intelligence Unit sign crypto-crime MoU",
-      "source_name": "Unlock Blockchain",
-      "source_url": "https://www.unlock-bc.com/en/uae-virtual-asset-financial-crime-fiu-and-vara-join-forces"
-    },
-    {
-      "id": "rain-bahrain-vara-licence-2026-10-05",
-      "date": "2026-10-05",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "Rain",
-      "title": "Rain MENA FZE receives full VARA licence for exchange and brokerage",
-      "source_name": "VARA public register",
-      "source_url": "https://www.vara.ae/en/licenses-and-register/public-register/rain-mena-fze/"
-    },
-    {
-      "id": "esma-mica-review-2026-09-30",
-      "date": "2026-09-30",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "ESMA",
-      "company": "ESMA",
-      "title": "ESMA urges explicit MiCA curbs on non-compliant stablecoins",
-      "source_name": "ESMA",
-      "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-calls-changes-make-mica-clearer-safer-and-ready-emerging-services"
-    },
-    {
-      "id": "tether-shiga-wdk-2026-09-28",
-      "date": "2026-09-28",
+      "id": "samsung-wallet-usdc-2026-10-07",
+      "date": "2026-10-07",
       "type": "Launch",
       "type_label": "Launch",
-      "region": "Middle East",
+      "region": "North America",
       "regulator": null,
-      "company": "Tether",
-      "title": "Shiga unveils USDT wallet products for Africa and Gulf on Tether kit",
-      "source_name": "Tether",
-      "source_url": "https://tether.io/news/tether-wdk-brings-self-custodial-finance-to-africa-and-the-gcc-with-shiga/"
+      "company": "Samsung",
+      "title": "Samsung Wallet to add USDC transfers for 82m US Galaxy devices",
+      "source_name": "Unchained",
+      "source_url": "https://unchainedcrypto.com/samsung-wallet-brings-usdc-transfers-to-82-million-us-galaxy-devices-in-late-october/"
+    },
+    {
+      "id": "noah-seed-2026-10-07",
+      "date": "2026-10-07",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Noah",
+      "title": "London's Noah adds $16m, taking stablecoin payments seed to $38m",
+      "source_name": "Tech.eu",
+      "source_url": "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round"
+    },
+    {
+      "id": "circle-europe-tereina-sap-2026-10-07",
+      "date": "2026-10-07",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle (Circle Internet Financial Europe)",
+      "title": "Circle and SAP-backed Tereina to bring USDC and EURC to SAP Pay",
+      "source_name": "Circle",
+      "source_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
+    },
+    {
+      "id": "zerohash-tempo-2026-10-06",
+      "date": "2026-10-06",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "zerohash",
+      "title": "zerohash becomes a Tempo validator and infrastructure partner",
+      "source_name": "Tempo",
+      "source_url": "https://tempo.xyz/blog/zerohash-joins-tempo-as-a-validator-and-infrastructure-partner/"
     }
   ],
   "companies": [
@@ -222,59 +237,59 @@
       "last_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     },
     {
-      "id": "rain-bahrain",
-      "name": "Rain",
-      "segment": "On/off-ramp",
-      "country": "Bahrain",
-      "region": "Middle East",
-      "moves_30d": 1,
-      "last_date": "2026-10-05",
-      "last_title": "Rain MENA FZE receives full VARA licence for exchange and brokerage",
-      "last_url": "https://www.vara.ae/en/licenses-and-register/public-register/rain-mena-fze/"
-    },
-    {
-      "id": "fasset",
-      "name": "Fasset",
+      "id": "ripple",
+      "name": "Ripple",
       "segment": "Settlement rails",
       "country": "United States",
       "region": "North America",
       "moves_30d": 1,
-      "last_date": "2026-09-16",
-      "last_title": "Fasset says it will be first VARA-regulated venue to list DDSC",
-      "last_url": "https://www.zawya.com/en/press-release/companies-news/fasset-will-become-the-first-platform-worldwide-to-list-ddsc-the-uaes-dirham-backed-stablecoin-741448"
+      "last_date": "2026-10-08",
+      "last_title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
+      "last_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
     },
     {
-      "id": "ddsc",
-      "name": "DDSC",
-      "segment": "Issuer",
-      "country": "United Arab Emirates",
-      "region": "Middle East",
+      "id": "noah",
+      "name": "Noah",
+      "segment": "Settlement rails",
+      "country": "United Kingdom",
+      "region": "Europe",
       "moves_30d": 1,
-      "last_date": "2026-09-16",
-      "last_title": "Fasset says it will be first VARA-regulated venue to list DDSC",
-      "last_url": "https://www.zawya.com/en/press-release/companies-news/fasset-will-become-the-first-platform-worldwide-to-list-ddsc-the-uaes-dirham-backed-stablecoin-741448"
+      "last_date": "2026-10-07",
+      "last_title": "London's Noah adds $16m, taking stablecoin payments seed to $38m",
+      "last_url": "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round"
     },
     {
-      "id": "network-international",
-      "name": "Network International",
-      "segment": "Merchant gateway",
-      "country": "United Arab Emirates",
-      "region": "Middle East",
-      "moves_30d": 0,
-      "last_date": "2026-09-09",
-      "last_title": "Network International pilots in-store DDSC payments",
-      "last_url": "https://www.network.ae/en/about-us/press-and-media/news/network-international-launches-uae-s-first-in-store-ddsc-payment-pilot-for-aed-backed-stablecoin-transactions"
+      "id": "circle-europe",
+      "name": "Circle (Circle Internet Financial Europe)",
+      "segment": "Issuer",
+      "country": "France",
+      "region": "Europe",
+      "moves_30d": 1,
+      "last_date": "2026-10-07",
+      "last_title": "Circle and SAP-backed Tereina to bring USDC and EURC to SAP Pay",
+      "last_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
     },
     {
-      "id": "fuze",
-      "name": "Fuze",
-      "segment": "On/off-ramp",
-      "country": "United Arab Emirates",
-      "region": "Middle East",
-      "moves_30d": 0,
-      "last_date": "2026-09-08",
-      "last_title": "Fuze expands to Switzerland after joining an AML self-regulator",
-      "last_url": "https://www.unlock-bc.com/en/fuze-finance-enters-switzerland-with-regulated-crypto"
+      "id": "zerohash",
+      "name": "zerohash",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 1,
+      "last_date": "2026-10-06",
+      "last_title": "zerohash becomes a Tempo validator and infrastructure partner",
+      "last_url": "https://tempo.xyz/blog/zerohash-joins-tempo-as-a-validator-and-infrastructure-partner/"
+    },
+    {
+      "id": "schuman-financial",
+      "name": "Schuman Financial",
+      "segment": "Issuer",
+      "country": "Switzerland",
+      "region": "Europe",
+      "moves_30d": 1,
+      "last_date": "2026-10-05",
+      "last_title": "Eleven firms form Eurøpe Consortium to push Schuman's EURØP",
+      "last_url": "https://schuman.io/blog/europe-consortium-launch-euro-onchain-finance/"
     }
   ],
   "licences": [
@@ -315,40 +330,40 @@
       "source_url": "https://www.adgm.com/media/announcements/adgm-fsra-invites-industry-feedback-on-proposed-defi-risk-management-guidance"
     },
     {
-      "id": "uae-fiu-vara-mou-2026-10-05",
-      "date": "2026-10-05",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "VARA / UAE FIU",
-      "title": "VARA and UAE Financial Intelligence Unit sign crypto-crime MoU",
-      "source_name": "Unlock Blockchain",
-      "source_url": "https://www.unlock-bc.com/en/uae-virtual-asset-financial-crime-fiu-and-vara-join-forces"
-    },
-    {
-      "id": "rain-bahrain-vara-licence-2026-10-05",
+      "id": "rain-us-occ-charter-2026-10-05",
       "date": "2026-10-05",
       "type": "License",
       "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "VARA",
+      "region": "North America",
+      "regulator": "OCC",
       "company": "Rain",
-      "title": "Rain MENA FZE receives full VARA licence for exchange and brokerage",
-      "source_name": "VARA public register",
-      "source_url": "https://www.vara.ae/en/licenses-and-register/public-register/rain-mena-fze/"
+      "title": "US stablecoin card firm Rain seeks OCC trust bank charter",
+      "source_name": "Crypto Briefing",
+      "source_url": "https://cryptobriefing.com/rain-occ-national-trust-bank-application/"
     },
     {
-      "id": "esma-mica-review-2026-09-30",
-      "date": "2026-09-30",
+      "id": "modern-treasury-occ-charter-2026-10-05",
+      "date": "2026-10-05",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Modern Treasury",
+      "title": "Modern Treasury applies to the OCC for a national trust bank",
+      "source_name": "Crypto Briefing",
+      "source_url": "https://cryptobriefing.com/modern-treasury-occ-trust-bank-charter/"
+    },
+    {
+      "id": "fincen-unhosted-wallet-withdrawal-2026-10-05",
+      "date": "2026-10-05",
       "type": "Regulation",
       "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "ESMA",
-      "company": "ESMA",
-      "title": "ESMA urges explicit MiCA curbs on non-compliant stablecoins",
-      "source_name": "ESMA",
-      "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-calls-changes-make-mica-clearer-safer-and-ready-emerging-services"
+      "region": "North America",
+      "regulator": "FinCEN",
+      "company": "FinCEN",
+      "title": "FinCEN withdraws unhosted-wallet and crypto-mixer proposals",
+      "source_name": "The Block",
+      "source_url": "https://www.theblock.co/news/regulation/2026-10-05-fincen-drops-crypto-mixing-rule-self-hosted-wallet-proposal-417690"
     }
   ],
   "regulators": [
@@ -356,12 +371,12 @@
       "name": "CBUAE",
       "where": "UAE",
       "licences": 5,
-      "actions": 2
+      "actions": 3
     },
     {
       "name": "CSSF",
       "where": "Luxembourg",
-      "licences": 4,
+      "licences": 5,
       "actions": 0
     },
     {
@@ -377,39 +392,39 @@
       "actions": 1
     },
     {
-      "name": "ESMA",
-      "where": "European Union",
-      "licences": 0,
-      "actions": 2
+      "name": "AMF",
+      "where": "France",
+      "licences": 2,
+      "actions": 0
     }
   ],
   "trends": {
     "since": "2025-10",
-    "total": 60,
-    "licences": 19,
-    "regulatory_actions": 11,
-    "commercial": 23,
-    "capital": 7,
+    "total": 100,
+    "licences": 26,
+    "regulatory_actions": 13,
+    "commercial": 46,
+    "capital": 15,
     "months": [
       {
         "m": "2025-10",
-        "n": 1
+        "n": 2
       },
       {
         "m": "2025-11",
-        "n": 6
+        "n": 8
       },
       {
         "m": "2025-12",
-        "n": 3
+        "n": 4
       },
       {
         "m": "2026-01",
-        "n": 6
+        "n": 7
       },
       {
         "m": "2026-02",
-        "n": 5
+        "n": 9
       },
       {
         "m": "2026-03",
@@ -417,15 +432,15 @@
       },
       {
         "m": "2026-04",
-        "n": 1
+        "n": 5
       },
       {
         "m": "2026-05",
-        "n": 7
+        "n": 8
       },
       {
         "m": "2026-06",
-        "n": 3
+        "n": 6
       },
       {
         "m": "2026-07",
@@ -433,15 +448,15 @@
       },
       {
         "m": "2026-08",
-        "n": 5
+        "n": 8
       },
       {
         "m": "2026-09",
-        "n": 9
+        "n": 14
       },
       {
         "m": "2026-10",
-        "n": 6
+        "n": 21
       }
     ],
     "partial_last": true
