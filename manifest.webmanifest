@@ -1,0 +1,17 @@
+{
+  "name": "AXON Market Radar",
+  "short_name": "Market Radar",
+  "description": "Weekly stablecoin payments moves in Europe and the Middle East, each checked against its source.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#2852EA",
+  "theme_color": "#2852EA",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
