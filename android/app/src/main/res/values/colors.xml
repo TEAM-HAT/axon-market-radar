@@ -14,4 +14,5 @@
     <color name="navy_line">#2A2F4A</color>
     <color name="on_navy_2">#A9AFC4</color>
     <color name="white">#FFFFFF</color>
+    <color name="black_bg">#000000</color>
 </resources>

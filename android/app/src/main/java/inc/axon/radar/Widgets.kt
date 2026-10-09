@@ -10,6 +10,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.RemoteViews
+import inc.axon.radar.ui.Link
 import org.json.JSONObject
 
 /** Widget size in dp, portrait. */
@@ -75,7 +76,7 @@ abstract class RadarWidget : AppWidgetProvider() {
         val up = Fmt.updated(brief?.str("updated_at"))
         v.setTextViewText(R.id.updated, up.ifEmpty { "↻  Refresh" })
         v.setOnClickPendingIntent(R.id.updated, refresh(ctx, javaClass, code + 98))
-        v.setOnClickPendingIntent(R.id.more, open(ctx, Brief.link(brief, hash), code + 99))
+        v.setOnClickPendingIntent(R.id.more, app(ctx, if (hash == "week") "home" else hash, null, code + 99))
     }
 
     /** Fills up to [n] move rows; each opens its source, or the radar when a move has none. */
@@ -91,9 +92,11 @@ abstract class RadarWidget : AppWidgetProvider() {
             v.setImageViewResource(GLYPH[i], Fmt.glyph(type))
             v.setTextViewText(META[i], Fmt.meta(m.str("type_label") ?: type, m.str("regulator") ?: m.str("company"), m.str("date"), typeColor))
             v.setTextViewText(TITLE[i], m.str("title") ?: "")
-            val url = m.str("source_url")?.takeIf { it.startsWith("https://") || it.startsWith("http://") }
-                ?: m.str("id")?.let { Brief.link(brief, "ev=$it") } ?: Brief.link(brief, "moves")
-            v.setOnClickPendingIntent(ROW[i], open(ctx, url, firstCode + i))
+            // Rows open the move in the app; a brief from before moves had ids falls back to the source.
+            val target = m.str("id")?.let { app(ctx, "move", it, firstCode + i) }
+                ?: m.str("source_url")?.takeIf { it.startsWith("https://") }?.let { open(ctx, it, firstCode + i) }
+                ?: app(ctx, "moves", null, firstCode + i)
+            v.setOnClickPendingIntent(ROW[i], target)
         }
     }
 
@@ -106,7 +109,7 @@ abstract class RadarWidget : AppWidgetProvider() {
         v.setImageViewResource(GLYPH[0], R.drawable.g_dot)
         v.setTextViewText(META[0], "")
         v.setTextViewText(TITLE[0], text)
-        v.setOnClickPendingIntent(ROW[0], open(ctx, Brief.link(brief, hash), code + 97))
+        v.setOnClickPendingIntent(ROW[0], app(ctx, if (hash == "week") "home" else hash, null, code + 97))
     }
 
     companion object {
@@ -134,6 +137,16 @@ abstract class RadarWidget : AppWidgetProvider() {
             return PendingIntent.getActivity(ctx, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         }
 
+        /** Opens the app on a tab ("home", "moves", "companies", "licences", "trends"), a move or a company. */
+        fun app(ctx: Context, dest: String, id: String?, requestCode: Int): PendingIntent {
+            val intent = Intent(ctx, MainActivity::class.java)
+                .setData(Uri.parse("radar://open/$dest/" + Uri.encode(id ?: "")))
+                .putExtra(Link.EXTRA_DEST, dest)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            if (id != null) intent.putExtra(Link.EXTRA_ID, id)
+            return PendingIntent.getActivity(ctx, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        }
+
         fun refresh(ctx: Context, cls: Class<*>, requestCode: Int): PendingIntent {
             val intent = Intent(ctx, cls).setAction(ACTION_REFRESH)
             return PendingIntent.getBroadcast(ctx, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
@@ -151,7 +164,7 @@ class BriefWidget : RadarWidget() {
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
         val v = RemoteViews(ctx.packageName, layout)
-        v.setOnClickPendingIntent(R.id.tap, open(ctx, Brief.link(brief, "week"), code))
+        v.setOnClickPendingIntent(R.id.tap, app(ctx, "home", null, code))
         footer(ctx, v, brief, "week")
         v.setInt(R.id.headline, "setMaxLines", ((d.h - (if (d.h >= 200) 110 else 72)) / 18).coerceIn(2, 8))
         if (brief == null) {
@@ -190,7 +203,7 @@ class MovesWidget : RadarWidget() {
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
         val v = RemoteViews(ctx.packageName, layout)
-        v.setOnClickPendingIntent(R.id.head, open(ctx, Brief.link(brief, "moves"), code))
+        v.setOnClickPendingIntent(R.id.head, app(ctx, "moves", null, code))
         footer(ctx, v, brief, "moves")
         if (brief == null) {
             v.setTextViewText(R.id.stat, "")
@@ -223,7 +236,7 @@ class CompaniesWidget : RadarWidget() {
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
         val v = RemoteViews(ctx.packageName, layout)
-        v.setOnClickPendingIntent(R.id.head, open(ctx, Brief.link(brief, "companies"), code))
+        v.setOnClickPendingIntent(R.id.head, app(ctx, "companies", null, code))
         footer(ctx, v, brief, "companies")
         val cos = brief?.objects("companies").orEmpty()
         val fit = ((d.h - 117) / 56).coerceIn(1, 6)
@@ -239,8 +252,7 @@ class CompaniesWidget : RadarWidget() {
             v.setTextViewText(SUB[i], listOfNotNull(c.str("segment"), c.str("country")).joinToString(" · "))
             v.setTextViewText(LAST[i], Fmt.day(c.str("last_date")))
             v.setTextViewText(N[i], if (moves > 0) Fmt.plural(moves, "move", "moves") else "Last move")
-            val target = c.str("id")?.let { Brief.link(brief, "co=$it") } ?: Brief.link(brief, "companies")
-            v.setOnClickPendingIntent(ROW[i], open(ctx, target, code + 10 + i))
+            v.setOnClickPendingIntent(ROW[i], c.str("id")?.let { app(ctx, "company", it, code + 10 + i) } ?: app(ctx, "companies", null, code + 10 + i))
         }
         if (cos.isEmpty()) {
             v.setViewVisibility(ROW[0], View.VISIBLE)
@@ -249,7 +261,7 @@ class CompaniesWidget : RadarWidget() {
             v.setTextViewText(SUB[0], "Open the radar for every company")
             v.setTextViewText(LAST[0], "")
             v.setTextViewText(N[0], "")
-            v.setOnClickPendingIntent(ROW[0], open(ctx, Brief.link(brief, "companies"), code + 10))
+            v.setOnClickPendingIntent(ROW[0], app(ctx, "companies", null, code + 10))
         }
         return v
     }
@@ -269,7 +281,7 @@ class LicencesWidget : RadarWidget() {
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
         val v = RemoteViews(ctx.packageName, layout)
-        val tab = open(ctx, Brief.link(brief, "licences"), code)
+        val tab = app(ctx, "licences", null, code)
         v.setOnClickPendingIntent(R.id.head, tab)
         v.setOnClickPendingIntent(R.id.tiles, tab)
         footer(ctx, v, brief, "licences")
@@ -302,7 +314,7 @@ class TrendsWidget : RadarWidget() {
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
         val v = RemoteViews(ctx.packageName, layout)
-        val tab = open(ctx, Brief.link(brief, "trends"), code)
+        val tab = app(ctx, "trends", null, code)
         v.setOnClickPendingIntent(R.id.top, tab)
         v.setOnClickPendingIntent(R.id.bottom, tab)
         val t = brief?.optJSONObject("trends")
@@ -341,11 +353,11 @@ class DashboardWidget : RadarWidget() {
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
         val v = RemoteViews(ctx.packageName, layout)
-        v.setOnClickPendingIntent(R.id.top, open(ctx, Brief.link(brief, "week"), code))
-        v.setOnClickPendingIntent(R.id.regions, open(ctx, Brief.link(brief, "moves"), code + 1))
-        v.setOnClickPendingIntent(R.id.co_col, open(ctx, Brief.link(brief, "companies"), code + 2))
-        v.setOnClickPendingIntent(R.id.reg_col, open(ctx, Brief.link(brief, "licences"), code + 3))
-        v.setOnClickPendingIntent(R.id.trend, open(ctx, Brief.link(brief, "trends"), code + 4))
+        v.setOnClickPendingIntent(R.id.top, app(ctx, "home", null, code))
+        v.setOnClickPendingIntent(R.id.regions, app(ctx, "moves", null, code + 1))
+        v.setOnClickPendingIntent(R.id.co_col, app(ctx, "companies", null, code + 2))
+        v.setOnClickPendingIntent(R.id.reg_col, app(ctx, "licences", null, code + 3))
+        v.setOnClickPendingIntent(R.id.trend, app(ctx, "trends", null, code + 4))
         footer(ctx, v, brief, "week")
 
         // Decide what fits: two moves first, then companies and regulators, a third move, then the chart.

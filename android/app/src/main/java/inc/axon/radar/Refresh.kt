@@ -20,6 +20,8 @@ class RefreshWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ct
         try {
             Brief.save(applicationContext, Brief.fetch())
             RadarWidget.updateAll(applicationContext)
+            // Keep the app's own copy fresh too, so it opens on today's news even offline.
+            runCatching { inc.axon.radar.data.Store.refresh(applicationContext) }
             Result.success()
         } catch (e: Exception) {
             RadarWidget.updateAll(applicationContext)
