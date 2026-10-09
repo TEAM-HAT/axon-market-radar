@@ -31,14 +31,16 @@ class RefreshWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ct
 object Refresh {
     private val online = Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
 
-    /** Every three hours, so a Sunday update reaches the home screen the same morning. */
+    /** Hourly, so the morning's update reaches the home screen soon after the daily sweep publishes it. */
     fun schedule(ctx: Context) {
-        val req = PeriodicWorkRequestBuilder<RefreshWorker>(3, TimeUnit.HOURS).setConstraints(online).build()
-        WorkManager.getInstance(ctx).enqueueUniquePeriodicWork("radar-periodic", ExistingPeriodicWorkPolicy.KEEP, req)
+        val req = PeriodicWorkRequestBuilder<RefreshWorker>(1, TimeUnit.HOURS, 20, TimeUnit.MINUTES).setConstraints(online).build()
+        WorkManager.getInstance(ctx).enqueueUniquePeriodicWork("radar-periodic", ExistingPeriodicWorkPolicy.UPDATE, req)
     }
 
-    fun now(ctx: Context) {
-        val req = OneTimeWorkRequestBuilder<RefreshWorker>().setConstraints(online).build()
-        WorkManager.getInstance(ctx).enqueueUniqueWork("radar-now", ExistingWorkPolicy.KEEP, req)
+    /** One fetch now. A tap on "Updated" forces it, replacing anything queued, so it fails fast when offline. */
+    fun now(ctx: Context, force: Boolean = false) {
+        val b = OneTimeWorkRequestBuilder<RefreshWorker>()
+        if (!force) b.setConstraints(online)
+        WorkManager.getInstance(ctx).enqueueUniqueWork("radar-now", if (force) ExistingWorkPolicy.REPLACE else ExistingWorkPolicy.KEEP, b.build())
     }
 }

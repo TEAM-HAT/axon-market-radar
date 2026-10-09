@@ -45,5 +45,53 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_moves_info" />
         </receiver>
+
+        <receiver
+            android:name=".CompaniesWidget"
+            android:exported="false"
+            android:label="@string/widget_companies">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_companies_info" />
+        </receiver>
+
+        <receiver
+            android:name=".LicencesWidget"
+            android:exported="false"
+            android:label="@string/widget_licences">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_licences_info" />
+        </receiver>
+
+        <receiver
+            android:name=".TrendsWidget"
+            android:exported="false"
+            android:label="@string/widget_trends">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_trends_info" />
+        </receiver>
+
+        <receiver
+            android:name=".DashboardWidget"
+            android:exported="false"
+            android:label="@string/widget_dashboard">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_dashboard_info" />
+        </receiver>
     </application>
 </manifest>

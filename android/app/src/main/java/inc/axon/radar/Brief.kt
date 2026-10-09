@@ -3,6 +3,7 @@ package inc.axon.radar
 import android.content.Context
 import android.text.Html
 import android.text.Spanned
+import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -10,7 +11,7 @@ import java.net.URL
 import java.time.LocalDate
 import java.time.OffsetDateTime
 
-/** The weekly brief the widgets show, read from the radar's public brief file. */
+/** The daily brief the widgets show, read from the radar's public brief file. */
 object Brief {
     const val FEED_URL = "https://team-hat.github.io/axon-market-radar/brief.json"
     const val RADAR_URL = "https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei"
@@ -27,7 +28,7 @@ object Brief {
 
     /** Downloads the brief. Throws on network errors or a malformed file. */
     fun fetch(): String {
-        val bust = System.currentTimeMillis() / 600_000L
+        val bust = System.currentTimeMillis() / 300_000L
         val conn = URL("$FEED_URL?t=$bust").openConnection() as HttpURLConnection
         conn.connectTimeout = 15_000
         conn.readTimeout = 15_000
@@ -44,48 +45,81 @@ object Brief {
     }
 
     fun radarUrl(b: JSONObject?): String =
-        b?.optString("radar_url").takeUnless { it.isNullOrBlank() } ?: RADAR_URL
+        b?.str("radar_url")?.takeIf { it.startsWith("https://") } ?: RADAR_URL
+
+    /** The radar opened on one tab (#moves) or one item (#co=tether). */
+    fun link(b: JSONObject?, hash: String): String = radarUrl(b).substringBefore('#') + "#" + hash
 }
 
-/** Small date and text helpers shared by both widgets. */
+/** A string field, or null when it is missing, JSON null or blank. */
+fun JSONObject.str(key: String): String? =
+    if (isNull(key)) null else optString(key).takeIf { it.isNotBlank() && it != "null" }
+
+fun JSONObject.objects(key: String): List<JSONObject> {
+    val a: JSONArray = optJSONArray(key) ?: return emptyList()
+    return (0 until a.length()).mapNotNull { a.optJSONObject(it) }
+}
+
+/** Date and text helpers shared by every widget. */
 object Fmt {
     private val MON = arrayOf("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
     private val DOW = arrayOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
-    private fun date(iso: String?): LocalDate? = runCatching { LocalDate.parse(iso!!.take(10)) }.getOrNull()
+    fun date(iso: String?): LocalDate? = runCatching { LocalDate.parse(iso!!.take(10)) }.getOrNull()
 
     fun day(iso: String?): String = date(iso)?.let { "${it.dayOfMonth} ${MON[it.monthValue - 1]}" } ?: ""
 
-    fun range(a: String?, b: String?): String {
+    fun dowDay(iso: String?): String = date(iso)?.let { "${DOW[it.dayOfWeek.value - 1]} ${it.dayOfMonth} ${MON[it.monthValue - 1]}" } ?: ""
+
+    fun range(a: String?, b: String?, year: Boolean = false): String {
         val s = date(a) ?: return day(b)
         val e = date(b) ?: return day(a)
-        return if (s.month == e.month) "${s.dayOfMonth}–${e.dayOfMonth} ${MON[e.monthValue - 1]}"
-        else "${s.dayOfMonth} ${MON[s.monthValue - 1]} – ${e.dayOfMonth} ${MON[e.monthValue - 1]}"
+        val y = if (year) " ${e.year}" else ""
+        return if (s.month == e.month) "${s.dayOfMonth}–${e.dayOfMonth} ${MON[e.monthValue - 1]}$y"
+        else "${s.dayOfMonth} ${MON[s.monthValue - 1]} – ${e.dayOfMonth} ${MON[e.monthValue - 1]}$y"
     }
 
     fun updated(iso: String?): String {
         val d = runCatching { OffsetDateTime.parse(iso).toLocalDate() }.getOrNull() ?: date(iso) ?: return ""
-        return "Updated ${DOW[d.dayOfWeek.value - 1]} ${d.dayOfMonth} ${MON[d.monthValue - 1]}"
+        return "↻  Updated ${DOW[d.dayOfWeek.value - 1]} ${d.dayOfMonth} ${MON[d.monthValue - 1]}"
     }
 
-    private fun escape(s: String) = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    /** "2025-10" to "Oct 2025". */
+    fun month(ym: String?): String {
+        val p = ym?.split("-") ?: return ""
+        val m = p.getOrNull(1)?.toIntOrNull() ?: return ""
+        return "${MON[(m - 1).coerceIn(0, 11)]} ${p[0]}"
+    }
+
+    fun plural(n: Int, one: String, many: String) = if (n == 1) "$n $one" else "$n $many"
+
+    fun escape(s: String) = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+    fun html(s: String): Spanned = Html.fromHtml(s, Html.FROM_HTML_MODE_COMPACT)
 
     /** Headline with the **key phrases** set in bold white, the rest left in the pale text colour. */
-    fun headline(raw: String?): Spanned {
-        val html = escape(raw ?: "").replace(Regex("\\*\\*(.+?)\\*\\*"), "<b><font color=\"#FFFFFF\">$1</font></b>")
-        return Html.fromHtml(html, Html.FROM_HTML_MODE_COMPACT)
-    }
+    fun headline(raw: String?): Spanned =
+        html(escape(raw ?: "").replace(Regex("\\*\\*(.+?)\\*\\*"), "<b><font color=\"#FFFFFF\">$1</font></b>"))
 
-    /** "REGULATION · ESMA · 8 OCT" with the type in AXON blue. */
-    fun meta(type: String, regulator: String?, iso: String?): Spanned {
-        val parts = listOfNotNull(regulator?.takeIf { it.isNotBlank() }, day(iso).takeIf { it.isNotBlank() })
+    /** "LICENCE · VARA · 5 OCT" with the type picked out in colour. */
+    fun meta(type: String, extra: String?, iso: String?, color: String = "#2852EA"): Spanned {
+        val parts = listOfNotNull(extra?.takeIf { it.isNotBlank() }, day(iso).takeIf { it.isNotBlank() })
         val rest = if (parts.isEmpty()) "" else " · " + parts.joinToString(" · ") { escape(it) }
-        return Html.fromHtml("<font color=\"#2852EA\">${escape(type)}</font>$rest", Html.FROM_HTML_MODE_COMPACT)
+        return html("<font color=\"$color\">${escape(type)}</font>$rest")
     }
 
     fun glyph(type: String?): Int = when (type) {
         "Funding", "M&A" -> R.drawable.g_sq
         "Launch", "Partnership" -> R.drawable.g_dot
         else -> R.drawable.g_dia
+    }
+
+    fun initials(name: String?): String {
+        val w = (name ?: "?").replace(Regex("[^A-Za-z0-9 ]"), " ").trim().split(Regex("\\s+")).filter { it.isNotEmpty() }
+        return when {
+            w.isEmpty() -> "?"
+            w.size > 1 -> "${w[0][0]}${w[1][0]}".uppercase()
+            else -> w[0].take(2).uppercase()
+        }
     }
 }
