@@ -7,8 +7,12 @@ ArtifactData "list" with out_dir writes). Output is brief.json.
 
 Usage: python3 tools/make_brief.py --export /path/to/export --out brief.json
 
-The file is public. It carries market news only: no AXON lens tags, no
-watchlist, no summaries or notes.
+It also writes radar.json beside brief.json: every move with its summary and
+source, every company profile, the regulators and the trend, for the Android
+app. Pass --full "" to skip it.
+
+Both files are public. They carry market news only: no AXON lens tags and no
+watchlist.
 """
 import argparse
 import datetime as dt
@@ -202,10 +206,67 @@ def build(export):
     }
 
 
+EVENT_FIELDS = ["id", "date", "date_precision", "type", "region", "title", "summary", "amount_usd_m", "jurisdiction",
+                "company_id", "company_name", "related", "source_name", "source_url", "added"]
+# Company fields that are public facts. The AXON lens tag is left out on purpose.
+COMPANY_FIELDS = ["id", "name", "hq_city", "hq_country", "region", "segment", "founded", "website", "blurb",
+                  "licenses", "funding", "status", "sources"]
+
+
+def build_full(export, brief):
+    """Everything the app shows: all moves newest first, companies, regulators and the trend."""
+    events = load(os.path.join(export, "events"))
+    cos = {c["id"]: c for c in load(os.path.join(export, "companies"))}
+    runs = load(os.path.join(export, "runs"))
+    run = max(runs, key=lambda r: str(r.get("run_at", ""))) if runs else {}
+    newest = sorted(events, key=lambda e: (str(e.get("date", "")), str(e.get("added", "")), e["id"]), reverse=True)
+
+    moves = []
+    stats = {cid: {"moves": 0, "last_date": None} for cid in cos}
+    for e in newest:
+        m = {k: e.get(k) for k in EVENT_FIELDS}
+        m["type_label"] = TYPE_LABEL.get(e.get("type"), e.get("type"))
+        m["regulator"] = reg_key(e.get("regulator"))
+        m["company_name"] = (cos.get(e.get("company_id")) or {}).get("name") or e.get("company_name")
+        m["related"] = [r for r in (e.get("related") or []) if r in cos]
+        moves.append(m)
+        for cid in [e.get("company_id")] + m["related"]:
+            if cid in stats:
+                stats[cid]["moves"] += 1
+                stats[cid]["last_date"] = stats[cid]["last_date"] or e.get("date")
+
+    companies = []
+    for cid, c in cos.items():
+        d = {k: c.get(k) for k in COMPANY_FIELDS}
+        d["licenses"] = [dict(l, regulator_key=reg_key(l.get("regulator"))) for l in (c.get("licenses") or [])]
+        d.update(stats[cid])
+        companies.append(d)
+    companies.sort(key=lambda c: (str(c["last_date"] or ""), c["moves"], c["name"] or ""), reverse=True)
+
+    regs = {}
+    for e in newest:
+        if e.get("type") not in ("License", "Regulation"):
+            continue
+        k = reg_key(e.get("regulator")) or "Other"
+        r = regs.setdefault(k, {"name": k, "where": REG_WHERE.get(k, ""), "licences": 0, "actions": 0, "last_date": e.get("date")})
+        r["licences" if e["type"] == "License" else "actions"] += 1
+    regulators = sorted(regs.values(), key=lambda r: (-(r["licences"] + r["actions"]), r["name"]))
+
+    keep = ("updated_at", "next_run", "window_start", "window_end", "count", "new_today", "headline", "mix_text",
+            "regions", "groups", "trends", "radar_url")
+    return dict(
+        {"schema": 1, "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()},
+        **{k: brief.get(k) for k in keep},
+        highlights=[h for h in (run.get("highlights") or []) if "axon" not in str(h).lower()],
+        events=moves, companies=companies, regulators=regulators,
+    )
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--export", required=True)
     ap.add_argument("--out", default="brief.json")
+    ap.add_argument("--full", default=None, help="path for radar.json (default: beside --out; empty to skip)")
     a = ap.parse_args()
     brief = build(a.export)
     with open(a.out, "w", encoding="utf-8") as f:
@@ -213,3 +274,11 @@ if __name__ == "__main__":
         f.write("\n")
     print(f"wrote {a.out}: {brief['count']} moves in {brief['window_start']}..{brief['window_end']}, "
           f"{len(brief['latest'])} latest, {len(brief['companies'])} companies, {len(brief['licences'])} licences")
+    full_path = os.path.join(os.path.dirname(os.path.abspath(a.out)), "radar.json") if a.full is None else a.full
+    if full_path:
+        full = build_full(a.export, brief)
+        with open(full_path, "w", encoding="utf-8") as f:
+            json.dump(full, f, ensure_ascii=False, separators=(",", ":"))
+            f.write("\n")
+        print(f"wrote {full_path}: {len(full['events'])} moves, {len(full['companies'])} companies, "
+              f"{len(full['regulators'])} regulators")
