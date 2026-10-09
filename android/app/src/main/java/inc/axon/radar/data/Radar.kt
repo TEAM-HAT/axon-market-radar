@@ -2,6 +2,7 @@ package inc.axon.radar.data
 
 import android.content.Context
 import inc.axon.radar.str
+import inc.axon.radar.ui.Look
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
@@ -177,6 +178,15 @@ object Store {
 
     fun setWatched(ctx: Context, ids: Set<String>) {
         ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putStringSet("watch", ids).apply()
+    }
+
+    /** Colour or black and white, for the app and its widgets. Kept on this phone. */
+    fun look(ctx: Context): Look =
+        if (ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString("look", null) == "mono") Look.Mono else Look.Colour
+
+    fun setLook(ctx: Context, look: Look) {
+        // Written at once, so widgets redrawn right after the switch read the new look.
+        ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putString("look", if (look == Look.Mono) "mono" else "colour").commit()
     }
 }
 

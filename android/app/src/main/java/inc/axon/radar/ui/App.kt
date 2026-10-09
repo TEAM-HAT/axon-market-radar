@@ -5,18 +5,21 @@ import android.content.Intent
 import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
@@ -30,13 +33,19 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
+import androidx.core.view.drawToBitmap
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
+import inc.axon.radar.RadarWidget
 import inc.axon.radar.data.Move
 import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Store
@@ -60,8 +69,40 @@ sealed interface Page {
 }
 
 @Composable
-fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boolean = true) {
+fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boolean = true, startLook: Look? = null) {
     val ctx = LocalContext.current
+    val view = LocalView.current
+    val scope = rememberCoroutineScope()
+    var look by remember { mutableStateOf(startLook ?: Store.look(ctx)) }
+    // While the look changes, a picture of the old screen fades out over the new one.
+    var before by remember { mutableStateOf<ImageBitmap?>(null) }
+    val fade = remember { Animatable(0f) }
+
+    fun switchLook(next: Look) {
+        if (next == look) return
+        before = runCatching { view.drawToBitmap().asImageBitmap() }.getOrNull()
+        look = next
+        Store.setLook(ctx, next)
+        runCatching { RadarWidget.updateAll(ctx) }
+        scope.launch {
+            fade.snapTo(1f)
+            fade.animateTo(0f, tween(560))
+            before = null
+        }
+    }
+
+    CompositionLocalProvider(LocalInk provides Ink.of(look)) {
+        Box(Modifier.fillMaxSize()) {
+            RadarContent(link, preload, autoRefresh, look, ::switchLook)
+            before?.let { Image(it, null, Modifier.fillMaxSize().graphicsLayer { alpha = fade.value }, contentScale = ContentScale.FillBounds) }
+        }
+    }
+}
+
+@Composable
+private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh: Boolean, look: Look, onLook: (Look) -> Unit) {
+    val ctx = LocalContext.current
+    val ink = LocalInk.current
     val scope = rememberCoroutineScope()
     var radar by remember { mutableStateOf(preload ?: Store.cached(ctx)) }
     var watched by remember { mutableStateOf(Store.watched(ctx)) }
@@ -72,6 +113,7 @@ fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boo
     var failed by remember { mutableStateOf(false) }
     var lastCheck by remember { mutableStateOf(0L) }
     val stack = remember { mutableStateListOf<Page>() }
+    var pagerAt by remember { mutableStateOf(-1) }
 
     fun refresh() {
         if (refreshing) return
@@ -96,7 +138,16 @@ fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boo
     }
 
     val r = radar
-    SystemBars(darkIcons = r != null && (stack.isNotEmpty() || tab != Tab.Home))
+    // Status icons follow the page in view: dark on light pages, light on the deck and on black pages.
+    val top = stack.lastOrNull()
+    val pageBg = when {
+        r == null -> null
+        top is Page.Moves -> top.ids.getOrNull(if (pagerAt >= 0) pagerAt else top.index)?.let { r.moveById[it] }?.let { ink.page(it.type) }
+        top is Page.Company -> ink.page(r.latestMove(top.id)?.type ?: "Partnership")
+        else -> null
+    }
+    SystemBars(darkIcons = r != null && (if (top != null) ink.display(pageBg ?: Palette.Paper) == Palette.Black else tab != Tab.Home))
+    LaunchedEffect(top) { pagerAt = -1 }
     if (r == null) {
         Loading(failed) { failed = false; refresh() }
         return
@@ -142,7 +193,7 @@ fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boo
             Tab.Explore -> Explore(r, section, { section = it }, ::openMoves, actions.openCompany, bottom)
             Tab.Watch -> WatchScreen(r, watched, actions.openCompany, ::openMoves, { tab = Tab.Explore; section = Section.Companies }, bottom)
             Tab.Trends -> TrendsScreen(r, bottom)
-            Tab.About -> AboutScreen(r, refreshing, ::refresh, { actions.openUrl(r.radarUrl) }, bottom)
+            Tab.About -> AboutScreen(r, refreshing, ::refresh, { actions.openUrl(r.radarUrl) }, look, onLook, bottom)
         }
         TabBar(tab, dark = tab == Tab.Home, onTab = { tab = it }, modifier = Modifier.align(Alignment.BottomCenter))
 
@@ -156,7 +207,7 @@ fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boo
         ) { page ->
             when (page) {
                 null -> Box(Modifier)
-                is Page.Moves -> MovePager(page.ids.mapNotNull { r.moveById[it] }, page.index, r, watched, actions)
+                is Page.Moves -> MovePager(page.ids.mapNotNull { r.moveById[it] }, page.index, r, watched, actions) { if (page == stack.lastOrNull()) pagerAt = it }
                 is Page.Company -> r.companyById[page.id]?.let { CompanyPoster(it, r, watched, actions) }
             }
         }

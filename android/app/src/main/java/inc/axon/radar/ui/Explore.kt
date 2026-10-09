@@ -144,9 +144,15 @@ private fun ListRow(thumb: @Composable () -> Unit, title: String, sub: String?, 
 
 @Composable
 fun MoveThumb(m: Move, size: Dp = 44.dp) {
-    Box(Modifier.size(size).clip(RoundedCornerShape(2.dp)).background(typeColor(m.type)).border(1.dp, Palette.Black.copy(alpha = 0.12f), RoundedCornerShape(2.dp)), contentAlignment = Alignment.Center) {
-        Glyph(glyphOf(m.type), Palette.Black, 11.dp)
-    }
+    Swatch(m.type, LocalInk.current.page(m.type), size, 11.dp, Palette.Black.copy(alpha = 0.12f))
+}
+
+/** The square of initials in front of a company row, in the colour of its latest move. */
+@Composable
+fun CompanyThumb(name: String, latestType: String?) {
+    val ink = LocalInk.current
+    val bg = ink.page(latestType ?: "Partnership")
+    Mono(name, bg, ink.display(bg), 44.dp, if (ink.mono) Modifier.border(1.dp, Palette.Black.copy(alpha = 0.12f), RoundedCornerShape(2.dp)) else Modifier, radius = 2.dp)
 }
 
 @Composable
@@ -166,14 +172,18 @@ private val REGIONS = listOf("All regions", "Europe", "Middle East", "North Amer
 private fun MoveCarousel(moves: List<Move>, onOpen: (List<Move>, Int) -> Unit) {
     LazyRow(contentPadding = PaddingValues(horizontal = 14.dp), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Top) {
         itemsIndexed(moves) { i, m ->
-            val bg = typeColor(m.type)
+            val ink = LocalInk.current
+            val bg = ink.page(m.type)
             Column(
                 Modifier.width(if (i == 0) 150.dp else 118.dp).height(if (i == 0) 200.dp else 150.dp).clip(RoundedCornerShape(3.dp)).background(bg)
                     .tap { onOpen(moves, i) }.padding(10.dp),
             ) {
-                FitTitle(m.subject, Palette.Black, Modifier.fillMaxWidth(), maxSize = if (i == 0) 30f else 24f, minSize = 14f, maxLines = 2)
+                FitTitle(m.subject, ink.display(bg), Modifier.fillMaxWidth(), maxSize = if (i == 0) 30f else 24f, minSize = 14f, maxLines = 2)
                 Spacer(Modifier.weight(1f))
-                Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(2.dp)).background(Palette.Black).padding(8.dp)) {
+                Box(
+                    Modifier.fillMaxWidth().clip(RoundedCornerShape(2.dp)).background(ink.panel(bg))
+                        .then(if (ink.lined(m.type)) Modifier.lines(ink.panelLines(bg), gap = 6.dp) else Modifier).padding(8.dp),
+                ) {
                     FitTitle(m.figure, bg, Modifier.fillMaxWidth(), maxSize = if (i == 0) 34f else 26f, minSize = 12f, maxLines = 1)
                 }
             }
@@ -233,7 +243,7 @@ private fun LazyListScope.companyRows(radar: Radar, seg: Int, onSeg: (Int) -> Un
     items(radar.companies.filter { s == null || it.segment == s }, key = { it.id }) { c ->
         val latest = radar.latestMove(c.id)
         ListRow(
-            { Mono(c.name, latest?.let { typeColor(it.type) } ?: Palette.Slate, Palette.Black, 44.dp, radius = 2.dp) },
+            { CompanyThumb(c.name, latest?.type) },
             c.name, listOfNotNull(c.segment, c.hqCountry).joinToString(" · "),
             Text.plural(c.moves, "Move", "Moves"), { onOpen(c.id) },
         )

@@ -13,10 +13,27 @@ Public market news only: no AXON tags and no watchlist.
 - **Explore**: Moves, Companies and Licences, each with a carousel, filters with counts and plain rows.
 - **Company pages**: the same layout, with licences, funding and every move.
 - **Watching**: companies you follow, kept on the phone.
-- **Trends** and **Radar** (data status, refresh, link to the web radar).
+- **Trends** and **Radar** (data status, refresh, link to the web radar, and the look).
 
 The design follows the clip Hamed shared: Swiss-style type (Inter Tight, SIL Open Font License), flat colour pages,
 a stacked card deck and a light directory.
+
+## Two looks
+
+The Radar tab offers **Colour** and **Black & white**. The choice is kept on the phone and applies to the app and the
+widgets at once; the screen crossfades from one look to the other.
+
+Black and white keeps the same layout and gives each family of move one tone, the way the glyphs already group them:
+
+| Family | Kinds | Tone | Glyph |
+| --- | --- | --- | --- |
+| Rules | Licence, regulation | Paper white `#F2F2F2` | Diamond |
+| Capital | Funding, M&A | Black, with white type and white figure blocks | Square |
+| Commercial | Launch, partnership | Silver `#B4B4B4` | Dot |
+
+The second kind in each family (regulation, M&A, partnership) carries fine diagonal lines on its figure block and
+squares, and a hollow glyph, so all six kinds stay apart without colour. Charts use the same tones and lines.
+The colour look is unchanged.
 
 ## Widgets
 
@@ -35,8 +52,11 @@ The widgets and the app check for new data every hour.
 ## Building
 
 Widget layouts are generated: edit `tools/gen_layouts.py`, then run `python3 tools/gen_layouts.py` from this folder.
-`WidgetRenderTest` renders every widget into `app/build/widget-previews/`; `AppRenderTest` renders every app screen
-into `app/build/app-previews/`, both from the published data files in the repository root.
+It writes each layout and its black-and-white twin (`widget_*_mono.xml`, same ids), the `mono_*` drawables and
+`values/colors_mono.xml`, so never edit those by hand.
+`WidgetRenderTest` renders every widget into `app/build/widget-previews/` and `widget-previews-mono/`; `AppRenderTest`
+renders every app screen into `app/build/app-previews/` and `app-previews-mono/`, all from the published data files
+in the repository root.
 
 The installable file is `download/market-radar.apk` at the repository root. Release builds are signed with a key kept
 outside this repository. Use the same key for every update, or the phone will refuse to install it over the old version.

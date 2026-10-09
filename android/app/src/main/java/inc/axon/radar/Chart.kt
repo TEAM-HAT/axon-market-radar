@@ -12,13 +12,14 @@ import org.json.JSONObject
 import kotlin.math.max
 import kotlin.math.min
 
-/** Moves per month as flat blue bars, drawn for the widgets the way the radar's Trends tab draws them. */
+/**
+ * Moves per month as flat bars, drawn for the widgets the way the radar's Trends tab draws them:
+ * blue in colour, black in black and white.
+ */
 object Chart {
-    private const val BLUE = 0xFF2852EA.toInt()
-    private const val INK = 0xFF101325.toInt()
-    private const val INK_3 = 0xFF646A80.toInt()
-    private const val LINE = 0xFFE3E6EF.toInt()
-    private const val PAPER = 0xFFFFFFFF.toInt()
+    private class Colours(val bar: Int, val ink: Int, val ink3: Int, val line: Int, val paper: Int)
+    private val COLOUR = Colours(0xFF2852EA.toInt(), 0xFF101325.toInt(), 0xFF646A80.toInt(), 0xFFE3E6EF.toInt(), 0xFFFFFFFF.toInt())
+    private val MONO = Colours(0xFF000000.toInt(), 0xFF000000.toInt(), 0xFF6E6E6E.toInt(), 0xFFE4E4E4.toInt(), 0xFFFFFFFF.toInt())
     private const val INITIALS = "JFMAMJJASOND"
 
     /**
@@ -29,6 +30,7 @@ object Chart {
         val months = trends?.objects("months").orEmpty()
         if (months.isEmpty() || wDp < 40 || hDp < 30) return null
         val partial = trends?.optBoolean("partial_last", false) ?: false
+        val k = if (RadarWidget.mono(ctx)) MONO else COLOUR
         val d = ctx.resources.displayMetrics.density
         val w = (wDp * d).toInt()
         val h = (hDp * d).toInt()
@@ -36,15 +38,15 @@ object Chart {
         val c = Canvas(bmp)
 
         val face = Typeface.create("sans-serif-condensed", Typeface.BOLD)
-        val axis = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = INK_3; textSize = 10.5f * d; typeface = face; textAlign = Paint.Align.CENTER; letterSpacing = 0.04f }
-        val value = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = INK; textSize = 11.5f * d; typeface = face; textAlign = Paint.Align.CENTER }
-        val fill = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = BLUE; style = Paint.Style.FILL }
-        val paper = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = PAPER; style = Paint.Style.FILL }
+        val axis = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = k.ink3; textSize = 10.5f * d; typeface = face; textAlign = Paint.Align.CENTER; letterSpacing = 0.04f }
+        val value = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = k.ink; textSize = 11.5f * d; typeface = face; textAlign = Paint.Align.CENTER }
+        val fill = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = k.bar; style = Paint.Style.FILL }
+        val paper = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = k.paper; style = Paint.Style.FILL }
         val dash = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = BLUE; style = Paint.Style.STROKE; strokeWidth = 1.5f * d
+            color = k.bar; style = Paint.Style.STROKE; strokeWidth = 1.5f * d
             pathEffect = DashPathEffect(floatArrayOf(3f * d, 2f * d), 0f)
         }
-        val rule = Paint().apply { color = LINE; strokeWidth = max(1f, d) }
+        val rule = Paint().apply { color = k.line; strokeWidth = max(1f, d) }
 
         val labelH = 16f * d
         val top = 16f * d

@@ -4,6 +4,7 @@ package inc.axon.radar.ui
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -19,10 +20,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.DrawStyle
+import androidx.compose.ui.graphics.drawscope.Fill
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.ExperimentalTextApi
@@ -88,18 +94,60 @@ fun FitTitle(
     }
 }
 
-/** A shape that names the group of a move: diamond for rules and licences, square for capital, dot for commercial. */
+/**
+ * A shape that names the group of a move: diamond for rules and licences, square for capital, dot for
+ * commercial. [hollow] draws only its outline; [halo] rings it in a colour so it stays crisp over lines.
+ */
 @Composable
-fun Glyph(shape: Shape, color: Color, size: Dp = 9.dp, modifier: Modifier = Modifier) {
+fun Glyph(shape: Shape, color: Color, size: Dp = 9.dp, modifier: Modifier = Modifier, hollow: Boolean = false, halo: Color? = null) {
     Canvas(modifier.size(size)) {
         val w = this.size.width
-        when (shape) {
-            Shape.Square -> drawRect(color, topLeft = Offset(w * 0.1f, w * 0.1f), size = Size(w * 0.8f, w * 0.8f))
-            Shape.Dot -> drawCircle(color, radius = w * 0.45f)
-            Shape.Diamond -> drawPath(Path().apply {
-                moveTo(w / 2, 0f); lineTo(w, w / 2); lineTo(w / 2, w); lineTo(0f, w / 2); close()
-            }, color)
+        val c = Offset(w / 2, w / 2)
+        fun draw(col: Color, grow: Float, style: DrawStyle) {
+            val k = (w + 2 * grow) / w
+            val half = w / 2 * k
+            when (shape) {
+                Shape.Square -> drawRect(col, topLeft = Offset(c.x - half * 0.8f, c.y - half * 0.8f), size = Size(w * 0.8f * k, w * 0.8f * k), style = style)
+                Shape.Dot -> drawCircle(col, radius = half * 0.9f, center = c, style = style)
+                Shape.Diamond -> drawPath(Path().apply {
+                    moveTo(c.x, c.y - half); lineTo(c.x + half, c.y); lineTo(c.x, c.y + half); lineTo(c.x - half, c.y); close()
+                }, col, style = style)
+            }
         }
+        val stroke = (w * 0.16f).coerceAtLeast(1.dp.toPx())
+        if (halo != null) draw(halo, 2.dp.toPx(), Fill)
+        if (hollow) draw(color, -stroke / 2, Stroke(stroke)) else draw(color, 0f, Fill)
+    }
+}
+
+/** A flat block in a kind's colour; in black and white, its tone, with lines for the second kind of a family. */
+fun Modifier.kind(type: String?, ink: Ink): Modifier {
+    val fill = ink.page(type)
+    return background(fill).then(if (ink.lined(type)) lines(ink.lines(fill), 3.5.dp, 1.dp) else Modifier)
+}
+
+/** Fine diagonal lines behind the content, for the second kind in each family in black and white. */
+fun Modifier.lines(color: Color, gap: Dp = 4.dp, width: Dp = 1.dp): Modifier =
+    drawBehind { hatch(color, gap.toPx(), width.toPx()) }
+
+/**
+ * A move's small square: its colour (or tone and lines in black and white), a hairline edge and its
+ * glyph. Used in lists, on the timeline and in a company's moves.
+ */
+@Composable
+fun Swatch(
+    type: String?, fill: Color, size: Dp, glyphSize: Dp, border: Color, modifier: Modifier = Modifier,
+    glyphColor: Color? = null, lined: Boolean = LocalInk.current.lined(type),
+) {
+    val ink = LocalInk.current
+    val shape = RoundedCornerShape(2.dp)
+    Box(
+        modifier.size(size).clip(shape).background(fill)
+            .then(if (lined) Modifier.lines(ink.lines(fill), gap = if (size > 30.dp) 4.5.dp else 3.5.dp, width = 1.dp) else Modifier)
+            .border(1.dp, border, shape),
+        contentAlignment = Alignment.Center,
+    ) {
+        Glyph(glyphOf(type), glyphColor ?: if (ink.mono) ink.reading(fill) else Palette.Black, glyphSize, halo = if (lined) fill else null)
     }
 }
 

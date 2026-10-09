@@ -7,7 +7,10 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.RemoteViews
 import androidx.test.core.app.ApplicationProvider
+import inc.axon.radar.data.Store
+import inc.axon.radar.ui.Look
 import org.json.JSONObject
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -23,8 +26,11 @@ import java.io.FileOutputStream
 class WidgetRenderTest {
     private val ctx: Context = ApplicationProvider.getApplicationContext()
     private val brief = JSONObject(File("../../brief.json").readText())
-    private val out = File("build/widget-previews").apply { mkdirs() }
+    private var out = File("build/widget-previews").apply { mkdirs() }
     private val log = StringBuilder()
+
+    @Before
+    fun colour() = Store.setLook(ctx, Look.Colour)
 
     private fun render(views: RemoteViews, d: Dims, name: String): View {
         val v = views.apply(ctx, FrameLayout(ctx))
@@ -51,7 +57,18 @@ class WidgetRenderTest {
     }
 
     @Test
-    fun rendersEveryWidget() {
+    fun rendersEveryWidget() = everyWidget()
+
+    /** The same widgets after the app is switched to black and white. */
+    @Test
+    fun rendersEveryWidgetInBlackAndWhite() {
+        Store.setLook(ctx, Look.Mono)
+        out = File("build/widget-previews-mono").apply { mkdirs() }
+        everyWidget()
+        Store.setLook(ctx, Look.Colour)
+    }
+
+    private fun everyWidget() {
         val cases = listOf(
             Triple(BriefWidget(), Dims(360, 170), "1-brief-170"),
             Triple(BriefWidget(), Dims(360, 248), "1-brief-248"),

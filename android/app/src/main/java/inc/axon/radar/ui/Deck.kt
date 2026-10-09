@@ -55,6 +55,7 @@ fun Deck(radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore:
     val scope = rememberCoroutineScope()
     val pos = remember { Animatable(start.coerceIn(0, (moves.size - 1).coerceAtLeast(0)).toFloat()) }
     val density = LocalDensity.current
+    val ink = LocalInk.current
     val top = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
 
     BoxWithConstraints(Modifier.fillMaxSize().background(Palette.Black)) {
@@ -123,15 +124,25 @@ fun Deck(radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore:
                     }
                 }
 
-                // One dot per card on the right edge, level with each card's top.
+                // One mark per card on the right edge, level with each card's top: a dot in the move's colour,
+                // or in black and white its glyph, hollow for the second kind of each family.
                 moves.forEachIndexed { i, m ->
                     val y = (ys[i] + 16f).coerceIn(shift + 6f, fullH.value - bottomInset.value - 24)
                     val on = i == focus
-                    Box(
-                        Modifier.offset(x = fullW - 22.dp - (if (on) 2.dp else 0.dp), y = (y - shift).dp).zIndex(500f)
-                            .size(if (on) 10.dp else 6.dp).clip(CircleShape).background(typeColor(m.type))
-                            .then(if (on) Modifier.border(1.5.dp, Palette.White, CircleShape) else Modifier),
-                    )
+                    if (ink.mono) {
+                        val s = if (on) 11.dp else 7.dp
+                        Glyph(
+                            glyphOf(m.type), if (on) Palette.White else Palette.White.copy(alpha = 0.72f), s,
+                            Modifier.offset(x = fullW - 22.dp - (if (on) 2.dp else 0.dp), y = (y - shift).dp).zIndex(500f),
+                            hollow = ink.lined(m.type),
+                        )
+                    } else {
+                        Box(
+                            Modifier.offset(x = fullW - 22.dp - (if (on) 2.dp else 0.dp), y = (y - shift).dp).zIndex(500f)
+                                .size(if (on) 10.dp else 6.dp).clip(CircleShape).background(typeColor(m.type))
+                                .then(if (on) Modifier.border(1.5.dp, Palette.White, CircleShape) else Modifier),
+                        )
+                    }
                 }
             }
         }
@@ -163,25 +174,38 @@ fun Deck(radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore:
     }
 }
 
-/** One card: the name huge in black on the move's colour, then the black figure block. */
+/**
+ * One card: the name huge on the move's colour, then the figure block. In black and white the cards
+ * keep a hairline edge, so cards of the same tone stay apart in the stack.
+ */
 @Composable
 private fun Card(m: Move, w: Dp, h: Dp, modifier: Modifier) {
-    val bg = typeColor(m.type)
-    Column(modifier.size(w, h).clip(RoundedCornerShape(3.dp)).background(bg).padding(10.dp)) {
-        FitTitle(m.subject, Palette.Black, Modifier.fillMaxWidth(), maxSize = 46f, minSize = 24f, maxLines = 2)
+    val ink = LocalInk.current
+    val bg = ink.page(m.type)
+    val lined = ink.lined(m.type)
+    val shape = RoundedCornerShape(3.dp)
+    Column(
+        modifier.size(w, h).clip(shape).background(bg)
+            .then(if (ink.mono) Modifier.border(1.dp, if (ink.dark(bg)) Tones.Edge else Palette.Black, shape) else Modifier)
+            .padding(10.dp),
+    ) {
+        FitTitle(m.subject, ink.display(bg), Modifier.fillMaxWidth(), maxSize = 46f, minSize = 24f, maxLines = 2)
         Spacer(Modifier.height(10.dp))
-        Box(Modifier.fillMaxWidth().weight(1f).clip(RoundedCornerShape(2.dp)).background(Palette.Black).padding(12.dp)) {
+        Box(
+            Modifier.fillMaxWidth().weight(1f).clip(RoundedCornerShape(2.dp)).background(ink.panel(bg))
+                .then(if (lined) Modifier.lines(ink.panelLines(bg), gap = 6.dp) else Modifier).padding(12.dp),
+        ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Glyph(glyphOf(m.type), bg, 8.dp)
+                Glyph(glyphOf(m.type), bg, 8.dp, hollow = lined)
                 Spacer(Modifier.width(6.dp))
                 T(listOfNotNull(m.typeLabel, m.regulator?.takeIf { Text.money(m.amount) != null }).joinToString(" · ").uppercase(), Type.Caps, bg, maxLines = 1)
             }
             Column(Modifier.align(Alignment.BottomStart)) {
                 FitTitle(m.figure, bg, Modifier.fillMaxWidth(), maxSize = 64f, minSize = 26f, maxLines = 1)
                 Spacer(Modifier.height(8.dp))
-                T(m.title, Type.Small.copy(fontSize = androidx.compose.ui.unit.TextUnit(13f, androidx.compose.ui.unit.TextUnitType.Sp)), Palette.White, maxLines = 3)
+                T(m.title, Type.Small.copy(fontSize = androidx.compose.ui.unit.TextUnit(13f, androidx.compose.ui.unit.TextUnitType.Sp)), ink.onPanel(bg), maxLines = 3)
                 Spacer(Modifier.height(6.dp))
-                T(Text.dayYear(m.date).uppercase(), Type.Caps, Palette.White.copy(alpha = 0.5f), maxLines = 1)
+                T(Text.dayYear(m.date).uppercase(), Type.Caps, ink.onPanel(bg).copy(alpha = 0.5f), maxLines = 1)
             }
         }
     }

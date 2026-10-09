@@ -4,8 +4,12 @@ package inc.axon.radar.ui
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -16,6 +20,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBars
@@ -24,17 +29,21 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.Dp
@@ -52,8 +61,9 @@ enum class Tab(val icon: ImageVector, val label: String) {
 /** The tab bar: five white line icons on a grey band, black on the deck. */
 @Composable
 fun TabBar(tab: Tab, dark: Boolean, onTab: (Tab) -> Unit, modifier: Modifier = Modifier) {
+    val ink = LocalInk.current
     Row(
-        modifier.fillMaxWidth().background(if (dark) Palette.Night else Palette.Bar).windowInsetsPadding(WindowInsets.navigationBars).height(58.dp),
+        modifier.fillMaxWidth().background(if (dark) ink.night else ink.bar).windowInsetsPadding(WindowInsets.navigationBars).height(58.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Tab.entries.forEach { t ->
@@ -119,7 +129,7 @@ fun WatchScreen(radar: Radar, watched: Set<String>, onOpenCompany: (String) -> U
                         .tap { onOpenCompany(c.id) }.padding(horizontal = 8.dp, vertical = 9.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Mono(c.name, radar.latestMove(c.id)?.let { typeColor(it.type) } ?: Palette.Slate, Palette.Black, 44.dp, radius = 2.dp)
+                    CompanyThumb(c.name, radar.latestMove(c.id)?.type)
                     Spacer(Modifier.width(14.dp))
                     Column(Modifier.weight(1f)) {
                         T(c.name, Type.Name, Palette.Black)
@@ -156,6 +166,7 @@ private val LABEL = mapOf("License" to "Licences", "Regulation" to "Rules", "Fun
 
 @Composable
 fun TrendsScreen(radar: Radar, bottomInset: Dp) {
+    val ink = LocalInk.current
     val t = radar.trends
     PaperList(bottomInset) {
         item { Titles(listOf("Trends"), 0) {} }
@@ -181,7 +192,7 @@ fun TrendsScreen(radar: Radar, bottomInset: Dp) {
             Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 10.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 ORDER.forEach { k ->
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Box(Modifier.size(9.dp).background(typeColor(k)))
+                        Box(Modifier.size(if (ink.mono) 11.dp else 9.dp).kind(k, ink))
                         Spacer(Modifier.width(4.dp))
                         T(LABEL[k] ?: k, Type.Small, Palette.Ink2, maxLines = 1)
                     }
@@ -197,7 +208,7 @@ fun TrendsScreen(radar: Radar, bottomInset: Dp) {
                     Row(Modifier.fillMaxWidth().padding(vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
                         T(LABEL[k] ?: k, Type.Name, Palette.Black, Modifier.width(110.dp))
                         Box(Modifier.weight(1f).height(22.dp)) {
-                            Box(Modifier.fillMaxWidth(n / max.toFloat()).fillMaxHeight().background(typeColor(k)))
+                            Box(Modifier.fillMaxWidth(n / max.toFloat()).fillMaxHeight().kind(k, ink))
                         }
                         T(n.toString(), Type.Name, Palette.Black, Modifier.width(36.dp).padding(start = 8.dp))
                     }
@@ -225,6 +236,7 @@ private fun MonthChart(radar: Radar) {
     val totals = stacks.map { it.sum() }
     val max = (totals.maxOrNull() ?: 0).coerceAtLeast(3)
     val measurer = rememberTextMeasurer()
+    val ink = LocalInk.current
     Canvas(Modifier.fillMaxWidth().height(220.dp).padding(horizontal = 14.dp)) {
         val labelH = 18.dp.toPx()
         val topPad = 18.dp.toPx()
@@ -239,7 +251,11 @@ private fun MonthChart(radar: Radar) {
             stacks[i].forEachIndexed { j, n ->
                 if (n > 0) {
                     val h = n / max.toFloat() * (base - topPad)
-                    drawRect(typeColor(ORDER[j]), Offset(x, y - h), Size(bw, h))
+                    val fill = ink.page(ORDER[j])
+                    // In black and white a hairline of paper keeps neighbouring kinds apart.
+                    val gap = if (ink.mono && y < base) 1.dp.toPx() else 0f
+                    drawRect(fill, Offset(x, y - h), Size(bw, h - gap))
+                    if (ink.lined(ORDER[j])) hatch(ink.lines(fill), 3.5.dp.toPx(), 1.dp.toPx(), x, y - h, x + bw, y - gap)
                     y -= h
                 }
             }
@@ -259,7 +275,10 @@ private fun MonthChart(radar: Radar) {
 // ---- About -------------------------------------------------------------------------------------
 
 @Composable
-fun AboutScreen(radar: Radar, refreshing: Boolean, onRefresh: () -> Unit, onOpenWeb: () -> Unit, bottomInset: Dp) {
+fun AboutScreen(
+    radar: Radar, refreshing: Boolean, onRefresh: () -> Unit, onOpenWeb: () -> Unit,
+    look: Look, onLook: (Look) -> Unit, bottomInset: Dp,
+) {
     PaperList(bottomInset) {
         item { Titles(listOf("Radar"), 0) {} }
         item {
@@ -267,6 +286,8 @@ fun AboutScreen(radar: Radar, refreshing: Boolean, onRefresh: () -> Unit, onOpen
                 T(androidx.compose.ui.text.AnnotatedString("Stablecoin and blockchain payments moves in Europe, the Middle East and North America, checked against their sources every morning."), Type.Lead, Palette.Ink2)
             }
         }
+        item { Heading("Look") }
+        item { LookPicker(radar, look, onLook) }
         item { Heading("Data") }
         item { PaperRow("Updated", Text.updated(radar.updatedAt)) }
         item { PaperRow("Next update", radar.nextRun?.let { Text.updated(it) + ", 06:54 Riyadh" } ?: "Daily") }
@@ -297,12 +318,81 @@ fun AboutScreen(radar: Radar, refreshing: Boolean, onRefresh: () -> Unit, onOpen
     }
 }
 
+/**
+ * The two looks side by side, each shown as a small copy of today's deck, so the choice is made by
+ * seeing it. The chosen one is framed in black.
+ */
+@Composable
+private fun LookPicker(radar: Radar, look: Look, onLook: (Look) -> Unit) {
+    Column(Modifier.padding(horizontal = 14.dp)) {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            LookOption(radar, Look.Colour, "Colour", look == Look.Colour, Modifier.weight(1f)) { onLook(Look.Colour) }
+            LookOption(radar, Look.Mono, "Black & white", look == Look.Mono, Modifier.weight(1f)) { onLook(Look.Mono) }
+        }
+        Spacer(Modifier.height(10.dp))
+        T("Changes the app and its home-screen widgets. Kept on this phone.", Type.Small, Palette.Muted)
+    }
+}
+
+@Composable
+private fun LookOption(radar: Radar, look: Look, label: String, selected: Boolean, modifier: Modifier, onClick: () -> Unit) {
+    val shape = RoundedCornerShape(3.dp)
+    Column(
+        modifier.clip(shape).background(Palette.Row)
+            .then(if (selected) Modifier.border(2.dp, Palette.Black, shape) else Modifier)
+            .selectable(selected, interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.RadioButton, onClick = onClick),
+    ) {
+        MiniDeck(radar.deck.take(4), Ink.of(look), Modifier.fillMaxWidth().height(138.dp))
+        Row(Modifier.fillMaxWidth().padding(start = 12.dp, end = 12.dp, top = 12.dp, bottom = 13.dp), verticalAlignment = Alignment.CenterVertically) {
+            T(label, Type.Name, Palette.Black, Modifier.weight(1f), maxLines = 1)
+            Box(
+                Modifier.size(18.dp).clip(CircleShape)
+                    .then(if (selected) Modifier.background(Palette.Black) else Modifier.border(1.5.dp, Palette.Black.copy(alpha = 0.35f), CircleShape)),
+                contentAlignment = Alignment.Center,
+            ) {
+                if (selected) Box(Modifier.size(6.dp).clip(CircleShape).background(Palette.White))
+            }
+        }
+    }
+}
+
+/** A few cards of the deck in miniature: folded strips with their names, the last one open. */
+@Composable
+private fun MiniDeck(moves: List<Move>, ink: Ink, modifier: Modifier) {
+    BoxWithConstraints(modifier.background(Palette.Black).clipToBounds()) {
+        val w = maxWidth * 0.76f
+        val full = maxHeight
+        val strip = 21.dp
+        moves.forEachIndexed { i, m ->
+            val bg = ink.page(m.type)
+            val shape = RoundedCornerShape(2.dp)
+            val last = i == moves.lastIndex
+            Column(
+                Modifier.offset(x = (maxWidth - w) / 2, y = 14.dp + strip * i).width(w).height(full).clip(shape).background(bg)
+                    .then(if (ink.mono) Modifier.border(1.dp, if (ink.dark(bg)) Tones.Edge else Palette.Black, shape) else Modifier)
+                    .padding(horizontal = 6.dp, vertical = 4.dp),
+            ) {
+                T(m.subject, Type.display(15f), ink.display(bg), maxLines = 1)
+                if (last) {
+                    Spacer(Modifier.height(5.dp))
+                    Box(
+                        Modifier.fillMaxWidth().height(full).clip(RoundedCornerShape(1.dp)).background(ink.panel(bg))
+                            .then(if (ink.lined(m.type)) Modifier.lines(ink.panelLines(bg), gap = 4.dp) else Modifier).padding(6.dp),
+                    ) {
+                        T(m.figure, Type.display(19f), bg, maxLines = 1)
+                    }
+                }
+            }
+        }
+    }
+}
+
 /** Shown once, before the first copy of the radar has arrived. */
 @Composable
 fun Loading(failed: Boolean, onRetry: () -> Unit) {
     Box(Modifier.fillMaxSize().background(Palette.Black).padding(20.dp)) {
         Column(Modifier.align(Alignment.CenterStart)) {
-            T("Market\nRadar", Type.display(64f), Palette.Yellow)
+            T("Market\nRadar", Type.display(64f), LocalInk.current.brand)
             Spacer(Modifier.height(16.dp))
             T(if (failed) "The radar couldn't be reached. Check the connection and try again." else "Loading the radar…", Type.Lead, Palette.White)
             if (failed) {

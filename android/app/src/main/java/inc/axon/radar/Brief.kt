@@ -108,10 +108,10 @@ object Fmt {
         return html("<font color=\"$color\">${escape(type)}</font>$rest")
     }
 
-    fun glyph(type: String?): Int = when (type) {
-        "Funding", "M&A" -> R.drawable.g_sq
-        "Launch", "Partnership" -> R.drawable.g_dot
-        else -> R.drawable.g_dia
+    fun glyph(type: String?, mono: Boolean = false): Int = when (type) {
+        "Funding", "M&A" -> if (mono) R.drawable.mono_g_sq else R.drawable.g_sq
+        "Launch", "Partnership" -> if (mono) R.drawable.mono_g_dot else R.drawable.g_dot
+        else -> if (mono) R.drawable.mono_g_dia else R.drawable.g_dia
     }
 
     fun initials(name: String?): String {

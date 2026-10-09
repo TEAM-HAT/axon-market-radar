@@ -10,7 +10,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.RemoteViews
+import inc.axon.radar.data.Store
 import inc.axon.radar.ui.Link
+import inc.axon.radar.ui.Look
 import org.json.JSONObject
 
 /** Widget size in dp, portrait. */
@@ -22,11 +24,16 @@ data class Dims(val w: Int, val h: Int)
  */
 abstract class RadarWidget : AppWidgetProvider() {
     abstract val layout: Int
+    /** The same layout in black and white, with the same ids. */
+    abstract val monoLayout: Int
     /** Size used until the launcher reports the real one. */
     abstract val fallback: Dims
     /** Base request code; each widget owns the hundred codes above it. */
     abstract val code: Int
     abstract fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews
+
+    /** The layout for the look chosen in the app. */
+    fun layoutFor(ctx: Context): Int = if (mono(ctx)) monoLayout else layout
 
     fun dims(mgr: AppWidgetManager, id: Int): Dims {
         val o = runCatching { mgr.getAppWidgetOptions(id) }.getOrNull()
@@ -62,7 +69,7 @@ abstract class RadarWidget : AppWidgetProvider() {
             val mgr = AppWidgetManager.getInstance(ctx)
             val ids = mgr.getAppWidgetIds(ComponentName(ctx, javaClass))
             if (ids.isNotEmpty()) {
-                val note = RemoteViews(ctx.packageName, layout).apply { setTextViewText(R.id.updated, "↻  Updating…") }
+                val note = RemoteViews(ctx.packageName, layoutFor(ctx)).apply { setTextViewText(R.id.updated, "↻  Updating…") }
                 mgr.partiallyUpdateAppWidget(ids, note)
             }
             Refresh.now(ctx, force = true)
@@ -89,7 +96,7 @@ abstract class RadarWidget : AppWidgetProvider() {
             if (i > 0) v.setViewVisibility(DIV[i], show)
             if (m == null) continue
             val type = m.str("type") ?: "Regulation"
-            v.setImageViewResource(GLYPH[i], Fmt.glyph(type))
+            v.setImageViewResource(GLYPH[i], Fmt.glyph(type, mono(ctx)))
             v.setTextViewText(META[i], Fmt.meta(m.str("type_label") ?: type, m.str("regulator") ?: m.str("company"), m.str("date"), typeColor))
             v.setTextViewText(TITLE[i], m.str("title") ?: "")
             // Rows open the move in the app; a brief from before moves had ids falls back to the source.
@@ -106,7 +113,7 @@ abstract class RadarWidget : AppWidgetProvider() {
             v.setViewVisibility(ROW[i], if (i == 0) View.VISIBLE else View.GONE)
             if (i > 0) v.setViewVisibility(DIV[i], View.GONE)
         }
-        v.setImageViewResource(GLYPH[0], R.drawable.g_dot)
+        v.setImageViewResource(GLYPH[0], if (mono(ctx)) R.drawable.mono_g_dot else R.drawable.g_dot)
         v.setTextViewText(META[0], "")
         v.setTextViewText(TITLE[0], text)
         v.setOnClickPendingIntent(ROW[0], app(ctx, if (hash == "week") "home" else hash, null, code + 97))
@@ -114,8 +121,17 @@ abstract class RadarWidget : AppWidgetProvider() {
 
     companion object {
         const val ACTION_REFRESH = "inc.axon.radar.action.REFRESH"
-        const val BLUE = "#2852EA"
-        const val SKY = "#77A1FD"
+        private const val BLUE = "#2852EA"
+        private const val SKY = "#77A1FD"
+
+        fun mono(ctx: Context): Boolean = Store.look(ctx) == Look.Mono
+
+        /** The accent on white widgets: blue, or black in black and white. */
+        fun accent(ctx: Context): String = if (mono(ctx)) "#000000" else BLUE
+        /** The quieter accent after a name, such as "· 2 moves". */
+        fun accentSoft(ctx: Context): String = if (mono(ctx)) "#6E6E6E" else BLUE
+        /** The accent on the dark licences widget. */
+        fun accentOnDark(ctx: Context): String = if (mono(ctx)) "#C9C9C9" else SKY
 
         val ROW = intArrayOf(R.id.row1, R.id.row2, R.id.row3, R.id.row4, R.id.row5, R.id.row6)
         val DIV = intArrayOf(0, R.id.div2, R.id.div3, R.id.div4, R.id.div5, R.id.div6)
@@ -159,11 +175,12 @@ abstract class RadarWidget : AppWidgetProvider() {
 /** Briefing tab, 4 x 2: moves in the last 7 days, what is new today, and the headline. */
 class BriefWidget : RadarWidget() {
     override val layout = R.layout.widget_brief
+    override val monoLayout = R.layout.widget_brief_mono
     override val fallback = Dims(360, 170)
     override val code = 100
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layout)
+        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
         v.setOnClickPendingIntent(R.id.tap, app(ctx, "home", null, code))
         footer(ctx, v, brief, "week")
         v.setInt(R.id.headline, "setMaxLines", ((d.h - (if (d.h >= 200) 110 else 72)) / 18).coerceIn(2, 8))
@@ -198,11 +215,12 @@ class BriefWidget : RadarWidget() {
 /** Moves tab, 4 x 4: the latest moves, each opening its source. */
 class MovesWidget : RadarWidget() {
     override val layout = R.layout.widget_moves
+    override val monoLayout = R.layout.widget_moves_mono
     override val fallback = Dims(360, 400)
     override val code = 200
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layout)
+        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
         v.setOnClickPendingIntent(R.id.head, app(ctx, "moves", null, code))
         footer(ctx, v, brief, "moves")
         if (brief == null) {
@@ -217,7 +235,7 @@ class MovesWidget : RadarWidget() {
             placeholder(ctx, v, brief, 5, "Nothing on the radar yet.", "moves")
             return v
         }
-        moveRows(ctx, v, brief, items, ((d.h - 117) / 71).coerceIn(1, 5), 5, BLUE, code + 10)
+        moveRows(ctx, v, brief, items, ((d.h - 117) / 71).coerceIn(1, 5), 5, accent(ctx), code + 10)
         return v
     }
 }
@@ -225,6 +243,7 @@ class MovesWidget : RadarWidget() {
 /** Companies tab, 4 x 4: the most active companies over 30 days. */
 class CompaniesWidget : RadarWidget() {
     override val layout = R.layout.widget_companies
+    override val monoLayout = R.layout.widget_companies_mono
     override val fallback = Dims(360, 400)
     override val code = 300
 
@@ -235,7 +254,7 @@ class CompaniesWidget : RadarWidget() {
     private val N = intArrayOf(R.id.n1, R.id.n2, R.id.n3, R.id.n4, R.id.n5, R.id.n6)
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layout)
+        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
         v.setOnClickPendingIntent(R.id.head, app(ctx, "companies", null, code))
         footer(ctx, v, brief, "companies")
         val cos = brief?.objects("companies").orEmpty()
@@ -270,6 +289,7 @@ class CompaniesWidget : RadarWidget() {
 /** Licences tab, 4 x 4, navy: the busiest regulators, then the newest licences and rules. */
 class LicencesWidget : RadarWidget() {
     override val layout = R.layout.widget_licences
+    override val monoLayout = R.layout.widget_licences_mono
     override val fallback = Dims(360, 400)
     override val code = 400
 
@@ -280,7 +300,7 @@ class LicencesWidget : RadarWidget() {
     private val TSUB = intArrayOf(R.id.tile_sub1, R.id.tile_sub2, R.id.tile_sub3)
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layout)
+        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
         val tab = app(ctx, "licences", null, code)
         v.setOnClickPendingIntent(R.id.head, tab)
         v.setOnClickPendingIntent(R.id.tiles, tab)
@@ -301,7 +321,7 @@ class LicencesWidget : RadarWidget() {
             placeholder(ctx, v, brief, 4, if (brief == null) "Loading licences and rules…" else "No licences or rule changes yet.", "licences")
             return v
         }
-        moveRows(ctx, v, brief, items, ((d.h - 221) / 72).coerceIn(1, 4), 4, SKY, code + 10)
+        moveRows(ctx, v, brief, items, ((d.h - 221) / 72).coerceIn(1, 4), 4, accentOnDark(ctx), code + 10)
         return v
     }
 }
@@ -309,11 +329,12 @@ class LicencesWidget : RadarWidget() {
 /** Trends tab, 4 x 3: the year's totals and moves per month. */
 class TrendsWidget : RadarWidget() {
     override val layout = R.layout.widget_trends
+    override val monoLayout = R.layout.widget_trends_mono
     override val fallback = Dims(360, 300)
     override val code = 500
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layout)
+        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
         val tab = app(ctx, "trends", null, code)
         v.setOnClickPendingIntent(R.id.top, tab)
         v.setOnClickPendingIntent(R.id.bottom, tab)
@@ -348,11 +369,12 @@ class TrendsWidget : RadarWidget() {
 /** Everything at once, 4 x 5: briefing, regions, latest moves, companies, regulators and the trend. */
 class DashboardWidget : RadarWidget() {
     override val layout = R.layout.widget_dashboard
+    override val monoLayout = R.layout.widget_dashboard_mono
     override val fallback = Dims(360, 620)
     override val code = 600
 
     override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layout)
+        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
         v.setOnClickPendingIntent(R.id.top, app(ctx, "home", null, code))
         v.setOnClickPendingIntent(R.id.regions, app(ctx, "moves", null, code + 1))
         v.setOnClickPendingIntent(R.id.co_col, app(ctx, "companies", null, code + 2))
@@ -402,18 +424,18 @@ class DashboardWidget : RadarWidget() {
 
         val items = brief.objects("latest").ifEmpty { brief.objects("moves") }
         if (items.isEmpty()) placeholder(ctx, v, brief, 3, "Nothing on the radar yet.", "moves")
-        else moveRows(ctx, v, brief, items, rows, 3, BLUE, code + 10)
+        else moveRows(ctx, v, brief, items, rows, 3, accent(ctx), code + 10)
 
         val cos = brief.objects("companies").take(3)
         v.setTextViewText(R.id.co_lines, Fmt.html(cos.joinToString("<br>") { c ->
             val m = c.optInt("moves_30d")
             val tail = if (m > 0) Fmt.plural(m, "move", "moves") else Fmt.day(c.str("last_date"))
-            "${Fmt.escape(c.str("name") ?: "")} <font color=\"$BLUE\">· ${Fmt.escape(tail)}</font>"
+            "${Fmt.escape(c.str("name") ?: "")} <font color=\"${accentSoft(ctx)}\">· ${Fmt.escape(tail)}</font>"
         }.ifEmpty { "No company moves yet" }))
         val regs = brief.objects("regulators").take(3)
         v.setTextViewText(R.id.reg_lines, Fmt.html(regs.joinToString("<br>") { r ->
             val total = r.optInt("licences") + r.optInt("actions")
-            "${Fmt.escape(r.str("name") ?: "")} <font color=\"$BLUE\">· ${Fmt.escape(Fmt.plural(total, "move", "moves"))}</font>"
+            "${Fmt.escape(r.str("name") ?: "")} <font color=\"${accentSoft(ctx)}\">· ${Fmt.escape(Fmt.plural(total, "move", "moves"))}</font>"
         }.ifEmpty { "No regulator moves yet" }))
 
         val t = brief.optJSONObject("trends")
