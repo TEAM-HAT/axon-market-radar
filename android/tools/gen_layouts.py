@@ -33,128 +33,14 @@ def tv(id_, text, size, color, family="sans-serif-condensed", bold=False, caps=F
     return "<TextView " + " ".join(f'{k}="{v}"' for k, v in a.items()) + " />"
 
 
-def eyebrow(id_, text, color, size="10.5sp", w="wrap_content", extra=""):
-    return tv(id_, text, size, color, bold=True, caps=True, spacing="0.12", w=w, extra=extra)
-
-
-def head(title, eyebrow_text, stat, dark=False):
-    eb = "sky" if dark else "blue"
-    st = "on_navy_2" if dark else "ink_3"
-    tc = "white" if dark else "ink"
-    rule = "navy_line" if dark else "ink"
-    return f'''
-    <LinearLayout android:id="@+id/head" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="16dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-            <ImageView android:layout_width="14dp" android:layout_height="14dp" android:importantForAccessibility="no" android:src="@drawable/{"mark" if dark else "mark_solid"}" />
-            {eyebrow("eyebrow", eyebrow_text, eb, w="0dp", extra='android:layout_weight="1" android:layout_marginStart="7dp"')}
-            {eyebrow("stat", stat, st, extra='android:layout_marginStart="8dp"')}
-        </LinearLayout>
-        {tv("title", title, "22sp", tc, family="sans-serif-condensed-medium", caps=True, extra='android:layout_marginTop="6dp"')}
-        <FrameLayout android:layout_width="match_parent" android:layout_height="1.5dp" android:layout_marginTop="8dp" android:background="@color/{rule}" />
-    </LinearLayout>'''
-
-
-def footer(more, dark=False):
-    up = "on_navy_2" if dark else "ink_3"
-    mo = "sky" if dark else "blue"
-    return f'''
-    <LinearLayout android:id="@+id/footer" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:gravity="center_vertical" android:orientation="horizontal"
-        android:paddingStart="16dp" android:paddingTop="6dp" android:paddingEnd="16dp" android:paddingBottom="13dp">
-        {eyebrow("updated", "↻  Updated Fri 9 Oct", up, size="9.5sp", w="0dp", extra='android:layout_weight="1" android:paddingTop="6dp" android:paddingBottom="6dp"')}
-        {eyebrow("more", more, mo, size="9.5sp", extra='android:paddingTop="6dp" android:paddingBottom="6dp" android:layout_marginStart="8dp"')}
-    </LinearLayout>'''
-
-
-SAMPLE_MOVES = [
-    ("g_dot", "Partnership · Visa · 8 Oct", "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments"),
-    ("g_dia", "Regulation · ESMA · 8 Oct", "ESMA sets three-month wind-down for unauthorised stablecoin services"),
-    ("g_dia", "Regulation · ADGM FSRA · 6 Oct", "ADGM FSRA consults on DeFi risk management guidance"),
-    ("g_dia", "Regulation · VARA · 6 Oct", "VARA sets tougher standards for audits of VASP reserves"),
-    ("g_dia", "Licence · VARA · 5 Oct", "Rain MENA FZE receives full VARA licence for exchange and brokerage"),
-]
-
-
-def move_row(i, dark=False, title_size="14.5sp"):
-    g, meta, title = SAMPLE_MOVES[(i - 1) % len(SAMPLE_MOVES)]
-    tint = 'android:tint="@color/sky"' if dark else ""
-    div = "" if i == 1 else f'<FrameLayout android:id="@+id/div{i}" android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/{"navy_line" if dark else "line"}" />'
-    return f'''
-        {div}
-        <LinearLayout android:id="@+id/row{i}" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:paddingTop="9dp" android:paddingBottom="9dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-                <ImageView android:id="@+id/glyph{i}" android:layout_width="8dp" android:layout_height="8dp" android:layout_marginEnd="7dp"
-                    android:importantForAccessibility="no" android:src="@drawable/{g}" {tint} />
-                {eyebrow(f"meta{i}", meta, "on_navy_2" if dark else "ink_3", size="9.5sp", w="0dp", extra='android:layout_weight="1" android:letterSpacing="0.1"')}
-            </LinearLayout>
-            {tv(f"title{i}", title.replace("'", "\\'"), title_size, "white" if dark else "ink", lines=2, w="match_parent", extra='android:layout_marginTop="3dp" android:lineSpacingMultiplier="1.02"')}
-        </LinearLayout>'''
-
-
-SAMPLE_COS = [("TE", "Tether", "Issuer · El Salvador", "8 Oct", "2 moves"), ("RA", "Rain", "On/off-ramp · Bahrain", "5 Oct", "1 move"),
-              ("FA", "Fasset", "Settlement rails · United States", "16 Sep", "1 move"), ("DD", "DDSC", "Issuer · United Arab Emirates", "16 Sep", "1 move"),
-              ("NI", "Network International", "Merchant gateway · UAE", "9 Sep", "Last move"), ("FU", "Fuze", "On/off-ramp · UAE", "8 Sep", "Last move")]
-
-
-def co_row(i):
-    ini, name, sub, last, n = SAMPLE_COS[(i - 1) % len(SAMPLE_COS)]
-    div = "" if i == 1 else f'<FrameLayout android:id="@+id/div{i}" android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/line" />'
-    return f'''
-        {div}
-        <LinearLayout android:id="@+id/row{i}" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="8dp" android:paddingBottom="8dp">
-            {tv(f"mono{i}", ini, "13sp", "blue_deep", bold=True, spacing="0.05", w="38dp", h="38dp", extra='android:gravity="center" android:background="@drawable/bg_mono"')}
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
-                {tv(f"name{i}", name, "16sp", "ink", family="sans-serif-condensed-medium", w="match_parent")}
-                {tv(f"sub{i}", sub, "12sp", "ink_3", family="sans-serif", w="match_parent", extra='android:layout_marginTop="1dp"')}
-            </LinearLayout>
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:gravity="end" android:orientation="vertical">
-                {eyebrow(f"last{i}", last, "ink", size="12sp", extra='android:letterSpacing="0.08"')}
-                {eyebrow(f"n{i}", n, "blue", size="9sp", extra='android:layout_marginTop="2dp" android:letterSpacing="0.1"')}
-            </LinearLayout>
-        </LinearLayout>'''
-
-
-# The black-and-white look: every widget colour mapped by its role. Surfaces that are blue or navy
-# in colour turn black, accents on white turn black, accents on black turn light grey.
-MONO = {
-    "blue": ("#000000", "brand surfaces, and accents on white"),
-    "blue_deep": ("#111111", "initials on the light squares"),
-    "sky": ("#C9C9C9", "accents on black"),
-    "pale": ("#E8E8E8", "initials squares, ring in the mark"),
-    "mist": ("#F0F0F0", "band behind the regions"),
-    "on_blue_2": ("#B5B5B5", "second text on black"),
-    "ink": ("#000000", "text on white"),
-    "ink_2": ("#474747", "quieter text on white"),
-    "ink_3": ("#6E6E6E", "labels and dates on white"),
-    "line": ("#E4E4E4", "dividers on white"),
-    "navy": ("#000000", "the licences widget"),
-    "navy_line": ("#2C2C2C", "dividers on black"),
-    "on_navy_2": ("#A8A8A8", "second text on black"),
-    "white": ("#FFFFFF", "white"),
-}
-# Drawables that carry colour get a black-and-white twin named mono_<name>.
-MONO_DRAWABLES = ["bg_blue", "bg_blue_top", "bg_chip", "bg_mono", "bg_navy", "bg_white", "chart_preview",
-                  "g_dia", "g_dot", "g_sq", "mark", "mark_solid"]
 RES = os.path.join(os.path.dirname(__file__), "..", "app", "src", "main", "res")
 
 
-def to_mono(xml):
-    xml = re.sub(r"@color/([a-z_0-9]+)", lambda m: "@color/mono_" + m.group(1) if m.group(1) in MONO else m.group(0), xml)
-    return re.sub(r"@drawable/([a-z_0-9]+)", lambda m: "@drawable/mono_" + m.group(1) if m.group(1) in MONO_DRAWABLES else m.group(0), xml)
-
-
-def write(name, body, twin=True):
-    """Writes a layout and its black-and-white twin (widget_x.xml and widget_x_mono.xml), with the same ids.
-    A layout whose colours are all set from code (the carousel) needs no twin."""
+def write(name, body):
+    """Writes a layout. Every colour that differs between the looks is set from code, so one layout serves both."""
     head_ = '<?xml version="1.0" encoding="utf-8"?>\n<!-- Generated by tools/gen_layouts.py -->\n'
     with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
         f.write(head_ + body.strip() + "\n")
-    if twin:
-        with open(os.path.join(OUT, name.replace(".xml", "_mono.xml")), "w", encoding="utf-8") as f:
-            f.write(head_ + to_mono(body.strip()) + "\n")
 
 
 def write_res(folder, name, body):
@@ -162,212 +48,361 @@ def write_res(folder, name, body):
         f.write(body.strip() + "\n")
 
 
-def write_mono_resources():
-    with open(os.path.join(RES, "values", "colors_mono.xml"), "w", encoding="utf-8") as f:
-        f.write('<?xml version="1.0" encoding="utf-8"?>\n<!-- Generated by tools/gen_layouts.py: the widgets in black and white -->\n<resources>\n')
-        for k, (v, why) in MONO.items():
-            f.write(f'    <color name="mono_{k}">{v}</color> <!-- {why} -->\n')
-        f.write("</resources>\n")
-    for d in MONO_DRAWABLES:
-        src = open(os.path.join(RES, "drawable", d + ".xml"), encoding="utf-8").read()
-        with open(os.path.join(RES, "drawable", "mono_" + d + ".xml"), "w", encoding="utf-8") as f:
-            f.write("<!-- Generated by tools/gen_layouts.py from " + d + ".xml -->\n" + to_mono(src))
+# The widgets, in the app's look ------------------------------------------------------------
+# Each widget is a piece of the app: the briefing and the dashboard's top on black like the deck, the moves,
+# companies and trends on the directory's light grey, and the licences on the licence colour, as a move's
+# page. Colours, type pictures and taps are set from code (Kit and the widgets), in either look; the
+# defaults here only show the layout. Rows, tiles and boxes are shared parts.
+
+KIT_FILLS = {
+    # swatch and tile fills: the app's page colours, the licence colour a step darker for a licence on its own
+    # page, and the black-and-white tones with their one-step neighbours
+    "yellow": "#FCED00", "yellowdeep": "#B0A600", "royal": "#263B94", "crimson": "#8B1112", "violet": "#975ACA",
+    "sage": "#618C75", "slate": "#7E888B", "paper": "#F2F2F2", "paperstep": "#DADADA", "silver": "#B4B4B4",
+    "black": "#000000", "blackstep": "#1F1F1F",
+}
+KIT_LINED = ["paper", "paperstep", "silver", "black", "blackstep"]
+KIT_DARK = {"black", "blackstep", "royal", "crimson"}
+KIT_ROWS = {"paper": "#DEDEDE", "night": "#121212", "yellow": "#D1C500", "paperstep": "#DADADA"}
+KIT_GROUNDS = {"paper": "#D6D6D6", "yellow": "#FCED00", "tonepaper": "#F2F2F2"}
 
 
-# 1. Daily briefing, 4 x 2 -------------------------------------------------------------
-write("widget_brief.xml", f'''
+def write_kit_resources():
+    for k, fill in KIT_FILLS.items():
+        edge = "#3A3A3A" if k in ("black", "blackstep") else "#1F000000"
+        write_res("drawable", f"sw_{k}.xml", f"""<!-- Generated by tools/gen_layouts.py: a move's swatch -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="{fill}" />
+    <stroke android:width="1dp" android:color="{edge}" />
+    <corners android:radius="2dp" />
+</shape>""")
+        if k in KIT_LINED:
+            lines = "light" if k in KIT_DARK else "dark"
+            write_res("drawable", f"sw_{k}_lined.xml", f"""<!-- Generated by tools/gen_layouts.py: the second kind of a family, in black and white -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/sw_{k}" />
+    <item android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp"><bitmap android:src="@drawable/hatch_sw_{lines}" android:tileMode="repeat" /></item>
+</layer-list>""")
+    for k, fill in KIT_ROWS.items():
+        write_res("drawable", f"row_{k}.xml", f"""<!-- Generated by tools/gen_layouts.py: a row -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="{fill}" />
+    <corners android:radius="2dp" />
+</shape>""")
+    for k, fill in KIT_GROUNDS.items():
+        write_res("drawable", f"bg_{k}.xml", f"""<!-- Generated by tools/gen_layouts.py: a widget's ground -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="{fill}" />
+    <corners android:radius="26dp" />
+</shape>""")
+    for k, fill in (("black", "#000000"), ("paper", "#F2F2F2"), ("paperstep", "#DADADA")):
+        write_res("drawable", f"tile_{k}.xml", f"""<!-- Generated by tools/gen_layouts.py: a regulator's tile -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="{fill}" />
+    <corners android:radius="3dp" />
+</shape>""")
+    # The dashboard's black top, rounded at the top as the widget is, for launchers that do not clip to it.
+    write_res("drawable", "bg_cover.xml", """<!-- Generated by tools/gen_layouts.py: the dashboard's briefing -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#000000" />
+    <corners android:topLeftRadius="26dp" android:topRightRadius="26dp" android:bottomLeftRadius="0dp" android:bottomRightRadius="0dp" />
+</shape>""")
+    write_res("drawable", "rule_kit.xml", """<!-- Generated by tools/gen_layouts.py -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle"><solid android:color="#C9C9C9" /></shape>""")
+    write_res("drawable", "ic_kit_refresh.xml", """<!-- Generated by tools/gen_layouts.py: the app's refresh icon, tinted from code -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="1.9" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="#00000000" android:pathData="M19,12a7,7 0,1 1,-2.05 -4.95" />
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="1.9" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="#00000000" android:pathData="M19,4.5V8h-3.5" />
+</vector>""")
+    write_hatch("hatch_sw_dark.png", (0, 0, 0, 0x6B), tile=10, width=3.0)
+    write_hatch("hatch_sw_light.png", (255, 255, 255, 0x99), tile=10, width=3.0)
+
+
+def text(id_, sample, size, color="#000000", family="sans-serif", bold=False, caps=False, lines=1, w="wrap_content", extra=""):
+    """Ordinary widget text in the system face: the small text round the app's type pictures."""
+    a = {"android:id": f"@+id/{id_}", "android:layout_width": w, "android:layout_height": "wrap_content", "android:fontFamily": family,
+         "android:text": sample, "android:textSize": size, "android:textColor": color, "android:includeFontPadding": "false"}
+    if bold:
+        a["android:textStyle"] = "bold"
+    if caps:
+        a["android:textAllCaps"] = "true"
+        a["android:letterSpacing"] = "0.08"
+    if lines:
+        a["android:maxLines"] = str(lines)
+        a["android:ellipsize"] = "end"
+    for k, v in re.findall(r'(\S+?)="([^"]*)"', extra):
+        a[k] = v
+    return "<TextView " + " ".join(f'{k}="{v}"' for k, v in a.items()) + " />"
+
+
+def picture(id_, extra=""):
+    """A picture drawn from code: a heading, number or name in the app's typeface, or a chart."""
+    return f'<ImageView android:id="@+id/{id_}" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" {extra} />'
+
+
+def kit_head(sample_colour="#000000"):
+    """A directory heading, the app's huge title, with the refresh at the right."""
+    return f"""<FrameLayout android:id="@+id/head" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingStart="14dp" android:paddingTop="10dp" android:paddingEnd="2dp">
+        {picture("heading")}
+        <ImageView android:id="@+id/refresh" android:layout_width="40dp" android:layout_height="40dp" android:layout_gravity="end|top"
+            android:padding="11dp" android:src="@drawable/ic_kit_refresh" android:tint="{sample_colour}" android:contentDescription="Check for news now" />
+    </FrameLayout>"""
+
+
+def kit_row(p="", root="row_item"):
+    """A move as a row, as the app lists them: its swatch, the title, what and who, and the day."""
+    return f"""<FrameLayout android:id="@+id/{p}{root}" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="2dp">
+        <LinearLayout android:id="@+id/{p}row" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/row_paper"
+            android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="8dp" android:paddingTop="9dp" android:paddingEnd="10dp" android:paddingBottom="9dp">
+            <FrameLayout android:id="@+id/{p}sw" android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/sw_royal">
+                <ImageView android:id="@+id/{p}sw_glyph" android:layout_width="10dp" android:layout_height="10dp" android:layout_gravity="center"
+                    android:importantForAccessibility="no" android:src="@drawable/g_dia" />
+            </FrameLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                {text(p + "title", "NCUA proposes stablecoin data fields for credit union call reports", "14sp", bold=True, lines=2, w="match_parent", extra='android:lineHeight="18sp"')}
+                {text(p + "meta", "Regulation · NCUA · North America", "11.5sp", "#9A9A9A", family="sans-serif-medium", w="match_parent", extra='android:layout_marginTop="3dp"')}
+            </LinearLayout>
+            {text(p + "date", "9 Oct", "13sp", "#9A9A9A", family="sans-serif-medium", extra='android:layout_marginStart="8dp"')}
+        </LinearLayout>
+    </FrameLayout>"""
+
+
+def kit_tile(p):
+    """One of the newest moves as the app's tile: its name on its colour, and the figure in a black block."""
+    return f"""<LinearLayout android:id="@+id/{p}" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:background="@drawable/card_royal" android:orientation="vertical" android:padding="8dp">
+            {picture(p + "_name")}
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+            <FrameLayout android:id="@+id/{p}_panel" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/panel_black" android:padding="6dp">
+                {picture(p + "_fig")}
+            </FrameLayout>
+        </LinearLayout>"""
+
+
+def kit_regtile(p):
+    """A regulator as the app's tile: how many moves, huge, then its name and where."""
+    return f"""<LinearLayout android:id="@+id/{p}" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:background="@drawable/tile_black" android:orientation="vertical" android:padding="8dp">
+            {picture(p + "_n")}
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+            {picture(p + "_name")}
+            {text(p + "_where", "United States", "10.5sp", "#99FFFFFF", family="sans-serif-medium", w="match_parent", extra='android:layout_marginTop="2dp"')}
+        </LinearLayout>"""
+
+
+def kit_box(p, height, initials_extra=""):
+    """A company as the app's Watching box: its name, what and where, its initials huge, and its latest move."""
+    return f"""<FrameLayout android:id="@+id/{p}box" android:layout_width="match_parent" android:layout_height="{height}" android:background="@drawable/card_royal" android:padding="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                {text(p + "box_name", "Ripple", "13sp", bold=True, lines=2, w="match_parent")}
+                {text(p + "box_sub", "Settlement rails · United States", "10.5sp", "#8C000000", family="sans-serif-medium", w="match_parent", extra='android:layout_marginTop="2dp"')}
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:orientation="vertical">
+                {picture(p + "box_initials", initials_extra)}
+                <LinearLayout android:id="@+id/{p}box_latest_row" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"
+                    android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageView android:id="@+id/{p}box_glyph" android:layout_width="7dp" android:layout_height="7dp" android:importantForAccessibility="no" android:src="@drawable/g_dia" />
+                    {text(p + "box_latest", "Funding · 8 Oct", "9.5sp", "#8C000000", bold=True, caps=True, w="0dp", extra='android:layout_weight="1" android:layout_marginStart="5dp"')}
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>"""
+
+
+def label(id_, sample, color="#000000", extra=""):
+    """A section's small capitals, as the app's month headers."""
+    return text(id_, sample, "10.5sp", color, bold=True, caps=True, w="match_parent",
+                extra='android:paddingStart="14dp" android:paddingEnd="14dp" ' + extra)
+
+
+LIST = ('android:divider="@null" android:dividerHeight="0dp" android:scrollbars="none" android:listSelector="@android:color/transparent" '
+        'android:cacheColorHint="#00000000" android:clipToPadding="false"')
+
+# 1. Daily briefing, 4 x 2 and taller: on black, as the app's home ------------------------------
+write("widget_brief.xml", f"""
 <FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/bg_blue" android:clipToOutline="true">
-    <LinearLayout android:id="@+id/tap" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
-        android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="16dp" android:paddingBottom="8dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:importantForAccessibility="no" android:src="@drawable/mark" />
-            {eyebrow("eyebrow", "Daily briefing · Fri 9 Oct", "on_blue_2", w="0dp", extra='android:layout_weight="1" android:layout_marginStart="7dp"')}
-        </LinearLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp" android:orientation="horizontal">
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal">
-                    {tv("count", "6", "60sp", "white", family="sans-serif-condensed-light", lines=0, extra='android:includeFontPadding="false"')}
-                    {tv("count_label", "Moves\\nin 7 days", "16sp", "white", caps=True, lines=2, extra='android:layout_marginStart="9dp" android:layout_marginBottom="5dp" android:lineSpacingMultiplier="0.88"')}
-                </LinearLayout>
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
-                    {eyebrow("dates", "3–9 Oct", "on_blue_2", size="9.5sp", extra='android:letterSpacing="0.1"')}
-                    {eyebrow("chip", "+2 new", "blue", size="9sp", extra='android:layout_marginStart="7dp" android:background="@drawable/bg_chip" android:paddingStart="5dp" android:paddingEnd="5dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:letterSpacing="0.1"')}
-                </LinearLayout>
+    android:background="@drawable/bg_deck" android:clipToOutline="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        <FrameLayout android:id="@+id/top" android:layout_width="match_parent" android:layout_height="44dp">
+            <ImageView android:id="@+id/topline" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="matrix" android:importantForAccessibility="no" />
+            <ImageView android:id="@+id/refresh" android:layout_width="40dp" android:layout_height="44dp" android:layout_gravity="end" android:padding="12dp"
+                android:src="@drawable/ic_kit_refresh" android:tint="#8CFFFFFF" android:contentDescription="Check for news now" />
+        </FrameLayout>
+        <LinearLayout android:id="@+id/hero" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+            android:paddingStart="18dp" android:paddingEnd="18dp">
+            <LinearLayout android:id="@+id/count_col" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+                {picture("count")}
+                {text("count_label", "Moves in 7 days", "10sp", "#BFFFFFFF", bold=True, caps=True, lines=2, extra='android:layout_marginTop="2dp" android:lineHeight="12sp"')}
+                {text("dates", "4–10 Oct", "10sp", "#80FFFFFF", bold=True, caps=True, extra='android:layout_marginTop="3dp"')}
             </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
-                {tv("headline", "Dubai gave Rain a full exchange licence and tightened reserve audits. Europe set a three-month deadline for licensed firms to unwind unauthorised stablecoins.", "13sp", "on_blue_2", family="sans-serif", lines=6, w="match_parent", extra='android:lineSpacingMultiplier="1.08"')}
-                {eyebrow("mix", "4 regulatory actions · 1 licence · 1 partnership", "on_blue_2", size="9sp", w="match_parent", extra='android:layout_marginTop="9dp" android:maxLines="2" android:letterSpacing="0.1"')}
-            </LinearLayout>
+            {text("headline", "Samsung Wallet will add USDC transfers for US Galaxy users as Anchorage bought Routable.", "13.5sp", "#FFFFFF", lines=6, w="0dp",
+                  extra='android:layout_weight="1" android:layout_marginStart="16dp" android:layout_marginTop="4dp" android:lineHeight="18sp"')}
         </LinearLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-            {eyebrow("updated", "↻  Updated Fri 9 Oct", "on_blue_2", size="9.5sp", w="0dp", extra='android:layout_weight="1" android:paddingTop="6dp" android:paddingBottom="6dp" android:letterSpacing="0.1"')}
-            {eyebrow("more", "Open →", "white", size="9.5sp", extra='android:paddingTop="6dp" android:paddingBottom="6dp" android:letterSpacing="0.1"')}
+        {picture("mix", 'android:layout_marginStart="18dp" android:layout_marginTop="14dp"')}
+        {label("latest_label", "Latest", "#80FFFFFF", 'android:layout_marginTop="16dp" android:paddingStart="18dp"')}
+        <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="6dp"
+            android:paddingStart="10dp" android:paddingEnd="10dp" android:paddingBottom="10dp" {LIST} />
+    </LinearLayout>
+</FrameLayout>""")
+
+# 2. Moves, 4 x 4: the app's Moves screen ----------------------------------------------------------
+write("widget_moves.xml", f"""
+<FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_paper" android:clipToOutline="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        {kit_head()}
+        <LinearLayout android:id="@+id/tiles" android:layout_width="match_parent" android:layout_height="124dp" android:layout_marginTop="6dp"
+            android:orientation="horizontal" android:paddingStart="12dp" android:paddingEnd="12dp">
+            {kit_tile("t1")}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_tile("t2")}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_tile("t3")}
         </LinearLayout>
+        {label("list_label", "Earlier", extra='android:layout_marginTop="16dp"')}
+        <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="6dp"
+            android:paddingStart="6dp" android:paddingEnd="6dp" android:paddingBottom="6dp" {LIST} />
     </LinearLayout>
-</FrameLayout>''')
+</FrameLayout>""")
 
-# 2. Moves, 4 x 4 ------------------------------------------------------------------------
-write("widget_moves.xml", f'''
-<LinearLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/bg_white" android:clipToOutline="true" android:orientation="vertical">
-    {head("Latest moves", "Market Radar · Moves", "6 in 7 days")}
-    <LinearLayout android:id="@+id/list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
-        android:orientation="vertical" android:paddingStart="16dp" android:paddingEnd="16dp">
-        {"".join(move_row(i) for i in range(1, 6))}
+# 3. Companies, 4 x 4: the app's Watching boxes ----------------------------------------------------
+write("widget_companies.xml", f"""
+<FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_paper" android:clipToOutline="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        {kit_head()}
+        {label("sub", "Most active · 30 days", "#9A9A9A", 'android:layout_marginTop="2dp"')}
+        <GridView android:id="@+id/grid" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp"
+            android:numColumns="2" android:stretchMode="columnWidth" android:paddingStart="9dp" android:paddingEnd="9dp" android:paddingBottom="9dp"
+            android:scrollbars="none" android:listSelector="@android:color/transparent" android:clipToPadding="false" />
     </LinearLayout>
-    {footer("All moves →")}
-</LinearLayout>''')
+</FrameLayout>""")
 
-# 3. Companies, 4 x 4 --------------------------------------------------------------------
-write("widget_companies.xml", f'''
-<LinearLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/bg_white" android:clipToOutline="true" android:orientation="vertical">
-    {head("Most active", "Market Radar · Companies", "Last 30 days")}
-    <LinearLayout android:id="@+id/list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
-        android:orientation="vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="2dp">
-        {"".join(co_row(i) for i in range(1, 7))}
+# 4. Licences, 4 x 4: a licence's page, in the licence colour ---------------------------------------
+write("widget_licences.xml", f"""
+<FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_yellow" android:clipToOutline="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        {kit_head()}
+        <LinearLayout android:id="@+id/tiles" android:layout_width="match_parent" android:layout_height="112dp" android:layout_marginTop="6dp"
+            android:orientation="horizontal" android:paddingStart="12dp" android:paddingEnd="12dp">
+            {kit_regtile("g1")}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_regtile("g2")}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_regtile("g3")}
+        </LinearLayout>
+        {label("list_label", "Latest licences and rules", extra='android:layout_marginTop="16dp"')}
+        <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="6dp"
+            android:paddingStart="6dp" android:paddingEnd="6dp" android:paddingBottom="6dp" {LIST} />
     </LinearLayout>
-    {footer("All companies →")}
-</LinearLayout>''')
+</FrameLayout>""")
 
 
-# 4. Licences, 4 x 4, navy ---------------------------------------------------------------
-def tile(i, n, name, where):
-    sep = "" if i == 1 else f'<FrameLayout android:id="@+id/tsep{i}" android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/navy_line" />'
-    return f'''
-            {sep}
-            <LinearLayout android:id="@+id/tile{i}" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
-                android:orientation="vertical" android:paddingStart="{0 if i == 1 else 10}dp" android:paddingEnd="6dp">
-                {tv(f"tile_n{i}", n, "34sp", "white", family="sans-serif-condensed-light", lines=0, extra='android:includeFontPadding="false"')}
-                {eyebrow(f"tile_name{i}", name, "white", size="12.5sp", w="match_parent", extra='android:layout_marginTop="6dp" android:letterSpacing="0.06"')}
-                {tv(f"tile_sub{i}", where, "11.5sp", "on_navy_2", family="sans-serif", w="match_parent")}
-            </LinearLayout>'''
+def CHART(extra=""):
+    """The month chart: whatever room is left, measured from code and drawn to fit it exactly."""
+    return ('<ImageView android:id="@+id/chart" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" '
+            'android:layout_marginStart="14dp" android:layout_marginEnd="14dp" android:scaleType="fitCenter" ' + extra + ' />')
 
 
-write("widget_licences.xml", f'''
-<LinearLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/bg_navy" android:clipToOutline="true" android:orientation="vertical">
-    {head("Regulators", "Market Radar · Licences", "12 months", dark=True)}
-    <LinearLayout android:id="@+id/tiles" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
-        android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="16dp" android:paddingBottom="12dp">
-        {tile(1, "07", "CBUAE", "UAE")}{tile(2, "04", "CSSF", "Luxembourg")}{tile(3, "04", "VARA", "Dubai")}
-    </LinearLayout>
-    <FrameLayout android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:background="@color/navy_line" />
-    <LinearLayout android:id="@+id/list" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
-        android:orientation="vertical" android:paddingStart="16dp" android:paddingEnd="16dp">
-        {"".join(move_row(i, dark=True) for i in range(1, 5))}
-    </LinearLayout>
-    {footer("All licences →", dark=True)}
-</LinearLayout>''')
-
-
-# 5. Trends, 4 x 3 ------------------------------------------------------------------------
-def stat(i, n, label, sep_color, n_color, l_color, size="30sp"):
-    sep = "" if i == 1 else f'<FrameLayout android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/{sep_color}" />'
-    return f'''
-            {sep}
+def kit_stat(i):
+    sep = "" if i == 1 else '<FrameLayout android:layout_width="1dp" android:layout_height="match_parent" android:background="@drawable/rule_kit" />'
+    return f"""{sep}
             <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"
-                android:paddingStart="{0 if i == 1 else 8}dp" android:paddingEnd="4dp">
-                {tv(f"s_n{i}", n, size, n_color, family="sans-serif-condensed-light", lines=0, extra='android:includeFontPadding="false"')}
-                {eyebrow(f"s_l{i}", label, l_color, size="9sp", w="match_parent", extra='android:maxLines="2" android:layout_marginTop="5dp" android:letterSpacing="0.08"')}
-            </LinearLayout>'''
+                android:paddingStart="{0 if i == 1 else 9}dp">
+                {picture(f"s{i}_n")}
+                {text(f"s{i}_label", "Licences", "11sp", "#9A9A9A", family="sans-serif-medium", w="match_parent", extra='android:layout_marginTop="3dp"')}
+            </LinearLayout>"""
 
 
-write("widget_trends.xml", f'''
-<LinearLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/bg_white" android:clipToOutline="true" android:orientation="vertical">
-    <LinearLayout android:id="@+id/top" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_blue_top"
-        android:orientation="vertical" android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="16dp" android:paddingBottom="14dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-            <ImageView android:layout_width="14dp" android:layout_height="14dp" android:importantForAccessibility="no" android:src="@drawable/mark" />
-            {eyebrow("eyebrow", "Market Radar · Trends", "on_blue_2", w="0dp", extra='android:layout_weight="1" android:layout_marginStart="7dp"')}
+# 5. Trends, 4 x 3: the app's Trends screen --------------------------------------------------------
+write("widget_trends.xml", f"""
+<FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_paper" android:clipToOutline="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        {kit_head()}
+        {picture("since", 'android:layout_marginStart="14dp" android:layout_marginTop="2dp"')}
+        <LinearLayout android:id="@+id/stats" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
+            {kit_stat(1)}{kit_stat(2)}{kit_stat(3)}{kit_stat(4)}
         </LinearLayout>
-        {tv("title", "60 moves since Oct 2025", "21sp", "white", caps=True, extra='android:layout_marginTop="6dp"')}
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
-            {stat(1, "19", "Licences", "sky", "white", "on_blue_2")}{stat(2, "11", "Regulatory actions", "sky", "white", "on_blue_2")}{stat(3, "23", "Commercial moves", "sky", "white", "on_blue_2")}{stat(4, "7", "Capital moves", "sky", "white", "on_blue_2")}
-        </LinearLayout>
+        {CHART('android:layout_marginTop="14dp"')}
+        {picture("legend", 'android:layout_marginStart="14dp" android:layout_marginTop="6dp" android:layout_marginBottom="12dp"')}
     </LinearLayout>
-    <LinearLayout android:id="@+id/bottom" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical"
-        android:paddingStart="16dp" android:paddingTop="10dp" android:paddingEnd="16dp" android:paddingBottom="12dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-            {eyebrow(None, "Moves per month", "blue", size="9.5sp", w="0dp", extra='android:layout_weight="1"')}
-            {eyebrow("cap", "Oct 2025 – Oct 2026", "ink_3", size="9.5sp", extra='android:letterSpacing="0.1"')}
-        </LinearLayout>
-        <ImageView android:id="@+id/chart" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
-            android:layout_marginTop="6dp" android:scaleType="fitXY" android:src="@drawable/chart_preview"
-            android:contentDescription="Moves per month over the last thirteen months" />
-    </LinearLayout>
-</LinearLayout>''')
+</FrameLayout>""")
 
 
-# 6. Dashboard, 4 x 5 ---------------------------------------------------------------------
-def region(i, n, label):
-    return f'''
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                {tv(f"r_n{i}", n, "24sp", "ink", family="sans-serif-condensed-light", lines=0, extra='android:includeFontPadding="false"')}
-                {eyebrow(f"r_l{i}", label, "ink_3", size="8.5sp", w="match_parent", extra='android:layout_marginTop="3dp" android:letterSpacing="0.1"')}
-            </LinearLayout>'''
+def kit_minibox(i):
+    return f"""<FrameLayout android:id="@+id/c{i}" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+            {kit_box(f"c{i}_", "match_parent")}
+        </FrameLayout>"""
 
 
-write("widget_dashboard.xml", f'''
-<LinearLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/bg_white" android:clipToOutline="true" android:orientation="vertical">
-    <LinearLayout android:id="@+id/top" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_blue_top"
-        android:orientation="vertical" android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="16dp" android:paddingBottom="13dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-            <ImageView android:layout_width="14dp" android:layout_height="14dp" android:importantForAccessibility="no" android:src="@drawable/mark" />
-            {eyebrow("eyebrow", "Market Radar · Daily briefing · Fri 9 Oct", "on_blue_2", w="0dp", extra='android:layout_weight="1" android:layout_marginStart="7dp"')}
-        </LinearLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="bottom" android:orientation="horizontal">
-            {tv("count", "6", "56sp", "white", family="sans-serif-condensed-light", lines=0, extra='android:includeFontPadding="false"')}
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:layout_marginBottom="4dp" android:orientation="vertical">
-                {tv("count_label", "Moves in 7 days", "17sp", "white", caps=True)}
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:gravity="center_vertical" android:orientation="horizontal">
-                    {eyebrow("dates", "3–9 Oct 2026", "on_blue_2", size="9.5sp", extra='android:letterSpacing="0.1"')}
-                    {eyebrow("chip", "+2 new", "blue", size="9sp", extra='android:layout_marginStart="8dp" android:background="@drawable/bg_chip" android:paddingStart="5dp" android:paddingEnd="5dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:letterSpacing="0.1"')}
+# 6. Dashboard, 4 x 5: the briefing on black, then the week on light grey ---------------------------
+write("widget_dashboard.xml", f"""
+<FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_paper" android:clipToOutline="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        <LinearLayout android:id="@+id/cover" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_cover"
+            android:orientation="vertical" android:paddingBottom="16dp">
+            <FrameLayout android:id="@+id/top" android:layout_width="match_parent" android:layout_height="44dp">
+                <ImageView android:id="@+id/topline" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="matrix" android:importantForAccessibility="no" />
+                <ImageView android:id="@+id/refresh" android:layout_width="40dp" android:layout_height="44dp" android:layout_gravity="end" android:padding="12dp"
+                    android:src="@drawable/ic_kit_refresh" android:tint="#8CFFFFFF" android:contentDescription="Check for news now" />
+            </FrameLayout>
+            <LinearLayout android:id="@+id/hero" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+                android:paddingStart="18dp" android:paddingEnd="18dp">
+                <LinearLayout android:id="@+id/count_col" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+                    {picture("count")}
+                    {text("count_label", "Moves in 7 days", "10sp", "#BFFFFFFF", bold=True, caps=True, lines=2, extra='android:layout_marginTop="2dp" android:lineHeight="12sp"')}
                 </LinearLayout>
+                {text("headline", "Samsung Wallet will add USDC transfers for US Galaxy users.", "13sp", "#FFFFFF", lines=4, w="0dp",
+                      extra='android:layout_weight="1" android:layout_marginStart="16dp" android:layout_marginTop="4dp" android:lineHeight="17sp"')}
             </LinearLayout>
+            {picture("mix", 'android:layout_marginStart="18dp" android:layout_marginTop="12dp"')}
         </LinearLayout>
-        {tv("headline", "Dubai gave Rain a full exchange licence and tightened reserve audits. Europe set a three-month deadline for licensed firms to unwind unauthorised stablecoins.", "13sp", "on_blue_2", family="sans-serif", lines=3, w="match_parent", extra='android:layout_marginTop="9dp" android:lineSpacingMultiplier="1.06"')}
-    </LinearLayout>
-    <LinearLayout android:id="@+id/regions" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/mist"
-        android:orientation="horizontal" android:paddingStart="16dp" android:paddingTop="9dp" android:paddingEnd="16dp" android:paddingBottom="9dp">
-        {region(1, "1", "Europe")}{region(2, "5", "Middle East")}{region(3, "0", "N. America")}{region(4, "0", "Global")}
-    </LinearLayout>
-    <LinearLayout android:id="@+id/list" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
-        android:paddingStart="16dp" android:paddingTop="10dp" android:paddingEnd="16dp">
-        {eyebrow(None, "Latest moves", "blue", size="9.5sp")}
-        {"".join(move_row(i, title_size="14sp") for i in range(1, 4))}
-    </LinearLayout>
-    <LinearLayout android:id="@+id/split" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
-        android:paddingStart="16dp" android:paddingEnd="16dp">
-        <FrameLayout android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/line" />
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingTop="9dp" android:paddingBottom="4dp">
-            <LinearLayout android:id="@+id/co_col" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                {eyebrow(None, "Most active · 30 days", "blue", size="9sp")}
-                {tv("co_lines", "Tether  2\\nRain  1\\nFasset  1", "13sp", "ink", lines=3, w="match_parent", extra='android:layout_marginTop="3dp" android:lineSpacingMultiplier="1.05"')}
-            </LinearLayout>
-            <LinearLayout android:id="@+id/reg_col" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
-                {eyebrow(None, "Regulators · 12 months", "blue", size="9sp")}
-                {tv("reg_lines", "CBUAE  7\\nCSSF  4\\nVARA  4", "13sp", "ink", lines=3, w="match_parent", extra='android:layout_marginTop="3dp" android:lineSpacingMultiplier="1.05"')}
-            </LinearLayout>
+        {label("latest_label", "Latest", extra='android:layout_marginTop="14dp"')}
+        <LinearLayout android:id="@+id/rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp"
+            android:orientation="vertical" android:paddingStart="6dp" android:paddingEnd="6dp">
+            {kit_row("r1_")}
+            {kit_row("r2_")}
+            {kit_row("r3_")}
         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout android:id="@+id/trend" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical"
-        android:paddingStart="16dp" android:paddingTop="6dp" android:paddingEnd="16dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-            {eyebrow(None, "Moves per month", "blue", size="9sp", w="0dp", extra='android:layout_weight="1"')}
-            {eyebrow("cap", "60 since Oct 2025", "ink_3", size="9sp", extra='android:letterSpacing="0.1"')}
+        {label("co_label", "Most active companies", extra='android:layout_marginTop="12dp"')}
+        <LinearLayout android:id="@+id/boxes" android:layout_width="match_parent" android:layout_height="96dp" android:layout_marginTop="6dp"
+            android:orientation="horizontal" android:paddingStart="12dp" android:paddingEnd="12dp">
+            {kit_minibox(1)}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_minibox(2)}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_minibox(3)}
         </LinearLayout>
-        <ImageView android:id="@+id/chart" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
-            android:layout_marginTop="4dp" android:scaleType="fitXY" android:src="@drawable/chart_preview"
-            android:contentDescription="Moves per month over the last thirteen months" />
+        {label("reg_label", "Busiest regulators", extra='android:layout_marginTop="12dp"')}
+        <LinearLayout android:id="@+id/tiles" android:layout_width="match_parent" android:layout_height="84dp" android:layout_marginTop="6dp"
+            android:orientation="horizontal" android:paddingStart="12dp" android:paddingEnd="12dp">
+            {kit_regtile("g1")}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_regtile("g2")}
+            <FrameLayout android:layout_width="7dp" android:layout_height="match_parent" />
+            {kit_regtile("g3")}
+        </LinearLayout>
+        {CHART('android:layout_marginTop="12dp" android:layout_marginBottom="12dp"')}
     </LinearLayout>
-    <FrameLayout android:id="@+id/spacer" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:visibility="gone" />
-    {footer("Open the radar →")}
-</LinearLayout>''')
+</FrameLayout>""")
 
+# The parts lists are made of: a move's row (the briefing, moves and licences) and a company's box.
+write("widget_row.xml", f"""
+{kit_row().replace('<FrameLayout android:id="@+id/row_item"', f'<FrameLayout {NS} android:id="@+id/row_item"', 1)}""")
+write("widget_month.xml", f"""
+<LinearLayout {NS} android:id="@+id/month_item" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
+    android:paddingStart="8dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="7dp">
+    {text("month_label", "October 2026", "10.5sp", bold=True, caps=True, w="0dp", extra='android:layout_weight="1"')}
+    {text("month_n", "24", "10.5sp", bold=True, caps=True)}
+</LinearLayout>""")
+write("widget_box.xml", f"""
+<FrameLayout {NS} android:id="@+id/box_item" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="3dp">
+    {kit_box("", "128dp")}
+</FrameLayout>""")
 
 
 # 7. Carousel, 4 x 4: the app's cards as a list ----------------------------------------------
@@ -491,7 +526,7 @@ write("widget_carousel.xml", f"""
     <FrameLayout android:id="@+id/top" android:layout_width="match_parent" android:layout_height="44dp" android:background="#000000">
         <ImageView android:id="@+id/topline" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="matrix" />
     </FrameLayout>
-</FrameLayout>""", twin=False)
+</FrameLayout>""")
 
 
 # One card of the list: the app's card, shorter. The name and figure are pictures in the app's typeface;
@@ -513,13 +548,13 @@ write("widget_carousel_card.xml", f"""
             {caps("date", "9 Oct 2026", "deck_faint", 'android:layout_marginTop="6dp"')}
         </LinearLayout>
     </LinearLayout>
-</FrameLayout>""", twin=False)
+</FrameLayout>""")
 
 # Shown for a moment while a card loads on phones before Android 12, where the cards come one by one.
 write("widget_carousel_loading.xml", f"""
-<FrameLayout {NS} android:layout_width="match_parent" android:layout_height="240dp" android:background="#000000" />""", twin=False)
+<FrameLayout {NS} android:layout_width="match_parent" android:layout_height="240dp" android:background="#000000" />""")
 
 
-write_mono_resources()
 write_deck_resources()
+write_kit_resources()
 print("layouts written to", os.path.normpath(OUT))

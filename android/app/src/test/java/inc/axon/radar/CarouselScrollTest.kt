@@ -11,7 +11,6 @@ import androidx.test.core.app.ApplicationProvider
 import inc.axon.radar.data.Store
 import inc.axon.radar.ui.Link
 import inc.axon.radar.ui.Look
-import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
@@ -43,8 +42,7 @@ class CarouselScrollTest {
     private fun stage(): Pair<View, ListView> {
         Store.setLook(ctx, Look.Colour)
         File(ctx.filesDir, "radar.json").writeText(File("../../radar.json").readText())
-        val brief = JSONObject(File("../../brief.json").readText())
-        val root = CarouselStage.mount(ctx, brief, d, 77)
+        val root = CarouselStage.mount(ctx, d, 77)
         return root to CarouselStage.list(root)
     }
 

@@ -29,6 +29,12 @@
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
+        <!-- Supplies the other widgets' lists before Android 12; from 12 they travel with the widget. -->
+        <service
+            android:name=".ListsService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <receiver
             android:name=".CarouselWidget"
             android:exported="false"

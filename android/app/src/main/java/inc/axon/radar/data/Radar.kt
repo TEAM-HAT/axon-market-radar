@@ -1,7 +1,6 @@
 package inc.axon.radar.data
 
 import android.content.Context
-import inc.axon.radar.str
 import inc.axon.radar.ui.Look
 import org.json.JSONArray
 import org.json.JSONObject
@@ -131,6 +130,10 @@ data class Radar(
             val a: JSONArray = optJSONArray(key) ?: return emptyList()
             return (0 until a.length()).mapNotNull { a.optString(it).takeIf { s -> s.isNotBlank() && s != "null" } }
         }
+
+        /** A string field, or null when it is missing, JSON null or blank. */
+        private fun JSONObject.str(key: String): String? =
+            if (isNull(key)) null else optString(key).takeIf { it.isNotBlank() && it != "null" }
 
         private fun JSONObject.num(key: String): Double? = if (isNull(key)) null else optDouble(key).takeIf { !it.isNaN() }
         private fun JSONObject.int(key: String): Int? = if (isNull(key)) null else optInt(key).takeIf { it != 0 }

@@ -73,7 +73,7 @@ class LaunchTest {
         File(ctx.filesDir, "radar.json").writeText(json)
         val deck = Radar.parse(json).deck
         val d = Dims(360, 420)
-        val views = CarouselWidget().buildFor(ctx, null, d, android.appwidget.AppWidgetManager.INVALID_APPWIDGET_ID)
+        val views = CarouselWidget().build(ctx, d, android.appwidget.AppWidgetManager.INVALID_APPWIDGET_ID)
         val parcel = android.os.Parcel.obtain()
         views.writeToParcel(parcel, 0)
         parcel.setDataPosition(0)

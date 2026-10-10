@@ -7,36 +7,40 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.RemoteViews
+import androidx.compose.ui.graphics.toArgb
+import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Store
+import inc.axon.radar.data.Text
+import inc.axon.radar.ui.Ink
 import inc.axon.radar.ui.Link
-import inc.axon.radar.ui.Look
-import org.json.JSONObject
+import inc.axon.radar.ui.Palette
 
 /** Widget size in dp, portrait. */
 data class Dims(val w: Int, val h: Int)
 
 /**
- * Shared behaviour for the six widgets: draw from the cached brief at the size the launcher reports,
- * ask for a fresh copy, and refresh on a tap of the "Updated" label.
+ * Shared behaviour for the widgets: each is drawn from the app's copy of the radar at the size the launcher
+ * reports, asks for a fresh copy now and then, and checks for news on a tap of ↻.
  */
 abstract class RadarWidget : AppWidgetProvider() {
     abstract val layout: Int
-    /** The same layout in black and white, with the same ids. */
-    abstract val monoLayout: Int
     /** Size used until the launcher reports the real one. */
     abstract val fallback: Dims
     /** Base request code; each widget owns the hundred codes above it. */
     abstract val code: Int
-    abstract fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews
+    /** The widget's list or grid, if it has one, for launchers before Android 12 to reload. */
+    open val listId: Int? = null
 
-    /** Builds for one placed widget; widgets that keep state per placement (the carousel) override this. */
-    open fun buildFor(ctx: Context, brief: JSONObject?, d: Dims, id: Int): RemoteViews = build(ctx, brief, d)
+    /** The widget placed as [id], [d] in size, drawn from [r]; with no radar yet, a word on what is coming. */
+    abstract fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews
 
-    /** The layout for the look chosen in the app. */
-    fun layoutFor(ctx: Context): Int = if (mono(ctx)) monoLayout else layout
+    /** The widget from the app's copy of the radar. */
+    fun build(ctx: Context, d: Dims, id: Int = AppWidgetManager.INVALID_APPWIDGET_ID): RemoteViews =
+        views(ctx, d, id, Store.cachedFast(ctx))
 
     fun dims(mgr: AppWidgetManager, id: Int): Dims {
         val o = runCatching { mgr.getAppWidgetOptions(id) }.getOrNull()
@@ -45,22 +49,21 @@ abstract class RadarWidget : AppWidgetProvider() {
         return if (w > 0 && h > 0) Dims(w, h) else fallback
     }
 
-    open fun draw(ctx: Context, mgr: AppWidgetManager, id: Int, brief: JSONObject?) {
+    open fun draw(ctx: Context, mgr: AppWidgetManager, id: Int) {
         val d = dims(mgr, id)
-        val views = runCatching { buildFor(ctx, brief, d, id) }.getOrElse { build(ctx, null, d) }
-        mgr.updateAppWidget(id, views)
+        val sent = runCatching { mgr.updateAppWidget(id, build(ctx, d, id)) }.isSuccess
+        if (!sent) runCatching { mgr.updateAppWidget(id, views(ctx, d, id, null)) }
+        val list = listId
+        if (list != null && Build.VERSION.SDK_INT < 31) runCatching { mgr.notifyAppWidgetViewDataChanged(id, list) }
     }
 
     override fun onUpdate(ctx: Context, mgr: AppWidgetManager, ids: IntArray) {
-        val brief = Brief.cached(ctx)
-        ids.forEach { draw(ctx, mgr, it, brief) }
+        ids.forEach { draw(ctx, mgr, it) }
         Refresh.schedule(ctx)
         Refresh.now(ctx)
     }
 
-    override fun onAppWidgetOptionsChanged(ctx: Context, mgr: AppWidgetManager, id: Int, options: Bundle) {
-        draw(ctx, mgr, id, Brief.cached(ctx))
-    }
+    override fun onAppWidgetOptionsChanged(ctx: Context, mgr: AppWidgetManager, id: Int, options: Bundle) = draw(ctx, mgr, id)
 
     override fun onEnabled(ctx: Context) {
         Refresh.schedule(ctx)
@@ -69,11 +72,11 @@ abstract class RadarWidget : AppWidgetProvider() {
 
     override fun onReceive(ctx: Context, intent: Intent) {
         if (intent.action == ACTION_REFRESH) {
+            // ↻ fades while the radar is checked; the redraw that follows brings it back.
             val mgr = AppWidgetManager.getInstance(ctx)
             val ids = mgr.getAppWidgetIds(ComponentName(ctx, javaClass))
-            if (ids.isNotEmpty()) {
-                val note = RemoteViews(ctx.packageName, layoutFor(ctx)).apply { setTextViewText(R.id.updated, "↻  Updating…") }
-                mgr.partiallyUpdateAppWidget(ids, note)
+            if (ids.isNotEmpty()) runCatching {
+                mgr.partiallyUpdateAppWidget(ids, RemoteViews(ctx.packageName, layout).apply { setInt(R.id.refresh, "setImageAlpha", 70) })
             }
             Refresh.now(ctx, force = true)
             return
@@ -81,79 +84,35 @@ abstract class RadarWidget : AppWidgetProvider() {
         super.onReceive(ctx, intent)
     }
 
-    /** "Updated Fri 9 Oct" refreshes on tap; the right-hand link opens the radar on this widget's tab. */
-    protected fun footer(ctx: Context, v: RemoteViews, brief: JSONObject?, hash: String) {
-        val up = Fmt.updated(brief?.str("updated_at"))
-        v.setTextViewText(R.id.updated, up.ifEmpty { "↻  Refresh" })
-        v.setOnClickPendingIntent(R.id.updated, refresh(ctx, javaClass, code + 98))
-        v.setOnClickPendingIntent(R.id.more, app(ctx, if (hash == "week") "home" else hash, null, code + 99))
+    /** ↻ at the top right, in [color]: checks for news now. */
+    protected fun refreshButton(ctx: Context, v: RemoteViews, color: Int) {
+        v.setOnClickPendingIntent(R.id.refresh, refresh(ctx, javaClass, code + 98))
+        v.setInt(R.id.refresh, "setColorFilter", color)
+        v.setInt(R.id.refresh, "setImageAlpha", 255)
     }
 
-    /** Fills up to [n] move rows; each opens its source, or the radar when a move has none. */
-    protected fun moveRows(ctx: Context, v: RemoteViews, brief: JSONObject?, items: List<JSONObject>, n: Int,
-                           rows: Int, typeColor: String, firstCode: Int) {
-        for (i in 0 until rows) {
-            val m = items.getOrNull(i)?.takeIf { i < n }
-            val show = if (m != null) View.VISIBLE else View.GONE
-            v.setViewVisibility(ROW[i], show)
-            if (i > 0) v.setViewVisibility(DIV[i], show)
-            if (m == null) continue
-            val type = m.str("type") ?: "Regulation"
-            v.setImageViewResource(GLYPH[i], Fmt.glyph(type, mono(ctx)))
-            v.setTextViewText(META[i], Fmt.meta(m.str("type_label") ?: type, m.str("regulator") ?: m.str("company"), m.str("date"), typeColor))
-            v.setTextViewText(TITLE[i], m.str("title") ?: "")
-            // Rows open the move in the app; a brief from before moves had ids falls back to the source.
-            val target = m.str("id")?.let { app(ctx, "move", it, firstCode + i) }
-                ?: m.str("source_url")?.takeIf { it.startsWith("https://") }?.let { open(ctx, it, firstCode + i) }
-                ?: app(ctx, "moves", null, firstCode + i)
-            v.setOnClickPendingIntent(ROW[i], target)
-        }
+    /** A directory's heading in [color], opening its section of the app. */
+    protected fun heading(ctx: Context, v: RemoteViews, word: String, count: Int?, color: Int, dest: String) {
+        v.setImageViewBitmap(R.id.heading, Kit.heading(ctx, word, count?.toString(), color))
+        v.setInt(R.id.heading, "setColorFilter", color)
+        v.setContentDescription(R.id.head, if (count != null) "$word, $count" else word)
+        v.setOnClickPendingIntent(R.id.head, app(ctx, dest, null, code))
     }
 
-    /** One placeholder row while the brief loads, or when a list is empty. */
-    protected fun placeholder(ctx: Context, v: RemoteViews, brief: JSONObject?, rows: Int, text: String, hash: String) {
-        for (i in 0 until rows) {
-            v.setViewVisibility(ROW[i], if (i == 0) View.VISIBLE else View.GONE)
-            if (i > 0) v.setViewVisibility(DIV[i], View.GONE)
-        }
-        v.setImageViewResource(GLYPH[0], if (mono(ctx)) R.drawable.mono_g_dot else R.drawable.g_dot)
-        v.setTextViewText(META[0], "")
-        v.setTextViewText(TITLE[0], text)
-        v.setOnClickPendingIntent(ROW[0], app(ctx, if (hash == "week") "home" else hash, null, code + 97))
-    }
+    /** The width in px of one of three tiles across a widget [d] wide, with 12dp sides and 7dp between. */
+    protected fun third(ctx: Context, d: Dims) = Kit.px(ctx, (d.w - 24 - 14) / 3f)
 
     companion object {
         const val ACTION_REFRESH = "inc.axon.radar.action.REFRESH"
-        private const val BLUE = "#061AD3"
-        private const val SKY = "#9AA6FF"
-
-        fun mono(ctx: Context): Boolean = Store.look(ctx) == Look.Mono
-
-        /** The accent on white widgets: blue, or black in black and white. */
-        fun accent(ctx: Context): String = if (mono(ctx)) "#000000" else BLUE
-        /** The quieter accent after a name, such as "· 2 moves". */
-        fun accentSoft(ctx: Context): String = if (mono(ctx)) "#6E6E6E" else BLUE
-        /** The accent on the dark licences widget. */
-        fun accentOnDark(ctx: Context): String = if (mono(ctx)) "#C9C9C9" else SKY
-
-        val ROW = intArrayOf(R.id.row1, R.id.row2, R.id.row3, R.id.row4, R.id.row5, R.id.row6)
-        val DIV = intArrayOf(0, R.id.div2, R.id.div3, R.id.div4, R.id.div5, R.id.div6)
-        val GLYPH = intArrayOf(R.id.glyph1, R.id.glyph2, R.id.glyph3, R.id.glyph4, R.id.glyph5)
-        val META = intArrayOf(R.id.meta1, R.id.meta2, R.id.meta3, R.id.meta4, R.id.meta5)
-        val TITLE = intArrayOf(R.id.title1, R.id.title2, R.id.title3, R.id.title4, R.id.title5)
+        /** ↻ on black. */
+        val GREY = 0xFF8C8C8C.toInt()
 
         fun all(): List<RadarWidget> =
             listOf(BriefWidget(), MovesWidget(), CompaniesWidget(), LicencesWidget(), TrendsWidget(), DashboardWidget(), CarouselWidget())
 
         fun updateAll(ctx: Context) {
-            val brief = Brief.cached(ctx)
             val mgr = AppWidgetManager.getInstance(ctx)
-            all().forEach { w -> mgr.getAppWidgetIds(ComponentName(ctx, w.javaClass)).forEach { w.draw(ctx, mgr, it, brief) } }
-        }
-
-        fun open(ctx: Context, url: String, requestCode: Int): PendingIntent {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            return PendingIntent.getActivity(ctx, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+            all().forEach { w -> mgr.getAppWidgetIds(ComponentName(ctx, w.javaClass)).forEach { w.draw(ctx, mgr, it) } }
         }
 
         /** Opens the app on a tab ("home", "moves", "companies", "licences", "trends"), a move or a company. */
@@ -170,290 +129,380 @@ abstract class RadarWidget : AppWidgetProvider() {
             val intent = Intent(ctx, cls).setAction(ACTION_REFRESH)
             return PendingIntent.getBroadcast(ctx, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         }
-
-        fun pad2(n: Int) = n.toString().padStart(2, '0')
     }
 }
 
-/** Briefing tab, 4 x 2: moves in the last 7 days, what is new today, and the headline. */
+/**
+ * The daily briefing, on black like the app's deck: the app's top line, the week's count and headline, the
+ * week's mix by kind, and the latest ten moves to scroll through, each opening in the app.
+ */
 class BriefWidget : RadarWidget() {
     override val layout = R.layout.widget_brief
-    override val monoLayout = R.layout.widget_brief_mono
-    override val fallback = Dims(360, 170)
+    override val fallback = Dims(360, 300)
     override val code = 100
+    override val listId = R.id.list
 
-    override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
-        v.setOnClickPendingIntent(R.id.tap, app(ctx, "home", null, code))
-        footer(ctx, v, brief, "week")
-        v.setInt(R.id.headline, "setMaxLines", ((d.h - (if (d.h >= 200) 110 else 72)) / 18).coerceIn(2, 8))
-        if (brief == null) {
-            v.setTextViewText(R.id.eyebrow, "Market Radar")
-            v.setTextViewText(R.id.count, "–")
-            v.setTextViewText(R.id.dates, "")
-            v.setViewVisibility(R.id.chip, View.GONE)
-            v.setViewVisibility(R.id.mix, View.GONE)
-            v.setTextViewText(R.id.headline, "Loading the daily brief…")
-            return v
+    override fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews {
+        val v = RemoteViews(ctx.packageName, layout)
+        val ink = Ink.of(Store.look(ctx))
+        refreshButton(ctx, v, GREY)
+        cover(ctx, v, d, r, ink, if (d.h < 200) 52f else 64f, 6, legend = d.h >= 190, dates = true, code)
+        if (r != null && r.moves.isNotEmpty()) {
+            v.setTextViewText(R.id.latest_label, "Latest moves")
+            Kit.list(ctx, v, R.id.list, "brief", id, code + 50, items(ctx, r, ink))
+            // The latest moves scroll under the headline when at least one of them fits, measured as the
+            // launcher will lay the widget out.
+            val root = Kit.measure(ctx, v, d, exact = true)
+            if (root.findViewById<View>(R.id.list).height >= Kit.px(ctx, MIN_LIST)) return v
+            v.setViewVisibility(R.id.latest_label, View.GONE)
+            v.setViewVisibility(R.id.list, View.GONE)
+            // Otherwise the headline takes the room, and the mix shows if it fits under the count.
+            var room = Kit.px(ctx, d.h.toFloat()) - Kit.tall(root, R.id.top) - Kit.px(ctx, 12f)
+            val mix = Kit.tall(root, R.id.mix)
+            if (room - mix >= Kit.tall(root, R.id.count_col)) room -= mix else v.setViewVisibility(R.id.mix, View.GONE)
+            val line = root.findViewById<android.widget.TextView>(R.id.headline).lineHeight.coerceAtLeast(1)
+            v.setInt(R.id.headline, "setMaxLines", ((room - Kit.px(ctx, 4f)) / line).coerceIn(2, 8))
+        } else {
+            v.setViewVisibility(R.id.latest_label, View.GONE)
+            v.setViewVisibility(R.id.list, View.GONE)
         }
-        val n = brief.optInt("count")
-        val fresh = brief.optInt("new_today")
-        v.setTextViewText(R.id.eyebrow, "Daily briefing · " + Fmt.dowDay(brief.str("window_end")))
-        v.setTextViewText(R.id.count, n.toString())
-        v.setTextViewText(R.id.count_label, if (n == 1) "Move\nin 7 days" else "Moves\nin 7 days")
-        v.setTextViewText(R.id.dates, Fmt.range(brief.str("window_start"), brief.str("window_end")))
-        v.setViewVisibility(R.id.chip, if (fresh > 0) View.VISIBLE else View.GONE)
-        v.setTextViewText(R.id.chip, "+$fresh new")
-        val head = brief.str("headline")
-        v.setTextViewText(R.id.headline, if (head != null) Fmt.headline(head) else Fmt.html(Fmt.escape("A quiet week. Nothing new passed the source check.")))
-        val mix = brief.str("mix_text")
-        v.setViewVisibility(R.id.mix, if (mix != null && d.h >= 200) View.VISIBLE else View.GONE)
-        // At most three kinds, numbers kept with their words, and line breaks after a dot rather than before it.
-        val parts = mix?.split(" · ")?.take(3)?.map { it.replace(Regex("(\\d) "), "$1\u00A0") }.orEmpty()
-        v.setTextViewText(R.id.mix, parts.joinToString("\u00A0· "))
         return v
+    }
+
+    companion object {
+        /** The least room for the list of latest moves, in dp: about one row. */
+        const val MIN_LIST = 60f
+        const val LATEST = 10
+
+        /** The latest ten moves as rows on black. */
+        fun items(ctx: Context, r: Radar, ink: Ink) = r.moves.take(LATEST).map { Kit.rowItem(ctx, it, ink, Kit.Ground.BLACK) }
+
+        /**
+         * The briefing's top on black, shared with the dashboard: the app's top line with ↻, the count huge with
+         * its dates, the headline with its key phrases bright, and the week's mix by kind.
+         */
+        fun cover(ctx: Context, v: RemoteViews, d: Dims, r: Radar?, ink: Ink, countSp: Float, lines: Int, legend: Boolean, dates: Boolean, code: Int) {
+            val home = RadarWidget.app(ctx, "home", null, code)
+            v.setOnClickPendingIntent(R.id.top, home)
+            v.setOnClickPendingIntent(R.id.hero, home)
+            val line = if (r != null) "Daily briefing · ${Text.dowDay(r.windowEnd)}" else "Market Radar"
+            val fresh = r?.newToday ?: 0
+            val short = r?.let { Text.dowDay(it.windowEnd) }
+            v.setImageViewBitmap(R.id.topline, CardArt.topLine(ctx, line, fresh, d.w - 30f, short))
+            v.setContentDescription(R.id.topline, if (fresh > 0) "$line, $fresh new today" else line)
+            val n = r?.count
+            v.setImageViewBitmap(R.id.count, Kit.word(ctx, n?.toString() ?: "–", countSp, Kit.WHITE))
+            v.setInt(R.id.count, "setColorFilter", Kit.WHITE)
+            v.setTextViewText(R.id.count_label, if (n == 1) "Move\nin 7 days" else "Moves\nin 7 days")
+            val range = r?.let { Text.range(it.windowStart, it.windowEnd) }.orEmpty()
+            if (dates) v.setTextViewText(R.id.dates, range)
+            val raw = when {
+                r == null -> "Loading the daily brief…"
+                r.headline.isBlank() -> "A quiet week. Nothing new passed the source check."
+                else -> r.headline
+            }
+            v.setTextViewText(R.id.headline, Kit.headline(raw, Kit.WHITE))
+            v.setTextColor(R.id.headline, Palette.White.copy(alpha = 0.72f).toArgb())
+            v.setInt(R.id.headline, "setMaxLines", lines)
+            v.setContentDescription(R.id.hero, listOfNotNull(n?.let { Text.plural(it, "move", "moves") + " in 7 days" }, range.ifEmpty { null }, raw.replace("**", "")).joinToString(". "))
+            if (r == null || r.count == 0) {
+                v.setViewVisibility(R.id.mix, View.GONE)
+                return
+            }
+            v.setViewVisibility(R.id.mix, View.VISIBLE)
+            val mix = Kit.mix(ctx, Kit.week(r), ink, Kit.px(ctx, d.w - 36f), Kit.BLACK, Palette.White.copy(alpha = 0.7f).toArgb(), legend)
+            v.setImageViewBitmap(R.id.mix, mix)
+            v.setContentDescription(R.id.mix, r.mixText)
+        }
     }
 }
 
-/** Moves tab, 4 x 4: the latest moves, each opening its source. */
+/** The app's Moves screen: the newest three as its tiles, then every move under its month, to scroll. */
 class MovesWidget : RadarWidget() {
     override val layout = R.layout.widget_moves
-    override val monoLayout = R.layout.widget_moves_mono
     override val fallback = Dims(360, 400)
     override val code = 200
+    override val listId = R.id.list
 
-    override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
-        v.setOnClickPendingIntent(R.id.head, app(ctx, "moves", null, code))
-        footer(ctx, v, brief, "moves")
-        if (brief == null) {
-            v.setTextViewText(R.id.stat, "")
-            placeholder(ctx, v, null, 5, "Loading the latest moves…", "moves")
+    override fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews {
+        val v = RemoteViews(ctx.packageName, layout)
+        val ink = Ink.of(Store.look(ctx))
+        refreshButton(ctx, v, Kit.BLACK)
+        heading(ctx, v, "Moves", r?.moves?.size, Kit.BLACK, "moves")
+        if (r == null || r.moves.isEmpty()) {
+            v.setViewVisibility(R.id.tiles, View.GONE)
+            v.setViewVisibility(R.id.list, View.GONE)
+            v.setTextViewText(R.id.list_label, if (r == null) "Loading the latest moves…" else "Nothing on the radar yet.")
             return v
         }
-        val n = brief.optInt("count")
-        v.setTextViewText(R.id.stat, "$n in 7 days")
-        val items = brief.objects("latest").ifEmpty { brief.objects("moves") }
-        if (items.isEmpty()) {
-            placeholder(ctx, v, brief, 5, "Nothing on the radar yet.", "moves")
-            return v
-        }
-        moveRows(ctx, v, brief, items, ((d.h - 117) / 71).coerceIn(1, 5), 5, accent(ctx), code + 10)
+        v.setViewVisibility(R.id.list_label, View.GONE)
+        // The tiles leave the list room to scroll on a short widget.
+        if (d.h >= 280) {
+            val w = third(ctx, d)
+            Kit.TILES.forEachIndexed { i, ids ->
+                val m = r.moves.getOrNull(i)
+                if (m == null) v.setViewVisibility(ids.tile, View.INVISIBLE)
+                else {
+                    Kit.bindTile(ctx, v, ids, m, ink, w)
+                    v.setOnClickPendingIntent(ids.tile, app(ctx, "move", m.id, code + 10 + i))
+                }
+            }
+        } else v.setViewVisibility(R.id.tiles, View.GONE)
+        Kit.list(ctx, v, R.id.list, "moves", id, code + 50, items(ctx, r, ink))
         return v
+    }
+
+    companion object {
+        /** The most moves the list holds; the app has the rest. */
+        const val MOST = 50
+
+        fun items(ctx: Context, r: Radar, ink: Ink) = Kit.byMonth(ctx, r.moves.take(MOST), r.moves, ink, Kit.Ground.PAPER)
     }
 }
 
-/** Companies tab, 4 x 4: the most active companies over 30 days. */
+/** The app's Watching boxes: the most active companies of the last 30 days, each in its latest move's colour. */
 class CompaniesWidget : RadarWidget() {
     override val layout = R.layout.widget_companies
-    override val monoLayout = R.layout.widget_companies_mono
     override val fallback = Dims(360, 400)
     override val code = 300
+    override val listId = R.id.grid
 
-    private val MONO = intArrayOf(R.id.mono1, R.id.mono2, R.id.mono3, R.id.mono4, R.id.mono5, R.id.mono6)
-    private val NAME = intArrayOf(R.id.name1, R.id.name2, R.id.name3, R.id.name4, R.id.name5, R.id.name6)
-    private val SUB = intArrayOf(R.id.sub1, R.id.sub2, R.id.sub3, R.id.sub4, R.id.sub5, R.id.sub6)
-    private val LAST = intArrayOf(R.id.last1, R.id.last2, R.id.last3, R.id.last4, R.id.last5, R.id.last6)
-    private val N = intArrayOf(R.id.n1, R.id.n2, R.id.n3, R.id.n4, R.id.n5, R.id.n6)
-
-    override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
-        v.setOnClickPendingIntent(R.id.head, app(ctx, "companies", null, code))
-        footer(ctx, v, brief, "companies")
-        val cos = brief?.objects("companies").orEmpty()
-        val fit = ((d.h - 117) / 56).coerceIn(1, 6)
-        for (i in 0 until 6) {
-            val c = cos.getOrNull(i)?.takeIf { i < fit }
-            val show = if (c != null) View.VISIBLE else View.GONE
-            v.setViewVisibility(ROW[i], show)
-            if (i > 0) v.setViewVisibility(DIV[i], show)
-            if (c == null) continue
-            val moves = c.optInt("moves_30d")
-            v.setTextViewText(MONO[i], Fmt.initials(c.str("name")))
-            v.setTextViewText(NAME[i], c.str("name") ?: "")
-            v.setTextViewText(SUB[i], listOfNotNull(c.str("segment"), c.str("country")).joinToString(" · "))
-            v.setTextViewText(LAST[i], Fmt.day(c.str("last_date")))
-            v.setTextViewText(N[i], if (moves > 0) Fmt.plural(moves, "move", "moves") else "Last move")
-            v.setOnClickPendingIntent(ROW[i], c.str("id")?.let { app(ctx, "company", it, code + 10 + i) } ?: app(ctx, "companies", null, code + 10 + i))
-        }
-        if (cos.isEmpty()) {
-            v.setViewVisibility(ROW[0], View.VISIBLE)
-            v.setTextViewText(MONO[0], "·")
-            v.setTextViewText(NAME[0], if (brief == null) "Loading…" else "No company moves yet")
-            v.setTextViewText(SUB[0], "Open the radar for every company")
-            v.setTextViewText(LAST[0], "")
-            v.setTextViewText(N[0], "")
-            v.setOnClickPendingIntent(ROW[0], app(ctx, "companies", null, code + 10))
-        }
-        return v
-    }
-}
-
-/** Licences tab, 4 x 4, navy: the busiest regulators, then the newest licences and rules. */
-class LicencesWidget : RadarWidget() {
-    override val layout = R.layout.widget_licences
-    override val monoLayout = R.layout.widget_licences_mono
-    override val fallback = Dims(360, 400)
-    override val code = 400
-
-    private val TILE = intArrayOf(R.id.tile1, R.id.tile2, R.id.tile3)
-    private val TSEP = intArrayOf(0, R.id.tsep2, R.id.tsep3)
-    private val TN = intArrayOf(R.id.tile_n1, R.id.tile_n2, R.id.tile_n3)
-    private val TNAME = intArrayOf(R.id.tile_name1, R.id.tile_name2, R.id.tile_name3)
-    private val TSUB = intArrayOf(R.id.tile_sub1, R.id.tile_sub2, R.id.tile_sub3)
-
-    override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
-        val tab = app(ctx, "licences", null, code)
-        v.setOnClickPendingIntent(R.id.head, tab)
-        v.setOnClickPendingIntent(R.id.tiles, tab)
-        footer(ctx, v, brief, "licences")
-        val regs = brief?.objects("regulators").orEmpty()
-        for (i in 0 until 3) {
-            val r = regs.getOrNull(i)
-            val show = if (r != null) View.VISIBLE else View.INVISIBLE
-            v.setViewVisibility(TILE[i], show)
-            if (i > 0) v.setViewVisibility(TSEP[i], show)
-            if (r == null) continue
-            v.setTextViewText(TN[i], pad2(r.optInt("licences") + r.optInt("actions")))
-            v.setTextViewText(TNAME[i], r.str("name") ?: "")
-            v.setTextViewText(TSUB[i], r.str("where") ?: "")
-        }
-        val items = brief?.objects("licences").orEmpty()
-        if (items.isEmpty()) {
-            placeholder(ctx, v, brief, 4, if (brief == null) "Loading licences and rules…" else "No licences or rule changes yet.", "licences")
+    override fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews {
+        val v = RemoteViews(ctx.packageName, layout)
+        val ink = Ink.of(Store.look(ctx))
+        refreshButton(ctx, v, Kit.BLACK)
+        heading(ctx, v, "Companies", r?.companies?.size, Kit.BLACK, "companies")
+        if (r == null || r.companies.isEmpty()) {
+            v.setViewVisibility(R.id.grid, View.GONE)
+            v.setTextViewText(R.id.sub, if (r == null) "Loading the companies…" else "No companies yet.")
             return v
         }
-        moveRows(ctx, v, brief, items, ((d.h - 221) / 72).coerceIn(1, 4), 4, accentOnDark(ctx), code + 10)
+        v.setTextViewText(R.id.sub, "Most active · 30 days")
+        Kit.list(ctx, v, R.id.grid, "companies", id, code + 50, items(ctx, r, ink))
         return v
+    }
+
+    companion object {
+        /** The most companies the grid holds; the app has them all. */
+        const val MOST = 30
+
+        fun items(ctx: Context, r: Radar, ink: Ink) = Kit.active(r).take(MOST).map { (c, latest) -> Kit.boxItem(ctx, c, latest, ink) }
     }
 }
 
-/** Trends tab, 4 x 3: the year's totals and moves per month. */
+/**
+ * A licence's page, in the licence colour (light paper in black and white): the busiest regulators as the
+ * app's black and white tiles, then the newest licences and rules under their months.
+ */
+class LicencesWidget : RadarWidget() {
+    override val layout = R.layout.widget_licences
+    override val fallback = Dims(360, 400)
+    override val code = 400
+    override val listId = R.id.list
+
+    override fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews {
+        val v = RemoteViews(ctx.packageName, layout)
+        val ink = Ink.of(Store.look(ctx))
+        val page = ink.page("License")
+        val fg = ink.display(page).toArgb()
+        v.setInt(android.R.id.background, "setBackgroundResource", if (ink.mono) R.drawable.bg_tonepaper else R.drawable.bg_yellow)
+        refreshButton(ctx, v, fg)
+        val rules = r?.let { rulesOf(it) }.orEmpty()
+        heading(ctx, v, "Licences", r?.let { rules.size }, fg, "licences")
+        if (r == null || rules.isEmpty()) {
+            v.setViewVisibility(R.id.tiles, View.GONE)
+            v.setViewVisibility(R.id.list, View.GONE)
+            v.setTextViewText(R.id.list_label, if (r == null) "Loading licences and rules…" else "No licences or rules yet.")
+            v.setTextColor(R.id.list_label, fg)
+            return v
+        }
+        v.setViewVisibility(R.id.list_label, View.GONE)
+        if (d.h >= 280) {
+            val w = third(ctx, d)
+            val regs = r.regulators.sortedByDescending { it.total }
+            Kit.REGS.forEachIndexed { i, ids ->
+                val g = regs.getOrNull(i)
+                if (g == null) v.setViewVisibility(ids.tile, View.INVISIBLE)
+                else {
+                    Kit.bindReg(ctx, v, ids, g, i, ink, w, 34f, page)
+                    val latest = r.movesForRegulator(g.name).firstOrNull()
+                    v.setOnClickPendingIntent(ids.tile, if (latest != null) app(ctx, "move", latest.id, code + 10 + i) else app(ctx, "licences", null, code + 10 + i))
+                }
+            }
+        } else v.setViewVisibility(R.id.tiles, View.GONE)
+        Kit.list(ctx, v, R.id.list, "licences", id, code + 50, items(ctx, r, ink))
+        return v
+    }
+
+    companion object {
+        /** The most licences and rules the list holds. */
+        const val MOST = 40
+
+        fun rulesOf(r: Radar) = r.moves.filter { it.type == "License" || it.type == "Regulation" }
+
+        fun items(ctx: Context, r: Radar, ink: Ink): List<Pair<Long, RemoteViews>> {
+            val rules = rulesOf(r)
+            return Kit.byMonth(ctx, rules.take(MOST), rules, ink, Kit.Ground.PAGE, ink.page("License"))
+        }
+    }
+}
+
+/** The app's Trends screen: moves since the radar began, its four totals, and moves per month by kind. */
 class TrendsWidget : RadarWidget() {
     override val layout = R.layout.widget_trends
-    override val monoLayout = R.layout.widget_trends_mono
     override val fallback = Dims(360, 300)
     override val code = 500
 
-    override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
-        val tab = app(ctx, "trends", null, code)
-        v.setOnClickPendingIntent(R.id.top, tab)
-        v.setOnClickPendingIntent(R.id.bottom, tab)
-        val t = brief?.optJSONObject("trends")
-        if (t == null) {
-            v.setTextViewText(R.id.title, if (brief == null) "Loading trends…" else "Refreshing soon")
-            intArrayOf(R.id.s_n1, R.id.s_n2, R.id.s_n3, R.id.s_n4).forEach { v.setTextViewText(it, "–") }
-            v.setTextViewText(R.id.cap, "")
-            v.setViewVisibility(R.id.chart, View.INVISIBLE)
+    override fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews {
+        val v = RemoteViews(ctx.packageName, layout)
+        val ink = Ink.of(Store.look(ctx))
+        val tab = app(ctx, "trends", null, code + 1)
+        refreshButton(ctx, v, Kit.BLACK)
+        heading(ctx, v, "Trends", null, Kit.BLACK, "trends")
+        v.setOnClickPendingIntent(R.id.stats, tab)
+        v.setOnClickPendingIntent(R.id.chart, tab)
+        val inner = Kit.px(ctx, d.w - 28f)
+        val t = r?.trends
+        val since = if (r == null || t == null) "Loading the trends…" else "${t.total} moves since ${Text.monthYear(t.since)}"
+        v.setImageViewBitmap(R.id.since, Kit.fit(ctx, since, Kit.BLACK, 26f, 14f, 1, inner))
+        v.setInt(R.id.since, "setColorFilter", Kit.BLACK)
+        v.setContentDescription(R.id.since, since)
+        val stats = listOf(t?.licences to "Licences", t?.actions to "Rules", t?.commercial to "Commercial", t?.capital to "Capital")
+        val column = (inner - 3 * Kit.px(ctx, 1f)) / 4 - Kit.px(ctx, 9f)
+        // The labels share one size, the largest at which the longest fits its column.
+        val labelSp = stats.minOf { (_, label) -> Kit.fitSp(ctx, label, 11f, MEDIUM, column) }
+        STAT_N.forEachIndexed { i, nId ->
+            val (n, label) = stats[i]
+            v.setImageViewBitmap(nId, Kit.fit(ctx, n?.toString() ?: "–", Kit.BLACK, 34f, 16f, 1, column))
+            v.setInt(nId, "setColorFilter", Kit.BLACK)
+            v.setTextViewText(STAT_LABEL[i], label)
+            v.setTextViewTextSize(STAT_LABEL[i], android.util.TypedValue.COMPLEX_UNIT_SP, labelSp)
+            v.setContentDescription(STAT_LABEL[i], "${n ?: 0} $label")
+        }
+        if (r == null) {
+            v.setViewVisibility(R.id.chart, View.GONE)
+            v.setViewVisibility(R.id.legend, View.GONE)
             return v
         }
-        v.setTextViewText(R.id.title, "${t.optInt("total")} moves since ${Fmt.month(t.str("since"))}")
-        val stats = listOf(
-            Triple(t.optInt("licences"), "Licence", "Licences"),
-            Triple(t.optInt("regulatory_actions"), "Regulatory action", "Regulatory actions"),
-            Triple(t.optInt("commercial"), "Commercial move", "Commercial moves"),
-            Triple(t.optInt("capital"), "Capital move", "Capital moves"),
-        )
-        val ns = intArrayOf(R.id.s_n1, R.id.s_n2, R.id.s_n3, R.id.s_n4)
-        val ls = intArrayOf(R.id.s_l1, R.id.s_l2, R.id.s_l3, R.id.s_l4)
-        stats.forEachIndexed { i, (n, one, many) ->
-            v.setTextViewText(ns[i], n.toString())
-            v.setTextViewText(ls[i], if (n == 1) one else many)
+        v.setImageViewBitmap(R.id.legend, Kit.legend(ctx, ink, inner, PAPER))
+        // The chart takes the room left: the widget is measured as the launcher will lay it out, then the chart
+        // is drawn to fill exactly what remains. The chart comes before its key: on a short widget the key goes
+        // first, and without room for the chart both go.
+        var chart = Kit.measure(ctx, v, d, exact = true).findViewById<View>(R.id.chart)
+        if (chart.height < Kit.px(ctx, CHART_WITH_KEY)) {
+            v.setViewVisibility(R.id.legend, View.GONE)
+            chart = Kit.measure(ctx, v, d, exact = true).findViewById(R.id.chart)
         }
-        val months = t.objects("months")
-        v.setTextViewText(R.id.cap, if (months.isEmpty()) "" else "${Fmt.month(months.first().str("m"))} – ${Fmt.month(months.last().str("m"))}")
-        Chart.months(ctx, t, d.w - 32, (d.h - 191).coerceAtLeast(56))?.let { v.setImageViewBitmap(R.id.chart, it) }
+        if (chart.height >= Kit.px(ctx, CHART_LEAST)) {
+            v.setImageViewBitmap(R.id.chart, Kit.chart(ctx, r, ink, chart.width, chart.height, PAPER))
+            v.setContentDescription(R.id.chart, "Moves per month, ${r.trends.months.joinToString(", ") { "${Text.monthYear(it.ym)}: ${it.n}" }}")
+        } else v.setViewVisibility(R.id.chart, View.GONE)
         return v
+    }
+
+    companion object {
+        /** The chart's least height in dp, and the least it keeps when its key shows under it. */
+        const val CHART_LEAST = 64f
+        const val CHART_WITH_KEY = 100f
+        val PAPER = Palette.Paper.toArgb()
+        /** The widgets' own face for small text, as the layout's sans-serif-medium. */
+        private val MEDIUM = android.graphics.Typeface.create("sans-serif-medium", android.graphics.Typeface.NORMAL)
+        val STAT_N = intArrayOf(R.id.s1_n, R.id.s2_n, R.id.s3_n, R.id.s4_n)
+        val STAT_LABEL = intArrayOf(R.id.s1_label, R.id.s2_label, R.id.s3_label, R.id.s4_label)
     }
 }
 
-/** Everything at once, 4 x 5: briefing, regions, latest moves, companies, regulators and the trend. */
+/**
+ * Everything at once: the briefing on black, then on light grey the latest moves, the most active companies as
+ * Watching boxes, the busiest regulators as tiles, and moves per month, as many of them as fit.
+ */
 class DashboardWidget : RadarWidget() {
     override val layout = R.layout.widget_dashboard
-    override val monoLayout = R.layout.widget_dashboard_mono
     override val fallback = Dims(360, 620)
     override val code = 600
 
-    override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews {
-        val v = RemoteViews(ctx.packageName, layoutFor(ctx))
-        v.setOnClickPendingIntent(R.id.top, app(ctx, "home", null, code))
-        v.setOnClickPendingIntent(R.id.regions, app(ctx, "moves", null, code + 1))
-        v.setOnClickPendingIntent(R.id.co_col, app(ctx, "companies", null, code + 2))
-        v.setOnClickPendingIntent(R.id.reg_col, app(ctx, "licences", null, code + 3))
-        v.setOnClickPendingIntent(R.id.trend, app(ctx, "trends", null, code + 4))
-        footer(ctx, v, brief, "week")
-
-        // Decide what fits: two moves first, then companies and regulators, a third move, then the chart.
-        // Heights measured in the render test: cover 174dp, regions 61, list label 24, move row 69,
-        // companies and regulators 80, chart label 22, footer 44.
-        var room = d.h - 326
-        var rows = if (room >= 138) 2 else 1
-        room -= rows * 69
-        val split = room >= 80 + 50
-        if (split) room -= 80
-        if (room >= 69 + 60) { rows = 3; room -= 69 }
-        val chartH = room - 2
-        showChart(v, split, chartH >= 44)
-
-        if (brief == null) {
-            v.setTextViewText(R.id.eyebrow, "Market Radar")
-            v.setTextViewText(R.id.count, "–")
-            v.setTextViewText(R.id.dates, "")
-            v.setViewVisibility(R.id.chip, View.GONE)
-            v.setTextViewText(R.id.headline, "Loading the daily brief…")
-            intArrayOf(R.id.r_n1, R.id.r_n2, R.id.r_n3, R.id.r_n4).forEach { v.setTextViewText(it, "–") }
-            placeholder(ctx, v, null, 3, "Loading the latest moves…", "moves")
-            showChart(v, false, false)
+    override fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews {
+        val v = RemoteViews(ctx.packageName, layout)
+        val ink = Ink.of(Store.look(ctx))
+        refreshButton(ctx, v, GREY)
+        BriefWidget.cover(ctx, v, d, r, ink, 56f, 4, legend = true, dates = false, code)
+        val parts = intArrayOf(R.id.latest_label, R.id.rows, R.id.co_label, R.id.boxes, R.id.reg_label, R.id.tiles, R.id.chart)
+        if (r == null || r.moves.isEmpty()) {
+            parts.forEach { v.setViewVisibility(it, View.GONE) }
             return v
         }
-
-        val n = brief.optInt("count")
-        val fresh = brief.optInt("new_today")
-        v.setTextViewText(R.id.eyebrow, "Daily briefing · " + Fmt.dowDay(brief.str("window_end")))
-        v.setTextViewText(R.id.count, n.toString())
-        v.setTextViewText(R.id.count_label, if (n == 1) "Move in 7 days" else "Moves in 7 days")
-        v.setTextViewText(R.id.dates, Fmt.range(brief.str("window_start"), brief.str("window_end"), year = true))
-        v.setViewVisibility(R.id.chip, if (fresh > 0) View.VISIBLE else View.GONE)
-        v.setTextViewText(R.id.chip, "+$fresh new")
-        val head = brief.str("headline")
-        v.setTextViewText(R.id.headline, if (head != null) Fmt.headline(head) else Fmt.html("A quiet week. Nothing new passed the source check."))
-
-        val regions = brief.optJSONObject("regions")
-        listOf("Europe", "Middle East", "North America", "Global").forEachIndexed { i, r ->
-            v.setTextViewText(intArrayOf(R.id.r_n1, R.id.r_n2, R.id.r_n3, R.id.r_n4)[i], (regions?.optInt(r) ?: 0).toString())
+        v.setTextViewText(R.id.latest_label, "Latest moves")
+        v.setOnClickPendingIntent(R.id.latest_label, app(ctx, "moves", null, code + 2))
+        Kit.ROWS.forEachIndexed { i, ids ->
+            val m = r.moves.getOrNull(i)
+            if (m == null) v.setViewVisibility(ids.item, View.GONE)
+            else {
+                Kit.bindRow(v, ids, m, ink, Kit.Ground.PAPER)
+                v.setOnClickPendingIntent(ids.row, app(ctx, "move", m.id, code + 10 + i))
+            }
         }
-
-        val items = brief.objects("latest").ifEmpty { brief.objects("moves") }
-        if (items.isEmpty()) placeholder(ctx, v, brief, 3, "Nothing on the radar yet.", "moves")
-        else moveRows(ctx, v, brief, items, rows, 3, accent(ctx), code + 10)
-
-        val cos = brief.objects("companies").take(3)
-        v.setTextViewText(R.id.co_lines, Fmt.html(cos.joinToString("<br>") { c ->
-            val m = c.optInt("moves_30d")
-            val tail = if (m > 0) Fmt.plural(m, "move", "moves") else Fmt.day(c.str("last_date"))
-            "${Fmt.escape(c.str("name") ?: "")} <font color=\"${accentSoft(ctx)}\">· ${Fmt.escape(tail)}</font>"
-        }.ifEmpty { "No company moves yet" }))
-        val regs = brief.objects("regulators").take(3)
-        v.setTextViewText(R.id.reg_lines, Fmt.html(regs.joinToString("<br>") { r ->
-            val total = r.optInt("licences") + r.optInt("actions")
-            "${Fmt.escape(r.str("name") ?: "")} <font color=\"${accentSoft(ctx)}\">· ${Fmt.escape(Fmt.plural(total, "move", "moves"))}</font>"
-        }.ifEmpty { "No regulator moves yet" }))
-
-        val t = brief.optJSONObject("trends")
-        if (t != null && chartH >= 44) {
-            v.setTextViewText(R.id.cap, "${t.optInt("total")} since ${Fmt.month(t.str("since"))}")
-            Chart.months(ctx, t, d.w - 32, chartH)?.let { v.setImageViewBitmap(R.id.chart, it) }
-        } else {
-            showChart(v, split, false)
+        v.setTextViewText(R.id.co_label, "Most active companies")
+        v.setOnClickPendingIntent(R.id.co_label, app(ctx, "companies", null, code + 3))
+        val cos = Kit.active(r).take(3)
+        Kit.BOXES.forEachIndexed { i, ids ->
+            val c = cos.getOrNull(i)
+            if (c == null) v.setViewVisibility(ids.box, View.INVISIBLE)
+            else {
+                Kit.bindBox(ctx, v, ids, c.first, c.second, ink, 30f, small = true)
+                v.setOnClickPendingIntent(ids.box, app(ctx, "company", c.first.id, code + 20 + i))
+            }
         }
+        v.setTextViewText(R.id.reg_label, "Busiest regulators")
+        v.setOnClickPendingIntent(R.id.reg_label, app(ctx, "licences", null, code + 4))
+        val regs = r.regulators.sortedByDescending { it.total }
+        val w = third(ctx, d)
+        Kit.REGS.forEachIndexed { i, ids ->
+            val g = regs.getOrNull(i)
+            if (g == null) v.setViewVisibility(ids.tile, View.INVISIBLE)
+            else {
+                Kit.bindReg(ctx, v, ids, g, i, ink, w, 26f)
+                val latest = r.movesForRegulator(g.name).firstOrNull()
+                v.setOnClickPendingIntent(ids.tile, if (latest != null) app(ctx, "move", latest.id, code + 30 + i) else app(ctx, "licences", null, code + 30 + i))
+            }
+        }
+        v.setOnClickPendingIntent(R.id.chart, app(ctx, "trends", null, code + 5))
+
+        // What fits, measured as the launcher will lay it out: the briefing and two moves first, then the
+        // companies, the regulators, the chart, and a third move. Each keeps 12dp clear under it, as the chart
+        // does with its own margin.
+        val natural = Kit.measure(ctx, v, d, exact = false)
+        val rows = Kit.ROWS.map { Kit.tall(natural, it.item) }
+        val co = Kit.tall(natural, R.id.co_label) + Kit.tall(natural, R.id.boxes)
+        val reg = Kit.tall(natural, R.id.reg_label) + Kit.tall(natural, R.id.tiles)
+        val pad = Kit.px(ctx, 12f)
+        val chartMin = Kit.px(ctx, 96f) + Kit.tall(natural, R.id.chart)
+        var room = Kit.px(ctx, d.h.toFloat()) - Kit.tall(natural, R.id.cover)
+        val first = Kit.tall(natural, R.id.latest_label) + Kit.tall(natural, R.id.rows) - rows.sum() + rows[0]
+        var shown = 0
+        if (room - first >= pad) { shown = 1; room -= first }
+        if (shown == 1 && room - rows[1] >= pad) { shown = 2; room -= rows[1] }
+        val showCo = shown > 0 && room - co >= pad
+        if (showCo) room -= co
+        val showReg = showCo && room - reg >= pad
+        if (showReg) room -= reg
+        val showChart = shown > 0 && room >= chartMin
+        if (shown == 2 && (if (showChart) room - chartMin >= rows[2] else room - rows[2] >= pad)) { shown = 3; room -= rows[2] }
+        Kit.ROWS.forEachIndexed { i, ids -> if (i >= shown) v.setViewVisibility(ids.item, View.GONE) }
+        if (shown == 0) {
+            v.setViewVisibility(R.id.latest_label, View.GONE)
+            v.setViewVisibility(R.id.rows, View.GONE)
+        }
+        v.setViewVisibility(R.id.co_label, if (showCo) View.VISIBLE else View.GONE)
+        v.setViewVisibility(R.id.boxes, if (showCo) View.VISIBLE else View.GONE)
+        v.setViewVisibility(R.id.reg_label, if (showReg) View.VISIBLE else View.GONE)
+        v.setViewVisibility(R.id.tiles, if (showReg) View.VISIBLE else View.GONE)
+        if (!showChart) {
+            v.setViewVisibility(R.id.chart, View.GONE)
+            return v
+        }
+        val chart = Kit.measure(ctx, v, d, exact = true).findViewById<View>(R.id.chart)
+        v.setImageViewBitmap(R.id.chart, Kit.chart(ctx, r, ink, chart.width, chart.height.coerceAtLeast(1), TrendsWidget.PAPER))
+        v.setContentDescription(R.id.chart, "Moves per month")
         return v
-    }
-
-    private fun showChart(v: RemoteViews, split: Boolean, chart: Boolean) {
-        v.setViewVisibility(R.id.split, if (split) View.VISIBLE else View.GONE)
-        v.setViewVisibility(R.id.trend, if (chart) View.VISIBLE else View.GONE)
-        v.setViewVisibility(R.id.spacer, if (chart) View.GONE else View.VISIBLE)
     }
 }

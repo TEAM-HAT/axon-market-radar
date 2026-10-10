@@ -7,11 +7,11 @@
     <string name="widget_trends">Trends</string>
     <string name="widget_dashboard">Dashboard</string>
     <string name="widget_carousel">Carousel</string>
-    <string name="widget_brief_desc">The last 7 days in one line: move count, what is new today and the headline.</string>
-    <string name="widget_moves_desc">The latest stablecoin and payments moves, each opening its source.</string>
-    <string name="widget_companies_desc">The most active companies over the last 30 days.</string>
-    <string name="widget_licences_desc">The busiest regulators and the newest licences and rules.</string>
-    <string name="widget_trends_desc">Moves per month over the last year, with the mix by kind.</string>
-    <string name="widget_dashboard_desc">Everything at once: the briefing, regions, latest moves, companies, regulators and the trend.</string>
+    <string name="widget_brief_desc">The week on black: the count, the headline and the mix by kind, with the latest 10 moves to scroll. Tap a move to read it.</string>
+    <string name="widget_moves_desc">The newest moves as the app\'s tiles, then every move under its month. Tap one to read it.</string>
+    <string name="widget_companies_desc">The most active companies of the last 30 days, each in the colour of its latest move.</string>
+    <string name="widget_licences_desc">The busiest regulators and the latest licences and rules, on the licence colour.</string>
+    <string name="widget_trends_desc">Moves since the radar began, the four totals, and moves per month by kind.</string>
+    <string name="widget_dashboard_desc">Everything at once: the briefing, the latest moves, the most active companies, the busiest regulators and moves per month.</string>
     <string name="widget_carousel_desc">The app\'s cards on your home screen as a list. Scroll through them, and tap a card to read it.</string>
 </resources>

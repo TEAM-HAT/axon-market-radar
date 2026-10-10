@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
 import android.widget.RemoteViews
@@ -15,13 +14,13 @@ import androidx.annotation.RequiresApi
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import inc.axon.radar.data.Move
+import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Store
 import inc.axon.radar.data.Text
 import inc.axon.radar.ui.Ink
 import inc.axon.radar.ui.Link
 import inc.axon.radar.ui.Shape
 import inc.axon.radar.ui.glyphOf
-import org.json.JSONObject
 import kotlin.math.min
 import kotlin.math.roundToInt
 
@@ -36,15 +35,11 @@ import kotlin.math.roundToInt
  * it scrolls; before that, CarouselService hands them to the launcher.
  */
 class CarouselWidget : RadarWidget() {
-    override val layout = R.layout.widget_carousel
-    override val monoLayout = R.layout.widget_carousel // every colour on it is set from code
+    override val layout = R.layout.widget_carousel // every colour on it is set from code
     override val fallback = Dims(360, 420)
     override val code = 700
 
-    override fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews =
-        buildFor(ctx, brief, d, AppWidgetManager.INVALID_APPWIDGET_ID)
-
-    override fun buildFor(ctx: Context, brief: JSONObject?, d: Dims, id: Int): RemoteViews = frame(ctx, d, id, MAX_CARDS)
+    override fun views(ctx: Context, d: Dims, id: Int, r: Radar?): RemoteViews = frame(ctx, d, id, MAX_CARDS)
 
     /** The widget with at most [most] cards in its list. */
     fun frame(ctx: Context, d: Dims, id: Int, most: Int): RemoteViews {
@@ -89,7 +84,7 @@ class CarouselWidget : RadarWidget() {
      * half screens of memory; the cards stay well under that, and if a launcher is stricter, the list is cut
      * down until it is taken.
      */
-    override fun draw(ctx: Context, mgr: AppWidgetManager, id: Int, brief: JSONObject?) {
+    override fun draw(ctx: Context, mgr: AppWidgetManager, id: Int) {
         val d = dims(mgr, id)
         var most = MAX_CARDS
         while (true) {
@@ -98,10 +93,6 @@ class CarouselWidget : RadarWidget() {
             most /= 2
         }
         if (Build.VERSION.SDK_INT < 31) runCatching { mgr.notifyAppWidgetViewDataChanged(id, R.id.list) }
-    }
-
-    override fun onAppWidgetOptionsChanged(ctx: Context, mgr: AppWidgetManager, id: Int, options: Bundle) {
-        draw(ctx, mgr, id, Brief.cached(ctx))
     }
 
     override fun onReceive(ctx: Context, intent: Intent) {

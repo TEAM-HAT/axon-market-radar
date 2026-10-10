@@ -14,13 +14,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
 
-/** Fetches the brief, caches it, and redraws every placed widget. */
+/** Fetches the radar if it changed, keeps it for the app and the widgets, and redraws every placed widget. */
 class RefreshWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, params) {
     override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
         try {
-            Brief.save(applicationContext, Brief.fetch())
-            // The app's own copy too: the carousel draws from it, and the app opens on today's news even offline.
-            runCatching { inc.axon.radar.data.Store.refresh(applicationContext) }
+            inc.axon.radar.data.Store.refresh(applicationContext)
             RadarWidget.updateAll(applicationContext)
             Result.success()
         } catch (e: Exception) {
@@ -39,7 +37,7 @@ object Refresh {
         WorkManager.getInstance(ctx).enqueueUniquePeriodicWork("radar-periodic", ExistingPeriodicWorkPolicy.UPDATE, req)
     }
 
-    /** One fetch now. A tap on "Updated" forces it, replacing anything queued, so it fails fast when offline. */
+    /** One fetch now. A tap on ↻ forces it, replacing anything queued, so it fails fast when offline. */
     fun now(ctx: Context, force: Boolean = false) {
         val b = OneTimeWorkRequestBuilder<RefreshWorker>()
         if (!force) b.setConstraints(online)
