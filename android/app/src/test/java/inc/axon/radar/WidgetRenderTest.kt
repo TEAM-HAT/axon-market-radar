@@ -30,7 +30,10 @@ class WidgetRenderTest {
     private val log = StringBuilder()
 
     @Before
-    fun colour() = Store.setLook(ctx, Look.Colour)
+    fun colour() {
+        Store.setLook(ctx, Look.Colour)
+        File(ctx.filesDir, "radar.json").writeText(File("../../radar.json").readText())
+    }
 
     private fun render(views: RemoteViews, d: Dims, name: String): View {
         val v = views.apply(ctx, FrameLayout(ctx))
@@ -88,8 +91,25 @@ class WidgetRenderTest {
         val fresh = JSONObject(brief.toString()).put("new_today", 2)
         render(BriefWidget().build(ctx, fresh, Dims(360, 248)), Dims(360, 248), "7-brief-new")
         render(DashboardWidget().build(ctx, fresh, Dims(360, 620)), Dims(360, 620), "7-dashboard-new")
-        RadarWidget.all().forEach { w -> render(w.build(ctx, null, w.fallback), w.fallback, "0-empty-" + w.javaClass.simpleName) }
+        RadarWidget.all().filter { it !is CarouselWidget }.forEach { w -> render(w.build(ctx, null, w.fallback), w.fallback, "0-empty-" + w.javaClass.simpleName) }
+        carousel()
         File(out, "measure.txt").writeText(log.toString())
+    }
+
+    /** The carousel at three heights, at the top of the deck, in the middle and at the end. */
+    private fun carousel() {
+        val deck = inc.axon.radar.data.Radar.parse(File("../../radar.json").readText()).deck
+        val w = CarouselWidget()
+        val id = 42
+        listOf(0 to "first", 4 to "middle", deck.lastIndex to "last").forEach { (i, tag) ->
+            CarouselWidget.keep(ctx, id, deck.first().id, deck[i].id)
+            listOf(Dims(360, 300), Dims(360, 360), Dims(360, 420), Dims(360, 560)).forEach { d ->
+                render(w.buildFor(ctx, brief, d, id), d, "8-carousel-$tag-${d.h}")
+            }
+        }
+        // Narrow, as a 3 x 4 widget.
+        CarouselWidget.keep(ctx, id, deck.first().id, deck[2].id)
+        render(w.buildFor(ctx, brief, Dims(270, 420), id), Dims(270, 420), "8-carousel-narrow")
     }
 
     /** A phone still holding last week's file (schema 1) must keep drawing until the next refresh. */

@@ -12,7 +12,8 @@ Public market news only: no AXON tags and no watchlist.
   moves along the bottom. Swipe sideways between moves.
 - **Explore**: Moves, Companies and Licences, each with a carousel, filters with counts and plain rows.
 - **Company pages**: the same layout, with licences, funding and every move.
-- **Watching**: companies you follow, kept on the phone.
+- **Watching**: the companies you follow as boxes in the colour of their latest move; a tap opens the company.
+  **Add companies** opens a searchable list of every company on the radar to add or remove. Kept on the phone.
 - **Trends** and **Radar** (data status, refresh, link to the web radar, and the look).
 
 The design follows the clip Hamed shared: Swiss-style type (Inter Tight, SIL Open Font License), flat colour pages,
@@ -45,8 +46,12 @@ The colour look is unchanged.
 | Licences | 4 x 4 | The busiest regulators, then the newest licences and rules | That move |
 | Trends | 4 x 3 | The year's totals and moves per month | Trends |
 | Dashboard | 4 x 5 | Briefing, regions, latest moves, companies, regulators, trend | The part you tap |
+| Carousel | 4 x 4 | The app's deck of cards: folded cards above, the open card, the next ones below | Flips on the arrows or a card; the open card opens that move; the grid opens the deck on that card |
 
 Every widget resizes; lists show as many rows as fit. Tap "Updated" on a widget to refresh it now.
+The carousel keeps its card per placed widget and goes back to the newest card when a new deck arrives. As it gets
+shorter it drops the folded and waiting cards one at a time, and fits the open card's figure and text to what is left.
+Widgets can't take swipes while keeping the stacked look, so it flips with taps.
 The widgets and the app check for new data every hour.
 
 ## Building

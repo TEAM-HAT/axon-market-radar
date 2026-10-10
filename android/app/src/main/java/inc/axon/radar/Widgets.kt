@@ -32,6 +32,9 @@ abstract class RadarWidget : AppWidgetProvider() {
     abstract val code: Int
     abstract fun build(ctx: Context, brief: JSONObject?, d: Dims): RemoteViews
 
+    /** Builds for one placed widget; widgets that keep state per placement (the carousel) override this. */
+    open fun buildFor(ctx: Context, brief: JSONObject?, d: Dims, id: Int): RemoteViews = build(ctx, brief, d)
+
     /** The layout for the look chosen in the app. */
     fun layoutFor(ctx: Context): Int = if (mono(ctx)) monoLayout else layout
 
@@ -44,7 +47,7 @@ abstract class RadarWidget : AppWidgetProvider() {
 
     fun draw(ctx: Context, mgr: AppWidgetManager, id: Int, brief: JSONObject?) {
         val d = dims(mgr, id)
-        val views = runCatching { build(ctx, brief, d) }.getOrElse { build(ctx, null, d) }
+        val views = runCatching { buildFor(ctx, brief, d, id) }.getOrElse { build(ctx, null, d) }
         mgr.updateAppWidget(id, views)
     }
 
@@ -140,7 +143,7 @@ abstract class RadarWidget : AppWidgetProvider() {
         val TITLE = intArrayOf(R.id.title1, R.id.title2, R.id.title3, R.id.title4, R.id.title5)
 
         fun all(): List<RadarWidget> =
-            listOf(BriefWidget(), MovesWidget(), CompaniesWidget(), LicencesWidget(), TrendsWidget(), DashboardWidget())
+            listOf(BriefWidget(), MovesWidget(), CompaniesWidget(), LicencesWidget(), TrendsWidget(), DashboardWidget(), CarouselWidget())
 
         fun updateAll(ctx: Context) {
             val brief = Brief.cached(ctx)

@@ -83,7 +83,7 @@ private fun PaperList(bottomInset: Dp, content: androidx.compose.foundation.lazy
 }
 
 @Composable
-private fun Heading(text: String, n: Int? = null) {
+fun Heading(text: String, n: Int? = null) {
     Row(Modifier.fillMaxWidth().padding(start = 14.dp, end = 14.dp, top = 26.dp, bottom = 10.dp), verticalAlignment = Alignment.Bottom) {
         T(text, Type.display(30f), Palette.Black, Modifier.weight(1f))
         if (n != null) T(n.toString(), Type.Caps, Palette.Black)
@@ -103,59 +103,6 @@ private fun PaperRow(left: String, right: String, sub: String? = null, onClick: 
         }
         Spacer(Modifier.width(10.dp))
         T(right, Type.Row, Palette.Muted)
-    }
-}
-
-// ---- Watching ----------------------------------------------------------------------------------
-
-@Composable
-fun WatchScreen(radar: Radar, watched: Set<String>, onOpenCompany: (String) -> Unit, onOpenMoves: (List<Move>, Int) -> Unit, onExplore: () -> Unit, bottomInset: Dp) {
-    val cos = radar.companies.filter { it.id in watched }
-    val moves = radar.moves.filter { m -> cos.any { it.id == m.companyId || it.id in m.related } }
-    PaperList(bottomInset) {
-        item { Titles(listOf("Watching", "Companies"), 0) { if (it == 1) onExplore() } }
-        if (cos.isEmpty()) {
-            item {
-                Column(Modifier.padding(horizontal = 14.dp, vertical = 8.dp)) {
-                    T("Tap Watch on any company page and it lands here, with its latest moves. Your list stays on this phone.", Type.Lead, Palette.Ink2)
-                    Spacer(Modifier.height(20.dp))
-                    T("Browse companies", Type.Tab, Palette.White, Modifier.clip(RoundedCornerShape(3.dp)).background(Palette.Black).tap(onExplore).padding(horizontal = 16.dp, vertical = 14.dp))
-                }
-            }
-        } else {
-            items(cos, key = { "c-" + it.id }) { c ->
-                Row(
-                    Modifier.fillMaxWidth().padding(horizontal = 6.dp, vertical = 1.dp).clip(RoundedCornerShape(2.dp)).background(Palette.Row)
-                        .tap { onOpenCompany(c.id) }.padding(horizontal = 8.dp, vertical = 9.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    CompanyThumb(c.name, radar.latestMove(c.id)?.type)
-                    Spacer(Modifier.width(14.dp))
-                    Column(Modifier.weight(1f)) {
-                        T(c.name, Type.Name, Palette.Black)
-                        T(listOfNotNull(c.segment, c.hqCountry).joinToString(" · "), Type.Small, Palette.Muted, maxLines = 1)
-                    }
-                    T(c.lastDate?.let { Text.day(it) } ?: "", Type.Row, Palette.Muted)
-                }
-            }
-            item { Heading("Their moves", moves.size) }
-            items(moves, key = { "m-" + it.id }) { m ->
-                Row(
-                    Modifier.fillMaxWidth().padding(horizontal = 6.dp, vertical = 1.dp).clip(RoundedCornerShape(2.dp)).background(Palette.Row)
-                        .tap { onOpenMoves(moves, moves.indexOf(m)) }.padding(horizontal = 8.dp, vertical = 9.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    MoveThumb(m)
-                    Spacer(Modifier.width(14.dp))
-                    Column(Modifier.weight(1f)) {
-                        T(m.title, Type.Name, Palette.Black, maxLines = 2)
-                        T(listOfNotNull(m.typeLabel, m.companyName).joinToString(" · "), Type.Small, Palette.Muted, maxLines = 1)
-                    }
-                    Spacer(Modifier.width(10.dp))
-                    T(Text.day(m.date), Type.Row, Palette.Muted)
-                }
-            }
-        }
     }
 }
 

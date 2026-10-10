@@ -146,6 +146,18 @@ object Store {
 
     fun cached(ctx: Context): Radar? = runCatching { Radar.parse(file(ctx).readText()) }.getOrNull()
 
+    @Volatile private var memo: Pair<Long, Radar>? = null
+
+    /** The same copy, parsed once per file version, for widgets that redraw often. */
+    fun cachedFast(ctx: Context): Radar? {
+        val f = file(ctx)
+        val stamp = f.lastModified() xor f.length()
+        memo?.let { (t, r) -> if (t == stamp) return r }
+        val r = cached(ctx) ?: return null
+        memo = stamp to r
+        return r
+    }
+
     /** Fetches radar.json if it changed since the last copy. Returns true when a new copy was saved. */
     fun refresh(ctx: Context): Boolean {
         val prefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)

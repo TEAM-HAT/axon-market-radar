@@ -41,6 +41,8 @@ object Icons {
     val Grid = icon("grid", "M5 5h5.5v5.5H5zM13.5 5H19v5.5h-5.5zM5 13.5h5.5V19H5zM13.5 13.5H19V19h-5.5z", width = 1.6f)
     val Refresh = icon("refresh", "M19 12a7 7 0 1 1-2.05-4.95", "M19 4.5V8h-3.5", width = 1.9f)
     val Play = icon("play", fills = listOf("M8 5.5v13l10.5-6.5z"))
+    val Search = icon("search", "M10.5 4.5a6 6 0 1 0 0 12a6 6 0 1 0 0-12z", "M15 15l4.5 4.5", width = 2f)
+    val Close = icon("close", "M6.5 6.5l11 11M17.5 6.5l-11 11", width = 2.2f)
 }
 
 @Composable

@@ -19,9 +19,9 @@ class RefreshWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ct
     override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
         try {
             Brief.save(applicationContext, Brief.fetch())
-            RadarWidget.updateAll(applicationContext)
-            // Keep the app's own copy fresh too, so it opens on today's news even offline.
+            // The app's own copy too: the carousel draws from it, and the app opens on today's news even offline.
             runCatching { inc.axon.radar.data.Store.refresh(applicationContext) }
+            RadarWidget.updateAll(applicationContext)
             Result.success()
         } catch (e: Exception) {
             RadarWidget.updateAll(applicationContext)

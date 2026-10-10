@@ -6,10 +6,12 @@
     <string name="widget_licences">Licences</string>
     <string name="widget_trends">Trends</string>
     <string name="widget_dashboard">Dashboard</string>
+    <string name="widget_carousel">Carousel</string>
     <string name="widget_brief_desc">The last 7 days in one line: move count, what is new today and the headline.</string>
     <string name="widget_moves_desc">The latest stablecoin and payments moves, each opening its source.</string>
     <string name="widget_companies_desc">The most active companies over the last 30 days.</string>
     <string name="widget_licences_desc">The busiest regulators and the newest licences and rules.</string>
     <string name="widget_trends_desc">Moves per month over the last year, with the mix by kind.</string>
     <string name="widget_dashboard_desc">Everything at once: the briefing, regions, latest moves, companies, regulators and the trend.</string>
+    <string name="widget_carousel_desc">The app\'s deck of cards on your home screen. Tap the arrows or a card to flip, and the open card to read it.</string>
 </resources>

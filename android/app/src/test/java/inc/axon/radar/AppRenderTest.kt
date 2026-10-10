@@ -9,6 +9,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performTextInput
+import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onFirst
+import androidx.compose.ui.test.onLast
 import androidx.test.core.app.ApplicationProvider
 import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Store
@@ -76,6 +80,29 @@ class AppRenderTest {
         }
         shot("08-deck-middle", look)
     }
+
+    /** Watching with a few companies, the empty Watching page, and the picker, searched. */
+    private fun watching(look: Look) {
+        val ctx: Context = ApplicationProvider.getApplicationContext()
+        Store.setWatched(ctx, emptySet())
+        val link = mutableStateOf<Link?>(Link("watch"))
+        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = look) }
+        shot("40-watch-empty", look)
+        rule.onNodeWithText("Add\ncompanies").performClick()
+        shot("41-picker", look)
+        // The picker lies over the Watching page, so its rows are the last match.
+        listOf("Ripple", "Tether", "Noah", "zerohash", "Schuman Financial").forEach { rule.onAllNodesWithText(it).onLast().performClick() }
+        rule.onNodeWithText("Search 40 companies").performTextInput("bank")
+        shot("42-picker-search", look)
+        link.value = Link("watch")
+        shot("43-watch-boxes", look)
+        rule.onAllNodesWithText("Ripple", substring = true).onFirst().performClick()
+        shot("44-watch-open-company", look)
+        Store.setWatched(ctx, emptySet())
+    }
+
+    @Test fun watchingInColour() = watching(Look.Colour)
+    @Test fun watchingInBlackAndWhite() = watching(Look.Mono)
 
     @Test fun deckInTheMiddleInColour() = deck(Look.Colour)
     @Test fun deckInTheMiddleInBlackAndWhite() = deck(Look.Mono)

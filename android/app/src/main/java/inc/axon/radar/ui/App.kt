@@ -25,6 +25,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -66,6 +67,8 @@ data class Link(val dest: String, val id: String? = null) {
 sealed interface Page {
     data class Moves(val ids: List<String>, val index: Int) : Page
     data class Company(val id: String) : Page
+    /** The list of every company, to add to or remove from Watching. */
+    data object Picker : Page
 }
 
 @Composable
@@ -109,6 +112,8 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
     var tab by rememberSaveable { mutableStateOf(Tab.Home) }
     var section by rememberSaveable { mutableStateOf(Section.Moves) }
     var focus by rememberSaveable { mutableStateOf(0) }
+    // Bumped when a widget asks for a given card, so the deck opens there.
+    var deckKey by remember { mutableStateOf(0) }
     var refreshing by remember { mutableStateOf(false) }
     var failed by remember { mutableStateOf(false) }
     var lastCheck by remember { mutableStateOf(0L) }
@@ -144,6 +149,7 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
         r == null -> null
         top is Page.Moves -> top.ids.getOrNull(if (pagerAt >= 0) pagerAt else top.index)?.let { r.moveById[it] }?.let { ink.page(it.type) }
         top is Page.Company -> ink.page(r.latestMove(top.id)?.type ?: "Partnership")
+        top is Page.Picker -> Palette.Paper
         else -> null
     }
     SystemBars(darkIcons = r != null && (if (top != null) ink.display(pageBg ?: Palette.Paper) == Palette.Black else tab != Tab.Home))
@@ -161,6 +167,11 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
         stack.clear()
         when (l.dest) {
             "home" -> tab = Tab.Home
+            "deck" -> {
+                tab = Tab.Home
+                focus = r.deck.indexOfFirst { it.id == l.id }.coerceAtLeast(0)
+                deckKey++
+            }
             "moves" -> { tab = Tab.Explore; section = Section.Moves }
             "companies" -> { tab = Tab.Explore; section = Section.Companies }
             "licences" -> { tab = Tab.Explore; section = Section.Licences }
@@ -189,9 +200,12 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
     Box(Modifier.fillMaxSize()) {
         val bottom = 58.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
         when (tab) {
-            Tab.Home -> Deck(r, focus, ::openMoves, onExplore = { tab = Tab.Explore }, onFocus = { focus = it }, bottomInset = bottom)
+            Tab.Home -> key(deckKey) { Deck(r, focus, ::openMoves, onExplore = { tab = Tab.Explore }, onFocus = { focus = it }, bottomInset = bottom) }
             Tab.Explore -> Explore(r, section, { section = it }, ::openMoves, actions.openCompany, bottom)
-            Tab.Watch -> WatchScreen(r, watched, actions.openCompany, ::openMoves, { tab = Tab.Explore; section = Section.Companies }, bottom)
+            Tab.Watch -> WatchScreen(
+                r, watched, actions.openCompany, ::openMoves, { tab = Tab.Explore; section = Section.Companies },
+                onAdd = { stack.add(Page.Picker) }, onToggle = actions.toggleWatch, bottomInset = bottom,
+            )
             Tab.Trends -> TrendsScreen(r, bottom)
             Tab.About -> AboutScreen(r, refreshing, ::refresh, { actions.openUrl(r.radarUrl) }, look, onLook, bottom)
         }
@@ -209,6 +223,7 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
                 null -> Box(Modifier)
                 is Page.Moves -> MovePager(page.ids.mapNotNull { r.moveById[it] }, page.index, r, watched, actions) { if (page == stack.lastOrNull()) pagerAt = it }
                 is Page.Company -> r.companyById[page.id]?.let { CompanyPoster(it, r, watched, actions) }
+                Page.Picker -> CompanyPicker(r, watched, actions.toggleWatch, actions.close)
             }
         }
     }
