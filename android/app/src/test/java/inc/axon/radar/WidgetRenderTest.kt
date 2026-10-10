@@ -97,14 +97,14 @@ class WidgetRenderTest {
     }
 
     /**
-     * The carousel the way a launcher shows it: the frame from the provider and the card stack filled with
-     * the factory's cards, at the top of the deck, part-way down it and at its end, at several sizes.
+     * The carousel the way a launcher shows it, scrolled to the top of the list, part-way down it and to its
+     * end, at several sizes.
      */
     private fun carousel() {
         val deck = inc.axon.radar.data.Radar.parse(File("../../radar.json").readText()).deck
         val id = 42
         listOf(Dims(360, 300), Dims(360, 360), Dims(360, 420), Dims(360, 560), Dims(270, 420)).forEach { d ->
-            listOf(0, 4, deck.lastIndex).forEach { front -> renderCarousel(id, d, front, "8-carousel-${d.w}x${d.h}-front$front") }
+            listOf(0, 4, deck.lastIndex).forEach { at -> renderCarousel(id, d, at, "8-carousel-${d.w}x${d.h}-at$at") }
         }
     }
 
@@ -132,10 +132,10 @@ class WidgetRenderTest {
         }
     }
 
-    private fun renderCarousel(id: Int, d: Dims, front: Int, name: String) {
+    private fun renderCarousel(id: Int, d: Dims, at: Int, name: String) {
         val root = CarouselStage.mount(ctx, brief, d, id)
-        CarouselStage.stack(root).setDisplayedChild(front)
-        CarouselStage.idle(800)
+        CarouselStage.list(root).setSelection(at)
+        CarouselStage.idle(400)
         val bmp = Bitmap.createBitmap(root.width, root.height, Bitmap.Config.ARGB_8888)
         val c = Canvas(bmp)
         c.drawColor(0xFF1C2033.toInt())

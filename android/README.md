@@ -53,27 +53,23 @@ The colour look is unchanged.
 | Licences | 4 x 4 | The busiest regulators, then the newest licences and rules | That move |
 | Trends | 4 x 3 | The year's totals and moves per month | Trends |
 | Dashboard | 4 x 5 | Briefing, regions, latest moves, companies, regulators, trend | The part you tap |
-| Carousel | 4 x 4 | The app's deck, drawn exactly as the app draws it: folded cards above, the open card, the waiting cards below | Swipe up for the next card and down for the previous one, one card per swipe, as in the app; tap the open card to read it, or another card to open the app's deck at it; the arrows step one card; the grid opens the app's lists |
+| Carousel | 4 x 4 | The app's cards as a list, made shorter: the name, then the kind, figure, title and date | Scroll the list like any list; tap a card to read it; up and down scroll a card at a time; the grid opens the app's lists |
 
 Every widget resizes; lists show as many rows as fit. Tap "Updated" on a widget to refresh it now.
-The carousel is an Android card stack (`StackView`), the only widget view a launcher lets you swipe one item at a time.
-Each card of the stack is the whole deck drawn at one move (`CarouselService` supplies them), so every swipe lands on the
-app's deck with the next card open. Two tricks make it behave like the app: the stack is drawn upside down and each card
-the right way up again, which puts the waiting cards below the open one and makes a swipe up go forward; and the stack
-is a quarter larger than its area, so the cards Android keeps waiting behind the front one stay hidden behind its black
-margin. Between cards it moves with Android's own stack motion: the deck lifts away and the next one settles in.
-Each placed widget stays where it was swiped to and goes back to the newest card when a new deck arrives.
-
-Widgets cannot use the app's typeface, so each card of the stack is a picture: `DeckArt` draws the app's deck the way
-the app does, with Inter Tight, the app's card shapes, marks and spacing, sized from the phone's screen as the app sizes
-them and set the way Compose sets text. It then scales the whole deck so the widget shows what the app shows under its
-top line: three folded cards, the open card and the name of the next one. The top line is a picture too, and from
-Android 12 the top line and the controls take the same scale, so the widget is the app in small. Over each picture
-sits a tap for every card that shows (one tap for the open card before Android 12).
-`DeckArtTest` renders the app's deck and DeckArt's picture of it on the same phone screen and compares them pixel by
-pixel (they match to within a few levels of anti-aliasing), saving both side by side in `app/build/deck-art/`.
-`CarouselSwipeTest` swipes the widget with real touch events, saves the frames in `app/build/carousel-swipe/` and a
-frame-by-frame clip in `app/build/carousel-clip/`, and checks that every tap lines up with its card.
+The carousel is a plain list, so it scrolls and flings the way any list does. Each card is the app's card made
+shorter: the empty space in its black block is gone and the figure is a little smaller (52sp rather than 64sp).
+Widgets cannot use the app's typeface, so the parts that carry it, the top line and each card's name and figure, are
+drawn by `CardArt` with Inter Tight, set the way the app sets them, and the names and figures come as alpha masks the
+widget tints, which keeps every card light. From Android 12 all the cards travel inside the widget itself
+(`RemoteCollectionItems`), so the list never waits for a card to load as it scrolls; the cards take well under half
+of the memory Android allows a widget, and if a launcher refuses, the list is cut down until it is taken. Before
+Android 12, `CarouselService` hands the same cards to the launcher. Each placed widget stays where it was scrolled to
+and goes back to the top when a new deck arrives.
+`CardArtTest` sets the top line and the names and figures of a few cards for the app's own screen and compares them
+pixel by pixel with the app's deck: they match to within one level in 255, in colour and in black and white.
+`CarouselScrollTest` scrolls the widget with real touch events: the list follows the finger exactly, flings on after
+a flick, rests where it is let go, scrolls a card at a time from the arrows, and opens a card when tapped. It saves a
+clip of a drag in `app/build/carousel-clip/`.
 The widget picker shows `res/drawable-nodpi/widget_carousel_preview.png`; to redraw it from the current data, run
 `RADAR_WRITE_PREVIEW=1 gradle :app:testDebugUnitTest --tests '*WidgetRenderTest.picturesTheCarouselForThePicker'`.
 The widgets and the app check for new data every hour.

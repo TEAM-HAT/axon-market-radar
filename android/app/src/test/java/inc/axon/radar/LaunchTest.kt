@@ -63,33 +63,43 @@ class LaunchTest {
     }
 
     /**
-     * The carousel's stack holds one card per move, newest first; a tap on a card opens that move in the app,
-     * and a new deck in the morning starts the stack again from the newest card.
+     * The carousel's list holds one card per move, newest first, and travels to the launcher in one parcel with
+     * all its pictures, well inside Android's allowance; older phones get the same cards from the service. A tap
+     * on a card opens that move in the app, and a new deck in the morning starts the list again from the top.
      */
     @Test
-    fun carouselStack() {
+    fun carouselList() {
         val json = File("../../radar.json").readText()
         File(ctx.filesDir, "radar.json").writeText(json)
         val deck = Radar.parse(json).deck
-        val stack = CarouselFactory(ctx, 7).apply { onCreate() }
-        org.junit.Assert.assertEquals(deck.size, stack.count)
-        listOf(0, 4, stack.count - 1).forEach { stack.getViewAt(it) }
-        // A card travels to the launcher in a parcel, its picture with it, and comes out whole.
+        val d = Dims(360, 420)
+        val views = CarouselWidget().buildFor(ctx, null, d, android.appwidget.AppWidgetManager.INVALID_APPWIDGET_ID)
         val parcel = android.os.Parcel.obtain()
-        stack.getViewAt(4).writeToParcel(parcel, 0)
+        views.writeToParcel(parcel, 0)
         parcel.setDataPosition(0)
-        val card = android.widget.RemoteViews(parcel).apply(ctx, android.widget.FrameLayout(ctx))
+        val root = android.widget.RemoteViews(parcel).apply(ctx, android.appwidget.AppWidgetHostView(ctx))
         parcel.recycle()
-        val art = (card.findViewById<android.widget.ImageView>(R.id.art).drawable as android.graphics.drawable.BitmapDrawable).bitmap
-        org.junit.Assert.assertTrue(art.width > 100 && art.height > 100)
-        val tap = CarouselWidget.openTemplate(ctx).let { Intent(ctx, MainActivity::class.java) }
+        val list = root.findViewById<android.widget.ListView>(R.id.list)
+        org.junit.Assert.assertEquals(minOf(deck.size, CarouselWidget.MAX_CARDS), list.adapter.count)
+        val card = list.adapter.getView(4, null, list)
+        val name = (card.findViewById<android.widget.ImageView>(R.id.name).drawable as android.graphics.drawable.BitmapDrawable).bitmap
+        org.junit.Assert.assertEquals(android.graphics.Bitmap.Config.ALPHA_8, name.config)
+        // Every card's pictures together take less than half of what Android allows a widget.
+        val dm = ctx.resources.displayMetrics
+        val bytes = deck.take(CarouselWidget.MAX_CARDS).sumOf { CarouselWidget.card(ctx, it, inc.axon.radar.ui.Ink.Colour, d).second }
+        org.junit.Assert.assertTrue("cards take $bytes bytes", bytes < 3L * dm.widthPixels * dm.heightPixels)
+
+        val older = CarouselFactory(ctx, 7).apply { onCreate() }
+        org.junit.Assert.assertEquals(minOf(deck.size, CarouselWidget.MAX_CARDS), older.count)
+        listOf(0, 4, older.count - 1).forEach { older.getViewAt(it) }
+        val tap = Intent(ctx, MainActivity::class.java)
         tap.fillIn(CarouselWidget.fillIn("move", deck[3].id), 0)
         org.junit.Assert.assertEquals(Link("move", deck[3].id), Link.from(tap))
         org.junit.Assert.assertTrue(CarouselWidget.newDeck(ctx, 7, deck.first().id))
         org.junit.Assert.assertFalse(CarouselWidget.newDeck(ctx, 7, deck.first().id))
         org.junit.Assert.assertTrue(CarouselWidget.newDeck(ctx, 7, "new-move"))
         org.junit.Assert.assertTrue(CarouselWidget.newDeck(ctx, 8, deck.first().id))
-        // The arrows' broadcast moves the stack; on a widget that is gone it does nothing.
+        // The arrows' broadcast scrolls the list; on a widget that is gone it does nothing.
         CarouselWidget().onReceive(ctx, Intent(ctx, CarouselWidget::class.java).setAction(CarouselWidget.ACTION_STEP)
             .putExtra(android.appwidget.AppWidgetManager.EXTRA_APPWIDGET_ID, 7).putExtra(CarouselWidget.EXTRA_DIR, 1))
     }
