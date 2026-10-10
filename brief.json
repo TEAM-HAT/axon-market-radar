@@ -1,14 +1,19 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-09T23:44:15+03:00",
-  "next_run": "2026-10-10T06:54:00+03:00",
-  "window_start": "2026-10-03",
-  "window_end": "2026-10-09",
+  "updated_at": "2026-10-10T06:59:30+03:00",
+  "next_run": "2026-10-11T06:54:00+03:00",
+  "window_start": "2026-10-04",
+  "window_end": "2026-10-10",
   "week": 41,
-  "count": 21,
-  "new_today": 15,
-  "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users as Anchorage bought Routable and Rain and Modern Treasury sought OCC trust charters. Europe gave licensed firms **three months to unwind unauthorised stablecoins**.",
+  "count": 24,
+  "new_today": 3,
+  "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users as Anchorage bought Routable and more crypto firms sought OCC trust charters. Europe gave licensed firms **three months to unwind unauthorised stablecoins**.",
   "mix": [
+    {
+      "type": "Partnership",
+      "n": 7,
+      "label": "partnerships"
+    },
     {
       "type": "Regulation",
       "n": 6,
@@ -18,11 +23,6 @@
       "type": "Launch",
       "n": 5,
       "label": "launches"
-    },
-    {
-      "type": "Partnership",
-      "n": 4,
-      "label": "partnerships"
     },
     {
       "type": "License",
@@ -40,19 +40,43 @@
       "label": "M&A deal"
     }
   ],
-  "mix_text": "6 regulatory actions · 5 launches · 4 partnerships · 3 licences · 2 funding rounds · 1 M&A deal",
+  "mix_text": "7 partnerships · 6 regulatory actions · 5 launches · 3 licences · 2 funding rounds · 1 M&A deal",
   "regions": {
     "Europe": 6,
-    "Middle East": 7,
-    "North America": 7,
-    "Global": 1
+    "Middle East": 6,
+    "North America": 8,
+    "Global": 4
   },
   "groups": {
     "regulatory": 9,
     "capital": 3,
-    "commercial": 9
+    "commercial": 12
   },
   "moves": [
+    {
+      "id": "ncua-call-report-stablecoin-2026-10-09",
+      "date": "2026-10-09",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "NCUA",
+      "company": "NCUA",
+      "title": "NCUA proposes stablecoin data fields for credit union call reports",
+      "source_name": "Bitcoin.com News",
+      "source_url": "https://news.bitcoin.com/regulation-and-legal/credit-unions-could-face-26-new-stablecoin-reporting-fields"
+    },
+    {
+      "id": "nium-redotpay-2026-10-08",
+      "date": "2026-10-08",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Nium",
+      "title": "Nium to run fiat payouts for RedotPay's stablecoin users",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/nium-and-redotpay-partner-on-stablecoin-off-ramp-payouts"
+    },
     {
       "id": "immix-funding-2026-10-08",
       "date": "2026-10-08",
@@ -100,34 +124,34 @@
       "title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
       "source_name": "ESMA",
       "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
-    },
-    {
-      "id": "samsung-wallet-usdc-2026-10-07",
-      "date": "2026-10-07",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "Samsung",
-      "title": "Samsung Wallet to add USDC transfers for 82m US Galaxy devices",
-      "source_name": "Unchained",
-      "source_url": "https://unchainedcrypto.com/samsung-wallet-brings-usdc-transfers-to-82-million-us-galaxy-devices-in-late-october/"
-    },
-    {
-      "id": "noah-seed-2026-10-07",
-      "date": "2026-10-07",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Noah",
-      "title": "London's Noah adds $16m, taking stablecoin payments seed to $38m",
-      "source_name": "Tech.eu",
-      "source_url": "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round"
     }
   ],
   "latest": [
     {
+      "id": "ncua-call-report-stablecoin-2026-10-09",
+      "date": "2026-10-09",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "NCUA",
+      "company": "NCUA",
+      "title": "NCUA proposes stablecoin data fields for credit union call reports",
+      "source_name": "Bitcoin.com News",
+      "source_url": "https://news.bitcoin.com/regulation-and-legal/credit-unions-could-face-26-new-stablecoin-reporting-fields"
+    },
+    {
+      "id": "nium-redotpay-2026-10-08",
+      "date": "2026-10-08",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Nium",
+      "title": "Nium to run fiat payouts for RedotPay's stablecoin users",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/nium-and-redotpay-partner-on-stablecoin-off-ramp-payouts"
+    },
+    {
       "id": "immix-funding-2026-10-08",
       "date": "2026-10-08",
       "type": "Funding",
@@ -176,52 +200,28 @@
       "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     },
     {
-      "id": "samsung-wallet-usdc-2026-10-07",
-      "date": "2026-10-07",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "Samsung",
-      "title": "Samsung Wallet to add USDC transfers for 82m US Galaxy devices",
-      "source_name": "Unchained",
-      "source_url": "https://unchainedcrypto.com/samsung-wallet-brings-usdc-transfers-to-82-million-us-galaxy-devices-in-late-october/"
-    },
-    {
-      "id": "noah-seed-2026-10-07",
-      "date": "2026-10-07",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Noah",
-      "title": "London's Noah adds $16m, taking stablecoin payments seed to $38m",
-      "source_name": "Tech.eu",
-      "source_url": "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round"
-    },
-    {
-      "id": "circle-europe-tereina-sap-2026-10-07",
+      "id": "polygon-tron-open-money-stack-2026-10-07",
       "date": "2026-10-07",
       "type": "Partnership",
       "type_label": "Partnership",
       "region": "Global",
       "regulator": null,
-      "company": "Circle (Circle Internet Financial Europe)",
-      "title": "Circle and SAP-backed Tereina to bring USDC and EURC to SAP Pay",
-      "source_name": "Circle",
-      "source_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
+      "company": "Polygon Labs",
+      "title": "Polygon adds TRON's USDT to its Open Money Stack payments platform",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/business/2026/10/07/polygon-and-tron-partner-to-bridge-usd94-billion-usdt-ecosystem-with-u-s-banking-rails"
     },
     {
-      "id": "zerohash-tempo-2026-10-06",
-      "date": "2026-10-06",
+      "id": "mesh-wlfi-usd1-2026-10-07",
+      "date": "2026-10-07",
       "type": "Partnership",
       "type_label": "Partnership",
-      "region": "North America",
+      "region": "Global",
       "regulator": null,
-      "company": "zerohash",
-      "title": "zerohash becomes a Tempo validator and infrastructure partner",
-      "source_name": "Tempo",
-      "source_url": "https://tempo.xyz/blog/zerohash-joins-tempo-as-a-validator-and-infrastructure-partner/"
+      "company": "Mesh",
+      "title": "World Liberty and Mesh plan USD1 spending at online merchants",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/trump-backed-wlfi-plans-usd1-payments-for-online-businesses"
     }
   ],
   "companies": [
@@ -231,10 +231,21 @@
       "segment": "Issuer",
       "country": "El Salvador",
       "region": "Global",
-      "moves_30d": 2,
+      "moves_30d": 3,
       "last_date": "2026-10-08",
       "last_title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
       "last_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
+    },
+    {
+      "id": "circle",
+      "name": "Circle",
+      "segment": "Issuer",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 2,
+      "last_date": "2026-09-22",
+      "last_title": "Binance buys $100m of Circle shares and renews USDC deal",
+      "last_url": "https://circle.com/pressroom/binance-invests-100-million-in-circle-expands-strategic-partnership-and-renews-commercial-agreement-for-five-years"
     },
     {
       "id": "ripple",
@@ -259,6 +270,17 @@
       "last_url": "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round"
     },
     {
+      "id": "mesh",
+      "name": "Mesh",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 1,
+      "last_date": "2026-10-07",
+      "last_title": "World Liberty and Mesh plan USD1 spending at online merchants",
+      "last_url": "https://cointelegraph.com/news/trump-backed-wlfi-plans-usd1-payments-for-online-businesses"
+    },
+    {
       "id": "circle-europe",
       "name": "Circle (Circle Internet Financial Europe)",
       "segment": "Issuer",
@@ -268,31 +290,21 @@
       "last_date": "2026-10-07",
       "last_title": "Circle and SAP-backed Tereina to bring USDC and EURC to SAP Pay",
       "last_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
-    },
-    {
-      "id": "zerohash",
-      "name": "zerohash",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 1,
-      "last_date": "2026-10-06",
-      "last_title": "zerohash becomes a Tempo validator and infrastructure partner",
-      "last_url": "https://tempo.xyz/blog/zerohash-joins-tempo-as-a-validator-and-infrastructure-partner/"
-    },
-    {
-      "id": "schuman-financial",
-      "name": "Schuman Financial",
-      "segment": "Issuer",
-      "country": "Switzerland",
-      "region": "Europe",
-      "moves_30d": 1,
-      "last_date": "2026-10-05",
-      "last_title": "Eleven firms form Eurøpe Consortium to push Schuman's EURØP",
-      "last_url": "https://schuman.io/blog/europe-consortium-launch-euro-onchain-finance/"
     }
   ],
   "licences": [
+    {
+      "id": "ncua-call-report-stablecoin-2026-10-09",
+      "date": "2026-10-09",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "NCUA",
+      "company": "NCUA",
+      "title": "NCUA proposes stablecoin data fields for credit union call reports",
+      "source_name": "Bitcoin.com News",
+      "source_url": "https://news.bitcoin.com/regulation-and-legal/credit-unions-could-face-26-new-stablecoin-reporting-fields"
+    },
     {
       "id": "esma-unauthorised-stablecoins-2026-10-08",
       "date": "2026-10-08",
@@ -352,21 +364,15 @@
       "title": "Modern Treasury applies to the OCC for a national trust bank",
       "source_name": "Crypto Briefing",
       "source_url": "https://cryptobriefing.com/modern-treasury-occ-trust-bank-charter/"
-    },
-    {
-      "id": "fincen-unhosted-wallet-withdrawal-2026-10-05",
-      "date": "2026-10-05",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "FinCEN",
-      "company": "FinCEN",
-      "title": "FinCEN withdraws unhosted-wallet and crypto-mixer proposals",
-      "source_name": "The Block",
-      "source_url": "https://www.theblock.co/news/regulation/2026-10-05-fincen-drops-crypto-mixing-rule-self-hosted-wallet-proposal-417690"
     }
   ],
   "regulators": [
+    {
+      "name": "OCC",
+      "where": "United States",
+      "licences": 7,
+      "actions": 2
+    },
     {
       "name": "CBUAE",
       "where": "UAE",
@@ -390,61 +396,55 @@
       "where": "Abu Dhabi",
       "licences": 2,
       "actions": 1
-    },
-    {
-      "name": "AMF",
-      "where": "France",
-      "licences": 2,
-      "actions": 0
     }
   ],
   "trends": {
     "since": "2025-10",
-    "total": 100,
-    "licences": 26,
-    "regulatory_actions": 13,
-    "commercial": 46,
-    "capital": 15,
+    "total": 140,
+    "licences": 32,
+    "regulatory_actions": 23,
+    "commercial": 63,
+    "capital": 22,
     "months": [
       {
         "m": "2025-10",
-        "n": 2
+        "n": 3
       },
       {
         "m": "2025-11",
-        "n": 8
+        "n": 11
       },
       {
         "m": "2025-12",
-        "n": 4
-      },
-      {
-        "m": "2026-01",
-        "n": 7
-      },
-      {
-        "m": "2026-02",
-        "n": 9
-      },
-      {
-        "m": "2026-03",
-        "n": 2
-      },
-      {
-        "m": "2026-04",
-        "n": 5
-      },
-      {
-        "m": "2026-05",
         "n": 8
       },
       {
+        "m": "2026-01",
+        "n": 9
+      },
+      {
+        "m": "2026-02",
+        "n": 13
+      },
+      {
+        "m": "2026-03",
+        "n": 7
+      },
+      {
+        "m": "2026-04",
+        "n": 8
+      },
+      {
+        "m": "2026-05",
+        "n": 10
+      },
+      {
         "m": "2026-06",
-        "n": 6
+        "n": 7
       },
       {
         "m": "2026-07",
-        "n": 6
+        "n": 9
       },
       {
         "m": "2026-08",
@@ -452,11 +452,11 @@
       },
       {
         "m": "2026-09",
-        "n": 14
+        "n": 21
       },
       {
         "m": "2026-10",
-        "n": 21
+        "n": 26
       }
     ],
     "partial_last": true
