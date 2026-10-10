@@ -102,7 +102,7 @@ object Fmt {
         html(escape(raw ?: "").replace(Regex("\\*\\*(.+?)\\*\\*"), "<b><font color=\"#FFFFFF\">$1</font></b>"))
 
     /** "LICENCE · VARA · 5 OCT" with the type picked out in colour. */
-    fun meta(type: String, extra: String?, iso: String?, color: String = "#2852EA"): Spanned {
+    fun meta(type: String, extra: String?, iso: String?, color: String = "#061AD3"): Spanned {
         val parts = listOfNotNull(extra?.takeIf { it.isNotBlank() }, day(iso).takeIf { it.isNotBlank() })
         val rest = if (parts.isEmpty()) "" else " · " + parts.joinToString(" · ") { escape(it) }
         return html("<font color=\"$color\">${escape(type)}</font>$rest")

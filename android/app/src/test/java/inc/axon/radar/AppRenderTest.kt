@@ -18,6 +18,7 @@ import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Store
 import inc.axon.radar.ui.Ink
 import inc.axon.radar.ui.Link
+import inc.axon.radar.ui.Loading
 import inc.axon.radar.ui.LocalInk
 import inc.axon.radar.ui.Look
 import inc.axon.radar.ui.RadarApp
@@ -67,6 +68,18 @@ class AppRenderTest {
         link.value = Link("about"); shot("07-about", look)
     }
 
+    /** The first launch, before any data: the logo on its blue (black in black and white), then the retry. */
+    private fun loading(look: Look) {
+        val failed = mutableStateOf(false)
+        rule.setContent { CompositionLocalProvider(LocalInk provides Ink.of(look)) { Loading(failed.value) {} } }
+        shot("00-loading", look)
+        failed.value = true
+        shot("00-loading-failed", look)
+    }
+
+    @Test fun loadingInColour() = loading(Look.Colour)
+    @Test fun loadingInBlackAndWhite() = loading(Look.Mono)
+
     @Test fun everyScreenInColour() = everyScreen(Look.Colour)
     @Test fun everyScreenInBlackAndWhite() = everyScreen(Look.Mono)
 
@@ -92,7 +105,7 @@ class AppRenderTest {
         shot("41-picker", look)
         // The picker lies over the Watching page, so its rows are the last match.
         listOf("Ripple", "Tether", "Noah", "zerohash", "Schuman Financial").forEach { rule.onAllNodesWithText(it).onLast().performClick() }
-        rule.onNodeWithText("Search 40 companies").performTextInput("bank")
+        rule.onNodeWithText("Search ${radar.companies.size} companies").performTextInput("bank")
         shot("42-picker-search", look)
         link.value = Link("watch")
         shot("43-watch-boxes", look)

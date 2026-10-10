@@ -3,7 +3,6 @@
 <resources>
     <color name="mono_blue">#000000</color> <!-- brand surfaces, and accents on white -->
     <color name="mono_blue_deep">#111111</color> <!-- initials on the light squares -->
-    <color name="mono_blue_wedge">#3A3A3A</color> <!-- launcher icon wedge (unused in widgets) -->
     <color name="mono_sky">#C9C9C9</color> <!-- accents on black -->
     <color name="mono_pale">#E8E8E8</color> <!-- initials squares, ring in the mark -->
     <color name="mono_mist">#F0F0F0</color> <!-- band behind the regions -->

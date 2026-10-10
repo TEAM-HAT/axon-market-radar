@@ -29,6 +29,7 @@ object Palette {
 
     val Black = Color(0xFF000000)
     val White = Color(0xFFFFFFFF)
+    val Brand = Color(0xFF061AD3)      // the Radar logo's blue: the loading screen
     val Paper = Color(0xFFD6D6D6)      // directory screens
     val Row = Color(0xFFDEDEDE)        // list rows on paper
     val Rule = Color(0xFFC9C9C9)
@@ -153,7 +154,6 @@ class Ink private constructor(val look: Look) {
     // The directory screens keep the inspiration's light grey in both looks; the tab bar turns black.
     val bar: Color get() = if (mono) Palette.Black else Palette.Bar
     val night: Color get() = if (mono) Palette.Black else Palette.Night
-    val brand: Color get() = if (mono) Palette.White else Palette.Yellow
 
     companion object {
         val Colour = Ink(Look.Colour)

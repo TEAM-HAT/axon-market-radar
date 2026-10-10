@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="114" fill="#2852EA"/>  <path d="M256 256 L204.7 115.05 A150 150 0 0 1 362.07 149.93 Z" fill="#4C71F2"/>
-  <circle cx="256" cy="256" r="150" fill="none" stroke="#77A1FD" stroke-width="12"/>
-  <circle cx="256" cy="256" r="86" fill="none" stroke="#77A1FD" stroke-width="12"/>
-  <line x1="256" y1="256" x2="362.07" y2="149.93" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round"/>
-  <rect x="292.9" y="136.1" width="26" height="26" rx="3" transform="rotate(45 305.9 149.1)" fill="#FFFFFF" stroke="#2852EA" stroke-width="6"/>
-  <rect x="205.7" y="349.3" width="24" height="24" rx="3" fill="#FFFFFF" stroke="#2852EA" stroke-width="6"/>
-  <circle cx="139.5" cy="213.6" r="13" fill="#FFFFFF" stroke="#2852EA" stroke-width="6"/>
-  <circle cx="256" cy="256" r="20" fill="#FFFFFF"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="14.317" fill="#061AD3"/><path fill="#FFFFFF" d="M21.12 50.845A21.76 21.76 0 1 1 43.456 50.5L41.025 47.728A18.133 18.133 0 1 0 21.12 46.507ZM21.12 22.405A14.507 14.507 0 0 0 21.12 41.595ZM22.405 21.12A14.507 14.507 0 1 1 38.572 44.932L36.077 42.087A10.88 10.88 0 0 0 32 21.12Z"/></svg>

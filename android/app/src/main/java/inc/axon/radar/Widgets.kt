@@ -124,8 +124,8 @@ abstract class RadarWidget : AppWidgetProvider() {
 
     companion object {
         const val ACTION_REFRESH = "inc.axon.radar.action.REFRESH"
-        private const val BLUE = "#2852EA"
-        private const val SKY = "#77A1FD"
+        private const val BLUE = "#061AD3"
+        private const val SKY = "#9AA6FF"
 
         fun mono(ctx: Context): Boolean = Store.look(ctx) == Look.Mono
 

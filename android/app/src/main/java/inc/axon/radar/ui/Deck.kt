@@ -149,9 +149,7 @@ fun Deck(radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore:
 
         // Top line: the date and how many moves the deck holds.
         Row(Modifier.padding(top = top + 14.dp, start = 18.dp, end = 18.dp).fillMaxWidth().zIndex(600f), verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.size(18.dp).background(Palette.White, RoundedCornerShape(3.dp)), contentAlignment = Alignment.Center) {
-                Ico(Icons.Play, Palette.Black, 11.dp)
-            }
+            RadarMark(Palette.White, 18.dp)
             Spacer(Modifier.width(10.dp))
             T("${Text.dowDay(radar.windowEnd)} · ${Text.plural(radar.count, "move", "moves")} in 7 days".uppercase(), Type.Caps, Palette.White.copy(alpha = 0.75f), Modifier.weight(1f), maxLines = 1)
             if (radar.newToday > 0) {

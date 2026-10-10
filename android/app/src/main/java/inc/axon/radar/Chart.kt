@@ -18,7 +18,7 @@ import kotlin.math.min
  */
 object Chart {
     private class Colours(val bar: Int, val ink: Int, val ink3: Int, val line: Int, val paper: Int)
-    private val COLOUR = Colours(0xFF2852EA.toInt(), 0xFF101325.toInt(), 0xFF646A80.toInt(), 0xFFE3E6EF.toInt(), 0xFFFFFFFF.toInt())
+    private val COLOUR = Colours(0xFF061AD3.toInt(), 0xFF101325.toInt(), 0xFF646A80.toInt(), 0xFFE3E6EF.toInt(), 0xFFFFFFFF.toInt())
     private val MONO = Colours(0xFF000000.toInt(), 0xFF000000.toInt(), 0xFF6E6E6E.toInt(), 0xFFE4E4E4.toInt(), 0xFFFFFFFF.toInt())
     private const val INITIALS = "JFMAMJJASOND"
 

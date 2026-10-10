@@ -227,7 +227,7 @@ fun AboutScreen(
     look: Look, onLook: (Look) -> Unit, bottomInset: Dp,
 ) {
     PaperList(bottomInset) {
-        item { Titles(listOf("Radar"), 0) {} }
+        item { RadarLockup(Palette.Black, 56.dp, Modifier.padding(start = 14.dp, top = 12.dp, bottom = 18.dp)) }
         item {
             Column(Modifier.padding(horizontal = 14.dp)) {
                 T(androidx.compose.ui.text.AnnotatedString("Stablecoin and blockchain payments moves in Europe, the Middle East and North America, checked against their sources every morning."), Type.Lead, Palette.Ink2)
@@ -337,14 +337,16 @@ private fun MiniDeck(moves: List<Move>, ink: Ink, modifier: Modifier) {
 /** Shown once, before the first copy of the radar has arrived. */
 @Composable
 fun Loading(failed: Boolean, onRetry: () -> Unit) {
-    Box(Modifier.fillMaxSize().background(Palette.Black).padding(20.dp)) {
+    // The logo on its own blue, or on black in black and white.
+    val bg = if (LocalInk.current.mono) Palette.Black else Palette.Brand
+    Box(Modifier.fillMaxSize().background(bg).padding(24.dp)) {
         Column(Modifier.align(Alignment.CenterStart)) {
-            T("Market\nRadar", Type.display(64f), LocalInk.current.brand)
-            Spacer(Modifier.height(16.dp))
+            RadarLockup(Palette.White, 54.dp, description = "Market Radar")
+            Spacer(Modifier.height(26.dp))
             T(if (failed) "The radar couldn't be reached. Check the connection and try again." else "Loading the radar…", Type.Lead, Palette.White)
             if (failed) {
                 Spacer(Modifier.height(20.dp))
-                T("Try again", Type.Tab, Palette.Black, Modifier.clip(RoundedCornerShape(3.dp)).background(Palette.White).tap(onRetry).padding(horizontal = 16.dp, vertical = 14.dp))
+                T("Try again", Type.Tab, bg, Modifier.clip(RoundedCornerShape(3.dp)).background(Palette.White).tap(onRetry).padding(horizontal = 16.dp, vertical = 14.dp))
             }
         }
     }
