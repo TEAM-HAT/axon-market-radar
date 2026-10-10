@@ -546,8 +546,9 @@ write("widget_carousel_preview.xml", f'''
     </LinearLayout>
 </FrameLayout>''', twin=False)
 
-# The carousel itself: the same header and controls, with the cards in a list the launcher
-# scrolls under your finger. Each card is filled by CarouselService and sized to the widget.
+# The carousel itself, as the app's deck: folded cards above, the open card, and the waiting cards
+# stacked below. The open card and the folded ones are fixed; the stack is a list the launcher
+# scrolls under your finger, filled by CarouselService. A tap on a stacked card brings it to the front.
 write("widget_carousel.xml", f'''
 <FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/bg_deck" android:clipToOutline="true">
@@ -565,42 +566,61 @@ write("widget_carousel.xml", f'''
             <ImageView android:id="@+id/grid" android:layout_width="36dp" android:layout_height="36dp" android:padding="9dp" android:layout_marginTop="6dp" android:layout_marginBottom="6dp" android:src="@drawable/ic_deck_grid" android:contentDescription="Open in the app" />
             <ImageView android:id="@+id/down" android:layout_width="36dp" android:layout_height="36dp" android:padding="8dp" android:src="@drawable/ic_deck_down" android:contentDescription="Next card" />
         </LinearLayout>
-        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:paddingEnd="12dp">
-            <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent"
-                android:divider="@null" android:dividerHeight="0dp" android:listSelector="@android:color/transparent"
-                android:cacheColorHint="#00000000" android:scrollbars="none" android:clipToPadding="false" android:paddingBottom="12dp" />
-            {tv("empty", "Loading the latest moves…", "13sp", "deck_dim", family="sans-serif", w="match_parent", h="match_parent", extra='android:gravity="center"')}
-        </FrameLayout>
+        <LinearLayout android:id="@+id/cards" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical"
+            android:paddingEnd="12dp">
+            <LinearLayout android:id="@+id/prev" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                {strip("p2", "Rain", "yellow")}
+                {strip("p1", "IMMIX", "crimson")}
+            </LinearLayout>
+            <LinearLayout android:id="@+id/open" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="58"
+                android:background="@drawable/card_royal" android:orientation="vertical" android:padding="9dp">
+                {big("name", "ESMA", "38sp", "deck_black", lines=2)}
+                <FrameLayout android:id="@+id/panel" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp"
+                    android:background="@drawable/panel_black" android:padding="10dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                        <ImageView android:id="@+id/glyph" android:layout_width="8dp" android:layout_height="8dp" android:importantForAccessibility="no" android:src="@drawable/g_dia" android:tint="@color/deck_royal" />
+                        {eyebrow("label", "Regulation", "deck_royal", size="9.5sp", w="0dp", extra='android:layout_weight="1" android:layout_marginStart="6dp" android:letterSpacing="0.08"')}
+                        {eyebrow("pos", "04/21", "deck_faint", size="9.5sp", extra='android:layout_marginStart="8dp" android:letterSpacing="0.08"')}
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:orientation="vertical">
+                        {big("figure", "8 Oct", "44sp", "deck_royal", extra='android:textAllCaps="true"')}
+                        {tv("title", "ESMA sets three-month wind-down for unauthorised stablecoin services", "12.5sp", "white", family="sans-serif", lines=3, w="match_parent", extra='android:layout_marginTop="6dp" android:lineSpacingMultiplier="1.05"')}
+                        {eyebrow("date", "8 Oct 2026", "deck_faint", size="9sp", extra='android:layout_marginTop="5dp" android:letterSpacing="0.08"')}
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="42">
+                <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:divider="@null" android:dividerHeight="0dp" android:listSelector="@android:color/transparent"
+                    android:cacheColorHint="#00000000" android:scrollbars="none" />
+                <LinearLayout android:id="@+id/end" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
+                    android:paddingStart="2dp" android:paddingTop="14dp">
+                    {eyebrow("end_title", "End of the week", "deck_dim", size="9.5sp", extra='android:letterSpacing="0.1"')}
+                    {tv("end_more", "Older moves are in the app →", "13sp", "white", family="sans-serif", extra='android:layout_marginTop="4dp"')}
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>''', twin=False)
 
-# One card of the list, as the app draws the open card. Its height is set from code to suit the widget.
-write("widget_carousel_card.xml", f'''
-<LinearLayout {NS} android:id="@+id/item" android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:orientation="vertical" android:paddingBottom="8dp">
-    <LinearLayout android:id="@+id/card" android:layout_width="match_parent" android:layout_height="300dp"
-        android:background="@drawable/card_royal" android:orientation="vertical" android:padding="9dp">
-        {big("name", "ESMA", "38sp", "deck_black", lines=2)}
-        <FrameLayout android:id="@+id/panel" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp"
-            android:background="@drawable/panel_black" android:padding="10dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-                <ImageView android:id="@+id/glyph" android:layout_width="8dp" android:layout_height="8dp" android:importantForAccessibility="no" android:src="@drawable/g_dia" android:tint="@color/deck_royal" />
-                {eyebrow("label", "Regulation", "deck_royal", size="9.5sp", w="0dp", extra='android:layout_weight="1" android:layout_marginStart="6dp" android:letterSpacing="0.08"')}
-                {eyebrow("pos", "05/21", "deck_faint", size="9.5sp", extra='android:layout_marginStart="8dp" android:letterSpacing="0.08"')}
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:orientation="vertical">
-                {big("figure", "8 Oct", "44sp", "deck_royal", extra='android:textAllCaps="true"')}
-                {tv("title", "ESMA sets three-month wind-down for unauthorised stablecoin services", "12.5sp", "white", family="sans-serif", lines=3, w="match_parent", extra='android:layout_marginTop="6dp" android:lineSpacingMultiplier="1.05"')}
-                {eyebrow("date", "8 Oct 2026", "deck_faint", size="9sp", extra='android:layout_marginTop="5dp" android:letterSpacing="0.08"')}
-            </LinearLayout>
+# One waiting card in the stack: its name and the top of its block with the kind, as the app's deck
+# shows the cards below the open one.
+write("widget_carousel_strip.xml", f'''
+<LinearLayout {NS} android:id="@+id/item" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+    <LinearLayout android:id="@+id/strip" android:layout_width="match_parent" android:layout_height="78dp"
+        android:background="@drawable/strip_sage" android:orientation="vertical" android:paddingStart="9dp" android:paddingTop="9dp" android:paddingEnd="9dp">
+        {big("s_name", "Bringin", "30sp", "deck_black")}
+        <FrameLayout android:id="@+id/s_panel" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="7dp"
+            android:background="@drawable/panel_black" android:paddingStart="10dp" android:paddingTop="7dp" android:paddingEnd="10dp">
+            {label_row("s_", "Launch", "deck_sage", "g_dot")}
         </FrameLayout>
     </LinearLayout>
 </LinearLayout>''', twin=False)
 
-# Shown for a moment while a card loads: a dark card of the same height.
+# Shown for a moment while a stacked card loads: a dark slice of the same height.
 write("widget_carousel_loading.xml", f'''
-<LinearLayout {NS} android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="8dp">
-    <FrameLayout android:layout_width="match_parent" android:layout_height="300dp" android:background="@drawable/card_black" />
+<LinearLayout {NS} android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="78dp" android:background="@drawable/strip_black" />
 </LinearLayout>''', twin=False)
 
 

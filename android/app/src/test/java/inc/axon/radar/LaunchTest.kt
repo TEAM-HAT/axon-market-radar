@@ -62,21 +62,28 @@ class LaunchTest {
         assertFalse(activity.isFinishing)
     }
 
-    /** The carousel's list holds one card per move in the deck, and each card opens its own move. */
+    /**
+     * The carousel's stack holds every card after the front one; a tap on one brings it to the front of
+     * that widget only, and a new deck in the morning starts again from the newest card.
+     */
     @Test
-    fun carouselListHasEveryCard() {
+    fun carouselStackAndFocus() {
         val json = File("../../radar.json").readText()
         File(ctx.filesDir, "radar.json").writeText(json)
         val deck = Radar.parse(json).deck
-        val factory = CarouselFactory(ctx, android.appwidget.AppWidgetManager.INVALID_APPWIDGET_ID)
-        factory.onCreate()
-        org.junit.Assert.assertEquals(deck.size, factory.count)
-        org.junit.Assert.assertEquals(deck[3].id, CarouselWidget.fillIn(deck[3]).getStringExtra(Link.EXTRA_ID))
-        // Building every card must not throw, at the top, middle and end.
-        listOf(0, deck.size / 2, deck.lastIndex).forEach { factory.getViewAt(it) }
-        // An arrow tap for a widget that is gone does nothing rather than crash.
-        CarouselWidget().onReceive(ctx, Intent(ctx, CarouselWidget::class.java).setAction(CarouselWidget.ACTION_SCROLL)
-            .putExtra(android.appwidget.AppWidgetManager.EXTRA_APPWIDGET_ID, 7).putExtra(CarouselWidget.EXTRA_DELTA, 1))
+        val ids = deck.map { it.id }
+        org.junit.Assert.assertEquals(deck.size - 1, CarouselFactory(ctx, 7).apply { onCreate() }.count)
+        // A tap on the fourth card's slice, through the stack's template.
+        val tap = Intent(ctx, CarouselWidget::class.java).setAction(CarouselWidget.ACTION_FOCUS)
+            .putExtra(android.appwidget.AppWidgetManager.EXTRA_APPWIDGET_ID, 7)
+        tap.fillIn(CarouselWidget.fillIn(deck[3]), 0)
+        CarouselWidget().onReceive(ctx, tap)
+        org.junit.Assert.assertEquals(3, CarouselWidget.position(ctx, 7, ids))
+        org.junit.Assert.assertEquals(0, CarouselWidget.position(ctx, 8, ids))
+        val stack = CarouselFactory(ctx, 7).apply { onCreate() }
+        org.junit.Assert.assertEquals(deck.size - 4, stack.count)
+        listOf(0, stack.count - 1).forEach { stack.getViewAt(it) }
+        org.junit.Assert.assertEquals(0, CarouselWidget.position(ctx, 7, listOf("new-move") + ids))
     }
 
     @Test

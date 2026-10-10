@@ -46,12 +46,13 @@ The colour look is unchanged.
 | Licences | 4 x 4 | The busiest regulators, then the newest licences and rules | That move |
 | Trends | 4 x 3 | The year's totals and moves per month | Trends |
 | Dashboard | 4 x 5 | Briefing, regions, latest moves, companies, regulators, trend | The part you tap |
-| Carousel | 4 x 4 | The app's deck of cards, one card at a time with the next peeking in | Swipe to scroll through the cards; the arrows step one card; a card opens that move; the grid opens the app |
+| Carousel | 4 x 4 | The app's deck: folded cards above, the open card, the waiting cards stacked below | Swipe the stack to scroll it; tap a stacked or folded card to bring it to the front; tap the open card to read it; the arrows step one card; the grid opens the app's deck on that card |
 
 Every widget resizes; lists show as many rows as fit. Tap "Updated" on a widget to refresh it now.
-The carousel's cards are a list the launcher scrolls under your finger (`CarouselService` supplies them). Each card is
-sized to the widget so the next one peeks in, and its figure and text are fitted to that size. The widget picker shows
-the stacked deck as its preview (`widget_carousel_preview.xml`).
+The carousel keeps the open card and the folded ones fixed, and puts the waiting cards in a list the launcher scrolls
+under your finger (`CarouselService` supplies them), so it looks like the app's deck and still takes swipes. Each placed
+widget keeps its front card and goes back to the newest when a new deck arrives. As it gets shorter it drops folded
+cards first, and the open card's figure and text are fitted to what is left.
 The widgets and the app check for new data every hour.
 
 ## Building

@@ -16,11 +16,43 @@
             <ImageView android:id="@+id/grid" android:layout_width="36dp" android:layout_height="36dp" android:padding="9dp" android:layout_marginTop="6dp" android:layout_marginBottom="6dp" android:src="@drawable/ic_deck_grid" android:contentDescription="Open in the app" />
             <ImageView android:id="@+id/down" android:layout_width="36dp" android:layout_height="36dp" android:padding="8dp" android:src="@drawable/ic_deck_down" android:contentDescription="Next card" />
         </LinearLayout>
-        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:paddingEnd="12dp">
-            <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent"
-                android:divider="@null" android:dividerHeight="0dp" android:listSelector="@android:color/transparent"
-                android:cacheColorHint="#00000000" android:scrollbars="none" android:clipToPadding="false" android:paddingBottom="12dp" />
-            <TextView android:id="@+id/empty" android:layout_width="match_parent" android:layout_height="match_parent" android:fontFamily="sans-serif" android:text="Loading the latest moves…" android:textSize="13sp" android:textColor="@color/deck_dim" android:maxLines="1" android:ellipsize="end" android:gravity="center" />
-        </FrameLayout>
+        <LinearLayout android:id="@+id/cards" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical"
+            android:paddingEnd="12dp">
+            <LinearLayout android:id="@+id/prev" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <FrameLayout android:id="@+id/p2" android:layout_width="match_parent" android:layout_height="23dp" android:background="@drawable/strip_yellow">
+                    <TextView android:id="@+id/p2_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="sans-serif-black" android:text="Rain" android:textSize="28sp" android:textColor="@color/deck_black" android:maxLines="1" android:ellipsize="end" android:letterSpacing="-0.04" android:includeFontPadding="false" android:paddingStart="9dp" android:paddingTop="4dp" android:paddingEnd="9dp" />
+                </FrameLayout>
+                <FrameLayout android:id="@+id/p1" android:layout_width="match_parent" android:layout_height="23dp" android:background="@drawable/strip_crimson">
+                    <TextView android:id="@+id/p1_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="sans-serif-black" android:text="IMMIX" android:textSize="28sp" android:textColor="@color/deck_black" android:maxLines="1" android:ellipsize="end" android:letterSpacing="-0.04" android:includeFontPadding="false" android:paddingStart="9dp" android:paddingTop="4dp" android:paddingEnd="9dp" />
+                </FrameLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/open" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="58"
+                android:background="@drawable/card_royal" android:orientation="vertical" android:padding="9dp">
+                <TextView android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="sans-serif-black" android:text="ESMA" android:textSize="38sp" android:textColor="@color/deck_black" android:maxLines="2" android:ellipsize="end" android:letterSpacing="-0.04" android:includeFontPadding="false" />
+                <FrameLayout android:id="@+id/panel" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp"
+                    android:background="@drawable/panel_black" android:padding="10dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                        <ImageView android:id="@+id/glyph" android:layout_width="8dp" android:layout_height="8dp" android:importantForAccessibility="no" android:src="@drawable/g_dia" android:tint="@color/deck_royal" />
+                        <TextView android:id="@+id/label" android:layout_width="0dp" android:layout_height="wrap_content" android:fontFamily="sans-serif-condensed" android:text="Regulation" android:textSize="9.5sp" android:textColor="@color/deck_royal" android:textStyle="bold" android:textAllCaps="true" android:letterSpacing="0.08" android:maxLines="1" android:ellipsize="end" android:layout_weight="1" android:layout_marginStart="6dp" />
+                        <TextView android:id="@+id/pos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-condensed" android:text="04/21" android:textSize="9.5sp" android:textColor="@color/deck_faint" android:textStyle="bold" android:textAllCaps="true" android:letterSpacing="0.08" android:maxLines="1" android:ellipsize="end" android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:orientation="vertical">
+                        <TextView android:id="@+id/figure" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="sans-serif-black" android:text="8 Oct" android:textSize="44sp" android:textColor="@color/deck_royal" android:maxLines="1" android:ellipsize="end" android:letterSpacing="-0.04" android:includeFontPadding="false" android:textAllCaps="true" />
+                        <TextView android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="sans-serif" android:text="ESMA sets three-month wind-down for unauthorised stablecoin services" android:textSize="12.5sp" android:textColor="@color/white" android:maxLines="3" android:ellipsize="end" android:layout_marginTop="6dp" android:lineSpacingMultiplier="1.05" />
+                        <TextView android:id="@+id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-condensed" android:text="8 Oct 2026" android:textSize="9sp" android:textColor="@color/deck_faint" android:textStyle="bold" android:textAllCaps="true" android:letterSpacing="0.08" android:maxLines="1" android:ellipsize="end" android:layout_marginTop="5dp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="42">
+                <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:divider="@null" android:dividerHeight="0dp" android:listSelector="@android:color/transparent"
+                    android:cacheColorHint="#00000000" android:scrollbars="none" />
+                <LinearLayout android:id="@+id/end" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
+                    android:paddingStart="2dp" android:paddingTop="14dp">
+                    <TextView android:id="@+id/end_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-condensed" android:text="End of the week" android:textSize="9.5sp" android:textColor="@color/deck_dim" android:textStyle="bold" android:textAllCaps="true" android:letterSpacing="0.1" android:maxLines="1" android:ellipsize="end" />
+                    <TextView android:id="@+id/end_more" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif" android:text="Older moves are in the app →" android:textSize="13sp" android:textColor="@color/white" android:maxLines="1" android:ellipsize="end" android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>
