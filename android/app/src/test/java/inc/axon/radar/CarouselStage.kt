@@ -24,11 +24,14 @@ object CarouselStage {
             android.view.LayoutInflater.from(ctx).inflate(R.layout.widget_carousel, FrameLayout(ctx), false)
         }
         val factory = CarouselFactory(ctx, id, d).apply { onCreate() }
+        // Like RemoteViewsService, mark each card as a collection item, which is what wires up its taps.
+        val asItem = android.widget.RemoteViews::class.java.getMethod("addFlags", Int::class.javaPrimitiveType)
         stack(root).adapter = object : BaseAdapter() {
             override fun getCount() = factory.count
             override fun getItem(p: Int) = p
             override fun getItemId(p: Int) = factory.getItemId(p)
-            override fun getView(p: Int, convert: View?, parent: ViewGroup): View = factory.getViewAt(p).apply(ctx, parent)
+            override fun getView(p: Int, convert: View?, parent: ViewGroup): View =
+                factory.getViewAt(p).also { asItem.invoke(it, 2) }.apply(ctx, parent)
         }
         return root
     }

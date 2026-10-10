@@ -106,9 +106,30 @@ class WidgetRenderTest {
         listOf(Dims(360, 300), Dims(360, 360), Dims(360, 420), Dims(360, 560), Dims(270, 420)).forEach { d ->
             listOf(0, 4, deck.lastIndex).forEach { front -> renderCarousel(id, d, front, "8-carousel-${d.w}x${d.h}-front$front") }
         }
-        // The picker preview, as the launcher's widget list shows it.
-        val preview = android.view.LayoutInflater.from(ctx).inflate(R.layout.widget_carousel_preview, FrameLayout(ctx), false)
-        draw(preview, Dims(360, 420), "8-carousel-preview")
+    }
+
+    /**
+     * The picture the launcher's widget list shows for the carousel: the widget at 4 x 4, newest card open, on
+     * a clear background. With RADAR_WRITE_PREVIEW=1 it is also written into the app's resources.
+     */
+    @Test
+    fun picturesTheCarouselForThePicker() {
+        val d = Dims(360, 420)
+        val root = CarouselStage.mount(ctx, brief, d, 41)
+        CarouselStage.idle(800)
+        val drawn = Bitmap.createBitmap(root.width, root.height, Bitmap.Config.ARGB_8888)
+        root.draw(Canvas(drawn))
+        // The launcher clips the widget to its rounded background; drawing in software does not, so round it here.
+        val r = 26 * ctx.resources.displayMetrics.density
+        val bmp = Bitmap.createBitmap(root.width, root.height, Bitmap.Config.ARGB_8888)
+        Canvas(bmp).apply {
+            clipPath(android.graphics.Path().apply { addRoundRect(0f, 0f, root.width.toFloat(), root.height.toFloat(), r, r, android.graphics.Path.Direction.CW) })
+            drawBitmap(drawn, 0f, 0f, null)
+        }
+        FileOutputStream(File(out, "8-carousel-picker.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        if (System.getenv("RADAR_WRITE_PREVIEW") == "1") {
+            FileOutputStream(File("src/main/res/drawable-nodpi/widget_carousel_preview.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        }
     }
 
     private fun renderCarousel(id: Int, d: Dims, front: Int, name: String) {
@@ -135,6 +156,20 @@ class WidgetRenderTest {
         c.drawColor(0xFF1C2033.toInt())
         v.draw(c)
         FileOutputStream(File(out, "$name.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+    }
+
+    /** The carousel on first install, before any data: the app's top line, no controls, and a word on what is coming. */
+    @Test
+    fun carouselBeforeAnyData() {
+        File(ctx.filesDir, "radar.json").delete()
+        val root = CarouselStage.mount(ctx, null, Dims(360, 420), 43)
+        org.junit.Assert.assertEquals(View.INVISIBLE, root.findViewById<View>(R.id.controls).visibility)
+        org.junit.Assert.assertEquals(View.VISIBLE, root.findViewById<View>(R.id.empty).visibility)
+        val bmp = Bitmap.createBitmap(root.width, root.height, Bitmap.Config.ARGB_8888)
+        val c = Canvas(bmp)
+        c.drawColor(0xFF1C2033.toInt())
+        root.draw(c)
+        FileOutputStream(File(out, "0-empty-CarouselWidget.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
 
     /** A phone still holding last week's file (schema 1) must keep drawing until the next refresh. */

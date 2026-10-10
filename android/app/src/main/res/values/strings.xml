@@ -13,5 +13,5 @@
     <string name="widget_licences_desc">The busiest regulators and the newest licences and rules.</string>
     <string name="widget_trends_desc">Moves per month over the last year, with the mix by kind.</string>
     <string name="widget_dashboard_desc">Everything at once: the briefing, regions, latest moves, companies, regulators and the trend.</string>
-    <string name="widget_carousel_desc">The app\'s deck of cards on your home screen. Swipe up or down to move one card, and tap a card to read it.</string>
+    <string name="widget_carousel_desc">The app\'s deck of cards on your home screen. Swipe up or down to move one card, and tap the open card to read it.</string>
 </resources>

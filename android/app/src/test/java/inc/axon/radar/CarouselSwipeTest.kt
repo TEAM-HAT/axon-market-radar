@@ -22,6 +22,7 @@ import org.robolectric.annotation.LooperMode
 import java.io.File
 import java.io.FileOutputStream
 import java.time.Duration
+import kotlin.math.abs
 
 /**
  * Swipes the carousel the way a finger does on the home screen: up for the next card, down for the
@@ -140,6 +141,56 @@ class CarouselSwipeTest {
         gesture(60f, 430f, 18)
         assertEquals(1, stack.displayedChild)
     }
+
+    /**
+     * Each card that shows has a tap over exactly its stretch of the picture: the open card reads its move,
+     * any other card opens the app's deck at that card. Saves the taps drawn over the widget.
+     */
+    @Test
+    fun tapsLineUpWithTheCards() {
+        val (root, stack) = stage()
+        val deck = Store.cachedFast(ctx)!!.deck
+        val p = DeckArt.forWidget(ctx, d)
+        val origin = android.graphics.Rect().also { root.getGlobalVisibleRect(it) }
+        fun rectOf(v: View) = android.graphics.Rect().also { v.getGlobalVisibleRect(it); it.offset(-origin.left, -origin.top) }
+        listOf(0, 4).forEach { focus ->
+            stack.setDisplayedChild(focus)
+            idle(800)
+            val front = stack.currentView
+            // The picture starts at the stack card's corner: 40dp across, under the top line.
+            val art = rectOf(front.findViewById(R.id.art))
+            assertEquals((40 * den).toInt(), art.left)
+            assertEquals(p.px(p.top), art.top)
+            val zones = DeckArt.zones(deck.size, focus, p)
+            val bmp = Bitmap.createBitmap(root.width, root.height, Bitmap.Config.ARGB_8888)
+            val c = Canvas(bmp)
+            root.draw(c)
+            val pen = android.graphics.Paint().apply { style = android.graphics.Paint.Style.STROKE; strokeWidth = 3f; color = 0xFFFF2D9B.toInt() }
+            CarouselWidget.ZONES.forEachIndexed { k, id ->
+                val v = front.findViewById<View>(id)
+                val z = zones.getOrNull(k)
+                if (z == null) {
+                    assertEquals(View.GONE, v.visibility)
+                    return@forEachIndexed
+                }
+                val r = rectOf(v)
+                c.drawRect(r, pen)
+                near("zone $k left", art.left + p.cardX, r.left, 2)
+                near("zone $k width", (p.cardWpx * p.scale).toInt(), r.width(), 3)
+                near("zone $k top", art.top + z.top, r.top, 2)
+                near("zone $k bottom", art.top + z.bottom, r.bottom, 2)
+                v.performClick()
+                val opened = shadowOf(ApplicationProvider.getApplicationContext<android.app.Application>()).nextStartedActivity
+                org.junit.Assert.assertNotNull("zone $k opens the app", opened)
+                val want = if (z.index == focus) "move" else "deck"
+                assertEquals(inc.axon.radar.ui.Link(want, deck[z.index].id), inc.axon.radar.ui.Link.from(opened))
+            }
+            FileOutputStream(File(out, "taps-focus$focus.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        }
+    }
+
+    private fun near(what: String, want: Int, got: Int, slack: Int) =
+        org.junit.Assert.assertTrue("$what: want $want, got $got", abs(want - got) <= slack)
 
     /** The arrows step the stack with the same motion, through RemoteViews as the launcher applies them. */
     @Test

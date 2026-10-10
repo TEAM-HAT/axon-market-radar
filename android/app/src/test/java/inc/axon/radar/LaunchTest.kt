@@ -74,6 +74,14 @@ class LaunchTest {
         val stack = CarouselFactory(ctx, 7).apply { onCreate() }
         org.junit.Assert.assertEquals(deck.size, stack.count)
         listOf(0, 4, stack.count - 1).forEach { stack.getViewAt(it) }
+        // A card travels to the launcher in a parcel, its picture with it, and comes out whole.
+        val parcel = android.os.Parcel.obtain()
+        stack.getViewAt(4).writeToParcel(parcel, 0)
+        parcel.setDataPosition(0)
+        val card = android.widget.RemoteViews(parcel).apply(ctx, android.widget.FrameLayout(ctx))
+        parcel.recycle()
+        val art = (card.findViewById<android.widget.ImageView>(R.id.art).drawable as android.graphics.drawable.BitmapDrawable).bitmap
+        org.junit.Assert.assertTrue(art.width > 100 && art.height > 100)
         val tap = CarouselWidget.openTemplate(ctx).let { Intent(ctx, MainActivity::class.java) }
         tap.fillIn(CarouselWidget.fillIn("move", deck[3].id), 0)
         org.junit.Assert.assertEquals(Link("move", deck[3].id), Link.from(tap))
