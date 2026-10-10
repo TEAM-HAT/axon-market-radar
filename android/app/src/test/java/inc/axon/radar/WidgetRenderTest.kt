@@ -96,20 +96,54 @@ class WidgetRenderTest {
         File(out, "measure.txt").writeText(log.toString())
     }
 
-    /** The carousel at three heights, at the top of the deck, in the middle and at the end. */
+    /**
+     * The carousel the way a launcher shows it: the frame from the provider, and its list filled with the
+     * factory's cards, scrolled to the top, part-way through a swipe, and further down the deck.
+     */
     private fun carousel() {
         val deck = inc.axon.radar.data.Radar.parse(File("../../radar.json").readText()).deck
-        val w = CarouselWidget()
-        val id = 42
-        listOf(0 to "first", 4 to "middle", deck.lastIndex to "last").forEach { (i, tag) ->
-            CarouselWidget.keep(ctx, id, deck.first().id, deck[i].id)
-            listOf(Dims(360, 300), Dims(360, 360), Dims(360, 420), Dims(360, 560)).forEach { d ->
-                render(w.buildFor(ctx, brief, d, id), d, "8-carousel-$tag-${d.h}")
+        val ink = inc.axon.radar.ui.Ink.of(Store.look(ctx))
+        listOf(Dims(360, 300), Dims(360, 420), Dims(360, 560), Dims(270, 420)).forEach { d ->
+            listOf(0 to 0, 1 to 120, 4 to 0).forEach { (first, offsetDp) ->
+                renderCarousel(deck, ink, d, first, offsetDp, "8-carousel-${d.w}x${d.h}-at$first" + (if (offsetDp > 0) "-swiping" else ""))
             }
         }
-        // Narrow, as a 3 x 4 widget.
-        CarouselWidget.keep(ctx, id, deck.first().id, deck[2].id)
-        render(w.buildFor(ctx, brief, Dims(270, 420), id), Dims(270, 420), "8-carousel-narrow")
+        // The picker preview, as the launcher's widget list shows it.
+        val preview = android.view.LayoutInflater.from(ctx).inflate(R.layout.widget_carousel_preview, FrameLayout(ctx), false)
+        draw(preview, Dims(360, 420), "8-carousel-preview")
+    }
+
+    private fun renderCarousel(deck: List<inc.axon.radar.data.Move>, ink: inc.axon.radar.ui.Ink, d: Dims, first: Int, offsetDp: Int, name: String) {
+        val frame = CarouselWidget().buildFor(ctx, brief, d, 42)
+        val root = runCatching { frame.apply(ctx, FrameLayout(ctx)) }.getOrElse {
+            android.view.LayoutInflater.from(ctx).inflate(R.layout.widget_carousel, FrameLayout(ctx), false)
+        }
+        val list = root.findViewById<android.widget.ListView>(R.id.list)
+        list.adapter = object : android.widget.BaseAdapter() {
+            override fun getCount() = deck.size
+            override fun getItem(p: Int) = deck[p]
+            override fun getItemId(p: Int) = p.toLong()
+            override fun getView(p: Int, convert: View?, parent: android.view.ViewGroup): View = CarouselWidget.card(ctx, deck, p, ink, d).apply(ctx, parent)
+        }
+        root.findViewById<View>(R.id.empty).visibility = View.GONE
+        val den = ctx.resources.displayMetrics.density
+        list.setSelectionFromTop(first, -(offsetDp * den).toInt())
+        draw(root, d, name)
+    }
+
+    private fun draw(v: View, d: Dims, name: String) {
+        val den = ctx.resources.displayMetrics.density
+        val w = (d.w * den).toInt()
+        val h = (d.h * den).toInt()
+        v.measure(View.MeasureSpec.makeMeasureSpec(w, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(h, View.MeasureSpec.EXACTLY))
+        v.layout(0, 0, w, h)
+        v.measure(View.MeasureSpec.makeMeasureSpec(w, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(h, View.MeasureSpec.EXACTLY))
+        v.layout(0, 0, w, h)
+        val bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
+        val c = Canvas(bmp)
+        c.drawColor(0xFF1C2033.toInt())
+        v.draw(c)
+        FileOutputStream(File(out, "$name.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
 
     /** A phone still holding last week's file (schema 1) must keep drawing until the next refresh. */

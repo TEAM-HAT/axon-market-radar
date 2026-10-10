@@ -23,6 +23,12 @@
             </intent-filter>
         </activity>
 
+        <!-- Supplies the carousel widget's cards to the launcher, which scrolls them. -->
+        <service
+            android:name=".CarouselService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <receiver
             android:name=".CarouselWidget"
             android:exported="false"

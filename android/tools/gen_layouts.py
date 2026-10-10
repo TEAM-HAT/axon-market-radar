@@ -498,7 +498,8 @@ def next_card(id_, name, colour, label):
             </LinearLayout>'''
 
 
-write("widget_carousel.xml", f'''
+# The picker preview: the deck as a still picture, the way the app draws it.
+write("widget_carousel_preview.xml", f'''
 <FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/bg_deck" android:clipToOutline="true">
     <LinearLayout android:id="@+id/top" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical"
@@ -544,6 +545,63 @@ write("widget_carousel.xml", f'''
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>''', twin=False)
+
+# The carousel itself: the same header and controls, with the cards in a list the launcher
+# scrolls under your finger. Each card is filled by CarouselService and sized to the widget.
+write("widget_carousel.xml", f'''
+<FrameLayout {NS} android:id="@android:id/background" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_deck" android:clipToOutline="true">
+    <LinearLayout android:id="@+id/top" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical"
+        android:orientation="horizontal" android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="14dp">
+        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:importantForAccessibility="no" android:src="@drawable/deck_play" />
+        {eyebrow("eyebrow", "Fri 9 Oct · 21 moves in 7 days", "deck_dim", size="10sp", w="0dp", extra='android:layout_weight="1" android:layout_marginStart="9dp" android:letterSpacing="0.08"')}
+        {eyebrow("chip", "+15 new", "deck_black", size="9sp", extra='android:layout_marginStart="8dp" android:background="@drawable/bg_chip" android:paddingStart="5dp" android:paddingEnd="5dp" android:paddingTop="1dp" android:paddingBottom="1dp" android:letterSpacing="0.08"')}
+    </LinearLayout>
+    <LinearLayout android:id="@+id/deck" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="42dp"
+        android:orientation="horizontal">
+        <LinearLayout android:id="@+id/controls" android:layout_width="40dp" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical"
+            android:paddingBottom="12dp">
+            <ImageView android:id="@+id/up" android:layout_width="36dp" android:layout_height="36dp" android:padding="8dp" android:src="@drawable/ic_deck_up" android:contentDescription="Previous card" />
+            <ImageView android:id="@+id/grid" android:layout_width="36dp" android:layout_height="36dp" android:padding="9dp" android:layout_marginTop="6dp" android:layout_marginBottom="6dp" android:src="@drawable/ic_deck_grid" android:contentDescription="Open in the app" />
+            <ImageView android:id="@+id/down" android:layout_width="36dp" android:layout_height="36dp" android:padding="8dp" android:src="@drawable/ic_deck_down" android:contentDescription="Next card" />
+        </LinearLayout>
+        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:paddingEnd="12dp">
+            <ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent"
+                android:divider="@null" android:dividerHeight="0dp" android:listSelector="@android:color/transparent"
+                android:cacheColorHint="#00000000" android:scrollbars="none" android:clipToPadding="false" android:paddingBottom="12dp" />
+            {tv("empty", "Loading the latest moves…", "13sp", "deck_dim", family="sans-serif", w="match_parent", h="match_parent", extra='android:gravity="center"')}
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>''', twin=False)
+
+# One card of the list, as the app draws the open card. Its height is set from code to suit the widget.
+write("widget_carousel_card.xml", f'''
+<LinearLayout {NS} android:id="@+id/item" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:paddingBottom="8dp">
+    <LinearLayout android:id="@+id/card" android:layout_width="match_parent" android:layout_height="300dp"
+        android:background="@drawable/card_royal" android:orientation="vertical" android:padding="9dp">
+        {big("name", "ESMA", "38sp", "deck_black", lines=2)}
+        <FrameLayout android:id="@+id/panel" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp"
+            android:background="@drawable/panel_black" android:padding="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:id="@+id/glyph" android:layout_width="8dp" android:layout_height="8dp" android:importantForAccessibility="no" android:src="@drawable/g_dia" android:tint="@color/deck_royal" />
+                {eyebrow("label", "Regulation", "deck_royal", size="9.5sp", w="0dp", extra='android:layout_weight="1" android:layout_marginStart="6dp" android:letterSpacing="0.08"')}
+                {eyebrow("pos", "05/21", "deck_faint", size="9.5sp", extra='android:layout_marginStart="8dp" android:letterSpacing="0.08"')}
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:orientation="vertical">
+                {big("figure", "8 Oct", "44sp", "deck_royal", extra='android:textAllCaps="true"')}
+                {tv("title", "ESMA sets three-month wind-down for unauthorised stablecoin services", "12.5sp", "white", family="sans-serif", lines=3, w="match_parent", extra='android:layout_marginTop="6dp" android:lineSpacingMultiplier="1.05"')}
+                {eyebrow("date", "8 Oct 2026", "deck_faint", size="9sp", extra='android:layout_marginTop="5dp" android:letterSpacing="0.08"')}
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>''', twin=False)
+
+# Shown for a moment while a card loads: a dark card of the same height.
+write("widget_carousel_loading.xml", f'''
+<LinearLayout {NS} android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="8dp">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="300dp" android:background="@drawable/card_black" />
+</LinearLayout>''', twin=False)
 
 
 write_mono_resources()

@@ -45,7 +45,7 @@ abstract class RadarWidget : AppWidgetProvider() {
         return if (w > 0 && h > 0) Dims(w, h) else fallback
     }
 
-    fun draw(ctx: Context, mgr: AppWidgetManager, id: Int, brief: JSONObject?) {
+    open fun draw(ctx: Context, mgr: AppWidgetManager, id: Int, brief: JSONObject?) {
         val d = dims(mgr, id)
         val views = runCatching { buildFor(ctx, brief, d, id) }.getOrElse { build(ctx, null, d) }
         mgr.updateAppWidget(id, views)
