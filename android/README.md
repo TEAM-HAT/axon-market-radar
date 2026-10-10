@@ -53,13 +53,19 @@ The colour look is unchanged.
 | Licences | 4 x 4 | The busiest regulators, then the newest licences and rules | That move |
 | Trends | 4 x 3 | The year's totals and moves per month | Trends |
 | Dashboard | 4 x 5 | Briefing, regions, latest moves, companies, regulators, trend | The part you tap |
-| Carousel | 4 x 4 | The app's deck: folded cards above, the open card, the waiting cards stacked below | Swipe the stack to scroll it; tap a stacked or folded card to bring it to the front; tap the open card to read it; the arrows step one card; the grid opens the app's deck on that card |
+| Carousel | 4 x 4 | The app's deck: folded cards above, the open card, the waiting cards stacked below | Swipe up for the next card and down for the previous one, one card per swipe, as in the app; tap any card to read it; the arrows step one card; the grid opens the app's deck |
 
 Every widget resizes; lists show as many rows as fit. Tap "Updated" on a widget to refresh it now.
-The carousel keeps the open card and the folded ones fixed, and puts the waiting cards in a list the launcher scrolls
-under your finger (`CarouselService` supplies them), so it looks like the app's deck and still takes swipes. Each placed
-widget keeps its front card and goes back to the newest when a new deck arrives. As it gets shorter it drops folded
-cards first, and the open card's figure and text are fitted to what is left.
+The carousel is an Android card stack (`StackView`), the only widget view a launcher lets you swipe one item at a time.
+Each card of the stack is the whole deck drawn at one move (`CarouselService` supplies them), so every swipe lands on the
+app's deck with the next card open. Two tricks make it behave like the app: the stack is drawn upside down and each card
+the right way up again, which puts the waiting cards below the open one and makes a swipe up go forward; and the stack
+is a quarter larger than its area, so the cards Android keeps waiting behind the front one stay hidden behind its black
+margin. Between cards it moves with Android's own stack motion: the deck lifts away and the next one settles in.
+Each placed widget stays where it was swiped to and goes back to the newest card when a new deck arrives. As it gets
+shorter it drops folded cards first, and the open card's figure and text are fitted to what is left.
+`CarouselSwipeTest` swipes it with real touch events and saves the frames in `app/build/carousel-swipe/` and a
+frame-by-frame clip in `app/build/carousel-clip/`.
 The widgets and the app check for new data every hour.
 
 ## Building

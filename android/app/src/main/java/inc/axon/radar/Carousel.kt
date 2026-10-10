@@ -20,15 +20,17 @@ import inc.axon.radar.data.Move
 import inc.axon.radar.data.Store
 import inc.axon.radar.data.Text
 import inc.axon.radar.ui.Ink
+import inc.axon.radar.ui.Link
 import inc.axon.radar.ui.Shape
 import inc.axon.radar.ui.glyphOf
 import org.json.JSONObject
 
 /**
- * The app's deck as a home-screen widget: the cards before the open one folded into strips above it,
- * the open card with its figure, and the waiting cards stacked below with their names showing. The
- * stack scrolls under your finger; a tap on a stacked or folded card brings it to the front, as in
- * the app, and a tap on the open card reads it in the app. Colours follow the app's look.
+ * The app's deck as a home-screen widget. The deck is an Android card stack that the launcher swipes one
+ * card at a time: swipe up for the next card and down for the previous one, as in the app. Each card of
+ * the stack draws the whole deck at that card, the way the app shows it with that card open: the cards
+ * before it folded into strips above, the open card with its figure, and the next cards waiting below.
+ * A tap on any card reads it in the app; the arrows step one card; the grid opens the app's deck.
  */
 class CarouselWidget : RadarWidget() {
     override val layout = R.layout.widget_carousel
@@ -41,72 +43,41 @@ class CarouselWidget : RadarWidget() {
 
     override fun buildFor(ctx: Context, brief: JSONObject?, d: Dims, id: Int): RemoteViews {
         val v = RemoteViews(ctx.packageName, layout)
-        val ink = Ink.of(Store.look(ctx))
         val radar = Store.cachedFast(ctx)
         val deck = radar?.deck.orEmpty()
         v.setOnClickPendingIntent(R.id.top, app(ctx, "home", null, code))
+        v.setOnClickPendingIntent(R.id.grid, app(ctx, "home", null, code + 2))
 
-        // The stack below the open card: a list the launcher scrolls, filled by CarouselService for this
-        // widget. Taps on its cards come back here to bring that card to the front.
+        // The stack: CarouselService draws each card for this widget, and a tap on a card reads its move.
         val svc = Intent(ctx, CarouselService::class.java).putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, id)
         svc.data = Uri.parse(svc.toUri(Intent.URI_INTENT_SCHEME))
-        v.setRemoteAdapter(R.id.list, svc)
-        v.setPendingIntentTemplate(R.id.list, focusTemplate(ctx, id))
-        v.setScrollPosition(R.id.list, 0)
-        // After the last card the stack is empty; it says so and points to older moves in the app.
-        v.setEmptyView(R.id.list, R.id.end)
-        v.setOnClickPendingIntent(R.id.end, app(ctx, "moves", null, code + 3))
+        v.setRemoteAdapter(R.id.stack, svc)
+        v.setPendingIntentTemplate(R.id.stack, openTemplate(ctx))
+        v.setEmptyView(R.id.stack, R.id.empty)
+        v.setOnClickPendingIntent(R.id.empty, app(ctx, "home", null, code + 3))
+        v.setOnClickPendingIntent(R.id.up, step(ctx, id, -1))
+        v.setOnClickPendingIntent(R.id.down, step(ctx, id, 1))
 
         if (radar == null || deck.isEmpty()) {
             v.setTextViewText(R.id.eyebrow, "Market Radar")
             v.setViewVisibility(R.id.chip, View.GONE)
-            v.setViewVisibility(R.id.prev, View.GONE)
             v.setViewVisibility(R.id.controls, View.INVISIBLE)
-            v.setTextViewText(R.id.name, "Market Radar")
-            v.setTextViewText(R.id.label, "")
-            v.setTextViewText(R.id.pos, "")
-            v.setTextViewText(R.id.figure, "…")
-            v.setTextViewText(R.id.title, if (radar == null) "Loading the latest moves…" else "Nothing on the radar yet.")
-            v.setTextViewText(R.id.date, "")
-            v.setOnClickPendingIntent(R.id.open, app(ctx, "home", null, code + 1))
+            v.setTextViewText(R.id.empty_text, if (radar == null) "Loading the latest moves…" else "Nothing on the radar yet.")
             return v
         }
-
-        val i = position(ctx, id, deck.map { it.id })
-        val m = deck[i]
+        v.setViewVisibility(R.id.controls, View.VISIBLE)
         v.setTextViewText(R.id.eyebrow, "${Text.dowDay(radar.windowEnd)} · ${Text.plural(radar.count, "move", "moves")} in 7 days")
         v.setViewVisibility(R.id.chip, if (radar.newToday > 0) View.VISIBLE else View.GONE)
         v.setTextViewText(R.id.chip, "+${radar.newToday} new")
-
-        // Folded above: the cards before the open one, as many as fit, each a tap away from the front.
-        // At the top of the deck there are none and the open card sits right under the header, as in the app.
-        val room = when {
-            d.h >= 400 -> 2
-            d.h >= 340 -> 1
-            else -> 0
-        }
-        val shown = minOf(room, i)
-        v.setViewVisibility(R.id.prev, if (shown > 0) View.VISIBLE else View.GONE)
-        folded(ctx, v, ink, id, R.id.p1, R.id.p1_name, deck.getOrNull(i - 1), shown >= 1)
-        folded(ctx, v, ink, id, R.id.p2, R.id.p2_name, deck.getOrNull(i - 2), shown >= 2)
-
-        // The open card takes 58 parts of what is left, the stack 42, as the app's deck divides it.
-        val cardW = (d.w - 40 - 12 - 18).toFloat()
-        val openH = ((d.h - 42 - shown * 23) * 0.58f).toInt()
-        openCard(ctx, v, ink, deck, i, openH, cardW)
-        v.setOnClickPendingIntent(R.id.open, app(ctx, "move", m.id, code + 1))
-
-        // Up and down move the front card; the grid opens the app's deck on this card.
-        control(v, R.id.up, deck.getOrNull(i - 1)?.let { focus(ctx, id, it.id) })
-        control(v, R.id.down, deck.getOrNull(i + 1)?.let { focus(ctx, id, it.id) })
-        v.setOnClickPendingIntent(R.id.grid, app(ctx, "deck", m.id, code + 2))
+        // A new deck starts again from its newest card; otherwise the stack stays where it was swiped to.
+        if (id != AppWidgetManager.INVALID_APPWIDGET_ID && newDeck(ctx, id, deck.first().id)) v.setDisplayedChild(R.id.stack, 0)
         return v
     }
 
-    /** Redraws the frame and asks the launcher to reload the stack: a new front card, data, look or size. */
+    /** Redraws the frame and asks the launcher to redraw every card: new data, look or size. */
     override fun draw(ctx: Context, mgr: AppWidgetManager, id: Int, brief: JSONObject?) {
         super.draw(ctx, mgr, id, brief)
-        runCatching { mgr.notifyAppWidgetViewDataChanged(id, R.id.list) }
+        runCatching { mgr.notifyAppWidgetViewDataChanged(id, R.id.stack) }
     }
 
     override fun onAppWidgetOptionsChanged(ctx: Context, mgr: AppWidgetManager, id: Int, options: Bundle) {
@@ -114,14 +85,13 @@ class CarouselWidget : RadarWidget() {
     }
 
     override fun onReceive(ctx: Context, intent: Intent) {
-        if (intent.action == ACTION_FOCUS) {
+        if (intent.action == ACTION_STEP) {
             val id = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)
-            val target = intent.getStringExtra(EXTRA_TARGET)
-            val deck = Store.cachedFast(ctx)?.deck.orEmpty()
-            if (id != AppWidgetManager.INVALID_APPWIDGET_ID && target != null && deck.isNotEmpty()) {
-                keep(ctx, id, deck.first().id, target)
-                // A tap can arrive after the widget was removed; there is nothing to redraw then.
-                runCatching { draw(ctx, AppWidgetManager.getInstance(ctx), id, Brief.cached(ctx)) }
+            if (id != AppWidgetManager.INVALID_APPWIDGET_ID) {
+                // The stack moves itself, with the same motion as a swipe; nothing else is redrawn.
+                val v = RemoteViews(ctx.packageName, layout)
+                if (intent.getIntExtra(EXTRA_DIR, 1) > 0) v.showNext(R.id.stack) else v.showPrevious(R.id.stack)
+                runCatching { AppWidgetManager.getInstance(ctx).partiallyUpdateAppWidget(id, v) }
             }
             return
         }
@@ -130,61 +100,111 @@ class CarouselWidget : RadarWidget() {
 
     override fun onDeleted(ctx: Context, ids: IntArray) {
         val e = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit()
-        ids.forEach { e.remove("carousel_$it").remove("carousel_${it}_head") }
+        ids.forEach { e.remove("carousel_${it}_head").remove("carousel_$it") }
         e.apply()
     }
 
-    private fun folded(ctx: Context, v: RemoteViews, ink: Ink, id: Int, slot: Int, name: Int, m: Move?, show: Boolean) {
-        if (!show || m == null) { v.setViewVisibility(slot, View.GONE); return }
-        val bg = ink.page(m.type)
-        v.setViewVisibility(slot, View.VISIBLE)
-        v.setInt(slot, "setBackgroundResource", stripRes(ink, m.type))
-        v.setTextViewText(name, m.subject)
-        v.setTextColor(name, ink.display(bg).toArgb())
-        v.setOnClickPendingIntent(slot, focus(ctx, id, m.id))
-    }
-
-    private fun control(v: RemoteViews, view: Int, target: PendingIntent?) {
-        v.setInt(view, "setImageAlpha", if (target != null) 220 else 70)
-        if (target != null) v.setOnClickPendingIntent(view, target)
-    }
-
     companion object {
-        const val ACTION_FOCUS = "inc.axon.radar.action.FOCUS"
-        const val EXTRA_TARGET = "inc.axon.radar.TARGET"
+        const val ACTION_STEP = "inc.axon.radar.action.STEP"
+        const val EXTRA_DIR = "inc.axon.radar.DIR"
         private const val PREFS = "radar"
         private val BLACK_FACE: Typeface = Typeface.create("sans-serif-black", Typeface.NORMAL)
 
-        /** The front card of each placed widget: kept by move id, and back to the newest when a new deck arrives. */
-        fun position(ctx: Context, id: Int, ids: List<String>): Int {
+        /** True, once, when widget [id] first sees a deck that starts with [head]. */
+        fun newDeck(ctx: Context, id: Int, head: String): Boolean {
             val p = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-            if (ids.isEmpty() || p.getString("carousel_${id}_head", null) != ids.first()) return 0
-            return ids.indexOf(p.getString("carousel_$id", null)).coerceAtLeast(0)
+            if (p.getString("carousel_${id}_head", null) == head) return false
+            p.edit().putString("carousel_${id}_head", head).apply()
+            return true
         }
 
-        fun keep(ctx: Context, id: Int, head: String, target: String) {
-            ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit()
-                .putString("carousel_$id", target).putString("carousel_${id}_head", head).apply()
-        }
-
-        /** Brings [target] to the front of widget [id]: for the arrows and the folded cards. */
-        fun focus(ctx: Context, id: Int, target: String): PendingIntent {
-            val intent = Intent(ctx, CarouselWidget::class.java).setAction(ACTION_FOCUS)
-                .setData(Uri.parse("radar://focus/$id/" + Uri.encode(target)))
-                .putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, id).putExtra(EXTRA_TARGET, target)
+        /** One card on (+1) or back (-1) in widget [id]'s stack: for the arrows. */
+        fun step(ctx: Context, id: Int, dir: Int): PendingIntent {
+            val intent = Intent(ctx, CarouselWidget::class.java).setAction(ACTION_STEP)
+                .setData(Uri.parse("radar://step/$id/$dir"))
+                .putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, id).putExtra(EXTRA_DIR, dir)
             return PendingIntent.getBroadcast(ctx, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         }
 
-        /** The same for the stacked cards: each card fills in which move. Mutable, so it can be filled in. */
-        fun focusTemplate(ctx: Context, id: Int): PendingIntent {
-            val intent = Intent(ctx, CarouselWidget::class.java).setAction(ACTION_FOCUS)
-                .setData(Uri.parse("radar://focus/$id"))
-                .putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, id)
-            return PendingIntent.getBroadcast(ctx, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE)
+        /** Opens the app; each card fills in which move. Mutable, so it can be filled in. */
+        fun openTemplate(ctx: Context): PendingIntent {
+            val intent = Intent(ctx, MainActivity::class.java).setData(Uri.parse("radar://open/card"))
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            return PendingIntent.getActivity(ctx, 750, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE)
         }
 
-        /** What a stacked card's tap fills into the template: bring this move to the front. */
-        fun fillIn(m: Move): Intent = Intent().putExtra(EXTRA_TARGET, m.id)
+        /** What a card's tap fills into the template: read this move, or open a tab of the app. */
+        fun fillIn(dest: String, id: String?): Intent =
+            Intent().putExtra(Link.EXTRA_DEST, dest).apply { if (id != null) putExtra(Link.EXTRA_ID, id) }
+
+        /**
+         * The area a card of the stack draws in, in dp: the stack is 1.25 times the deck area (the widget less
+         * the 40dp controls and, at the top, the 42dp line, plus the 4dp and 16dp it reaches past them); its
+         * front card is 0.9 of that less 8dp of frame, and the deck is drawn in the top-left 7/8 of the card.
+         */
+        fun area(d: Dims): Pair<Float, Float> =
+            (0.875f * (1.125f * (d.w - 40) - 8f)) to (0.875f * (1.125f * (d.h - 22) - 8f))
+
+        /** Card [i] of the stack: the deck as the app shows it with card [i] open. */
+        fun card(ctx: Context, deck: List<Move>, i: Int, ink: Ink, d: Dims): RemoteViews {
+            val v = RemoteViews(ctx.packageName, R.layout.widget_carousel_card)
+            val m = deck[i]
+            val (w, h) = area(d)
+
+            // Folded above: the cards before this one, as many as fit; none at the top of the deck, so the
+            // first card opens right under the top line, as in the app.
+            val room = when {
+                d.h >= 400 -> 2
+                d.h >= 340 -> 1
+                else -> 0
+            }
+            val shown = minOf(room, i)
+            v.setViewVisibility(R.id.prev, if (shown > 0) View.VISIBLE else View.GONE)
+            folded(v, ink, R.id.p1, R.id.p1_name, deck.getOrNull(i - 1), shown >= 1)
+            folded(v, ink, R.id.p2, R.id.p2_name, deck.getOrNull(i - 2), shown >= 2)
+
+            // The open card takes 58 parts of what is left and the waiting cards 42, as the app's deck does.
+            val openH = ((h - shown * 23) * 0.58f).toInt()
+            openCard(ctx, v, ink, deck, i, openH, w - 18)
+            v.setOnClickFillInIntent(R.id.open, fillIn("move", m.id))
+
+            // Waiting below: the next cards' names and kinds; after the last card, a pointer to older moves.
+            val waiting = listOf(Triple(R.id.n1, R.id.n1_name, Triple(R.id.n1_panel, R.id.n1_glyph, R.id.n1_label)),
+                Triple(R.id.n2, R.id.n2_name, Triple(R.id.n2_panel, R.id.n2_glyph, R.id.n2_label)),
+                Triple(R.id.n3, R.id.n3_name, Triple(R.id.n3_panel, R.id.n3_glyph, R.id.n3_label)))
+            waiting.forEachIndexed { k, (slot, name, parts) ->
+                val n = deck.getOrNull(i + 1 + k)
+                if (n == null) { v.setViewVisibility(slot, View.GONE); return@forEachIndexed }
+                val bg = ink.page(n.type)
+                val lined = ink.lined(n.type)
+                v.setViewVisibility(slot, View.VISIBLE)
+                v.setInt(slot, "setBackgroundResource", stripRes(ink, n.type))
+                v.setTextViewText(name, n.subject)
+                v.setTextColor(name, ink.display(bg).toArgb())
+                v.setTextViewTextSize(name, TypedValue.COMPLEX_UNIT_SP, fit(ctx, n.subject, 30f, 18f, w - 18, 1))
+                v.setInt(parts.first, "setBackgroundResource", panelRes(ink, bg, lined))
+                v.setImageViewResource(parts.second, glyphRes(n.type, lined))
+                v.setInt(parts.second, "setColorFilter", bg.toArgb())
+                v.setTextViewText(parts.third, n.typeLabel)
+                v.setTextColor(parts.third, bg.toArgb())
+                v.setOnClickFillInIntent(slot, fillIn("move", n.id))
+            }
+            val last = i == deck.lastIndex
+            v.setViewVisibility(R.id.nexts, if (last) View.GONE else View.VISIBLE)
+            v.setViewVisibility(R.id.end, if (last) View.VISIBLE else View.GONE)
+            v.setOnClickFillInIntent(R.id.end, fillIn("moves", null))
+            return v
+        }
+
+        private fun folded(v: RemoteViews, ink: Ink, slot: Int, name: Int, m: Move?, show: Boolean) {
+            if (!show || m == null) { v.setViewVisibility(slot, View.GONE); return }
+            val bg = ink.page(m.type)
+            v.setViewVisibility(slot, View.VISIBLE)
+            v.setInt(slot, "setBackgroundResource", stripRes(ink, m.type))
+            v.setTextViewText(name, m.subject)
+            v.setTextColor(name, ink.display(bg).toArgb())
+            v.setOnClickFillInIntent(slot, fillIn("move", m.id))
+        }
 
         /** The open card, as the app draws it, with its figure and text fitted to [openH] x [cardW] dp. */
         fun openCard(ctx: Context, v: RemoteViews, ink: Ink, deck: List<Move>, i: Int, openH: Int, cardW: Float) {
@@ -238,24 +258,6 @@ class CarouselWidget : RadarWidget() {
             v.setInt(R.id.title, "setMaxLines", titleLines.coerceAtLeast(1))
             v.setViewVisibility(R.id.title, if (titleLines > 0) View.VISIBLE else View.GONE)
             v.setViewVisibility(R.id.date, if (showDate) View.VISIBLE else View.GONE)
-        }
-
-        /** One waiting card in the stack: its name and the top of its block with the kind. */
-        fun strip(ctx: Context, m: Move, ink: Ink, d: Dims): RemoteViews {
-            val v = RemoteViews(ctx.packageName, R.layout.widget_carousel_strip)
-            val bg = ink.page(m.type)
-            val lined = ink.lined(m.type)
-            v.setInt(R.id.strip, "setBackgroundResource", stripRes(ink, m.type))
-            v.setTextViewText(R.id.s_name, m.subject)
-            v.setTextColor(R.id.s_name, ink.display(bg).toArgb())
-            v.setTextViewTextSize(R.id.s_name, TypedValue.COMPLEX_UNIT_SP, fit(ctx, m.subject, 30f, 18f, (d.w - 40 - 12 - 18).toFloat(), 1))
-            v.setInt(R.id.s_panel, "setBackgroundResource", panelRes(ink, bg, lined))
-            v.setImageViewResource(R.id.s_glyph, glyphRes(m.type, lined))
-            v.setInt(R.id.s_glyph, "setColorFilter", bg.toArgb())
-            v.setTextViewText(R.id.s_label, m.typeLabel)
-            v.setTextColor(R.id.s_label, bg.toArgb())
-            v.setOnClickFillInIntent(R.id.strip, fillIn(m))
-            return v
         }
 
         fun glyphRes(type: String?, hollow: Boolean): Int = when (glyphOf(type)) {
@@ -332,14 +334,15 @@ class CarouselWidget : RadarWidget() {
     }
 }
 
-/** Hands the launcher the stack below a carousel's open card: every card after it, in order. */
+/** Hands the launcher the carousel's cards: one per move of the deck, newest first. */
 class CarouselService : RemoteViewsService() {
     override fun onGetViewFactory(intent: Intent): RemoteViewsFactory =
         CarouselFactory(applicationContext, intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID))
 }
 
-class CarouselFactory(private val ctx: Context, private val id: Int) : RemoteViewsService.RemoteViewsFactory {
-    private var stack: List<Move> = emptyList()
+/** [size] fixes the widget's size, for tests; otherwise it is read from the launcher. */
+class CarouselFactory(private val ctx: Context, private val id: Int, private val size: Dims? = null) : RemoteViewsService.RemoteViewsFactory {
+    private var deck: List<Move> = emptyList()
     private var ink: Ink = Ink.Colour
     private var dims = Dims(360, 420)
 
@@ -348,18 +351,16 @@ class CarouselFactory(private val ctx: Context, private val id: Int) : RemoteVie
     override fun onDestroy() {}
 
     private fun load() {
-        val deck = Store.cachedFast(ctx)?.deck.orEmpty()
-        val front = CarouselWidget.position(ctx, id, deck.map { it.id })
-        stack = deck.drop(front + 1)
+        deck = Store.cachedFast(ctx)?.deck.orEmpty()
         ink = Ink.of(Store.look(ctx))
-        dims = if (id == AppWidgetManager.INVALID_APPWIDGET_ID) CarouselWidget().fallback
+        dims = size ?: if (id == AppWidgetManager.INVALID_APPWIDGET_ID) CarouselWidget().fallback
         else CarouselWidget().dims(AppWidgetManager.getInstance(ctx), id)
     }
 
-    override fun getCount(): Int = stack.size
-    override fun getViewAt(position: Int): RemoteViews = CarouselWidget.strip(ctx, stack[position.coerceIn(0, stack.lastIndex)], ink, dims)
+    override fun getCount(): Int = deck.size
+    override fun getViewAt(position: Int): RemoteViews = CarouselWidget.card(ctx, deck, position.coerceIn(0, deck.lastIndex), ink, dims)
     override fun getLoadingView(): RemoteViews = RemoteViews(ctx.packageName, R.layout.widget_carousel_loading)
     override fun getViewTypeCount(): Int = 1
-    override fun getItemId(position: Int): Long = stack.getOrNull(position)?.id?.hashCode()?.toLong() ?: position.toLong()
+    override fun getItemId(position: Int): Long = deck.getOrNull(position)?.id?.hashCode()?.toLong() ?: position.toLong()
     override fun hasStableIds(): Boolean = true
 }

@@ -50,7 +50,7 @@ class LaunchTest {
         Store.setLook(ctx, Look.Colour)
     }
 
-    /** The carousel's grid button opens the app's deck on the same card. */
+    /** A link to the app's deck on a given card. */
     @Test
     fun opensTheDeckOnACard() {
         val json = File("../../radar.json").readText()
@@ -63,27 +63,27 @@ class LaunchTest {
     }
 
     /**
-     * The carousel's stack holds every card after the front one; a tap on one brings it to the front of
-     * that widget only, and a new deck in the morning starts again from the newest card.
+     * The carousel's stack holds one card per move, newest first; a tap on a card opens that move in the app,
+     * and a new deck in the morning starts the stack again from the newest card.
      */
     @Test
-    fun carouselStackAndFocus() {
+    fun carouselStack() {
         val json = File("../../radar.json").readText()
         File(ctx.filesDir, "radar.json").writeText(json)
         val deck = Radar.parse(json).deck
-        val ids = deck.map { it.id }
-        org.junit.Assert.assertEquals(deck.size - 1, CarouselFactory(ctx, 7).apply { onCreate() }.count)
-        // A tap on the fourth card's slice, through the stack's template.
-        val tap = Intent(ctx, CarouselWidget::class.java).setAction(CarouselWidget.ACTION_FOCUS)
-            .putExtra(android.appwidget.AppWidgetManager.EXTRA_APPWIDGET_ID, 7)
-        tap.fillIn(CarouselWidget.fillIn(deck[3]), 0)
-        CarouselWidget().onReceive(ctx, tap)
-        org.junit.Assert.assertEquals(3, CarouselWidget.position(ctx, 7, ids))
-        org.junit.Assert.assertEquals(0, CarouselWidget.position(ctx, 8, ids))
         val stack = CarouselFactory(ctx, 7).apply { onCreate() }
-        org.junit.Assert.assertEquals(deck.size - 4, stack.count)
-        listOf(0, stack.count - 1).forEach { stack.getViewAt(it) }
-        org.junit.Assert.assertEquals(0, CarouselWidget.position(ctx, 7, listOf("new-move") + ids))
+        org.junit.Assert.assertEquals(deck.size, stack.count)
+        listOf(0, 4, stack.count - 1).forEach { stack.getViewAt(it) }
+        val tap = CarouselWidget.openTemplate(ctx).let { Intent(ctx, MainActivity::class.java) }
+        tap.fillIn(CarouselWidget.fillIn("move", deck[3].id), 0)
+        org.junit.Assert.assertEquals(Link("move", deck[3].id), Link.from(tap))
+        org.junit.Assert.assertTrue(CarouselWidget.newDeck(ctx, 7, deck.first().id))
+        org.junit.Assert.assertFalse(CarouselWidget.newDeck(ctx, 7, deck.first().id))
+        org.junit.Assert.assertTrue(CarouselWidget.newDeck(ctx, 7, "new-move"))
+        org.junit.Assert.assertTrue(CarouselWidget.newDeck(ctx, 8, deck.first().id))
+        // The arrows' broadcast moves the stack; on a widget that is gone it does nothing.
+        CarouselWidget().onReceive(ctx, Intent(ctx, CarouselWidget::class.java).setAction(CarouselWidget.ACTION_STEP)
+            .putExtra(android.appwidget.AppWidgetManager.EXTRA_APPWIDGET_ID, 7).putExtra(CarouselWidget.EXTRA_DIR, 1))
     }
 
     @Test

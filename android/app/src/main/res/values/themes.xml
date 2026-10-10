@@ -5,4 +5,9 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
+    <!-- The carousel widget's card stack: Android outlines a dragged or tapped card in the theme's primary
+         colour; a clear primary keeps the cards flat, as in the app. -->
+    <style name="RadarStack">
+        <item name="android:colorPrimary">@android:color/transparent</item>
+    </style>
 </resources>

@@ -97,42 +97,29 @@ class WidgetRenderTest {
     }
 
     /**
-     * The carousel the way a launcher shows it: the frame from the provider, and the stack below the open
-     * card filled with the factory's cards. At the top of the deck, part-way down it, and at its end, at
-     * several heights, plus one with the stack scrolled by a finger.
+     * The carousel the way a launcher shows it: the frame from the provider and the card stack filled with
+     * the factory's cards, at the top of the deck, part-way down it and at its end, at several sizes.
      */
     private fun carousel() {
         val deck = inc.axon.radar.data.Radar.parse(File("../../radar.json").readText()).deck
         val id = 42
         listOf(Dims(360, 300), Dims(360, 360), Dims(360, 420), Dims(360, 560), Dims(270, 420)).forEach { d ->
-            listOf(0, 4, deck.lastIndex).forEach { front ->
-                CarouselWidget.keep(ctx, id, deck.first().id, deck[front].id)
-                renderCarousel(id, d, 0, "8-carousel-${d.w}x${d.h}-front$front")
-            }
+            listOf(0, 4, deck.lastIndex).forEach { front -> renderCarousel(id, d, front, "8-carousel-${d.w}x${d.h}-front$front") }
         }
-        CarouselWidget.keep(ctx, id, deck.first().id, deck[0].id)
-        renderCarousel(id, Dims(360, 420), 50, "8-carousel-360x420-front0-swiping")
         // The picker preview, as the launcher's widget list shows it.
         val preview = android.view.LayoutInflater.from(ctx).inflate(R.layout.widget_carousel_preview, FrameLayout(ctx), false)
         draw(preview, Dims(360, 420), "8-carousel-preview")
     }
 
-    private fun renderCarousel(id: Int, d: Dims, scrolledDp: Int, name: String) {
-        val frame = CarouselWidget().buildFor(ctx, brief, d, id)
-        val root = runCatching { frame.apply(ctx, FrameLayout(ctx)) }.getOrElse {
-            android.view.LayoutInflater.from(ctx).inflate(R.layout.widget_carousel, FrameLayout(ctx), false)
-        }
-        val factory = CarouselFactory(ctx, id).apply { onCreate() }
-        val list = root.findViewById<android.widget.ListView>(R.id.list)
-        list.adapter = object : android.widget.BaseAdapter() {
-            override fun getCount() = factory.count
-            override fun getItem(p: Int) = p
-            override fun getItemId(p: Int) = p.toLong()
-            override fun getView(p: Int, convert: View?, parent: android.view.ViewGroup): View = factory.getViewAt(p).apply(ctx, parent)
-        }
-        val den = ctx.resources.displayMetrics.density
-        if (scrolledDp > 0) list.setSelectionFromTop(0, -(scrolledDp * den).toInt())
-        draw(root, d, name)
+    private fun renderCarousel(id: Int, d: Dims, front: Int, name: String) {
+        val root = CarouselStage.mount(ctx, brief, d, id)
+        CarouselStage.stack(root).setDisplayedChild(front)
+        CarouselStage.idle(800)
+        val bmp = Bitmap.createBitmap(root.width, root.height, Bitmap.Config.ARGB_8888)
+        val c = Canvas(bmp)
+        c.drawColor(0xFF1C2033.toInt())
+        root.draw(c)
+        FileOutputStream(File(out, "$name.png")).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
 
     private fun draw(v: View, d: Dims, name: String) {
