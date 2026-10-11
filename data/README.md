@@ -4,6 +4,8 @@ These files add structure and history to the moves the daily sweep collects. The
 
 `tools/make_brief.py` lays them over the database export when it writes `brief.json` and `radar.json`.
 
+The web portal (https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei) lays the same files over its live database in the browser, from its own copy, `radar-data.json`, published beside the page. After changing anything here, rebuild that copy with `python3 tools/portal_data.py --out radar-data.json` and republish the portal with it, so the portal and the app keep showing the same moves.
+
 | File | What it holds |
 | --- | --- |
 | `themes.json` | The 15 market themes every move is filed under. |
