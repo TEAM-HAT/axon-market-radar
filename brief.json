@@ -5,19 +5,19 @@
   "window_start": "2026-10-05",
   "window_end": "2026-10-11",
   "week": 41,
-  "count": 28,
+  "count": 30,
   "new_today": 2,
   "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users while more crypto firms sought OCC trust charters and Anchorage bought Routable. In Europe, ESMA gave licensed firms **three months to drop unauthorised stablecoins**.",
   "mix": [
     {
+      "type": "Partnership",
+      "n": 9,
+      "label": "partnerships"
+    },
+    {
       "type": "Launch",
       "n": 8,
       "label": "launches"
-    },
-    {
-      "type": "Partnership",
-      "n": 8,
-      "label": "partnerships"
     },
     {
       "type": "Regulation",
@@ -25,14 +25,14 @@
       "label": "regulatory actions"
     },
     {
+      "type": "Funding",
+      "n": 3,
+      "label": "funding rounds"
+    },
+    {
       "type": "License",
       "n": 3,
       "label": "licences"
-    },
-    {
-      "type": "Funding",
-      "n": 2,
-      "label": "funding rounds"
     },
     {
       "type": "M&A",
@@ -40,17 +40,17 @@
       "label": "M&A deal"
     }
   ],
-  "mix_text": "8 launches · 8 partnerships · 6 regulatory actions · 3 licences · 2 funding rounds · 1 M&A deal",
+  "mix_text": "9 partnerships · 8 launches · 6 regulatory actions · 3 funding rounds · 3 licences · 1 M&A deal",
   "regions": {
-    "Europe": 6,
-    "Middle East": 6,
+    "Europe": 7,
+    "Middle East": 7,
     "North America": 8,
     "Global": 8
   },
   "groups": {
     "regulatory": 9,
-    "capital": 3,
-    "commercial": 16
+    "capital": 4,
+    "commercial": 17
   },
   "moves": [
     {
@@ -226,6 +226,28 @@
   ],
   "companies": [
     {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "segment": "Custody & wallets",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 5,
+      "last_date": "2026-10-07",
+      "last_title": "Yuno adds Coinbase stablecoin checkout for its merchants",
+      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/yuno-partners-with-coinbase-to-add-stablecoin-checkout-for-merchants"
+    },
+    {
+      "id": "visa",
+      "name": "Visa",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "Global",
+      "moves_30d": 4,
+      "last_date": "2026-10-08",
+      "last_title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
+      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
+    },
+    {
       "id": "circle",
       "name": "Circle",
       "segment": "Issuer",
@@ -237,17 +259,6 @@
       "last_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
     },
     {
-      "id": "visa",
-      "name": "Visa",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "Global",
-      "moves_30d": 3,
-      "last_date": "2026-10-08",
-      "last_title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
-      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
-    },
-    {
       "id": "tether",
       "name": "Tether",
       "segment": "Issuer",
@@ -257,17 +268,6 @@
       "last_date": "2026-10-08",
       "last_title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
       "last_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
-    },
-    {
-      "id": "coinbase",
-      "name": "Coinbase",
-      "segment": "Custody & wallets",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 3,
-      "last_date": "2026-10-07",
-      "last_title": "Yuno adds Coinbase stablecoin checkout for its merchants",
-      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/yuno-partners-with-coinbase-to-add-stablecoin-checkout-for-merchants"
     },
     {
       "id": "ripple",
@@ -370,7 +370,7 @@
     {
       "name": "OCC",
       "where": "United States",
-      "licences": 14,
+      "licences": 15,
       "actions": 2
     },
     {
@@ -386,77 +386,77 @@
       "actions": 3
     },
     {
+      "name": "FCA",
+      "where": "United Kingdom",
+      "licences": 3,
+      "actions": 3
+    },
+    {
       "name": "CSSF",
       "where": "Luxembourg",
       "licences": 5,
       "actions": 0
-    },
-    {
-      "name": "FCA",
-      "where": "United Kingdom",
-      "licences": 3,
-      "actions": 2
     }
   ],
   "trends": {
     "since": "2025-10",
-    "total": 349,
-    "licences": 51,
-    "regulatory_actions": 45,
-    "commercial": 165,
-    "capital": 88,
+    "total": 440,
+    "licences": 57,
+    "regulatory_actions": 52,
+    "commercial": 217,
+    "capital": 114,
     "months": [
       {
         "m": "2025-10",
-        "n": 28
-      },
-      {
-        "m": "2025-11",
-        "n": 35
-      },
-      {
-        "m": "2025-12",
-        "n": 30
-      },
-      {
-        "m": "2026-01",
-        "n": 20
-      },
-      {
-        "m": "2026-02",
-        "n": 26
-      },
-      {
-        "m": "2026-03",
-        "n": 23
-      },
-      {
-        "m": "2026-04",
-        "n": 16
-      },
-      {
-        "m": "2026-05",
-        "n": 33
-      },
-      {
-        "m": "2026-06",
-        "n": 20
-      },
-      {
-        "m": "2026-07",
-        "n": 23
-      },
-      {
-        "m": "2026-08",
-        "n": 26
-      },
-      {
-        "m": "2026-09",
         "n": 39
       },
       {
-        "m": "2026-10",
+        "m": "2025-11",
+        "n": 47
+      },
+      {
+        "m": "2025-12",
+        "n": 44
+      },
+      {
+        "m": "2026-01",
+        "n": 26
+      },
+      {
+        "m": "2026-02",
         "n": 30
+      },
+      {
+        "m": "2026-03",
+        "n": 27
+      },
+      {
+        "m": "2026-04",
+        "n": 25
+      },
+      {
+        "m": "2026-05",
+        "n": 40
+      },
+      {
+        "m": "2026-06",
+        "n": 29
+      },
+      {
+        "m": "2026-07",
+        "n": 28
+      },
+      {
+        "m": "2026-08",
+        "n": 29
+      },
+      {
+        "m": "2026-09",
+        "n": 44
+      },
+      {
+        "m": "2026-10",
+        "n": 32
       }
     ],
     "partial_last": true
