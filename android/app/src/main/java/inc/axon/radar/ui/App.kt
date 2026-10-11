@@ -47,6 +47,9 @@ import androidx.core.view.drawToBitmap
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import inc.axon.radar.RadarWidget
+import inc.axon.radar.data.Lens
+import inc.axon.radar.data.LensResult
+import inc.axon.radar.data.LensStore
 import inc.axon.radar.data.Move
 import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Store
@@ -72,7 +75,10 @@ sealed interface Page {
 }
 
 @Composable
-fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boolean = true, startLook: Look? = null) {
+fun RadarApp(
+    link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boolean = true, startLook: Look? = null,
+    startLayout: Layout? = null, preloadLens: Lens? = null,
+) {
     val ctx = LocalContext.current
     val view = LocalView.current
     val scope = rememberCoroutineScope()
@@ -94,16 +100,34 @@ fun RadarApp(link: MutableState<Link?>, preload: Radar? = null, autoRefresh: Boo
         }
     }
 
+    var layout by remember { mutableStateOf(startLayout ?: Store.layout(ctx)) }
+
+    // The layout switches the same way the look does: a picture of the old screen fades over the new one.
+    fun switchLayout(next: Layout) {
+        if (next == layout) return
+        before = runCatching { view.drawToBitmap().asImageBitmap() }.getOrNull()
+        layout = next
+        Store.setLayout(ctx, next)
+        scope.launch {
+            fade.snapTo(1f)
+            fade.animateTo(0f, tween(560))
+            before = null
+        }
+    }
+
     CompositionLocalProvider(LocalInk provides Ink.of(look)) {
         Box(Modifier.fillMaxSize()) {
-            RadarContent(link, preload, autoRefresh, look, ::switchLook)
+            RadarContent(link, preload, autoRefresh, look, ::switchLook, layout, ::switchLayout, preloadLens)
             before?.let { Image(it, null, Modifier.fillMaxSize().graphicsLayer { alpha = fade.value }, contentScale = ContentScale.FillBounds) }
         }
     }
 }
 
 @Composable
-private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh: Boolean, look: Look, onLook: (Look) -> Unit) {
+private fun RadarContent(
+    link: MutableState<Link?>, preload: Radar?, autoRefresh: Boolean, look: Look, onLook: (Look) -> Unit,
+    layout: Layout, onLayout: (Layout) -> Unit, preloadLens: Lens?,
+) {
     val ctx = LocalContext.current
     val ink = LocalInk.current
     val scope = rememberCoroutineScope()
@@ -112,6 +136,18 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
     var tab by rememberSaveable { mutableStateOf(Tab.Home) }
     var section by rememberSaveable { mutableStateOf(Section.Moves) }
     var focus by rememberSaveable { mutableStateOf(0) }
+    // The five areas and the page each one last showed.
+    var area by rememberSaveable { mutableStateOf(Area.Today) }
+    var todayList by rememberSaveable { mutableStateOf(false) }
+    var rivalsAt by rememberSaveable { mutableStateOf(0) }
+    var dealsAt by rememberSaveable { mutableStateOf(0) }
+    var marketAt by rememberSaveable { mutableStateOf(0) }
+    var axonAt by rememberSaveable { mutableStateOf(0) }
+    // AXON's private view: read from the private repository with the key, kept sealed on the phone.
+    var lens by remember { mutableStateOf(preloadLens ?: LensStore.cached(ctx)) }
+    var lensBusy by remember { mutableStateOf(false) }
+    var lensMsg by remember { mutableStateOf<String?>(null) }
+    var lensFetched by remember { mutableStateOf(LensStore.fetchedAt(ctx)) }
     // Bumped when a widget asks for a given card, so the deck opens there.
     var deckKey by remember { mutableStateOf(0) }
     var refreshing by remember { mutableStateOf(false) }
@@ -127,9 +163,46 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
             val ok = withContext(Dispatchers.IO) { runCatching { Store.refresh(ctx) } }
             ok.getOrNull()?.let { changed -> if (changed || radar == null) radar = withContext(Dispatchers.IO) { Store.cached(ctx) } }
             failed = ok.isFailure && radar == null
+            if (preloadLens == null) {
+                val lr = withContext(Dispatchers.IO) { runCatching { LensStore.refresh(ctx) }.getOrNull() }
+                if (lr is LensResult.Updated) lens = lr.lens
+                lensFetched = LensStore.fetchedAt(ctx)
+            }
             lastCheck = System.currentTimeMillis()
             refreshing = false
         }
+    }
+
+    fun connectKey(key: String) {
+        if (lensBusy) return
+        lensBusy = true
+        lensMsg = null
+        scope.launch {
+            val r = withContext(Dispatchers.IO) { LensStore.connect(ctx, key) }
+            if (r is LensResult.Updated) lens = r.lens
+            lensMsg = LensStore.explain(r)
+            lensFetched = LensStore.fetchedAt(ctx)
+            lensBusy = false
+        }
+    }
+
+    fun checkLens() {
+        if (lensBusy) return
+        lensBusy = true
+        scope.launch {
+            val r = withContext(Dispatchers.IO) { LensStore.refresh(ctx) }
+            if (r is LensResult.Updated) lens = r.lens
+            lensMsg = if (r is LensResult.Updated || r is LensResult.Unchanged) "Up to date: ${lens?.marks?.size ?: 0} marks." else LensStore.explain(r)
+            lensFetched = LensStore.fetchedAt(ctx)
+            lensBusy = false
+        }
+    }
+
+    fun forgetKey() {
+        LensStore.forget(ctx)
+        lens = null
+        lensFetched = null
+        lensMsg = "The key and AXON's private view were removed from this phone."
     }
 
     // Check for news on start and whenever the app comes back after half an hour.
@@ -152,7 +225,8 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
         top is Page.Picker -> Palette.Paper
         else -> null
     }
-    SystemBars(darkIcons = r != null && (if (top != null) ink.display(pageBg ?: Palette.Paper) == Palette.Black else tab != Tab.Home))
+    val onDeck = if (layout == Layout.Original) tab == Tab.Home else area == Area.Today && !todayList
+    SystemBars(darkIcons = r != null && (if (top != null) ink.display(pageBg ?: Palette.Paper) == Palette.Black else !onDeck))
     LaunchedEffect(top) { pagerAt = -1 }
     if (r == null) {
         Loading(failed) { failed = false; refresh() }
@@ -165,7 +239,7 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
         val l = link.value ?: return@LaunchedEffect
         link.value = null
         stack.clear()
-        when (l.dest) {
+        if (layout == Layout.Original) when (l.dest) {
             "home" -> tab = Tab.Home
             "deck" -> {
                 tab = Tab.Home
@@ -178,8 +252,31 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
             "trends" -> tab = Tab.Trends
             "watch" -> tab = Tab.Watch
             "about" -> tab = Tab.About
+        } else when (l.dest) {
+            // The same links land in the five areas: the deck in Today, lists where their questions now live.
+            "home" -> { area = Area.Today; todayList = false }
+            "deck" -> {
+                area = Area.Today; todayList = false
+                focus = todayDeck(r, lens).indexOfFirst { it.id == l.id }.coerceAtLeast(0)
+                deckKey++
+            }
+            "moves" -> { area = Area.Today; todayList = true }
+            "companies" -> { area = Area.Competitors; rivalsAt = 2 }
+            "rivals" -> { area = Area.Competitors; rivalsAt = 0 }
+            "map" -> { area = Area.Competitors; rivalsAt = 1 }
+            "funding" -> { area = Area.Deals; dealsAt = 0 }
+            "acquisitions" -> { area = Area.Deals; dealsAt = 1 }
+            "partnerships" -> { area = Area.Deals; dealsAt = 2 }
+            "licences" -> { area = Area.Market; marketAt = 1 }
+            "trends" -> { area = Area.Market; marketAt = 0 }
+            "watch" -> { area = Area.Axon; axonAt = 0 }
+            "steps" -> { area = Area.Axon; axonAt = 1 }
+            "about", "settings" -> { area = Area.Axon; axonAt = 2 }
+        }
+        when (l.dest) {
             "move" -> r.moveById[l.id]?.let { m ->
-                val list = if (m in r.deck) r.deck else r.moves
+                val deck = if (layout == Layout.Original) r.deck else todayDeck(r, lens)
+                val list = if (m in deck) deck else r.moves
                 openMoves(list, list.indexOf(m))
             }
             "company" -> if (l.id != null && r.companyById.containsKey(l.id)) stack.add(Page.Company(l.id))
@@ -195,21 +292,55 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
     )
 
     BackHandler(enabled = stack.isNotEmpty()) { actions.close() }
-    BackHandler(enabled = stack.isEmpty() && tab != Tab.Home) { tab = Tab.Home }
+    BackHandler(enabled = stack.isEmpty() && layout == Layout.Original && tab != Tab.Home) { tab = Tab.Home }
+    BackHandler(enabled = stack.isEmpty() && layout == Layout.Areas && (area != Area.Today || todayList)) { area = Area.Today; todayList = false }
+
+    // The private view shows only in the five areas; the original tabs stay as they were.
+    val shownLens = if (layout == Layout.Areas) lens else null
 
     Box(Modifier.fillMaxSize()) {
         val bottom = 58.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
-        when (tab) {
-            Tab.Home -> key(deckKey) { Deck(r, focus, ::openMoves, onExplore = { tab = Tab.Explore }, onFocus = { focus = it }, bottomInset = bottom) }
-            Tab.Explore -> Explore(r, section, { section = it }, ::openMoves, actions.openCompany, bottom)
-            Tab.Watch -> WatchScreen(
-                r, watched, actions.openCompany, ::openMoves, { tab = Tab.Explore; section = Section.Companies },
-                onAdd = { stack.add(Page.Picker) }, onToggle = actions.toggleWatch, bottomInset = bottom,
-            )
-            Tab.Trends -> TrendsScreen(r, bottom)
-            Tab.About -> AboutScreen(r, refreshing, ::refresh, { actions.openUrl(r.radarUrl) }, look, onLook, bottom)
+        if (layout == Layout.Original) {
+            when (tab) {
+                Tab.Home -> key(deckKey) { Deck(r, focus, ::openMoves, onExplore = { tab = Tab.Explore }, onFocus = { focus = it }, bottomInset = bottom) }
+                Tab.Explore -> Explore(r, section, { section = it }, ::openMoves, actions.openCompany, bottom)
+                Tab.Watch -> WatchScreen(
+                    r, watched, actions.openCompany, ::openMoves, { tab = Tab.Explore; section = Section.Companies },
+                    onAdd = { stack.add(Page.Picker) }, onToggle = actions.toggleWatch, bottomInset = bottom,
+                )
+                Tab.Trends -> TrendsScreen(r, bottom)
+                Tab.About -> AboutScreen(r, refreshing, ::refresh, { actions.openUrl(r.radarUrl) }, look, onLook, bottom, layout, onLayout)
+            }
+            TabBar(tab, dark = tab == Tab.Home, onTab = { tab = it }, modifier = Modifier.align(Alignment.BottomCenter))
+        } else {
+            val toKey = { area = Area.Axon; axonAt = 2 }
+            when (area) {
+                Area.Today -> TodayArea(r, lens, focus, deckKey, todayList, { todayList = it }, ::openMoves, { focus = it }, bottom)
+                Area.Competitors -> CompetitorsArea(r, lens, rivalsAt, { rivalsAt = it }, actions.openCompany, toKey, bottom)
+                Area.Deals -> DealsArea(r, dealsAt, { dealsAt = it }, ::openMoves, bottom)
+                Area.Market -> MarketArea(r, marketAt, { marketAt = it }, ::openMoves, bottom)
+                Area.Axon -> when (axonAt) {
+                    0 -> WatchScreen(
+                        r, watched, actions.openCompany, ::openMoves, { area = Area.Competitors; rivalsAt = 2 },
+                        onAdd = { stack.add(Page.Picker) }, onToggle = actions.toggleWatch, bottomInset = bottom,
+                        header = { Titles(AXON_SECTIONS, 0) { axonAt = it } },
+                        offer = lens?.let { l -> { WatchlistOffer(r, l, watched) { ids -> watched = watched + ids; Store.setWatched(ctx, watched) } } },
+                    )
+                    1 -> AxonNextSteps(r, lens, { axonAt = it }, ::openMoves, toKey, bottom)
+                    else -> AxonSettingsPage(
+                        r, lens,
+                        AxonSettings(
+                            connected = lens != null, fetchedAt = lensFetched, busy = lensBusy, message = lensMsg,
+                            onConnect = ::connectKey, onForget = ::forgetKey, onCheck = ::checkLens,
+                            layout = layout, onLayout = onLayout, look = look, onLook = onLook,
+                            refreshing = refreshing, onRefresh = ::refresh, onOpenWeb = { actions.openUrl(r.radarUrl) },
+                        ),
+                        { axonAt = it }, bottom,
+                    )
+                }
+            }
+            AreaBar(area, dark = area == Area.Today && !todayList, onArea = { a -> if (a == Area.Today && area == Area.Today) todayList = false; area = a }, modifier = Modifier.align(Alignment.BottomCenter))
         }
-        TabBar(tab, dark = tab == Tab.Home, onTab = { tab = it }, modifier = Modifier.align(Alignment.BottomCenter))
 
         AnimatedContent(
             targetState = stack.lastOrNull(),
@@ -221,8 +352,8 @@ private fun RadarContent(link: MutableState<Link?>, preload: Radar?, autoRefresh
         ) { page ->
             when (page) {
                 null -> Box(Modifier)
-                is Page.Moves -> MovePager(page.ids.mapNotNull { r.moveById[it] }, page.index, r, watched, actions) { if (page == stack.lastOrNull()) pagerAt = it }
-                is Page.Company -> r.companyById[page.id]?.let { CompanyPoster(it, r, watched, actions) }
+                is Page.Moves -> MovePager(page.ids.mapNotNull { r.moveById[it] }, page.index, r, watched, actions, { if (page == stack.lastOrNull()) pagerAt = it }, shownLens)
+                is Page.Company -> r.companyById[page.id]?.let { CompanyPoster(it, r, watched, actions, shownLens) }
                 Page.Picker -> CompanyPicker(r, watched, actions.toggleWatch, actions.close)
             }
         }

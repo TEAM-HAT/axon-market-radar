@@ -3,9 +3,42 @@
 The AXON Market Radar as a full Android app, plus home-screen widgets. It reads the public
 `radar.json` that the daily sweep publishes to https://team-hat.github.io/axon-market-radar/ (the sweep also
 publishes `brief.json`, which versions before 3.9 read for their widgets).
-Public market news only: no AXON tags and no watchlist.
+The public file carries market news only: no AXON tags and no watchlist. From 4.0 the app can also show AXON's
+private view, read separately from a private repository with a read-only key (see below).
 
-## The app
+## The five areas (4.0)
+
+From 4.0 the app opens on five areas, each answering one question. The original tabs (below) stay one switch away,
+under AXON, Settings, Layout, and on the original Radar tab.
+
+- **Today**: what changed and whether it matters. The card deck stays; each card carries AXON's mark on the move
+  (threat, opportunity or watch) and the reason, and the day opens with the three marked moves that matter most.
+  The grid button opens every move, filtered by AXON's mark, kind and region.
+- **Competitors**: who AXON is up against. Rivals lists every company by its threat to AXON, with its roles, the
+  markets where it matters and AXON's note; the map places every company by layer and home region, shaded by threat,
+  with AXON among the Middle East's settlement rails; Companies is the full directory.
+- **Deals**: how the market partners and raises money. Every funding round with stage, amount, valuation, lead and
+  investors, benchmarks by stage and the most active investors; acquisitions with price, status and the buyer's reason;
+  partnerships by kind, with the most connected companies.
+- **Market**: Trends and Licences, as before.
+- **AXON**: Watching (with AXON's watchlist one tap away), the open next steps by owner with the decisions taken,
+  and Settings: the private view's key, the layout, the look and the data.
+
+Company pages gain licences grouped by AXON's markets, the money raised and from whom, deals and partners; move pages
+gain the round, valuation, investors, deal status and parties. In the five areas both also show AXON's reading.
+
+## AXON's private view
+
+Marks, roles, threat levels, notes, next steps and decisions never travel in the public files. The app reads them from
+`lens/axon-lens.json` in the private repository through GitHub's API, with a fine-grained, read-only key the user
+pastes once under AXON, Settings. The key is checked before it is kept, then sealed with the phone's hardware
+keystore, and the lens is kept sealed the same way; Remove the key deletes both. Without a key, every area works on
+public data and shows where the private view would appear.
+`LensStoreTest` exercises the trip against a local stand-in for GitHub's API with a made-up lens. `AreasRenderTest`
+renders the five areas without a key and, when a clone of the private repository sits beside this one, with it; those
+pictures stay in the build folder, which git ignores.
+
+## The original tabs
 
 - **Briefing**: the latest moves as a deck of flat colour cards on black. Drag to flip through; tap the open card to read it.
 - **Move pages**: one full colour page per move, coloured by kind: licence yellow, rule blue, funding crimson, M&A violet,

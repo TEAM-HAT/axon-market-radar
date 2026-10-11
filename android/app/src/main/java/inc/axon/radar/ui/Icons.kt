@@ -42,6 +42,10 @@ object Icons {
     val Refresh = icon("refresh", "M19 12a7 7 0 1 1-2.05-4.95", "M19 4.5V8h-3.5", width = 1.9f)
     val Search = icon("search", "M10.5 4.5a6 6 0 1 0 0 12a6 6 0 1 0 0-12z", "M15 15l4.5 4.5", width = 2f)
     val Close = icon("close", "M6.5 6.5l11 11M17.5 6.5l-11 11", width = 2.2f)
+    val Target = icon("target", "M12 3.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 1 0 0-17z", "M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8z", fills = listOf("M12 10.8a1.2 1.2 0 1 0 0 2.4a1.2 1.2 0 1 0 0-2.4z"))
+    val Exchange = icon("exchange", "M4.5 8.5h14", "M15 5l3.5 3.5L15 12", "M19.5 15.5h-14", "M9 12l-3.5 3.5L9 19")
+    val Flag = icon("flag", "M6 20.5V4", "M6 4.5h11.5l-2.6 4.2 2.6 4.3H6")
+    val Key = icon("key", "M8.5 9.5a4 4 0 1 0 0 8a4 4 0 1 0 0-8z", "M11.4 10.6L19 3.5", "M16.2 6.2l2.3 2.3M14 8.4l1.8 1.8", width = 1.8f)
 }
 
 @Composable

@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.zIndex
+import inc.axon.radar.data.Mark
 import inc.axon.radar.data.Move
 import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Text
@@ -50,8 +51,10 @@ import kotlin.math.roundToInt
  * their names showing. Drag to flip through; tap the open card to read it.
  */
 @Composable
-fun Deck(radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore: () -> Unit, onFocus: (Int) -> Unit, bottomInset: Dp) {
-    val moves = radar.deck
+fun Deck(
+    radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore: () -> Unit, onFocus: (Int) -> Unit, bottomInset: Dp,
+    moves: List<Move> = radar.deck, marks: Map<String, Mark> = emptyMap(),
+) {
     val scope = rememberCoroutineScope()
     val pos = remember { Animatable(start.coerceIn(0, (moves.size - 1).coerceAtLeast(0)).toFloat()) }
     val density = LocalDensity.current
@@ -120,6 +123,7 @@ fun Deck(radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore:
                             m, cardW, cardH,
                             Modifier.offset(x = (fullW - cardW) / 2, y = (y - shift).dp).zIndex(i.toFloat())
                                 .tap { if (i == focus) onOpen(moves, i) else go(i) },
+                            marks[m.id]?.takeIf { it.mark != "none" },
                         )
                     }
                 }
@@ -177,7 +181,7 @@ fun Deck(radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore:
  * keep a hairline edge, so cards of the same tone stay apart in the stack.
  */
 @Composable
-private fun Card(m: Move, w: Dp, h: Dp, modifier: Modifier) {
+private fun Card(m: Move, w: Dp, h: Dp, modifier: Modifier, mark: Mark? = null) {
     val ink = LocalInk.current
     val bg = ink.page(m.type)
     val lined = ink.lined(m.type)
@@ -199,11 +203,18 @@ private fun Card(m: Move, w: Dp, h: Dp, modifier: Modifier) {
                 T(listOfNotNull(m.typeLabel, m.regulator?.takeIf { Text.money(m.amount) != null }).joinToString(" · ").uppercase(), Type.Caps, bg, maxLines = 1)
             }
             Column(Modifier.align(Alignment.BottomStart)) {
-                FitTitle(m.figure, bg, Modifier.fillMaxWidth(), maxSize = 64f, minSize = 26f, maxLines = 1)
+                FitTitle(m.figure, bg, Modifier.fillMaxWidth(), maxSize = if (mark != null) 54f else 64f, minSize = 26f, maxLines = 1)
                 Spacer(Modifier.height(8.dp))
-                T(m.title, Type.Small.copy(fontSize = androidx.compose.ui.unit.TextUnit(13f, androidx.compose.ui.unit.TextUnitType.Sp)), ink.onPanel(bg), maxLines = 3)
+                T(m.title, Type.Small.copy(fontSize = androidx.compose.ui.unit.TextUnit(13f, androidx.compose.ui.unit.TextUnitType.Sp)), ink.onPanel(bg), maxLines = if (mark != null) 2 else 3)
                 Spacer(Modifier.height(6.dp))
                 T(Text.dayYear(m.date).uppercase(), Type.Caps, ink.onPanel(bg).copy(alpha = 0.5f), maxLines = 1)
+                if (mark != null) {
+                    // AXON's line on the move: what it means for AXON, in the card's own colour.
+                    Spacer(Modifier.height(10.dp))
+                    Box(Modifier.fillMaxWidth().height(1.dp).background(ink.onPanel(bg).copy(alpha = 0.18f)))
+                    Spacer(Modifier.height(8.dp))
+                    MarkLine(mark, bg, ink.onPanel(bg).copy(alpha = 0.86f), lines = 2)
+                }
             }
         }
     }

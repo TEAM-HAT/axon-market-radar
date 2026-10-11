@@ -21,6 +21,7 @@ import inc.axon.radar.ui.Ink
 import inc.axon.radar.ui.Link
 import inc.axon.radar.ui.Loading
 import inc.axon.radar.ui.LocalInk
+import inc.axon.radar.ui.Layout
 import inc.axon.radar.ui.Look
 import inc.axon.radar.ui.RadarApp
 import org.junit.Assert.assertEquals
@@ -56,7 +57,7 @@ class AppRenderTest {
 
     private fun everyScreen(look: Look) {
         val link = mutableStateOf<Link?>(Link("home"))
-        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = look) }
+        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = look, startLayout = Layout.Original) }
         shot("01-home", look)
         listOf("moves" to "02-moves", "companies" to "03-companies", "licences" to "04-licences", "trends" to "05-trends").forEach { (d, n) ->
             link.value = Link(d); shot(n, look)
@@ -100,7 +101,7 @@ class AppRenderTest {
         val ctx: Context = ApplicationProvider.getApplicationContext()
         Store.setWatched(ctx, emptySet())
         val link = mutableStateOf<Link?>(Link("watch"))
-        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = look) }
+        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = look, startLayout = Layout.Original) }
         shot("40-watch-empty", look)
         rule.onNodeWithText("Add\ncompanies").performClick()
         shot("41-picker", look)
@@ -132,7 +133,7 @@ class AppRenderTest {
         val ctx: Context = ApplicationProvider.getApplicationContext()
         Store.setLook(ctx, Look.Colour)
         val link = mutableStateOf<Link?>(Link("about"))
-        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false) }
+        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLayout = Layout.Original) }
         shot("09-switch-before", Look.Mono)
         rule.onNodeWithText("Black & white").performClick()
         rule.mainClock.advanceTimeBy(200)
@@ -166,7 +167,7 @@ class TallRenderTest {
 
     private fun fullPages(look: Look) {
         val link = mutableStateOf<Link?>(Link("move", radar.deck.first().id))
-        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = look) }
+        rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = look, startLayout = Layout.Original) }
         shot("30-tall-move", look)
         link.value = Link("company", "ripple"); shot("31-tall-company", look)
         link.value = Link("trends"); shot("32-tall-trends", look)

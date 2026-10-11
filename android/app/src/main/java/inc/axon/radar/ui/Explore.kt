@@ -98,7 +98,7 @@ fun Titles(titles: List<String>, selected: Int, onSelect: (Int) -> Unit) {
 }
 
 @Composable
-private fun Filters(items: List<Pair<String, Int?>>, selected: Int, onSelect: (Int) -> Unit) {
+internal fun Filters(items: List<Pair<String, Int?>>, selected: Int, onSelect: (Int) -> Unit) {
     Row(
         Modifier.fillMaxWidth().background(Palette.Paper).horizontalScroll(rememberScrollState()).padding(start = 14.dp, end = 14.dp, top = 12.dp, bottom = 10.dp),
         horizontalArrangement = Arrangement.spacedBy(20.dp),
@@ -110,7 +110,7 @@ private fun Filters(items: List<Pair<String, Int?>>, selected: Int, onSelect: (I
 }
 
 @Composable
-private fun SmallFilters(items: List<String>, selected: Int, onSelect: (Int) -> Unit) {
+internal fun SmallFilters(items: List<String>, selected: Int, onSelect: (Int) -> Unit) {
     Row(
         Modifier.fillMaxWidth().background(Palette.Paper).horizontalScroll(rememberScrollState()).padding(start = 14.dp, end = 14.dp, bottom = 10.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -125,7 +125,7 @@ private fun SmallFilters(items: List<String>, selected: Int, onSelect: (Int) -> 
 
 /** A row on light grey: a small square, a bold name, and a muted count on the right. */
 @Composable
-private fun ListRow(thumb: @Composable () -> Unit, title: String, sub: String?, right: String, onClick: () -> Unit, titleLines: Int = 1) {
+internal fun ListRow(thumb: @Composable () -> Unit, title: String, sub: String?, right: String, onClick: () -> Unit, titleLines: Int = 1) {
     Row(
         Modifier.fillMaxWidth().padding(horizontal = 6.dp, vertical = 1.dp).clip(RoundedCornerShape(2.dp)).background(Palette.Row)
             .tap(onClick).padding(horizontal = 8.dp, vertical = 9.dp),
@@ -156,7 +156,7 @@ fun CompanyThumb(name: String, latestType: String?) {
 }
 
 @Composable
-private fun MonthHeader(label: String, n: Int) {
+internal fun MonthHeader(label: String, n: Int) {
     Row(Modifier.fillMaxWidth().background(Palette.Paper).padding(start = 14.dp, end = 14.dp, top = 18.dp, bottom = 8.dp)) {
         T(label.uppercase(), Type.Caps, Palette.Black, Modifier.weight(1f))
         T(n.toString(), Type.Caps, Palette.Black)
@@ -165,11 +165,11 @@ private fun MonthHeader(label: String, n: Int) {
 
 // ---- Moves -------------------------------------------------------------------------------------
 
-private val KINDS = listOf("All" to null, "Licences" to "License", "Rules" to "Regulation", "Funding" to "Funding", "M&A" to "M&A", "Launches" to "Launch", "Partnerships" to "Partnership")
-private val REGIONS = listOf("All regions", "Europe", "Middle East", "North America", "Global")
+internal val KINDS = listOf("All" to null, "Licences" to "License", "Rules" to "Regulation", "Funding" to "Funding", "M&A" to "M&A", "Launches" to "Launch", "Partnerships" to "Partnership")
+internal val REGIONS = listOf("All regions", "Europe", "Middle East", "North America", "Global")
 
 @Composable
-private fun MoveCarousel(moves: List<Move>, onOpen: (List<Move>, Int) -> Unit) {
+internal fun MoveCarousel(moves: List<Move>, onOpen: (List<Move>, Int) -> Unit) {
     LazyRow(contentPadding = PaddingValues(horizontal = 14.dp), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Top) {
         itemsIndexed(moves) { i, m ->
             val ink = LocalInk.current
@@ -191,7 +191,7 @@ private fun MoveCarousel(moves: List<Move>, onOpen: (List<Move>, Int) -> Unit) {
     }
 }
 
-private fun LazyListScope.movesRows(
+internal fun LazyListScope.movesRows(
     base: List<Move>, kinds: List<Pair<String, String?>>, kind: Int, onKind: (Int) -> Unit,
     region: Int, onRegion: (Int) -> Unit, onOpen: (List<Move>, Int) -> Unit,
 ) {
@@ -216,10 +216,10 @@ private fun LazyListScope.movesRows(
 
 // ---- Companies ---------------------------------------------------------------------------------
 
-private val SEGMENTS = listOf("Featured" to null, "Issuers" to "Issuer", "Rails" to "Settlement rails", "Ramps" to "On/off-ramp", "Custody" to "Custody & wallets", "Gateways" to "Merchant gateway")
+internal val SEGMENTS = listOf("Featured" to null, "Issuers" to "Issuer", "Rails" to "Settlement rails", "Ramps" to "On/off-ramp", "Custody" to "Custody & wallets", "Gateways" to "Merchant gateway")
 
 @Composable
-private fun CompanyCarousel(radar: Radar, onOpen: (String) -> Unit) {
+internal fun CompanyCarousel(radar: Radar, onOpen: (String) -> Unit) {
     val top = radar.companies.sortedByDescending { c -> radar.moves.count { (it.companyId == c.id || c.id in it.related) && it.date >= (radar.windowStart ?: "") } * 100 + c.moves }.take(10)
     LazyRow(contentPadding = PaddingValues(horizontal = 14.dp), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Top) {
         itemsIndexed(top) { i, c -> Portrait(c, tall = i == 1, dark = i % 3 != 2) { onOpen(c.id) } }
@@ -228,7 +228,7 @@ private fun CompanyCarousel(radar: Radar, onOpen: (String) -> Unit) {
 
 /** A black-and-white tile with the company's initials, standing in for the inspiration's portraits. */
 @Composable
-private fun Portrait(c: Company, tall: Boolean, dark: Boolean, onClick: () -> Unit) {
+internal fun Portrait(c: Company, tall: Boolean, dark: Boolean, onClick: () -> Unit) {
     val bg = if (dark) Palette.Black else Color(0xFFF2F2F2)
     val fg = if (dark) Palette.White else Palette.Black
     Box(Modifier.width(if (tall) 128.dp else 112.dp).height(if (tall) 196.dp else 136.dp).clip(RoundedCornerShape(3.dp)).background(bg).tap(onClick).padding(10.dp)) {
@@ -237,7 +237,7 @@ private fun Portrait(c: Company, tall: Boolean, dark: Boolean, onClick: () -> Un
     }
 }
 
-private fun LazyListScope.companyRows(radar: Radar, seg: Int, onSeg: (Int) -> Unit, onOpen: (String) -> Unit) {
+internal fun LazyListScope.companyRows(radar: Radar, seg: Int, onSeg: (Int) -> Unit, onOpen: (String) -> Unit) {
     stickyHeader { Filters(SEGMENTS.map { (label, s) -> label to radar.companies.count { s == null || it.segment == s } }, seg, onSeg) }
     val s = SEGMENTS[seg].second
     items(radar.companies.filter { s == null || it.segment == s }, key = { it.id }) { c ->
@@ -253,7 +253,7 @@ private fun LazyListScope.companyRows(radar: Radar, seg: Int, onSeg: (Int) -> Un
 // ---- Licences ----------------------------------------------------------------------------------
 
 @Composable
-private fun RegulatorCarousel(radar: Radar, onOpen: (List<Move>, Int) -> Unit) {
+internal fun RegulatorCarousel(radar: Radar, onOpen: (List<Move>, Int) -> Unit) {
     LazyRow(contentPadding = PaddingValues(horizontal = 14.dp), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Top) {
         itemsIndexed(radar.regulators.take(12)) { i, r ->
             val tall = i == 0

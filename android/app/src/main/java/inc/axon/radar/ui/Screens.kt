@@ -75,7 +75,7 @@ fun TabBar(tab: Tab, dark: Boolean, onTab: (Tab) -> Unit, modifier: Modifier = M
 }
 
 @Composable
-private fun PaperList(bottomInset: Dp, content: androidx.compose.foundation.lazy.LazyListScope.() -> Unit) {
+internal fun PaperList(bottomInset: Dp, content: androidx.compose.foundation.lazy.LazyListScope.() -> Unit) {
     LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars)) }
         content()
@@ -91,7 +91,7 @@ fun Heading(text: String, n: Int? = null) {
 }
 
 @Composable
-private fun PaperRow(left: String, right: String, sub: String? = null, onClick: (() -> Unit)? = null) {
+internal fun PaperRow(left: String, right: String, sub: String? = null, onClick: (() -> Unit)? = null) {
     Row(
         Modifier.fillMaxWidth().padding(horizontal = 6.dp, vertical = 1.dp).clip(RoundedCornerShape(2.dp)).background(Palette.Row)
             .then(if (onClick != null) Modifier.tap(onClick) else Modifier).padding(horizontal = 12.dp, vertical = 13.dp),
@@ -108,15 +108,23 @@ private fun PaperRow(left: String, right: String, sub: String? = null, onClick: 
 
 // ---- Trends ------------------------------------------------------------------------------------
 
-private val ORDER = listOf("License", "Regulation", "Funding", "M&A", "Launch", "Partnership")
-private val LABEL = mapOf("License" to "Licences", "Regulation" to "Rules", "Funding" to "Funding", "M&A" to "M&A", "Launch" to "Launches", "Partnership" to "Partnerships")
+internal val ORDER = listOf("License", "Regulation", "Funding", "M&A", "Launch", "Partnership")
+internal val LABEL = mapOf("License" to "Licences", "Regulation" to "Rules", "Funding" to "Funding", "M&A" to "M&A", "Launch" to "Launches", "Partnership" to "Partnerships")
 
 @Composable
 fun TrendsScreen(radar: Radar, bottomInset: Dp) {
-    val ink = LocalInk.current
-    val t = radar.trends
     PaperList(bottomInset) {
         item { Titles(listOf("Trends"), 0) {} }
+        trendsItems(radar)
+    }
+}
+
+/** The Trends page below its title, shared by the original Trends tab and the Market area. */
+internal fun androidx.compose.foundation.lazy.LazyListScope.trendsItems(radar: Radar) {
+    val t = radar.trends
+    // The deal history before the radar's window stays out of these counts, as it does from the monthly chart.
+    val recent = radar.moves.filter { !it.history }
+    run {
         item {
             Column(Modifier.padding(horizontal = 14.dp)) {
                 T("${t.total} moves since ${Text.monthYear(t.since)}", Type.display(34f), Palette.Black)
@@ -136,6 +144,7 @@ fun TrendsScreen(radar: Radar, bottomInset: Dp) {
         item { Heading("Moves per month") }
         item { MonthChart(radar) }
         item {
+            val ink = LocalInk.current
             Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 10.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 ORDER.forEach { k ->
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -148,10 +157,11 @@ fun TrendsScreen(radar: Radar, bottomInset: Dp) {
         }
         item { Heading("What kind of moves") }
         item {
-            val max = ORDER.maxOf { k -> radar.moves.count { it.type == k } }.coerceAtLeast(1)
+            val ink = LocalInk.current
+            val max = ORDER.maxOf { k -> recent.count { it.type == k } }.coerceAtLeast(1)
             Column(Modifier.padding(horizontal = 14.dp)) {
                 ORDER.forEach { k ->
-                    val n = radar.moves.count { it.type == k }
+                    val n = recent.count { it.type == k }
                     Row(Modifier.fillMaxWidth().padding(vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
                         T(LABEL[k] ?: k, Type.Name, Palette.Black, Modifier.width(110.dp))
                         Box(Modifier.weight(1f).height(22.dp)) {
@@ -162,9 +172,9 @@ fun TrendsScreen(radar: Radar, bottomInset: Dp) {
                 }
             }
         }
-        item { Heading("Where", radar.moves.size) }
+        item { Heading("Where", recent.size) }
         items(listOf("Europe", "Middle East", "North America", "Global")) { r ->
-            PaperRow(r, Text.plural(radar.moves.count { it.region == r }, "move", "moves"), "${radar.regions[r] ?: 0} in the last 7 days")
+            PaperRow(r, Text.plural(recent.count { it.region == r }, "move", "moves"), "${radar.regions[r] ?: 0} in the last 7 days")
         }
         item { Heading("Most active regulators") }
         items(radar.regulators.take(10)) { r ->
@@ -175,7 +185,7 @@ fun TrendsScreen(radar: Radar, bottomInset: Dp) {
 
 /** Moves per month for the last thirteen months, each bar stacked in the colours of its kinds. */
 @Composable
-private fun MonthChart(radar: Radar) {
+internal fun MonthChart(radar: Radar) {
     val months = radar.trends.months.map { it.ym }.ifEmpty {
         val end = LocalDate.now(); (12 downTo 0).map { end.minusMonths(it.toLong()) }.map { "%04d-%02d".format(it.year, it.monthValue) }
     }
@@ -225,6 +235,7 @@ private fun MonthChart(radar: Radar) {
 fun AboutScreen(
     radar: Radar, refreshing: Boolean, onRefresh: () -> Unit, onOpenWeb: () -> Unit,
     look: Look, onLook: (Look) -> Unit, bottomInset: Dp,
+    layout: Layout? = null, onLayout: ((Layout) -> Unit)? = null,
 ) {
     PaperList(bottomInset) {
         item { RadarLockup(Palette.Black, 56.dp, Modifier.padding(start = 14.dp, top = 12.dp, bottom = 18.dp)) }
@@ -232,6 +243,10 @@ fun AboutScreen(
             Column(Modifier.padding(horizontal = 14.dp)) {
                 T(androidx.compose.ui.text.AnnotatedString("Stablecoin and blockchain payments moves in Europe, the Middle East and North America, checked against their sources every morning."), Type.Lead, Palette.Ink2)
             }
+        }
+        if (layout != null && onLayout != null) {
+            item { Heading("Layout") }
+            item { LayoutPicker(layout, onLayout) }
         }
         item { Heading("Look") }
         item { LookPicker(radar, look, onLook) }
@@ -259,7 +274,7 @@ fun AboutScreen(
                     Ico(Icons.ArrowOut, Palette.Black, 18.dp)
                 }
                 Spacer(Modifier.height(24.dp))
-                T("The app shows public market news only. Company tags for AXON and the radar's watchlist stay in the web radar. Type is Inter Tight, under the SIL Open Font License.", Type.Small, Palette.Muted)
+                T("These tabs show public market news only. AXON's private view appears in the five areas once its read-only key is added. Type is Inter Tight, under the SIL Open Font License.", Type.Small, Palette.Muted)
             }
         }
     }
@@ -270,7 +285,7 @@ fun AboutScreen(
  * seeing it. The chosen one is framed in black.
  */
 @Composable
-private fun LookPicker(radar: Radar, look: Look, onLook: (Look) -> Unit) {
+internal fun LookPicker(radar: Radar, look: Look, onLook: (Look) -> Unit) {
     Column(Modifier.padding(horizontal = 14.dp)) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             LookOption(radar, Look.Colour, "Colour", look == Look.Colour, Modifier.weight(1f)) { onLook(Look.Colour) }

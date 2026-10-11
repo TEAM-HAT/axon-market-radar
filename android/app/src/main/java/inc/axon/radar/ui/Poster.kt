@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.util.lerp
 import inc.axon.radar.data.Company
+import inc.axon.radar.data.Lens
 import inc.axon.radar.data.Move
 import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Text
@@ -58,7 +59,10 @@ class PosterActions(
 
 /** Swipe sideways between moves; the next page slides over the one before, as in the inspiration. */
 @Composable
-fun MovePager(moves: List<Move>, start: Int, radar: Radar, watched: Set<String>, actions: PosterActions, onPage: (Int) -> Unit = {}) {
+fun MovePager(
+    moves: List<Move>, start: Int, radar: Radar, watched: Set<String>, actions: PosterActions, onPage: (Int) -> Unit = {},
+    lens: Lens? = null,
+) {
     val state = rememberPagerState(initialPage = start.coerceIn(0, (moves.size - 1).coerceAtLeast(0))) { moves.size }
     LaunchedEffect(state) { snapshotFlow { state.currentPage }.collect(onPage) }
     HorizontalPager(state, Modifier.fillMaxSize().background(Palette.Black), beyondBoundsPageCount = 1) { page ->
@@ -70,13 +74,34 @@ fun MovePager(moves: List<Move>, start: Int, radar: Radar, watched: Set<String>,
                 alpha = lerp(1f, 0.55f, offset.coerceIn(0f, 1f))
             }
         }) {
-            MovePoster(moves[page], radar, watched, actions)
+            MovePoster(moves[page], radar, watched, actions, lens)
         }
     }
 }
 
+private val STATUS = mapOf("announced" to "Announced", "completed" to "Completed", "called off" to "Called off", "reported" to "Reported")
+
+/** The deal details a move carries: round, valuation, investors, status, what the buyer gains, the parties and themes. */
+private fun dealFacts(m: Move, radar: Radar): List<Pair<String, String>> {
+    val others = m.parties.filter { it.role != "lead investor" && it.role != "investor" }
+    return listOfNotNull(
+        m.round?.stage?.let { "Round" to it },
+        m.round?.valuation?.let { "Valuation" to (Text.money(it) ?: "") },
+        m.leads.takeIf { it.isNotEmpty() }?.let { "Led by" to it.joinToString(", ") { p -> p.name } },
+        m.investors.takeIf { it.isNotEmpty() }?.let { "Investors" to it.joinToString(", ") { p -> p.name } },
+        m.round?.useOfFunds?.let { "For" to it.replaceFirstChar { c -> c.uppercase() } },
+        m.deal?.status?.let { "Status" to (STATUS[it] ?: it) },
+        m.deal?.valuation?.let { "Valuation" to (Text.money(it) ?: "") },
+        m.deal?.rationale?.let { "Why" to it.replaceFirstChar { c -> c.uppercase() } },
+        m.deal?.gains?.takeIf { it.isNotEmpty() }?.let { "Buyer gains" to it.joinToString(", ").replaceFirstChar { c -> c.uppercase() } },
+        m.kind?.let { "Kind" to it },
+        others.takeIf { it.isNotEmpty() }?.let { "Parties" to it.joinToString(", ") { p -> "${p.name} (${p.role})" } },
+        m.themes.mapNotNull { t -> radar.themes.firstOrNull { it.id == t }?.name }.takeIf { it.isNotEmpty() }?.let { "Themes" to it.joinToString(", ") },
+    )
+}
+
 @Composable
-fun MovePoster(m: Move, radar: Radar, watched: Set<String>, actions: PosterActions) {
+fun MovePoster(m: Move, radar: Radar, watched: Set<String>, actions: PosterActions, lens: Lens? = null) {
     val ink = LocalInk.current
     val bg = ink.page(m.type)
     val company = m.companyId?.let { radar.companyById[it] }
@@ -103,6 +128,13 @@ fun MovePoster(m: Move, radar: Radar, watched: Set<String>, actions: PosterActio
         timeline = { Timeline(radar.timelineFor(m), m, bg) { list, i -> actions.openMoves(list, i) } },
     ) {
         T(m.summary, Type.Body.copy(fontSize = 17.sp, lineHeight = 25.sp), ink.reading(bg))
+        lens?.mark(m.id)?.let { mk ->
+            Spacer(Modifier.height(22.dp))
+            AxonPanel(
+                bg, "For AXON · ${mk.label}", mk.mark, mk.why,
+                listOfNotNull(mk.next?.let { "Next step" to it }, mk.owner?.let { "Owner" to it }),
+            )
+        }
         Spacer(Modifier.height(22.dp))
         Facts(bg, listOfNotNull(
             company?.let { "Company" to it.name },
@@ -111,6 +143,7 @@ fun MovePoster(m: Move, radar: Radar, watched: Set<String>, actions: PosterActio
             m.jurisdiction?.let { "Jurisdiction" to it },
             m.region?.let { "Region" to it },
             "Date" to Text.long(m.date, m.precision),
+        ) + dealFacts(m, radar) + listOfNotNull(
             m.sourceName?.let { "Source" to "$it · ${Text.host(m.sourceUrl)}" },
         ))
         Spacer(Modifier.height(22.dp))
@@ -122,13 +155,32 @@ fun MovePoster(m: Move, radar: Radar, watched: Set<String>, actions: PosterActio
     }
 }
 
+/** Which of AXON's markets a licence counts in, from its regulator and jurisdiction. */
+fun licenceMarket(l: inc.axon.radar.data.Licence): String {
+    val s = listOfNotNull(l.key, l.regulator, l.jurisdiction, l.type).joinToString(" ").uppercase()
+    return when {
+        Regex("VARA|ADGM|FSRA|DFSA|CBUAE|UAE|DUBAI|ABU DHABI").containsMatchIn(s) -> "UAE"
+        Regex("SAMA|\\bCMA\\b|SAUDI").containsMatchIn(s) -> "Saudi Arabia"
+        Regex("\\bCBB\\b|BAHRAIN").containsMatchIn(s) -> "Bahrain"
+        Regex("\\bFCA\\b|UNITED KINGDOM|\\bUK\\b").containsMatchIn(s) -> "UK"
+        Regex("FINTRAC|\\bCSA\\b|\\bOSC\\b|CIRO|FCAC|CANADA|ONTARIO|QUEBEC|ALBERTA|BRITISH COLUMBIA").containsMatchIn(s) -> "Canada"
+        Regex("NYDFS|\\bOCC\\b|FINCEN|FEDERAL RESERVE|FDIC|UNITED STATES|\\bUSA?\\b|NEW YORK|STATE").containsMatchIn(s) -> "US"
+        Regex("MICA|ESMA|CSSF|\\bAFM\\b|\\bDNB\\b|MFSA|BAFIN|\\bAMF\\b|\\bCBI\\b|LITHUANIA|CYSEC|FIN-FSA|EEA|LUXEMBOURG|NETHERLANDS|MALTA|GERMANY|FRANCE|IRELAND|CYPRUS|AUSTRIA|FINLAND|SPAIN|ITALY|BELGIUM|POLAND|EU\\b").containsMatchIn(s) -> "EU"
+        else -> "Elsewhere"
+    }
+}
+
 @Composable
-fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: PosterActions) {
+fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: PosterActions, lens: Lens? = null) {
     val moves = radar.movesFor(c.id)
     val latest = moves.firstOrNull()
     val ink = LocalInk.current
     val bg = ink.page(latest?.type ?: "Partnership")
     val on = c.id in watched
+    val stance = lens?.stance(c.id)
+    val rounds = radar.moves.filter { it.type == "Funding" && it.companyId == c.id }
+    val deals = radar.moves.filter { it.type == "M&A" && (it.companyId == c.id || it.parties.any { p -> p.id == c.id }) }
+    val partners = radar.moves.filter { it.type == "Partnership" && (it.companyId == c.id || it.parties.any { p -> p.id == c.id } || c.id in it.related) }
     Poster(
         bg = bg, title = c.name, onClose = actions.close,
         meta = {
@@ -145,6 +197,17 @@ fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: Poste
         label = c.segment ?: "About", lead = c.blurb ?: "",
         timeline = { Timeline(moves, null, bg) { list, i -> actions.openMoves(list, i) } },
     ) {
+        if (stance != null) {
+            AxonPanel(
+                bg, "For AXON", null, stance.note.ifBlank { stanceLine(stance) },
+                listOfNotNull(
+                    "Role" to stance.roles.joinToString(", ") { Lens.roleLabel(it) },
+                    "Threat" to Lens.threatLabel(stance.threat),
+                    stance.markets.takeIf { it.isNotEmpty() }?.let { "Matters in" to it.joinToString(", ") },
+                ),
+            )
+            Spacer(Modifier.height(26.dp))
+        }
         Facts(bg, listOfNotNull(
             listOfNotNull(c.hqCity, c.hqCountry).joinToString(", ").takeIf { it.isNotEmpty() }?.let { "Headquarters" to it },
             c.region?.let { "Region" to it },
@@ -161,12 +224,78 @@ fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: Poste
             Spacer(Modifier.height(26.dp))
             T("Licences", Type.display(30f), ink.display(bg))
             Spacer(Modifier.height(10.dp))
-            c.licences.forEach { l ->
+            // Grouped by AXON's markets, so the ones that matter to AXON read first.
+            val byMarket = c.licences.groupBy { licenceMarket(it) }
+            (inc.axon.radar.data.Lens.MARKETS + "Elsewhere").filter { it in byMarket }.forEach { market ->
+                Rule(bg)
+                T(market.uppercase(), Type.Caps, ink.display(bg), Modifier.padding(top = 12.dp, bottom = 2.dp))
+                byMarket.getValue(market).forEach { l ->
+                    Column(Modifier.padding(vertical = 7.dp)) {
+                        T(listOfNotNull(l.key ?: l.regulator, l.jurisdiction, l.year?.toString()).joinToString(" · "), Type.Caps, ink.secondary(bg))
+                        Spacer(Modifier.height(3.dp))
+                        T(l.type ?: "", Type.Row, ink.reading(bg))
+                    }
+                }
+            }
+        }
+        if (rounds.isNotEmpty()) {
+            Spacer(Modifier.height(26.dp))
+            T("Money raised", Type.display(30f), ink.display(bg))
+            Spacer(Modifier.height(10.dp))
+            rounds.forEach { m ->
+                Rule(bg)
+                Row(Modifier.fillMaxWidth().tap { actions.openMoves(rounds, rounds.indexOf(m)) }.padding(vertical = 11.dp), verticalAlignment = Alignment.Top) {
+                    Column(Modifier.weight(1f)) {
+                        T(listOfNotNull(m.round?.stage, Text.dayYear(m.date).takeIf { m.precision != "month" } ?: Text.monthFull(m.date)).joinToString(" · ").uppercase(), Type.Caps, ink.secondary(bg))
+                        Spacer(Modifier.height(3.dp))
+                        T(listOfNotNull(
+                            m.leads.takeIf { it.isNotEmpty() }?.let { "Led by " + it.joinToString(", ") { p -> p.name } },
+                            m.investors.takeIf { it.isNotEmpty() }?.let { "with " + it.take(6).joinToString(", ") { p -> p.name } + if (it.size > 6) " and ${it.size - 6} more" else "" },
+                        ).joinToString(", ").ifEmpty { m.title }, Type.Row, ink.reading(bg))
+                        m.round?.valuation?.let { v -> Spacer(Modifier.height(2.dp)); T("Valued at ${Text.money(v)}", Type.Small, ink.secondary(bg)) }
+                    }
+                    Spacer(Modifier.width(10.dp))
+                    T(Text.money(m.amount) ?: "Undisclosed", Type.Name, ink.reading(bg))
+                }
+            }
+            val backers = rounds.flatMap { it.leads + it.investors }.distinctBy { it.id }
+            if (backers.isNotEmpty()) {
                 Rule(bg)
                 Column(Modifier.padding(vertical = 11.dp)) {
-                    T(listOfNotNull(l.key ?: l.regulator, l.jurisdiction, l.year?.toString()).joinToString(" · "), Type.Caps, ink.secondary(bg))
+                    T("BACKERS", Type.Caps, ink.secondary(bg))
                     Spacer(Modifier.height(3.dp))
-                    T(l.type ?: "", Type.Row, ink.reading(bg))
+                    T(backers.joinToString(", ") { it.name }, Type.Row, ink.reading(bg))
+                }
+            }
+        }
+        if (deals.isNotEmpty()) {
+            Spacer(Modifier.height(26.dp))
+            T("Deals", Type.display(30f), ink.display(bg))
+            Spacer(Modifier.height(10.dp))
+            deals.forEach { m ->
+                Rule(bg)
+                Row(Modifier.fillMaxWidth().tap { actions.openMoves(deals, deals.indexOf(m)) }.padding(vertical = 11.dp), verticalAlignment = Alignment.Top) {
+                    Column(Modifier.weight(1f)) {
+                        T(listOfNotNull(m.deal?.status?.let { STATUS[it] ?: it }, Text.dayYear(m.date)).joinToString(" · ").uppercase(), Type.Caps, ink.secondary(bg))
+                        Spacer(Modifier.height(3.dp))
+                        T(m.title, Type.Row, ink.reading(bg))
+                    }
+                    Text.money(m.amount)?.let { Spacer(Modifier.width(10.dp)); T(it, Type.Name, ink.reading(bg)) }
+                }
+            }
+        }
+        if (partners.isNotEmpty()) {
+            Spacer(Modifier.height(26.dp))
+            T("Partners", Type.display(30f), ink.display(bg))
+            Spacer(Modifier.height(10.dp))
+            partners.forEach { m ->
+                val with = (m.parties.filter { it.id != c.id }.map { it.name } + m.related.filter { it != c.id }.mapNotNull { radar.companyById[it]?.name } +
+                    listOfNotNull(m.companyName.takeIf { m.companyId != c.id })).distinct()
+                Rule(bg)
+                Column(Modifier.fillMaxWidth().tap { actions.openMoves(partners, partners.indexOf(m)) }.padding(vertical = 11.dp)) {
+                    T(listOfNotNull(m.kind, Text.dayYear(m.date)).joinToString(" · ").uppercase(), Type.Caps, ink.secondary(bg))
+                    Spacer(Modifier.height(3.dp))
+                    T(if (with.isNotEmpty()) "With " + with.joinToString(", ") else m.title, Type.Row, ink.reading(bg))
                 }
             }
         }
@@ -183,6 +312,14 @@ fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: Poste
                         T("${m.typeLabel.uppercase()} · ${Text.dayYear(m.date).uppercase()}", Type.Caps, ink.secondary(bg))
                         Spacer(Modifier.height(3.dp))
                         T(m.title, Type.Row, ink.reading(bg))
+                        lens?.mark(m.id)?.takeIf { it.mark != "none" }?.let { mk ->
+                            Spacer(Modifier.height(4.dp))
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                MarkSign(mk.mark, ink.reading(bg), 8.dp)
+                                Spacer(Modifier.width(5.dp))
+                                T("FOR AXON · ${mk.label.uppercase()}", Type.Caps, ink.reading(bg), maxLines = 1)
+                            }
+                        }
                     }
                 }
             }

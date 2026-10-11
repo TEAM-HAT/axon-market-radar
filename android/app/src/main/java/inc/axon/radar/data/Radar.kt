@@ -1,6 +1,7 @@
 package inc.axon.radar.data
 
 import android.content.Context
+import inc.axon.radar.ui.Layout
 import inc.axon.radar.ui.Look
 import org.json.JSONArray
 import org.json.JSONObject
@@ -13,12 +14,26 @@ import java.time.OffsetDateTime
 import java.time.format.TextStyle
 import java.util.Locale
 
+/** Another organisation named in a move, and its part in it: lead investor, investor, buyer, target, partner, client... */
+data class Party(val id: String, val name: String, val role: String)
+
+/** A funding round's stage, valuation and what the money is for. */
+data class Round(val stage: String?, val valuation: Double?, val useOfFunds: String?)
+
+/** An acquisition's status, the buyer's reason and what it gains. */
+data class Deal(val status: String?, val rationale: String?, val gains: List<String>, val valuation: Double?)
+
 data class Move(
     val id: String, val date: String, val precision: String, val type: String, val typeLabel: String,
     val region: String?, val title: String, val summary: String, val amount: Double?, val regulator: String?,
     val jurisdiction: String?, val companyId: String?, val companyName: String?, val related: List<String>,
     val sourceName: String?, val sourceUrl: String?, val added: String?,
+    val parties: List<Party> = emptyList(), val themes: List<String> = emptyList(), val round: Round? = null,
+    val deal: Deal? = null, val kind: String? = null, val history: Boolean = false,
 ) {
+    val leads: List<Party> get() = parties.filter { it.role == "lead investor" }
+    val investors: List<Party> get() = parties.filter { it.role == "investor" }
+
     /** Who the move is about: the company, else the regulator, else the region. */
     val subject: String get() = companyName ?: regulator ?: jurisdiction ?: region ?: "Market"
 
@@ -46,11 +61,18 @@ data class Trends(
     val months: List<Month>, val partialLast: Boolean,
 )
 
+/** A tracked theme, such as dirham tokens or the MiCA clean-up. */
+data class Theme(val id: String, val name: String, val what: String?)
+
 data class Radar(
     val updatedAt: String?, val nextRun: String?, val windowStart: String?, val windowEnd: String?, val count: Int,
     val newToday: Int, val headline: String, val mixText: String, val regions: Map<String, Int>, val highlights: List<String>,
     val moves: List<Move>, val companies: List<Company>, val regulators: List<Regulator>, val trends: Trends, val radarUrl: String,
+    val themes: List<Theme> = emptyList(), val orgNames: Map<String, String> = emptyMap(),
 ) {
+    /** The name of any organisation the radar knows: a tracked company first, then the wider list. */
+    fun nameOf(id: String): String? = companyById[id]?.name ?: orgNames[id]
+
     val companyById: Map<String, Company> = companies.associateBy { it.id }
     val moveById: Map<String, Move> = moves.associateBy { it.id }
 
@@ -85,6 +107,15 @@ data class Radar(
                     companyId = e.str("company_id"), companyName = e.str("company_name"),
                     related = e.strings("related"), sourceName = e.str("source_name"), sourceUrl = e.str("source_url"),
                     added = e.str("added"),
+                    parties = e.list("parties").mapNotNull { p ->
+                        val id = p.str("id") ?: return@mapNotNull null
+                        Party(id, p.str("name") ?: id, p.str("role") ?: "partner")
+                    },
+                    themes = e.strings("themes"),
+                    round = e.optJSONObject("round")?.let { Round(it.str("stage"), it.num("valuation_usd_m"), it.str("use_of_funds")) },
+                    deal = e.optJSONObject("deal")?.let { Deal(it.str("status"), it.str("rationale"), it.strings("gains"), it.num("valuation_usd_m")) },
+                    kind = e.str("kind"),
+                    history = e.optBoolean("history", false),
                 )
             }
             val companies = o.list("companies").map { c ->
@@ -118,6 +149,10 @@ data class Radar(
                 headline = o.str("headline") ?: "", mixText = o.str("mix_text") ?: "", regions = regions,
                 highlights = o.strings("highlights"), moves = moves, companies = companies, regulators = regulators,
                 trends = trends, radarUrl = o.str("radar_url") ?: "https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei",
+                themes = o.list("themes").mapNotNull { t -> t.str("id")?.let { Theme(it, t.str("name") ?: it, t.str("what")) } },
+                orgNames = o.optJSONObject("orgs")?.let { org ->
+                    org.keys().asSequence().associateWith { k -> org.optJSONObject(k)?.str("name") ?: k }
+                } ?: emptyMap(),
             )
         }
 
@@ -202,6 +237,14 @@ object Store {
     fun setLook(ctx: Context, look: Look) {
         // Written at once, so widgets redrawn right after the switch read the new look.
         ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putString("look", if (look == Look.Mono) "mono" else "colour").commit()
+    }
+
+    /** The five areas, or the original tabs one switch away. Kept on this phone. */
+    fun layout(ctx: Context): Layout =
+        if (ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString("layout", null) == "original") Layout.Original else Layout.Areas
+
+    fun setLayout(ctx: Context, layout: Layout) {
+        ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putString("layout", if (layout == Layout.Original) "original" else "areas").commit()
     }
 }
 

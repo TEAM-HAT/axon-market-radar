@@ -74,13 +74,15 @@ private val BoxHeight = 176.dp
 fun WatchScreen(
     radar: Radar, watched: Set<String>, onOpenCompany: (String) -> Unit, onOpenMoves: (List<Move>, Int) -> Unit,
     onExplore: () -> Unit, onAdd: () -> Unit, onToggle: (String) -> Unit, bottomInset: Dp,
+    header: (@Composable () -> Unit)? = null, offer: (@Composable () -> Unit)? = null,
 ) {
     // Most recently active first, so the box that changed lately leads.
     val cos = radar.companies.filter { it.id in watched }.sortedByDescending { it.lastDate ?: "" }
     val moves = radar.moves.filter { m -> cos.any { it.id == m.companyId || it.id in m.related } }
     LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars)) }
-        item { Titles(listOf("Watching", "Companies"), 0) { if (it == 1) onExplore() } }
+        item { if (header != null) header() else Titles(listOf("Watching", "Companies"), 0) { if (it == 1) onExplore() } }
+        if (offer != null) item { offer() }
         if (cos.isEmpty()) {
             item {
                 T("Add the companies you follow. Each gets a box here with its latest move, and a tap opens its page. Your list stays on this phone.",
