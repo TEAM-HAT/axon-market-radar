@@ -1,28 +1,28 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-10T06:59:30+03:00",
-  "next_run": "2026-10-11T06:54:00+03:00",
-  "window_start": "2026-10-04",
-  "window_end": "2026-10-10",
+  "updated_at": "2026-10-11T07:00:00+03:00",
+  "next_run": "2026-10-12T06:54:00+03:00",
+  "window_start": "2026-10-05",
+  "window_end": "2026-10-11",
   "week": 41,
-  "count": 24,
-  "new_today": 3,
-  "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users as Anchorage bought Routable and more crypto firms sought OCC trust charters. Europe gave licensed firms **three months to unwind unauthorised stablecoins**.",
+  "count": 26,
+  "new_today": 2,
+  "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users while more crypto firms sought OCC trust charters and Anchorage bought Routable. In Europe, ESMA gave licensed firms **three months to drop unauthorised stablecoins**.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 7,
+      "n": 8,
       "label": "partnerships"
+    },
+    {
+      "type": "Launch",
+      "n": 6,
+      "label": "launches"
     },
     {
       "type": "Regulation",
       "n": 6,
       "label": "regulatory actions"
-    },
-    {
-      "type": "Launch",
-      "n": 5,
-      "label": "launches"
     },
     {
       "type": "License",
@@ -40,17 +40,17 @@
       "label": "M&A deal"
     }
   ],
-  "mix_text": "7 partnerships · 6 regulatory actions · 5 launches · 3 licences · 2 funding rounds · 1 M&A deal",
+  "mix_text": "8 partnerships · 6 launches · 6 regulatory actions · 3 licences · 2 funding rounds · 1 M&A deal",
   "regions": {
     "Europe": 6,
     "Middle East": 6,
     "North America": 8,
-    "Global": 4
+    "Global": 6
   },
   "groups": {
     "regulatory": 9,
     "capital": 3,
-    "commercial": 12
+    "commercial": 14
   },
   "moves": [
     {
@@ -200,6 +200,18 @@
       "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     },
     {
+      "id": "coinbase-yuno-checkout-2026-10-07",
+      "date": "2026-10-07",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Coinbase",
+      "title": "Yuno adds Coinbase stablecoin checkout for its merchants",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/yuno-partners-with-coinbase-to-add-stablecoin-checkout-for-merchants"
+    },
+    {
       "id": "polygon-tron-open-money-stack-2026-10-07",
       "date": "2026-10-07",
       "type": "Partnership",
@@ -210,18 +222,6 @@
       "title": "Polygon adds TRON's USDT to its Open Money Stack payments platform",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/business/2026/10/07/polygon-and-tron-partner-to-bridge-usd94-billion-usdt-ecosystem-with-u-s-banking-rails"
-    },
-    {
-      "id": "mesh-wlfi-usd1-2026-10-07",
-      "date": "2026-10-07",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Mesh",
-      "title": "World Liberty and Mesh plan USD1 spending at online merchants",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/trump-backed-wlfi-plans-usd1-payments-for-online-businesses"
     }
   ],
   "companies": [
@@ -235,6 +235,17 @@
       "last_date": "2026-10-08",
       "last_title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
       "last_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
+    },
+    {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "segment": "Custody & wallets",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 2,
+      "last_date": "2026-10-07",
+      "last_title": "Yuno adds Coinbase stablecoin checkout for its merchants",
+      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/yuno-partners-with-coinbase-to-add-stablecoin-checkout-for-merchants"
     },
     {
       "id": "circle",
@@ -279,17 +290,6 @@
       "last_date": "2026-10-07",
       "last_title": "World Liberty and Mesh plan USD1 spending at online merchants",
       "last_url": "https://cointelegraph.com/news/trump-backed-wlfi-plans-usd1-payments-for-online-businesses"
-    },
-    {
-      "id": "circle-europe",
-      "name": "Circle (Circle Internet Financial Europe)",
-      "segment": "Issuer",
-      "country": "France",
-      "region": "Europe",
-      "moves_30d": 1,
-      "last_date": "2026-10-07",
-      "last_title": "Circle and SAP-backed Tereina to bring USDC and EURC to SAP Pay",
-      "last_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
     }
   ],
   "licences": [
@@ -400,10 +400,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 140,
+    "total": 142,
     "licences": 32,
     "regulatory_actions": 23,
-    "commercial": 63,
+    "commercial": 65,
     "capital": 22,
     "months": [
       {
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 26
+        "n": 28
       }
     ],
     "partial_last": true
