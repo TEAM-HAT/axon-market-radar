@@ -121,6 +121,55 @@
    "added": "2026-10-11"
   },
   {
+   "id": "kast-seed-2024-12-11",
+   "date": "2024-12-11",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "KAST",
+   "type": "Funding",
+   "region": "Global",
+   "title": "KAST raises $10m seed led by HSG and Peak XV",
+   "summary": "KAST, a stablecoin platform offering payment cards and US dollar accounts in over 150 countries with partners such as Bridge, raised a $10m seed led by HSG and Peak XV, with partners of DST Global and Goodwater Capital.",
+   "amount_usd_m": 10,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "KAST",
+   "source_url": "https://www.kast.xyz/blog/kast-secures-us-10-million-seed-round",
+   "related": [],
+   "parties": [
+    {
+     "id": "hongshan",
+     "name": "HSG",
+     "role": "lead investor"
+    },
+    {
+     "id": "peak-xv",
+     "name": "Peak XV Partners",
+     "role": "lead investor"
+    },
+    {
+     "id": "dst-global",
+     "name": "DST Global",
+     "role": "investor"
+    },
+    {
+     "id": "goodwater-capital",
+     "name": "Goodwater Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "apps-and-wallets"
+   ],
+   "round": {
+    "stage": "Seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "savings and remittance products on top of its cards and dollar accounts"
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "bvnk-series-b-2024-12-17",
    "date": "2024-12-17",
    "date_precision": "day",
@@ -252,6 +301,40 @@
    "added": "2026-10-11"
   },
   {
+   "id": "1money-seed-2025-01-16",
+   "date": "2025-01-16",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "1Money",
+   "type": "Funding",
+   "region": "North America",
+   "title": "1Money emerges with over $20m seed for a stablecoin payments chain",
+   "summary": "1Money came out of stealth with more than $20m of seed capital, with Hack VC among its backers, to launch the 1Money Network, a layer 1 protocol built for stablecoin payments that it planned to open in the second quarter.",
+   "amount_usd_m": 20,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/news/investment-tracker/2025/1money-raises-20-million-to-launch-network-for-stablecoin-payments/",
+   "related": [],
+   "parties": [
+    {
+     "id": "hack-vc",
+     "name": "Hack VC",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "payment-chains"
+   ],
+   "round": {
+    "stage": "Seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "launching the 1Money Network"
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "komainu-series-b-2025-01-16",
    "date": "2025-01-16",
    "date_precision": "day",
@@ -281,6 +364,45 @@
     "stage": "Series B",
     "valuation_usd_m": null,
     "use_of_funds": "international growth and Blockstream technology for collateral management and tokenisation"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "phantom-series-c-2025-01-17",
+   "date": "2025-01-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Phantom",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Phantom raises $150m Series C at a $3bn valuation",
+   "summary": "Crypto wallet Phantom raised $150m in a Series C led by Sequoia Capital and Paradigm at a $3bn valuation. It claimed 15m active users and $20bn of annual trading volume.",
+   "amount_usd_m": 150,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "SiliconANGLE",
+   "source_url": "https://siliconangle.com/2025/01/17/phantom-cryptocurrency-wallet-raises-150m-3b-valuation/",
+   "related": [],
+   "parties": [
+    {
+     "id": "sequoia-capital",
+     "name": "Sequoia Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "paradigm",
+     "name": "Paradigm",
+     "role": "lead investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "apps-and-wallets"
+   ],
+   "round": {
+    "stage": "Series C",
+    "valuation_usd_m": 3000,
+    "use_of_funds": "new features for its wallet, including social discovery"
    },
    "added": "2026-10-11"
   },
@@ -325,6 +447,88 @@
    "added": "2026-10-11"
   },
   {
+   "id": "cedar-money-seed-2025-01-30",
+   "date": "2025-01-30",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Cedar Money",
+   "type": "Funding",
+   "region": "North America",
+   "title": "QED leads $9.9m seed in stablecoin payments firm Cedar Money",
+   "summary": "US-based Cedar Money, which runs cross-border payments on stablecoins behind a fiat-facing service, raised a $9.9m seed led by QED Investors with Lattice, NIV, Stellar and Wischoff Ventures.",
+   "amount_usd_m": 9.9,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "TechCrunch",
+   "source_url": "https://techcrunch.com/2025/01/30/qed-seeds-9-9m-in-cedar-money-a-stablecoin-payment-platform/",
+   "related": [],
+   "parties": [
+    {
+     "id": "qed-investors",
+     "name": "QED Investors",
+     "role": "lead investor"
+    },
+    {
+     "id": "lattice",
+     "name": "Lattice",
+     "role": "investor"
+    },
+    {
+     "id": "niv",
+     "name": "NIV",
+     "role": "investor"
+    },
+    {
+     "id": "stellar",
+     "name": "Stellar",
+     "role": "investor"
+    },
+    {
+     "id": "wischoff-ventures",
+     "name": "Wischoff Ventures",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "scaling its payment infrastructure"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bastion-ny-trust-charter-2025-02",
+   "date": "2025-02",
+   "date_precision": "month",
+   "company_id": "bastion",
+   "company_name": "Bastion",
+   "type": "License",
+   "region": "North America",
+   "title": "Bastion gains a New York trust charter by buying Dibbs Trust Company",
+   "summary": "Stablecoin infrastructure firm Bastion secured a New York limited purpose trust charter from NYDFS by acquiring Dibbs Trust Company, to launch a white-label stablecoin issuance platform.",
+   "amount_usd_m": null,
+   "regulator": "NYDFS",
+   "jurisdiction": "United States",
+   "source_name": "American Banker",
+   "source_url": "https://www.americanbanker.com/news/bastion-platforms-seeks-to-convert-its-state-trust-charter",
+   "related": [],
+   "parties": [
+    {
+     "id": "dibbs-trust-company",
+     "name": "Dibbs Trust Company",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "stripe-bridge-close-2025-02-04",
    "date": "2025-02-04",
    "date_precision": "day",
@@ -358,6 +562,50 @@
      "technology",
      "clients"
     ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "limited-pre-seed-2025-02-11",
+   "date": "2025-02-11",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Limited",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Limited raises $3m pre-seed for stablecoin-based banking",
+   "summary": "Limited, founded by Hussein Ahmed to offer premium global banking services on stablecoins with self-custody, raised a $3m pre-seed led by Third Prime, with The House Fund and Arche Capital.",
+   "amount_usd_m": 3,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Pulse 2.0",
+   "source_url": "https://pulse2.com/limited-3-million-pre-seed-raised-to-transform-banking-through-stablecoins-and-self-custody/",
+   "related": [],
+   "parties": [
+    {
+     "id": "third-prime",
+     "name": "Third Prime",
+     "role": "lead investor"
+    },
+    {
+     "id": "the-house-fund",
+     "name": "The House Fund",
+     "role": "investor"
+    },
+    {
+     "id": "arche-capital",
+     "name": "Arche Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "apps-and-wallets"
+   ],
+   "round": {
+    "stage": "Pre-seed",
+    "valuation_usd_m": null,
+    "use_of_funds": null
    },
    "added": "2026-10-11"
   },
@@ -514,6 +762,39 @@
    "added": "2026-10-11"
   },
   {
+   "id": "mgx-binance-2025-03-12",
+   "date": "2025-03-12",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Binance",
+   "type": "Funding",
+   "region": "Middle East",
+   "title": "Abu Dhabi's MGX invests $2bn in Binance, paid in a stablecoin",
+   "summary": "Abu Dhabi investment firm MGX invested $2bn in Binance, paid in a stablecoin. It was the exchange's first institutional investment and MGX's first digital-asset deal; Binance has around 1,000 staff in Abu Dhabi.",
+   "amount_usd_m": 2000,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/03/12/binance-gets-usd2b-investment-from-abu-dhabi-s-mgx",
+   "related": [],
+   "parties": [
+    {
+     "id": "mgx",
+     "name": "MGX",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "moonpay-iron-2025-03-13",
    "date": "2025-03-13",
    "date_precision": "day",
@@ -547,6 +828,65 @@
      "technology",
      "clients"
     ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "redotpay-series-a-2025-03-14",
+   "date": "2025-03-14",
+   "date_precision": "day",
+   "company_id": "redotpay",
+   "company_name": "RedotPay",
+   "type": "Funding",
+   "region": "Global",
+   "title": "RedotPay raises $40m Series A led by Lightspeed",
+   "summary": "Hong Kong crypto card and payments platform RedotPay, founded in 2023, raised a $40m Series A led by Lightspeed, with HSG, Galaxy Ventures, DST Global Partners, Accel and Temasek-backed Vertex Ventures.",
+   "amount_usd_m": 40,
+   "regulator": null,
+   "jurisdiction": "Hong Kong",
+   "source_name": "Fintech Hong Kong",
+   "source_url": "https://fintechnews.hk/32851/payments/redotpay-secures-40m-series-a-funding/",
+   "related": [],
+   "parties": [
+    {
+     "id": "lightspeed",
+     "name": "Lightspeed",
+     "role": "lead investor"
+    },
+    {
+     "id": "hongshan",
+     "name": "HSG",
+     "role": "investor"
+    },
+    {
+     "id": "galaxy",
+     "name": "Galaxy Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "dst-global",
+     "name": "DST Global Partners",
+     "role": "investor"
+    },
+    {
+     "id": "accel",
+     "name": "Accel",
+     "role": "investor"
+    },
+    {
+     "id": "vertex-ventures",
+     "name": "Vertex Ventures",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "cards-and-networks"
+   ],
+   "round": {
+    "stage": "Series A",
+    "valuation_usd_m": null,
+    "use_of_funds": "a wider payment ecosystem, new products, stronger compliance and more licences"
    },
    "added": "2026-10-11"
   },
@@ -777,6 +1117,85 @@
    "added": "2026-10-11"
   },
   {
+   "id": "rain-series-a-2025-03-25",
+   "date": "2025-03-25",
+   "date_precision": "day",
+   "company_id": "rain",
+   "company_name": "Rain",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Rain raises $24.5m Series A led by Norwest",
+   "summary": "Stablecoin card issuer Rain raised $24.5m led by Norwest Venture Partners, with new backers Galaxy Ventures, Goldcrest, Thayer and Hard Yaka joining Lightspeed, Coinbase Ventures and other existing investors.",
+   "amount_usd_m": 24.5,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "FinTech Global",
+   "source_url": "https://fintech.global/2025/03/25/stablecoin-card-issuer-rain-secures-24-5m-to-fuel-global-expansion/",
+   "related": [],
+   "parties": [
+    {
+     "id": "norwest-venture-partners",
+     "name": "Norwest Venture Partners",
+     "role": "lead investor"
+    },
+    {
+     "id": "galaxy",
+     "name": "Galaxy Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "goldcrest",
+     "name": "Goldcrest",
+     "role": "investor"
+    },
+    {
+     "id": "thayer-ventures",
+     "name": "Thayer",
+     "role": "investor"
+    },
+    {
+     "id": "hard-yaka",
+     "name": "Hard Yaka",
+     "role": "investor"
+    },
+    {
+     "id": "lightspeed",
+     "name": "Lightspeed",
+     "role": "investor"
+    },
+    {
+     "id": "coinbase",
+     "name": "Coinbase Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "vinyl-capital",
+     "name": "Vinyl Capital",
+     "role": "investor"
+    },
+    {
+     "id": "canonical-crypto",
+     "name": "Canonical Crypto",
+     "role": "investor"
+    },
+    {
+     "id": "latitude-capital",
+     "name": "Latitude Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "cards-and-networks"
+   ],
+   "round": {
+    "stage": "Series A",
+    "valuation_usd_m": null,
+    "use_of_funds": "more interoperability with existing rails, a wider footprint and its stablecoin authorisation and settlement infrastructure"
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "damisa-pre-seed-2025-04",
    "date": "2025-04-01",
    "date_precision": "month",
@@ -897,6 +1316,121 @@
      "clients",
      "licences"
     ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "swapped-kado-2025-04-21",
+   "date": "2025-04-21",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Swapped.com",
+   "type": "M&A",
+   "region": "Global",
+   "title": "Swapped.com buys Web3 payments firm Kado Software",
+   "summary": "Crypto on-ramp Swapped.com acquired Kado Software, a Web3 payments infrastructure provider, on undisclosed terms. Kado founder Emery Andrew leads Swapped's US operations and product expansion.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CMO Intern",
+   "source_url": "https://www.cmointern.com/2025/04/swapped-acquires-kado-expanding-web3.html?m=1",
+   "related": [],
+   "parties": [
+    {
+     "id": "kado-software",
+     "name": "Kado Software",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "consolidation"
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "a larger US presence and new crypto-native payment products",
+    "gains": [
+     "market entry",
+     "technology",
+     "team"
+    ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "ripple-circle-bid-2025-04-30",
+   "date": "2025-04-30",
+   "date_precision": "day",
+   "company_id": "circle",
+   "company_name": "Circle",
+   "type": "M&A",
+   "region": "North America",
+   "title": "Circle turns down a $4bn to $5bn takeover offer from Ripple",
+   "summary": "Ripple, issuer of the RLUSD stablecoin, offered $4bn to $5bn to buy USDC issuer Circle, Bloomberg reported. Circle rejected the offer as too low while it prepared to go public.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/04/30/ripple-offered-4b-5b-for-stablecoin-issuer-circle-bloomberg",
+   "related": [],
+   "parties": [
+    {
+     "id": "ripple",
+     "name": "Ripple",
+     "role": "buyer"
+    }
+   ],
+   "themes": [
+    "consolidation"
+   ],
+   "deal": {
+    "status": "called off",
+    "rationale": "Circle rejected the offer as too low",
+    "gains": []
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "openfx-23m-2025-05",
+   "date": "2025-05",
+   "date_precision": "month",
+   "company_id": "openfx",
+   "company_name": "OpenFX",
+   "type": "Funding",
+   "region": "Global",
+   "title": "OpenFX emerges with $23m led by Accel for round-the-clock FX",
+   "summary": "OpenFX came out of stealth with a $23m round led by Accel, with Castle Island Ventures and Hash3, to run instant cross-border payments around the clock. It claimed $10bn of annualised payment volume already.",
+   "amount_usd_m": 23,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/openfx-raises-23-million-for-stablecoin-cross-border-payments/",
+   "related": [],
+   "parties": [
+    {
+     "id": "accel",
+     "name": "Accel",
+     "role": "lead investor"
+    },
+    {
+     "id": "castle-island-ventures",
+     "name": "Castle Island Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "hash3",
+     "name": "Hash3",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "non-dollar",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": null
    },
    "added": "2026-10-11"
   },
@@ -1133,6 +1667,70 @@
    "added": "2026-10-11"
   },
   {
+   "id": "velocity-pre-seed-2025-05-28",
+   "date": "2025-05-28",
+   "date_precision": "day",
+   "company_id": "velocity",
+   "company_name": "Velocity",
+   "type": "Funding",
+   "region": "Europe",
+   "title": "Velocity emerges with $10m pre-seed led by Activant",
+   "summary": "London's Velocity, founded by Tom Greenwood and Eric Queathem, raised a $10m pre-seed led by Activant Capital, with Fuel, Triton, Fabric, Commerce, Digital Space and Preface, and launched a Stablecoin Payment Account.",
+   "amount_usd_m": 10,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "UKTN Deal Lite",
+   "source_url": "https://www.uktechnews.info/2025/05/28/velocity-secures-7-42-million-pre-seed-investment-led-by-activant-capital/",
+   "related": [],
+   "parties": [
+    {
+     "id": "activant-capital",
+     "name": "Activant Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "fuel-ventures",
+     "name": "Fuel Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "triton-capital",
+     "name": "Triton Capital",
+     "role": "investor"
+    },
+    {
+     "id": "fabric-ventures",
+     "name": "Fabric Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "commerce-ventures",
+     "name": "Commerce Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "digital-space-ventures",
+     "name": "Digital Space Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "preface-ventures",
+     "name": "Preface Ventures",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Pre-seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "platform development and global expansion"
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "circle-ipo-2025-06-04",
    "date": "2025-06-04",
    "date_precision": "day",
@@ -1156,6 +1754,60 @@
     "stage": "IPO",
     "valuation_usd_m": 8060,
     "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "limited-seed-2025-06-04",
+   "date": "2025-06-04",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Limited",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Limited raises $7m seed led by North Island Ventures",
+   "summary": "Self-custody stablecoin banking start-up Limited raised a $7m seed led by North Island Ventures, with Third Prime, Arche Capital, Collab+Currency and SevenX Ventures, taking its total to $10m.",
+   "amount_usd_m": 7,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Pulse 2.0",
+   "source_url": "https://pulse2.com/limited-7-million-seed-funding-raised-for-scaling-stablecoin-banking-platform/",
+   "related": [],
+   "parties": [
+    {
+     "id": "north-island-ventures",
+     "name": "North Island Ventures",
+     "role": "lead investor"
+    },
+    {
+     "id": "third-prime",
+     "name": "Third Prime",
+     "role": "investor"
+    },
+    {
+     "id": "arche-capital",
+     "name": "Arche Capital",
+     "role": "investor"
+    },
+    {
+     "id": "collab-currency",
+     "name": "Collab+Currency",
+     "role": "investor"
+    },
+    {
+     "id": "sevenx-ventures",
+     "name": "SevenX Ventures",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "apps-and-wallets"
+   ],
+   "round": {
+    "stage": "Seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "growth in Latin America, South-East Asia and the Middle East"
    },
    "added": "2026-10-11"
   },
@@ -1480,6 +2132,43 @@
    "added": "2026-10-11"
   },
   {
+   "id": "monad-portal-2025-07-09",
+   "date": "2025-07-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Monad Foundation",
+   "type": "M&A",
+   "region": "Global",
+   "title": "Monad Foundation buys stablecoin wallet platform Portal",
+   "summary": "The Monad Foundation acquired Portal Labs, whose embedded wallets let businesses and banks accept stablecoin payments. Portal CEO Raj Parekh, formerly of Visa, becomes Monad's head of payments and stablecoins.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Blockhead",
+   "source_url": "https://www.blockhead.co/2025/07/10/monad-foundation-acquires-portal-labs-to-accelerate-stablecoin-payment-infrastructure/",
+   "related": [],
+   "parties": [
+    {
+     "id": "portal-labs",
+     "name": "Portal",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "consolidation",
+    "payment-chains"
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "stablecoin payments on the Monad blockchain",
+    "gains": [
+     "technology",
+     "team"
+    ]
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "agora-series-a-2025-07-10",
    "date": "2025-07-10",
    "date_precision": "day",
@@ -1562,6 +2251,28 @@
    "added": "2026-10-11"
   },
   {
+   "id": "genius-act-signed-2025-07-18",
+   "date": "2025-07-18",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "White House",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "Trump signs the GENIUS Act, the first US stablecoin law",
+   "summary": "President Trump signed the GENIUS Act, the Senate's stablecoin bill as passed by the House, into law, creating a federal regulatory framework for dollar-backed payment stablecoins.",
+   "amount_usd_m": null,
+   "regulator": "White House",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2025/07/18/trump-signs-genius-act-into-law-the-full-transcript",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "stablr-kraken-2025-07-21",
    "date": "2025-07-21",
    "date_precision": "day",
@@ -1591,6 +2302,39 @@
    ],
    "round": {
     "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "spiko-22m-2025-07-28",
+   "date": "2025-07-28",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Spiko",
+   "type": "Funding",
+   "region": "Europe",
+   "title": "Spiko raises $22m led by Index Ventures for tokenised cash funds",
+   "summary": "French start-up Spiko, which issues tokenised money market funds, raised $22m led by Index Ventures, with angels including Revolut's Nikolay Storonsky and Wise CTO Harsh Sinha. It held almost $400m after less than a year.",
+   "amount_usd_m": 22,
+   "regulator": null,
+   "jurisdiction": "France",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/french-tokenized-mmf-startup-spiko-raises-22m-in-funding/",
+   "related": [],
+   "parties": [
+    {
+     "id": "index-ventures",
+     "name": "Index Ventures",
+     "role": "lead investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Undisclosed",
     "valuation_usd_m": null,
     "use_of_funds": null
    },
@@ -1864,6 +2608,43 @@
    "added": "2026-10-11"
   },
   {
+   "id": "circle-malachite-2025-08-18",
+   "date": "2025-08-18",
+   "date_precision": "day",
+   "company_id": "circle",
+   "company_name": "Circle",
+   "type": "M&A",
+   "region": "North America",
+   "title": "Circle buys the Malachite consensus engine to power its Arc chain",
+   "summary": "Circle acquired Malachite, the consensus engine set to underpin its Arc payments blockchain, from Informal Systems, including the technology and IP; nine Informal Systems staff joined Circle. Terms were not disclosed.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/08/18/circle-acquires-malachite-to-power-its-upcoming-arc-blockchain",
+   "related": [],
+   "parties": [
+    {
+     "id": "informal-systems",
+     "name": "Informal Systems",
+     "role": "seller"
+    }
+   ],
+   "themes": [
+    "consolidation",
+    "payment-chains"
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "consensus technology for the Arc blockchain",
+    "gains": [
+     "technology",
+     "team"
+    ]
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "tazapay-series-b-2025-08-27",
    "date": "2025-08-27",
    "date_precision": "day",
@@ -1977,6 +2758,70 @@
     "stage": "Series B",
     "valuation_usd_m": null,
     "use_of_funds": "its stablecoin network for issuers"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "rain-series-b-2025-08-28",
+   "date": "2025-08-28",
+   "date_precision": "day",
+   "company_id": "rain",
+   "company_name": "Rain",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Rain raises $58m Series B led by Sapphire Ventures",
+   "summary": "Rain raised a $58m Series B led by Sapphire Ventures, with Dragonfly, Galaxy, Endeavor Catalyst, Samsung Next, Lightspeed and Norwest, five months after its Series A, taking its total to $88.5m; volume had grown 10x since January.",
+   "amount_usd_m": 58,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Rain",
+   "source_url": "https://www.rain.xyz/resources/rain-raises-58m-series-b-led-by-sapphire-ventures-to-become-the-enterprise-stablecoin-platform-of-record",
+   "related": [],
+   "parties": [
+    {
+     "id": "sapphire-ventures",
+     "name": "Sapphire Ventures",
+     "role": "lead investor"
+    },
+    {
+     "id": "dragonfly",
+     "name": "Dragonfly",
+     "role": "investor"
+    },
+    {
+     "id": "galaxy",
+     "name": "Galaxy Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "endeavor-catalyst",
+     "name": "Endeavor Catalyst",
+     "role": "investor"
+    },
+    {
+     "id": "samsung",
+     "name": "Samsung Next",
+     "role": "investor"
+    },
+    {
+     "id": "lightspeed",
+     "name": "Lightspeed",
+     "role": "investor"
+    },
+    {
+     "id": "norwest-venture-partners",
+     "name": "Norwest Venture Partners",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "cards-and-networks"
+   ],
+   "round": {
+    "stage": "Series B",
+    "valuation_usd_m": null,
+    "use_of_funds": "hiring in engineering, commercial and compliance teams, scaling partner programmes and entering new markets"
    },
    "added": "2026-10-11"
   },
@@ -2211,6 +3056,172 @@
    "added": "2026-10-11"
   },
   {
+   "id": "dlocal-fireblocks-network-2025-09-10",
+   "date": "2025-09-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "dLocal",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "dLocal joins the Fireblocks Network for fiat-stablecoin rails",
+   "summary": "Emerging-markets payments firm dLocal joined the Fireblocks Network for Payments, giving institutions a partner for on- and off-ramps and easier access to liquidity providers among more than 2,400 participants.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "The Paypers",
+   "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/dlocal-joins-the-fireblocks-network-for-payments",
+   "related": [],
+   "parties": [
+    {
+     "id": "dlocal",
+     "name": "dLocal",
+     "role": "partner"
+    },
+    {
+     "id": "fireblocks",
+     "name": "Fireblocks",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Network or consortium",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "gemini-ipo-2025-09-11",
+   "date": "2025-09-11",
+   "date_precision": "day",
+   "company_id": "gemini",
+   "company_name": "Gemini",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Gemini raises $425m in its IPO at a $3.3bn valuation",
+   "summary": "Crypto exchange Gemini priced its IPO at $28 a share, above a range it had already raised, selling 15.2m shares for $425m at a value of about $3.3bn. Nasdaq agreed to buy $50m of its stock in a private placement.",
+   "amount_usd_m": 425,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/09/10/winklevoss-backed-gemini-prices-ipo-at-usd28-share-values-crypto-exchange-at-more-than-usd3b",
+   "related": [],
+   "parties": [
+    {
+     "id": "nasdaq",
+     "name": "Nasdaq",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "IPO",
+    "valuation_usd_m": 3300,
+    "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "moonpay-meso-2025-09-15",
+   "date": "2025-09-15",
+   "date_precision": "day",
+   "company_id": "moonpay",
+   "company_name": "MoonPay",
+   "type": "M&A",
+   "region": "Global",
+   "title": "MoonPay buys payments start-up Meso",
+   "summary": "MoonPay acquired payments start-up Meso, confirming the deal on X, to help build what it called crypto's largest global payments network. No financial terms were given; it follows MoonPay's $175m purchase of Helio in January.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/09/15/moonpay-to-acquire-payments-startup-meso",
+   "related": [],
+   "parties": [
+    {
+     "id": "meso",
+     "name": "Meso",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "consolidation"
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "a global crypto payments network",
+    "gains": [
+     "technology"
+    ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "stablecore-20m-2025-09-16",
+   "date": "2025-09-16",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Stablecore",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Stablecore raises $20m led by Norwest to bring stablecoins to banks",
+   "summary": "Dallas-based Stablecore, founded in 2025, raised $20m led by Norwest Venture Partners, with Coinbase Ventures, Curql, BankTech Ventures, Bank of Utah, EJF Ventures and funds representing over 290 banks and credit unions.",
+   "amount_usd_m": 20,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Dallas Innovates",
+   "source_url": "https://dallasinnovates.com/dallas-based-stablecore-raises-20m-to-bring-stablecoins-and-more-into-banks-and-credit-unions/",
+   "related": [],
+   "parties": [
+    {
+     "id": "norwest-venture-partners",
+     "name": "Norwest Venture Partners",
+     "role": "lead investor"
+    },
+    {
+     "id": "coinbase",
+     "name": "Coinbase Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "curql",
+     "name": "Curql",
+     "role": "investor"
+    },
+    {
+     "id": "banktech-ventures",
+     "name": "BankTech Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "bank-of-utah",
+     "name": "Bank of Utah",
+     "role": "investor"
+    },
+    {
+     "id": "ejf-ventures",
+     "name": "EJF Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "bankers-helping-bankers-fund",
+     "name": "Bankers Helping Bankers Fund",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "bank-tokens"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": "letting community and regional banks and credit unions offer stablecoins and tokenised deposits"
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "brale-30m-2025-09-18",
    "date": "2025-09-18",
    "date_precision": "day",
@@ -2333,6 +3344,143 @@
     "stage": "Strategic",
     "valuation_usd_m": null,
     "use_of_funds": "PYUSD distribution and liquidity"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fnality-series-c-2025-09-23",
+   "date": "2025-09-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Fnality",
+   "type": "Funding",
+   "region": "Europe",
+   "title": "Fnality raises $136m Series C with Bank of America and Citi",
+   "summary": "Fnality, which runs the central bank-regulated Sterling Fnality Payment System, raised $136m led by WisdomTree, Bank of America, Citi, KBC, Temasek and Tradeweb, with Santander, Barclays, Goldman Sachs, UBS and other existing backers.",
+   "amount_usd_m": 136,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "FinTech Global",
+   "source_url": "https://fintech.global/2025/09/23/fnality-raises-136m-to-expand-blockchain-settlement-systems/",
+   "related": [],
+   "parties": [
+    {
+     "id": "wisdomtree",
+     "name": "WisdomTree",
+     "role": "lead investor"
+    },
+    {
+     "id": "bank-of-america",
+     "name": "Bank of America",
+     "role": "lead investor"
+    },
+    {
+     "id": "citi",
+     "name": "Citi",
+     "role": "lead investor"
+    },
+    {
+     "id": "kbc",
+     "name": "KBC Group",
+     "role": "lead investor"
+    },
+    {
+     "id": "temasek",
+     "name": "Temasek",
+     "role": "lead investor"
+    },
+    {
+     "id": "tradeweb",
+     "name": "Tradeweb",
+     "role": "lead investor"
+    },
+    {
+     "id": "santander",
+     "name": "Banco Santander",
+     "role": "investor"
+    },
+    {
+     "id": "barclays",
+     "name": "Barclays",
+     "role": "investor"
+    },
+    {
+     "id": "bnp-paribas",
+     "name": "BNP Paribas",
+     "role": "investor"
+    },
+    {
+     "id": "dtcc",
+     "name": "DTCC",
+     "role": "investor"
+    },
+    {
+     "id": "euroclear",
+     "name": "Euroclear",
+     "role": "investor"
+    },
+    {
+     "id": "goldman-sachs",
+     "name": "Goldman Sachs",
+     "role": "investor"
+    },
+    {
+     "id": "ing",
+     "name": "ING",
+     "role": "investor"
+    },
+    {
+     "id": "nasdaq",
+     "name": "Nasdaq Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "state-street",
+     "name": "State Street",
+     "role": "investor"
+    },
+    {
+     "id": "ubs",
+     "name": "UBS",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "bank-tokens",
+    "payment-chains"
+   ],
+   "round": {
+    "stage": "Series C",
+    "valuation_usd_m": null,
+    "use_of_funds": "more currencies, better liquidity management and links to stablecoins and tokenised deposits"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "tether-raise-talks-2025-09-23",
+   "date": "2025-09-23",
+   "date_precision": "day",
+   "company_id": "tether",
+   "company_name": "Tether",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Tether in talks to raise up to $20bn at a $500bn valuation",
+   "summary": "Tether was reported to be seeking $15bn to $20bn for about 3% of the company in a private placement, valuing it near $500bn. The talks were early, with investors given data-room access; it reported $4.9bn of second-quarter profit.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/markets/2025/09/23/tether-looking-to-raise-upto-usd20b-bringing-its-valuation-to-usd500b-bloomberg",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Private placement",
+    "valuation_usd_m": 500000,
+    "use_of_funds": null
    },
    "added": "2026-10-11"
   },
@@ -2546,6 +3694,34 @@
    "added": "2026-10-11"
   },
   {
+   "id": "cloudflare-net-dollar-2025-09-25",
+   "date": "2025-09-25",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Cloudflare",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Cloudflare plans NET Dollar stablecoin for AI agent payments",
+   "summary": "Cloudflare announced NET Dollar, a US dollar-backed stablecoin for instant, global online payments and microtransactions by AI agents; CEO Matthew Prince said stablecoin payments could replace ads and bank transfers.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/09/25/cloudflare-unveils-u-s-dollar-stablecoin-for-ai-powered-internet-economy",
+   "related": [],
+   "parties": [
+    {
+     "id": "cloudflare",
+     "name": "Cloudflare",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "agent-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "redotpay-strategic-2025-09-25",
    "date": "2025-09-25",
    "date_precision": "day",
@@ -2586,6 +3762,39 @@
     "stage": "Strategic",
     "valuation_usd_m": null,
     "use_of_funds": "global expansion"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "m2-ethena-2025-09-26",
+   "date": "2025-09-26",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Ethena",
+   "type": "Funding",
+   "region": "Middle East",
+   "title": "Abu Dhabi's M2 Capital invests $20m in Ethena",
+   "summary": "UAE-based M2 Capital invested $20m in Ethena, whose USDe synthetic dollar and yield-bearing sUSDe had drawn over $14bn since 2024, and plans to add Ethena products to its wealth management services.",
+   "amount_usd_m": 20,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "The National",
+   "source_url": "https://www.thenationalnews.com/future/2025/09/26/uaes-m2-capital-invests-20m-in-ethena-in-digital-asset-push/",
+   "related": [],
+   "parties": [
+    {
+     "id": "m2-capital",
+     "name": "M2 Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": null
    },
    "added": "2026-10-11"
   },
@@ -2932,6 +4141,84 @@
    "added": "2026-10-11"
   },
   {
+   "id": "ten-banks-g7-tokens-2025-10-10",
+   "date": "2025-10-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Global bank group",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Ten global banks explore reserve-backed tokens in G7 currencies",
+   "summary": "Ten of the world's largest banks, including Bank of America, Santander, BNP Paribas, Citi, Deutsche Bank and Goldman Sachs, said they will explore issuing 1:1 reserve-backed digital money on public blockchains in G7 currencies.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/ten-systemically-important-banks-collaborate-on-stablecoin-like-initiative/",
+   "related": [],
+   "parties": [
+    {
+     "id": "bank-of-america",
+     "name": "Bank of America",
+     "role": "partner"
+    },
+    {
+     "id": "santander",
+     "name": "Banco Santander",
+     "role": "partner"
+    },
+    {
+     "id": "bnp-paribas",
+     "name": "BNP Paribas",
+     "role": "partner"
+    },
+    {
+     "id": "citi",
+     "name": "Citi",
+     "role": "partner"
+    },
+    {
+     "id": "deutsche-bank",
+     "name": "Deutsche Bank",
+     "role": "partner"
+    },
+    {
+     "id": "goldman-sachs",
+     "name": "Goldman Sachs",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ],
+   "kind": "Network or consortium",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "legend-trading-mica-2025-10-13",
+   "date": "2025-10-13",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Legend Trading",
+   "type": "License",
+   "region": "Europe",
+   "title": "Legend Trading wins MiCA licence in Ireland and launches Legend FXN",
+   "summary": "Legend Trading was authorised as a crypto-asset service provider by the Central Bank of Ireland under MiCA and unveiled Legend FXN, a regulated stablecoin-to-fiat settlement hub.",
+   "amount_usd_m": null,
+   "regulator": "Central Bank of Ireland",
+   "jurisdiction": "Ireland",
+   "source_name": "Legend Trading",
+   "source_url": "https://legendtrading.com/newsroom/2025/legend-trading-secures-mi-ca-license-in-ireland-and-unveils-legend-fxn-a-regulated-stablecoin-to-fiat-settlement-hub",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "mica",
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "sg-forge-bitpanda-defi-2025-10-14",
    "date": "2025-10-14",
    "date_precision": "day",
@@ -3061,6 +4348,28 @@
      "technology"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fed-waller-skinny-account-2025-10-21",
+   "date": "2025-10-21",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Federal Reserve",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "Fed's Waller floats 'skinny' master accounts for payment firms",
+   "summary": "Fed Governor Christopher Waller asked staff to explore a 'payment account' giving eligible institutions focused on payments basic access to Fed rails, with no interest, balance caps, no overdrafts and no discount window.",
+   "amount_usd_m": null,
+   "regulator": "Federal Reserve",
+   "jurisdiction": "United States",
+   "source_name": "Mayer Brown",
+   "source_url": "https://www.mayerbrown.com/en/insights/publications/2025/10/federal-reserve-governor-waller-introduces-skinny-master-account-concept-and-signals-support-for-payments-innovation",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -3215,6 +4524,66 @@
      "team"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "swiss-finia-consultation-2025-10-22",
+   "date": "2025-10-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Swiss Federal Council",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "Switzerland proposes stablecoin and crypto institution licences",
+   "summary": "Switzerland's Federal Council opened a consultation, running to 6 February 2026, on new payment instrument institution licences covering stablecoins and crypto institution licences, under direct FINMA supervision.",
+   "amount_usd_m": null,
+   "regulator": "Swiss Federal Council",
+   "jurisdiction": "Switzerland",
+   "source_name": "velaw",
+   "source_url": "https://www.velaw.ch/en/crypto-institution-license-under-finig-the-next-regulatory-stage-for-the-swiss-crypto-market-federal-council-moves-forward-with-stablecoins-and-cryptos-consultation-opened/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "non-dollar"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "zepz-sendwave-wallet-2025-10-22",
+   "date": "2025-10-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Zepz",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Zepz launches the Sendwave Wallet on USDC and Solana",
+   "summary": "Zepz, the remittance group behind WorldRemit and Sendwave, launched the Sendwave Wallet, putting stablecoins in users' hands with Circle's USDC, Solana and wallet provider Portal; Sendwave already serves over a million users.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Condia",
+   "source_url": "https://thecondia.com/zepz-launch-sendwave-wallet/",
+   "related": [],
+   "parties": [
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "issuer"
+    },
+    {
+     "id": "solana-foundation",
+     "name": "Solana",
+     "role": "partner"
+    },
+    {
+     "id": "portal-labs",
+     "name": "Portal",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -3661,6 +5030,44 @@
    "added": "2026-10-11"
   },
   {
+   "id": "western-union-usdpt-plan-2025-10-28",
+   "date": "2025-10-28",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Western Union",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Western Union plans USDPT stablecoin on Solana with Anchorage",
+   "summary": "Western Union plans to roll out USDPT, a US dollar payment token issued by Anchorage Digital on Solana, for its payment network of 100m users in the first half of 2026.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/28/western-union-to-launch-stablecoin-on-solana-with-anchorage-digital",
+   "related": [],
+   "parties": [
+    {
+     "id": "western-union",
+     "name": "Western Union",
+     "role": "client"
+    },
+    {
+     "id": "anchorage-digital",
+     "name": "Anchorage Digital",
+     "role": "issuer"
+    },
+    {
+     "id": "solana-foundation",
+     "name": "Solana",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "bancomat-eur-bank-2025-10-29",
    "date": "2025-10-29",
    "date_precision": "day",
@@ -3747,6 +5154,40 @@
    "added": "2026-10-11"
   },
   {
+   "id": "mastercard-zerohash-talks-2025-10-29",
+   "date": "2025-10-29",
+   "date_precision": "day",
+   "company_id": "zerohash",
+   "company_name": "zerohash",
+   "type": "M&A",
+   "region": "North America",
+   "title": "Mastercard in late-stage talks to buy zerohash for up to $2bn",
+   "summary": "Mastercard was in late-stage talks to buy stablecoin infrastructure firm zerohash for $1.5bn to $2bn, Fortune reported; zerohash had raised $104m in September led by Interactive Brokers. Mastercard had earlier held talks with BVNK.",
+   "amount_usd_m": 2000,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/29/mastercard-eyes-zero-hash-acquisition-for-nearly-usd2b-bet-on-stablecoins-report",
+   "related": [],
+   "parties": [
+    {
+     "id": "mastercard",
+     "name": "Mastercard",
+     "role": "buyer"
+    }
+   ],
+   "themes": [
+    "consolidation",
+    "cards-and-networks"
+   ],
+   "deal": {
+    "status": "reported",
+    "rationale": "stablecoin payments infrastructure",
+    "gains": []
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "polygon-flutterwave-2025-10-29",
    "date": "2025-10-29",
    "date_precision": "day",
@@ -3798,6 +5239,39 @@
    "added": "2026-10-11"
   },
   {
+   "id": "coinbase-bvnk-talks-2025-10-31",
+   "date": "2025-10-31",
+   "date_precision": "day",
+   "company_id": "bvnk",
+   "company_name": "BVNK",
+   "type": "M&A",
+   "region": "Europe",
+   "title": "Coinbase in late-stage talks to buy BVNK for about $2bn",
+   "summary": "Coinbase was in late-stage talks to buy stablecoin infrastructure firm BVNK for about $2bn, Bloomberg reported, aiming to finish late in 2025 or early 2026; Coinbase Ventures was already a BVNK investor. Coinbase declined to comment.",
+   "amount_usd_m": 2000,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/cryptocurrency/2025/coinbase-in-late-stage-talks-on-2-billion-bvnk-deal",
+   "related": [],
+   "parties": [
+    {
+     "id": "coinbase",
+     "name": "Coinbase",
+     "role": "buyer"
+    }
+   ],
+   "themes": [
+    "consolidation"
+   ],
+   "deal": {
+    "status": "reported",
+    "rationale": "stablecoin payments infrastructure",
+    "gains": []
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "cash-app-stablecoin-support-2025-11",
    "date": "2025-11",
    "date_precision": "month",
@@ -3823,6 +5297,41 @@
    "themes": [
     "apps-and-wallets"
    ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "ripple-palisade-2025-11-03",
+   "date": "2025-11-03",
+   "date_precision": "day",
+   "company_id": "ripple",
+   "company_name": "Ripple",
+   "type": "M&A",
+   "region": "Global",
+   "title": "Ripple buys wallet provider Palisade for its custody business",
+   "summary": "Ripple acquired Palisade, whose wallet-as-a-service platform joins Ripple Custody to give fintechs and corporates fast wallets for on- and off-ramps and payments. It was Ripple's fourth deal of 2025 after Hidden Road, Rail and GTreasury.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/11/03/ripple-acquires-crypto-wallet-firm-palisade-to-expand-institutional-payments-business",
+   "related": [],
+   "parties": [
+    {
+     "id": "palisade",
+     "name": "Palisade",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "consolidation"
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "fast wallet infrastructure for institutional custody and payments",
+    "gains": [
+     "technology"
+    ]
+   },
    "added": "2026-10-11"
   },
   {
@@ -4643,6 +6152,34 @@
    "added": "2026-10-11"
   },
   {
+   "id": "palm-usd-pusd-2025-11-17",
+   "date": "2025-11-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Palm Azgar",
+   "type": "Launch",
+   "region": "Middle East",
+   "title": "Riyadh's Palm Azgar launches PUSD, backed by dirham and riyal reserves",
+   "summary": "Palm Azgar Finance Company, a licensed provider in Riyadh, launched PUSD through its British Virgin Islands affiliate, a dollar stablecoin whose reserves are held in UAE dirhams and Saudi riyals at Shariah-compliant institutions.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Saudi Arabia",
+   "source_name": "Bitwire",
+   "source_url": "https://www.bitwire.com/feed/palm-usd-launches-pusd-a-global-free-stablecoin-backed-by-aed-and-sar",
+   "related": [],
+   "parties": [
+    {
+     "id": "palm-azgar",
+     "name": "Palm Azgar Finance Company",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "gulf-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "circle-xreserve-2025-11-18",
    "date": "2025-11-18",
    "date_precision": "day",
@@ -4782,6 +6319,34 @@
      "market entry"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "cross-river-stablecoin-payments-2025-11-25",
+   "date": "2025-11-25",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Cross River Bank",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Cross River adds stablecoin payments to its real-time core system",
+   "summary": "Cross River Bank launched a stablecoin payments offering built into COS, its real-time core system, unifying fiat and stablecoin flows within a single platform.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Trade Treasury Payments",
+   "source_url": "https://tradetreasurypayments.com/news/cross-river-launches-stablecoin-payments-to-power-on-chain-finance",
+   "related": [],
+   "parties": [
+    {
+     "id": "cross-river",
+     "name": "Cross River Bank",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -5278,6 +6843,34 @@
    "added": "2026-10-11"
   },
   {
+   "id": "kraken-ramp-2025-12-08",
+   "date": "2025-12-08",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Kraken",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Kraken launches Kraken Ramp, a single API for crypto on-ramps",
+   "summary": "Kraken launched Kraken Ramp, a unified fiat-to-crypto API that lets platforms offer crypto access on Kraken's licensed rails and liquidity, with Kraken handling compliance, KYC and fraud checks behind the scenes.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Coinspeaker",
+   "source_url": "https://partners.coinspeaker.com/kraken-ramp-global-fiat-to-crypto-api-gateway",
+   "related": [],
+   "parties": [
+    {
+     "id": "kraken",
+     "name": "Kraken",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "brale-canton-repo-2025-12-09",
    "date": "2025-12-09",
    "date_precision": "day",
@@ -5457,6 +7050,39 @@
     "apps-and-wallets"
    ],
    "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "sgb-solana-minting-2025-12-12",
+   "date": "2025-12-12",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Singapore Gulf Bank",
+   "type": "Launch",
+   "region": "Middle East",
+   "title": "Singapore Gulf Bank launches zero-fee stablecoin minting on Solana",
+   "summary": "Singapore Gulf Bank let corporate clients mint and redeem USDC and USDT on Solana, waiving transaction and gas fees for a launch period; it says it has processed over $7bn across Asia and the GCC corridor.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Bahrain",
+   "source_name": "Technext",
+   "source_url": "https://technext24.com/2025/12/12/singapore-zero-fee-stablecoin-solana/",
+   "related": [],
+   "parties": [
+    {
+     "id": "singapore-gulf-bank",
+     "name": "Singapore Gulf Bank",
+     "role": "partner"
+    },
+    {
+     "id": "solana-foundation",
+     "name": "Solana",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -5893,6 +7519,28 @@
     "business-payments"
    ],
    "kind": "Enterprise integration",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fed-payment-account-rfi-2025-12-19",
+   "date": "2025-12-19",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Federal Reserve",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "Fed seeks comment on 'payment accounts' with basic access to its rails",
+   "summary": "The Federal Reserve opened a 45-day request for information on prototype payment accounts for eligible institutions, without access to Fed credit; Governor Barr opposed it over money-laundering safeguards.",
+   "amount_usd_m": null,
+   "regulator": "Federal Reserve",
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/federal-reserve-consults-on-skinny-master-accounts/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -6396,6 +8044,35 @@
    "added": "2026-10-11"
   },
   {
+   "id": "noah-nala-2026-01-13",
+   "date": "2026-01-13",
+   "date_precision": "day",
+   "company_id": "noah",
+   "company_name": "Noah",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Noah and NALA build instant stablecoin settlement for Africa and Asia",
+   "summary": "Noah and NALA partnered so businesses in Africa and Asia can collect US dollars anywhere and pay out local currency in minutes, pairing Noah's USD collection with NALA's licensed stablecoin on- and off-ramp network.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "Noah",
+   "source_url": "https://noah.com/blog/nala-noah",
+   "related": [],
+   "parties": [
+    {
+     "id": "nala",
+     "name": "NALA",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Payouts and corridors",
+   "added": "2026-10-11"
+  },
+  {
    "id": "polygon-coinme-sequence-2026-01-13",
    "date": "2026-01-13",
    "date_precision": "day",
@@ -6597,6 +8274,67 @@
    "added": "2026-10-11"
   },
   {
+   "id": "zerohash-mastercard-off-2026-01-20",
+   "date": "2026-01-20",
+   "date_precision": "day",
+   "company_id": "zerohash",
+   "company_name": "zerohash",
+   "type": "M&A",
+   "region": "North America",
+   "title": "zerohash walks away from Mastercard takeover to stay independent",
+   "summary": "zerohash ended takeover talks with Mastercard, reported in October at $1.5bn to $2bn, saying it was \"not entertaining an acquisition\"; Mastercard was said to be weighing a strategic investment instead.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/blockchain/2026/mastercard-considers-investment-in-blockchain-infrastructure-company-zerohash",
+   "related": [],
+   "parties": [
+    {
+     "id": "mastercard",
+     "name": "Mastercard",
+     "role": "buyer"
+    }
+   ],
+   "themes": [
+    "consolidation",
+    "cards-and-networks"
+   ],
+   "deal": {
+    "status": "called off",
+    "rationale": "zerohash chose to remain independent",
+    "gains": []
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bitgo-ipo-2026-01-22",
+   "date": "2026-01-22",
+   "date_precision": "day",
+   "company_id": "bitgo",
+   "company_name": "BitGo",
+   "type": "Funding",
+   "region": "North America",
+   "title": "BitGo lists on the NYSE after a $213m IPO at $18 a share",
+   "summary": "Crypto custodian BitGo priced its IPO at $18 a share, above its $15 to $17 range, raising $213m at a valuation above $2bn; the shares opened at $22.43 on the NYSE. It was last valued at $1.75bn in a 2023 Series C.",
+   "amount_usd_m": 213,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "SiliconANGLE",
+   "source_url": "https://siliconangle.com/2026/01/21/bitgo-prices-ipo-above-range-ahead-stock-market-debut-seeking-2b-valuation/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "IPO",
+    "valuation_usd_m": 2000,
+    "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "capital-one-brex-2026-01-22",
    "date": "2026-01-22",
    "date_precision": "day",
@@ -6635,6 +8373,33 @@
      "clients",
      "technology"
     ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "zerohash-raise-talks-2026-01-26",
+   "date": "2026-01-26",
+   "date_precision": "day",
+   "company_id": "zerohash",
+   "company_name": "zerohash",
+   "type": "Funding",
+   "region": "North America",
+   "title": "zerohash in talks to raise $250m at a $1.5bn valuation",
+   "summary": "After walking away from Mastercard's takeover approach to stay independent, zerohash was in talks to raise $250m at a $1.5bn valuation, according to a source cited by CoinDesk; Mastercard was said to be weighing an investment.",
+   "amount_usd_m": 250,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/01/26/zerohash-is-in-talks-to-raise-usd250-million-at-usd1-5-billion-valuation-after-walking-away-from-mastercard-takeover",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": 1500,
+    "use_of_funds": null
    },
    "added": "2026-10-11"
   },
@@ -6695,6 +8460,55 @@
     "mica"
    ],
    "kind": "Network or consortium",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "tether-raise-cut-2026-02-04",
+   "date": "2026-02-04",
+   "date_precision": "day",
+   "company_id": "tether",
+   "company_name": "Tether",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Tether said to cut its raise to about $5bn; its CEO disputes it",
+   "summary": "The FT reported Tether's advisers were discussing a raise of about $5bn, down from up to $20bn, after investors balked at a $500bn valuation. CEO Paolo Ardoino said the larger figures were a maximum, not a target.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/blockchain/2026/tether-ceo-disputes-reports-of-fundraising-pullback-amid-valuation-concerns/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Private placement",
+    "valuation_usd_m": 500000,
+    "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "uk-cryptoasset-regulations-2026-02-04",
+   "date": "2026-02-04",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "UK Parliament",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "UK Parliament passes rules bringing stablecoin issuance under FSMA",
+   "summary": "Parliament passed the Financial Services and Markets Act 2000 (Cryptoassets) Regulations 2026, bringing crypto dealing, custody, stablecoin issuance and staking arrangements within the UK regulatory perimeter for the first time.",
+   "amount_usd_m": null,
+   "regulator": "UK Parliament",
+   "jurisdiction": "United Kingdom",
+   "source_name": "Licentium",
+   "source_url": "https://www.licentium.io/post/fca-final-rules-uk-cryptoasset-authorisation-june-2026",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -6903,6 +8717,34 @@
    "themes": [
     "non-dollar",
     "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "crypto-com-occ-conditional-2026-02-23",
+   "date": "2026-02-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Crypto.com",
+   "type": "License",
+   "region": "North America",
+   "title": "Crypto.com wins conditional OCC approval for a national trust bank",
+   "summary": "Crypto.com received conditional OCC approval to set up Foris DAX National Trust Bank, consolidating its US custody services under federal oversight.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/02/23/crypto-com-approved-for-u-s-federally-regulated-crypto-custodian-bank",
+   "related": [],
+   "parties": [
+    {
+     "id": "crypto-com",
+     "name": "Crypto.com",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "us-rules"
    ],
    "added": "2026-10-11"
   },
@@ -7149,6 +8991,40 @@
    ],
    "themes": [
     "canada-uk-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "morgan-stanley-trust-charter-2026-03-02",
+   "date": "2026-03-02",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Morgan Stanley",
+   "type": "License",
+   "region": "North America",
+   "title": "Morgan Stanley applies for a national trust bank for digital assets",
+   "summary": "Morgan Stanley applied to the OCC for a national trust bank charter for a standalone digital asset entity, as it prepares spot crypto trading for E*Trade clients with zerohash.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/morgan-stanley-files-for-national-trust-bank-charter-dedicated-to-digital-assets/",
+   "related": [],
+   "parties": [
+    {
+     "id": "morgan-stanley",
+     "name": "Morgan Stanley",
+     "role": "partner"
+    },
+    {
+     "id": "zerohash",
+     "name": "zerohash",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "us-rules",
+    "bank-tokens"
    ],
    "added": "2026-10-11"
   },
@@ -7992,6 +9868,33 @@
    "added": "2026-10-11"
   },
   {
+   "id": "tether-raise-deadline-2026-04-03",
+   "date": "2026-04-03",
+   "date_precision": "day",
+   "company_id": "tether",
+   "company_name": "Tether",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Tether gives investors two weeks to commit at a $500bn valuation",
+   "summary": "Tether will likely postpone its fundraising if too few investors commit within two weeks, The Information reported. It has been raising since late 2025 but met investor concerns about the $500bn valuation it is seeking.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/cryptocurrency/2026/tether-sets-2-week-deadline-for-500-billion-valuation-deal/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Private placement",
+    "valuation_usd_m": 500000,
+    "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "polygon-payments-raise-2026-04-08",
    "date": "2026-04-08",
    "date_precision": "day",
@@ -8017,6 +9920,61 @@
     "valuation_usd_m": null,
     "use_of_funds": "the Open Money Stack payments platform"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "swiss-chf-stablecoin-sandbox-2026-04-08",
+   "date": "2026-04-08",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Swiss bank group",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "UBS and five Swiss banks launch a joint Swiss franc stablecoin sandbox",
+   "summary": "UBS, PostFinance, Sygnum, Raiffeisen, Zürcher Kantonalbank, BCV and Swiss Stablecoin AG launched a sandbox to test uses for a Swiss franc stablecoin and connect blockchain applications with the franc.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Switzerland",
+   "source_name": "PostFinance",
+   "source_url": "https://www.postfinance.ch/en/about-us/media/newsroom/chf-stablecoin-sandbox.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "ubs",
+     "name": "UBS",
+     "role": "partner"
+    },
+    {
+     "id": "postfinance",
+     "name": "PostFinance",
+     "role": "partner"
+    },
+    {
+     "id": "sygnum",
+     "name": "Sygnum",
+     "role": "partner"
+    },
+    {
+     "id": "raiffeisen",
+     "name": "Raiffeisen",
+     "role": "partner"
+    },
+    {
+     "id": "zkb",
+     "name": "Zürcher Kantonalbank",
+     "role": "partner"
+    },
+    {
+     "id": "bcv",
+     "name": "BCV",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "bank-tokens"
+   ],
+   "kind": "Network or consortium",
    "added": "2026-10-11"
   },
   {
@@ -8134,6 +10092,49 @@
    "added": "2026-10-11"
   },
   {
+   "id": "sdev-tether-2026-04-15",
+   "date": "2026-04-15",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Stablecoin Development Corporation",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Tether joins $134m raise for Stablecoin Development Corporation",
+   "summary": "Tether Investments took part in a $134m financing for Stablecoin Development Corporation, an NYSE American-listed firm offering public-market access to the stablecoin economy, alongside R01 Fund and Framework Ventures.",
+   "amount_usd_m": 134,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Tether",
+   "source_url": "https://tether.io/news/tether-backs-134-million-raise-as-stablecoin-infrastructure-expands-into-mainstream-use-cases/",
+   "related": [],
+   "parties": [
+    {
+     "id": "tether",
+     "name": "Tether",
+     "role": "investor"
+    },
+    {
+     "id": "r01-fund",
+     "name": "R01 Fund",
+     "role": "investor"
+    },
+    {
+     "id": "framework-ventures",
+     "name": "Framework Ventures",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
+   "added": "2026-10-11"
+  },
+  {
    "id": "sg-forge-consensys-metamask-2026-04-15",
    "date": "2026-04-15",
    "date_precision": "day",
@@ -8161,6 +10162,28 @@
     "bank-tokens"
    ],
    "kind": "Consumer distribution",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bastion-occ-conversion-2026-04-16",
+   "date": "2026-04-16",
+   "date_precision": "day",
+   "company_id": "bastion",
+   "company_name": "Bastion",
+   "type": "License",
+   "region": "North America",
+   "title": "Bastion applies to turn its New York trust into a national trust bank",
+   "summary": "Bastion applied to the OCC to convert its New York limited purpose trust charter into Bastion Platforms National Trust Company; an adviser said a national charter removes much of the complexity of white-label stablecoins nationwide.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "American Banker",
+   "source_url": "https://www.americanbanker.com/news/bastion-platforms-seeks-to-convert-its-state-trust-charter",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -8290,6 +10313,40 @@
    "added": "2026-10-11"
   },
   {
+   "id": "nium-coinbase-2026-04-21",
+   "date": "2026-04-21",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Nium",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Nium adds USDC payments for its clients through Coinbase",
+   "summary": "Nium made USDC payouts, treasury and card programmes live for its clients, with Coinbase as stablecoin payments and liquidity infrastructure, wallet provider and regulated custodian.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/nium-and-coinbase-partner-to-power-global-stablecoin-payments-and-settlement-302748599.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "nium",
+     "name": "Nium",
+     "role": "client"
+    },
+    {
+     "id": "coinbase",
+     "name": "Coinbase",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
    "id": "uk-payments-framework-stablecoins-2026-04-21",
    "date": "2026-04-21",
    "date_precision": "day",
@@ -8371,6 +10428,48 @@
     "rationale": "custody technology for a new institutional business",
     "gains": [
      "technology"
+    ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bakkt-dtr-2026-04-30",
+   "date": "2026-04-30",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Bakkt",
+   "type": "M&A",
+   "region": "North America",
+   "title": "Bakkt completes its purchase of stablecoin firm DTR",
+   "summary": "Bakkt completed its all-stock acquisition of Distributed Technologies Research, issuing 11.3m shares and combining its licences with DTR's agentic payments and stablecoin infrastructure.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Stock Titan",
+   "source_url": "https://www.stocktitan.net/news/BKKT/bakkt-completes-acquisition-of-distributed-technologies-wn1btspexml5.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "bakkt",
+     "name": "Bakkt",
+     "role": "buyer"
+    },
+    {
+     "id": "dtr",
+     "name": "Distributed Technologies Research",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "consolidation",
+    "agent-payments"
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "stablecoin and agentic payments infrastructure",
+    "gains": [
+     "technology",
+     "team"
     ]
    },
    "added": "2026-10-11"
@@ -8738,6 +10837,36 @@
    "added": "2026-10-11"
   },
   {
+   "id": "mastercard-yellow-card-2026-05-07",
+   "date": "2026-05-07",
+   "date_precision": "day",
+   "company_id": "mastercard",
+   "company_name": "Mastercard",
+   "type": "Partnership",
+   "region": "Middle East",
+   "title": "Mastercard and Yellow Card partner on stablecoin payments across EEMEA",
+   "summary": "Mastercard and Yellow Card partnered to advance stablecoin payments in Eastern Europe, the Middle East and Africa, including cross-border remittances and digital loyalty.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "GCC Business News",
+   "source_url": "https://www.gccbusinessnews.com/mastercard-and-yellow-card-partnership",
+   "related": [],
+   "parties": [
+    {
+     "id": "yellow-card",
+     "name": "Yellow Card",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks",
+    "business-payments"
+   ],
+   "kind": "Payouts and corridors",
+   "added": "2026-10-11"
+  },
+  {
    "id": "exodus-xo-cash-agents-2026-05-08",
    "date": "2026-05-08",
    "date_precision": "day",
@@ -8890,6 +11019,49 @@
     "stage": "Debt",
     "valuation_usd_m": null,
     "use_of_funds": "margin financing at Ripple Prime"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "boundary-pre-seed-2026-05-12",
+   "date": "2026-05-12",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Boundary",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Boundary raises $2m pre-seed led by Galaxy for stablecoin USBD",
+   "summary": "Boundary raised a $2m pre-seed, closed in December 2025 and led by Galaxy Ventures with First Block Capital and BlackWood, to build USBD, an institutional stablecoin with daily on-chain reserve audits, due on Ethereum in summer 2026.",
+   "amount_usd_m": 2,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Crypto Briefing",
+   "source_url": "https://cryptobriefing.com/boundary-usbd-stablecoin-launch-2026/",
+   "related": [],
+   "parties": [
+    {
+     "id": "galaxy",
+     "name": "Galaxy Ventures",
+     "role": "lead investor"
+    },
+    {
+     "id": "first-block-capital",
+     "name": "First Block Capital",
+     "role": "investor"
+    },
+    {
+     "id": "blackwood",
+     "name": "BlackWood",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Pre-seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "developing USBD and its yield-bearing companion token sUSBD"
    },
    "added": "2026-10-11"
   },
@@ -9123,6 +11295,33 @@
     "checkout"
    ],
    "kind": "Merchant acceptance",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "zerohash-new-raise-2026-05-19",
+   "date": "2026-05-19",
+   "date_precision": "day",
+   "company_id": "zerohash",
+   "company_name": "zerohash",
+   "type": "Funding",
+   "region": "North America",
+   "title": "zerohash raises above a $1.5bn valuation as Mastercard steps back",
+   "summary": "Mastercard dropped plans to invest in zerohash after buying BVNK for $1.8bn, a source told CoinDesk. Chicago-based zerohash is now raising fresh capital at a valuation above the $1.5bn discussed in January.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/05/19/zerohash-pursues-new-funding-at-more-than-usd1-5-billion-valuation-after-mastercard-drops-investment-plans",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
    "added": "2026-10-11"
   },
   {
@@ -9394,6 +11593,28 @@
    "added": "2026-10-11"
   },
   {
+   "id": "aave-push-fca-2026-05-28",
+   "date": "2026-05-28",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Aave Labs",
+   "type": "License",
+   "region": "Europe",
+   "title": "Aave Labs' Push wins FCA crypto registration for UK stablecoin ramps",
+   "summary": "Push Labs and Push Virtual Assets, Aave Labs' UK units, registered with the FCA for cryptoasset activities on top of their e-money authorisation, to offer regulated, zero-fee stablecoin on- and off-ramps in the UK.",
+   "amount_usd_m": null,
+   "regulator": "FCA",
+   "jurisdiction": "United Kingdom",
+   "source_name": "Crypto Briefing",
+   "source_url": "https://cryptobriefing.com/aave-labs-fca-registration-uk-push/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "nala-credit-facility-2026-05-28",
    "date": "2026-05-28",
    "date_precision": "day",
@@ -9425,6 +11646,35 @@
     "valuation_usd_m": null,
     "use_of_funds": "pre-funding wallets and new payment corridors"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "coinbase-checkout-com-2026-06-02",
+   "date": "2026-06-02",
+   "date_precision": "day",
+   "company_id": "coinbase",
+   "company_name": "Coinbase",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Checkout.com merchants can accept USDC and USDT via Coinbase Payments",
+   "summary": "Checkout.com integrated Coinbase Payments so eligible enterprise merchants can accept USDC and USDT and receive settlement in US dollars.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "The Crypto Times",
+   "source_url": "https://www.cryptotimes.io/2026/06/02/checkout-com-adds-usdc-usdt-payments-via-coinbase-service/",
+   "related": [],
+   "parties": [
+    {
+     "id": "checkout-com",
+     "name": "Checkout.com",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "checkout"
+   ],
+   "kind": "Merchant acceptance",
    "added": "2026-10-11"
   },
   {
@@ -10234,6 +12484,28 @@
     "valuation_usd_m": null,
     "use_of_funds": "USDC settlement across its platform"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "delaware-stablecoin-law-2026-07-07",
+   "date": "2026-07-07",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "State of Delaware",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "Delaware enacts a GENIUS-style law for state stablecoin issuers",
+   "summary": "Delaware's governor signed SB 19, the Delaware Payment Stablecoins Act, with two banking bills: issuers must redeem within two business days, publish monthly reserve reports and, if new, hold at least $5m of capital.",
+   "amount_usd_m": null,
+   "regulator": "State of Delaware",
+   "jurisdiction": "United States",
+   "source_name": "Orrick InfoBytes",
+   "source_url": "https://infobytes.orrick.com/2026-07-10/delaware-enacts-financial-services-modernization-package/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -11416,6 +13688,28 @@
    "added": "2026-10-11"
   },
   {
+   "id": "coinbax-deposits-2026-09",
+   "date": "2026-09",
+   "date_precision": "month",
+   "company_id": null,
+   "company_name": "Coinbax",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Coinbax lets banks and credit unions take stablecoin deposits",
+   "summary": "Coinbax launched Coinbax Deposits, which lets banks and credit unions accept stablecoin deposits as dollars on their own balance sheets; it also screens, holds and releases payments across FedNow, RTP, wires and stablecoins.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "GlobeNewswire via The Manila Times",
+   "source_url": "https://www.manilatimes.net/2026/10/08/tmt-newswire/globenewswire/coinbax-joins-the-us-faster-payments-council-as-it-extends-payment-controls-to-fednow-and-rtp/2441756",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "bank-consortium-usd-stablecoin-2026-09-01",
    "date": "2026-09-01",
    "date_precision": "day",
@@ -11575,6 +13869,29 @@
     "valuation_usd_m": null,
     "use_of_funds": "remittances, lending and savings products"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "kast-business-2026-09-02",
+   "date": "2026-09-02",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "KAST",
+   "type": "Launch",
+   "region": "Global",
+   "title": "KAST launches a stablecoin business platform for 170+ countries",
+   "summary": "KAST launched KAST Business, giving companies in over 170 countries stablecoin-based accounts, cards, cross-border payments and contractor payroll, with fiat virtual accounts from regulated partners beside on-chain assets.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "The Paypers",
+   "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/kast-launches-stablecoin-native-business-platform-for-global-firms",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "business-payments",
+    "apps-and-wallets"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -11772,6 +14089,34 @@
    ],
    "themes": [
     "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "us-bank-usbdc-pilot-2026-09-09",
+   "date": "2026-09-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "U.S. Bank",
+   "type": "Launch",
+   "region": "North America",
+   "title": "U.S. Bank runs a live USBDC stablecoin pilot on Stellar",
+   "summary": "U.S. Bank completed a live cross-border pilot of USBDC, its own dollar stablecoin, between its North American and European entities on the public Stellar network, with mint, redeem, freeze and clawback.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Stablecoin Insider",
+   "source_url": "https://stablecoininsider.org/us-bank-usbdc-stellar-cross-border-pilot/",
+   "related": [],
+   "parties": [
+    {
+     "id": "us-bank",
+     "name": "U.S. Bank",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
    ],
    "added": "2026-10-11"
   },
@@ -11981,6 +14326,28 @@
    ],
    "themes": [
     "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fca-crypto-gateway-2026-09-16",
+   "date": "2026-09-16",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "FCA",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "FCA sets 30 September opening for crypto and stablecoin authorisation",
+   "summary": "The FCA published perimeter guidance for the UK crypto regime, covering stablecoin issuance, trading, dealing, safeguarding and staking; its authorisation gateway opens on 30 September 2026 and the regime on 25 October 2027.",
+   "amount_usd_m": null,
+   "regulator": "FCA",
+   "jurisdiction": "United Kingdom",
+   "source_name": "Polar Insight",
+   "source_url": "https://polarinsight.com/insights/crypto-authorisation-opens-30-september-the-gateway-is-now-the-strategy-2026-09-17",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules"
    ],
    "added": "2026-10-11"
   },
@@ -12254,6 +14621,49 @@
    "themes": [
     "cards-and-networks",
     "payment-chains"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fiserv-platform-live-2026-10-01",
+   "date": "2026-10-01",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Fiserv",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Fiserv's digital asset platform goes live with Roughrider Coin",
+   "summary": "Fiserv's digital asset platform went live for banks, with Bank of North Dakota's Roughrider Coin the first stablecoin on it, issued by VersaBank with Fireblocks providing tokenisation.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "FinTech Global",
+   "source_url": "https://fintech.global/2026/10/02/fiserv-brings-stablecoins-into-mainstream-banking/",
+   "related": [],
+   "parties": [
+    {
+     "id": "fiserv",
+     "name": "Fiserv",
+     "role": "supplier"
+    },
+    {
+     "id": "bank-of-north-dakota",
+     "name": "Bank of North Dakota",
+     "role": "client"
+    },
+    {
+     "id": "versabank",
+     "name": "VersaBank",
+     "role": "issuer"
+    },
+    {
+     "id": "fireblocks",
+     "name": "Fireblocks",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
    ],
    "added": "2026-10-11"
   },

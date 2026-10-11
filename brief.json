@@ -370,7 +370,7 @@
     {
       "name": "OCC",
       "where": "United States",
-      "licences": 15,
+      "licences": 18,
       "actions": 2
     },
     {
@@ -380,15 +380,15 @@
       "actions": 3
     },
     {
+      "name": "FCA",
+      "where": "United Kingdom",
+      "licences": 4,
+      "actions": 4
+    },
+    {
       "name": "Other",
       "where": "",
       "licences": 5,
-      "actions": 3
-    },
-    {
-      "name": "FCA",
-      "where": "United Kingdom",
-      "licences": 3,
       "actions": 3
     },
     {
@@ -400,51 +400,51 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 440,
-    "licences": 57,
-    "regulatory_actions": 52,
-    "commercial": 217,
-    "capital": 114,
+    "total": 479,
+    "licences": 62,
+    "regulatory_actions": 58,
+    "commercial": 233,
+    "capital": 126,
     "months": [
       {
         "m": "2025-10",
-        "n": 39
-      },
-      {
-        "m": "2025-11",
         "n": 47
       },
       {
+        "m": "2025-11",
+        "n": 50
+      },
+      {
         "m": "2025-12",
-        "n": 44
+        "n": 47
       },
       {
         "m": "2026-01",
-        "n": 26
-      },
-      {
-        "m": "2026-02",
         "n": 30
       },
       {
+        "m": "2026-02",
+        "n": 33
+      },
+      {
         "m": "2026-03",
-        "n": 27
+        "n": 28
       },
       {
         "m": "2026-04",
-        "n": 25
+        "n": 31
       },
       {
         "m": "2026-05",
-        "n": 40
+        "n": 44
       },
       {
         "m": "2026-06",
-        "n": 29
+        "n": 30
       },
       {
         "m": "2026-07",
-        "n": 28
+        "n": 29
       },
       {
         "m": "2026-08",
@@ -452,11 +452,11 @@
       },
       {
         "m": "2026-09",
-        "n": 44
+        "n": 48
       },
       {
         "m": "2026-10",
-        "n": 32
+        "n": 33
       }
     ],
     "partial_last": true

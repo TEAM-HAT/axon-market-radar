@@ -211,6 +211,13 @@
    "hq_country": null,
    "website": null
   },
+  "arche-capital": {
+   "id": "arche-capital",
+   "name": "Arche Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "archetype": {
    "id": "archetype",
    "name": "Archetype",
@@ -260,6 +267,13 @@
    "hq_country": "United States",
    "website": null
   },
+  "bakkt": {
+   "id": "bakkt",
+   "name": "Bakkt",
+   "kind": "technology firm",
+   "hq_country": "United States",
+   "website": null
+  },
   "bancomat": {
    "id": "bancomat",
    "name": "Bancomat",
@@ -278,6 +292,20 @@
    "id": "bank-of-north-dakota",
    "name": "Bank of North Dakota",
    "kind": "bank",
+   "hq_country": "United States",
+   "website": null
+  },
+  "bank-of-utah": {
+   "id": "bank-of-utah",
+   "name": "Bank of Utah",
+   "kind": "bank",
+   "hq_country": "United States",
+   "website": null
+  },
+  "bankers-helping-bankers-fund": {
+   "id": "bankers-helping-bankers-fund",
+   "name": "Bankers Helping Bankers Fund",
+   "kind": "investor",
    "hq_country": "United States",
    "website": null
   },
@@ -314,6 +342,13 @@
    "name": "BCP Technologies",
    "kind": "payments firm",
    "hq_country": "United Kingdom",
+   "website": null
+  },
+  "bcv": {
+   "id": "bcv",
+   "name": "BCV",
+   "kind": "bank",
+   "hq_country": "Switzerland",
    "website": null
   },
   "bdc-capital": {
@@ -391,6 +426,13 @@
    "name": "BlackRock",
    "kind": "investor",
    "hq_country": "United States",
+   "website": null
+  },
+  "blackwood": {
+   "id": "blackwood",
+   "name": "BlackWood",
+   "kind": "investor",
+   "hq_country": null,
    "website": null
   },
   "block": {
@@ -505,6 +547,13 @@
    "hq_country": null,
    "website": null
   },
+  "canonical-crypto": {
+   "id": "canonical-crypto",
+   "name": "Canonical Crypto",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "canton-network": {
    "id": "canton-network",
    "name": "Canton Network",
@@ -580,6 +629,13 @@
    "name": "Changer",
    "kind": "technology firm",
    "hq_country": null,
+   "website": null
+  },
+  "checkout-com": {
+   "id": "checkout-com",
+   "name": "Checkout.com",
+   "kind": "payments firm",
+   "hq_country": "United Kingdom",
    "website": null
   },
   "citadel-securities": {
@@ -673,6 +729,13 @@
    "hq_country": "United States",
    "website": null
   },
+  "collab-currency": {
+   "id": "collab-currency",
+   "name": "Collab+Currency",
+   "kind": "investor",
+   "hq_country": "United States",
+   "website": null
+  },
   "column": {
    "id": "column",
    "name": "Column",
@@ -756,6 +819,13 @@
    "kind": "technology firm",
    "hq_country": "Switzerland",
    "website": "https://www.crypto-finance.com"
+  },
+  "curql": {
+   "id": "curql",
+   "name": "Curql",
+   "kind": "investor",
+   "hq_country": "United States",
+   "website": null
   },
   "custodia": {
    "id": "custodia",
@@ -841,6 +911,13 @@
    "hq_country": "France",
    "website": null
   },
+  "dibbs-trust-company": {
+   "id": "dibbs-trust-company",
+   "name": "Dibbs Trust Company",
+   "kind": "other",
+   "hq_country": "United States",
+   "website": null
+  },
   "digital-space-ventures": {
    "id": "digital-space-ventures",
    "name": "Digital Space Ventures",
@@ -876,11 +953,25 @@
    "hq_country": "United States",
    "website": null
   },
+  "dst-global": {
+   "id": "dst-global",
+   "name": "DST Global",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "dtcc": {
    "id": "dtcc",
    "name": "DTCC",
    "kind": "other",
    "hq_country": "United States",
+   "website": null
+  },
+  "dtr": {
+   "id": "dtr",
+   "name": "Distributed Technologies Research",
+   "kind": "technology firm",
+   "hq_country": null,
    "website": null
   },
   "dubai-customs": {
@@ -930,6 +1021,13 @@
    "name": "Ego Death Capital",
    "kind": "investor",
    "hq_country": null,
+   "website": null
+  },
+  "ejf-ventures": {
+   "id": "ejf-ventures",
+   "name": "EJF Ventures",
+   "kind": "investor",
+   "hq_country": "United States",
    "website": null
   },
   "emirates": {
@@ -1091,6 +1189,13 @@
    "name": "Finstreet",
    "kind": "other",
    "hq_country": "United Arab Emirates",
+   "website": null
+  },
+  "first-block-capital": {
+   "id": "first-block-capital",
+   "name": "First Block Capital",
+   "kind": "investor",
+   "hq_country": null,
    "website": null
   },
   "first-data-sa": {
@@ -1303,6 +1408,13 @@
    "hq_country": "Japan",
    "website": null
   },
+  "goldcrest": {
+   "id": "goldcrest",
+   "name": "Goldcrest",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "golden-ventures": {
    "id": "golden-ventures",
    "name": "Golden Ventures",
@@ -1380,6 +1492,20 @@
    "hq_country": "United States",
    "website": null
   },
+  "hard-yaka": {
+   "id": "hard-yaka",
+   "name": "Hard Yaka",
+   "kind": "investor",
+   "hq_country": "United States",
+   "website": null
+  },
+  "hash3": {
+   "id": "hash3",
+   "name": "Hash3",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "hashed": {
    "id": "hashed",
    "name": "Hashed",
@@ -1427,6 +1553,13 @@
    "name": "Hidden Road",
    "kind": "other",
    "hq_country": null,
+   "website": null
+  },
+  "hongshan": {
+   "id": "hongshan",
+   "name": "HSG (HongShan)",
+   "kind": "investor",
+   "hq_country": "China",
    "website": null
   },
   "hsbc": {
@@ -1513,6 +1646,20 @@
    "hq_country": null,
    "website": null
   },
+  "informal-systems": {
+   "id": "informal-systems",
+   "name": "Informal Systems",
+   "kind": "technology firm",
+   "hq_country": null,
+   "website": null
+  },
+  "ing": {
+   "id": "ing",
+   "name": "ING",
+   "kind": "bank",
+   "hq_country": "Netherlands",
+   "website": null
+  },
   "ingenico": {
    "id": "ingenico",
    "name": "Ingenico",
@@ -1597,6 +1744,13 @@
    "hq_country": "United States",
    "website": null
   },
+  "kado-software": {
+   "id": "kado-software",
+   "name": "Kado Software",
+   "kind": "payments firm",
+   "hq_country": "United States",
+   "website": null
+  },
   "kalshi": {
    "id": "kalshi",
    "name": "Kalshi",
@@ -1609,6 +1763,13 @@
    "name": "Kazea Fund",
    "kind": "investor",
    "hq_country": null,
+   "website": null
+  },
+  "kbc": {
+   "id": "kbc",
+   "name": "KBC Group",
+   "kind": "bank",
+   "hq_country": "Belgium",
    "website": null
   },
   "keybank": {
@@ -1656,6 +1817,13 @@
   "lasagna": {
    "id": "lasagna",
    "name": "Lasagna",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "latitude-capital": {
+   "id": "latitude-capital",
+   "name": "Latitude Capital",
    "kind": "investor",
    "hq_country": null,
    "website": null
@@ -1786,6 +1954,13 @@
    "hq_country": "United States",
    "website": null
   },
+  "m2-capital": {
+   "id": "m2-capital",
+   "name": "M2 Capital",
+   "kind": "investor",
+   "hq_country": "United Arab Emirates",
+   "website": null
+  },
   "magic-labs": {
    "id": "magic-labs",
    "name": "Magic Labs",
@@ -1856,11 +2031,25 @@
    "hq_country": "United Kingdom",
    "website": null
   },
+  "meso": {
+   "id": "meso",
+   "name": "Meso",
+   "kind": "payments firm",
+   "hq_country": "United States",
+   "website": null
+  },
   "meta": {
    "id": "meta",
    "name": "Meta",
    "kind": "corporate",
    "hq_country": "United States",
+   "website": null
+  },
+  "mgx": {
+   "id": "mgx",
+   "name": "MGX",
+   "kind": "investor",
+   "hq_country": "United Arab Emirates",
    "website": null
   },
   "modern-treasury": {
@@ -2003,6 +2192,13 @@
    "hq_country": "Singapore",
    "website": "https://www.nium.com"
   },
+  "niv": {
+   "id": "niv",
+   "name": "NIV",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "nordea": {
    "id": "nordea",
    "name": "Nordea",
@@ -2024,6 +2220,13 @@
    "hq_country": "United States",
    "website": "https://www.northcapital.com"
   },
+  "north-island-ventures": {
+   "id": "north-island-ventures",
+   "name": "North Island Ventures",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "northwestern-mutual-future-ventures": {
    "id": "northwestern-mutual-future-ventures",
    "name": "Northwestern Mutual Future Ventures",
@@ -2036,6 +2239,13 @@
    "name": "Northzone",
    "kind": "investor",
    "hq_country": null,
+   "website": null
+  },
+  "norwest-venture-partners": {
+   "id": "norwest-venture-partners",
+   "name": "Norwest Venture Partners",
+   "kind": "investor",
+   "hq_country": "United States",
    "website": null
   },
   "notion-capital": {
@@ -2106,6 +2316,20 @@
    "name": "OSL Group",
    "kind": "exchange",
    "hq_country": "Hong Kong",
+   "website": null
+  },
+  "palisade": {
+   "id": "palisade",
+   "name": "Palisade",
+   "kind": "technology firm",
+   "hq_country": null,
+   "website": null
+  },
+  "palm-azgar": {
+   "id": "palm-azgar",
+   "name": "Palm Azgar Finance Company",
+   "kind": "payments firm",
+   "hq_country": "Saudi Arabia",
    "website": null
   },
   "panache-ventures": {
@@ -2220,9 +2444,30 @@
    "hq_country": null,
    "website": null
   },
+  "portal-labs": {
+   "id": "portal-labs",
+   "name": "Portal",
+   "kind": "technology firm",
+   "hq_country": null,
+   "website": null
+  },
   "portfolio-ventures": {
    "id": "portfolio-ventures",
    "name": "Portfolio Ventures",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "postfinance": {
+   "id": "postfinance",
+   "name": "PostFinance",
+   "kind": "bank",
+   "hq_country": "Switzerland",
+   "website": null
+  },
+  "preface-ventures": {
+   "id": "preface-ventures",
+   "name": "Preface Ventures",
    "kind": "investor",
    "hq_country": null,
    "website": null
@@ -2276,11 +2521,25 @@
    "hq_country": null,
    "website": null
   },
+  "r01-fund": {
+   "id": "r01-fund",
+   "name": "R01 Fund",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "rabobank": {
    "id": "rabobank",
    "name": "Rabobank",
    "kind": "bank",
    "hq_country": "Netherlands",
+   "website": null
+  },
+  "raiffeisen": {
+   "id": "raiffeisen",
+   "name": "Raiffeisen",
+   "kind": "bank",
+   "hq_country": "Switzerland",
    "website": null
   },
   "rail": {
@@ -2360,12 +2619,26 @@
    "hq_country": "South Korea",
    "website": "https://www.samsung.com"
   },
+  "santander": {
+   "id": "santander",
+   "name": "Banco Santander",
+   "kind": "bank",
+   "hq_country": "Spain",
+   "website": null
+  },
   "sap": {
    "id": "sap",
    "name": "SAP",
    "kind": "corporate",
    "hq_country": "Germany",
    "website": "https://www.sap.com"
+  },
+  "sapphire-ventures": {
+   "id": "sapphire-ventures",
+   "name": "Sapphire Ventures",
+   "kind": "investor",
+   "hq_country": "United States",
+   "website": null
   },
   "sbi-group": {
    "id": "sbi-group",
@@ -2415,6 +2688,13 @@
    "kind": "investor",
    "hq_country": "United States",
    "website": "https://sequoiacap.com"
+  },
+  "sevenx-ventures": {
+   "id": "sevenx-ventures",
+   "name": "SevenX Ventures",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
   },
   "shakepay": {
    "id": "shakepay",
@@ -2570,6 +2850,20 @@
    "hq_country": null,
    "website": null
   },
+  "state-street": {
+   "id": "state-street",
+   "name": "State Street",
+   "kind": "bank",
+   "hq_country": "United States",
+   "website": null
+  },
+  "stellar": {
+   "id": "stellar",
+   "name": "Stellar",
+   "kind": "other",
+   "hq_country": null,
+   "website": null
+  },
   "stonecastle": {
    "id": "stonecastle",
    "name": "StoneCastle Cash Management",
@@ -2626,6 +2920,13 @@
    "hq_country": "Switzerland",
    "website": null
   },
+  "sygnum": {
+   "id": "sygnum",
+   "name": "Sygnum",
+   "kind": "bank",
+   "hq_country": "Switzerland",
+   "website": null
+  },
   "tastytrade": {
    "id": "tastytrade",
    "name": "tastytrade",
@@ -2647,11 +2948,25 @@
    "hq_country": null,
    "website": null
   },
+  "temasek": {
+   "id": "temasek",
+   "name": "Temasek",
+   "kind": "investor",
+   "hq_country": "Singapore",
+   "website": null
+  },
   "tereina": {
    "id": "tereina",
    "name": "Tereina",
    "kind": "technology firm",
    "hq_country": null,
+   "website": null
+  },
+  "thayer-ventures": {
+   "id": "thayer-ventures",
+   "name": "Thayer Ventures",
+   "kind": "investor",
+   "hq_country": "United States",
    "website": null
   },
   "the-clearing-house": {
@@ -2661,11 +2976,25 @@
    "hq_country": "United States",
    "website": null
   },
+  "the-house-fund": {
+   "id": "the-house-fund",
+   "name": "The House Fund",
+   "kind": "investor",
+   "hq_country": "United States",
+   "website": null
+  },
   "the-operating-group": {
    "id": "the-operating-group",
    "name": "The Operating Group",
    "kind": "investor",
    "hq_country": null,
+   "website": null
+  },
+  "third-prime": {
+   "id": "third-prime",
+   "name": "Third Prime",
+   "kind": "investor",
+   "hq_country": "United States",
    "website": null
   },
   "thrive-capital": {
@@ -2722,6 +3051,13 @@
    "name": "Triple-A",
    "kind": "payments firm",
    "hq_country": "Singapore",
+   "website": null
+  },
+  "triton-capital": {
+   "id": "triton-capital",
+   "name": "Triton Capital",
+   "kind": "investor",
+   "hq_country": null,
    "website": null
   },
   "triton-ventures": {
@@ -2871,6 +3207,13 @@
    "hq_country": null,
    "website": null
   },
+  "vinyl-capital": {
+   "id": "vinyl-capital",
+   "name": "Vinyl Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
   "virtu": {
    "id": "virtu",
    "name": "Virtu Financial",
@@ -2948,6 +3291,20 @@
    "hq_country": "United Kingdom",
    "website": null
   },
+  "wischoff-ventures": {
+   "id": "wischoff-ventures",
+   "name": "Wischoff Ventures",
+   "kind": "investor",
+   "hq_country": "United States",
+   "website": null
+  },
+  "wisdomtree": {
+   "id": "wisdomtree",
+   "name": "WisdomTree",
+   "kind": "investor",
+   "hq_country": "United States",
+   "website": null
+  },
   "wise": {
    "id": "wise",
    "name": "Wise",
@@ -2990,6 +3347,13 @@
    "hq_country": "United States",
    "website": null
   },
+  "yellow-card": {
+   "id": "yellow-card",
+   "name": "Yellow Card",
+   "kind": "payments firm",
+   "hq_country": null,
+   "website": null
+  },
   "yolo-investments": {
    "id": "yolo-investments",
    "name": "Yolo Investments",
@@ -3023,6 +3387,13 @@
    "name": "Zengo",
    "kind": "technology firm",
    "hq_country": null,
+   "website": null
+  },
+  "zkb": {
+   "id": "zkb",
+   "name": "Zürcher Kantonalbank",
+   "kind": "bank",
+   "hq_country": "Switzerland",
    "website": null
   }
  }
