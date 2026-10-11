@@ -13,6 +13,15 @@ app. Pass --full "" to skip it.
 
 Both files are public. They carry market news only: no AXON lens tags and no
 watchlist.
+
+The repository's data/ folder adds structure the database does not hold yet
+(see data/README.md): enrich.json lays parties, deal and round details,
+partnership kinds and themes over existing moves; moves.json adds moves found
+later, including the deal history before the daily radar began; companies.json
+adds companies and corrects existing ones until the sweep has imported that
+version; orgs.json and themes.json name the organisations and themes. Moves
+dated before the radar began are marked "history" and kept out of the counts
+and trends.
 """
 import argparse
 import datetime as dt
@@ -22,6 +31,9 @@ import os
 import re
 
 RADAR_URL = "https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei"
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
+RADAR_START = "2025-10-01"  # the daily radar's first day; earlier moves are deal history
+PRIVATE = {"lens", "axon", "mark", "marks", "watch", "watchlist", "private", "note_for_axon"}
 TYPE_LABEL = {"Funding": "Funding", "M&A": "M&A", "License": "Licence", "Launch": "Launch",
               "Partnership": "Partnership", "Regulation": "Regulation"}
 ONE = {"Funding": "funding round", "M&A": "M&A deal", "License": "licence", "Launch": "launch",
@@ -47,6 +59,67 @@ def day(s):
         return dt.date.fromisoformat(str(s)[:10])
     except (TypeError, ValueError):
         return None
+
+
+def read_json(path, default):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return default
+
+
+def public(d):
+    """A copy without any private field, at any depth of plain dicts."""
+    return {k: v for k, v in d.items() if k not in PRIVATE}
+
+
+def load_all(export, data_dir=None):
+    """The database export with the repository's data/ files laid over it.
+
+    Returns (events, companies by id, runs, meta/app, extras) where extras holds the themes and organisations.
+    """
+    data_dir = DATA_DIR if data_dir is None else data_dir
+    events = load(os.path.join(export, "events"))
+    cos = {c["id"]: c for c in load(os.path.join(export, "companies"))}
+    runs = load(os.path.join(export, "runs"))
+    meta = {m["id"]: m for m in load(os.path.join(export, "meta"))}.get("app", {})
+
+    enrich = read_json(os.path.join(data_dir, "enrich.json"), {}).get("moves", {})
+    for e in events:
+        patch = enrich.get(e["id"])
+        if patch:
+            e.update(public({k: v for k, v in patch.items() if k != "id"}))
+    have = {e["id"] for e in events}
+    for m in read_json(os.path.join(data_dir, "moves.json"), {}).get("moves", []):
+        if m["id"] not in have:
+            events.append(public(dict(m)))
+            have.add(m["id"])
+
+    # Until the sweep has imported this version of companies.json into the database, the file's records win.
+    extra = read_json(os.path.join(data_dir, "companies.json"), {})
+    if extra and str(meta.get("companies_imported") or "") < str(extra.get("version") or ""):
+        for cid, patch in (extra.get("companies") or {}).items():
+            patch = public(patch)
+            if cid in cos:
+                cos[cid].update(patch)
+            else:
+                cos[cid] = dict(patch, id=cid)
+
+    for e in events:
+        e["history"] = str(e.get("date") or "") < RADAR_START
+        rel = [r for r in (e.get("related") or []) if r != e.get("company_id")]
+        for p in e.get("parties") or []:
+            pid = p.get("id")
+            if pid in cos and pid != e.get("company_id") and pid not in rel:
+                rel.append(pid)
+        e["related"] = rel
+
+    extras = {
+        "themes": read_json(os.path.join(data_dir, "themes.json"), {}).get("themes", []),
+        "orgs": read_json(os.path.join(data_dir, "orgs.json"), {}).get("orgs", {}),
+    }
+    return events, cos, runs, meta, extras
 
 
 REG_RULES = [
@@ -99,11 +172,9 @@ def move(e, cos):
     }
 
 
-def build(export):
-    events = load(os.path.join(export, "events"))
-    cos = {c["id"]: c for c in load(os.path.join(export, "companies"))}
-    runs = load(os.path.join(export, "runs"))
-    meta = {m["id"]: m for m in load(os.path.join(export, "meta"))}.get("app", {})
+def build(export, data_dir=None):
+    events, cos, runs, meta, _ = load_all(export, data_dir)
+    events = [e for e in events if not e["history"]]  # the brief, counts and trends cover the daily radar only
     run = max(runs, key=lambda r: str(r.get("run_at", ""))) if runs else {}
 
     end = day(run.get("window_end")) or dt.date.today()
@@ -207,17 +278,17 @@ def build(export):
 
 
 EVENT_FIELDS = ["id", "date", "date_precision", "type", "region", "title", "summary", "amount_usd_m", "jurisdiction",
-                "company_id", "company_name", "related", "source_name", "source_url", "added"]
+                "company_id", "company_name", "related", "source_name", "source_url", "added",
+                "parties", "round", "deal", "kind", "themes", "history"]
 # Company fields that are public facts. The AXON lens tag is left out on purpose.
 COMPANY_FIELDS = ["id", "name", "hq_city", "hq_country", "region", "segment", "founded", "website", "blurb",
                   "licenses", "funding", "status", "sources"]
+ORG_FIELDS = ["id", "name", "kind", "hq_country", "website"]
 
 
-def build_full(export, brief):
-    """Everything the app shows: all moves newest first, companies, regulators and the trend."""
-    events = load(os.path.join(export, "events"))
-    cos = {c["id"]: c for c in load(os.path.join(export, "companies"))}
-    runs = load(os.path.join(export, "runs"))
+def build_full(export, brief, data_dir=None):
+    """Everything the app shows: all moves newest first, companies, regulators, themes, organisations and the trend."""
+    events, cos, runs, meta, extras = load_all(export, data_dir)
     run = max(runs, key=lambda r: str(r.get("run_at", ""))) if runs else {}
     newest = sorted(events, key=lambda e: (str(e.get("date", "")), str(e.get("added", "")), e["id"]), reverse=True)
 
@@ -229,6 +300,12 @@ def build_full(export, brief):
         m["regulator"] = reg_key(e.get("regulator"))
         m["company_name"] = (cos.get(e.get("company_id")) or {}).get("name") or e.get("company_name")
         m["related"] = [r for r in (e.get("related") or []) if r in cos]
+        m["parties"] = [{k: p.get(k) for k in ("id", "name", "role")} for p in (e.get("parties") or [])]
+        m["themes"] = list(e.get("themes") or [])
+        m["history"] = bool(e.get("history"))
+        for k in ("round", "deal", "kind"):
+            if not m.get(k):
+                m.pop(k, None)
         moves.append(m)
         for cid in [e.get("company_id")] + m["related"]:
             if cid in stats:
@@ -238,10 +315,24 @@ def build_full(export, brief):
     companies = []
     for cid, c in cos.items():
         d = {k: c.get(k) for k in COMPANY_FIELDS}
-        d["licenses"] = [dict(l, regulator_key=reg_key(l.get("regulator"))) for l in (c.get("licenses") or [])]
+        d["licenses"] = [dict(public(l), regulator_key=reg_key(l.get("regulator"))) for l in (c.get("licenses") or [])]
         d.update(stats[cid])
         companies.append(d)
     companies.sort(key=lambda c: (str(c["last_date"] or ""), c["moves"], c["name"] or ""), reverse=True)
+
+    # Themes with how many moves each holds, and the organisations the moves name that the radar does not track.
+    live = [e for e in events if not e["history"]]
+    since90 = (day(brief.get("window_end")) or dt.date.today()) - dt.timedelta(days=89)
+    themes = [{"id": t["id"], "name": t["name"], "what": t.get("what"),
+               "moves": sum(1 for e in events if t["id"] in (e.get("themes") or [])),
+               "moves_90d": sum(1 for e in live if t["id"] in (e.get("themes") or []) and (day(e.get("date")) or since90) >= since90)}
+              for t in extras["themes"]]
+    named = {p["id"] for m in moves for p in m["parties"]} - set(cos)
+    orgs = {i: {k: o.get(k) for k in ORG_FIELDS} for i, o in extras["orgs"].items() if i in named}
+    for m in moves:
+        for p in m["parties"]:
+            if p["id"] not in cos and p["id"] not in orgs:
+                orgs[p["id"]] = {"id": p["id"], "name": p["name"], "kind": None, "hq_country": None, "website": None}
 
     regs = {}
     for e in newest:
@@ -252,14 +343,32 @@ def build_full(export, brief):
         r["licences" if e["type"] == "License" else "actions"] += 1
     regulators = sorted(regs.values(), key=lambda r: (-(r["licences"] + r["actions"]), r["name"]))
 
+    history = [m for m in moves if m["history"]]
     keep = ("updated_at", "next_run", "window_start", "window_end", "count", "new_today", "headline", "mix_text",
             "regions", "groups", "trends", "radar_url")
     return dict(
-        {"schema": 1, "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()},
+        {"schema": 2, "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()},
         **{k: brief.get(k) for k in keep},
+        radar_since=RADAR_START,
+        history_since=min((m["date"] for m in history), default=None),
         highlights=[h for h in (run.get("highlights") or []) if "axon" not in str(h).lower()],
-        events=moves, companies=companies, regulators=regulators,
+        events=moves, companies=companies, regulators=regulators, themes=themes, orgs=orgs,
     )
+
+
+def check_public(full):
+    """Warn about anything in the public file that looks like it belongs to the private lens."""
+    problems = []
+    for m in full["events"]:
+        for k in ("title", "summary"):
+            if re.search(r"\baxon\b", str(m.get(k) or ""), re.I):
+                problems.append(f"move {m['id']}: {k} mentions AXON")
+    for c in full["companies"]:
+        if re.search(r"\baxon\b", str(c.get("blurb") or ""), re.I):
+            problems.append(f"company {c['id']}: blurb mentions AXON")
+    for p in problems:
+        print("WARNING:", p)
+    return problems
 
 
 if __name__ == "__main__":
@@ -267,8 +376,9 @@ if __name__ == "__main__":
     ap.add_argument("--export", required=True)
     ap.add_argument("--out", default="brief.json")
     ap.add_argument("--full", default=None, help="path for radar.json (default: beside --out; empty to skip)")
+    ap.add_argument("--data", default=None, help="the data/ folder with enrich, moves, companies, orgs and themes")
     a = ap.parse_args()
-    brief = build(a.export)
+    brief = build(a.export, a.data)
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(brief, f, ensure_ascii=False, indent=2)
         f.write("\n")
@@ -276,9 +386,12 @@ if __name__ == "__main__":
           f"{len(brief['latest'])} latest, {len(brief['companies'])} companies, {len(brief['licences'])} licences")
     full_path = os.path.join(os.path.dirname(os.path.abspath(a.out)), "radar.json") if a.full is None else a.full
     if full_path:
-        full = build_full(a.export, brief)
+        full = build_full(a.export, brief, a.data)
+        check_public(full)
         with open(full_path, "w", encoding="utf-8") as f:
             json.dump(full, f, ensure_ascii=False, separators=(",", ":"))
             f.write("\n")
-        print(f"wrote {full_path}: {len(full['events'])} moves, {len(full['companies'])} companies, "
-              f"{len(full['regulators'])} regulators")
+        hist = sum(1 for m in full["events"] if m["history"])
+        print(f"wrote {full_path}: {len(full['events'])} moves ({hist} from the deal history before {RADAR_START}), "
+              f"{len(full['companies'])} companies, {len(full['regulators'])} regulators, {len(full['themes'])} themes, "
+              f"{len(full['orgs'])} other organisations")

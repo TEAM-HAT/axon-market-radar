@@ -1,0 +1,80 @@
+{
+ "version": "2026-10-11",
+ "themes": [
+  {
+   "id": "gulf-tokens",
+   "name": "Dirham and Gulf tokens",
+   "what": "AED, BHD and other Gulf stablecoins and tokenised deposits, their approvals and uptake"
+  },
+  {
+   "id": "gulf-rules",
+   "name": "Gulf rules and licences",
+   "what": "VARA, ADGM, DFSA, CBUAE, CBB, SAMA and CMA rules, licences and supervisory action"
+  },
+  {
+   "id": "mica",
+   "name": "MiCA in force",
+   "what": "EU MiCA authorisations, e-money tokens, transition deadlines, and ESMA and national enforcement"
+  },
+  {
+   "id": "us-rules",
+   "name": "US rules and charters",
+   "what": "GENIUS Act rule-making, OCC, FDIC, Federal Reserve, FinCEN and Treasury actions, and national trust charters"
+  },
+  {
+   "id": "canada-uk-rules",
+   "name": "Canada and UK rules",
+   "what": "Canada's Stablecoin Act and its regulators, and the UK's FCA and Treasury regimes"
+  },
+  {
+   "id": "bank-tokens",
+   "name": "Banks move on-chain",
+   "what": "Banks issuing stablecoins or tokenised deposits, joining consortia, or adding stablecoin custody, settlement and payments"
+  },
+  {
+   "id": "consolidation",
+   "name": "Consolidation",
+   "what": "Acquisitions, mergers, takeover bids and sales of stablecoin and payments infrastructure firms"
+  },
+  {
+   "id": "capital",
+   "name": "Capital for infrastructure",
+   "what": "Funding rounds, strategic stakes and listings of stablecoin and payments infrastructure firms"
+  },
+  {
+   "id": "apps-and-wallets",
+   "name": "Stablecoins in mainstream apps",
+   "what": "Wallets, super-apps, consumer platforms and big tech adding stablecoins"
+  },
+  {
+   "id": "cards-and-networks",
+   "name": "Card networks on stablecoins",
+   "what": "Visa, Mastercard and card programmes funded or settled in stablecoins"
+  },
+  {
+   "id": "checkout",
+   "name": "Stablecoins at the checkout",
+   "what": "Merchants, acquirers, payment service providers and checkouts accepting or settling in stablecoins"
+  },
+  {
+   "id": "payment-chains",
+   "name": "Payment chains and networks",
+   "what": "Payment blockchains and settlement networks such as Tempo, Arc, Canton, Circle Payments Network, the Global Dollar Network and BLINC"
+  },
+  {
+   "id": "business-payments",
+   "name": "Business payments and treasury",
+   "what": "B2B payments, cross-border payouts, corporate treasury and enterprise integrations"
+  },
+  {
+   "id": "non-dollar",
+   "name": "Non-dollar stablecoins and FX",
+   "what": "Euro, franc, sterling, Canadian dollar, dirham and other non-dollar tokens, and stablecoin FX"
+  },
+  {
+   "id": "agent-payments",
+   "name": "AI agent payments",
+   "what": "Payments made by or for AI agents"
+  }
+ ]
+}

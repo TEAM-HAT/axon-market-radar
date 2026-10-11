@@ -1,0 +1,1797 @@
+{
+ "version": "2026-10-11",
+ "moves": {
+  "tempo-series-a-2025-10-17": {
+   "parties": [
+    {
+     "id": "thrive-capital",
+     "name": "Thrive Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "greenoaks",
+     "name": "Greenoaks",
+     "role": "lead investor"
+    },
+    {
+     "id": "sequoia-capital",
+     "name": "Sequoia",
+     "role": "investor"
+    },
+    {
+     "id": "ribbit-capital",
+     "name": "Ribbit Capital",
+     "role": "investor"
+    },
+    {
+     "id": "sv-angel",
+     "name": "SV Angel",
+     "role": "investor"
+    }
+   ],
+   "round": {
+    "stage": "Series A",
+    "valuation_usd_m": 5000,
+    "use_of_funds": null
+   },
+   "related": [
+    "bridge",
+    "stripe"
+   ],
+   "themes": [
+    "capital",
+    "payment-chains"
+   ]
+  },
+  "mesh-series-c-2026-01-27": {
+   "parties": [
+    {
+     "id": "dragonfly",
+     "name": "Dragonfly",
+     "role": "lead investor"
+    },
+    {
+     "id": "paradigm",
+     "name": "Paradigm",
+     "role": "investor"
+    },
+    {
+     "id": "moderne-ventures",
+     "name": "Moderne Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "coinbase",
+     "name": "Coinbase Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "sbi-group",
+     "name": "SBI Investment",
+     "role": "investor"
+    },
+    {
+     "id": "liberty-city-ventures",
+     "name": "Liberty City Ventures",
+     "role": "investor"
+    }
+   ],
+   "round": {
+    "stage": "Series C",
+    "valuation_usd_m": 1000,
+    "use_of_funds": "expansion into Latin America, Asia and Europe, and product development"
+   },
+   "themes": [
+    "capital",
+    "checkout"
+   ]
+  },
+  "anchorage-digital-tether-stake-2026-02-05": {
+   "parties": [
+    {
+     "id": "tether",
+     "name": "Tether",
+     "role": "lead investor"
+    }
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": 4200,
+    "use_of_funds": null
+   },
+   "themes": [
+    "capital"
+   ]
+  },
+  "fasset-series-b-2026-05-15": {
+   "parties": [
+    {
+     "id": "sbi-group",
+     "name": "SBI Group",
+     "role": "investor"
+    },
+    {
+     "id": "arz-portfoy",
+     "name": "Arz Portföy",
+     "role": "investor"
+    },
+    {
+     "id": "investcorp",
+     "name": "Investcorp",
+     "role": "investor"
+    }
+   ],
+   "round": {
+    "stage": "Series B",
+    "valuation_usd_m": null,
+    "use_of_funds": "banking corridors, new markets, and lending, SME banking and trade finance"
+   },
+   "jurisdiction": "United States",
+   "themes": [
+    "capital"
+   ]
+  },
+  "fasset-series-c-2026-08-24": {
+   "parties": [
+    {
+     "id": "sbi-group",
+     "name": "SBI Group",
+     "role": "lead investor"
+    }
+   ],
+   "round": {
+    "stage": "Series C",
+    "valuation_usd_m": 1000,
+    "use_of_funds": "its Own Network of banking corridors and AI tools for stablecoin settlement"
+   },
+   "jurisdiction": "United States",
+   "themes": [
+    "capital"
+   ]
+  },
+  "schuman-financial-ripple-openfx-2026-08-01": {
+   "date": "2026-08-05",
+   "date_precision": "day",
+   "parties": [
+    {
+     "id": "ripple",
+     "name": "Ripple",
+     "role": "investor"
+    },
+    {
+     "id": "openfx",
+     "name": "OpenFX",
+     "role": "investor"
+    }
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": "EURØP adoption, institutional integrations and infrastructure"
+   },
+   "themes": [
+    "capital",
+    "non-dollar"
+   ]
+  },
+  "circle-binance-2026-09-22": {
+   "parties": [
+    {
+     "id": "binance",
+     "name": "Binance",
+     "role": "investor"
+    }
+   ],
+   "round": {
+    "stage": "Private placement",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
+   "themes": [
+    "capital"
+   ]
+  },
+  "noah-seed-2026-10-07": {
+   "parties": [
+    {
+     "id": "endeit-capital",
+     "name": "Endeit Capital",
+     "role": "investor"
+    },
+    {
+     "id": "fj-labs",
+     "name": "FJ Labs",
+     "role": "investor"
+    },
+    {
+     "id": "localglobe",
+     "name": "LocalGlobe",
+     "role": "investor"
+    },
+    {
+     "id": "felix-capital",
+     "name": "Felix Capital",
+     "role": "investor"
+    }
+   ],
+   "round": {
+    "stage": "Seed extension",
+    "valuation_usd_m": null,
+    "use_of_funds": "US expansion, including a New York office"
+   },
+   "themes": [
+    "capital",
+    "business-payments"
+   ]
+  },
+  "immix-funding-2026-10-08": {
+   "company_id": "immix",
+   "parties": [
+    {
+     "id": "crane-ventures",
+     "name": "Crane Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "btse",
+     "name": "BTSE",
+     "role": "investor"
+    },
+    {
+     "id": "portfolio-ventures",
+     "name": "Portfolio Ventures",
+     "role": "investor"
+    }
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": "pricing engine, liquidity and partner distribution"
+   },
+   "themes": [
+    "capital",
+    "non-dollar"
+   ]
+  },
+  "bvnk-coinbase-talks-end-2025-11-11": {
+   "parties": [
+    {
+     "id": "coinbase",
+     "name": "Coinbase",
+     "role": "buyer"
+    }
+   ],
+   "deal": {
+    "status": "called off",
+    "rationale": "talks ended after due diligence",
+    "gains": []
+   },
+   "themes": [
+    "consolidation"
+   ]
+  },
+  "paxos-fordefi-2025-11-25": {
+   "parties": [
+    {
+     "id": "fordefi",
+     "name": "Fordefi",
+     "role": "target"
+    }
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "build out its custody layer with MPC wallet technology",
+    "gains": [
+     "technology"
+    ]
+   },
+   "themes": [
+    "consolidation"
+   ]
+  },
+  "bvnk-mastercard-agreement-2026-03-17": {
+   "amount_usd_m": 1800,
+   "parties": [
+    {
+     "id": "mastercard",
+     "name": "Mastercard",
+     "role": "buyer"
+    }
+   ],
+   "deal": {
+    "status": "announced",
+    "rationale": "connect on-chain payments with fiat rails",
+    "gains": [
+     "technology",
+     "licences"
+    ]
+   },
+   "themes": [
+    "consolidation",
+    "cards-and-networks"
+   ]
+  },
+  "moonpay-dflow-2026-05-05": {
+   "parties": [
+    {
+     "id": "dflow",
+     "name": "DFlow",
+     "role": "target"
+    }
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "add trading to its payments stack",
+    "gains": [
+     "technology"
+    ]
+   },
+   "themes": [
+    "consolidation"
+   ]
+  },
+  "zodia-custody-stanchart-2026-05-18": {
+   "parties": [
+    {
+     "id": "standard-chartered",
+     "name": "Standard Chartered",
+     "role": "buyer"
+    }
+   ],
+   "deal": {
+    "status": "announced",
+    "rationale": "fold regulated custody into the bank's securities services",
+    "gains": [
+     "licences",
+     "clients"
+    ]
+   },
+   "themes": [
+    "consolidation",
+    "bank-tokens"
+   ]
+  },
+  "openpayd-spac-2026-06-01": {
+   "parties": [
+    {
+     "id": "titan-acquisition-corp",
+     "name": "Titan Acquisition Corp",
+     "role": "buyer"
+    }
+   ],
+   "deal": {
+    "status": "announced",
+    "rationale": "Nasdaq listing through a SPAC merger",
+    "gains": [],
+    "valuation_usd_m": 1145
+   },
+   "themes": [
+    "consolidation",
+    "capital"
+   ]
+  },
+  "paypal-stripe-advent-bid-2026-07-15": {
+   "parties": [
+    {
+     "id": "stripe",
+     "name": "Stripe",
+     "role": "buyer"
+    },
+    {
+     "id": "advent-international",
+     "name": "Advent International",
+     "role": "buyer"
+    }
+   ],
+   "deal": {
+    "status": "called off",
+    "rationale": "takeover approach judged too low",
+    "gains": []
+   },
+   "themes": [
+    "consolidation"
+   ]
+  },
+  "bvnk-mastercard-close-2026-08-03": {
+   "parties": [
+    {
+     "id": "mastercard",
+     "name": "Mastercard",
+     "role": "buyer"
+    }
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "connect on-chain payments with fiat rails",
+    "gains": [
+     "technology",
+     "licences"
+    ]
+   },
+   "themes": [
+    "consolidation",
+    "cards-and-networks"
+   ]
+  },
+  "openpayd-msb-usa-2026-09-03": {
+   "parties": [
+    {
+     "id": "msb-usa",
+     "name": "MSB USA",
+     "role": "target"
+    }
+   ],
+   "deal": {
+    "status": "announced",
+    "rationale": "US state licences and payment routing before its listing",
+    "gains": [
+     "licences",
+     "market entry"
+    ]
+   },
+   "themes": [
+    "consolidation"
+   ]
+  },
+  "circle-tazapay-2026-09-08": {
+   "amount_usd_m": 400,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/09/08/circle-agrees-to-buy-cross-border-payments-firm-tazapay-for-usd400-million",
+   "parties": [
+    {
+     "id": "tazapay",
+     "name": "Tazapay",
+     "role": "target"
+    }
+   ],
+   "deal": {
+    "status": "announced",
+    "rationale": "expand cross-border payments infrastructure",
+    "gains": [
+     "clients",
+     "licences"
+    ]
+   },
+   "themes": [
+    "consolidation",
+    "business-payments"
+   ]
+  },
+  "copper-sale-ceo-2026-09-08": {
+   "parties": [],
+   "deal": {
+    "status": "reported",
+    "rationale": "sale process run by Cantor Fitzgerald",
+    "gains": []
+   },
+   "themes": [
+    "consolidation"
+   ]
+  },
+  "moonpay-north-capital-2026-09-24": {
+   "amount_usd_m": 60,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/09/23/moonpay-to-acquire-sec-registered-north-capital-in-usd60-million-all-stock-deal",
+   "parties": [
+    {
+     "id": "north-capital",
+     "name": "North Capital",
+     "role": "target"
+    }
+   ],
+   "deal": {
+    "status": "announced",
+    "rationale": "move into tokenised securities",
+    "gains": [
+     "licences"
+    ]
+   },
+   "themes": [
+    "consolidation"
+   ]
+  },
+  "anchorage-routable-2026-10-06": {
+   "company_id": "anchorage-digital",
+   "parties": [
+    {
+     "id": "routable",
+     "name": "Routable",
+     "role": "target"
+    }
+   ],
+   "deal": {
+    "status": "completed",
+    "rationale": "stablecoin and tokenised-deposit settlement for corporate payouts",
+    "gains": [
+     "clients",
+     "technology"
+    ]
+   },
+   "themes": [
+    "consolidation",
+    "business-payments"
+   ]
+  },
+  "sg-forge-deutsche-borse-2025-11-18": {
+   "kind": "Venue listing",
+   "parties": [
+    {
+     "id": "deutsche-borse",
+     "name": "Deutsche Börse",
+     "role": "partner"
+    },
+    {
+     "id": "societe-generale",
+     "name": "Société Générale",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ]
+  },
+  "allunity-deutsche-borse-2025-11-26": {
+   "kind": "Venue listing",
+   "parties": [
+    {
+     "id": "deutsche-borse",
+     "name": "Deutsche Börse",
+     "role": "partner"
+    },
+    {
+     "id": "crypto-finance",
+     "name": "Crypto Finance",
+     "role": "custodian"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "mica"
+   ]
+  },
+  "visa-aquanow-cemea-2025-11-26": {
+   "kind": "Card programme",
+   "company_id": "visa",
+   "parties": [
+    {
+     "id": "aquanow",
+     "name": "Aquanow",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ]
+  },
+  "bastion-sony-2025-12-01": {
+   "kind": "Infrastructure supply",
+   "parties": [
+    {
+     "id": "sony",
+     "name": "Sony Financial Group",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ]
+  },
+  "ae-coin-adnoc-2025-12-12": {
+   "kind": "Merchant acceptance",
+   "parties": [
+    {
+     "id": "adnoc-distribution",
+     "name": "ADNOC Distribution",
+     "role": "partner"
+    },
+    {
+     "id": "al-maryah-community-bank",
+     "name": "Al Maryah Community Bank",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "gulf-tokens",
+    "checkout"
+   ]
+  },
+  "network-international-ae-coin-mou-2026-01-06": {
+   "kind": "Merchant acceptance",
+   "parties": [
+    {
+     "id": "al-maryah-community-bank",
+     "name": "Al Maryah Community Bank",
+     "role": "issuer"
+    },
+    {
+     "id": "ae-coin",
+     "name": "AE Coin",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "gulf-tokens",
+    "checkout"
+   ]
+  },
+  "taurus-clearbank-2026-01-13": {
+   "kind": "Infrastructure supply",
+   "parties": [
+    {
+     "id": "clearbank",
+     "name": "ClearBank",
+     "role": "client"
+    },
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ]
+  },
+  "sg-forge-swift-2026-01-15": {
+   "kind": "Network or consortium",
+   "parties": [
+    {
+     "id": "swift",
+     "name": "Swift",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ]
+  },
+  "riyad-bank-ripple-mou-2026-01-26": {
+   "kind": "Bank adoption",
+   "parties": [
+    {
+     "id": "ripple",
+     "name": "Ripple",
+     "role": "supplier"
+    },
+    {
+     "id": "jeel",
+     "name": "Jeel",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ]
+  },
+  "versabank-qcad-custody-2026-02-03": {
+   "kind": "Bank adoption",
+   "parties": [
+    {
+     "id": "stablecorp",
+     "name": "Stablecorp",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ]
+  },
+  "paxos-europe-bitpanda-usdg-2026-02-05": {
+   "kind": "Venue listing",
+   "parties": [
+    {
+     "id": "bitpanda",
+     "name": "Bitpanda",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "mica",
+    "payment-chains"
+   ]
+  },
+  "zand-ripple-partnership-2026-02-10": {
+   "kind": "Bank adoption",
+   "parties": [
+    {
+     "id": "ripple",
+     "name": "Ripple",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "gulf-tokens",
+    "bank-tokens"
+   ]
+  },
+  "bcb-group-zodia-blinc-2026-02-11": {
+   "kind": "Network or consortium",
+   "parties": [
+    {
+     "id": "zodia-markets",
+     "name": "Zodia Markets",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ]
+  },
+  "quantoz-visa-2026-02-17": {
+   "kind": "Card programme",
+   "parties": [
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks",
+    "mica"
+   ]
+  },
+  "bridge-visa-cards-2026-03-03": {
+   "kind": "Card programme",
+   "parties": [
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ]
+  },
+  "conduit-yuno-2026-03-03": {
+   "kind": "Merchant acceptance",
+   "parties": [
+    {
+     "id": "yuno",
+     "name": "Yuno",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "checkout",
+    "business-payments"
+   ]
+  },
+  "circle-europe-clearbank-2026-04-13": {
+   "kind": "Bank adoption",
+   "parties": [
+    {
+     "id": "clearbank",
+     "name": "ClearBank",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "mica"
+   ]
+  },
+  "fireblocks-qivalis-2026-04-22": {
+   "kind": "Infrastructure supply",
+   "parties": [
+    {
+     "id": "qivalis",
+     "name": "Qivalis",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ]
+  },
+  "universal-digital-ae-coin-conversion-2026-05-07": {
+   "kind": "Infrastructure supply",
+   "parties": [
+    {
+     "id": "ae-coin",
+     "name": "AE Coin",
+     "role": "partner"
+    },
+    {
+     "id": "al-maryah-community-bank",
+     "name": "Al Maryah Community Bank",
+     "role": "partner"
+    },
+    {
+     "id": "changer",
+     "name": "Changer",
+     "role": "custodian"
+    },
+    {
+     "id": "aquanow",
+     "name": "Aquanow",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "gulf-tokens",
+    "non-dollar"
+   ]
+  },
+  "qivalis-37-banks-2026-05-20": {
+   "kind": "Network or consortium",
+   "company_id": "qivalis",
+   "parties": [
+    {
+     "id": "abn-amro",
+     "name": "ABN AMRO",
+     "role": "partner"
+    },
+    {
+     "id": "intesa-sanpaolo",
+     "name": "Intesa Sanpaolo",
+     "role": "partner"
+    },
+    {
+     "id": "nordea",
+     "name": "Nordea",
+     "role": "partner"
+    },
+    {
+     "id": "rabobank",
+     "name": "Rabobank",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ]
+  },
+  "brale-visa-canton-2026-06-04": {
+   "kind": "Card programme",
+   "parties": [
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    },
+    {
+     "id": "canton-network",
+     "name": "Canton Network",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks",
+    "payment-chains"
+   ]
+  },
+  "bridge-banking-circle-2026-06-10": {
+   "kind": "Infrastructure supply",
+   "parties": [
+    {
+     "id": "banking-circle",
+     "name": "Banking Circle",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "business-payments",
+    "non-dollar"
+   ]
+  },
+  "stablecorp-td-custody-2026-07-15": {
+   "kind": "Bank adoption",
+   "parties": [
+    {
+     "id": "td-bank",
+     "name": "TD Bank Group",
+     "role": "custodian"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ]
+  },
+  "bitgo-allunity-2026-08-17": {
+   "kind": "Infrastructure supply",
+   "parties": [
+    {
+     "id": "allunity",
+     "name": "AllUnity",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "mica"
+   ]
+  },
+  "zand-usdc-support-2026-08-25": {
+   "kind": "Bank adoption",
+   "parties": [
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "gulf-tokens"
+   ]
+  },
+  "openpayd-circle-payments-network-2026-08-26": {
+   "kind": "Network or consortium",
+   "parties": [
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains",
+    "business-payments"
+   ]
+  },
+  "fasset-ddsc-listing-2026-09-16": {
+   "kind": "Venue listing",
+   "parties": [
+    {
+     "id": "ddsc",
+     "name": "DDSC",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "gulf-tokens"
+   ]
+  },
+  "monerium-bermuda-2026-09-25": {
+   "kind": "Infrastructure supply",
+   "parties": [
+    {
+     "id": "bermuda",
+     "name": "Bermuda",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "business-payments"
+   ]
+  },
+  "coinbase-citi-2026-09-28": {
+   "kind": "Bank adoption",
+   "parties": [
+    {
+     "id": "citi",
+     "name": "Citi",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "business-payments"
+   ]
+  },
+  "schuman-financial-europe-consortium-2026-10-05": {
+   "kind": "Network or consortium",
+   "parties": [
+    {
+     "id": "etoro",
+     "name": "eToro",
+     "role": "partner"
+    },
+    {
+     "id": "swissborg",
+     "name": "SwissBorg",
+     "role": "partner"
+    },
+    {
+     "id": "coinhouse",
+     "name": "Coinhouse",
+     "role": "partner"
+    },
+    {
+     "id": "dfns",
+     "name": "Dfns",
+     "role": "partner"
+    },
+    {
+     "id": "lcx",
+     "name": "LCX",
+     "role": "partner"
+    },
+    {
+     "id": "rockawayx",
+     "name": "RockawayX",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "mica"
+   ]
+  },
+  "zerohash-tempo-2026-10-06": {
+   "kind": "Network or consortium",
+   "parties": [
+    {
+     "id": "tempo",
+     "name": "Tempo",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ]
+  },
+  "circle-europe-tereina-sap-2026-10-07": {
+   "kind": "Enterprise integration",
+   "parties": [
+    {
+     "id": "tereina",
+     "name": "Tereina",
+     "role": "partner"
+    },
+    {
+     "id": "sap",
+     "name": "SAP",
+     "role": "partner"
+    }
+   ],
+   "related": [
+    "circle"
+   ],
+   "themes": [
+    "business-payments"
+   ]
+  },
+  "coinbase-yuno-checkout-2026-10-07": {
+   "kind": "Merchant acceptance",
+   "parties": [
+    {
+     "id": "yuno",
+     "name": "Yuno",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "checkout"
+   ]
+  },
+  "mesh-wlfi-usd1-2026-10-07": {
+   "kind": "Merchant acceptance",
+   "parties": [
+    {
+     "id": "world-liberty-financial",
+     "name": "World Liberty Financial",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "checkout"
+   ]
+  },
+  "polygon-tron-open-money-stack-2026-10-07": {
+   "kind": "Infrastructure supply",
+   "company_id": "polygon-labs",
+   "parties": [
+    {
+     "id": "tron",
+     "name": "TRON",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains",
+    "business-payments"
+   ]
+  },
+  "nium-redotpay-2026-10-08": {
+   "kind": "Payouts and corridors",
+   "parties": [
+    {
+     "id": "nium",
+     "name": "Nium",
+     "role": "supplier"
+    },
+    {
+     "id": "redotpay",
+     "name": "RedotPay",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments",
+    "apps-and-wallets"
+   ]
+  },
+  "visa-adi-foundation-2026-10-08": {
+   "kind": "Network or consortium",
+   "company_id": "visa",
+   "parties": [
+    {
+     "id": "adi-foundation",
+     "name": "ADI Foundation",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains",
+    "cards-and-networks"
+   ]
+  },
+  "conduit-virtual-accounts-2025-12-01": {
+   "themes": [
+    "business-payments"
+   ]
+  },
+  "qivalis-launch-2025-12-02": {
+   "themes": [
+    "bank-tokens",
+    "non-dollar",
+    "mica"
+   ]
+  },
+  "anchorage-digital-usat-2026-01-27": {
+   "parties": [
+    {
+     "id": "tether",
+     "name": "Tether",
+     "role": "client"
+    },
+    {
+     "id": "cantor-fitzgerald",
+     "name": "Cantor Fitzgerald",
+     "role": "custodian"
+    },
+    {
+     "id": "kraken",
+     "name": "Kraken",
+     "role": "partner"
+    },
+    {
+     "id": "crypto-com",
+     "name": "Crypto.com",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "us-rules"
+   ]
+  },
+  "visa-nymcard-gcc-2026-02-02": {
+   "company_id": "nymcard",
+   "parties": [
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    },
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ]
+  },
+  "allunity-chfau-2026-02-26": {
+   "themes": [
+    "non-dollar",
+    "mica"
+   ]
+  },
+  "versabank-usdvb-pilot-2026-03-03": {
+   "themes": [
+    "bank-tokens"
+   ]
+  },
+  "paypal-pyusd-70-markets-2026-03-17": {
+   "parties": [
+    {
+     "id": "paxos",
+     "name": "Paxos",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ]
+  },
+  "tempo-mainnet-2026-03-18": {
+   "parties": [
+    {
+     "id": "stripe",
+     "name": "Stripe",
+     "role": "partner"
+    },
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    },
+    {
+     "id": "lightspark",
+     "name": "Lightspark",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains",
+    "agent-payments"
+   ]
+  },
+  "quantoz-plnq-gbpq-2026-04-14": {
+   "parties": [
+    {
+     "id": "zodia-markets",
+     "name": "Zodia Markets",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "mica"
+   ]
+  },
+  "anchorage-digital-usdpt-2026-05-04": {
+   "parties": [
+    {
+     "id": "western-union",
+     "name": "Western Union",
+     "role": "client"
+    },
+    {
+     "id": "fireblocks",
+     "name": "Fireblocks",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ]
+  },
+  "tetra-trust-cadd-2026-05-04": {
+   "parties": [
+    {
+     "id": "tempo",
+     "name": "Tempo",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar"
+   ]
+  },
+  "ddsc-ihc-transaction-2026-05-21": {
+   "parties": [
+    {
+     "id": "ihc",
+     "name": "IHC",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "gulf-tokens"
+   ]
+  },
+  "orbital-us-expansion-2026-06-11": {
+   "themes": [
+    "business-payments"
+   ]
+  },
+  "stanchart-circle-usdc-difc-2026-07-02": {
+   "company_id": "standard-chartered",
+   "parties": [
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ]
+  },
+  "emirates-cryptocom-pay-2026-07-28": {
+   "parties": [
+    {
+     "id": "emirates",
+     "name": "Emirates",
+     "role": "client"
+    },
+    {
+     "id": "crypto-com",
+     "name": "Crypto.com",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "checkout"
+   ]
+  },
+  "moonpay-enterprise-2026-08-06": {
+   "themes": [
+    "business-payments"
+   ]
+  },
+  "bridge-revolut-eurr-2026-08-26": {
+   "parties": [
+    {
+     "id": "revolut",
+     "name": "Revolut",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets",
+    "non-dollar",
+    "mica"
+   ]
+  },
+  "utila-partner-network-2026-09-01": {
+   "parties": [
+    {
+     "id": "fipto",
+     "name": "Fipto",
+     "role": "partner"
+    },
+    {
+     "id": "coingate",
+     "name": "CoinGate",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ]
+  },
+  "network-international-ddsc-pilot-2026-09-09": {
+   "parties": [
+    {
+     "id": "ddsc",
+     "name": "DDSC",
+     "role": "issuer"
+    },
+    {
+     "id": "marks-and-spencer",
+     "name": "Marks & Spencer",
+     "role": "client"
+    },
+    {
+     "id": "lulu",
+     "name": "LuLu",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "gulf-tokens",
+    "checkout"
+   ]
+  },
+  "circle-arc-mainnet-2026-09-16": {
+   "parties": [
+    {
+     "id": "blackrock",
+     "name": "BlackRock",
+     "role": "partner"
+    },
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    },
+    {
+     "id": "mastercard",
+     "name": "Mastercard",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ]
+  },
+  "tether-shiga-wdk-2026-09-28": {
+   "parties": [
+    {
+     "id": "shiga",
+     "name": "Shiga",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ]
+  },
+  "allunity-usdau-2026-09-30": {
+   "parties": [
+    {
+     "id": "banking-circle",
+     "name": "Banking Circle",
+     "role": "custodian"
+    }
+   ],
+   "themes": [
+    "mica"
+   ]
+  },
+  "dimoco-stablecoin-settlement-2026-10-05": {
+   "parties": [
+    {
+     "id": "fipto",
+     "name": "Fipto",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "checkout",
+    "mica"
+   ]
+  },
+  "ant-international-hsbc-tokenised-deposits-2026-10-06": {
+   "parties": [
+    {
+     "id": "hsbc",
+     "name": "HSBC",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "gulf-tokens"
+   ]
+  },
+  "brale-verusd-2026-10-06": {
+   "company_id": "brale",
+   "parties": [
+    {
+     "id": "verona",
+     "name": "Verona",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "agent-payments"
+   ]
+  },
+  "paxos-usdg-arbitrum-2026-10-06": {
+   "parties": [
+    {
+     "id": "arbitrum",
+     "name": "Arbitrum",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ]
+  },
+  "samsung-wallet-usdc-2026-10-07": {
+   "parties": [
+    {
+     "id": "bastion",
+     "name": "Bastion",
+     "role": "custodian"
+    },
+    {
+     "id": "coinbase",
+     "name": "Coinbase Prime",
+     "role": "custodian"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ]
+  },
+  "bringin-business-beta-2026-10-08": {
+   "parties": [
+    {
+     "id": "lightspark",
+     "name": "Lightspark",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "business-payments",
+    "mica"
+   ]
+  },
+  "sg-forge-mica-casp-2025-10-23": {
+   "themes": [
+    "mica",
+    "bank-tokens"
+   ]
+  },
+  "zerohash-mica-casp-2025-11-02": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "zand-aed-approval-2025-11-17": {
+   "themes": [
+    "gulf-rules",
+    "gulf-tokens",
+    "bank-tokens"
+   ]
+  },
+  "stablecorp-qcad-csa-2025-11-20": {
+   "themes": [
+    "canada-uk-rules",
+    "non-dollar"
+   ]
+  },
+  "ripple-rlusd-adgm-2025-11-27": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "tether-adgm-afrt-2025-12-08": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "occ-five-trust-charters-2025-12-12": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "rakbank-aed-ipa-2026-01-07": {
+   "themes": [
+    "gulf-rules",
+    "gulf-tokens",
+    "bank-tokens"
+   ]
+  },
+  "ripple-fca-emi-2026-01-09": {
+   "themes": [
+    "canada-uk-rules"
+   ]
+  },
+  "universal-digital-usdu-registration-2026-01-29": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "ripple-eu-emi-2026-02-02": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "ddsc-cbuae-approval-2026-02-11": {
+   "themes": [
+    "gulf-rules",
+    "gulf-tokens"
+   ]
+  },
+  "bridge-occ-conditional-2026-02-12": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "bvnk-mica-casp-2026-02-16": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "coinbase-occ-conditional-2026-04-02": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "banking-circle-cssf-casp-2026-04-15": {
+   "themes": [
+    "mica",
+    "bank-tokens"
+   ]
+  },
+  "circle-europe-amf-casp-2026-04-20": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "rain-bahrain-vara-ipa-2026-05-07": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "zerohash-dnb-emi-2026-05-18": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "openpayd-mica-casp-2026-06-01": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "ax-coin-cbb-licence-2026-06-03": {
+   "themes": [
+    "gulf-rules",
+    "gulf-tokens"
+   ]
+  },
+  "zodia-custody-pi-licence-2026-06-09": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "bridge-mica-emi-2026-07-02": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "ddsc-vara-platforms-noc-2026-07-03": {
+   "themes": [
+    "gulf-rules",
+    "gulf-tokens"
+   ]
+  },
+  "ripple-mica-casp-2026-07-06": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "circle-occ-final-2026-07-10": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "fuze-switzerland-2026-09-08": {
+   "themes": []
+  },
+  "moonpay-dnb-emi-2026-09-08": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "occ-bastion-agora-catena-2026-09-18": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "modern-treasury-occ-charter-2026-10-05": {
+   "themes": [
+    "us-rules",
+    "business-payments"
+   ]
+  },
+  "rain-bahrain-vara-licence-2026-10-05": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "rain-us-occ-charter-2026-10-05": {
+   "themes": [
+    "us-rules",
+    "cards-and-networks"
+   ]
+  },
+  "saudi-stablecoin-talks-2025-10-01": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "cbuae-central-bank-law-2025-11-01": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "canada-budget-stablecoin-2025-11-04": {
+   "themes": [
+    "canada-uk-rules"
+   ]
+  },
+  "dfsa-crypto-token-rules-2025-12-15": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "fdic-stablecoin-application-rule-2025-12-16": {
+   "themes": [
+    "us-rules",
+    "bank-tokens"
+   ]
+  },
+  "occ-genius-proposal-2026-02-25": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "canada-stablecoin-act-2026-03-26": {
+   "themes": [
+    "canada-uk-rules"
+   ]
+  },
+  "fdic-stablecoin-prudential-2026-04-07": {
+   "themes": [
+    "us-rules",
+    "bank-tokens"
+   ]
+  },
+  "fincen-stablecoin-aml-proposal-2026-04-08": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "tether-mica-transition-end-2026-07-01": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "cbuae-aed-stablecoin-pipeline-2026-09-17": {
+   "themes": [
+    "gulf-rules",
+    "gulf-tokens"
+   ]
+  },
+  "sama-mbridge-exit-2026-09-21": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "federal-reserve-genius-proposal-2026-09-24": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "esma-mica-review-2026-09-30": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "us-treasury-certification-rule-2026-09-30": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "icba-sues-occ-2026-10-02": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "cbuae-bank-al-maghrib-mou-2026-10-03": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "fincen-unhosted-wallet-withdrawal-2026-10-05": {
+   "themes": [
+    "us-rules"
+   ]
+  },
+  "uae-fiu-vara-mou-2026-10-05": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "adgm-defi-guidance-consultation-2026-10-06": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "vara-reserve-audit-circular-2026-10-06": {
+   "themes": [
+    "gulf-rules"
+   ]
+  },
+  "esma-unauthorised-stablecoins-2026-10-08": {
+   "themes": [
+    "mica"
+   ]
+  },
+  "ncua-call-report-stablecoin-2026-10-09": {
+   "themes": [
+    "us-rules"
+   ]
+  }
+ }
+}

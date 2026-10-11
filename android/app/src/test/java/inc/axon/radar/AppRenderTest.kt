@@ -9,7 +9,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTextInput
+import androidx.compose.ui.test.hasSetTextAction
+import androidx.compose.ui.test.performTextReplacement
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onLast
@@ -103,9 +104,14 @@ class AppRenderTest {
         shot("40-watch-empty", look)
         rule.onNodeWithText("Add\ncompanies").performClick()
         shot("41-picker", look)
-        // The picker lies over the Watching page, so its rows are the last match.
-        listOf("Ripple", "Tether", "Noah", "zerohash", "Schuman Financial").forEach { rule.onAllNodesWithText(it).onLast().performClick() }
-        rule.onNodeWithText("Search ${radar.companies.size} companies").performTextInput("bank")
+        // Each company is searched for first, since the list is longer than the screen. The picker lies over the
+        // Watching page, so its rows are the last match.
+        val search = rule.onNode(hasSetTextAction())
+        listOf("Ripple", "Tether", "Noah", "zerohash", "Schuman Financial").forEach {
+            search.performTextReplacement(it)
+            rule.onAllNodesWithText(it).onLast().performClick()
+        }
+        search.performTextReplacement("bank")
         shot("42-picker-search", look)
         link.value = Link("watch")
         shot("43-watch-boxes", look)

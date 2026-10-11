@@ -1,0 +1,1994 @@
+{
+ "version": "2026-10-11",
+ "companies": {
+  "visa": {
+   "id": "visa",
+   "name": "Visa",
+   "hq_city": "San Francisco",
+   "hq_country": "United States",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 1958,
+   "website": "https://www.visa.com",
+   "blurb": "Global card network in 200+ countries that settles with issuers and acquirers in stablecoins and backs stablecoin firms such as BVNK.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "IPO",
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://corporate.visa.com/en/about-visa.html",
+    "https://en.wikipedia.org/wiki/Visa_Inc.",
+    "https://www.forbes.com/sites/danielwebber/2025/05/06/visa-makes-landmark-bvnk-investment-in-powerful-validation-of-stablecoins-payments-future/"
+   ]
+  },
+  "mastercard": {
+   "id": "mastercard",
+   "name": "Mastercard",
+   "hq_city": "Purchase, New York",
+   "hq_country": "United States",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 1966,
+   "website": "https://www.mastercard.com",
+   "blurb": "Global card network; bought London stablecoin infrastructure firm BVNK in 2026 for up to $1.8bn to link on-chain and card rails.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "IPO",
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mastercard",
+    "https://www.mastercard.com/us/en/news-and-trends/press/2026/march/Mastercard-to-acquire-BVNK-to-connect-on-chain-payments-and-fiat-rails.html"
+   ]
+  },
+  "stripe": {
+   "id": "stripe",
+   "name": "Stripe",
+   "hq_city": "South San Francisco and Dublin",
+   "hq_country": "United States",
+   "region": "Global",
+   "segment": "Merchant gateway",
+   "founded": 2009,
+   "website": "https://stripe.com",
+   "blurb": "Payments company that owns stablecoin platform Bridge and wallet maker Privy and incubated the Tempo payments chain; valued at $159bn in 2026.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Tender offer",
+    "last_round_usd_m": null,
+    "last_round_date": "2026-02-24",
+    "lead": "Thrive Capital, Coatue and a16z",
+    "valuation_usd_m": 159000,
+    "investors": [
+     "Thrive Capital",
+     "Coatue",
+     "a16z"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.paymentsdive.com/news/stripe-valued-at-159b-in-tender-offer-ipo-payments/812883/",
+    "https://en.wikipedia.org/wiki/Stripe,_Inc.",
+    "https://stripe.com/newsroom/news/stripe-completes-bridge-acquisition"
+   ]
+  },
+  "standard-chartered": {
+   "id": "standard-chartered",
+   "name": "Standard Chartered",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Global",
+   "segment": "Custody & wallets",
+   "founded": 1969,
+   "website": "https://www.sc.com",
+   "blurb": "London-listed bank in 55 markets; owner of custody firm Zodia Custody, and offers USDC minting and redemption to institutions from the DIFC.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://www.sc.com/en/about/our-history/",
+    "https://en.wikipedia.org/wiki/Standard_Chartered",
+    "https://www.sc.com/EN/press-release/standard-chartered-to-acquire-zodia-custodys-custody-business/"
+   ]
+  },
+  "nymcard": {
+   "id": "nymcard",
+   "name": "NymCard",
+   "hq_city": "Dubai",
+   "hq_country": "United Arab Emirates",
+   "region": "Middle East",
+   "segment": "Merchant gateway",
+   "founded": 2018,
+   "website": "https://nymcard.com",
+   "blurb": "Dubai card-issuing and banking-as-a-service platform for 50+ institutions in MENA; settles card flows with Visa in USDC.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 70,
+    "last_round_type": "Series B",
+    "last_round_usd_m": 33,
+    "last_round_date": "2025-03-21",
+    "lead": "QED Investors",
+    "valuation_usd_m": null,
+    "investors": [
+     "QED Investors",
+     "Oraseya Capital",
+     "Shorooq",
+     "Lunate",
+     "Dubai Future District Fund",
+     "Mashreq Bank",
+     "Knollwood",
+     "Reciprocal",
+     "FJ Labs",
+     "Endeavor"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.fintechfutures.com/bankingtech/nymcard-raises-33m-series-b-backed-by-qed-investors",
+    "https://nymcard.com/2026/02/02/nymcard-enables-stablecoin-settlement-with-visa-in-the-gcc"
+   ]
+  },
+  "polygon-labs": {
+   "id": "polygon-labs",
+   "name": "Polygon Labs",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 2017,
+   "website": "https://polygon.technology",
+   "blurb": "Developer of the Polygon chain and the Open Money Stack, one API for stablecoin pay-ins, accounts, FX and payouts; bought Coinme and Sequence in 2026.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Token sale",
+    "last_round_usd_m": 450,
+    "last_round_date": "2022-02",
+    "lead": "Sequoia Capital India",
+    "valuation_usd_m": null,
+    "investors": [
+     "Sequoia Capital India",
+     "Tiger Global",
+     "SoftBank Vision Fund"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://polygon.technology/",
+    "https://en.wikipedia.org/wiki/Polygon_(blockchain)",
+    "https://www.fintechfutures.com/blockchain-crypto-digital-assets/polygon-labs-buys-coinme-and-sequence"
+   ]
+  },
+  "fipto": {
+   "id": "fipto",
+   "name": "Fipto",
+   "hq_city": "Paris",
+   "hq_country": "France",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": 2022,
+   "website": "https://www.fipto.com",
+   "blurb": "Paris stablecoin payments platform for PSPs, brokers and firms: euro and dollar accounts, conversion and payouts through one API.",
+   "licenses": [
+    {
+     "regulator": "AMF",
+     "jurisdiction": "France (EEA passport)",
+     "type": "MiCA CASP (authorisation A2026-009)",
+     "year": 2026
+    },
+    {
+     "regulator": "ACPR",
+     "jurisdiction": "France",
+     "type": "Payment institution (Fipto PI SAS, code 17908)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": null,
+    "last_round_date": "2023-09-14",
+    "lead": "Serena",
+    "valuation_usd_m": null,
+    "investors": [
+     "Serena",
+     "Motier Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.fipto.com/",
+    "https://www.crowdfundinsider.com/?p=259115",
+    "https://www.eu-startups.com/2023/09/paris-based-fipto-snaps-e15-million-to-acutely-simplify-international-payments-using-blockchain/"
+   ]
+  },
+  "immix": {
+   "id": "immix",
+   "name": "IMMIX",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "London trading firm that converts stablecoins between currencies for payment companies, pricing several FX legs as one trade.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Undisclosed",
+    "last_round_usd_m": 3.5,
+    "last_round_date": "2026-10-08",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "Crane Venture Partners",
+     "BTSE",
+     "Portfolio Ventures",
+     "MassMutual Ventures",
+     "Ripple"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
+   ]
+  },
+  "bridge": {
+   "id": "bridge",
+   "founded": 2022,
+   "status": "Acquired by Stripe (2025)",
+   "funding": {
+    "total_usd_m": 58,
+    "last_round_type": null,
+    "last_round_usd_m": 40,
+    "last_round_date": "2024-08-29",
+    "lead": "Sequoia; Ribbit",
+    "valuation_usd_m": null,
+    "investors": [
+     "Sequoia",
+     "Ribbit",
+     "Index Ventures",
+     "Haun Ventures",
+     "Bedrock"
+    ]
+   },
+   "licenses": [
+    {
+     "regulator": "CSSF",
+     "jurisdiction": "Luxembourg (EU passport)",
+     "type": "MiCA CASP (Bridge Building S.A., N00000012)",
+     "year": 2026
+    },
+    {
+     "regulator": "CSSF",
+     "jurisdiction": "Luxembourg (EU passport)",
+     "type": "Electronic money institution (Bridge Building S.A., W00000024)",
+     "year": 2026
+    },
+    {
+     "regulator": "OCC",
+     "jurisdiction": "United States",
+     "type": "Conditional approval to organise a national trust bank (not final)",
+     "year": 2026
+    },
+    {
+     "regulator": "State regulators",
+     "jurisdiction": "United States (32 states and DC)",
+     "type": "Money transmitter licences (Bridge Building Inc., NMLS 2450917)",
+     "year": null
+    },
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business registration (Bridge Building Inc. and Bridge Ventures Inc.)",
+     "year": null
+    },
+    {
+     "regulator": null,
+     "jurisdiction": "Poland",
+     "type": "Entry in the register of virtual currency activity (Bridge Building Sp. z o.o., RDWW-794)",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://stripe.com/newsroom/news/stripe-completes-bridge-acquisition",
+    "https://www.nbcnewyork.com/news/business/money-report/stripe-closes-1-1-billion-bridge-deal-prepares-for-aggressive-stablecoin-push/6135508/",
+    "https://fortune.com/crypto/2024/08/29/bridge-stablecoins-sequoia-ribbit-index-haun-58-million",
+    "https://www.fintechfutures.com/fintech-start-ups/stripe-reportedly-in-discussions-to-buy-stablecoin-infrastructure-start-up-bridge-in-potential-1bn-deal",
+    "https://www.bridge.xyz/legal",
+    "https://www.bridge.xyz/legal/licenses/us-licenses-and-registrations",
+    "https://bridge.xyz/legal/licenses/overview",
+    "https://bridge.xyz/blog/bridge-secures-mica-and-emi-authorisations-across-all-27-eu-member-states",
+    "https://bridge.xyz/blog/bridge-receives-occ-conditional-approval-to-organize-a-federally-chartered-national-trust-bank",
+    "https://www.kitco.com/news/off-the-wire/2026-02-17/stripes-crypto-unit-bridge-obtains-initial-approval-establish-trust"
+   ]
+  },
+  "bvnk": {
+   "id": "bvnk",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "founded": 2021,
+   "status": "Acquired by Mastercard (2026)",
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": null,
+    "last_round_date": "2025-10-17",
+    "lead": "Citi Ventures",
+    "valuation_usd_m": 750,
+    "investors": [
+     "Haun Ventures",
+     "Tiger Global",
+     "Coinbase Ventures",
+     "Avenir",
+     "DRW VC",
+     "Scribble Ventures",
+     "Visa",
+     "Citi Ventures"
+    ]
+   },
+   "licenses": [
+    {
+     "regulator": "MFSA",
+     "jurisdiction": "Malta (EU passport)",
+     "type": "MiCA CASP (System Pay Services (Malta) Ltd)",
+     "year": 2026
+    },
+    {
+     "regulator": "MFSA",
+     "jurisdiction": "Malta (EU passport)",
+     "type": "E-money institution (System Pay Services (Malta) Ltd, acquired; live for BVNK from 2024)",
+     "year": null
+    },
+    {
+     "regulator": "FCA",
+     "jurisdiction": "United Kingdom",
+     "type": "E-money institution (System Pay Services Ltd, FRN 901057; acquired in 2022)",
+     "year": 2020
+    },
+    {
+     "regulator": "State regulators",
+     "jurisdiction": "United States (38 states, DC and Puerto Rico)",
+     "type": "Money transmitter licences (System Pay Services (US), Inc., NMLS 2531294)",
+     "year": null
+    },
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business registration (System Pay Services (US), Inc.)",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://www.bvnk.com/blog/bvnk-joins-mastercard",
+    "https://www.mastercard.com/us/en/news-and-trends/press/2026/march/Mastercard-to-acquire-BVNK-to-connect-on-chain-payments-and-fiat-rails.html",
+    "https://www.theblock.co/news/deals/2026-03-17-mastercard-to-acquire-stablecoin-infrastructure-firm-bvnk-for-up-to-1-8-billion-393898",
+    "https://www.bvnk.com/blog/citi-ventures-backs-bvnk",
+    "https://fortune.com/crypto/2024/12/17/exclusive-stablecoin-bvnk-750-million-series-b-bridge-stripe-haun",
+    "https://www.fintechfutures.com/venture-capital-funding/uk-fintech-bvnk-secures-50m-in-series-b-funding-round",
+    "https://regional-front.cointelegraph.com/news/bvnk-raises-50-million-expand-us-stablecoin-market",
+    "https://www.BVNK.com/compliance",
+    "https://help.bvnk.com/hc/en-us/articles/11094354781074",
+    "https://help.bvnk.com/hc/en-us/articles/11904995498514-How-are-my-e-money-funds-protected",
+    "https://www.crowdfundinsider.com/?p=199221",
+    "https://bvnk.com/blog/e-money-institution-europe-b2b-payments"
+   ]
+  },
+  "zerohash": {
+   "id": "zerohash",
+   "hq_city": "Chicago",
+   "hq_country": "United States",
+   "founded": 2017,
+   "status": "Independent",
+   "funding": {
+    "total_usd_m": 275,
+    "last_round_type": "Series D-2",
+    "last_round_usd_m": 104,
+    "last_round_date": "2025-09-23",
+    "lead": "Interactive Brokers",
+    "valuation_usd_m": 1000,
+    "investors": [
+     "Interactive Brokers",
+     "Morgan Stanley",
+     "Apollo",
+     "SoFi",
+     "Jump Crypto",
+     "Northwestern Mutual Future Ventures",
+     "FTMO",
+     "IMC",
+     "Liberty City Ventures",
+     "PEAK6",
+     "tastytrade",
+     "Nyca Partners",
+     "Point72 Ventures",
+     "Bain Capital Ventures"
+    ]
+   },
+   "licenses": [
+    {
+     "regulator": "AFM",
+     "jurisdiction": "Netherlands (EEA passport)",
+     "type": "MiCA CASP (zerohash europe B.V.)",
+     "year": 2025
+    },
+    {
+     "regulator": "DNB",
+     "jurisdiction": "Netherlands (EEA passport)",
+     "type": "E-money institution (zerohash europe B.V.)",
+     "year": 2026
+    },
+    {
+     "regulator": "NYDFS",
+     "jurisdiction": "United States (New York)",
+     "type": "Virtual currency business activity licences (zerohash llc and zerohash liquidity services llc) and a money transmitter licence",
+     "year": null
+    },
+    {
+     "regulator": "State regulators",
+     "jurisdiction": "United States (51 jurisdictions)",
+     "type": "Money transmitter licences (zerohash llc)",
+     "year": null
+    },
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business registration (zerohash llc)",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business registration (zerohash llc)",
+     "year": null
+    },
+    {
+     "regulator": "AUSTRAC",
+     "jurisdiction": "Australia",
+     "type": "Digital currency exchange registration (zerohash australia pty ltd)",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://blockworks.com/news/zerohash-hits-1b-valuation",
+    "https://fortune.com/crypto/2025/09/23/zerohash-edward-woodford-fundraise-interactive-brokers-morgan-stanley",
+    "https://pymnts.com/news/fintech-investments/2026/zerohash-eyes-1-billion-dollar-valuation-after-exiting-mastercard-deal",
+    "https://zerohash.com/press/zerohash-secures-micar-authorization-to-serve-european-clients",
+    "https://zerohash.com/press/zerohash-receives-emi-license-from-dutch-central-bank",
+    "https://docs.zerohash.com/page/us-licenses-and-disclosures",
+    "https://docs.zerohash.com/page/about-zero-hash",
+    "https://www.coindesk.com/business/2026/05/19/zerohash-pursues-new-funding-at-more-than-usd1-5-billion-valuation-after-mastercard-drops-investment-plans"
+   ]
+  },
+  "conduit": {
+   "id": "conduit",
+   "hq_city": "Boston",
+   "hq_country": "United States",
+   "founded": 2021,
+   "status": "Independent",
+   "funding": {
+    "total_usd_m": 53,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 36,
+    "last_round_date": "2025-05-28",
+    "lead": "Dragonfly; Altos Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Dragonfly",
+     "Altos Ventures",
+     "Sound Ventures",
+     "Commerce Ventures",
+     "DCG",
+     "Circle Ventures",
+     "Helios Digital Ventures",
+     "Portage Ventures"
+    ]
+   },
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business registration (Conduit Technology, Inc.)",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business registration (12835304 Canada Inc.)",
+     "year": null
+    },
+    {
+     "regulator": "Bank of Canada",
+     "jurisdiction": "Canada",
+     "type": "Payment service provider registration under the Retail Payment Activities Act (12835304 Canada Inc.)",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://conduitpay.com/about",
+    "https://fortune.com/crypto/2025/05/28/stablecoin-conduit-36-million-dragonfly-capital",
+    "https://www.theblock.co/post/356048/dragonfly-co-leads-36-million-series-a-in-cross-border-payment-startup-conduit",
+    "https://cointelegraph.com/news/conduit-raises-36m-stablecoin-fiat-cross-border-network"
+   ]
+  },
+  "openpayd": {
+   "id": "openpayd",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "founded": 2018,
+   "status": "Independent",
+   "funding": {
+    "total_usd_m": 0,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": 1145,
+    "investors": []
+   },
+   "licenses": [
+    {
+     "regulator": "FCA",
+     "jurisdiction": "United Kingdom",
+     "type": "E-money institution (SettleGo Solutions Limited, trading as OpenPayd, FRN 900483)",
+     "year": null
+    },
+    {
+     "regulator": "MFSA",
+     "jurisdiction": "Malta (EEA passport)",
+     "type": "Financial institution licence (OpenPayd Financial Services Malta Limited)",
+     "year": null
+    },
+    {
+     "regulator": "MFSA",
+     "jurisdiction": "Malta (EEA passport)",
+     "type": "MiCA CASP",
+     "year": 2026
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business (OpenPayd Canada, Inc.)",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://www.openpayd.com/company/",
+    "https://www.fintechfutures.com/m-a/openpayd-gears-up-for-nasdaq-listing-with-msb-usa-integration",
+    "https://www.financemagnates.com/fintech/openpayd-to-go-public-via-276m-spac-deal-targets-nasdaq-listing/",
+    "https://www.businesswire.com/news/home/20260601259498/en/OpenPayd-Targets-Nasdaq-Listing-at-Unicorn-Valuation",
+    "https://thepaypers.com/crypto-web3-and-cbdc/news/openpayd-secures-mica-licence-to-offer-crypto-asset-services-across-europe"
+   ]
+  },
+  "aryze": {
+   "id": "aryze",
+   "name": "Aryze",
+   "hq_city": "Copenhagen",
+   "hq_country": "Denmark",
+   "region": "Europe",
+   "segment": "Issuer",
+   "founded": null,
+   "website": null,
+   "blurb": "Copenhagen-founded firm running stablecoin technology as a managed service for licensed stablecoin and tokenised asset issuers.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Pre-Series A",
+    "last_round_usd_m": null,
+    "last_round_date": "2026-05-19",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fintech.global/2026/05/19/aryze-closes-e3m-pre-series-a-to-scale-stablecoin-infrastructure/"
+   ]
+  },
+  "augustus": {
+   "id": "augustus",
+   "name": "Augustus",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": 2022,
+   "website": "https://augustus.com",
+   "blurb": "Clearing bank for fintechs and banks joining dollar and euro accounts, payment networks and stablecoins; holds an OCC charter and EU licences.",
+   "licenses": [
+    {
+     "regulator": "OCC",
+     "jurisdiction": "United States",
+     "type": "National bank charter (conditional approval)",
+     "year": 2026
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series B",
+    "last_round_usd_m": 180,
+    "last_round_date": "2026-07-21",
+    "lead": "Tiger Global",
+    "valuation_usd_m": 1000,
+    "investors": [
+     "Tiger Global",
+     "Hummingbird",
+     "QED Investors",
+     "Valar Ventures",
+     "Creandum"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2026/05/11/augustus-stablecoins-occ-charter/",
+    "https://www.coindesk.com/business/2026/07/21/augustus-raises-usd180-million-to-build-a-clearing-bank-for-the-ai-and-stablecoin-era",
+    "https://augustus.com/"
+   ]
+  },
+  "better-money": {
+   "id": "better-money",
+   "name": "Better Money Company",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://bettermoney.com",
+   "blurb": "Start-up building a clearinghouse where firms can cheaply exchange one dollar stablecoin for another; founded by an ex-a16z crypto investor.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 10,
+    "last_round_date": "2026-03-31",
+    "lead": "a16z crypto",
+    "valuation_usd_m": null,
+    "investors": [
+     "a16z crypto",
+     "BoxGroup",
+     "Sunflower Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2026/03/31/the-better-money-company-stablecoin-clearinghouse-a16z-crypto-seed-round/",
+    "https://bettermoney.com/"
+   ]
+  },
+  "bloxfi": {
+   "id": "bloxfi",
+   "name": "BloxFi",
+   "hq_city": "Hong Kong",
+   "hq_country": "Hong Kong",
+   "region": "Global",
+   "segment": "On/off-ramp",
+   "founded": 2022,
+   "website": "https://bloxfi.com",
+   "blurb": "One API for fiat-to-stablecoin conversion, settlement and payouts across 120+ currencies via local rails, for fintechs, wallets and firms.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://bloxfi.com/",
+    "https://bloxfi.com/about-us",
+    "https://bloxfi.com/legal/terms-of-use",
+    "https://bloxfi.com/legal/privacy-policy",
+    "https://bloxfi.com/legal/risk-disclosure"
+   ]
+  },
+  "cari": {
+   "id": "cari",
+   "name": "Cari Network",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.cari.com",
+   "blurb": "Bank-governed network for tokenised deposits that lets regional and community banks move money on-chain and stay at the centre of the relationship.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": 32.5,
+    "last_round_date": "2026-09-02",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "First Horizon Bank",
+     "Huntington Bank",
+     "KeyBank",
+     "M&T Bank",
+     "Old National Bank",
+     "SouthState Bank",
+     "Glacier Bank"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.cari.com/news/cari-raises-over-30-million-in-first-tranche-of-initial-funding-round-backed-entirely-by-banks"
+   ]
+  },
+  "catena-labs": {
+   "id": "catena-labs",
+   "name": "Catena Labs",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://catena.com",
+   "blurb": "Start-up led by Circle co-founder Sean Neville building a regulated, AI-native financial institution and payment tools for AI agents.",
+   "licenses": [
+    {
+     "regulator": "OCC",
+     "jurisdiction": "United States",
+     "type": "National trust bank (conditional approval)",
+     "year": 2026
+    }
+   ],
+   "funding": {
+    "total_usd_m": 48,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 30,
+    "last_round_date": "2026-05-20",
+    "lead": "Acrew Capital; a16z crypto",
+    "valuation_usd_m": null,
+    "investors": [
+     "Acrew Capital",
+     "a16z crypto",
+     "Breyer Capital",
+     "General Catalyst",
+     "QED Investors"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://cointelegraph.com/news/catena-labs-raises-18m-ai-native-financial-institution",
+    "https://fortune.com/2026/05/20/catena-labs-series-a-sean-neville-ai-native-bank/",
+    "https://catena.com/blog/catena-receives-conditional-occ-approval-for-a-national-trust-bank-built-for-ai-agents"
+   ]
+  },
+  "codex": {
+   "id": "codex",
+   "name": "Codex",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Start-up building a blockchain designed for stablecoin payments, backed by Dragonfly and the venture arms of Coinbase and Circle.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 15.8,
+    "last_round_date": "2025-04-04",
+    "lead": "Dragonfly",
+    "valuation_usd_m": null,
+    "investors": [
+     "Dragonfly",
+     "Coinbase Ventures",
+     "Circle Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/crypto/2025/04/04/codex-seed-round-dragonfly-coinbase-circle-15-8-million/"
+   ]
+  },
+  "coinflow": {
+   "id": "coinflow",
+   "name": "Coinflow",
+   "hq_city": "Chicago",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Merchant gateway",
+   "founded": null,
+   "website": "https://coinflow.cash",
+   "blurb": "Chicago-based payments firm whose infrastructure lets businesses accept and pay out money with stablecoins such as USDC in 170+ countries.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 25,
+    "last_round_date": "2025-10-08",
+    "lead": "Pantera Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Pantera Capital",
+     "Coinbase Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coindesk.com/business/2025/10/08/coinflow-raises-usd25m-to-scale-stablecoin-payments-backed-by-pantera-and-coinbase"
+   ]
+  },
+  "crossmint": {
+   "id": "crossmint",
+   "name": "Crossmint",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Custody & wallets",
+   "founded": null,
+   "website": "https://www.crossmint.com",
+   "blurb": "Platform of wallets, stablecoin on-ramps, orchestration and agent payments for businesses and AI agents; holds a VASP licence.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": null,
+    "last_round_date": "2025-09-24",
+    "lead": "Circle Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Ribbit Capital",
+     "Circle Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.crossmint.com/announcement/crossmint-raises-23-6m-led-by-ribbit-capital",
+    "https://www.crossmint.com/announcement/announcing-a-strategic-investment-from-circle-ventures"
+   ]
+  },
+  "cyclops": {
+   "id": "cyclops",
+   "name": "Cyclops",
+   "hq_city": "Miami",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Miami-based firm helping payment providers settle faster with stablecoins; clients include Mastercard.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 20,
+    "last_round_date": "2026-07-15",
+    "lead": "Nava Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Nava Ventures",
+     "Castle Island Ventures",
+     "Coinbase Ventures",
+     "Circle",
+     "Lasagna",
+     "GPT Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2026/07/15/exclusive-cyclops-20-million-payment-companies-settlement-stablecoins/"
+   ]
+  },
+  "dakota": {
+   "id": "dakota",
+   "name": "Dakota",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://dakota.xyz",
+   "blurb": "Stablecoin-powered business banking platform co-founded by former Coinbase executive Ryan Bozarth.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 12.5,
+    "last_round_date": "2025-07-15",
+    "lead": "CoinFund",
+    "valuation_usd_m": null,
+    "investors": [
+     "CoinFund",
+     "6th Man Ventures",
+     "Triton Ventures",
+     "Digital Currency Group"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/crypto/2025/07/15/dakota-coinbase-executive-series-a-coinfund-ryan-bozarth/"
+   ]
+  },
+  "damisa": {
+   "id": "damisa",
+   "name": "Damisa",
+   "hq_city": null,
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Payments platform co-founded by Volt's Jordan Lawrence offering stablecoin payments and secure wallets that replace escrow services.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Pre-seed",
+    "last_round_usd_m": null,
+    "last_round_date": "2025-04",
+    "lead": "Fuel Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Fuel Ventures",
+     "EWOR",
+     "Greyhound Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.fuel.ventures/damisa-secures-2-25-million-pre-seed"
+   ]
+  },
+  "digital-asset": {
+   "id": "digital-asset",
+   "name": "Digital Asset",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.digitalasset.com",
+   "blurb": "Creator of the Canton Network, a privacy-focused blockchain used by banks and market infrastructures for tokenised assets.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": 135,
+    "last_round_date": "2025-06-24",
+    "lead": "DRW Venture Capital; Tradeweb Markets",
+    "valuation_usd_m": null,
+    "investors": [
+     "DRW Venture Capital",
+     "Tradeweb Markets",
+     "BNP Paribas",
+     "Circle Ventures",
+     "Citadel Securities",
+     "DTCC",
+     "IMC",
+     "Virtu Financial",
+     "Paxos"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coindesk.com/business/2025/06/23/digital-asset-builder-of-privacy-focused-blockchain-canton-raises-usd135m",
+    "https://www.digitalasset.com/"
+   ]
+  },
+  "fin": {
+   "id": "fin",
+   "name": "Fin",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Stablecoin app, formerly TipLink, for sending large sums across borders quickly and cheaply, backed by Pantera, Sequoia and Samsung Next.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Undisclosed",
+    "last_round_usd_m": 17,
+    "last_round_date": "2025-12-03",
+    "lead": "Pantera Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Pantera Capital",
+     "Sequoia",
+     "Samsung Next"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2025/12/03/former-citadel-employees-raise-17-million-for-fin/"
+   ]
+  },
+  "hercle": {
+   "id": "hercle",
+   "name": "Hercle",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://hercle.com",
+   "blurb": "Institutional infrastructure linking fiat, digital assets and stablecoins for payment providers and commodity traders; $20bn+ processed.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Undisclosed",
+    "last_round_usd_m": 10,
+    "last_round_date": "2025-10-29",
+    "lead": "F-Prime",
+    "valuation_usd_m": null,
+    "investors": [
+     "F-Prime"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/crypto/2025/10/29/startup-hercle-raises-10-million-to-build-out-stablecoin-based-global-money-transfers/",
+    "https://hercle.com/"
+   ]
+  },
+  "hifi": {
+   "id": "hifi",
+   "name": "HIFI",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.hifi.com",
+   "blurb": "Stablecoin infrastructure firm offering one API for fiat and stablecoin payments and tokenised capital markets.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 37,
+    "last_round_date": "2026-09-24",
+    "lead": "Left Lane Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Left Lane Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://cointelegraph.com/news/hifi-raises-37m-to-expand-stablecoin-payments-tokenized-markets",
+    "https://www.hifi.com/"
+   ]
+  },
+  "kaio": {
+   "id": "kaio",
+   "name": "KAIO",
+   "hq_city": "Abu Dhabi",
+   "hq_country": "United Arab Emirates",
+   "region": "Middle East",
+   "segment": "Issuer",
+   "founded": null,
+   "website": "https://kaio.xyz",
+   "blurb": "Abu Dhabi tokenisation firm packaging institutional funds from managers such as BlackRock and Hamilton Lane on-chain, backed by Tether.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 19,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": 8,
+    "last_round_date": "2026-04-20",
+    "lead": "Tether",
+    "valuation_usd_m": null,
+    "investors": [
+     "Tether"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coindesk.com/business/2026/04/20/tether-backs-uae-tokenization-firm-kaio-in-usd8m-funding-round-to-bring-emirati-funds-onchain",
+    "https://kaio.xyz/"
+   ]
+  },
+  "kite": {
+   "id": "kite",
+   "name": "Kite",
+   "hq_city": "San Francisco",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://gokite.ai",
+   "blurb": "San Francisco start-up giving AI agents verified identities, spending rules and stablecoin payment rails.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 33,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 18,
+    "last_round_date": "2025-09-02",
+    "lead": "General Catalyst; PayPal Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "General Catalyst",
+     "PayPal Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coindesk.com/business/2025/09/02/kite-raises-usd18m-to-bridge-stablecoin-payments-and-autonomous-agents",
+    "https://gokite.ai/"
+   ]
+  },
+  "latitude": {
+   "id": "latitude",
+   "name": "Latitude",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Texas-based firm letting businesses use stablecoins to pay out local currency to bank accounts and mobile wallets.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 43,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 35,
+    "last_round_date": "2026-09-09",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "NEA",
+     "Lightspeed Faction",
+     "Coinbase",
+     "Paxos",
+     "Solana Foundation"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2026/03/31/exclusive-former-stripe-and-coinbase-employees-raise-8-million-for-latitude/",
+    "https://fortune.com/2026/09/09/exclusive-latitude-stripe-uber-alums-35-million-stablecoins-local-payments/"
+   ]
+  },
+  "lead-bank": {
+   "id": "lead-bank",
+   "name": "Lead Bank",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.lead.bank",
+   "blurb": "State-chartered bank providing API-driven banking infrastructure for fintechs and digital asset firms, including stablecoin operations.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series B",
+    "last_round_usd_m": 70,
+    "last_round_date": "2025-09-05",
+    "lead": "ICONIQ; Greycroft",
+    "valuation_usd_m": null,
+    "investors": [
+     "ICONIQ",
+     "Greycroft",
+     "Ribbit Capital",
+     "Coatue",
+     "Khosla Ventures",
+     "Andreessen Horowitz",
+     "Zeev Ventures"
+    ]
+   },
+   "status": "Bank-owned",
+   "sources": [
+    "https://fintech.global/2025/09/05/fintech-bank-lead-raises-70m-in-series-b/",
+    "https://www.lead.bank/"
+   ]
+  },
+  "loon": {
+   "id": "loon",
+   "name": "Loon",
+   "hq_city": "Calgary",
+   "hq_country": "Canada",
+   "region": "North America",
+   "segment": "Issuer",
+   "founded": 2025,
+   "website": "https://loon.finance",
+   "blurb": "Calgary-based issuer of CADC, a regulated Canadian-dollar stablecoin with reserves at ATB Financial, spun out of Paytrie.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Pre-seed",
+    "last_round_usd_m": null,
+    "last_round_date": "2025-10-27",
+    "lead": "Version One Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Version One Ventures",
+     "Garage Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://betakit.com/paytrie-spinout-loon-raises-3-million-to-oversee-canadian-dollar-backed-stablecoin/",
+    "https://loon.finance/"
+   ]
+  },
+  "m0": {
+   "id": "m0",
+   "name": "M0",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Issuer",
+   "founded": null,
+   "website": "https://www.m0.org",
+   "blurb": "Modular infrastructure that lets many issuers mint interoperable stablecoins and custom on-chain finance products.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 100,
+    "last_round_type": "Series B",
+    "last_round_usd_m": 40,
+    "last_round_date": "2025-08-28",
+    "lead": "Polychain; Ribbit Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Polychain",
+     "Ribbit Capital",
+     "Endeavor Catalyst",
+     "Pantera Capital",
+     "Bain Capital Crypto"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/crypto/2025/08/28/m0-series-b-40-million-polychain-ribbit-capital-stablecoins/",
+    "https://www.m0.org/"
+   ]
+  },
+  "mansa": {
+   "id": "mansa",
+   "name": "Mansa",
+   "hq_city": "Dubai",
+   "hq_country": "United Arab Emirates",
+   "region": "Middle East",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Dubai-based provider of stablecoin liquidity on a revolving line so payment companies, mainly in Africa, can settle and pre-fund instantly.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 10,
+    "last_round_date": "2025-02-19",
+    "lead": "Tether",
+    "valuation_usd_m": null,
+    "investors": [
+     "Tether",
+     "Faculty Group",
+     "Octerra Capital",
+     "Polymorphic Capital",
+     "Trive Digital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://techcrunch.com/2025/02/19/tether-backs-stablecoin-liquidity-provider-mansa-in-10m-seed-round/"
+   ]
+  },
+  "meld": {
+   "id": "meld",
+   "name": "Meld",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "On/off-ramp",
+   "founded": null,
+   "website": "https://www.meld.io",
+   "blurb": "Network joining 50+ crypto and stablecoin payment providers in 180+ countries and 150 currencies, founded by a Block veteran.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 15,
+    "last_round_type": "Undisclosed",
+    "last_round_usd_m": 7,
+    "last_round_date": "2026-01-14",
+    "lead": "Lightspeed Faction",
+    "valuation_usd_m": null,
+    "investors": [
+     "Lightspeed Faction",
+     "F-Prime",
+     "Yolo Investments",
+     "Scytale Digital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2026/01/14/meld-raises-7-million-to-integrate-stablecoin-networks/",
+    "https://www.meld.io/"
+   ]
+  },
+  "nodu": {
+   "id": "nodu",
+   "name": "Nodu",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": 2025,
+   "website": null,
+   "blurb": "London start-up founded in 2025 by the Crassula team, offering banks and licensed fintechs a plug-in layer to send, receive and hold stablecoins.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Pre-seed",
+    "last_round_usd_m": 1.45,
+    "last_round_date": "2025-12-28",
+    "lead": "Digital Space Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Digital Space Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://menafn.com/1110531117/Stablecoin-Startup-Nodu-Targets-Banks-With-Compliant-Payments-Layer"
+   ]
+  },
+  "openfx": {
+   "id": "openfx",
+   "name": "OpenFX",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 2024,
+   "website": "https://www.openfx.com",
+   "blurb": "FX start-up founded in 2024 that moves large cross-border sums using stablecoins, with $45bn+ of annualised volume.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Undisclosed",
+    "last_round_usd_m": 94,
+    "last_round_date": "2026-03-31",
+    "lead": "Accel; Lightspeed Faction; M13; Northzone; Pantera Capital",
+    "valuation_usd_m": 500,
+    "investors": [
+     "Accel",
+     "Lightspeed Faction",
+     "M13",
+     "Northzone",
+     "Pantera Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coindesk.com/business/2026/03/31/forex-startup-openfx-raises-usd94-million-to-expand-stablecoin-powered-cross-border-payments",
+    "https://www.openfx.com/"
+   ]
+  },
+  "opentrade": {
+   "id": "opentrade",
+   "name": "OpenTrade",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Issuer",
+   "founded": null,
+   "website": "https://www.opentrade.io",
+   "blurb": "London-based infrastructure for fintechs to offer stablecoin yield products backed by real-world assets.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 30,
+    "last_round_type": "Undisclosed",
+    "last_round_usd_m": 17,
+    "last_round_date": "2026-05-06",
+    "lead": "Mercury Fund; Notion Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Mercury Fund",
+     "Notion Capital",
+     "a16z crypto",
+     "AlbionVC",
+     "CMCC Global"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coindesk.com/business/2025/06/10/uks-opentrade-raises-7m-to-expand-stablecoin-yield-access-in-inflation-hit-markets",
+    "https://www.coindesk.com/business/2026/05/06/opentrade-raises-usd17-million-to-expand-stablecoin-yield-infrastructure"
+   ]
+  },
+  "plasma": {
+   "id": "plasma",
+   "name": "Plasma",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.plasma.org",
+   "blurb": "Blockchain built for fast, zero-fee USDT transfers, backed by Framework, Bitfinex and Founders Fund; its XPL sale drew $373m.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Token sale",
+    "last_round_usd_m": 373,
+    "last_round_date": "2025-07-29",
+    "lead": null,
+    "valuation_usd_m": 500,
+    "investors": [
+     "Framework Ventures",
+     "Bitfinex",
+     "Founders Fund",
+     "Peter Thiel",
+     "Paolo Ardoino"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/crypto/2025/02/13/exclusive-stablecoin-company-plasma-raises-24-million-from-framework-to-launch-its-own-blockchain/",
+    "https://www.plasma.org/company/blog/accelerating-global-stablecoin-adoption-with-founders-fund",
+    "https://unchainedcrypto.com/plasma-public-sale-ends-with-373-million-in-xpl-commitments/"
+   ]
+  },
+  "privy": {
+   "id": "privy",
+   "name": "Privy",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Custody & wallets",
+   "founded": null,
+   "website": "https://www.privy.io",
+   "blurb": "Embedded crypto wallet infrastructure serving 75m+ accounts and 1,000 developer teams; bought by Stripe in 2025.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 40,
+    "last_round_type": "Undisclosed",
+    "last_round_usd_m": 15,
+    "last_round_date": "2025-03-19",
+    "lead": "Ribbit Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Ribbit Capital",
+     "Sequoia Capital",
+     "Paradigm",
+     "BlueYard",
+     "Coinbase"
+    ]
+   },
+   "status": "Acquired by Stripe (2025)",
+   "sources": [
+    "https://www.coindesk.com/business/2025/03/19/wallet-infrastructure-provider-privy-raises-usd15m-to-develop-crypto-onboarding-rails",
+    "https://decrypt.co/324674/payments-giant-stripe-acquire-crypto-firm-privy"
+   ]
+  },
+  "rain": {
+   "id": "rain",
+   "name": "Rain",
+   "hq_city": "New York",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Merchant gateway",
+   "founded": 2021,
+   "website": "https://www.rain.xyz",
+   "blurb": "New York platform for enterprises to launch stablecoin cards, wallets, rewards and payouts through one integration; valued at $1.95bn.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 338,
+    "last_round_type": "Series C",
+    "last_round_usd_m": 250,
+    "last_round_date": "2026-01",
+    "lead": "ICONIQ",
+    "valuation_usd_m": 1950,
+    "investors": [
+     "ICONIQ",
+     "Sapphire Ventures",
+     "Dragonfly",
+     "Galaxy Ventures",
+     "Samsung Next",
+     "Lightspeed",
+     "Norwest"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rain_(platform)",
+    "https://www.rain.xyz/resources/rain-raises-250m-series-c-to-scale-stablecoin-powered-payments-infrastructure-for-global-enterprises",
+    "https://fortune.com/2026/05/04/mastercard-rain-stablecoin-startup-institutional-customers-partnership/"
+   ]
+  },
+  "redotpay": {
+   "id": "redotpay",
+   "name": "RedotPay",
+   "hq_city": "Hong Kong",
+   "hq_country": "Hong Kong",
+   "region": "Global",
+   "segment": "Custody & wallets",
+   "founded": 2023,
+   "website": null,
+   "blurb": "Hong Kong fintech founded in 2023 offering stablecoin cards, multicurrency wallets and payouts in 100+ countries.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 194,
+    "last_round_type": "Series B",
+    "last_round_usd_m": 107,
+    "last_round_date": "2025-12-16",
+    "lead": "Goodwater Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Goodwater Capital",
+     "Pantera Capital",
+     "Blockchain Capital",
+     "Circle Ventures",
+     "Coinbase Ventures",
+     "Galaxy Ventures",
+     "Vertex Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://cointelegraph.com/news/redotpay-joins-unicorn-club-with-47m-raise",
+    "https://www.coindesk.com/markets/2025/12/16/hong-kong-s-redotpay-raises-over-usd100-million-series-b-to-push-stablecoin-payments-globally"
+   ]
+  },
+  "shield": {
+   "id": "shield",
+   "name": "Shield",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 2022,
+   "website": null,
+   "blurb": "Crypto payments firm letting exporters and importers pay across borders in dollar stablecoins with compliance screening.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 7,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 5,
+    "last_round_date": "2025-09-22",
+    "lead": "Giant Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Giant Ventures",
+     "a16z crypto CSX",
+     "Factor Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://techcrunch.com/2025/09/22/a16z-crypto-backed-shield-raises-5m-to-help-facilitate-international-business-transactions-in-crypto/"
+   ]
+  },
+  "stable": {
+   "id": "stable",
+   "name": "Stable",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://stable.xyz",
+   "blurb": "Layer-1 blockchain powered by USDT, incubated by Bitfinex, that also brought PayPal's PYUSD onto its network.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": null,
+    "last_round_date": "2025-09-22",
+    "lead": "PayPal Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Bitfinex",
+     "Hack VC",
+     "Franklin Templeton",
+     "Castle Island Ventures",
+     "PayPal Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://pulse2.com/stable-28-million-funding-secured-for-layer-1-blockchain-network-platform/",
+    "https://www.prnewswire.com/news-releases/paypal-invests-in-stablecoin-focused-layer-1-stable-to-expand-paypal-usd-distribution-utility-and-liquidity-302562531.html"
+   ]
+  },
+  "stable-sea": {
+   "id": "stable-sea",
+   "name": "Stable Sea",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.stablesea.com",
+   "blurb": "Orchestration platform giving corporate treasurers a fiat off-ramp and a dashboard for cross-border stablecoin payments.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 3.5,
+    "last_round_date": "2025-03-19",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.pymnts.com/news/cross-border-payments/2025/exclusive-stable-sea-breaks-stealth-mode-aims-to-streamline-corporate-stablecoin-transactions/"
+   ]
+  },
+  "superset": {
+   "id": "superset",
+   "name": "Superset",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Shared liquidity layer for stablecoins, tokenised deposits and on-chain FX, chaired by ClearBank co-founder Charles McManus.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 4,
+    "last_round_date": "2026-02-11",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "7RIDGE",
+     "Exponential Science Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://techfundingnews.com/superset-raises-4m-to-build-the-unified-liquidity-layer-for-the-300b-stablecoin-economy/"
+   ]
+  },
+  "tazapay": {
+   "id": "tazapay",
+   "name": "Tazapay",
+   "hq_city": "Singapore",
+   "hq_country": "Singapore",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Singapore B2B cross-border payments firm linking payment companies to 60+ banks in 100 markets; Circle agreed to buy it in 2026.",
+   "licenses": [
+    {
+     "regulator": null,
+     "jurisdiction": "Singapore, Canada and the EU",
+     "type": "Payment licences (as stated by the company)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series B",
+    "last_round_usd_m": null,
+    "last_round_date": "2026-03-26",
+    "lead": "Circle Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Circle Ventures",
+     "Peak XV Partners",
+     "Ripple",
+     "CMT Digital",
+     "Coinbase Ventures",
+     "GMO Venture Partners",
+     "January Capital",
+     "Norinchukin Capital",
+     "ARC180",
+     "RTP Global"
+    ]
+   },
+   "status": "Being acquired by Circle",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/tazapay-lands-strategic-investments-from-ripple-and-circle-signaling-a-new-era-for-cross-border-payments-302539389.html",
+    "https://www.prnewswire.com/news-releases/tazapay-raises-36m-in-total-series-b-funding-to-scale-next-generation-payment-rails-globally-circle-ventures-leads-extension-302725915.html",
+    "https://www.coindesk.com/business/2026/09/08/circle-agrees-to-buy-cross-border-payments-firm-tazapay-for-usd400-million"
+   ]
+  },
+  "tesser": {
+   "id": "tesser",
+   "name": "Tesser",
+   "hq_city": "New York",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": 2025,
+   "website": "https://tesser.xyz",
+   "blurb": "New York start-up founded in 2025 giving licensed financial institutions a full-stack platform to move money on stablecoin rails.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 4.5,
+    "last_round_date": "2025-10-21",
+    "lead": "Castle Island Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Castle Island Ventures",
+     "Strobe Ventures",
+     "Anthemis"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/tesser-raises-4-5m-seed-round-to-bring-instant-cross-border-payments-to-banks-and-psps-302590774.html",
+    "https://tesser.xyz/"
+   ]
+  },
+  "thiqwave": {
+   "id": "thiqwave",
+   "name": "Thiqwave",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "Middle East",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://thiqwave.com",
+   "blurb": "Wholesale stablecoin settlement layer for the Middle East, founded by ex-FAB and AAIB operators; licensed partners carry the regulated activity.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://thiqwave.com/about",
+    "https://thiqwave.com/terms",
+    "https://thiqwave.com/blog/stablecoin-settlement-in-the-middle-east-the-complete-guide"
+   ]
+  },
+  "transak": {
+   "id": "transak",
+   "name": "Transak",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "On/off-ramp",
+   "founded": null,
+   "website": "https://transak.com",
+   "blurb": "Fiat on- and off-ramp provider with virtual accounts, liquidity routing and compliance tooling; $2bn+ processed, ~30% in stablecoins.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": 16,
+    "last_round_date": "2025-08-12",
+    "lead": "Tether; IDG Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Tether",
+     "IDG Capital",
+     "Primal Capital",
+     "1kx",
+     "Protein Capital",
+     "Genting Ventures",
+     "Fuel Ventures",
+     "Umami Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://transak.com/blog/strategic-fundraise"
+   ]
+  },
+  "transfi": {
+   "id": "transfi",
+   "name": "TransFi",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.transfi.com",
+   "blurb": "Stablecoin payments infrastructure and orchestration firm for cross-border business payments, focused on emerging markets.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 19.2,
+    "last_round_date": "2026-03-19",
+    "lead": "Turing Financial Group",
+    "valuation_usd_m": null,
+    "investors": [
+     "Turing Financial Group"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fintech.global/2026/03/19/transfi-raises-19m-to-scale-stablecoin-payments/",
+    "https://www.transfi.com/"
+   ]
+  },
+  "turnkey": {
+   "id": "turnkey",
+   "name": "Turnkey",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Custody & wallets",
+   "founded": null,
+   "website": "https://www.turnkey.com",
+   "blurb": "Wallet and key-management infrastructure behind 50m+ embedded wallets, built on secure enclaves; backed by Bain Capital Crypto and Sequoia.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 65,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": 12.5,
+    "last_round_date": "2026-05-14",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "Bain Capital Crypto",
+     "Sequoia Capital",
+     "Lightspeed Faction",
+     "Galaxy Ventures",
+     "Archetype",
+     "Circle Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.turnkey.com/blog/30m-series-b-to-secure-the-next-era-of-crypto",
+    "https://www.coindesk.com/business/2026/05/06/turnkey-raises-usd12-5-million-in-round-backed-by-circle-ventures-and-sequoia-capital"
+   ]
+  },
+  "ubyx": {
+   "id": "ubyx",
+   "name": "Ubyx",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Clearing system for stablecoins and tokenised deposits through regulated banks, founded by ex-Citi executive Tony McLaughlin.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Strategic",
+    "last_round_usd_m": null,
+    "last_round_date": "2026-01-07",
+    "lead": "Barclays",
+    "valuation_usd_m": null,
+    "investors": [
+     "Galaxy Ventures",
+     "Coinbase Ventures",
+     "Founders Fund",
+     "Paxos",
+     "VanEck",
+     "Barclays"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coindesk.com/markets/2025/06/17/stablecoin-clearing-startup-ubyx-raises-10m-round-backed-by-galaxy-coinbase-others",
+    "https://www.coindesk.com/business/2026/01/07/barclays-invests-in-stablecoin-settlement-firm-as-tokenized-infrastructure-advances"
+   ]
+  },
+  "velocity": {
+   "id": "velocity",
+   "name": "Velocity",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.velocity.xyz",
+   "blurb": "London-based firm moving business payment settlement and treasury onto stablecoin rails; backed by Dragonfly, Visa, Circle and Ripple.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 10,
+    "last_round_date": "2026-09-15",
+    "lead": "Dragonfly; FirstMark",
+    "valuation_usd_m": 200,
+    "investors": [
+     "Dragonfly",
+     "FirstMark",
+     "Coinbase",
+     "Capital One Ventures",
+     "QED Investors",
+     "Activant Capital",
+     "Ripple",
+     "Wintermute",
+     "Visa Ventures",
+     "Circle Ventures",
+     "Haun Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2026/07/14/exclusive-payments-startup-velocity-38-million-businesses-stablecoin-growth/",
+    "https://www.coindesk.com/business/2026/09/10/velocity-extends-series-a-to-usd48m-at-usd200m-valuation-with-backing-from-visa-circle-and-ripple",
+    "https://www.velocity.xyz/"
+   ]
+  },
+  "xfx": {
+   "id": "xfx",
+   "name": "XFX",
+   "hq_city": "Miami",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.xfx.io",
+   "blurb": "Miami-based liquidity layer joining fiat and stablecoin FX so institutions can move between cash and stablecoins and settle faster.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 26,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 17,
+    "last_round_date": "2026-03-26",
+    "lead": "Castle Island Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "Castle Island Ventures",
+     "Haun Ventures",
+     "Coinbase Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://fortune.com/2026/03/26/xfx-17-million-series-a-stablecoins-fiat-castle-island-ventures/",
+    "https://www.xfx.io/"
+   ]
+  },
+  "zodia-markets": {
+   "id": "zodia-markets",
+   "name": "Zodia Markets",
+   "hq_city": null,
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "On/off-ramp",
+   "founded": null,
+   "website": "https://zodiamarkets.com",
+   "blurb": "Institutional crypto trading firm majority-owned by Standard Chartered, expanding into stablecoin payments and FX.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 18.25,
+    "last_round_date": "2025-07-28",
+    "lead": "Pharsalus Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "Pharsalus Capital",
+     "Circle Ventures",
+     "The Operating Group",
+     "XVC Tech"
+    ]
+   },
+   "status": "Bank-owned",
+   "sources": [
+    "https://www.coindesk.com/business/2025/07/28/zodia-markets-raises-usd18-25m-to-fuel-international-expansion-stablecoin-payments",
+    "https://zodiamarkets.com/"
+   ]
+  }
+ }
+}

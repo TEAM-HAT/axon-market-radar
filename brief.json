@@ -226,6 +226,28 @@
   ],
   "companies": [
     {
+      "id": "circle",
+      "name": "Circle",
+      "segment": "Issuer",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 4,
+      "last_date": "2026-10-07",
+      "last_title": "Circle and SAP-backed Tereina to bring USDC and EURC to SAP Pay",
+      "last_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
+    },
+    {
+      "id": "visa",
+      "name": "Visa",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "Global",
+      "moves_30d": 3,
+      "last_date": "2026-10-08",
+      "last_title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
+      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
+    },
+    {
       "id": "tether",
       "name": "Tether",
       "segment": "Issuer",
@@ -242,21 +264,10 @@
       "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 2,
+      "moves_30d": 3,
       "last_date": "2026-10-07",
       "last_title": "Yuno adds Coinbase stablecoin checkout for its merchants",
       "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/yuno-partners-with-coinbase-to-add-stablecoin-checkout-for-merchants"
-    },
-    {
-      "id": "circle",
-      "name": "Circle",
-      "segment": "Issuer",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 2,
-      "last_date": "2026-09-22",
-      "last_title": "Binance buys $100m of Circle shares and renews USDC deal",
-      "last_url": "https://circle.com/pressroom/binance-invests-100-million-in-circle-expands-strategic-partnership-and-renews-commercial-agreement-for-five-years"
     },
     {
       "id": "ripple",
@@ -264,32 +275,21 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 1,
+      "moves_30d": 2,
       "last_date": "2026-10-08",
       "last_title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
       "last_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
     },
     {
-      "id": "noah",
-      "name": "Noah",
-      "segment": "Settlement rails",
-      "country": "United Kingdom",
-      "region": "Europe",
-      "moves_30d": 1,
-      "last_date": "2026-10-07",
-      "last_title": "London's Noah adds $16m, taking stablecoin payments seed to $38m",
-      "last_url": "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round"
-    },
-    {
-      "id": "mesh",
-      "name": "Mesh",
-      "segment": "Settlement rails",
+      "id": "bastion",
+      "name": "Bastion",
+      "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 1,
+      "moves_30d": 2,
       "last_date": "2026-10-07",
-      "last_title": "World Liberty and Mesh plan USD1 spending at online merchants",
-      "last_url": "https://cointelegraph.com/news/trump-backed-wlfi-plans-usd1-payments-for-online-businesses"
+      "last_title": "Samsung Wallet to add USDC transfers for 82m US Galaxy devices",
+      "last_url": "https://unchainedcrypto.com/samsung-wallet-brings-usdc-transfers-to-82-million-us-galaxy-devices-in-late-october/"
     }
   ],
   "licences": [
@@ -400,59 +400,59 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 142,
+    "total": 200,
     "licences": 32,
     "regulatory_actions": 23,
     "commercial": 65,
-    "capital": 22,
+    "capital": 80,
     "months": [
       {
         "m": "2025-10",
-        "n": 3
+        "n": 9
       },
       {
         "m": "2025-11",
-        "n": 11
+        "n": 15
       },
       {
         "m": "2025-12",
-        "n": 8
+        "n": 16
       },
       {
         "m": "2026-01",
-        "n": 9
+        "n": 14
       },
       {
         "m": "2026-02",
-        "n": 13
+        "n": 15
       },
       {
         "m": "2026-03",
-        "n": 7
+        "n": 15
       },
       {
         "m": "2026-04",
-        "n": 8
-      },
-      {
-        "m": "2026-05",
         "n": 10
       },
       {
-        "m": "2026-06",
-        "n": 7
+        "m": "2026-05",
+        "n": 17
       },
       {
-        "m": "2026-07",
+        "m": "2026-06",
         "n": 9
       },
       {
+        "m": "2026-07",
+        "n": 15
+      },
+      {
         "m": "2026-08",
-        "n": 8
+        "n": 12
       },
       {
         "m": "2026-09",
-        "n": 21
+        "n": 25
       },
       {
         "m": "2026-10",
