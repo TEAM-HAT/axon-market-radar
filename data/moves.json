@@ -2624,6 +2624,61 @@
    "added": "2026-10-11"
   },
   {
+   "id": "paxos-labs-aleo-usad-2025-10-01",
+   "date": "2025-10-01",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Paxos Labs",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Paxos Labs and Aleo launch USAD, a private dollar stablecoin",
+   "summary": "Paxos Labs and the Aleo Network Foundation launched USAD, a dollar stablecoin that encrypts transaction data end to end, aimed at institutions that want private, programmable digital dollars.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/01/aleo-and-paxos-labs-launch-privacy-focused-dollar-stablecoin-aimed-at-institutions",
+   "related": [],
+   "parties": [
+    {
+     "id": "paxos-labs",
+     "name": "Paxos Labs",
+     "role": "issuer"
+    },
+    {
+     "id": "aleo",
+     "name": "Aleo Network Foundation",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fasset-malaysia-licence-2025-10-07",
+   "date": "2025-10-07",
+   "date_precision": "day",
+   "company_id": "fasset",
+   "company_name": "Fasset",
+   "type": "License",
+   "region": "Middle East",
+   "title": "Fasset wins provisional Malaysian licence for Islamic stablecoin bank",
+   "summary": "Dubai-based Fasset received a provisional licence in Malaysia to run a Shariah-compliant digital bank backed by stablecoins, offering asset-backed savings, zero-interest accounts and on-chain global payments.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Malaysia",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/07/fasset-wins-malaysia-license-to-launch-first-stablecoin-based-islamic-digital-bank",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "apps-and-wallets"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "coinflow-series-a-2025-10-08",
    "date": "2025-10-08",
    "date_precision": "day",
@@ -2660,6 +2715,156 @@
     "valuation_usd_m": null,
     "use_of_funds": "payout coverage in Asia and Latin America, hiring and approval rates"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "north-dakota-roughrider-2025-10-08",
+   "date": "2025-10-08",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Bank of North Dakota",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Bank of North Dakota plans Roughrider Coin stablecoin with Fiserv",
+   "summary": "The state-owned Bank of North Dakota will launch Roughrider Coin, a dollar stablecoin for banks and credit unions in the state, in 2026. It runs on Fiserv's digital asset platform and its white-label FIUSD system.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/08/north-dakota-to-issue-stablecoin-with-fiserv-as-digital-dollar-trend-expands",
+   "related": [],
+   "parties": [
+    {
+     "id": "bank-of-north-dakota",
+     "name": "Bank of North Dakota",
+     "role": "issuer"
+    },
+    {
+     "id": "fiserv",
+     "name": "Fiserv",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "eu-commission-multi-issuance-2025-10-10",
+   "date": "2025-10-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "European Commission",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "Brussels declines ECB push to restrict multi-issuance stablecoins",
+   "summary": "The European Commission signalled on 10 October that it would not add restrictions on stablecoin firms that treat tokens issued inside and outside the EU as interchangeable, rejecting the ECB's call for tighter MiCA rules.",
+   "amount_usd_m": null,
+   "regulator": "European Commission",
+   "jurisdiction": "European Union",
+   "source_name": "Yahoo Finance (Benzinga)",
+   "source_url": "https://finance.yahoo.com/news/eu-just-sided-crypto-stablecoins-010119386.html",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "sg-forge-bitpanda-defi-2025-10-14",
+   "date": "2025-10-14",
+   "date_precision": "day",
+   "company_id": "sg-forge",
+   "company_name": "SG-FORGE",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "Bitpanda offers SG-FORGE's euro and dollar stablecoins to retail users",
+   "summary": "SG-FORGE and Bitpanda widened their partnership so Bitpanda's DeFi wallet offers SG-FORGE's EUR and USD CoinVertible stablecoins to retail users across Europe for the first time, with on-chain lending and borrowing.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/14/societe-generale-forge-and-bitpanda-expand-partnership-to-bring-regulated-stablecoins-to-defi",
+   "related": [],
+   "parties": [
+    {
+     "id": "bitpanda",
+     "name": "Bitpanda",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "apps-and-wallets",
+    "bank-tokens"
+   ],
+   "kind": "Consumer distribution",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "erebor-occ-conditional-2025-10-15",
+   "date": "2025-10-15",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Erebor",
+   "type": "License",
+   "region": "North America",
+   "title": "Erebor wins conditional OCC approval for a national bank charter",
+   "summary": "The OCC granted conditional national bank status to Erebor, a tech-sector bank aiming to serve crypto and venture-backed companies. The regulator said the decision shows it is open to digital asset activity at the banks it oversees.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2025/10/15/crypto-bank-erebor-approved-for-conditional-federal-bank-charter-by-occ",
+   "related": [],
+   "parties": [
+    {
+     "id": "erebor",
+     "name": "Erebor",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "us-rules",
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "oddo-bhf-eurod-2025-10-15",
+   "date": "2025-10-15",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "ODDO BHF",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "French bank ODDO BHF launches EUROD, a MiCA euro stablecoin",
+   "summary": "ODDO BHF, the Franco-German financial group, launched EUROD, a euro stablecoin built to comply with MiCA, with a listing on Madrid-based crypto platform Bit2Me, whose backers include Telefónica, Unicaja and BBVA.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "France",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/15/french-banking-giant-oddo-bhf-enters-crypto-with-euro-backed-stablecoin-eurod",
+   "related": [],
+   "parties": [
+    {
+     "id": "oddo-bhf",
+     "name": "ODDO BHF",
+     "role": "issuer"
+    },
+    {
+     "id": "bit2me",
+     "name": "Bit2Me",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "bank-tokens",
+    "mica"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -2745,6 +2950,95 @@
    "added": "2026-10-11"
   },
   {
+   "id": "b2c2-penny-2025-10-22",
+   "date": "2025-10-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "B2C2",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Market maker B2C2 launches PENNY for zero-fee stablecoin swaps",
+   "summary": "Institutional liquidity provider B2C2 launched PENNY, a zero-fee platform for instant swaps between major stablecoins including USDT, USDC and PYUSD across several blockchains.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/markets/2025/10/23/crypto-market-maker-b2c2-launches-penny-to-enable-instant-zero-fee-stablecoin-swaps",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "borderless-benchmark-2025-10-22",
+   "date": "2025-10-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Borderless.xyz",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Borderless.xyz launches an open benchmark for stablecoin FX rates",
+   "summary": "Borderless.xyz launched the Borderless Benchmark, an open reference for stablecoin-to-fiat exchange rates such as USDC, USDT and EURC against local currencies, built on its network of regulated on- and off-ramp providers.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Borderless.xyz",
+   "source_url": "https://borderless.xyz/insights/introducing-the-borderless-benchmark-bringing-clarity-to-stablecoin-fx-rates",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "non-dollar",
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "esrb-stablecoin-recommendation-2025-10-22",
+   "date": "2025-10-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "ESRB",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "ESRB flags stablecoin risks and targets third-country multi-issuers",
+   "summary": "The European Systemic Risk Board published a report on crypto risks, focused on stablecoins, and issued a recommendation on stablecoins issued jointly by EU and non-EU entities, warning of vulnerabilities as crypto ties to finance grow.",
+   "amount_usd_m": null,
+   "regulator": "ESRB",
+   "jurisdiction": "European Union",
+   "source_name": "Debrecen Sun",
+   "source_url": "https://www.debrecensun.hu/europe/2025/10/22/esrb-flags-financial-stability-risks-from-stablecoins-issues-recommendation-on-third-country-multi-issuers/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "blockchain-com-mica-malta-2025-10-23",
+   "date": "2025-10-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Blockchain.com",
+   "type": "License",
+   "region": "Europe",
+   "title": "Blockchain.com wins MiCA licence from Malta's MFSA",
+   "summary": "Blockchain.com obtained a MiCA licence from the Malta Financial Services Authority, letting it offer institutional crypto products in 30 EEA countries as it expands in Europe.",
+   "amount_usd_m": null,
+   "regulator": "MFSA",
+   "jurisdiction": "Malta",
+   "source_name": "Cointelegraph",
+   "source_url": "https://cointelegraph.com/news/blockchain-com-mica-eu-institutions-malta-mfsa",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "fireblocks-dynamic-2025-10-23",
    "date": "2025-10-23",
    "date_precision": "day",
@@ -2778,6 +3072,242 @@
      "clients"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "pave-bank-39m-2025-10-23",
+   "date": "2025-10-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Pave Bank",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Pave Bank raises $39m led by Accel for programmable banking",
+   "summary": "Pave Bank, which joins traditional banking with regulated digital assets, raised $39m led by Accel with Tether Investments, Quona Capital, Wintermute and others, taking its total funding past $44m.",
+   "amount_usd_m": 39,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Techeconomy",
+   "source_url": "https://techeconomy.ng/pave-bank-raises-39m-programmable-banking-digital-assets/",
+   "related": [],
+   "parties": [
+    {
+     "id": "accel",
+     "name": "Accel",
+     "role": "lead investor"
+    },
+    {
+     "id": "tether",
+     "name": "Tether Investments",
+     "role": "investor"
+    },
+    {
+     "id": "quona-capital",
+     "name": "Quona Capital",
+     "role": "investor"
+    },
+    {
+     "id": "wintermute",
+     "name": "Wintermute",
+     "role": "investor"
+    },
+    {
+     "id": "helios-digital-ventures",
+     "name": "Helios Digital Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "ftp-ventures",
+     "name": "Financial Technology Partners",
+     "role": "investor"
+    },
+    {
+     "id": "yolo-investments",
+     "name": "Yolo Investments",
+     "role": "investor"
+    },
+    {
+     "id": "kazea-fund",
+     "name": "Kazea Fund",
+     "role": "investor"
+    },
+    {
+     "id": "gch-investments",
+     "name": "GC&H Investments",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "bank-tokens"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": "global expansion, regulatory footprint and institutional banking infrastructure"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "revolut-mica-cyprus-2025-10-23",
+   "date": "2025-10-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Revolut",
+   "type": "License",
+   "region": "Europe",
+   "title": "Revolut wins MiCA licence in Cyprus and adds 1:1 stablecoin swaps",
+   "summary": "Revolut received MiCA authorisation from Cyprus's CySEC to offer crypto services across 30 EEA markets, alongside new 1:1 conversions between US dollars and stablecoins and zero-fee staking.",
+   "amount_usd_m": null,
+   "regulator": "CySEC",
+   "jurisdiction": "Cyprus",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2025/10/23/revolut-secures-mica-license-in-cyprus-expanding-regulated-crypto-services-across-europe",
+   "related": [],
+   "parties": [
+    {
+     "id": "revolut",
+     "name": "Revolut",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "mica",
+    "apps-and-wallets"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "transak-cross-river-2025-10-23",
+   "date": "2025-10-23",
+   "date_precision": "day",
+   "company_id": "transak",
+   "company_name": "Transak",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "Transak taps Cross River for faster fiat rails in the US",
+   "summary": "Cross River Bank will process fiat payments for Transak, including ACH, wires and instant rails such as RTP and FedNow, to speed up settlement for the on-ramp's consumer and business users.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Chainwire",
+   "source_url": "https://chainwire.org/2025/10/23/transak-taps-cross-river-to-deliver-faster-compliant-fiat-to-crypto-transactions-for-consumers-and-businesses/",
+   "related": [],
+   "parties": [
+    {
+     "id": "cross-river",
+     "name": "Cross River",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "vantage-custodia-tokenized-deposits-2025-10-23",
+   "date": "2025-10-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Vantage Bank",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Vantage Bank and Custodia offer tokenised deposits to US banks",
+   "summary": "Vantage Bank and Custodia invited US banks and credit unions to join a consortium offering tokenised deposits and stablecoins inside online banking. Tokens can switch between deposit and stablecoin status under oversight.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/vantage-bank-and-custodia-announce-launch-of-tokenized-deposits-for-us-banks-302592931.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "vantage-bank",
+     "name": "Vantage Bank",
+     "role": "issuer"
+    },
+    {
+     "id": "custodia",
+     "name": "Custodia Bank",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "usbc-us-bank-coin-2025-10-24",
+   "date": "2025-10-24",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "USBC",
+   "type": "Launch",
+   "region": "North America",
+   "title": "USBC plans US Bank Coin tokenised deposit with Vast Bank and Uphold",
+   "summary": "NYSE-listed USBC unveiled US Bank Coin, a dollar tokenised deposit for retail users on a permissioned blockchain. Vast Bank will launch it first in 2026, with exchange Uphold distributing it to its users.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/usbc-to-launch-us-bank-coin-tokenized-deposit-with-vast-bank-and-uphold/",
+   "related": [],
+   "parties": [
+    {
+     "id": "vast-bank",
+     "name": "Vast Bank",
+     "role": "issuer"
+    },
+    {
+     "id": "uphold",
+     "name": "Uphold",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "circle-arc-testnet-2025-10-27",
+   "date": "2025-10-27",
+   "date_precision": "day",
+   "company_id": "circle",
+   "company_name": "Circle",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Circle opens Arc public testnet with over 100 institutions",
+   "summary": "Circle deployed the public testnet of Arc, its blockchain with dollar-based fees and sub-second settlement, with over 100 financial and technology firms taking part, including BlackRock, Visa, HSBC and AWS.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/27/circle-issuer-of-usdc-starts-testing-arc-blockchain-with-big-institutions-onboard",
+   "related": [],
+   "parties": [
+    {
+     "id": "blackrock",
+     "name": "BlackRock",
+     "role": "partner"
+    },
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    },
+    {
+     "id": "hsbc",
+     "name": "HSBC",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -2820,6 +3350,28 @@
    "added": "2026-10-11"
   },
   {
+   "id": "fasb-stablecoin-project-2025-10-29",
+   "date": "2025-10-29",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "FASB",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "FASB opens a project on accounting for stablecoins",
+   "summary": "The Financial Accounting Standards Board voted 6-1 to add stablecoin accounting to its technical agenda, after the President's digital asset working group asked it to consider treating stablecoins as cash equivalents.",
+   "amount_usd_m": null,
+   "regulator": "FASB",
+   "jurisdiction": "United States",
+   "source_name": "CFO Dive",
+   "source_url": "https://www.cfodive.com/news/fasb-votes-6-1-tackle-stablecoin-accounting-crypto/804187/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "hercle-10m-2025-10-29",
    "date": "2025-10-29",
    "date_precision": "day",
@@ -2851,6 +3403,35 @@
     "valuation_usd_m": null,
     "use_of_funds": "global expansion"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "polygon-flutterwave-2025-10-29",
+   "date": "2025-10-29",
+   "date_precision": "day",
+   "company_id": "polygon-labs",
+   "company_name": "Polygon Labs",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Flutterwave picks Polygon for stablecoin payments across Africa",
+   "summary": "Flutterwave will use the Polygon network as the default rails for its new stablecoin payment system, starting with multinational clients such as Uber and Audiomack, across more than 30 African countries.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/10/30/flutterwave-africa-s-usd31b-payment-provider-taps-polygon-for-cross-border-payments",
+   "related": [],
+   "parties": [
+    {
+     "id": "flutterwave",
+     "name": "Flutterwave",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Infrastructure supply",
    "added": "2026-10-11"
   },
   {
@@ -2936,6 +3517,132 @@
    "added": "2026-10-11"
   },
   {
+   "id": "bank-of-england-systemic-consultation-2025-11-10",
+   "date": "2025-11-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Bank of England",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "Bank of England consults on rules for systemic sterling stablecoins",
+   "summary": "The Bank of England published a consultation paper setting out its proposed regime for sterling-denominated systemic stablecoins.",
+   "amount_usd_m": null,
+   "regulator": "Bank of England",
+   "jurisdiction": "United Kingdom",
+   "source_name": "Bank of England",
+   "source_url": "https://www.bankofengland.co.uk/news/2025/november/boe-launches-consultation-on-regulating-systemic-stablecoins",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules",
+    "non-dollar"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "cleartoken-fca-2025-11-11",
+   "date": "2025-11-11",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "ClearToken",
+   "type": "License",
+   "region": "Europe",
+   "title": "ClearToken wins FCA approval for CT Settle digital asset settlement",
+   "summary": "London-based ClearToken won FCA authorisation to launch CT Settle, a delivery-versus-payment system for crypto, stablecoins and fiat that removes pre-funding, modelled on CLS in foreign exchange.",
+   "amount_usd_m": null,
+   "regulator": "FCA",
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2025/11/11/cleartoken-wins-uk-regulator-approval-for-digital-asset-settlement-service",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules",
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "transak-us-mtls-2025-11-11",
+   "date": "2025-11-11",
+   "date_precision": "day",
+   "company_id": "transak",
+   "company_name": "Transak",
+   "type": "License",
+   "region": "North America",
+   "title": "Transak adds six US state money transmitter licences",
+   "summary": "Transak secured money transmitter licences in Iowa, Kansas, Michigan, South Carolina, Vermont and Pennsylvania, widening its regulated reach for stablecoin payments in the US.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Cointelegraph",
+   "source_url": "https://cointelegraph.com/news/transak-expands-us-stablecoin-licenses-mtl",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bridge-usdsui-2025-11-12",
+   "date": "2025-11-12",
+   "date_precision": "day",
+   "company_id": "bridge",
+   "company_name": "Bridge",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Sui launches native stablecoin USDsui issued by Bridge",
+   "summary": "The Sui blockchain unveiled USDsui, a native dollar stablecoin issued by Stripe's Bridge and designed to meet the GENIUS Act.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Sui",
+   "source_url": "https://blog.sui.io/sui-unveils-usdsui-native-stablecoin/",
+   "related": [],
+   "parties": [
+    {
+     "id": "sui",
+     "name": "Sui",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "monerium-finery-2025-11-12",
+   "date": "2025-11-12",
+   "date_precision": "day",
+   "company_id": "monerium",
+   "company_name": "Monerium",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "Monerium links its euro stablecoin to Finery Markets' liquidity",
+   "summary": "Monerium integrated with Finery Markets so its EURe euro stablecoin can tap institutional liquidity and cross rates with USDC and USDT.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Business Insider (Chainwire)",
+   "source_url": "https://markets.businessinsider.com/news/currencies/eur-stablecoin-goes-global-finery-markets-powers-monerium-s-cross-rates-creation-1035549680",
+   "related": [],
+   "parties": [
+    {
+     "id": "finery-markets",
+     "name": "Finery Markets",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar"
+   ],
+   "kind": "Venue listing",
+   "added": "2026-10-11"
+  },
+  {
    "id": "rain-uptop-2025-11-12",
    "date": "2025-11-12",
    "date_precision": "day",
@@ -2970,6 +3677,390 @@
      "clients"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "telcoin-nebraska-charter-2025-11-12",
+   "date": "2025-11-12",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Telcoin",
+   "type": "License",
+   "region": "North America",
+   "title": "Nebraska issues first digital asset bank charter to Telcoin",
+   "summary": "Nebraska's governor and banking regulator issued a charter to Telcoin Digital Asset Bank under the state's Financial Innovation Act, letting it run a stablecoin and digital asset business.",
+   "amount_usd_m": null,
+   "regulator": "Nebraska Department of Banking and Finance",
+   "jurisdiction": "United States",
+   "source_name": "Rural Radio Network",
+   "source_url": "https://ruralradio.com/maxcountry/news/gov-pillen-signs-first-in-nation-digital-asset-bank-charter/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules",
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bny-stablecoin-reserve-fund-2025-11-13",
+   "date": "2025-11-13",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "BNY",
+   "type": "Launch",
+   "region": "North America",
+   "title": "BNY launches a reserve fund for stablecoin issuers",
+   "summary": "BNY launched a regulated money market fund for stablecoin issuers to hold reserves under US rules, with Anchorage Digital providing the initial investment.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/11/13/bny-eyes-usd1-5t-stablecoin-market-with-new-reserve-fund-for-issuers",
+   "related": [],
+   "parties": [
+    {
+     "id": "bny",
+     "name": "BNY",
+     "role": "issuer"
+    },
+    {
+     "id": "anchorage-digital",
+     "name": "Anchorage Digital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "brale-cardano-2025-11-13",
+   "date": "2025-11-13",
+   "date_precision": "day",
+   "company_id": "brale",
+   "company_name": "Brale",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Cardano Foundation partners with Brale on compliant stablecoins",
+   "summary": "The Cardano Foundation partnered with stablecoin issuance platform Brale to bring compliant stablecoin tools to builders and enterprises on Cardano.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Blockchain Reporter",
+   "source_url": "https://blockchainreporter.net/cardano-and-brale-empower-builders-and-enterprises-with-compliant-digital-solutions/",
+   "related": [],
+   "parties": [
+    {
+     "id": "cardano-foundation",
+     "name": "Cardano Foundation",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "circle-stablefx-2025-11-13",
+   "date": "2025-11-13",
+   "date_precision": "day",
+   "company_id": "circle",
+   "company_name": "Circle",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Circle unveils StableFX engine and partner stablecoins on Arc",
+   "summary": "Circle announced StableFX, an institutional stablecoin FX engine on Arc's public testnet, and Circle Partner Stablecoins, a programme for local-currency stablecoins issued by partners, to move FX settlement on-chain.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Circle",
+   "source_url": "https://www.circle.com/blog/introducing-circle-stablefx-and-circle-partner-stablecoins",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "non-dollar",
+    "payment-chains"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fdic-tokenized-deposit-insurance-2025-11-13",
+   "date": "2025-11-13",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "FDIC",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "FDIC prepares guidance on deposit insurance for tokenised deposits",
+   "summary": "The FDIC's chair confirmed the agency is drafting guidance on how deposit insurance applies to tokenised deposits, to help banks that issue them on blockchains.",
+   "amount_usd_m": null,
+   "regulator": "FDIC",
+   "jurisdiction": "United States",
+   "source_name": "Cryptopolitan",
+   "source_url": "https://www.cryptopolitan.com/fdic-tokenized-deposit-insurance-guidance/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules",
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "hercle-lightspark-2025-11-13",
+   "date": "2025-11-13",
+   "date_precision": "day",
+   "company_id": "hercle",
+   "company_name": "Hercle",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "Hercle and Lightspark add instant bitcoin payouts in euros and pounds",
+   "summary": "Hercle became the first partner of Lightspark Grid in Europe, offering payment firms, fintechs and institutions instant settlement from bitcoin into euros and British pounds across the EU and the UK.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Lightspark",
+   "source_url": "https://www.lightspark.com/news/lightspark/hercle-and-lightspark-announcement",
+   "related": [],
+   "parties": [
+    {
+     "id": "lightspark",
+     "name": "Lightspark",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments",
+    "non-dollar"
+   ],
+   "kind": "Payouts and corridors",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "mastercard-thunes-2025-11-13",
+   "date": "2025-11-13",
+   "date_precision": "day",
+   "company_id": "mastercard",
+   "company_name": "Mastercard",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Mastercard Move adds stablecoin wallet payouts through Thunes",
+   "summary": "Mastercard and Thunes announced at the Singapore Fintech Festival that Mastercard Move will make near real-time payouts to stablecoin wallets through Thunes' Direct Global Network.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Thunes",
+   "source_url": "https://www.thunes.com/news/mastercard-and-thunes-bring-stablecoin-payouts-to-the-mainstream/",
+   "related": [],
+   "parties": [
+    {
+     "id": "thunes",
+     "name": "Thunes",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks",
+    "business-payments"
+   ],
+   "kind": "Payouts and corridors",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "citi-swift-trial-2025-11-14",
+   "date": "2025-11-14",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Citi",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Citi and Swift complete fiat-to-digital currency settlement trial",
+   "summary": "Citi and Swift completed a trial showing that payments can settle between fiat and digital currencies through synchronised settlement, using Swift messaging to bridge the two.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/apac/news-releases/citi-completes-landmark-fiat-to-digital-currency-payment-settlement-workflow-trial-with-swift-302615195.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "citi",
+     "name": "Citi",
+     "role": "partner"
+    },
+    {
+     "id": "swift",
+     "name": "Swift",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "payment-chains"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "mastercard-circle-eemea-2025-11-14",
+   "date": "2025-11-14",
+   "date_precision": "day",
+   "company_id": "mastercard",
+   "company_name": "Mastercard",
+   "type": "Partnership",
+   "region": "Middle East",
+   "title": "Mastercard and Circle bring USDC and EURC settlement to EEMEA",
+   "summary": "Mastercard introduced its first stablecoin settlement capability in Eastern Europe, the Middle East and Africa with Circle, letting acquirers and issuers in the region settle card transactions in USDC and EURC.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "TahawulTech",
+   "source_url": "https://www.tahawultech.com/home-slide/mastercard-and-circle-expand-stablecoin-settlement-capabilities-across-eemea/",
+   "related": [],
+   "parties": [
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "jpm-kinexys-alibaba-2025-11-15",
+   "date": "2025-11-15",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "J.P. Morgan (Kinexys)",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Alibaba to settle B2B payments with J.P. Morgan tokenised deposits",
+   "summary": "Alibaba's global business-to-business platform will use J.P. Morgan's blockchain and tokenised dollar and euro deposits to speed up cross-border payments, CNBC reported.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/11/15/alibaba-to-use-jpmorgan-s-blockchain-for-tokenized-dollar-and-euro-payments-cnbc",
+   "related": [],
+   "parties": [
+    {
+     "id": "jpmorgan",
+     "name": "J.P. Morgan",
+     "role": "supplier"
+    },
+    {
+     "id": "alibaba",
+     "name": "Alibaba",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "business-payments"
+   ],
+   "kind": "Enterprise integration",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "moonpay-enterprise-stablecoins-2025-11-17",
+   "date": "2025-11-17",
+   "date_precision": "day",
+   "company_id": "moonpay",
+   "company_name": "MoonPay",
+   "type": "Launch",
+   "region": "Global",
+   "title": "MoonPay launches an enterprise stablecoin business built on M0",
+   "summary": "MoonPay launched a business that issues and manages fully reserved stablecoins for enterprises across several blockchains, integrating M0's issuance infrastructure and distributing the tokens through its global network.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Yahoo Finance (GlobalData)",
+   "source_url": "https://finance.yahoo.com/news/moonpay-launches-enterprise-stablecoin-business-140148379.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "m0",
+     "name": "M0",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "obex-37m-2025-11-17",
+   "date": "2025-11-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Obex",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Obex raises $37m to incubate stablecoins backed by real-world credit",
+   "summary": "Obex, an incubator for stablecoins backed by compute, energy and fintech credit, raised $37m led by Framework Ventures and Sky, which has committed up to $2.5bn to the projects it backs.",
+   "amount_usd_m": 37,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/11/18/obex-raises-usd37m-to-build-y-combinator-for-rwa-backed-stablecoins-led-by-framework-sky",
+   "related": [],
+   "parties": [
+    {
+     "id": "framework-ventures",
+     "name": "Framework Ventures",
+     "role": "lead investor"
+    },
+    {
+     "id": "sky",
+     "name": "Sky",
+     "role": "lead investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": "funding new asset-backed stablecoin projects"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "hsbc-tokenized-deposits-expansion-2025-11-18",
+   "date": "2025-11-18",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "HSBC",
+   "type": "Launch",
+   "region": "Global",
+   "title": "HSBC plans wider tokenised deposit service for the first half of 2026",
+   "summary": "HSBC is due to expand its tokenised deposit service, already offered in Hong Kong, Singapore and other markets, with the launch scheduled for the first half of 2026, PYMNTS reported.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/blockchain/2025/hsbc-makes-big-bets-on-blockchain-with-tokenization-expansion",
+   "related": [],
+   "parties": [
+    {
+     "id": "hsbc",
+     "name": "HSBC",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -3021,6 +4112,63 @@
    "added": "2026-10-11"
   },
   {
+   "id": "us-bank-stellar-pilot-2025-11-25",
+   "date": "2025-11-25",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "U.S. Bank",
+   "type": "Launch",
+   "region": "North America",
+   "title": "U.S. Bank pilots its own stablecoin issuance on Stellar",
+   "summary": "U.S. Bancorp, the fifth-largest US commercial bank, is testing custom stablecoin issuance on the Stellar network, including features such as asset freezing and transaction reversal that suit compliance needs.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/11/25/u-s-bank-tests-custom-stablecoin-issuance-on-stellar-network",
+   "related": [],
+   "parties": [
+    {
+     "id": "us-bank",
+     "name": "U.S. Bank",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "polygon-stableport-2025-11-26",
+   "date": "2025-11-26",
+   "date_precision": "day",
+   "company_id": "polygon-labs",
+   "company_name": "Polygon Labs",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Polygon partners with Stableport on B2B stablecoin payments",
+   "summary": "Polygon partnered with Stableport to run business-to-business stablecoin payment flows on Polygon PoS through Stableport's network of licensed virtual asset service providers.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Live Bitcoin News",
+   "source_url": "https://www.livebitcoinnews.com/polygon-news-polygon-joins-stableport-to-enable-scalable-b2b-payment-flows/",
+   "related": [],
+   "parties": [
+    {
+     "id": "stableport",
+     "name": "Stableport",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
    "id": "rain-fern-2025-12",
    "date": "2025-12-01",
    "date_precision": "month",
@@ -3054,6 +4202,73 @@
      "team"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "uk-property-digital-assets-act-2025-12-02",
+   "date": "2025-12-02",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "UK Parliament",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "UK law recognises crypto and stablecoins as personal property",
+   "summary": "The Property (Digital Assets etc) Act received Royal Assent, confirming digital assets can be owned, recovered after theft or fraud, and included in insolvency and estates.",
+   "amount_usd_m": null,
+   "regulator": "UK Parliament",
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2025/12/03/uk-passes-law-formally-recognizing-crypto-as-property",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "unlimit-stable-com-2025-12-02",
+   "date": "2025-12-02",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Unlimit",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Unlimit launches Stable.com, a clearing house for stablecoins",
+   "summary": "Payments firm Unlimit, founded in 2009, launched Stable.com, a non-custodial clearing house that combines swaps between major stablecoins with fiat off-ramps worldwide.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/12/02/unlimit-debuts-stable-com-a-decentralized-clearing-house-built-for-stablecoins",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "coinbase-bank-pilots-2025-12-03",
+   "date": "2025-12-03",
+   "date_precision": "day",
+   "company_id": "coinbase",
+   "company_name": "Coinbase",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "Coinbase says it runs stablecoin pilots with large US banks",
+   "summary": "Coinbase is running pilot programmes with some of the largest US banks covering stablecoins, crypto custody and trading, its chief executive said at the New York Times DealBook Summit.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/12/03/coinbase-is-partnering-with-major-u-s-banks-on-stablecoin-and-crypto-pilots",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "bank-tokens"
+   ],
+   "kind": "Bank adoption",
    "added": "2026-10-11"
   },
   {
@@ -3101,6 +4316,129 @@
    "added": "2026-10-11"
   },
   {
+   "id": "openpayd-altify-2025-12-03",
+   "date": "2025-12-03",
+   "date_precision": "day",
+   "company_id": "openpayd",
+   "company_name": "OpenPayd",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "OpenPayd powers Altify's euro, sterling and dollar on- and off-ramps",
+   "summary": "Tokenised private markets app Altify partnered with OpenPayd to handle fiat deposits and withdrawals in EUR, GBP and USD for its more than 80,000 users.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "Business Insider (Chainwire)",
+   "source_url": "https://markets.businessinsider.com/news/currencies/openpayd-to-power-altify-s-multi-currency-on-off-ramps-1035613081",
+   "related": [],
+   "parties": [
+    {
+     "id": "altify",
+     "name": "Altify",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "dubai-customs-binance-2025-12-07",
+   "date": "2025-12-07",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Dubai Customs",
+   "type": "Partnership",
+   "region": "Middle East",
+   "title": "Dubai Customs signs MoU with Binance on crypto payments for trade",
+   "summary": "Dubai Customs signed a memorandum of understanding with Binance FZE to bring Binance Pay and other crypto payment services into customs, trade and logistics, aiming to cut costs and clearance times for SMEs.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "CoinLaw",
+   "source_url": "https://coinlaw.io/dubai-binance-crypto-payments-customs-trade/",
+   "related": [],
+   "parties": [
+    {
+     "id": "dubai-customs",
+     "name": "Dubai Customs",
+     "role": "client"
+    },
+    {
+     "id": "binance",
+     "name": "Binance",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Enterprise integration",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "brale-canton-repo-2025-12-09",
+   "date": "2025-12-09",
+   "date_precision": "day",
+   "company_id": "brale",
+   "company_name": "Brale",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Brale's SBC stablecoin funds tokenised Treasury repo on Canton",
+   "summary": "Brale-issued stablecoin SBC served as a funding leg in coordinated tokenised US Treasury repo trades on the Canton Network, as more institutions joined the working group behind them.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Brale",
+   "source_url": "https://brale.xyz/blog/brale-powers-onchain-us-treasury-repo-transactions",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "payment-chains"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "tempo-public-testnet-2025-12-09",
+   "date": "2025-12-09",
+   "date_precision": "day",
+   "company_id": "tempo",
+   "company_name": "Tempo",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Tempo opens its public testnet with Mastercard, UBS and Kalshi",
+   "summary": "Tempo, the payments blockchain built by Stripe and Paradigm, launched its public testnet and added partners including Kalshi, Mastercard and UBS.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/tech/2025/12/09/stripe-backed-blockchain-tempo-starts-testnet-kalshi-mastercard-ubs-added-as-partners",
+   "related": [],
+   "parties": [
+    {
+     "id": "mastercard",
+     "name": "Mastercard",
+     "role": "partner"
+    },
+    {
+     "id": "ubs",
+     "name": "UBS",
+     "role": "partner"
+    },
+    {
+     "id": "kalshi",
+     "name": "Kalshi",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "stripe-valora-2025-12-10",
    "date": "2025-12-10",
    "date_precision": "day",
@@ -3133,6 +4471,64 @@
      "team"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "klarna-privy-2025-12-11",
+   "date": "2025-12-11",
+   "date_precision": "day",
+   "company_id": "privy",
+   "company_name": "Privy",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "Klarna works with Privy on crypto wallets for its users",
+   "summary": "Klarna partnered with Stripe-owned Privy to develop crypto wallet features for its users, building on the launch of KlarnaUSD, its dollar stablecoin.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2025/12/11/klarna-partners-with-privy-to-explore-crypto-wallet-use-within-its-ecosystem",
+   "related": [],
+   "parties": [
+    {
+     "id": "klarna",
+     "name": "Klarna",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "youtube-pyusd-payouts-2025-12-12",
+   "date": "2025-12-12",
+   "date_precision": "day",
+   "company_id": "paypal",
+   "company_name": "PayPal",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "YouTube pays US creators in PYUSD through PayPal",
+   "summary": "YouTube began offering US creators payouts in PayPal's PYUSD stablecoin, with PayPal handling the crypto side so the platform does not touch it directly.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Crypto Briefing",
+   "source_url": "https://cryptobriefing.com/stablecoin-payouts-youtube-paypal/",
+   "related": [],
+   "parties": [
+    {
+     "id": "youtube",
+     "name": "YouTube",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
+   "kind": "Payouts and corridors",
    "added": "2026-10-11"
   },
   {
@@ -3169,6 +4565,61 @@
      "technology"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "paypal-utah-bank-2025-12-15",
+   "date": "2025-12-15",
+   "date_precision": "day",
+   "company_id": "paypal",
+   "company_name": "PayPal",
+   "type": "License",
+   "region": "North America",
+   "title": "PayPal applies for a Utah industrial bank licence",
+   "summary": "PayPal, the issuer of PYUSD, applied for a Utah industrial bank licence to create PayPal Bank, which would offer business lending and interest-bearing savings accounts.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2025/12/15/paypal-issuer-of-pyusd-applies-for-utah-industrial-bank-license",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "exodus-moonpay-stablecoin-2025-12-16",
+   "date": "2025-12-16",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Exodus",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Exodus plans a dollar stablecoin issued with MoonPay",
+   "summary": "Listed crypto wallet firm Exodus said it will launch a fully reserved dollar stablecoin with MoonPay to power self-custodial payments in its wallet app.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://coindesk.com/business/2025/12/16/exodus-joins-stablecoin-race-with-moonpay-backed-digital-dollar",
+   "related": [],
+   "parties": [
+    {
+     "id": "exodus",
+     "name": "Exodus",
+     "role": "partner"
+    },
+    {
+     "id": "moonpay",
+     "name": "MoonPay",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -3292,6 +4743,85 @@
     "gains": [
      "clients"
     ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "shift4-stablecoin-settlement-2025-12-22",
+   "date": "2025-12-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Shift4",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Shift4 launches stablecoin settlement for merchants worldwide",
+   "summary": "Payments processor Shift4 launched a global stablecoin settlement platform that lets merchants receive their funds in stablecoins at any time, faster than through banking rails.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Shift4",
+   "source_url": "https://investors.shift4.com/news-events/press-releases/detail/288/shift4-launches-global-stablecoin-settlement-platform-unlocking-faster-payments-for-merchants",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "checkout"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "stanchart-tokenized-deposits-ant-2025-12-22",
+   "date": "2025-12-22",
+   "date_precision": "day",
+   "company_id": "standard-chartered",
+   "company_name": "Standard Chartered",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Standard Chartered launches tokenised deposits with Ant International",
+   "summary": "Standard Chartered launched a tokenised deposit service in Singapore dollars and US dollars for 24/7 treasury management, with Ant International as its first client.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Singapore",
+   "source_name": "Blockhead",
+   "source_url": "https://www.blockhead.co/2025/12/22/standard-chartered-launches-tokenized-deposit-solution-with-ant-international-as-first-client/",
+   "related": [],
+   "parties": [
+    {
+     "id": "ant-international",
+     "name": "Ant International",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "erebor-350m-2025-12-23",
+   "date": "2025-12-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Erebor",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Bank start-up Erebor raises $350m at $4.35bn valuation",
+   "summary": "Erebor, the Columbus-based digital bank co-founded by Palmer Luckey that calls itself stablecoin-native, closed a $350m round valuing it at $4.35bn, Axios reported, weeks after conditional OCC approval.",
+   "amount_usd_m": 350,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Ohio Tech News",
+   "source_url": "https://www.ohiotechnews.com/erebor-hits-4b-valuation-report/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "capital",
+    "bank-tokens"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": 4350,
+    "use_of_funds": "building a bank for technology, AI and defence companies"
    },
    "added": "2026-10-11"
   },
@@ -3434,6 +4964,119 @@
    "added": "2026-10-11"
   },
   {
+   "id": "world-liberty-trust-application-2026-01-07",
+   "date": "2026-01-07",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "World Liberty Financial",
+   "type": "License",
+   "region": "North America",
+   "title": "World Liberty Financial applies to the OCC for a trust bank",
+   "summary": "World Liberty Financial applied to the OCC to launch World Liberty Trust Company, a national trust bank that would issue its USD1 stablecoin directly.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/01/07/trump-linked-world-liberty-financial-applies-for-federal-bank-charter",
+   "related": [],
+   "parties": [
+    {
+     "id": "world-liberty-financial",
+     "name": "World Liberty Financial",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bvnk-direct-sepa-2026-01-08",
+   "date": "2026-01-08",
+   "date_precision": "day",
+   "company_id": "bvnk",
+   "company_name": "BVNK",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "BVNK wins direct SEPA access for instant euro payments",
+   "summary": "BVNK became a direct participant in SEPA through the Bank of Lithuania's CENTROlink, with its own accounts on SEPA Credit Transfer and SEPA Instant, so it can offer euro and stablecoin payments 24/7 without partner banks.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Lithuania",
+   "source_name": "BVNK",
+   "source_url": "https://bvnk.com/blog/bvnk-secures-direct-sepa-access",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "business-payments",
+    "non-dollar"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "franklin-templeton-reserve-fund-2026-01-13",
+   "date": "2026-01-13",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Franklin Templeton",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Franklin Templeton adapts a money market fund for stablecoin reserves",
+   "summary": "Franklin Templeton modified its institutional LUIXX money market fund to hold short-term Treasuries and meet stablecoin reserve standards, and gave its DIGXX fund an on-chain share class.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/01/13/franklin-templeton-turns-money-market-fund-into-stablecoin-reserve-vehicle",
+   "related": [],
+   "parties": [
+    {
+     "id": "franklin-templeton",
+     "name": "Franklin Templeton",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "ingenico-walletconnect-2026-01-13",
+   "date": "2026-01-13",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Ingenico",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "Ingenico brings stablecoin payments to physical checkouts",
+   "summary": "Ingenico, the payment terminal maker, partnered with WalletConnect Pay so merchants can accept supported stablecoins directly at checkout.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "WalletConnect",
+   "source_url": "https://walletconnect.com/blog/ingenico-launcheswith-walletconnect-pay",
+   "related": [],
+   "parties": [
+    {
+     "id": "ingenico",
+     "name": "Ingenico",
+     "role": "partner"
+    },
+    {
+     "id": "walletconnect",
+     "name": "WalletConnect",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "checkout"
+   ],
+   "kind": "Merchant acceptance",
+   "added": "2026-10-11"
+  },
+  {
    "id": "polygon-coinme-sequence-2026-01-13",
    "date": "2026-01-13",
    "date_precision": "day",
@@ -3526,6 +5169,95 @@
    "added": "2026-10-11"
   },
   {
+   "id": "zerohash-gusto-2026-01-16",
+   "date": "2026-01-16",
+   "date_precision": "day",
+   "company_id": "zerohash",
+   "company_name": "zerohash",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "Gusto taps zerohash for stablecoin payouts to workers abroad",
+   "summary": "Payroll and HR platform Gusto partnered with zerohash to offer workers outside the US near-instant payouts in stablecoins, to custodial or self-custodial wallets.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/01/16/hr-services-provider-gusto-taps-zerohash-to-speed-up-global-payouts-with-stablecoins",
+   "related": [],
+   "parties": [
+    {
+     "id": "gusto",
+     "name": "Gusto",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Payouts and corridors",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "hifi-wspn-2026-01-19",
+   "date": "2026-01-19",
+   "date_precision": "day",
+   "company_id": "hifi",
+   "company_name": "HIFI",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "WSPN partners with HIFI on stablecoin-fiat conversion",
+   "summary": "Worldwide Stablecoin Payment Network (WSPN) partnered with licensed payments infrastructure provider HIFI so institutional clients can convert between stablecoins and fiat for cross-border payments.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/wspn-partners-with-hifi-to-enable-seamless-cross-border-stablecoin-fiat-conversion-for-institutional-clients-302664961.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "wspn",
+     "name": "WSPN",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "qivalis-bbva-2026-02-04",
+   "date": "2026-02-04",
+   "date_precision": "day",
+   "company_id": "qivalis",
+   "company_name": "Qivalis",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "BBVA joins the Qivalis bank consortium for a euro stablecoin",
+   "summary": "BBVA joined Qivalis, the banking consortium developing a regulated euro stablecoin for faster, cheaper payments and the settlement of digital assets.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "BBVA",
+   "source_url": "https://www.bbva.com/en/innovation/bbva-joins-banking-consortium-to-issue-european-stablecoin/",
+   "related": [],
+   "parties": [
+    {
+     "id": "bbva",
+     "name": "BBVA",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar",
+    "mica"
+   ],
+   "kind": "Network or consortium",
+   "added": "2026-10-11"
+  },
+  {
    "id": "superset-seed-2026-02-11",
    "date": "2026-02-11",
    "date_precision": "day",
@@ -3565,6 +5297,270 @@
    "added": "2026-10-11"
   },
   {
+   "id": "agant-fca-registration-2026-02-12",
+   "date": "2026-02-12",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Agant",
+   "type": "License",
+   "region": "Europe",
+   "title": "Agant registers with the FCA ahead of GBPA sterling stablecoin",
+   "summary": "Stablecoin issuer Agant won FCA registration as a cryptoasset business under money laundering rules, clearing the way to issue GBPA, a fully backed sterling stablecoin for institutional use.",
+   "amount_usd_m": null,
+   "regulator": "FCA",
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/02/12/agant-registers-with-u-k-fca-ahead-of-british-pound-stablecoin-debut",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules",
+    "non-dollar"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "modern-treasury-stablecoin-psp-2026-02-18",
+   "date": "2026-02-18",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Modern Treasury",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Modern Treasury adds stablecoin settlement to its payments platform",
+   "summary": "Modern Treasury launched a payments platform that settles in USDG, USDP and USDC alongside ACH, wires and real-time rails, after buying Beam and partnering with Paxos; USDT is to follow.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Cointelegraph",
+   "source_url": "https://cointelegraph.com/news/modern-treasury-integrates-stablecoin-settlement-alongside-ach-and-wires",
+   "related": [],
+   "parties": [
+    {
+     "id": "modern-treasury",
+     "name": "Modern Treasury",
+     "role": "partner"
+    },
+    {
+     "id": "paxos",
+     "name": "Paxos",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "world-liberty-apex-2026-02-18",
+   "date": "2026-02-18",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "World Liberty Financial",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "World Liberty brings USD1 into Apex Group's fund services",
+   "summary": "World Liberty Financial and Apex Group, a fund services firm in 52 countries, agreed to integrate the USD1 stablecoin for subscriptions, distributions and redemptions of tokenised assets.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Crypto Economy",
+   "source_url": "https://crypto-economy.com/world-liberty-financial-taps-apex-group-in-strategic-push-with-3-5t-global-giant/",
+   "related": [],
+   "parties": [
+    {
+     "id": "world-liberty-financial",
+     "name": "World Liberty Financial",
+     "role": "issuer"
+    },
+    {
+     "id": "apex-group",
+     "name": "Apex Group",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Enterprise integration",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "sg-forge-xrpl-2026-02-19",
+   "date": "2026-02-19",
+   "date_precision": "day",
+   "company_id": "sg-forge",
+   "company_name": "SG-FORGE",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "SG-FORGE brings its euro stablecoin to the XRP Ledger",
+   "summary": "Société Générale's digital assets unit launched EUR CoinVertible on the XRP Ledger, its third blockchain after Ethereum and Solana, with about €65.8m in circulation.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "France",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/tech/2026/02/19/socgen-taps-xrp-ledger-for-euro-stablecoin-distribution",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "non-dollar",
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "meta-stablecoin-plans-2026-02-24",
+   "date": "2026-02-24",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Meta",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Meta plans stablecoin payments in the second half of 2026",
+   "summary": "Meta sent a request for proposals to third parties to help run stablecoin payments and plans a new wallet, with a launch aimed at the second half of the year, sources told CoinDesk.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/02/24/mark-zuckerberg-s-meta-is-planning-stablecoin-comeback-in-the-second-half-of-this-year",
+   "related": [],
+   "parties": [
+    {
+     "id": "meta",
+     "name": "Meta",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "moonpay-agents-2026-02-24",
+   "date": "2026-02-24",
+   "date_precision": "day",
+   "company_id": "moonpay",
+   "company_name": "MoonPay",
+   "type": "Launch",
+   "region": "Global",
+   "title": "MoonPay launches MoonPay Agents, money tools for AI agents",
+   "summary": "MoonPay launched MoonPay Agents, non-custodial infrastructure that lets AI agents fund themselves, pay and off-ramp back to fiat.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/02/24/moonpay-unveils-ai-onramp-for-brave-new-agent-economy",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "agent-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "payoneer-occ-application-2026-02-24",
+   "date": "2026-02-24",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Payoneer",
+   "type": "License",
+   "region": "North America",
+   "title": "Payoneer applies to the OCC to open a stablecoin-focused bank",
+   "summary": "Cross-border payments firm Payoneer applied to the OCC to open a digital bank, calling it the next step in bringing stablecoin capabilities to its nearly 2 million customers.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/cryptocurrency/2026/payoneer-aims-launch-stablecoin-focused-digital-bank/",
+   "related": [],
+   "parties": [
+    {
+     "id": "payoneer",
+     "name": "Payoneer",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "us-rules",
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "redotpay-ipo-plan-2026-02-24",
+   "date": "2026-02-24",
+   "date_precision": "day",
+   "company_id": "redotpay",
+   "company_name": "RedotPay",
+   "type": "Funding",
+   "region": "Global",
+   "title": "RedotPay said to prepare a New York IPO of over $1bn",
+   "summary": "Hong Kong-based stablecoin payments firm RedotPay is preparing a US listing that could raise more than $1bn, and has hired JPMorgan, Goldman Sachs and Jefferies, Bloomberg reported. No deal has been announced.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Hong Kong",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/02/24/hong-kong-s-redotpay-said-to-plan-blockbuster-usd1-billion-ipo-in-new-york-bloomberg",
+   "related": [],
+   "parties": [
+    {
+     "id": "jpmorgan",
+     "name": "JPMorgan",
+     "role": "partner"
+    },
+    {
+     "id": "goldman-sachs",
+     "name": "Goldman Sachs",
+     "role": "partner"
+    },
+    {
+     "id": "jefferies",
+     "name": "Jefferies",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "IPO",
+    "valuation_usd_m": null,
+    "use_of_funds": "a US initial public offering"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "stable-sea-dlocal-2026-02-24",
+   "date": "2026-02-24",
+   "date_precision": "day",
+   "company_id": "stable-sea",
+   "company_name": "Stable Sea",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Stable Sea and dLocal partner on B2B stablecoin payments",
+   "summary": "Stable Sea partnered with dLocal to use dLocal's local payment rails in more than 40 countries for its business stablecoin payouts and settlement.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/stable-sea-and-dlocal-join-forces-to-power-low-cost-b2b-cross-border-stablecoin-payments-302695181.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "dlocal",
+     "name": "dLocal",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Payouts and corridors",
+   "added": "2026-10-11"
+  },
+  {
    "id": "stripe-paypal-talks-2026-02-24",
    "date": "2026-02-24",
    "date_precision": "day",
@@ -3595,6 +5591,63 @@
     "rationale": "combine two payment firms that both use stablecoins",
     "gains": []
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fca-stablecoin-sandbox-2026-02-25",
+   "date": "2026-02-25",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "FCA",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "FCA picks four firms to test stablecoins in its sandbox",
+   "summary": "The FCA chose Monee Financial Technologies, ReStabilise, Revolut and VVTX from 20 applicants to test stablecoin services against its proposed rules in the Regulatory Sandbox.",
+   "amount_usd_m": null,
+   "regulator": "FCA",
+   "jurisdiction": "United Kingdom",
+   "source_name": "FCA",
+   "source_url": "https://www.fca.org.uk/news/press-releases/4-firms-selected-test-stablecoin-regulatory-sandbox",
+   "related": [],
+   "parties": [
+    {
+     "id": "revolut",
+     "name": "Revolut",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "canada-uk-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "crossmint-western-union-2026-03-04",
+   "date": "2026-03-04",
+   "date_precision": "day",
+   "company_id": "crossmint",
+   "company_name": "Crossmint",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Crossmint supports Western Union's USDPT stablecoin on Solana",
+   "summary": "Crossmint partnered with Western Union to support USDPT, its new dollar stablecoin on Solana, and the Digital Asset Network that links digital dollars to over 360,000 cash payout points.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Crossmint",
+   "source_url": "https://blog.crossmint.com/crossmint-western-union-support-usdpt-stablecoin-and-digital-asset-network-on-solana/",
+   "related": [],
+   "parties": [
+    {
+     "id": "western-union",
+     "name": "Western Union",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Infrastructure supply",
    "added": "2026-10-11"
   },
   {
@@ -3629,6 +5682,28 @@
     "valuation_usd_m": null,
     "use_of_funds": "USDT flows inside regulated payment ecosystems"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "squarefi-launch-2026-03-10",
+   "date": "2026-03-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "SquareFi",
+   "type": "Launch",
+   "region": "Global",
+   "title": "SquareFi emerges with stablecoin infrastructure for B2B payments",
+   "summary": "SquareFi came out of stealth with stablecoin-based infrastructure for global business payments, already serving fintechs and platforms with $250m in transaction volume.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/news/b2b-payments/2026/squarefi-launches-stablecoin-infrastructure-for-cross-border-b2b-payments/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "business-payments"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -3668,6 +5743,40 @@
    "added": "2026-10-11"
   },
   {
+   "id": "thunes-swift-stablecoin-wallets-2026-03-17",
+   "date": "2026-03-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Thunes",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Thunes lets 11,500 Swift banks pay into stablecoin wallets",
+   "summary": "Thunes opened its Pay-to-Stablecoin-Wallets service to the 11,500 institutions on Swift, so banks can send real-time payments to over 500 million stablecoin wallets with no new integration.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Thunes",
+   "source_url": "https://www.thunes.com/news/thunes-brings-stablecoin-payouts-to-11500-banks-via-swift-connectivity-bridging-traditional-finance-and-digital-assets",
+   "related": [],
+   "parties": [
+    {
+     "id": "thunes",
+     "name": "Thunes",
+     "role": "partner"
+    },
+    {
+     "id": "swift",
+     "name": "Swift",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments",
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "transfi-series-a-2026-03-19",
    "date": "2026-03-19",
    "date_precision": "day",
@@ -3699,6 +5808,109 @@
     "valuation_usd_m": null,
     "use_of_funds": "scaling stablecoin payments in emerging markets"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "clarity-rewards-text-2026-03-23",
+   "date": "2026-03-23",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "US Senate",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "CLARITY Act draft bars rewards on stablecoin balances",
+   "summary": "Draft text of the Senate's crypto market structure bill would not allow rewards on stablecoin balances or anything resembling a bank deposit, leaving activity-based rewards uncertain, CoinDesk reported.",
+   "amount_usd_m": null,
+   "regulator": "US Senate",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/03/23/stablecoin-yield-in-crypto-clarity-act-won-t-allow-rewards-on-balances-latest-text-says",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "moonpay-open-wallet-standard-2026-03-23",
+   "date": "2026-03-23",
+   "date_precision": "day",
+   "company_id": "moonpay",
+   "company_name": "MoonPay",
+   "type": "Launch",
+   "region": "Global",
+   "title": "MoonPay open-sources a wallet standard for AI agents",
+   "summary": "MoonPay launched the Open Wallet Standard, an open-source standard for AI agents to hold and move money, with contributions from PayPal, Ripple, Circle, Polygon and others.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/moonpay-open-sources-the-wallet-layer-for-the-agent-economy-302722116.html",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "agent-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "stablecorp-deloitte-2026-03-23",
+   "date": "2026-03-23",
+   "date_precision": "day",
+   "company_id": "stablecorp",
+   "company_name": "Stablecorp",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "Deloitte Canada and Stablecorp build QCAD rails for banks",
+   "summary": "Deloitte Canada and Stablecorp formed an alliance to deliver QCAD-based stablecoin infrastructure to Canadian financial institutions.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Canada",
+   "source_name": "Newswire.ca",
+   "source_url": "https://www.newswire.ca/news-releases/deloitte-canada-and-stablecorp-announce-strategic-collaboration-on-industry-first-stablecoin-infrastructure-for-canadian-financial-institutions-860470891.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "deloitte",
+     "name": "Deloitte Canada",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "bank-tokens"
+   ],
+   "kind": "Bank adoption",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "monument-bank-tokenized-deposits-2026-03-25",
+   "date": "2026-03-25",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Monument Bank",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "Monument Bank to tokenise up to £250m of retail deposits",
+   "summary": "UK challenger Monument Bank plans to tokenise up to £250m of retail deposits on the Midnight blockchain, keeping them interest-bearing, fully backed and covered by the FSCS.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/03/25/monument-bank-to-tokenized-250-million-pounds-of-retail-deposits-in-uk-first",
+   "related": [],
+   "parties": [
+    {
+     "id": "monument-bank",
+     "name": "Monument Bank",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -3823,6 +6035,36 @@
     "valuation_usd_m": null,
     "use_of_funds": null
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "crossmint-wirex-2026-03-30",
+   "date": "2026-03-30",
+   "date_precision": "day",
+   "company_id": "crossmint",
+   "company_name": "Crossmint",
+   "type": "Partnership",
+   "region": "Europe",
+   "title": "Wirex and Crossmint make stablecoins spendable by card",
+   "summary": "Wirex expanded its work with Crossmint: Wirex handles card issuance, bank accounts and payment rails while Crossmint provides wallets and stablecoin orchestration.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Digital Transactions",
+   "source_url": "https://www.digitaltransactions.net/wirex-teams-with-crossmint-to-enable-easier-spending-via-stablecoins/",
+   "related": [],
+   "parties": [
+    {
+     "id": "wirex",
+     "name": "Wirex",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks",
+    "apps-and-wallets"
+   ],
+   "kind": "Card programme",
    "added": "2026-10-11"
   },
   {
@@ -3979,6 +6221,202 @@
    "added": "2026-10-11"
   },
   {
+   "id": "merge-named-eur-ibans-2026-04",
+   "date": "2026-04",
+   "date_precision": "month",
+   "company_id": null,
+   "company_name": "Merge",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "Merge launches named euro IBANs for fiat-stablecoin payments",
+   "summary": "Merge, a regulated fintech backed by Octopus Ventures and Coinbase, launched named EUR IBANs so businesses can give their users dedicated euro accounts for collection, reconciliation and payouts.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "Financial IT",
+   "source_url": "https://financialit.net/news/cryptocurrencies/merge-launches-named-euro-ibans-power-scalable-fiat-stablecoin-payment#:~:text=Merge%2C%20a%20regulated%20fintech%20backed,its%20API%2Dfirst%20payments%20infrastructure.",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "business-payments",
+    "non-dollar"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "rain-episode-six-2026-04-01",
+   "date": "2026-04-01",
+   "date_precision": "day",
+   "company_id": "rain",
+   "company_name": "Rain",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Rain and Episode Six expand stablecoin cards in Asia-Pacific",
+   "summary": "Rain partnered with card processor Episode Six to power stablecoin credit, debit and prepaid card programmes for enterprise clients across Asia-Pacific.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "FintechLaunches",
+   "source_url": "https://www.fintechlaunches.com/announcements/rain-episode-six-partnership-stablecoin-card-programs-asia-pacific-expansion/",
+   "related": [],
+   "parties": [
+    {
+     "id": "episode-six",
+     "name": "Episode Six",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ],
+   "kind": "Card programme",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "deutsche-borse-kraken-2026-04-14",
+   "date": "2026-04-14",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Kraken (Payward)",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Deutsche Börse buys 1.5% of Kraken for $200m",
+   "summary": "Deutsche Börse took a 1.5% stake in Kraken for $200m, deepening a partnership begun in December to bridge traditional and digital markets for institutions in Europe.",
+   "amount_usd_m": 200,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/04/14/deutsche-boerse-takes-1-5-stake-in-crypto-exchange-kraken-for-usd200-million",
+   "related": [],
+   "parties": [
+    {
+     "id": "deutsche-borse",
+     "name": "Deutsche Börse",
+     "role": "lead investor"
+    },
+    {
+     "id": "kraken",
+     "name": "Kraken",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": "a strategic stake alongside the two firms' partnership"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "etoro-zengo-2026-04-15",
+   "date": "2026-04-15",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "eToro",
+   "type": "M&A",
+   "region": "Middle East",
+   "title": "eToro agrees to buy self-custody wallet Zengo for about $70m",
+   "summary": "Trading platform eToro agreed to acquire crypto wallet Zengo in a deal estimated at around $70m, moving into self-custody with wallet technology meant to protect users' assets.",
+   "amount_usd_m": 70,
+   "regulator": null,
+   "jurisdiction": "Israel",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/04/15/etoro-to-acquire-crypto-wallet-zengo-in-usd70-million-deal",
+   "related": [],
+   "parties": [
+    {
+     "id": "etoro",
+     "name": "eToro",
+     "role": "buyer"
+    },
+    {
+     "id": "zengo",
+     "name": "Zengo",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "consolidation",
+    "apps-and-wallets"
+   ],
+   "deal": {
+    "status": "announced",
+    "rationale": "self-custodial wallet technology for its users",
+    "gains": [
+     "technology",
+     "clients"
+    ]
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "sg-forge-consensys-metamask-2026-04-15",
+   "date": "2026-04-15",
+   "date_precision": "day",
+   "company_id": "sg-forge",
+   "company_name": "SG-FORGE",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "SG-FORGE brings its USD CoinVertible stablecoin to MetaMask",
+   "summary": "Société Générale-FORGE partnered with Consensys to make its USD CoinVertible stablecoin available to MetaMask's millions of users.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "SG-FORGE",
+   "source_url": "https://www.sgforge.com/sgf-partners-consensys-usdcv-metamask/",
+   "related": [],
+   "parties": [
+    {
+     "id": "consensys",
+     "name": "Consensys",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets",
+    "bank-tokens"
+   ],
+   "kind": "Consumer distribution",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "moneygram-nala-2026-04-17",
+   "date": "2026-04-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "MoneyGram",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "MoneyGram and NALA partner on stablecoin-settled payouts",
+   "summary": "MoneyGram and NALA, a stablecoin payments company, partnered to power cross-border payouts into emerging markets with stablecoin settlement.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "NALA",
+   "source_url": "https://www.nala.com/blog/moneygram-and-nala-partner-for-stablecoin-settlement-and-modernized-payouts-across-emerging-markets",
+   "related": [],
+   "parties": [
+    {
+     "id": "moneygram",
+     "name": "MoneyGram",
+     "role": "partner"
+    },
+    {
+     "id": "nala",
+     "name": "NALA",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Payouts and corridors",
+   "added": "2026-10-11"
+  },
+  {
    "id": "kaio-tether-2026-04-20",
    "date": "2026-04-20",
    "date_precision": "day",
@@ -4047,6 +6485,180 @@
    "added": "2026-10-11"
   },
   {
+   "id": "kraken-moneygram-2026-05-05",
+   "date": "2026-05-05",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Kraken (Payward)",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Kraken and MoneyGram link crypto to cash at retail locations",
+   "summary": "Kraken partnered with MoneyGram so users can convert between crypto and cash through MoneyGram's network, while its co-chief executive said the exchange is '80% ready' to go public.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/05/05/kraken-eyes-ipo-as-it-partners-with-moneygram-to-bridge-crypto-to-cash-gap",
+   "related": [],
+   "parties": [
+    {
+     "id": "kraken",
+     "name": "Kraken",
+     "role": "partner"
+    },
+    {
+     "id": "moneygram",
+     "name": "MoneyGram",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
+   "kind": "Consumer distribution",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "slash-global-cards-2026-05-05",
+   "date": "2026-05-05",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Slash",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Slash launches stablecoin-funded Visa cards for firms abroad",
+   "summary": "Slash Financial launched Global Cards, Visa cards for international businesses without a US entity, running on Rain's infrastructure and Slash's USDSL stablecoin.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "The Paypers",
+   "source_url": "https://thepaypers.com/fintech/news/slash-financial-rolls-out-global-cards-for-international-businesses",
+   "related": [],
+   "parties": [
+    {
+     "id": "rain",
+     "name": "Rain",
+     "role": "supplier"
+    },
+    {
+     "id": "visa",
+     "name": "Visa",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks",
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "solana-google-cloud-pay-sh-2026-05-05",
+   "date": "2026-05-05",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Solana Foundation",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Solana and Google Cloud let AI agents pay for APIs in stablecoins",
+   "summary": "The Solana Foundation and Google Cloud launched Pay.sh, so AI agents can find and pay per request in stablecoins for Google Cloud services such as Gemini and BigQuery and over 50 community APIs.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Decrypt",
+   "source_url": "https://decrypt.co/366876/solana-google-cloud-launch-stablecoin-payments-service-ai-agents",
+   "related": [],
+   "parties": [
+    {
+     "id": "solana-foundation",
+     "name": "Solana Foundation",
+     "role": "partner"
+    },
+    {
+     "id": "google-cloud",
+     "name": "Google Cloud",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "agent-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bny-abu-dhabi-custody-2026-05-06",
+   "date": "2026-05-06",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "BNY",
+   "type": "Launch",
+   "region": "Middle East",
+   "title": "BNY expands digital asset custody to Abu Dhabi",
+   "summary": "BNY, the world's largest custodian, is bringing its digital asset custody business to Abu Dhabi through local partners Finstreet and the ADI Foundation, starting with bitcoin and ether.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/05/07/bny-world-s-largest-custody-bank-expands-crypto-services-in-abu-dhabi",
+   "related": [],
+   "parties": [
+    {
+     "id": "bny",
+     "name": "BNY",
+     "role": "custodian"
+    },
+    {
+     "id": "finstreet",
+     "name": "Finstreet",
+     "role": "partner"
+    },
+    {
+     "id": "adi-foundation",
+     "name": "ADI Foundation",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bvnk-corpay-2026-05-06",
+   "date": "2026-05-06",
+   "date_precision": "day",
+   "company_id": "bvnk",
+   "company_name": "BVNK",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Corpay adds stablecoin settlement through BVNK and Kinexys",
+   "summary": "Corpay signed agreements with J.P. Morgan's Kinexys and BVNK to add stablecoin and tokenised fiat settlement to its cross-border payments platform.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "The Paypers",
+   "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/corpay-adds-blockchain-settlement-rails-via-jp-morgan-and-bvnk",
+   "related": [],
+   "parties": [
+    {
+     "id": "corpay",
+     "name": "Corpay",
+     "role": "client"
+    },
+    {
+     "id": "jpmorgan",
+     "name": "J.P. Morgan (Kinexys)",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "business-payments",
+    "bank-tokens"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
    "id": "opentrade-17m-2026-05-06",
    "date": "2026-05-06",
    "date_precision": "day",
@@ -4100,6 +6712,44 @@
    "added": "2026-10-11"
   },
   {
+   "id": "aws-agentcore-payments-2026-05-07",
+   "date": "2026-05-07",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Amazon Web Services",
+   "type": "Launch",
+   "region": "Global",
+   "title": "AWS launches stablecoin payments for AI agents with Coinbase, Stripe",
+   "summary": "Amazon Web Services launched Bedrock AgentCore Payments, letting AI agents buy APIs, web content and online services with stablecoins, built with Coinbase and Stripe; bookings and merchant payments are to follow.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/05/07/amazon-rolls-out-ai-agent-stablecoin-payments-platform-with-coinbase-and-stripe",
+   "related": [],
+   "parties": [
+    {
+     "id": "amazon",
+     "name": "Amazon Web Services",
+     "role": "partner"
+    },
+    {
+     "id": "coinbase",
+     "name": "Coinbase",
+     "role": "partner"
+    },
+    {
+     "id": "stripe",
+     "name": "Stripe",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "agent-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "kraken-reap-2026-05-07",
    "date": "2026-05-07",
    "date_precision": "day",
@@ -4143,6 +6793,34 @@
    "added": "2026-10-11"
   },
   {
+   "id": "payward-occ-application-2026-05-08",
+   "date": "2026-05-08",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Kraken (Payward)",
+   "type": "License",
+   "region": "North America",
+   "title": "Kraken's parent applies for an OCC national trust charter",
+   "summary": "Payward applied to the OCC for a federally regulated trust company offering crypto custody, adding to the group's Wyoming bank charter and Fed master account.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/05/08/kraken-parent-goes-for-the-occ-charter-in-big-to-become-a-federal-crypto-bank",
+   "related": [],
+   "parties": [
+    {
+     "id": "kraken",
+     "name": "Payward",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "augustus-40m-2026-05-11",
    "date": "2026-05-11",
    "date_precision": "day",
@@ -4180,6 +6858,28 @@
     "valuation_usd_m": null,
     "use_of_funds": "a US clearing bank for dollar payments"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "clarity-act-senate-text-2026-05-11",
+   "date": "2026-05-11",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "US Senate",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "Senate Banking Committee unveils CLARITY Act text before markup",
+   "summary": "The Senate Banking Committee released the latest text of the CLARITY Act, the crypto market structure bill, ahead of its committee vote.",
+   "amount_usd_m": null,
+   "regulator": "US Senate",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/05/11/clarity-act-in-the-flesh-unveiled-by-u-s-senate-banking-committee-before-hearing",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4259,6 +6959,34 @@
    "added": "2026-10-11"
   },
   {
+   "id": "modern-treasury-global-usd-2026-05-18",
+   "date": "2026-05-18",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Modern Treasury",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Modern Treasury launches global USD accounts with stablecoin support",
+   "summary": "Modern Treasury launched Global USD Accounts so platforms can give users in more than 90 countries named US dollar accounts with ACH, wire, RTP, FedNow and stablecoin support.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Modern Treasury",
+   "source_url": "https://www.moderntreasury.com/newsroom/press-releases/modern-treasury-launches-global-usd-accounts-enabling-platforms-to-serve-users-in-90-countries?utm_campaign=42247835-FY-27-organic-social&utm_source=twitter&utm_medium=social&utm_term=press-release&utm_content=modern-treasury-launches-global-usd-accounts-enabling-platforms-to-serve-users-in-90-countries-press-release",
+   "related": [],
+   "parties": [
+    {
+     "id": "modern-treasury",
+     "name": "Modern Treasury",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "aryze-pre-series-a-2026-05-19",
    "date": "2026-05-19",
    "date_precision": "day",
@@ -4284,6 +7012,64 @@
     "valuation_usd_m": null,
     "use_of_funds": "its platform for licensed stablecoin and tokenised asset issuers"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "wego-triple-a-2026-05-19",
+   "date": "2026-05-19",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Wego",
+   "type": "Partnership",
+   "region": "Middle East",
+   "title": "Dubai's Wego accepts stablecoins for flights through Triple-A",
+   "summary": "Travel platform Wego, based in Dubai, began accepting stablecoins and other crypto for flight and travel bookings through Triple-A, while settling in local currency.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "Triple-A",
+   "source_url": "https://www.triple-a.io/newsroom/wego-stablecoin-payments-triple-a-travel-bookings",
+   "related": [],
+   "parties": [
+    {
+     "id": "wego",
+     "name": "Wego",
+     "role": "client"
+    },
+    {
+     "id": "triple-a",
+     "name": "Triple-A",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "checkout"
+   ],
+   "kind": "Merchant acceptance",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "allunity-sekau-2026-05-20",
+   "date": "2026-05-20",
+   "date_precision": "day",
+   "company_id": "allunity",
+   "company_name": "AllUnity",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "AllUnity plans a Swedish krona stablecoin and agent payments",
+   "summary": "AllUnity, backed by DWS and Galaxy, targets a June launch for SEKAU, a Swedish krona stablecoin, and is moving into AI agent payments.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Germany",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/05/20/germany-s-allunity-plans-swedish-krona-stablecoin-pushes-into-ai-agentic-payments",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "non-dollar",
+    "agent-payments",
+    "mica"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4341,6 +7127,240 @@
    "added": "2026-10-11"
   },
   {
+   "id": "eu-mica-review-consultation-2026-05-20",
+   "date": "2026-05-20",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "European Commission",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "European Commission consults on whether MiCA is still fit for purpose",
+   "summary": "The European Commission opened a consultation on whether MiCA, enacted in 2023, needs updating as crypto markets and global rules change.",
+   "amount_usd_m": null,
+   "regulator": "European Commission",
+   "jurisdiction": "European Union",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/05/20/eu-opens-mica-consultation-to-review-if-crypto-framework-is-still-fit-for-purpose",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "tether-georgia-lari-2026-05-25",
+   "date": "2026-05-25",
+   "date_precision": "day",
+   "company_id": "tether",
+   "company_name": "Tether",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "Tether to launch an official Georgian lari stablecoin",
+   "summary": "Tether said it will launch a token representing the Georgian lari with government support, Reuters reported.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Georgia",
+   "source_name": "Yahoo Finance (Reuters)",
+   "source_url": "https://finance.yahoo.com/markets/crypto/articles/tether-says-launch-official-stablecoin-113126385.html",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "non-dollar"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "sofiusd-app-launch-2026-05-26",
+   "date": "2026-05-26",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "SoFi",
+   "type": "Launch",
+   "region": "North America",
+   "title": "SoFi brings its bank-issued SoFiUSD to 15 million members",
+   "summary": "SoFi launched SoFiUSD, a dollar stablecoin on Ethereum and Solana issued by a US national bank, letting its members trade and transfer it in the app, with yield to follow.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/05/27/sofi-brings-bank-issued-stablecoin-to-15-million-users-in-crypto-push",
+   "related": [],
+   "parties": [
+    {
+     "id": "sofi",
+     "name": "SoFi",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "apps-and-wallets"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "anchorage-falcon-fusd-2026-05-27",
+   "date": "2026-05-27",
+   "date_precision": "day",
+   "company_id": "anchorage-digital",
+   "company_name": "Anchorage Digital",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Anchorage issues Falcon's fUSD stablecoin with rewards on Ceffu",
+   "summary": "Falcon Finance launched fUSD, a GENIUS-ready stablecoin issued by Anchorage Digital Bank with monthly attestations, offering qualifying institutions rewards on Binance's Ceffu custody platform.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Falcon Finance",
+   "source_url": "https://falcon.finance/news/falcon-finance-and-anchorage-digital-bank-launch-fusd-a-genius-ready-stablecoin-with-rewards-on-ceffu",
+   "related": [],
+   "parties": [
+    {
+     "id": "falcon-finance",
+     "name": "Falcon Finance",
+     "role": "client"
+    },
+    {
+     "id": "ceffu",
+     "name": "Ceffu",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "cash-app-stablecoin-rollout-2026-05-27",
+   "date": "2026-05-27",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Block (Cash App)",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Cash App rolls out stablecoins to its nearly 60 million users",
+   "summary": "Block began a phased rollout of stablecoin features in Cash App, reaching 25% of users with all to follow within the week, CoinDesk reported.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/05/27/block-kicks-off-cash-app-s-phased-stablecoin-roll-out-to-its-nearly-60-million-users",
+   "related": [],
+   "parties": [
+    {
+     "id": "block",
+     "name": "Block",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fireblocks-flow-2026-06-02",
+   "date": "2026-06-02",
+   "date_precision": "day",
+   "company_id": "fireblocks",
+   "company_name": "Fireblocks",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Fireblocks launches Flow for stablecoin acceptance by PSPs",
+   "summary": "Fireblocks launched Flow, letting payment service providers and fintechs accept stablecoin payments with settlement and reconciliation built in; Flutterwave is a launch partner.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/fireblocks-launches-flow-stablecoin-acceptance-for-psps-and-fintechs-302788865.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "flutterwave",
+     "name": "Flutterwave",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "checkout"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "mastercard-stablecoin-settlement-2026-06-03",
+   "date": "2026-06-03",
+   "date_precision": "day",
+   "company_id": "mastercard",
+   "company_name": "Mastercard",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Mastercard adds USDC and PYUSD settlement plus weekend settlement",
+   "summary": "Mastercard will settle transactions in several regulated US dollar stablecoins, including USDC and PYUSD, alongside fiat, and plans weekend and holiday settlement.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/markets/2026/06/03/mastercard-expands-on-chain-settlement-in-bet-on-stablecoins-and-always-on-finance",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "cards-and-networks"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "coinbase-cardless-card-2026-06-09",
+   "date": "2026-06-09",
+   "date_precision": "day",
+   "company_id": "coinbase",
+   "company_name": "Coinbase",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Coinbase and Cardless launch a stablecoin-secured credit card",
+   "summary": "Coinbase and Cardless unveiled a credit card secured by stablecoins for customers who would not be approved for an unsecured card, extending their Coinbase-branded card partnership.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/06/09/coinbase-and-cardless-unveil-credit-card-backed-by-stablecoins",
+   "related": [],
+   "parties": [
+    {
+     "id": "cardless",
+     "name": "Cardless",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "nydfs-stablecoin-proposal-2026-06-10",
+   "date": "2026-06-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "NYDFS",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "New York proposes stablecoin rules built on the federal rulebook",
+   "summary": "NYDFS proposed new rules for dollar stablecoins that align its regime with the OCC's federal proposals, with a few tougher requirements, aiming to keep issuers chartered in New York.",
+   "amount_usd_m": null,
+   "regulator": "NYDFS",
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/new-york-moves-to-keep-its-stablecoin-issuers-while-leaning-on-federal-rulebook/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "flutterwave-ripple-2026-06-16",
    "date": "2026-06-16",
    "date_precision": "day",
@@ -4372,6 +7392,73 @@
     "valuation_usd_m": 3200,
     "use_of_funds": "stablecoin cross-border payments across Africa"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "us-agencies-stablecoin-cip-2026-06-18",
+   "date": "2026-06-18",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "US Treasury",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "US agencies propose customer ID rules for stablecoin issuers",
+   "summary": "The Federal Reserve, Treasury, OCC and FDIC proposed a GENIUS Act rule setting bank-style customer identification standards for stablecoin issuers, now open for comment.",
+   "amount_usd_m": null,
+   "regulator": "US Treasury",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/06/18/u-s-agencies-seek-stablecoin-customer-id-rules-akin-to-banks-in-new-genius-act-rule",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "anchorage-tokenized-deposits-2026-06-19",
+   "date": "2026-06-19",
+   "date_precision": "day",
+   "company_id": "anchorage-digital",
+   "company_name": "Anchorage Digital",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Anchorage launches a tokenised deposit platform for banks",
+   "summary": "Anchorage Digital launched a platform that lets banks offer 24/7 payments and settlement with tokenised deposits, while the funds stay in their existing deposit accounts.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/06/19/anchorage-aims-to-bring-banks-onchain-with-new-tokenized-deposit-platform",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "boe-holding-limits-dropped-2026-06-22",
+   "date": "2026-06-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Bank of England",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "Bank of England drops stablecoin holding limits for a £40bn cap",
+   "summary": "The Bank of England scrapped planned caps on individual and corporate stablecoin holdings in favour of a £40bn aggregate issuance limit and better yield terms for issuers, ahead of a 2027 launch.",
+   "amount_usd_m": null,
+   "regulator": "Bank of England",
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/06/22/bank-of-england-backs-down-on-strict-stablecoin-holding-limits-sets-usd50-billion-issuance-cap",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules",
+    "non-dollar"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4412,6 +7499,152 @@
    "added": "2026-10-11"
   },
   {
+   "id": "binance-eu-exit-2026-06-26",
+   "date": "2026-06-26",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Binance",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "Binance suspends EU services after withdrawing its MiCA application",
+   "summary": "A day after withdrawing its MiCA licence application in Greece, Binance told users across the EU it would suspend some services, having failed to secure authorisation before the transition period ended.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "European Union",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/06/26/binance-tells-eu-users-it-will-no-longer-provide-services-after-failing-to-secure-mica-license",
+   "related": [],
+   "parties": [
+    {
+     "id": "binance",
+     "name": "Binance",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "euroclear-socgen-usd-stablecoin-2026-06-26",
+   "date": "2026-06-26",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Euroclear",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "Euroclear and Société Générale test a dollar stablecoin for settlement",
+   "summary": "Euroclear and Société Générale are testing a US dollar stablecoin to settle tokenised commercial paper in European markets.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Fintech News Switzerland",
+   "source_url": "https://fintechnews.ch/blockchain_bitcoin/euroclear-societe-generale-stablecoin-settlement/84374/",
+   "related": [],
+   "parties": [
+    {
+     "id": "euroclear",
+     "name": "Euroclear",
+     "role": "partner"
+    },
+    {
+     "id": "societe-generale",
+     "name": "Société Générale",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bny-usdc-mint-burn-2026-06-29",
+   "date": "2026-06-29",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "BNY",
+   "type": "Launch",
+   "region": "North America",
+   "title": "BNY adds stablecoin minting, burning and custody, starting with USDC",
+   "summary": "BNY launched stablecoin mint, burn and custody for institutional clients, with Circle's USDC the first stablecoin on its digital asset custody platform.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/bny-adds-stablecoin-mint-and-burn-for-institutions-deepening-usdc-role/",
+   "related": [],
+   "parties": [
+    {
+     "id": "bny",
+     "name": "BNY",
+     "role": "custodian"
+    },
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fca-stablecoin-capital-2026-06-30",
+   "date": "2026-06-30",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "FCA",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "FCA cuts stablecoin issuer capital requirement to 1%",
+   "summary": "The FCA set out its formal crypto guidance and cut the capital requirement for stablecoin issuers to 1% of tokens in circulation, from a proposed 2%, below the EU's MiCA requirements.",
+   "amount_usd_m": null,
+   "regulator": "FCA",
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/06/30/uk-to-lower-stablecoin-capital-buffers-undercutting-eu-s-mica-requirements",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "credit-agricole-eurxt-2026-07-01",
+   "date": "2026-07-01",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Crédit Agricole",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "Crédit Agricole launches the EURXT euro stablecoin",
+   "summary": "Crédit Agricole rolled out EURXT, a euro stablecoin backed 1:1 by reserves at CACEIS Bank, launching with about 20m tokens on Ethereum and competing with Circle's EURC and SocGen's EURCV.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "France",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/07/01/french-banking-giant-credit-agricole-rolls-out-euro-stablecoin-eurxt",
+   "related": [],
+   "parties": [
+    {
+     "id": "credit-agricole",
+     "name": "Crédit Agricole",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "bank-tokens",
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "flutterwave-circle-2026-07",
    "date": "2026-07-01",
    "date_precision": "month",
@@ -4443,6 +7676,172 @@
     "valuation_usd_m": null,
     "use_of_funds": "USDC settlement across its platform"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "kraken-eu-bank-licence-2026-07-07",
+   "date": "2026-07-07",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Kraken (Payward)",
+   "type": "License",
+   "region": "Europe",
+   "title": "Kraken seeks a European banking licence in Lithuania",
+   "summary": "Kraken is pursuing a European banking licence with Lithuania as the target jurisdiction, following the path of Revolut, a person familiar with the plans told CoinDesk.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Lithuania",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/07/07/crypto-exchange-kraken-is-trying-to-become-a-bank-in-europe",
+   "related": [],
+   "parties": [
+    {
+     "id": "kraken",
+     "name": "Kraken",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "citi-scb-tokenized-clearing-2026-07-09",
+   "date": "2026-07-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Citi",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Siam Commercial Bank goes live on Citi's tokenised deposit clearing",
+   "summary": "Thailand's Siam Commercial Bank became the first respondent bank live on Citi's 24/7 service that combines its tokenised deposits with its clearing network for round-the-clock US dollar payments.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/scb-is-first-respondent-bank-live-on-citis-tokenized-deposit-clearing-solution/",
+   "related": [],
+   "parties": [
+    {
+     "id": "citi",
+     "name": "Citi",
+     "role": "supplier"
+    },
+    {
+     "id": "scb",
+     "name": "Siam Commercial Bank",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "eu-parliament-multi-issuance-2026-07-09",
+   "date": "2026-07-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "European Parliament",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "European Parliament backs stablecoin multi-issuance",
+   "summary": "The European Parliament adopted a report on digital assets by 390 votes to 86 that supports multi-issuance, rejecting a proposed ban on stablecoins issued both inside and outside the EU.",
+   "amount_usd_m": null,
+   "regulator": "European Parliament",
+   "jurisdiction": "European Union",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/eu-parliament-backs-stablecoin-multi-issuance-dismissing-ban-proposal/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "infinia-series-a-2026-07-09",
+   "date": "2026-07-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Infinia",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Infinia raises $13.5m Series A to link bank rails with stablecoins",
+   "summary": "New York-based Infinia, an infrastructure layer connecting traditional banking with digital asset rails, raised a $13.5m Series A led by Bain Capital and Variant with Y Combinator, Lattice and others.",
+   "amount_usd_m": 13.5,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Infinia",
+   "source_url": "https://infinia.xyz/insights/infinia-closes-13-million-series-a-funding",
+   "related": [],
+   "parties": [
+    {
+     "id": "bain-capital",
+     "name": "Bain Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "variant",
+     "name": "Variant",
+     "role": "lead investor"
+    },
+    {
+     "id": "y-combinator",
+     "name": "Y Combinator",
+     "role": "investor"
+    },
+    {
+     "id": "lattice",
+     "name": "Lattice",
+     "role": "investor"
+    },
+    {
+     "id": "tekton-ventures",
+     "name": "Tekton Ventures",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "bank-tokens"
+   ],
+   "round": {
+    "stage": "Series A",
+    "valuation_usd_m": null,
+    "use_of_funds": "regional licences and expansion"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "sony-connectia-occ-2026-07-09",
+   "date": "2026-07-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Sony Bank",
+   "type": "License",
+   "region": "North America",
+   "title": "Sony Bank wins conditional OCC approval for a US stablecoin bank",
+   "summary": "Sony Bank received conditional OCC approval to set up Connectia Trust, a US national trust bank for its stablecoin business.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/cryptocurrency/2026/sony-gets-conditional-ok-for-us-based-stablecoin-bank/",
+   "related": [],
+   "parties": [
+    {
+     "id": "sony",
+     "name": "Sony Bank",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "us-rules",
+    "bank-tokens"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4487,6 +7886,29 @@
     "valuation_usd_m": null,
     "use_of_funds": "USAT across payroll, earned wage access, credit and payments"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "us-uk-tokenisation-roadmap-2026-07-14",
+   "date": "2026-07-14",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "US and UK authorities",
+   "type": "Regulation",
+   "region": "Global",
+   "title": "US and UK agree a roadmap to align tokenised finance rules",
+   "summary": "The United States and the United Kingdom set out a joint roadmap to explore common rules for tokenised securities, cross-border stablecoin activity and industry tokenisation pilots.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/07/14/u-s-uk-move-to-align-rules-for-tokenized-finance-across-world-s-largest-financial-markets",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules",
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4696,6 +8118,143 @@
    "added": "2026-10-11"
   },
   {
+   "id": "brale-ion-protocol-2026-07-29",
+   "date": "2026-07-29",
+   "date_precision": "day",
+   "company_id": "brale",
+   "company_name": "Brale",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Brale tests ION, a protocol to move custom stablecoins across chains",
+   "summary": "Brale debuted ION on testnet, a protocol to move custom stablecoins between blockchains without prefunded liquidity pools, as hundreds of companies issue their own tokens.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/07/29/stablecoin-firm-brale-says-new-protocol-can-remove-a-major-hurdle-to-scaling-custom-tokens",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "payment-chains"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "sphere-deutsche-telekom-2026-08-03",
+   "date": "2026-08-03",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Sphere",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Deutsche Telekom joins SphereNet as a validator",
+   "summary": "Deutsche Telekom joined SphereNet, Sphere Labs' compliance-focused ledger for regulated payments, as a validator partner ahead of its public launch.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Sphere",
+   "source_url": "https://spherepay.co/blog/sphere-partners-with-deutsche-telekom-on-enterprise-infrastructure-for-spherenet",
+   "related": [],
+   "parties": [
+    {
+     "id": "sphere",
+     "name": "Sphere",
+     "role": "partner"
+    },
+    {
+     "id": "deutsche-telekom",
+     "name": "Deutsche Telekom",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "payment-chains"
+   ],
+   "kind": "Network or consortium",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "cloudflare-wallets-2026-08-04",
+   "date": "2026-08-04",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Cloudflare",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Cloudflare launches Wallets for AI agent payments",
+   "summary": "Cloudflare announced Cloudflare Wallets, giving AI agents native payments and verifiable identity on the web through the x402 protocol, with spending limits and stablecoin self-funding.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Cloudflare",
+   "source_url": "https://blog.cloudflare.com/wallets/",
+   "related": [],
+   "parties": [
+    {
+     "id": "cloudflare",
+     "name": "Cloudflare",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "agent-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "tether-saudi-tokenisation-2026-08-06",
+   "date": "2026-08-06",
+   "date_precision": "day",
+   "company_id": "tether",
+   "company_name": "Tether",
+   "type": "Launch",
+   "region": "Middle East",
+   "title": "Tether brings its Hadron tokenisation platform to Saudi Arabia",
+   "summary": "Tether is extending its Hadron tokenisation platform into Saudi Arabia, starting with institutional real estate, with Saudi partners First Data and fintech BKN301.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Saudi Arabia",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/08/06/tether-expands-tokenization-business-into-saudi-arabia-starting-with-real-estate",
+   "related": [],
+   "parties": [
+    {
+     "id": "first-data-sa",
+     "name": "First Data",
+     "role": "partner"
+    },
+    {
+     "id": "bkn301",
+     "name": "BKN301",
+     "role": "partner"
+    }
+   ],
+   "themes": [],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "coinbase-abu-dhabi-2026-08-11",
+   "date": "2026-08-11",
+   "date_precision": "day",
+   "company_id": "coinbase",
+   "company_name": "Coinbase",
+   "type": "License",
+   "region": "Middle East",
+   "title": "Coinbase wins approval to run tokenised securities from Abu Dhabi",
+   "summary": "Coinbase said it secured regulatory approval to offer tokenised securities from Abu Dhabi, making the emirate the base for its international tokenisation business.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/08/11/coinbase-picks-abu-dhabi-for-its-global-tokenized-asset-push",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "gulf-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "rain-ansa-2026-08-12",
    "date": "2026-08-12",
    "date_precision": "day",
@@ -4733,6 +8292,56 @@
    "added": "2026-10-11"
   },
   {
+   "id": "crossmint-canada-rpaa-2026-08-13",
+   "date": "2026-08-13",
+   "date_precision": "day",
+   "company_id": "crossmint",
+   "company_name": "Crossmint",
+   "type": "License",
+   "region": "North America",
+   "title": "Crossmint registers in Canada under the RPAA and with FINTRAC",
+   "summary": "Crossmint registered with the Bank of Canada as a payment service provider under the RPAA and with FINTRAC as a money services business, opening on- and off-ramps and transfers for Canadian clients.",
+   "amount_usd_m": null,
+   "regulator": "Bank of Canada",
+   "jurisdiction": "Canada",
+   "source_name": "Crossmint",
+   "source_url": "https://www.crossmint.com/announcement/rpaa-and-msb-registration-canada",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bitpanda-fma-fine-2026-08-17",
+   "date": "2026-08-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "FMA",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "Austria's FMA fines Bitpanda in its first published MiCA case",
+   "summary": "Austria's Financial Market Authority fined Bitpanda €70,000 for filing a white paper late and omitting required disclosures in marketing, its first penalty under MiCA.",
+   "amount_usd_m": null,
+   "regulator": "FMA",
+   "jurisdiction": "Austria",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/08/17/bitpanda-fined-eur70-000-in-austria-s-first-published-mica-enforcement-case",
+   "related": [],
+   "parties": [
+    {
+     "id": "bitpanda",
+     "name": "Bitpanda",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-11"
+  },
+  {
    "id": "stripe-openrouter-2026-08-17",
    "date": "2026-08-17",
    "date_precision": "day",
@@ -4767,6 +8376,78 @@
      "technology"
     ]
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "treasury-genius-licensing-proposal-2026-08-17",
+   "date": "2026-08-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "US Treasury",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "Treasury proposes GENIUS Act rules on who may issue stablecoins",
+   "summary": "The Treasury proposed rules making issuance without a federal or state licence unlawful unless a foreign issuer is from a comparable regime and registered with the OCC, with a due-diligence duty on exchanges.",
+   "amount_usd_m": null,
+   "regulator": "US Treasury",
+   "jurisdiction": "United States",
+   "source_name": "Bankless",
+   "source_url": "https://www.bankless.com/read/news/treasury-proposes-rules-for-how-genius-act-stablecoin-licensing-works",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "world-liberty-trust-occ-2026-08-17",
+   "date": "2026-08-17",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "World Liberty Financial",
+   "type": "License",
+   "region": "North America",
+   "title": "OCC conditionally approves World Liberty Trust's national charter",
+   "summary": "The OCC granted preliminary conditional approval for World Liberty Financial to set up a national trust bank that would issue its USD1 stablecoin.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/occ-grants-world-liberty-trust-a-preliminary-trust-charter-with-notable-smallprint/",
+   "related": [],
+   "parties": [
+    {
+     "id": "world-liberty-financial",
+     "name": "World Liberty Financial",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "fasb-cash-equivalent-proposal-2026-08-18",
+   "date": "2026-08-18",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "FASB",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "FASB proposes treating qualifying stablecoins as cash equivalents",
+   "summary": "The Financial Accounting Standards Board proposed that certain stablecoins count as cash equivalents under US GAAP, alongside Treasuries, commercial paper and money market funds.",
+   "amount_usd_m": null,
+   "regulator": "FASB",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/08/18/u-s-accounting-standards-group-proposes-way-to-see-stablecoins-as-cash-equivalent",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4828,6 +8509,135 @@
     "valuation_usd_m": null,
     "use_of_funds": "working capital and prime brokerage expansion"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "swift-ledger-first-transaction-2026-08-19",
+   "date": "2026-08-19",
+   "date_precision": "day",
+   "company_id": "standard-chartered",
+   "company_name": "Standard Chartered",
+   "type": "Launch",
+   "region": "Global",
+   "title": "HSBC and StanChart settle the first live payment on Swift's ledger",
+   "summary": "HSBC and Standard Chartered completed the first live interbank transaction on Swift's blockchain ledger, using tokenised deposits for real-time cross-border settlement in a 17-bank pilot.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/08/19/hsbc-standard-chartered-execute-first-live-banking-transaction-on-swift-s-24-7-ledger",
+   "related": [],
+   "parties": [
+    {
+     "id": "hsbc",
+     "name": "HSBC",
+     "role": "partner"
+    },
+    {
+     "id": "swift",
+     "name": "Swift",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "payment-chains"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "stanchart-hkdap-2026-08-24",
+   "date": "2026-08-24",
+   "date_precision": "day",
+   "company_id": "standard-chartered",
+   "company_name": "Standard Chartered",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Standard Chartered distributes Anchorpoint's HKDAP stablecoin",
+   "summary": "Standard Chartered became the first bank to distribute HKDAP, the Hong Kong dollar stablecoin issued by its Anchorpoint venture, to eligible clients and partners.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Hong Kong",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/08/24/standard-chartered-first-bank-to-distribute-anchorpoint-s-hong-kong-dollar-stablecoin",
+   "related": [],
+   "parties": [
+    {
+     "id": "anchorpoint",
+     "name": "Anchorpoint",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "non-dollar",
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bankchain-alliance-2026-08-25",
+   "date": "2026-08-25",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "BankChain Alliance",
+   "type": "Launch",
+   "region": "North America",
+   "title": "US state banking associations plan the BankChain Alliance network",
+   "summary": "US state banking associations plan a nationwide blockchain network, the BankChain Alliance, aimed at a 2027 launch for stablecoins, payments and tokenised deposits within bank regulation.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/08/25/u-s-state-banking-associations-plan-to-launch-their-own-nationwide-blockchain-network",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "zerohash-occ-reapplication-2026-08-25",
+   "date": "2026-08-25",
+   "date_precision": "day",
+   "company_id": "zerohash",
+   "company_name": "zerohash",
+   "type": "License",
+   "region": "North America",
+   "title": "zerohash reapplies to the OCC for a narrower trust charter",
+   "summary": "zerohash filed a new application for an OCC national trust bank charter, which it said would be narrower, after the regulator handed back its first application.",
+   "amount_usd_m": null,
+   "regulator": "OCC",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/08/25/zerohash-back-for-second-effort-at-occ-trust-bank-charter",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "uk-boe-stablecoin-objective-2026-08-27",
+   "date": "2026-08-27",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "HM Treasury",
+   "type": "Regulation",
+   "region": "Europe",
+   "title": "UK plans a new Bank of England objective for stablecoins",
+   "summary": "The UK plans to give the Bank of England a new objective covering stablecoins, with financial stability still its first duty and annual reports to Parliament, alongside a temporary £40bn cap per systemic token.",
+   "amount_usd_m": null,
+   "regulator": "HM Treasury",
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/08/27/britain-plans-new-bank-of-england-objective-for-stablecoins",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "canada-uk-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4895,6 +8705,119 @@
    "added": "2026-10-11"
   },
   {
+   "id": "sofi-kraken-2026-09-03",
+   "date": "2026-09-03",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "SoFi",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "Kraken joins SoFi's settlement network and lists SoFiUSD",
+   "summary": "SoFi and Kraken linked up: Kraken joins SoFi's banking and dollar settlement rails and lists SoFiUSD, while SoFi brings Kraken's trading infrastructure to its customers.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/09/03/sofi-kraken-tie-up-as-crypto-and-banking-push-into-each-other-s-turf",
+   "related": [],
+   "parties": [
+    {
+     "id": "sofi",
+     "name": "SoFi",
+     "role": "issuer"
+    },
+    {
+     "id": "kraken",
+     "name": "Kraken",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "kind": "Venue listing",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "stanchart-dubai-crypto-trading-2026-09-03",
+   "date": "2026-09-03",
+   "date_precision": "day",
+   "company_id": "standard-chartered",
+   "company_name": "Standard Chartered",
+   "type": "Launch",
+   "region": "Middle East",
+   "title": "Standard Chartered brings spot crypto trading to its Dubai FX platform",
+   "summary": "Standard Chartered let institutional clients trade bitcoin and ether on its foreign-exchange platforms from Dubai and settle with a custodian of their choice, including its own.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/09/03/standard-chartered-first-top-global-bank-to-offer-bitcoin-and-ether-trading-in-uae",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "block-bank-charter-2026-09-09",
+   "date": "2026-09-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Block",
+   "type": "License",
+   "region": "North America",
+   "title": "Block applies for a bank charter for Builders Bank",
+   "summary": "Block applied for a charter for Builders Bank, a branchless bank in Sioux Falls that would consolidate the custody it now runs under more than 50 state licences, after $10.7bn of bitcoin volume in 2025.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Decrypt",
+   "source_url": "https://decrypt.co/377746/jack-dorseys-block-applies-for-bank-charter-to-custody-bitcoin",
+   "related": [],
+   "parties": [
+    {
+     "id": "block",
+     "name": "Block",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "us-rules"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "bvnk-marqeta-2026-09-09",
+   "date": "2026-09-09",
+   "date_precision": "day",
+   "company_id": "bvnk",
+   "company_name": "BVNK",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Marqeta turns to BVNK for stablecoin-backed cards",
+   "summary": "Card issuing platform Marqeta partnered with BVNK to offer stablecoin-backed card programmes to crypto and non-crypto companies.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PYMNTS",
+   "source_url": "https://www.pymnts.com/cryptocurrency/2026/marqeta-turns-to-bvnk-for-stablecoin-backed-card-capabilities/",
+   "related": [],
+   "parties": [
+    {
+     "id": "marqeta",
+     "name": "Marqeta",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ],
+   "kind": "Card programme",
+   "added": "2026-10-11"
+  },
+  {
    "id": "latitude-series-a-2026-09-09",
    "date": "2026-09-09",
    "date_precision": "day",
@@ -4920,6 +8843,156 @@
     "valuation_usd_m": null,
     "use_of_funds": "local payouts funded by stablecoins"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "mesh-flex-2026-09-09",
+   "date": "2026-09-09",
+   "date_precision": "day",
+   "company_id": "mesh",
+   "company_name": "Mesh",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "Flex uses Mesh for crypto and stablecoin deposits by business owners",
+   "summary": "Finance platform Flex partnered with Mesh so business owners can fund their accounts directly from hundreds of exchanges and wallets in crypto and stablecoins.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/flex-partners-with-mesh-to-power-crypto-and-stablecoin-deposits-for-business-owners-302872691.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "flex",
+     "name": "Flex",
+     "role": "client"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "modern-treasury-stablecoin-wallets-2026-09-09",
+   "date": "2026-09-09",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Modern Treasury",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Modern Treasury launches non-custodial stablecoin wallets",
+   "summary": "Modern Treasury launched non-custodial wallets for USDG, USDC and USDT in more than 90 countries, joined to its global USD accounts and payment orchestration through one API.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Modern Treasury",
+   "source_url": "https://www.moderntreasury.com/newsroom/press-releases/modern-treasury-launches-non-custodial-stablecoin-wallets-bringing-global-usd-accounts-embeddable",
+   "related": [],
+   "parties": [
+    {
+     "id": "modern-treasury",
+     "name": "Modern Treasury",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "business-payments"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "moneygram-card-2026-09-10",
+   "date": "2026-09-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "MoneyGram",
+   "type": "Launch",
+   "region": "Global",
+   "title": "MoneyGram launches a stablecoin-backed card with Rain",
+   "summary": "MoneyGram launched the MoneyGram Card, a stablecoin-backed card for eligible customers worldwide built with Rain, reaching a base of over 60 million active customers.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/news-releases/introducing-the-moneygram-card-giving-customers-more-freedom-to-use-their-money-wherever-life-takes-them-302875353.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "moneygram",
+     "name": "MoneyGram",
+     "role": "issuer"
+    },
+    {
+     "id": "rain",
+     "name": "Rain",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "cards-and-networks"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "nasdaq-payward-2026-09-10",
+   "date": "2026-09-10",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Kraken (Payward)",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Nasdaq invests $100m in Kraken's parent Payward",
+   "summary": "Nasdaq is investing $100m in Payward, deepening a tokenised equities partnership announced in March, with Nasdaq Equity Tokens now targeted for the second quarter of 2027.",
+   "amount_usd_m": 100,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/nasdaq-invests-100m-in-kraken-parent-targets-q2-2027-for-native-tokenized-equities/",
+   "related": [],
+   "parties": [
+    {
+     "id": "nasdaq",
+     "name": "Nasdaq",
+     "role": "lead investor"
+    },
+    {
+     "id": "kraken",
+     "name": "Payward",
+     "role": "target"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": "a strategic stake alongside a tokenised equities partnership"
+   },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "clarity-act-fails-2026-09-15",
+   "date": "2026-09-15",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "US Senate",
+   "type": "Regulation",
+   "region": "North America",
+   "title": "CLARITY Act fails to clear the Senate's 60-vote hurdle",
+   "summary": "The crypto market structure bill could not win enough votes to advance in the Senate, leaving firms to rely on agency rules that a future administration could reverse.",
+   "amount_usd_m": null,
+   "regulator": "US Senate",
+   "jurisdiction": "United States",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/policy/2026/09/15/clarity-act-fails-in-senate-here-is-how-the-crypto-industry-is-reacting",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "us-rules"
+   ],
    "added": "2026-10-11"
   },
   {
@@ -4982,6 +9055,121 @@
    "added": "2026-10-11"
   },
   {
+   "id": "column-stablecoin-cards-2026-09-16",
+   "date": "2026-09-16",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Column",
+   "type": "Launch",
+   "region": "North America",
+   "title": "Column adds its own card processor, including stablecoin-backed cards",
+   "summary": "Column, the developer-focused US bank, built its own issuer processor so clients can run card programmes, including stablecoin-backed cards, on Visa and Mastercard through one integration.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Column",
+   "source_url": "https://column.com/blog/full-stack/",
+   "related": [],
+   "parties": [
+    {
+     "id": "column",
+     "name": "Column",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "cards-and-networks",
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "deutsche-bank-custody-2026-09-16",
+   "date": "2026-09-16",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Deutsche Bank",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "Deutsche Bank nears crypto custody launch including USDC and EURC",
+   "summary": "Deutsche Bank plans to launch digital asset custody for European institutional and corporate clients, supporting bitcoin, ether and stablecoins such as USDC and EURC.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Germany",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/09/16/deutsche-bank-nears-crypto-custody-service-debut-for-institutional-clients",
+   "related": [],
+   "parties": [
+    {
+     "id": "deutsche-bank",
+     "name": "Deutsche Bank",
+     "role": "custodian"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "canada-big-six-tokenized-deposits-2026-09-22",
+   "date": "2026-09-22",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "Canada's Big Six banks",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "Canada's six largest banks plan a shared tokenised deposit network",
+   "summary": "Canada's Big Six banks plan an interbank tokenised deposit initiative, starting with moving digital commercial deposits between them before linking to wider digital asset markets.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Canada",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/09/22/canada-s-big-six-banks-unite-to-launch-interbank-tokenized-deposit-initiative",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ],
+   "kind": "Network or consortium",
+   "added": "2026-10-11"
+  },
+  {
+   "id": "clearing-house-quant-2026-09-24",
+   "date": "2026-09-24",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "The Clearing House",
+   "type": "Partnership",
+   "region": "North America",
+   "title": "The Clearing House picks Quant for tokenised deposit interoperability",
+   "summary": "The Clearing House selected Quant to build interoperability for interbank payments with tokenised deposits, targeting a launch in the first half of 2027.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/the-clearing-house-selects-quant-for-tokenized-deposit-interoperability/",
+   "related": [],
+   "parties": [
+    {
+     "id": "the-clearing-house",
+     "name": "The Clearing House",
+     "role": "client"
+    },
+    {
+     "id": "quant",
+     "name": "Quant",
+     "role": "supplier"
+    }
+   ],
+   "themes": [
+    "bank-tokens"
+   ],
+   "kind": "Infrastructure supply",
+   "added": "2026-10-11"
+  },
+  {
    "id": "hifi-series-a-2026-09-24",
    "date": "2026-09-24",
    "date_precision": "day",
@@ -5013,6 +9201,95 @@
     "valuation_usd_m": null,
     "use_of_funds": "stablecoin payments and tokenised capital markets"
    },
+   "added": "2026-10-11"
+  },
+  {
+   "id": "uk-tokenized-sterling-deposits-2026-09-24",
+   "date": "2026-09-24",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "UK banks",
+   "type": "Launch",
+   "region": "Europe",
+   "title": "UK banks complete first interbank payments with tokenised sterling",
+   "summary": "Barclays, NatWest, HSBC and other UK banks completed interbank customer transactions with tokenised sterling deposits, including remortgage payments and a marketplace purchase.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/09/24/uk-s-largest-banks-complete-world-s-first-interbank-transactions-using-tokenized-deposits",
+   "related": [],
+   "parties": [
+    {
+     "id": "barclays",
+     "name": "Barclays",
+     "role": "partner"
+    },
+    {
+     "id": "natwest",
+     "name": "NatWest",
+     "role": "partner"
+    },
+    {
+     "id": "hsbc",
+     "name": "HSBC",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "bank-tokens",
+    "non-dollar"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "stripe-stablecoin-cards-expansion-2026-10-05",
+   "date": "2026-10-05",
+   "date_precision": "day",
+   "company_id": "stripe",
+   "company_name": "Stripe",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Stripe plans stablecoin cards in over 100 countries by year end",
+   "summary": "Stripe plans to expand its stablecoin cards to more than 100 countries by the end of the year and is exploring tokenised deposits, with Privy's Henri Stern now overseeing crypto across Stripe.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/10/01/stripe-to-expand-stablecoin-cards-to-over-100-countries-by-the-end-of-the-year",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "cards-and-networks"
+   ],
+   "added": "2026-10-11"
+  },
+  {
+   "id": "okx-money-2026-10-06",
+   "date": "2026-10-06",
+   "date_precision": "day",
+   "company_id": null,
+   "company_name": "OKX",
+   "type": "Launch",
+   "region": "Global",
+   "title": "OKX launches OKX Money for stablecoin saving and spending",
+   "summary": "OKX launched OKX Money, letting eligible customers convert over 50 local currencies into dollar stablecoins and spend them with a virtual or physical card.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "CoinDesk",
+   "source_url": "https://www.coindesk.com/business/2026/10/06/okx-money-lets-users-save-earn-10-yield-and-spend-dollar-stablecoins-in-one-app",
+   "related": [],
+   "parties": [
+    {
+     "id": "okx",
+     "name": "OKX",
+     "role": "issuer"
+    }
+   ],
+   "themes": [
+    "apps-and-wallets"
+   ],
    "added": "2026-10-11"
   }
  ]

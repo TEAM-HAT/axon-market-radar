@@ -5,19 +5,19 @@
   "window_start": "2026-10-05",
   "window_end": "2026-10-11",
   "week": 41,
-  "count": 26,
+  "count": 28,
   "new_today": 2,
   "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users while more crypto firms sought OCC trust charters and Anchorage bought Routable. In Europe, ESMA gave licensed firms **three months to drop unauthorised stablecoins**.",
   "mix": [
     {
+      "type": "Launch",
+      "n": 8,
+      "label": "launches"
+    },
+    {
       "type": "Partnership",
       "n": 8,
       "label": "partnerships"
-    },
-    {
-      "type": "Launch",
-      "n": 6,
-      "label": "launches"
     },
     {
       "type": "Regulation",
@@ -40,17 +40,17 @@
       "label": "M&A deal"
     }
   ],
-  "mix_text": "8 partnerships · 6 launches · 6 regulatory actions · 3 licences · 2 funding rounds · 1 M&A deal",
+  "mix_text": "8 launches · 8 partnerships · 6 regulatory actions · 3 licences · 2 funding rounds · 1 M&A deal",
   "regions": {
     "Europe": 6,
     "Middle East": 6,
     "North America": 8,
-    "Global": 6
+    "Global": 8
   },
   "groups": {
     "regulatory": 9,
     "capital": 3,
-    "commercial": 14
+    "commercial": 16
   },
   "moves": [
     {
@@ -370,12 +370,18 @@
     {
       "name": "OCC",
       "where": "United States",
-      "licences": 7,
+      "licences": 14,
       "actions": 2
     },
     {
       "name": "CBUAE",
       "where": "UAE",
+      "licences": 5,
+      "actions": 3
+    },
+    {
+      "name": "Other",
+      "where": "",
       "licences": 5,
       "actions": 3
     },
@@ -386,77 +392,71 @@
       "actions": 0
     },
     {
-      "name": "VARA",
-      "where": "Dubai",
-      "licences": 2,
+      "name": "FCA",
+      "where": "United Kingdom",
+      "licences": 3,
       "actions": 2
-    },
-    {
-      "name": "ADGM FSRA",
-      "where": "Abu Dhabi",
-      "licences": 2,
-      "actions": 1
     }
   ],
   "trends": {
     "since": "2025-10",
-    "total": 200,
-    "licences": 32,
-    "regulatory_actions": 23,
-    "commercial": 65,
-    "capital": 80,
+    "total": 349,
+    "licences": 51,
+    "regulatory_actions": 45,
+    "commercial": 165,
+    "capital": 88,
     "months": [
       {
         "m": "2025-10",
-        "n": 9
+        "n": 28
       },
       {
         "m": "2025-11",
-        "n": 15
+        "n": 35
       },
       {
         "m": "2025-12",
-        "n": 16
+        "n": 30
       },
       {
         "m": "2026-01",
-        "n": 14
+        "n": 20
       },
       {
         "m": "2026-02",
-        "n": 15
+        "n": 26
       },
       {
         "m": "2026-03",
-        "n": 15
+        "n": 23
       },
       {
         "m": "2026-04",
-        "n": 10
+        "n": 16
       },
       {
         "m": "2026-05",
-        "n": 17
+        "n": 33
       },
       {
         "m": "2026-06",
-        "n": 9
+        "n": 20
       },
       {
         "m": "2026-07",
-        "n": 15
+        "n": 23
       },
       {
         "m": "2026-08",
-        "n": 12
+        "n": 26
       },
       {
         "m": "2026-09",
-        "n": 25
+        "n": 39
       },
       {
         "m": "2026-10",
-        "n": 28
+        "n": 30
       }
     ],
     "partial_last": true
