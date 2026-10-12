@@ -1111,7 +1111,8 @@
    "themes": [
     "business-payments",
     "apps-and-wallets"
-   ]
+   ],
+   "company_id": "nium"
   },
   "visa-adi-foundation-2026-10-08": {
    "kind": "Network or consortium",
@@ -1664,7 +1665,8 @@
    "themes": [
     "us-rules",
     "business-payments"
-   ]
+   ],
+   "company_id": "modern-treasury"
   },
   "rain-bahrain-vara-licence-2026-10-05": {
    "themes": [

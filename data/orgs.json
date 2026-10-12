@@ -3409,6 +3409,20 @@
    "kind": "exchange",
    "hq_country": null,
    "website": "https://www.kucoin.com"
+  },
+  "stc-pay": {
+   "id": "stc-pay",
+   "name": "stc pay",
+   "kind": "payments firm",
+   "hq_country": "Saudi Arabia",
+   "website": null
+  },
+  "bbk": {
+   "id": "bbk",
+   "name": "Bank of Bahrain and Kuwait",
+   "kind": "bank",
+   "hq_country": "Bahrain",
+   "website": null
   }
  }
 }

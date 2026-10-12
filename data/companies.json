@@ -2445,6 +2445,1980 @@
     "https://www.korahq.com/",
     "https://fintech.global/2026/10/06/kora-launches-stablecoin-rail-for-african-cross-border-payments/"
    ]
+  },
+  "arp-digital": {
+   "id": "arp-digital",
+   "name": "ARP Digital",
+   "hq_city": "Manama",
+   "hq_country": "Bahrain",
+   "region": "Middle East",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.arpdigital.io",
+   "blurb": "Bahrain-licensed settlement desk for Gulf corridors: stablecoin conversion, cross-border settlement and OTC, with stc pay and BBK as partners.",
+   "licenses": [
+    {
+     "regulator": "CBB",
+     "jurisdiction": "Bahrain",
+     "type": "Category 3 crypto-asset service provider",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business registration (Vancouver entity)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.arpdigital.io/en",
+    "https://fintechnews.ae/28217/bahrain/arp-digital-and-stc-pay-announce-strategic-partnership-to-expand-cross-border-settlement-infrastructure/",
+    "https://gulfnews.com/business/corporate-news/arp-digital-bbk-announce-strategic-partnership-to-expand-cross-border-settlement-infrastructure-1.500316875"
+   ]
+  },
+  "lean-technologies": {
+   "id": "lean-technologies",
+   "name": "Lean Technologies",
+   "hq_city": "Riyadh",
+   "hq_country": "Saudi Arabia",
+   "region": "Middle East",
+   "segment": "Settlement rails",
+   "founded": 2019,
+   "website": "https://leantech.me",
+   "blurb": "Riyadh open-banking firm whose Lean X moves money out of the Gulf for banks, exchanges and money transfer firms over licensed local payout rails.",
+   "licenses": [
+    {
+     "regulator": "ADGM FSRA",
+     "jurisdiction": "Abu Dhabi",
+     "type": "Category 3C: providing money services",
+     "year": null
+    },
+    {
+     "regulator": "SAMA",
+     "jurisdiction": "Saudi Arabia",
+     "type": "Payment institution licence for open banking (account information services)",
+     "year": null
+    },
+    {
+     "regulator": "CBUAE",
+     "jurisdiction": "United Arab Emirates",
+     "type": "In-principle approval for open finance services",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": 100,
+    "last_round_type": "Series B",
+    "last_round_usd_m": 67.5,
+    "last_round_date": null,
+    "lead": "General Catalyst",
+    "valuation_usd_m": null,
+    "investors": [
+     "General Catalyst",
+     "Bain Capital Ventures",
+     "Duquesne Family Office",
+     "Arbor Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://leantech.me/ksa/en/products/payments/lean-x",
+    "https://leantech.me/uae/en/products/payments/lean-x",
+    "https://wamda.com/2024/11/lean-closes-series-b-67-5-million-bringing-total-funding-100-million"
+   ]
+  },
+  "stables": {
+   "id": "stables",
+   "name": "Stables",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://stables.money",
+   "blurb": "API for USDT payments in Asia and the Middle East: virtual accounts, fiat collection, conversion and payouts on local rails, through licensed entities.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://stables.money/"
+   ]
+  },
+  "buna": {
+   "id": "buna",
+   "name": "Buna",
+   "hq_city": "Abu Dhabi",
+   "hq_country": "United Arab Emirates",
+   "region": "Middle East",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://buna.co",
+   "blurb": "The Arab Monetary Fund's cross-border payment system, which lets banks and financial institutions in the Arab region and beyond pay each other directly.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Owned by the Arab Monetary Fund",
+   "sources": [
+    "https://buna.co/the-organization",
+    "https://thefintechtimes.com/overview-of-buna-across-the-middle-east-and-africa/"
+   ]
+  },
+  "singapore-gulf-bank": {
+   "id": "singapore-gulf-bank",
+   "name": "Singapore Gulf Bank",
+   "hq_city": "Manama",
+   "hq_country": "Bahrain",
+   "region": "Middle East",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": null,
+   "blurb": "Bahrain-licensed bank whose SGB Net clears dollars around the clock for institutions in Asia and the Gulf; corporate clients can mint USDC and USDT.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.cryptotimes.io/2026/10/05/payward-partners-with-singapore-gulf-bank-for-24-7-usd-settlement/",
+    "https://technext24.com/2025/12/12/singapore-zero-fee-stablecoin-solana/"
+   ]
+  },
+  "progmat": {
+   "id": "progmat",
+   "name": "Progmat",
+   "hq_city": "Tokyo",
+   "hq_country": "Japan",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://progmat.co.jp/en/",
+   "blurb": "Japanese platform for issuing stablecoins and tokens; with Datachain it leads Project Pax, a pilot sending stablecoins between banks on Swift instructions.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": null,
+   "sources": [
+    "https://progmat.co.jp/en/",
+    "https://www.datachain.jp/news/progmat-and-datachain-launch-project-pax",
+    "https://www.theblock.co/post/315058/japans-three-major-banks-to-test-cross-border-stablecoin-transfer-platform"
+   ]
+  },
+  "metacomp": {
+   "id": "metacomp",
+   "name": "MetaComp",
+   "hq_city": "Singapore",
+   "hq_country": "Singapore",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.mce.sg",
+   "blurb": "MAS-licensed payment institution moving fiat and stablecoins for financial institutions and businesses across Asia through its StableX network.",
+   "licenses": [
+    {
+     "regulator": "MAS",
+     "jurisdiction": "Singapore",
+     "type": "Major payment institution",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.mce.sg/"
+   ]
+  },
+  "triple-a": {
+   "id": "triple-a",
+   "name": "Triple-A",
+   "hq_city": "Singapore",
+   "hq_country": "Singapore",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.triple-a.io",
+   "blurb": "Stablecoin payments for businesses: checkout, payouts, multi-currency accounts and white-label remittance, licensed in Singapore, the EU, the US and Canada.",
+   "licenses": [
+    {
+     "regulator": "MAS",
+     "jurisdiction": "Singapore",
+     "type": "Major payment institution (PS20200525)",
+     "year": null
+    },
+    {
+     "regulator": "ACPR",
+     "jurisdiction": "France",
+     "type": "Payment institution and crypto-asset service provider (Paytop SAS)",
+     "year": null
+    },
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business; money transmitter licences in various US states",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Foreign money services business; registered with the Bank of Canada as a payment service provider",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.triple-a.io/"
+   ]
+  },
+  "alloyx": {
+   "id": "alloyx",
+   "name": "AlloyX",
+   "hq_city": "Hong Kong",
+   "hq_country": "Hong Kong",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.alloyx.com",
+   "blurb": "Hong Kong stablecoin payments and orchestration platform, now part of Nasdaq-listed AXG, the group behind Bahrain's AX Coin.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Part of AXG (SOLOWIN Holdings)",
+   "sources": [
+    "https://www.alloyx.com/",
+    "https://solowin.gcs-web.com/news-releases/news-release-details/ax-coin-backed-axg-granted-first-stablecoin-issuer-license"
+   ]
+  },
+  "rd-technologies": {
+   "id": "rd-technologies",
+   "name": "RD Technologies",
+   "hq_city": "Hong Kong",
+   "hq_country": "Hong Kong",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://rd.group",
+   "blurb": "Hong Kong group behind OristaPay, a business payment network settling in fiat and stablecoins with direct access to emerging markets.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://rd.group/"
+   ]
+  },
+  "photonpay": {
+   "id": "photonpay",
+   "name": "PhotonPay",
+   "hq_city": "Hong Kong",
+   "hq_country": "Hong Kong",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.photonpay.com",
+   "blurb": "Hong Kong business payments platform for over 200,000 firms: multi-asset wallets, stablecoin and fiat collection, FX and corporate cards.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.photonpay.com/"
+   ]
+  },
+  "talino": {
+   "id": "talino",
+   "name": "Talino Fintech Foundry",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://talinofoundry.com",
+   "blurb": "Stablecoin infrastructure for platforms and enterprises to launch payment products, with US and Canadian money services registrations held by an affiliate.",
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business (Talino Digital Solutions Inc)",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business (Talino Digital Solutions Inc)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://talinofoundry.com/"
+   ]
+  },
+  "xweave": {
+   "id": "xweave",
+   "name": "Xweave",
+   "hq_city": "Singapore",
+   "hq_country": "Singapore",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.xweave.io",
+   "blurb": "Singapore network for real-time cross-border payments without pre-funding, routing through regulated partners for wallets, remitters and corporates.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.xweave.io/"
+   ]
+  },
+  "obita": {
+   "id": "obita",
+   "name": "Obita",
+   "hq_city": "Hong Kong",
+   "hq_country": "Hong Kong",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://obita.xyz",
+   "blurb": "Hong Kong payment infrastructure for fiat and stablecoins: global collection accounts, payouts and treasury for trade and platform businesses.",
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business",
+     "year": null
+    },
+    {
+     "regulator": "Customs and Excise Department",
+     "jurisdiction": "Hong Kong",
+     "type": "Money service operator licence",
+     "year": null
+    },
+    {
+     "regulator": "Companies Registry",
+     "jurisdiction": "Hong Kong",
+     "type": "Trust or company service provider licence",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://obita.xyz/"
+   ]
+  },
+  "ovex": {
+   "id": "ovex",
+   "name": "OVEX",
+   "hq_city": null,
+   "hq_country": "South Africa",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://ovex.com",
+   "blurb": "South African liquidity and payments provider licensed by the FSCA: wholesale FX, OTC and stablecoin cross-border payments for institutions in Africa.",
+   "licenses": [
+    {
+     "regulator": "FSCA",
+     "jurisdiction": "South Africa",
+     "type": "Licensed (type not stated on its site)",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business (Canadian affiliate)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://ovex.com/en"
+   ]
+  },
+  "cedar-money": {
+   "id": "cedar-money",
+   "name": "Cedar Money",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.cedar.money",
+   "blurb": "Business payments between Africa and global markets, settled on stablecoins behind a fiat service, for importers, exporters, banks and fintechs.",
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business",
+     "year": null
+    },
+    {
+     "regulator": "Bank of Canada",
+     "jurisdiction": "Canada",
+     "type": "Registered under the Retail Payment Activities Act",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 9.9,
+    "last_round_date": "2025-01-30",
+    "lead": "QED Investors",
+    "valuation_usd_m": null,
+    "investors": [
+     "QED Investors",
+     "Lattice",
+     "NIV",
+     "Stellar",
+     "Wischoff Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.cedar.money/",
+    "https://techcrunch.com/2025/01/30/qed-seeds-9-9m-in-cedar-money-a-stablecoin-payment-platform/"
+   ]
+  },
+  "zone": {
+   "id": "zone",
+   "name": "Zone",
+   "hq_city": "Lagos",
+   "hq_country": "Nigeria",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://zonenetwork.com",
+   "blurb": "Nigerian payment network on a regulated blockchain that connects banks, fintechs and other institutions; licensed by the Central Bank of Nigeria.",
+   "licenses": [
+    {
+     "regulator": "Central Bank of Nigeria",
+     "jurisdiction": "Nigeria",
+     "type": "Payment processing licence",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://zonenetwork.com/"
+   ]
+  },
+  "jenzy": {
+   "id": "jenzy",
+   "name": "Jenzy",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.jenzy.com",
+   "blurb": "Payment infrastructure for African trade corridors that routes across several rails with settlement guarantees; licensed partners hold the funds.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.jenzy.com/"
+   ]
+  },
+  "tenites": {
+   "id": "tenites",
+   "name": "Tenites",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://tenites.africa",
+   "blurb": "Programmable settlement and liquidity coordination network for African payments, covering 17 corridors with licensed liquidity partners.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://tenites.africa/"
+   ]
+  },
+  "honeycoin": {
+   "id": "honeycoin",
+   "name": "HoneyCoin",
+   "hq_city": "Nairobi",
+   "hq_country": "Kenya",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://honeycoin.app",
+   "blurb": "Kenyan platform for business payments in 22+ markets: collections, payouts, multi-currency wallets, cards and stablecoin minting via licensed partners.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://honeycoin.app/"
+   ]
+  },
+  "onafriq": {
+   "id": "onafriq",
+   "name": "Onafriq",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://onafriq.com",
+   "blurb": "Pan-African payments gateway linking banks, mobile money operators and money transfer firms to some 500 million wallets for pay-ins and payouts.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://onafriq.com/"
+   ]
+  },
+  "velafi": {
+   "id": "velafi",
+   "name": "VelaFi",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.velafi.com",
+   "blurb": "Latin American stablecoin payment and treasury infrastructure for enterprises, fintechs and PSPs, connected to Circle Payments Network.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series B",
+    "last_round_usd_m": 20,
+    "last_round_date": "2026-01-09",
+    "lead": "XVC",
+    "valuation_usd_m": null,
+    "investors": [
+     "XVC",
+     "Ikuyo"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.velafi.com/",
+    "https://www.coindesk.com/business/2026/01/12/velafi-raises-usd20-million-in-series-b-to-expand-stablecoin-payments-infrastructure"
+   ]
+  },
+  "bitso": {
+   "id": "bitso",
+   "name": "Bitso",
+   "hq_city": "Mexico City",
+   "hq_country": "Mexico",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://bitso.com/business",
+   "blurb": "Mexican crypto platform whose Bitso Business arm offers stablecoin cross-border and local payments, treasury and MXNB, its peso stablecoin.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://bitso.com/business"
+   ]
+  },
+  "infinia": {
+   "id": "infinia",
+   "name": "Infinia",
+   "hq_city": "New York",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.infinia.xyz",
+   "blurb": "New York infrastructure linking bank clearing rails with digital ledgers for cross-border payouts, collections and named accounts in 9+ markets.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 13.5,
+    "last_round_date": "2026-07-09",
+    "lead": "Bain Capital and Variant",
+    "valuation_usd_m": null,
+    "investors": [
+     "Bain Capital",
+     "Variant",
+     "Y Combinator",
+     "Lattice"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.infinia.xyz/",
+    "https://infinia.xyz/insights/infinia-closes-13-million-series-a-funding"
+   ]
+  },
+  "transfero": {
+   "id": "transfero",
+   "name": "Transfero",
+   "hq_city": "Rio de Janeiro",
+   "hq_country": "Brazil",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://transfero.com",
+   "blurb": "Brazilian payments infrastructure joining banking rails, blockchains and liquidity: Pix acceptance, 24/7 cross-border settlement and stablecoin accounts.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://transfero.com/"
+   ]
+  },
+  "avenia": {
+   "id": "avenia",
+   "name": "Avenia",
+   "hq_city": "São Paulo",
+   "hq_country": "Brazil",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://avenia.io",
+   "blurb": "Money movement for Latin America built on BRLA, a Brazilian real stablecoin, linking Pix and local rails to global ones through one API.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://avenia.io/"
+   ]
+  },
+  "cobre": {
+   "id": "cobre",
+   "name": "Cobre",
+   "hq_city": "Bogotá",
+   "hq_country": "Colombia",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.cobre.com",
+   "blurb": "Colombian platform and API for enterprise payments in Latin America: real-time local, cross-border and stablecoin payments and collections.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.cobre.com/"
+   ]
+  },
+  "parfin": {
+   "id": "parfin",
+   "name": "Parfin",
+   "hq_city": "São Paulo",
+   "hq_country": "Brazil",
+   "region": "Global",
+   "segment": "Custody & wallets",
+   "founded": null,
+   "website": "https://parfin.io",
+   "blurb": "Brazilian core banking platform for digital assets that lets banks and institutions offer custody, tokenisation and settlement as regulated providers.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://parfin.io/"
+   ]
+  },
+  "abbeycross": {
+   "id": "abbeycross",
+   "name": "AbbeyCross",
+   "hq_city": null,
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.abbeycross.com",
+   "blurb": "UK FX payment network for banks and payment firms: one connection to many FX providers, with control over provider choice and routing logic.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.abbeycross.com/"
+   ]
+  },
+  "adhara": {
+   "id": "adhara",
+   "name": "Adhara",
+   "hq_city": null,
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://adhara.io",
+   "blurb": "Deposit-token and liquidity-management software for banks' international payments on shared ledgers, with interbank payment and CBDC products.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://adhara.io/"
+   ]
+  },
+  "fnality": {
+   "id": "fnality",
+   "name": "Fnality",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.fnality.com",
+   "blurb": "Bank-backed operator of the Sterling Fnality Payment System, a wholesale payment system on a shared ledger regulated by the Bank of England.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series C",
+    "last_round_usd_m": 136,
+    "last_round_date": "2025-09-23",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "WisdomTree",
+     "Bank of America",
+     "Citi",
+     "KBC",
+     "Temasek",
+     "Tradeweb"
+    ]
+   },
+   "status": "Consortium",
+   "sources": [
+    "https://fintech.global/2025/09/23/fnality-raises-136m-to-expand-blockchain-settlement-systems/"
+   ]
+  },
+  "centiglobe": {
+   "id": "centiglobe",
+   "name": "Centiglobe",
+   "hq_city": "Stockholm",
+   "hq_country": "Sweden",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.centiglobe.com",
+   "blurb": "Swedish member network where banks and PSPs settle two-way cross-border payments with bank-agnostic tokenised deposits instead of pre-funding.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.centiglobe.com/"
+   ]
+  },
+  "crymbo": {
+   "id": "crymbo",
+   "name": "CRYMBO",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://crymbo.com",
+   "blurb": "London infrastructure that lets banks, EMIs, PSPs and exchanges launch compliant digital-asset and stablecoin services through one API.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://crymbo.com/"
+   ]
+  },
+  "merge": {
+   "id": "merge",
+   "name": "Merge",
+   "hq_city": null,
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.merge.money",
+   "blurb": "Stablecoin and fiat payments through one API for fintechs, PSPs and businesses, backed by Octopus and Coinbase Ventures; UBS piloted payments with it.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.merge.money/",
+    "https://financialit.net/news/cryptocurrencies/merge-launches-named-euro-ibans-power-scalable-fiat-stablecoin-payment"
+   ]
+  },
+  "damex": {
+   "id": "damex",
+   "name": "Damex",
+   "hq_city": "Gibraltar",
+   "hq_country": "Gibraltar",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://damex.io",
+   "blurb": "Gibraltar stablecoin infrastructure for B2B payments: conversion, wallets as a service, global payouts and OTC liquidity for financial institutions.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://damex.io/"
+   ]
+  },
+  "freemarket": {
+   "id": "freemarket",
+   "name": "Freemarket",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.wearefreemarket.com",
+   "blurb": "FCA-authorised payments network for businesses moving money in 30+ currencies, with stablecoins, FX and liquidity, and an Irish arm.",
+   "licenses": [
+    {
+     "regulator": "FCA",
+     "jurisdiction": "United Kingdom",
+     "type": "Authorised (FreemarketFX Limited)",
+     "year": null
+    },
+    {
+     "regulator": "CBI",
+     "jurisdiction": "Ireland",
+     "type": "Authorised and regulated (FreemarketFX Ireland Limited)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.wearefreemarket.com/"
+   ]
+  },
+  "due": {
+   "id": "due",
+   "name": "Due",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.opendue.com",
+   "blurb": "Borderless accounts and payments in 150+ countries over stablecoins and local rails, for individuals and businesses; registered in Canada and Spain.",
+   "licenses": [
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business; registered with the Bank of Canada as a payment service provider",
+     "year": null
+    },
+    {
+     "regulator": "CNMV",
+     "jurisdiction": "Spain",
+     "type": "Crypto-asset service provider under MiCA",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.opendue.com/"
+   ]
+  },
+  "striga": {
+   "id": "striga",
+   "name": "Striga",
+   "hq_city": "Tallinn",
+   "hq_country": "Estonia",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://striga.com",
+   "blurb": "Estonian APIs for apps to offer bitcoin and stablecoin accounts, cards, IBANs and wallets in Europe, under an Estonian virtual currency licence.",
+   "licenses": [
+    {
+     "regulator": "Estonian FIU",
+     "jurisdiction": "Estonia",
+     "type": "Virtual currency service licence (FVT000546)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://striga.com/"
+   ]
+  },
+  "arf": {
+   "id": "arf",
+   "name": "Arf",
+   "hq_city": "Zug",
+   "hq_country": "Switzerland",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://arf.one",
+   "blurb": "Swiss provider of short-term liquidity for cross-border payment firms, settled in stablecoins and offered only to licensed institutions.",
+   "licenses": [
+    {
+     "regulator": "Swiss regulation",
+     "jurisdiction": "Switzerland",
+     "type": "Regulated in Switzerland (type not stated on its site)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://arf.one/"
+   ]
+  },
+  "unlimit": {
+   "id": "unlimit",
+   "name": "Unlimit",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Merchant gateway",
+   "founded": 2009,
+   "website": "https://www.unlimit.com",
+   "blurb": "Global payments firm founded in 2009 offering acquiring, accounts, crypto and banking services; it launched Stable.com to clear stablecoin swaps.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.unlimit.com/",
+    "https://www.coindesk.com/business/2025/12/02/unlimit-debuts-stable-com-a-decentralized-clearing-house-built-for-stablecoins"
+   ]
+  },
+  "quant": {
+   "id": "quant",
+   "name": "Quant",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://quant.network",
+   "blurb": "London firm whose software lets banks run programmable money and connect ledgers; The Clearing House chose it for tokenised deposit links.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://quant.network/",
+    "https://www.ledgerinsights.com/the-clearing-house-selects-quant-for-tokenized-deposit-interoperability/"
+   ]
+  },
+  "swift": {
+   "id": "swift",
+   "name": "Swift",
+   "hq_city": "La Hulpe",
+   "hq_country": "Belgium",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.swift.com",
+   "blurb": "The banks' messaging co-operative, now running a shared ledger for real-time, 24/7 cross-border payments; HSBC and StanChart settled first.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Consortium",
+   "sources": [
+    "https://www.coindesk.com/business/2026/08/19/hsbc-standard-chartered-execute-first-live-banking-transaction-on-swift-s-24-7-ledger"
+   ]
+  },
+  "hsbc": {
+   "id": "hsbc",
+   "name": "HSBC",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.hsbc.com",
+   "blurb": "Global bank whose Tokenised Deposit Service moves client money around the clock; Ant International piloted dirham and dollar payments on it in the UAE.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://www.hsbc.com/"
+   ]
+  },
+  "nala": {
+   "id": "nala",
+   "name": "NALA",
+   "hq_city": null,
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.nala.com",
+   "blurb": "Stablecoin payments company with a consumer app and Rafiki, an API for payouts and collections across the US, UK, Europe, Asia and Africa.",
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business; state money transmitter licences (NALA Payments LLC)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.nala.com/",
+    "https://www.rafiki.com/"
+   ]
+  },
+  "citi": {
+   "id": "citi",
+   "name": "Citi",
+   "hq_city": "New York",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.citigroup.com",
+   "blurb": "Global bank combining tokenised deposits with its clearing network for 24/7 dollar payments; Siam Commercial Bank was the first respondent live.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://www.ledgerinsights.com/scb-is-first-respondent-bank-live-on-citis-tokenized-deposit-clearing-solution/"
+   ]
+  },
+  "jpmorgan": {
+   "id": "jpmorgan",
+   "name": "J.P. Morgan (Kinexys)",
+   "hq_city": "New York",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.jpmorgan.com/kinexys/index",
+   "blurb": "J.P. Morgan's blockchain unit: tokenised dollar and euro deposits (JPMD) for 24/7 settlement, used by Alibaba's B2B platform and linked with DBS.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://www.jpmorgan.com/kinexys/index",
+    "https://www.coindesk.com/business/2025/11/15/alibaba-to-use-jpmorgan-s-blockchain-for-tokenized-dollar-and-euro-payments-cnbc"
+   ]
+  },
+  "borderless": {
+   "id": "borderless",
+   "name": "Borderless.xyz",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://borderless.xyz",
+   "blurb": "Orchestration network linking licensed stablecoin ramps in 113+ countries through one API, with provider selection, failover and real-time routing.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://borderless.xyz/",
+    "https://borderless.xyz/insights/introducing-the-borderless-benchmark-bringing-clarity-to-stablecoin-fx-rates"
+   ]
+  },
+  "lightspark": {
+   "id": "lightspark",
+   "name": "Lightspark",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.lightspark.com",
+   "blurb": "API for accounts, payments, cards and stablecoins under a client's own brand, with local rails in 65+ countries and real-time settlement.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.lightspark.com/"
+   ]
+  },
+  "cybrid": {
+   "id": "cybrid",
+   "name": "Cybrid",
+   "hq_city": "Toronto",
+   "hq_country": "Canada",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://cybrid.xyz",
+   "blurb": "Toronto stablecoin payment APIs with orchestration, liquidity, compliance and wallets for banks, neobanks and remitters; licensed in all US states.",
+   "licenses": [
+    {
+     "regulator": "US state regulators",
+     "jurisdiction": "United States",
+     "type": "Money services business licences in all 50 US states, per its site",
+     "year": null
+    },
+    {
+     "regulator": "Bank of Canada",
+     "jurisdiction": "Canada",
+     "type": "Retail Payment Activities Act compliance, per its site",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 10,
+    "last_round_date": "2025-10-23",
+    "lead": "BDC Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "BDC Capital",
+     "Golden Ventures",
+     "Luge Capital",
+     "Panache Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://cybrid.xyz/",
+    "https://betakit.com/cybrid-closes-10-million-usd-series-a-round-to-bring-stablecoins-to-the-business-mainstream/"
+   ]
+  },
+  "zynk": {
+   "id": "zynk",
+   "name": "Zynk",
+   "hq_city": null,
+   "hq_country": "Canada",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.zynk.money",
+   "blurb": "Same-day settlement and liquidity for cross-border payments and remittances through one API; a money services business registered in Canada.",
+   "licenses": [
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.zynk.money/"
+   ]
+  },
+  "levl": {
+   "id": "levl",
+   "name": "Levl",
+   "hq_city": "Toronto",
+   "hq_country": "Canada",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.levl.ch",
+   "blurb": "Toronto payments suite for fintechs, PSPs, remitters and neobanks: stablecoin liquidity, named accounts, ramps and cross-border payments.",
+   "licenses": [
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business (C100000584)",
+     "year": null
+    },
+    {
+     "regulator": "Bank of Canada",
+     "jurisdiction": "Canada",
+     "type": "Registered payment service provider",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.levl.ch/"
+   ]
+  },
+  "sphere": {
+   "id": "sphere",
+   "name": "Sphere",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://spherepay.co",
+   "blurb": "Stablecoin payments API and dashboard settling payouts in 160+ markets; it is building SphereNet, a compliance-focused ledger for regulated payments.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://spherepay.co/",
+    "https://spherepay.co/blog/sphere-partners-with-deutsche-telekom-on-enterprise-infrastructure-for-spherenet"
+   ]
+  },
+  "modern-treasury": {
+   "id": "modern-treasury",
+   "name": "Modern Treasury",
+   "hq_city": "San Francisco",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.moderntreasury.com",
+   "blurb": "Payment operations platform with one API for multi-rail payments, ledgers and stablecoin orchestration; it has applied for a US trust bank charter.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.moderntreasury.com/"
+   ]
+  },
+  "routefusion": {
+   "id": "routefusion",
+   "name": "Routefusion",
+   "hq_city": "Austin",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.routefusion.com",
+   "blurb": "Austin-based single API linking fragmented payment rails for cross-border transfers and multi-currency accounts.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": 40.7,
+    "last_round_type": "Series A",
+    "last_round_usd_m": 26.5,
+    "last_round_date": "2025-10-09",
+    "lead": "PeakSpan Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "PeakSpan Capital",
+     "Silverton Partners"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://thefintechtimes.com/routefusion-secures-26-5m-to-unify-global-payments-ecosystem-via-single-api/"
+   ]
+  },
+  "fiserv": {
+   "id": "fiserv",
+   "name": "Fiserv",
+   "hq_city": "Milwaukee",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Issuer",
+   "founded": null,
+   "website": "https://www.fiserv.com",
+   "blurb": "US banking and payments processor whose digital asset platform lets banks issue and run stablecoins, including FIUSD; live since October 2026.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://fintech.global/2026/10/02/fiserv-brings-stablecoins-into-mainstream-banking/"
+   ]
+  },
+  "fis": {
+   "id": "fis",
+   "name": "FIS",
+   "hq_city": "Jacksonville",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.fisglobal.com",
+   "blurb": "US banking technology provider leading Project Keystone, a bank-controlled network for tokenised money on regulated deposits, with US banks.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://www.fisglobal.com/",
+    "https://investingnews.com/fis-and-leading-financial-institutions-to-build-their-own-digital-tokenized-money-network/"
+   ]
+  },
+  "stablecore": {
+   "id": "stablecore",
+   "name": "Stablecore",
+   "hq_city": "Dallas",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Issuer",
+   "founded": 2025,
+   "website": "https://stablecore.com",
+   "blurb": "Dallas platform, founded in 2025, for banks and credit unions to offer stablecoins, tokenised deposits and digital-asset accounts from their cores.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": 20,
+    "last_round_date": "2025-09-16",
+    "lead": "Norwest Venture Partners",
+    "valuation_usd_m": null,
+    "investors": [
+     "Norwest Venture Partners",
+     "Coinbase Ventures",
+     "Curql",
+     "BankTech Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://stablecore.com/",
+    "https://dallasinnovates.com/dallas-based-stablecore-raises-20m-to-bring-stablecoins-and-more-into-banks-and-credit-unions/"
+   ]
+  },
+  "coinbax": {
+   "id": "coinbax",
+   "name": "Coinbax",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.coinbax.com",
+   "blurb": "Programmable escrow, controls and reversibility for stablecoin and tokenised deposit payments, built for banks, credit unions and fintechs.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 4.2,
+    "last_round_date": "2025-12-22",
+    "lead": "BankTech Ventures",
+    "valuation_usd_m": null,
+    "investors": [
+     "BankTech Ventures",
+     "Connecticut Innovations",
+     "Paxos",
+     "SpringTime Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.coinbax.com/",
+    "https://www.coinbax.com/signals/coinbax-seed-funding"
+   ]
+  },
+  "owny": {
+   "id": "owny",
+   "name": "OWNY",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://owny.com",
+   "blurb": "Payment rails for emerging-market banks: dollar accounts, cross-border payments, FX, stablecoin access and compliance, through licensed partners.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://owny.com/"
+   ]
+  },
+  "almond": {
+   "id": "almond",
+   "name": "Almond FinTech",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.almondfintech.com",
+   "blurb": "Execution layer for cross-border FX that chooses path, timing and mix across stablecoin routes, with same-day settlement, around the clock.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.almondfintech.com/"
+   ]
+  },
+  "checker": {
+   "id": "checker",
+   "name": "Checker",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.checker.finance",
+   "blurb": "Single integration that gives financial institutions access to exchanges, OTC desks, banks and payment providers for stablecoin flows.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 8,
+    "last_round_date": "2026-05-19",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "Galaxy Ventures",
+     "Framework Ventures",
+     "Al Mada Ventures"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.checker.finance/",
+    "https://cryptobriefing.com/checker-raises-8m-stablecoin-infrastructure/"
+   ]
+  },
+  "1money": {
+   "id": "1money",
+   "name": "1Money",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.1money.com",
+   "blurb": "Stablecoin payments platform with no platform fees: custody, conversion, named accounts and payouts on its own network; licensed in US states and Bermuda.",
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business; money transmitter licences in US states",
+     "year": null
+    },
+    {
+     "regulator": "Bermuda Monetary Authority",
+     "jurisdiction": "Bermuda",
+     "type": "Digital asset business licence",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Seed",
+    "last_round_usd_m": 20,
+    "last_round_date": "2025-01-16",
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "Hack VC"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.1money.com/",
+    "https://www.pymnts.com/news/investment-tracker/2025/1money-raises-20-million-to-launch-network-for-stablecoin-payments/"
+   ]
+  },
+  "squarefi": {
+   "id": "squarefi",
+   "name": "SquareFi",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://squarefi.co",
+   "blurb": "White-label accounts, cards, stablecoins and payouts for fintechs and platforms through one API, run on its Canadian money services registration.",
+   "licenses": [
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://squarefi.co/"
+   ]
+  },
+  "blindpay": {
+   "id": "blindpay",
+   "name": "BlindPay",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://blindpay.com",
+   "blurb": "Stablecoin API that connects local payment rails, business accounts and compliance for global payments; a FinCEN-registered money services business.",
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://blindpay.com/"
+   ]
+  },
+  "n3xt": {
+   "id": "n3xt",
+   "name": "N3XT",
+   "hq_city": null,
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://n3xt.io",
+   "blurb": "Full-reserve US bank running an instant dollar payment network for business transactions, with programmable 24/7 settlement.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://n3xt.io/"
+   ]
+  },
+  "nilos": {
+   "id": "nilos",
+   "name": "Nilos",
+   "hq_city": "Vancouver",
+   "hq_country": "Canada",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.nilos.io",
+   "blurb": "Cross-border payments for hard emerging-market corridors in Africa, Latin America and Asia: one API, local payouts, collection accounts and FX.",
+   "licenses": [
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.nilos.io/"
+   ]
   }
  }
 }
