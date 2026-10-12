@@ -1,5 +1,5 @@
 {
- "version": "2026-10-12",
+ "version": "2026-10-13",
  "companies": {
   "visa": {
    "id": "visa",
@@ -570,6 +570,12 @@
      "jurisdiction": "Canada",
      "type": "Money services business (OpenPayd Canada, Inc.)",
      "year": null
+    },
+    {
+     "regulator": "State regulators",
+     "jurisdiction": "United States (43 states)",
+     "type": "Money transmitter licences, through MSB USA, folded in after regulatory approval in September 2026",
+     "year": 2026
     }
    ],
    "sources": [
@@ -577,7 +583,8 @@
     "https://www.fintechfutures.com/m-a/openpayd-gears-up-for-nasdaq-listing-with-msb-usa-integration",
     "https://www.financemagnates.com/fintech/openpayd-to-go-public-via-276m-spac-deal-targets-nasdaq-listing/",
     "https://www.businesswire.com/news/home/20260601259498/en/OpenPayd-Targets-Nasdaq-Listing-at-Unicorn-Valuation",
-    "https://thepaypers.com/crypto-web3-and-cbdc/news/openpayd-secures-mica-licence-to-offer-crypto-asset-services-across-europe"
+    "https://thepaypers.com/crypto-web3-and-cbdc/news/openpayd-secures-mica-licence-to-offer-crypto-asset-services-across-europe",
+    "https://pulse2.com/openpayd-acquires-43-u-s-state-money-transmitter-licenses-ahead-of-planned-nasdaq-listing/"
    ]
   },
   "aryze": {
@@ -1329,9 +1336,28 @@
    "region": "Europe",
    "segment": "Settlement rails",
    "founded": 2025,
-   "website": null,
-   "blurb": "London start-up founded in 2025 by the Crassula team, offering banks and licensed fintechs a plug-in layer to send, receive and hold stablecoins.",
-   "licenses": [],
+   "website": "https://nodu.fi",
+   "blurb": "London start-up founded in 2025 by the Crassula team, giving banks, fintechs and payment firms one API for stablecoin pay-ins, payouts and wallets; licensed under MiCA in Latvia.",
+   "licenses": [
+    {
+     "regulator": "Latvijas Banka",
+     "jurisdiction": "Latvia (EU passport)",
+     "type": "MiCA CASP (Nodu Digital SIA)",
+     "year": 2026
+    },
+    {
+     "regulator": "Latvijas Banka",
+     "jurisdiction": "Latvia (EU passport)",
+     "type": "Payment institution (Nodu Digital SIA)",
+     "year": 2026
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business registration (Nodu Canada Inc.); Bank of Canada payment service provider registration pending",
+     "year": null
+    }
+   ],
    "funding": {
     "total_usd_m": null,
     "last_round_type": "Pre-seed",
@@ -1345,7 +1371,10 @@
    },
    "status": "Independent",
    "sources": [
-    "https://menafn.com/1110531117/Stablecoin-Startup-Nodu-Targets-Banks-With-Compliant-Payments-Layer"
+    "https://menafn.com/1110531117/Stablecoin-Startup-Nodu-Targets-Banks-With-Compliant-Payments-Layer",
+    "https://www.bank.lv/en/news-and-events/news-and-articles/news/17744-latvijas-banka-is-issuing-two-licences-to-nodu-digital-sia",
+    "https://thepaypers.com/crypto-web3-and-cbdc/news/latvijas-banka-issues-crypto-and-payment-licences-to-nodu-digital",
+    "https://nodu.fi/solutions/regulatory-coverage/"
    ]
   },
   "openfx": {
@@ -2036,6 +2065,113 @@
     "https://fasset.com/about-us/",
     "https://theblock.co/news/business/2026-08-24-fasset-68-million-raise-sbi-group-412563",
     "https://fintech.global/2026/05/15/fasset-closes-51m-series-b-to-scale-stablecoin-banking/"
+   ]
+  },
+  "noah": {
+   "licenses": [
+    {
+     "regulator": "State regulators",
+     "jurisdiction": "United States (30 states, DC and Puerto Rico)",
+     "type": "Money transmitter licences (Noah US, Inc., NMLS 2696057)",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Money services business registration (Noah Savings, Inc.)",
+     "year": null
+    },
+    {
+     "regulator": null,
+     "jurisdiction": "Lithuania",
+     "type": "Virtual asset service provider registration (Noah LT, UAB), a pre-MiCA status",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://tech.eu/2026/10/07/uk-stablecoin-infrastructure-startup-noah-closes-38m-seed-round",
+    "https://www.globenewswire.com/news-release/2026/10/07/3376327/0/en/noah-closes-38m-seed-funding-round-as-major-enterprises-move-cross-border-payments-onto-stablecoin.html",
+    "https://noah.com/terms-of-service?terms=licences-and-registrations"
+   ]
+  },
+  "orbital": {
+   "licenses": [
+    {
+     "regulator": "FCA",
+     "jurisdiction": "United Kingdom",
+     "type": "Authorised payment institution (Pay Perform Limited, 843960)",
+     "year": null
+    },
+    {
+     "regulator": "GFSC",
+     "jurisdiction": "Gibraltar",
+     "type": "E-money issuer (Pay Perform Gibraltar Limited)",
+     "year": null
+    },
+    {
+     "regulator": "GFSC",
+     "jurisdiction": "Gibraltar",
+     "type": "Distributed ledger technology provider (Pay Perform Digital Limited)",
+     "year": null
+    },
+    {
+     "regulator": "Estonian FIU",
+     "jurisdiction": "Estonia",
+     "type": "Virtual currency service provider (Pay Perform AS, FVT000290), a pre-MiCA licence",
+     "year": null
+    },
+    {
+     "regulator": "VQF",
+     "jurisdiction": "Switzerland",
+     "type": "Member of the VQF self-regulatory organisation (Pay Perform Switzerland GmbH)",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://getorbital.com/",
+    "https://tech.eu/2023/08/03/orbital-5m-crypto-and-traditional-payment-services/",
+    "https://www.getorbital.com/pressroom/orbital-unveils-plans-for-us-expansion-as-demand-grows-for-stablecoin-and-cross-border-payment-infrastructure",
+    "https://www.getorbital.com/legal-disclosures"
+   ]
+  },
+  "bcb-group": {
+   "licenses": [
+    {
+     "regulator": "FCA",
+     "jurisdiction": "United Kingdom",
+     "type": "Authorised payment institution (BCB Payments Limited, 807377)",
+     "year": 2018
+    },
+    {
+     "regulator": "ACPR",
+     "jurisdiction": "France",
+     "type": "E-money institution (BCB Payments (Europe) SASU, 735745)",
+     "year": 2024
+    },
+    {
+     "regulator": "AMF",
+     "jurisdiction": "France",
+     "type": "Digital asset service provider registration",
+     "year": 2024
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Foreign money services business",
+     "year": 2026
+    },
+    {
+     "regulator": "VQF",
+     "jurisdiction": "Switzerland",
+     "type": "Member of the VQF self-regulatory organisation (BCB Markets (Switzerland) Sarl)",
+     "year": null
+    }
+   ],
+   "sources": [
+    "https://www.bcbgroup.com/about-us/",
+    "https://www.bcbgroup.com/insights/bcb-group-secures-european-presence-with-emi-and-dasp-licence-in-france/",
+    "https://www.bcbgroup.com/insights/theblock-bcb-group-raises-60m-series-a-round",
+    "https://www.bcbgroup.com/about/our-licences-and-regulations/"
    ]
   }
  }

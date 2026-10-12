@@ -395,8 +395,8 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 482,
-    "licences": 63,
+    "total": 483,
+    "licences": 64,
     "regulatory_actions": 58,
     "commercial": 234,
     "capital": 127,
@@ -439,7 +439,7 @@
       },
       {
         "m": "2026-07",
-        "n": 29
+        "n": 30
       },
       {
         "m": "2026-08",

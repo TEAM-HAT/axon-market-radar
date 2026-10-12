@@ -1,5 +1,5 @@
 {
- "version": "2026-10-12",
+ "version": "2026-10-13",
  "moves": {
   "tempo-series-a-2025-10-17": {
    "parties": [
@@ -1675,7 +1675,8 @@
    "themes": [
     "us-rules",
     "cards-and-networks"
-   ]
+   ],
+   "company_id": "rain"
   },
   "saudi-stablecoin-talks-2025-10-01": {
    "themes": [

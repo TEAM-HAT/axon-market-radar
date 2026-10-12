@@ -1,5 +1,5 @@
 {
- "version": "2026-10-12",
+ "version": "2026-10-13",
  "moves": [
   {
    "id": "stripe-bridge-agreement-2024-10-21",
@@ -14823,6 +14823,28 @@
    "parties": [],
    "themes": [],
    "added": "2026-10-12"
+  },
+  {
+   "id": "nodu-latvia-mica-pi-2026-07-08",
+   "date": "2026-07-08",
+   "date_precision": "day",
+   "company_id": "nodu",
+   "company_name": "Nodu",
+   "type": "License",
+   "region": "Europe",
+   "title": "Latvia licenses Nodu under MiCA and as a payment institution",
+   "summary": "Latvijas Banka's Supervision Committee decided to license Nodu Digital SIA for crypto-asset services (exchanging crypto-assets for funds and transferring them for clients) and as a payment institution. It was the tenth MiCA licence the bank has granted, and the authorisation can be passported across the EU.",
+   "amount_usd_m": null,
+   "regulator": "Latvijas Banka",
+   "jurisdiction": "Latvia",
+   "source_name": "Latvijas Banka",
+   "source_url": "https://www.bank.lv/en/news-and-events/news-and-articles/news/17744-latvijas-banka-is-issuing-two-licences-to-nodu-digital-sia",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "mica"
+   ],
+   "added": "2026-10-13"
   }
  ]
 }
