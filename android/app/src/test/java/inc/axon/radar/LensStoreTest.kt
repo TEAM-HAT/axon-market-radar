@@ -32,7 +32,11 @@ class LensStoreTest {
     private val lens = """
         {"version":"test","companies":{"acme":{"roles":["competitor"],"threat":"high","markets":["UAE"],"note":"A made-up rival."}},
          "marks":{"acme-launch-2026-10-01":{"mark":"threat","why":"A made-up reason.","next":"Do a made-up thing","owner":"BD"}},
-         "ecosystem":[],"markets":[],"watchlist":{"companies":["acme"],"private":[]},"decisions":[]}
+         "ecosystem":[],"markets":[],"watchlist":{"companies":["acme"],"private":[]},"decisions":[],
+         "pillars":{"method":"Made up.","pillars":[{"id":"routing","name":"Routing","test":"a made-up test"}],
+           "companies":{"axon":{"name":"AXON","checked":"2026-07-27","verdict":"Made up.","cells":{"routing":{"mark":"full","note":"Made up.","sources":["A dossier"]}}},
+                        "acme":{"name":"Acme","checked":"2026-10-12","verdict":"Made up.","cells":{"routing":{"mark":"claimed","note":"Made up.","sources":["https://example.com/a"]}}}},
+           "next":["acme"]}}
     """.trimIndent()
 
     @Before
@@ -72,6 +76,9 @@ class LensStoreTest {
         assertEquals("high", l.stance("acme")?.threat)
         assertEquals("threat", l.mark("acme-launch-2026-10-01")?.mark)
         assertEquals(1, l.steps.size)
+        assertEquals("full", l.grid?.axon?.cells?.get("routing")?.mark)
+        assertEquals(listOf("acme"), l.grid?.rivals?.map { it.id })
+        assertEquals(listOf("https://example.com/a"), l.grid?.companies?.get("acme")?.cells?.get("routing")?.sources)
         assertEquals("Bearer good-key", seen.last()["auth"])
         assertEquals("application/vnd.github.raw+json", seen.last()["accept"])
         assertTrue(LensStore.hasKey(ctx))

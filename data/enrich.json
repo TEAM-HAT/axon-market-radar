@@ -1,5 +1,5 @@
 {
- "version": "2026-10-11",
+ "version": "2026-10-12",
  "moves": {
   "tempo-series-a-2025-10-17": {
    "parties": [
@@ -126,10 +126,11 @@
     "valuation_usd_m": null,
     "use_of_funds": "banking corridors, new markets, and lending, SME banking and trade finance"
    },
-   "jurisdiction": "United States",
+   "jurisdiction": "United Arab Emirates",
    "themes": [
     "capital"
-   ]
+   ],
+   "region": "Middle East"
   },
   "fasset-series-c-2026-08-24": {
    "parties": [
@@ -144,10 +145,11 @@
     "valuation_usd_m": 1000,
     "use_of_funds": "its Own Network of banking corridors and AI tools for stablecoin settlement"
    },
-   "jurisdiction": "United States",
+   "jurisdiction": "United Arab Emirates",
    "themes": [
     "capital"
-   ]
+   ],
+   "region": "Middle East"
   },
   "schuman-financial-ripple-openfx-2026-08-01": {
    "date": "2026-08-05",

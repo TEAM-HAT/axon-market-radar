@@ -264,6 +264,7 @@ private fun RadarContent(
             "companies" -> { area = Area.Competitors; rivalsAt = 2 }
             "rivals" -> { area = Area.Competitors; rivalsAt = 0 }
             "map" -> { area = Area.Competitors; rivalsAt = 1 }
+            "compare" -> { area = Area.Competitors; rivalsAt = 3 }
             "funding" -> { area = Area.Deals; dealsAt = 0 }
             "acquisitions" -> { area = Area.Deals; dealsAt = 1 }
             "partnerships" -> { area = Area.Deals; dealsAt = 2 }
@@ -316,7 +317,7 @@ private fun RadarContent(
             val toKey = { area = Area.Axon; axonAt = 2 }
             when (area) {
                 Area.Today -> TodayArea(r, lens, focus, deckKey, todayList, { todayList = it }, ::openMoves, { focus = it }, bottom)
-                Area.Competitors -> CompetitorsArea(r, lens, rivalsAt, { rivalsAt = it }, actions.openCompany, toKey, bottom)
+                Area.Competitors -> CompetitorsArea(r, lens, rivalsAt, { rivalsAt = it }, actions.openCompany, toKey, bottom, actions.openUrl)
                 Area.Deals -> DealsArea(r, dealsAt, { dealsAt = it }, ::openMoves, bottom)
                 Area.Market -> MarketArea(r, marketAt, { marketAt = it }, ::openMoves, bottom)
                 Area.Axon -> when (axonAt) {

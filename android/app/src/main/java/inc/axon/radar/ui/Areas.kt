@@ -2,9 +2,11 @@
 
 package inc.axon.radar.ui
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -28,6 +30,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -45,8 +48,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.semantics.Role
@@ -57,10 +63,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import inc.axon.radar.data.Assessed
 import inc.axon.radar.data.Company
+import inc.axon.radar.data.Grid
 import inc.axon.radar.data.Lens
 import inc.axon.radar.data.LensStore
 import inc.axon.radar.data.Move
+import inc.axon.radar.data.Pillar
 import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Stance
 import inc.axon.radar.data.Text
@@ -222,24 +231,28 @@ private val MARKET_FILTERS = listOf("All markets") + Lens.MARKETS
 @Composable
 fun CompetitorsArea(
     radar: Radar, lens: Lens?, section: Int, onSection: (Int) -> Unit, onOpenCompany: (String) -> Unit, onAddKey: () -> Unit,
-    bottomInset: Dp,
+    bottomInset: Dp, openUrl: (String) -> Unit = {},
 ) {
     var role by rememberSaveable { mutableStateOf(0) }
     var market by rememberSaveable { mutableStateOf(0) }
     var mapScope by rememberSaveable { mutableStateOf(0) }
     var seg by rememberSaveable { mutableStateOf(0) }
+    // No company is named here: until a pick is made, the two rivals that rank highest in the private view lead.
+    var first by rememberSaveable { mutableStateOf("") }
+    var second by rememberSaveable { mutableStateOf("") }
     val list = rememberLazyListState()
     LaunchedEffect(section) { list.scrollToItem(0) }
     LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Top() }
-        item { Titles(listOf("Rivals", "Map", "Companies"), section, onSection) }
+        item { Titles(listOf("Rivals", "Map", "Companies", "Compare"), section, onSection) }
         when (section) {
             0 -> rivals(radar, lens, role, { role = it }, market, { market = it }, onOpenCompany, onAddKey)
             1 -> map(radar, lens, mapScope, { mapScope = it }, onOpenCompany)
-            else -> {
+            2 -> {
                 item { CompanyCarousel(radar, onOpenCompany) }
                 companyRows(radar, seg, { seg = it }, onOpenCompany)
             }
+            else -> compare(radar, lens, first, { first = it }, second, { second = it }, onOpenCompany, openUrl, onAddKey)
         }
     }
 }
@@ -420,6 +433,195 @@ private fun AxonChip() {
         contentAlignment = Alignment.CenterStart,
     ) {
         T("AXON", Type.Name.copy(fontSize = 12.sp), if (ink.mono) Palette.Black else Palette.White, maxLines = 1)
+    }
+}
+
+// ---- Compare -----------------------------------------------------------------------------------
+
+/** Assessed rivals in the order they matter: threat level first, then name. */
+private fun ordered(g: Grid, lens: Lens): List<Assessed> =
+    g.rivals.sortedWith(compareBy<Assessed> { Lens.THREAT_ORDER.indexOf(lens.stance(it.id)?.threat ?: "none") }.thenBy { it.name })
+
+/**
+ * AXON against two competitors, pillar by pillar, the way AXON's July 2026 assessment set the grid out: a mark
+ * for each pillar, what exists behind it, and the sources. Every mark rests on a source; marketing alone never counts.
+ */
+private fun LazyListScope.compare(
+    radar: Radar, lens: Lens?, first: String, onFirst: (String) -> Unit, second: String, onSecond: (String) -> Unit,
+    onOpen: (String) -> Unit, openUrl: (String) -> Unit, onAddKey: () -> Unit,
+) {
+    if (lens == null) {
+        item { KeyPrompt("AXON against its competitors, pillar by pillar, with the evidence behind every mark, comes from AXON's private view.", onAddKey) }
+        return
+    }
+    val g = lens.grid
+    val axon = g?.axon
+    val rivals = g?.let { ordered(it, lens) }.orEmpty()
+    if (g == null || axon == null || rivals.size < 2) {
+        item { Intro("The side-by-side comparison arrives with the next update of AXON's private view. Refresh it in AXON, under Settings.") }
+        return
+    }
+    val a = rivals.firstOrNull { it.id == first } ?: rivals[0]
+    val others = rivals.filter { it.id != a.id }
+    val b = others.firstOrNull { it.id == second } ?: others[0]
+    val three = listOf(axon, a, b)
+    item { Intro("AXON against two competitors on the six pillars of orchestration, regulation and public engineering. Every mark rests on a source.") }
+    item { PickRow("AXON AGAINST", rivals, a.id, onFirst) }
+    item { PickRow("AND", others, b.id, onSecond) }
+    item { PillarLegend() }
+    item { PillarMatrix(g, three) }
+    listOf(a, b).forEach { c ->
+        item(key = "v-" + c.id) { VerdictRow(c, lens.stance(c.id), radar.companyById.containsKey(c.id)) { onOpen(c.id) } }
+    }
+    g.pillars.forEach { p ->
+        item(key = "p-" + p.id + a.id + b.id) { PillarBlock(p, three, openUrl) }
+    }
+    item {
+        val dates = three.joinToString(" · ") { "${it.name} ${Text.day(it.checked)}" }
+        T("Checked: $dates. ${axon.basis ?: ""}", Type.Small, Palette.Muted, Modifier.padding(start = 14.dp, end = 14.dp, top = 18.dp))
+    }
+    if (g.method.isNotBlank()) item { T(g.method, Type.Small, Palette.Muted, Modifier.padding(start = 14.dp, end = 14.dp, top = 10.dp)) }
+    val next = g.next.mapNotNull { radar.companyById[it]?.name }
+    if (next.isNotEmpty()) item {
+        T("Next to assess: " + next.joinToString(", ") + ".", Type.Small, Palette.Muted, Modifier.padding(start = 14.dp, end = 14.dp, top = 10.dp))
+    }
+}
+
+/** A labelled row of names to pick one company from. */
+@Composable
+private fun PickRow(label: String, cos: List<Assessed>, selected: String, onPick: (String) -> Unit) {
+    Column(Modifier.fillMaxWidth().background(Palette.Paper)) {
+        T(label, Type.Caps, Palette.Black, Modifier.padding(start = 14.dp, top = 4.dp, bottom = 6.dp), maxLines = 1)
+        SmallFilters(cos.map { it.name }, cos.indexOfFirst { it.id == selected }.coerceAtLeast(0)) { i -> onPick(cos[i].id) }
+    }
+}
+
+/** ● documented, ◐ claimed only, ○ absent: a filled dot, a half-filled ring and an empty ring. */
+@Composable
+fun PillarSign(mark: String, color: Color, size: Dp = 12.dp, modifier: Modifier = Modifier) {
+    Canvas(modifier.size(size)) {
+        val w = this.size.width
+        val r = w * 0.42f
+        val c = Offset(w / 2, w / 2)
+        when (mark) {
+            "full" -> drawCircle(color, radius = r, center = c)
+            "claimed" -> {
+                drawArc(color, 90f, 180f, true, topLeft = Offset(c.x - r, c.y - r), size = Size(r * 2, r * 2))
+                drawCircle(color, radius = r - w * 0.06f, center = c, style = Stroke(w * 0.12f))
+            }
+            else -> drawCircle(color, radius = r - w * 0.06f, center = c, style = Stroke(w * 0.12f))
+        }
+    }
+}
+
+@Composable
+private fun PillarLegend() {
+    Row(
+        Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically,
+    ) {
+        listOf("full", "claimed", "absent").forEach { m ->
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                PillarSign(m, Palette.Black, 11.dp)
+                Spacer(Modifier.width(4.dp))
+                T(Lens.pillarShort(m), Type.Small, Palette.Ink2, maxLines = 1)
+            }
+        }
+    }
+}
+
+/** The whole grid at a glance: a row per pillar, a column per company. */
+@Composable
+private fun PillarMatrix(g: Grid, cos: List<Assessed>) {
+    Column(Modifier.padding(horizontal = 6.dp, vertical = 4.dp).fillMaxWidth().clip(RoundedCornerShape(2.dp)).background(Palette.Row).padding(vertical = 8.dp)) {
+        Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+            Spacer(Modifier.weight(1.5f))
+            cos.forEach { c -> T(c.name.uppercase(), Type.Caps, Palette.Black, Modifier.weight(1f), maxLines = 1) }
+        }
+        g.pillars.forEach { p ->
+            Box(Modifier.fillMaxWidth().padding(horizontal = 8.dp).height(1.dp).background(Palette.Rule))
+            Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 7.dp), verticalAlignment = Alignment.CenterVertically) {
+                T(p.name, Type.Small, Palette.Ink2, Modifier.weight(1.5f).padding(end = 6.dp), maxLines = 2)
+                cos.forEach { c ->
+                    Box(Modifier.weight(1f)) { PillarSign(c.cells[p.id]?.mark ?: "absent", Palette.Black, 14.dp) }
+                }
+            }
+        }
+    }
+}
+
+/** What a rival is, in AXON's reading, with its threat level; opens the company. */
+@Composable
+private fun VerdictRow(c: Assessed, s: Stance?, known: Boolean, onClick: () -> Unit) {
+    Column(
+        Modifier.fillMaxWidth().padding(horizontal = 6.dp, vertical = 1.dp).clip(RoundedCornerShape(2.dp)).background(Palette.Row)
+            .then(if (known) Modifier.tap(onClick) else Modifier).padding(horizontal = 8.dp, vertical = 10.dp),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            T(c.name, Type.Name, Palette.Black, Modifier.weight(1f), maxLines = 1)
+            if (s != null) { Spacer(Modifier.width(8.dp)); ThreatTag(s.threat) }
+        }
+        Spacer(Modifier.height(4.dp))
+        T(c.verdict, Type.Small, Palette.Ink2)
+        Spacer(Modifier.height(5.dp))
+        T("${c.count("full")} DOCUMENTED · ${c.count("claimed")} CLAIMED ONLY · ${c.count("absent")} ABSENT", Type.Caps, Palette.Black, maxLines = 1)
+    }
+}
+
+/** One pillar: its test, then each company's mark, what exists behind it, and the sources. */
+@Composable
+private fun PillarBlock(p: Pillar, cos: List<Assessed>, openUrl: (String) -> Unit) {
+    Column(Modifier.fillMaxWidth().padding(start = 14.dp, end = 14.dp, top = 24.dp)) {
+        T(p.name, Type.display(26f), Palette.Black)
+        if (p.test.isNotBlank()) { Spacer(Modifier.height(4.dp)); T(p.test.uppercase(), Type.Caps, Palette.Muted) }
+        cos.forEach { c ->
+            val cell = c.cells[p.id]
+            Spacer(Modifier.height(12.dp))
+            Box(Modifier.fillMaxWidth().height(1.dp).background(Palette.Rule))
+            Spacer(Modifier.height(10.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                PillarSign(cell?.mark ?: "absent", Palette.Black, 13.dp)
+                Spacer(Modifier.width(7.dp))
+                T(c.name, Type.Name, Palette.Black, Modifier.weight(1f), maxLines = 1)
+                T(Lens.pillarShort(cell?.mark).uppercase(), Type.Caps, Palette.Ink2, maxLines = 1)
+            }
+            Spacer(Modifier.height(4.dp))
+            T(cell?.note ?: "Not assessed.", Type.Small, Palette.Ink2)
+            val src = cell?.sources.orEmpty()
+            if (src.isNotEmpty()) {
+                Spacer(Modifier.height(6.dp))
+                Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    src.zip(sourceLabels(src)).forEach { (s, label) ->
+                        val url = s.startsWith("http")
+                        T(label, Type.Caps.copy(fontSize = 10.sp), if (url) Palette.Black else Palette.Muted,
+                            Modifier.clip(RoundedCornerShape(2.dp)).background(Palette.Row).then(if (url) Modifier.tap { openUrl(s) } else Modifier)
+                                .padding(horizontal = 7.dp, vertical = 5.dp),
+                            maxLines = 1)
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** A source as its site's name: "docs.ripple.com", "vara.ae". */
+internal fun sourceName(url: String): String =
+    runCatching { java.net.URI(url).host?.removePrefix("www.") }.getOrNull() ?: url
+
+/**
+ * Labels for a cell's sources: the site's name, and where two share a site, the page's own name after it
+ * ("docs.ripple.com › funding-methods"). Sources that are not links keep their words.
+ */
+internal fun sourceLabels(sources: List<String>): List<String> {
+    val hosts = sources.map { if (it.startsWith("http")) sourceName(it) else null }
+    return sources.mapIndexed { i, s ->
+        val h = hosts[i] ?: return@mapIndexed s
+        if (hosts.count { it == h } < 2) h
+        else {
+            val page = runCatching { java.net.URI(s).path }.getOrNull().orEmpty().trimEnd('/').substringAfterLast('/')
+                .substringBeforeLast('.').let { if (it.length > 30) it.take(29) + "…" else it }
+            if (page.isBlank()) h else "$h › $page"
+        }
     }
 }
 

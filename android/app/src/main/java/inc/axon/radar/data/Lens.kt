@@ -38,6 +38,25 @@ data class Position(val market: String, val axon: String, val watch: String)
 
 data class Decision(val date: String, val text: String, val evidence: String)
 
+/** One mark in the capability grid: full (documented), claimed (marketing only) or absent, what exists, and its sources. */
+data class PillarCell(val mark: String, val note: String, val sources: List<String>)
+
+/** A pillar of the grid and the test its marks answer. */
+data class Pillar(val id: String, val name: String, val test: String)
+
+/** A company assessed pillar by pillar: AXON's reading of what it is, and when its record was checked. */
+data class Assessed(
+    val id: String, val name: String, val checked: String, val basis: String?, val verdict: String, val cells: Map<String, PillarCell>,
+) {
+    fun count(mark: String): Int = cells.values.count { it.mark == mark }
+}
+
+/** AXON and its competitors by pillar, from AXON's July 2026 assessment onwards. */
+data class Grid(val method: String, val pillars: List<Pillar>, val companies: Map<String, Assessed>, val next: List<String>) {
+    val axon: Assessed? get() = companies["axon"]
+    val rivals: List<Assessed> get() = companies.values.filter { it.id != "axon" }
+}
+
 /**
  * AXON's private view of the radar. It never travels with the public data: the app reads it from the private
  * repository with a read-only key the user enters once, and keeps it encrypted on the phone.
@@ -45,7 +64,7 @@ data class Decision(val date: String, val text: String, val evidence: String)
 data class Lens(
     val version: String?, val updated: String?, val stances: Map<String, Stance>, val marks: Map<String, Mark>,
     val relations: List<Relation>, val positions: List<Position>, val watchIds: List<String>, val watchNames: List<String>,
-    val decisions: List<Decision>,
+    val decisions: List<Decision>, val grid: Grid? = null,
 ) {
     fun stance(companyId: String?): Stance? = companyId?.let { stances[it] }
     fun mark(moveId: String): Mark? = marks[moveId]
@@ -99,6 +118,38 @@ data class Lens(
             else -> 3
         }
 
+        /** A pillar mark in words, as the July 2026 assessment's legend puts it. */
+        fun pillarLabel(m: String?): String = when (m) {
+            "full" -> "Documented & verifiable"
+            "claimed" -> "Claimed in marketing, not evidenced"
+            else -> "Absent from the documented record"
+        }
+
+        /** The same, short enough for a tag. */
+        fun pillarShort(m: String?): String = when (m) {
+            "full" -> "Documented"
+            "claimed" -> "Claimed only"
+            else -> "Absent"
+        }
+
+        private fun parseGrid(p: JSONObject): Grid? {
+            val pillars = p.list("pillars").mapNotNull { x -> x.str("id")?.let { Pillar(it, x.str("name") ?: it, x.str("test") ?: "") } }
+            val companies = p.optJSONObject("companies")?.let { c ->
+                c.keys().asSequence().mapNotNull { id ->
+                    val x = c.optJSONObject(id) ?: return@mapNotNull null
+                    val cells = x.optJSONObject("cells")?.let { cs ->
+                        cs.keys().asSequence().mapNotNull { pid ->
+                            val y = cs.optJSONObject(pid) ?: return@mapNotNull null
+                            pid to PillarCell(y.str("mark") ?: "absent", y.str("note") ?: "", y.strings("sources"))
+                        }.toMap()
+                    } ?: emptyMap()
+                    id to Assessed(id, x.str("name") ?: id, x.str("checked") ?: "", x.str("basis"), x.str("verdict") ?: "", cells)
+                }.toMap()
+            } ?: emptyMap()
+            if (pillars.isEmpty() || companies.isEmpty()) return null
+            return Grid(p.str("method") ?: "", pillars, companies, p.strings("next"))
+        }
+
         fun parse(text: String): Lens {
             val o = JSONObject(text)
             val stances = o.optJSONObject("companies")?.let { c ->
@@ -123,9 +174,10 @@ data class Lens(
             val positions = o.list("markets").map { Position(it.str("market") ?: "", it.str("axon_position") ?: "", it.str("watch") ?: "") }
             val w = o.optJSONObject("watchlist")
             val decisions = o.list("decisions").map { Decision(it.str("date") ?: "", it.str("decision") ?: "", it.str("evidence") ?: "") }
+            val grid = o.optJSONObject("pillars")?.let { runCatching { parseGrid(it) }.getOrNull() }
             return Lens(
                 o.str("version"), o.str("updated"), stances, marks, relations, positions,
-                w?.strings("companies") ?: emptyList(), w?.strings("private") ?: emptyList(), decisions,
+                w?.strings("companies") ?: emptyList(), w?.strings("private") ?: emptyList(), decisions, grid,
             )
         }
 

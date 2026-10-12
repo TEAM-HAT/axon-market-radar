@@ -1,5 +1,5 @@
 {
- "version": "2026-10-11",
+ "version": "2026-10-12",
  "moves": [
   {
    "id": "stripe-bridge-agreement-2024-10-21",
@@ -3930,12 +3930,12 @@
    "company_id": "fasset",
    "company_name": "Fasset",
    "type": "License",
-   "region": "Middle East",
-   "title": "Fasset wins provisional Malaysian licence for Islamic stablecoin bank",
-   "summary": "Dubai-based Fasset received a provisional licence in Malaysia to run a Shariah-compliant digital bank backed by stablecoins, offering asset-backed savings, zero-interest accounts and on-chain global payments.",
+   "region": "Global",
+   "title": "Labuan FSA gives Fasset conditional approval for a stablecoin Islamic digital bank",
+   "summary": "Labuan's regulator gave Fasset Islamic Digital Bank Limited a conditional approval in its Islamic digital bank sandbox; it may not start business until it meets every operational and prudential requirement. Fasset had described it as a Malaysian banking licence.",
    "amount_usd_m": null,
-   "regulator": null,
-   "jurisdiction": "Malaysia",
+   "regulator": "Labuan FSA",
+   "jurisdiction": "Malaysia (Labuan)",
    "source_name": "CoinDesk",
    "source_url": "https://www.coindesk.com/business/2025/10/07/fasset-wins-malaysia-license-to-launch-first-stablecoin-based-islamic-digital-bank",
    "related": [],
@@ -14803,6 +14803,26 @@
     "use_of_funds": "growing its tokenised cash funds"
    },
    "added": "2026-10-11"
+  },
+  {
+   "id": "fasset-ojk-rejection-2026-05-25",
+   "date": "2026-05-25",
+   "date_precision": "day",
+   "company_id": "fasset",
+   "company_name": "Fasset",
+   "type": "License",
+   "region": "Global",
+   "title": "Indonesia's OJK rejects Fasset's crypto trader licence application",
+   "summary": "OJK rejected PT Gerbang Aset Digital, Fasset's Indonesian arm, as a digital financial asset trader, revoked its registration as a prospective crypto trader and barred it from crypto business in Indonesia, telling it to settle its obligations to customers.",
+   "amount_usd_m": null,
+   "regulator": "OJK",
+   "jurisdiction": "Indonesia",
+   "source_name": "OJK",
+   "source_url": "https://ojk.go.id/en/berita-dan-kegiatan/pengumuman/Pages/Rejection-of-Business-License-Application-of-PT-Gerbang-Aset-Digital-as-a-Digital-Financial-Asset-Trader.aspx",
+   "related": [],
+   "parties": [],
+   "themes": [],
+   "added": "2026-10-12"
   }
  ]
 }

@@ -55,6 +55,7 @@ class AreasRenderTest {
 
     private val PAGES = listOf(
         "home" to "50-today", "moves" to "51-all-moves", "rivals" to "52-rivals", "map" to "53-map", "companies" to "54-companies",
+        "compare" to "54b-compare",
         "funding" to "55-funding", "acquisitions" to "56-acquisitions", "partnerships" to "57-partnerships",
         "trends" to "58-trends", "licences" to "59-licences", "watch" to "60-watching", "steps" to "61-steps", "settings" to "62-settings",
     )
@@ -95,6 +96,22 @@ class AreasRenderTest {
         assertEquals(lead.sortedBy { Lens.weight(it) }, lead)
     }
 
+    /** The capability grid arrives whole: AXON and every assessed rival, each with a mark, a note and a source on every pillar. */
+    @Test
+    fun theGridIsComplete() {
+        val lens = privateLens(); assumeTrue(lens != null)
+        val g = lens!!.grid
+        assertTrue("the lens carries the grid", g != null && g.axon != null)
+        assertEquals(8, g!!.pillars.size)
+        g.companies.values.forEach { c ->
+            g.pillars.forEach { p ->
+                val cell = c.cells[p.id]
+                assertTrue("${c.id} ${p.id}", cell != null && cell.mark in setOf("full", "claimed", "absent") && cell.note.isNotBlank() && cell.sources.isNotEmpty())
+            }
+            assertTrue(c.id, c.id == "axon" || radar.companyById.containsKey(c.id))
+        }
+    }
+
     /** Without the private view the deck keeps its date order. */
     @Test
     fun todayWithoutKeyKeepsTheDeck() = assertEquals(radar.deck, todayDeck(radar, null))
@@ -126,6 +143,7 @@ class TallAreasRenderTest {
         shot("70-tall-rivals", look)
         listOf("map" to "71-tall-map", "funding" to "72-tall-funding", "steps" to "73-tall-steps", "settings" to "74-tall-settings", "partnerships" to "75-tall-partnerships")
             .forEach { (d, n) -> link.value = Link(d); shot(n, look) }
+        link.value = Link("compare"); shot("80-tall-compare", look)
         link.value = Link("company", "ripple"); shot("76-tall-company-ripple", look)
         link.value = Link("company", "bvnk"); shot("77-tall-company-bvnk", look)
         val marked = radar.moves.first { lens!!.mark(it.id)?.mark == "opportunity" }
