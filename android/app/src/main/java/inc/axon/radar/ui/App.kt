@@ -70,6 +70,7 @@ data class Link(val dest: String, val id: String? = null) {
 sealed interface Page {
     data class Moves(val ids: List<String>, val index: Int) : Page
     data class Company(val id: String) : Page
+    data class Investor(val id: String) : Page
     /** The list of every company, to add to or remove from Watching. */
     data object Picker : Page
 }
@@ -148,6 +149,9 @@ private fun RadarContent(
     var lensBusy by remember { mutableStateOf(false) }
     var lensMsg by remember { mutableStateOf<String?>(null) }
     var lensFetched by remember { mutableStateOf(LensStore.fetchedAt(ctx)) }
+    // The private view can be switched off on this phone without removing the key.
+    var lensHidden by remember { mutableStateOf(Store.lensHidden(ctx)) }
+    val viewLens = if (lensHidden) null else lens
     // Bumped when a widget asks for a given card, so the deck opens there.
     var deckKey by remember { mutableStateOf(0) }
     var refreshing by remember { mutableStateOf(false) }
@@ -222,6 +226,7 @@ private fun RadarContent(
         r == null -> null
         top is Page.Moves -> top.ids.getOrNull(if (pagerAt >= 0) pagerAt else top.index)?.let { r.moveById[it] }?.let { ink.page(it.type) }
         top is Page.Company -> ink.page(r.latestMove(top.id)?.type ?: "Partnership")
+        top is Page.Investor -> ink.page("Funding")
         top is Page.Picker -> Palette.Paper
         else -> null
     }
@@ -257,7 +262,7 @@ private fun RadarContent(
             "home" -> { area = Area.Today; todayList = false }
             "deck" -> {
                 area = Area.Today; todayList = false
-                focus = todayDeck(r, lens).indexOfFirst { it.id == l.id }.coerceAtLeast(0)
+                focus = todayDeck(r, viewLens).indexOfFirst { it.id == l.id }.coerceAtLeast(0)
                 deckKey++
             }
             "moves" -> { area = Area.Today; todayList = true }
@@ -268,6 +273,7 @@ private fun RadarContent(
             "funding" -> { area = Area.Deals; dealsAt = 0 }
             "acquisitions" -> { area = Area.Deals; dealsAt = 1 }
             "partnerships" -> { area = Area.Deals; dealsAt = 2 }
+            "investors" -> { area = Area.Deals; dealsAt = 3 }
             "licences" -> { area = Area.Market; marketAt = 1 }
             "trends" -> { area = Area.Market; marketAt = 0 }
             "watch" -> { area = Area.Axon; axonAt = 0 }
@@ -276,11 +282,12 @@ private fun RadarContent(
         }
         when (l.dest) {
             "move" -> r.moveById[l.id]?.let { m ->
-                val deck = if (layout == Layout.Original) r.deck else todayDeck(r, lens)
+                val deck = if (layout == Layout.Original) r.deck else todayDeck(r, viewLens)
                 val list = if (m in deck) deck else r.moves
                 openMoves(list, list.indexOf(m))
             }
             "company" -> if (l.id != null && r.companyById.containsKey(l.id)) stack.add(Page.Company(l.id))
+            "investor" -> if (l.id != null && r.investorById.containsKey(l.id)) stack.add(Page.Investor(l.id))
         }
     }
 
@@ -290,6 +297,7 @@ private fun RadarContent(
         openCompany = { id -> stack.add(Page.Company(id)) },
         openMoves = ::openMoves,
         toggleWatch = { id -> watched = if (id in watched) watched - id else watched + id; Store.setWatched(ctx, watched) },
+        openInvestor = { id -> if (r.investorById.containsKey(id)) stack.add(Page.Investor(id)) },
     )
 
     BackHandler(enabled = stack.isNotEmpty()) { actions.close() }
@@ -297,7 +305,7 @@ private fun RadarContent(
     BackHandler(enabled = stack.isEmpty() && layout == Layout.Areas && (area != Area.Today || todayList)) { area = Area.Today; todayList = false }
 
     // The private view shows only in the five areas; the original tabs stay as they were.
-    val shownLens = if (layout == Layout.Areas) lens else null
+    val shownLens = if (layout == Layout.Areas) viewLens else null
 
     Box(Modifier.fillMaxSize()) {
         val bottom = 58.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
@@ -316,18 +324,18 @@ private fun RadarContent(
         } else {
             val toKey = { area = Area.Axon; axonAt = 2 }
             when (area) {
-                Area.Today -> TodayArea(r, lens, focus, deckKey, todayList, { todayList = it }, ::openMoves, { focus = it }, bottom)
-                Area.Competitors -> CompetitorsArea(r, lens, rivalsAt, { rivalsAt = it }, actions.openCompany, toKey, bottom, actions.openUrl)
-                Area.Deals -> DealsArea(r, dealsAt, { dealsAt = it }, ::openMoves, bottom)
+                Area.Today -> TodayArea(r, viewLens, focus, deckKey, todayList, { todayList = it }, ::openMoves, { focus = it }, bottom)
+                Area.Competitors -> CompetitorsArea(r, viewLens, rivalsAt, { rivalsAt = it }, actions.openCompany, toKey, bottom, actions.openUrl)
+                Area.Deals -> DealsArea(r, dealsAt, { dealsAt = it }, ::openMoves, bottom, viewLens, actions.openInvestor)
                 Area.Market -> MarketArea(r, marketAt, { marketAt = it }, ::openMoves, bottom)
                 Area.Axon -> when (axonAt) {
                     0 -> WatchScreen(
                         r, watched, actions.openCompany, ::openMoves, { area = Area.Competitors; rivalsAt = 2 },
                         onAdd = { stack.add(Page.Picker) }, onToggle = actions.toggleWatch, bottomInset = bottom,
                         header = { Titles(AXON_SECTIONS, 0) { axonAt = it } },
-                        offer = lens?.let { l -> { WatchlistOffer(r, l, watched) { ids -> watched = watched + ids; Store.setWatched(ctx, watched) } } },
+                        offer = viewLens?.let { l -> { WatchlistOffer(r, l, watched) { ids -> watched = watched + ids; Store.setWatched(ctx, watched) } } },
                     )
-                    1 -> AxonNextSteps(r, lens, { axonAt = it }, ::openMoves, toKey, bottom)
+                    1 -> AxonNextSteps(r, viewLens, { axonAt = it }, ::openMoves, toKey, bottom)
                     else -> AxonSettingsPage(
                         r, lens,
                         AxonSettings(
@@ -335,6 +343,8 @@ private fun RadarContent(
                             onConnect = ::connectKey, onForget = ::forgetKey, onCheck = ::checkLens,
                             layout = layout, onLayout = onLayout, look = look, onLook = onLook,
                             refreshing = refreshing, onRefresh = ::refresh, onOpenWeb = { actions.openUrl(r.radarUrl) },
+                            hidden = lensHidden, onHidden = { lensHidden = it; Store.setLensHidden(ctx, it) },
+                            onOpenSources = { actions.openUrl(r.radarUrl + "#sources") },
                         ),
                         { axonAt = it }, bottom,
                     )
@@ -355,6 +365,7 @@ private fun RadarContent(
                 null -> Box(Modifier)
                 is Page.Moves -> MovePager(page.ids.mapNotNull { r.moveById[it] }, page.index, r, watched, actions, { if (page == stack.lastOrNull()) pagerAt = it }, shownLens)
                 is Page.Company -> r.companyById[page.id]?.let { CompanyPoster(it, r, watched, actions, shownLens) }
+                is Page.Investor -> r.investorById[page.id]?.let { InvestorPoster(it, r, actions, shownLens) }
                 Page.Picker -> CompanyPicker(r, watched, actions.toggleWatch, actions.close)
             }
         }

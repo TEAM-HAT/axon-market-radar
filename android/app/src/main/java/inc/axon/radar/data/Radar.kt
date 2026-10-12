@@ -64,11 +64,14 @@ data class Trends(
 /** A tracked theme, such as dirham tokens or the MiCA clean-up. */
 data class Theme(val id: String, val name: String, val what: String?)
 
+/** An organisation the moves name that the radar does not track as a company: an investor, a bank, an exchange... */
+data class Org(val id: String, val name: String, val kind: String?, val country: String?, val website: String?)
+
 data class Radar(
     val updatedAt: String?, val nextRun: String?, val windowStart: String?, val windowEnd: String?, val count: Int,
     val newToday: Int, val headline: String, val mixText: String, val regions: Map<String, Int>, val highlights: List<String>,
     val moves: List<Move>, val companies: List<Company>, val regulators: List<Regulator>, val trends: Trends, val radarUrl: String,
-    val themes: List<Theme> = emptyList(), val orgNames: Map<String, String> = emptyMap(),
+    val themes: List<Theme> = emptyList(), val orgNames: Map<String, String> = emptyMap(), val orgs: Map<String, Org> = emptyMap(),
 ) {
     /** The name of any organisation the radar knows: a tracked company first, then the wider list. */
     fun nameOf(id: String): String? = companyById[id]?.name ?: orgNames[id]
@@ -94,6 +97,10 @@ data class Radar(
     }
 
     fun latestMove(companyId: String): Move? = movesFor(companyId).firstOrNull()
+
+    /** Everyone named as a lead or other investor in a move, most active first, as on the web portal. */
+    val investors: List<Investor> by lazy { Investors.build(this) }
+    val investorById: Map<String, Investor> by lazy { investors.associateBy { it.id } }
 
     companion object {
         fun parse(text: String): Radar {
@@ -152,6 +159,11 @@ data class Radar(
                 themes = o.list("themes").mapNotNull { t -> t.str("id")?.let { Theme(it, t.str("name") ?: it, t.str("what")) } },
                 orgNames = o.optJSONObject("orgs")?.let { org ->
                     org.keys().asSequence().associateWith { k -> org.optJSONObject(k)?.str("name") ?: k }
+                } ?: emptyMap(),
+                orgs = o.optJSONObject("orgs")?.let { org ->
+                    org.keys().asSequence().mapNotNull { k ->
+                        org.optJSONObject(k)?.let { x -> Org(k, x.str("name") ?: k, x.str("kind"), x.str("hq_country"), x.str("website")) }
+                    }.associateBy { it.id }
                 } ?: emptyMap(),
             )
         }
@@ -228,6 +240,13 @@ object Store {
 
     fun setWatched(ctx: Context, ids: Set<String>) {
         ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putStringSet("watch", ids).apply()
+    }
+
+    /** AXON's private view switched off on this phone; the key stays where it is. */
+    fun lensHidden(ctx: Context): Boolean = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getBoolean("lens_hidden", false)
+
+    fun setLensHidden(ctx: Context, hidden: Boolean) {
+        ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putBoolean("lens_hidden", hidden).apply()
     }
 
     /** Colour or black and white, for the app and its widgets. Kept on this phone. */

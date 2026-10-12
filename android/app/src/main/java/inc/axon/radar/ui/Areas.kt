@@ -66,6 +66,7 @@ import androidx.compose.ui.unit.sp
 import inc.axon.radar.data.Assessed
 import inc.axon.radar.data.Company
 import inc.axon.radar.data.Grid
+import inc.axon.radar.data.Investors
 import inc.axon.radar.data.Lens
 import inc.axon.radar.data.LensStore
 import inc.axon.radar.data.Move
@@ -646,22 +647,89 @@ private fun median(xs: List<Double>): Double? {
     return if (s.size % 2 == 1) s[s.size / 2] else (s[s.size / 2 - 1] + s[s.size / 2]) / 2
 }
 
+val DEALS_SECTIONS = listOf("Funding", "Acquisitions", "Partnerships", "Investors")
+
 @Composable
-fun DealsArea(radar: Radar, section: Int, onSection: (Int) -> Unit, onOpenMoves: (List<Move>, Int) -> Unit, bottomInset: Dp) {
+fun DealsArea(
+    radar: Radar, section: Int, onSection: (Int) -> Unit, onOpenMoves: (List<Move>, Int) -> Unit, bottomInset: Dp,
+    lens: Lens? = null, onOpenInvestor: (String) -> Unit = {},
+) {
     var stage by rememberSaveable { mutableStateOf(0) }
     var status by rememberSaveable { mutableStateOf(0) }
     var kind by rememberSaveable { mutableStateOf(0) }
     var region by rememberSaveable { mutableStateOf(0) }
+    var invFilter by rememberSaveable { mutableStateOf(0) }
+    var invQuery by rememberSaveable { mutableStateOf("") }
     val list = rememberLazyListState()
     LaunchedEffect(section) { list.scrollToItem(0) }
     LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Top() }
-        item { Titles(listOf("Funding", "Acquisitions", "Partnerships"), section, onSection) }
+        item { Titles(DEALS_SECTIONS, section, onSection) }
         when (section) {
-            0 -> funding(radar, stage, { stage = it }, region, { region = it }, onOpenMoves)
+            0 -> funding(radar, stage, { stage = it }, region, { region = it }, onOpenMoves, onOpenInvestor) { onSection(3) }
             1 -> acquisitions(radar, status, { status = it }, onOpenMoves)
-            else -> partnerships(radar, kind, { kind = it }, onOpenMoves)
+            2 -> partnerships(radar, kind, { kind = it }, onOpenMoves)
+            else -> investorsList(radar, lens, invFilter, { invFilter = it }, invQuery, { invQuery = it }, onOpenInvestor)
         }
+    }
+}
+
+/** Everyone named as a lead or other investor, most active first, with filters and a search over names and portfolios. */
+private fun LazyListScope.investorsList(
+    radar: Radar, lens: Lens?, filter: Int, onFilter: (Int) -> Unit, query: String, onQuery: (String) -> Unit, onOpen: (String) -> Unit,
+) {
+    val all = radar.investors
+    val rounds = all.flatMap { v -> v.rounds.map { it.id } }.toSet().size
+    val since = all.flatMap { v -> v.rounds.map { it.date.take(7) } }.minOrNull()
+    val tests: List<Pair<String, (inc.axon.radar.data.Investor) -> Boolean>> = listOf<Pair<String, (inc.axon.radar.data.Investor) -> Boolean>>(
+        "All" to { _ -> true }, "Led a round" to { v -> v.led.isNotEmpty() }, "Two or more" to { v -> v.rounds.size > 1 },
+    ) + (if (lens != null) listOf<Pair<String, (inc.axon.radar.data.Investor) -> Boolean>>("Back AXON rivals" to { v -> Investors.rivalsBacked(v, lens).isNotEmpty() }) else emptyList())
+    val f = filter.coerceIn(0, tests.lastIndex)
+    item {
+        Figures(
+            "${Text.plural(all.size, "investor", "investors")} in $rounds rounds since ${Text.monthYear(since)}",
+            listOf(all.count(tests[1].second).toString() to "Led a round", all.count(tests[2].second).toString() to "Two or more") +
+                (if (lens != null) listOf(all.count(tests[3].second).toString() to "Back AXON rivals") else emptyList()),
+        )
+    }
+    item { T("Everyone named as a lead or other investor in a round on the radar, most active first. The money is each round's size, not what one investor put in.", Type.Small, Palette.Muted, Modifier.padding(start = 14.dp, end = 14.dp, top = 14.dp, bottom = 4.dp)) }
+    stickyHeader {
+        Column(Modifier.background(Palette.Paper)) {
+            Filters(tests.map { (l, t) -> l to all.count(t) }, f, onFilter)
+            SearchField(query, onQuery, "Search investors and the companies they backed")
+        }
+    }
+    val q = query.trim().lowercase()
+    val shown = all.filter(tests[f].second).filter { v ->
+        q.isEmpty() || (listOfNotNull(v.name, v.country) + v.portfolio.map { it.name }).joinToString(" ").lowercase().contains(q)
+    }
+    if (shown.isEmpty()) item { T("No investor matches.", Type.Row, Palette.Muted, Modifier.padding(16.dp)) }
+    items(shown, key = { "inv-" + it.id }) { v -> InvestorRow(v, Investors.rivalsBacked(v, lens).size) { onOpen(v.id) } }
+}
+
+@Composable
+private fun InvestorRow(v: inc.axon.radar.data.Investor, rivals: Int, onClick: () -> Unit) {
+    Row(
+        Modifier.fillMaxWidth().padding(horizontal = 6.dp, vertical = 1.dp).clip(RoundedCornerShape(2.dp)).background(Palette.Row)
+            .tap(onClick).padding(horizontal = 8.dp, vertical = 9.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        CompanyThumb(v.name, "Funding")
+        Spacer(Modifier.width(14.dp))
+        Column(Modifier.weight(1f)) {
+            T(v.name, Type.Name, Palette.Black, maxLines = 1)
+            Spacer(Modifier.height(2.dp))
+            T(
+                listOfNotNull(
+                    v.led.size.takeIf { it > 0 }?.let { "led $it" }, "latest ${Text.monthYear(v.rounds.first().date.take(7))}",
+                    rivals.takeIf { it > 0 }?.let { "backs " + Text.plural(it, "AXON rival", "AXON rivals") },
+                    v.portfolio.take(3).joinToString(", ") { it.name } + if (v.portfolio.size > 3) " +${v.portfolio.size - 3}" else "",
+                ).joinToString(" · "),
+                Type.Small, Palette.Muted, maxLines = 1,
+            )
+        }
+        Spacer(Modifier.width(10.dp))
+        T(Text.plural(v.rounds.size, "round", "rounds"), Type.Name, Palette.Black, maxLines = 1)
     }
 }
 
@@ -688,6 +756,7 @@ private fun Figures(headline: String, stats: List<Pair<String, String>>) {
 
 private fun LazyListScope.funding(
     radar: Radar, stage: Int, onStage: (Int) -> Unit, region: Int, onRegion: (Int) -> Unit, onOpen: (List<Move>, Int) -> Unit,
+    onOpenInvestor: (String) -> Unit, onEveryInvestor: () -> Unit,
 ) {
     val all = radar.moves.filter { it.type == "Funding" }
     val recent = all.filter { !it.history }
@@ -714,16 +783,13 @@ private fun LazyListScope.funding(
         ) { if (rs.isNotEmpty()) onOpen(rs, 0) }
     }
     item { Heading("Most active investors") }
-    val byInvestor = all.flatMap { m -> (m.leads + m.investors).distinctBy { it.id }.map { it to m } }.groupBy({ it.first.id }, { it })
-    val top = byInvestor.values.sortedWith(compareByDescending<List<Pair<inc.axon.radar.data.Party, Move>>> { it.size }.thenByDescending { g -> g.count { it.first.role == "lead investor" } }).take(12)
-    items(top, key = { "i-" + it.first().first.id }) { g ->
-        val rounds = g.map { it.second }.distinct()
-        val led = g.count { it.first.role == "lead investor" }
+    items(radar.investors.take(12), key = { "i-" + it.id }) { v ->
         PaperRow(
-            radar.nameOf(g.first().first.id) ?: g.first().first.name, Text.plural(rounds.size, "round", "rounds"),
-            listOfNotNull(led.takeIf { it > 0 }?.let { "led $it" }, "latest ${Text.monthYear(rounds.maxOf { it.date }.take(7))}").joinToString(" · "),
-        ) { onOpen(rounds, 0) }
+            v.name, Text.plural(v.rounds.size, "round", "rounds"),
+            listOfNotNull(v.led.size.takeIf { it > 0 }?.let { "led $it" }, "latest ${Text.monthYear(v.rounds.first().date.take(7))}").joinToString(" · "),
+        ) { onOpenInvestor(v.id) }
     }
+    item { PaperRow("Every investor", Text.plural(radar.investors.size, "investor", "investors"), null, onEveryInvestor) }
     item { Heading("Every round", all.size) }
     val set = STAGES[stage].second
     val r = REGIONS[region].takeIf { region > 0 }
@@ -863,6 +929,9 @@ class AxonSettings(
     val onConnect: (String) -> Unit, val onForget: () -> Unit, val onCheck: () -> Unit,
     val layout: Layout, val onLayout: (Layout) -> Unit, val look: Look, val onLook: (Look) -> Unit,
     val refreshing: Boolean, val onRefresh: () -> Unit, val onOpenWeb: () -> Unit,
+    /** AXON's private view switched off on this phone, without removing the key. */
+    val hidden: Boolean = false, val onHidden: (Boolean) -> Unit = {},
+    val onOpenSources: () -> Unit = {},
 )
 
 val AXON_SECTIONS = listOf("Watching", "Next steps", "Settings")
@@ -925,6 +994,14 @@ fun AxonSettingsPage(radar: Radar, lens: Lens?, s: AxonSettings, onSection: (Int
         item { Titles(AXON_SECTIONS, 2, onSection) }
         item { Heading("Private view") }
         item { KeyPanel(lens, s) }
+        item { Heading("News sources") }
+        item {
+            Column(Modifier.padding(horizontal = 14.dp)) {
+                T("The daily update reads only the sources the team has switched on, and never cites one switched off. The list is kept on the web page, where each change is made by a signed-in person whose role allows it.", Type.Row, Palette.Ink2)
+                Spacer(Modifier.height(12.dp))
+                Button("Manage news sources on the web", Icons.ArrowOut, dark = false, onClick = s.onOpenSources)
+            }
+        }
         item { Heading("Layout") }
         item { LayoutPicker(s.layout, s.onLayout) }
         item { Heading("Look") }
@@ -946,6 +1023,26 @@ fun AxonSettingsPage(radar: Radar, lens: Lens?, s: AxonSettings, onSection: (Int
                     Type.Small, Palette.Muted,
                 )
             }
+        }
+    }
+}
+
+/** A row that is one switch: the label and what it does on the left, the knob on the right. */
+@Composable
+private fun SwitchRow(label: String, sub: String, on: Boolean, onClick: () -> Unit) {
+    Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(3.dp)).background(Palette.Row)
+            .selectable(selected = on, role = Role.Switch, onClick = onClick).padding(horizontal = 14.dp, vertical = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Column(Modifier.weight(1f)) {
+            T(label, Type.Name, Palette.Black, maxLines = 1)
+            Spacer(Modifier.height(2.dp))
+            T(sub, Type.Small, Palette.Muted, maxLines = 2)
+        }
+        Spacer(Modifier.width(12.dp))
+        Box(Modifier.size(42.dp, 24.dp).clip(RoundedCornerShape(12.dp)).background(if (on) Palette.Black else Palette.Faint)) {
+            Box(Modifier.padding(3.dp).size(18.dp).align(if (on) Alignment.CenterEnd else Alignment.CenterStart).clip(CircleShape).background(Palette.White))
         }
     }
 }
@@ -973,13 +1070,19 @@ private fun KeyPanel(lens: Lens?, s: AxonSettings) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Ico(Icons.Key, Palette.White, 18.dp)
                     Spacer(Modifier.width(8.dp))
-                    T("CONNECTED", Type.Caps, Palette.White, maxLines = 1)
+                    T(if (s.hidden) "CONNECTED · HIDDEN ON THIS PHONE" else "CONNECTED", Type.Caps, Palette.White, maxLines = 1)
                 }
                 Spacer(Modifier.height(10.dp))
-                T("${lens.marks.size} marks, ${lens.stances.size} companies and ${lens.steps.size} open steps.", Type.Lead, Palette.White)
+                T(
+                    if (s.hidden) "AXON's marks, roles, threat levels, notes, Compare and next steps are hidden here. The key stays sealed on the phone."
+                    else "${lens.marks.size} marks, ${lens.stances.size} companies and ${lens.steps.size} open steps.",
+                    Type.Lead, Palette.White,
+                )
                 Spacer(Modifier.height(8.dp))
                 T("Read from ${LensStore.REPO}${s.fetchedAt?.let { " · checked ${Text.updated(it)}" } ?: ""}", Type.Small, Palette.White.copy(alpha = 0.65f))
             }
+            Spacer(Modifier.height(8.dp))
+            SwitchRow("Show on this phone", if (s.hidden) "Off: this phone shows the public radar only" else "On: switch off to show the public radar only here", !s.hidden) { s.onHidden(!s.hidden) }
             Spacer(Modifier.height(8.dp))
             Button(if (s.busy) "Checking…" else "Check for changes", Icons.Refresh, dark = false, onClick = s.onCheck)
             Spacer(Modifier.height(8.dp))

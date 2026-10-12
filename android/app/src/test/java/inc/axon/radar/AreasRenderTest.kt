@@ -5,8 +5,12 @@ import android.graphics.Canvas
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onNodeWithText
+import inc.axon.radar.data.Investors
 import inc.axon.radar.data.Lens
 import inc.axon.radar.data.Radar
+import inc.axon.radar.data.Store
 import inc.axon.radar.ui.Layout
 import inc.axon.radar.ui.Link
 import inc.axon.radar.ui.Look
@@ -56,7 +60,7 @@ class AreasRenderTest {
     private val PAGES = listOf(
         "home" to "50-today", "moves" to "51-all-moves", "rivals" to "52-rivals", "map" to "53-map", "companies" to "54-companies",
         "compare" to "54b-compare",
-        "funding" to "55-funding", "acquisitions" to "56-acquisitions", "partnerships" to "57-partnerships",
+        "funding" to "55-funding", "acquisitions" to "56-acquisitions", "partnerships" to "57-partnerships", "investors" to "57b-investors",
         "trends" to "58-trends", "licences" to "59-licences", "watch" to "60-watching", "steps" to "61-steps", "settings" to "62-settings",
     )
 
@@ -70,6 +74,8 @@ class AreasRenderTest {
             link.value = Link("move", marked.id); shot("63-move-marked$suffix", look)
             listOf("ripple", "thiqwave").forEach { id -> link.value = Link("company", id); shot("64-company-$id$suffix", look) }
         }
+        // The busiest investor's page.
+        link.value = Link("investor", radar.investors.first().id); shot("65-investor$suffix", look)
     }
 
     @Test fun areasWithoutKeyInColour() = everyArea(Look.Colour, null, "-nokey")
@@ -115,6 +121,46 @@ class AreasRenderTest {
     /** Without the private view the deck keeps its date order. */
     @Test
     fun todayWithoutKeyKeepsTheDeck() = assertEquals(radar.deck, todayDeck(radar, null))
+
+    /** Every investor named in a move, counted once per round, in the same order as on the web portal. */
+    @Test
+    fun investorsAreCountedOncePerRound() {
+        val all = radar.investors
+        assertTrue(all.size > 100)
+        all.zipWithNext().forEach { (a, b) ->
+            assertTrue("${a.id} before ${b.id}", a.rounds.size > b.rounds.size || (a.rounds.size == b.rounds.size &&
+                (a.led.size > b.led.size || (a.led.size == b.led.size && a.name <= b.name))))
+        }
+        all.forEach { v ->
+            assertEquals(v.id, v.rounds.size, v.rounds.map { it.id }.toSet().size)
+            v.rounds.forEach { m -> assertTrue("${v.id} in ${m.id}", m.parties.any { it.id == v.id && (it.role == "lead investor" || it.role == "investor") }) }
+            assertTrue(v.id, v.led.all { id -> v.rounds.any { it.id == id } })
+            assertEquals(v.id, v.rounds.size, v.portfolio.sumOf { it.rounds.size })
+            assertTrue(v.id, v.with.none { it.id == v.id } && v.with.all { it.rounds <= v.rounds.size })
+            assertEquals(v.id, v.rounds.sortedByDescending { it.date }.map { it.date }, v.rounds.map { it.date })
+        }
+        // The investing arm's own name, as the sources write it.
+        radar.investorById["coinbase"]?.let { assertEquals("Coinbase Ventures", it.name) }
+    }
+
+    /** Switched off on this phone, the private view leaves every area; the key stays and Settings says so. */
+    @Test
+    fun privateViewCanBeHiddenOnThisPhone() {
+        val lens = privateLens(); assumeTrue(lens != null)
+        Store.setLensHidden(rule.activity, true)
+        try {
+            val link = mutableStateOf<Link?>(Link("settings"))
+            rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLook = Look.Colour, startLayout = Layout.Areas, preloadLens = lens) }
+            rule.waitForIdle()
+            rule.onNodeWithText("CONNECTED · HIDDEN ON THIS PHONE").assertExists()
+            rule.onNodeWithText("Show on this phone").assertExists()
+            shot("62b-settings-hidden", Look.Colour)
+            link.value = Link("steps"); rule.waitForIdle()
+            rule.onAllNodesWithText("AXON's private view", substring = true).fetchSemanticsNodes().let { assertTrue("the steps ask for the private view", it.isNotEmpty()) }
+        } finally {
+            Store.setLensHidden(rule.activity, false)
+        }
+    }
 }
 
 /** The longest pages on a very tall screen, to see everything below the fold at once. */
@@ -150,6 +196,9 @@ class TallAreasRenderTest {
         link.value = Link("move", marked.id); shot("78-tall-move-marked", look)
         val round = radar.moves.first { it.type == "Funding" && it.leads.isNotEmpty() && it.investors.isNotEmpty() }
         link.value = Link("move", round.id); shot("79-tall-move-round", look)
+        link.value = Link("investors"); shot("81-tall-investors", look)
+        val backer = radar.investors.first { Investors.rivalsBacked(it, lens).isNotEmpty() }
+        link.value = Link("investor", backer.id); shot("82-tall-investor-${backer.id}", look)
     }
 
     @Test fun tallInColour() = tall(Look.Colour)

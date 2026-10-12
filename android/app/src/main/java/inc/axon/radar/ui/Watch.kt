@@ -229,7 +229,7 @@ fun CompanyPicker(radar: Radar, watched: Set<String>, onToggle: (String) -> Unit
 }
 
 @Composable
-private fun SearchField(value: String, onChange: (String) -> Unit, hint: String) {
+internal fun SearchField(value: String, onChange: (String) -> Unit, hint: String) {
     val focus = LocalFocusManager.current
     Box(Modifier.fillMaxWidth().background(Palette.Paper).padding(start = 14.dp, end = 14.dp, top = 12.dp, bottom = 10.dp)) {
         BasicTextField(

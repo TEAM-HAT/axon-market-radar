@@ -42,7 +42,10 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.util.lerp
 import inc.axon.radar.data.Company
+import inc.axon.radar.data.Investor
+import inc.axon.radar.data.Investors
 import inc.axon.radar.data.Lens
+import inc.axon.radar.data.Party
 import inc.axon.radar.data.Move
 import inc.axon.radar.data.Radar
 import inc.axon.radar.data.Text
@@ -55,6 +58,7 @@ class PosterActions(
     val openCompany: (String) -> Unit,
     val openMoves: (List<Move>, Int) -> Unit,
     val toggleWatch: (String) -> Unit,
+    val openInvestor: (String) -> Unit = {},
 )
 
 /** Swipe sideways between moves; the next page slides over the one before, as in the inspiration. */
@@ -87,8 +91,6 @@ private fun dealFacts(m: Move, radar: Radar): List<Pair<String, String>> {
     return listOfNotNull(
         m.round?.stage?.let { "Round" to it },
         m.round?.valuation?.let { "Valuation" to (Text.money(it) ?: "") },
-        m.leads.takeIf { it.isNotEmpty() }?.let { "Led by" to it.joinToString(", ") { p -> p.name } },
-        m.investors.takeIf { it.isNotEmpty() }?.let { "Investors" to it.joinToString(", ") { p -> p.name } },
         m.round?.useOfFunds?.let { "For" to it.replaceFirstChar { c -> c.uppercase() } },
         m.deal?.status?.let { "Status" to (STATUS[it] ?: it) },
         m.deal?.valuation?.let { "Valuation" to (Text.money(it) ?: "") },
@@ -146,6 +148,14 @@ fun MovePoster(m: Move, radar: Radar, watched: Set<String>, actions: PosterActio
         ) + dealFacts(m, radar) + listOfNotNull(
             m.sourceName?.let { "Source" to "$it · ${Text.host(m.sourceUrl)}" },
         ))
+        val backers = (m.leads + m.investors).distinctBy { it.id }
+        if (backers.isNotEmpty()) {
+            Spacer(Modifier.height(26.dp))
+            T("Investors", Type.display(30f), ink.display(bg))
+            Spacer(Modifier.height(10.dp))
+            backers.forEach { p -> InvestorLine(p, m.leads.any { it.id == p.id }, radar, bg, actions) }
+            Rule(bg)
+        }
         Spacer(Modifier.height(22.dp))
         if (m.sourceUrl != null) BigButton("Read the source", Icons.ArrowOut, bg = bg) { actions.openUrl(m.sourceUrl) }
         if (company != null) {
@@ -260,12 +270,10 @@ fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: Poste
             }
             val backers = rounds.flatMap { it.leads + it.investors }.distinctBy { it.id }
             if (backers.isNotEmpty()) {
-                Rule(bg)
-                Column(Modifier.padding(vertical = 11.dp)) {
-                    T("BACKERS", Type.Caps, ink.secondary(bg))
-                    Spacer(Modifier.height(3.dp))
-                    T(backers.joinToString(", ") { it.name }, Type.Row, ink.reading(bg))
-                }
+                Spacer(Modifier.height(26.dp))
+                T("Backers", Type.display(30f), ink.display(bg))
+                Spacer(Modifier.height(10.dp))
+                backers.forEach { p -> InvestorLine(p, rounds.any { r -> r.leads.any { it.id == p.id } }, radar, bg, actions) }
             }
         }
         if (deals.isNotEmpty()) {
@@ -327,6 +335,131 @@ fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: Poste
         if (c.sources.isNotEmpty()) {
             Spacer(Modifier.height(22.dp))
             T("Profile sources: " + c.sources.joinToString(" · ") { Text.host(it) }, Type.Small, ink.secondary(bg))
+        }
+    }
+}
+
+/** An investor on a move or company page: its name, whether it led, how active it is on the radar; a tap opens its page. */
+@Composable
+private fun InvestorLine(p: Party, led: Boolean, radar: Radar, bg: Color, actions: PosterActions) {
+    val ink = LocalInk.current
+    val v = radar.investorById[p.id]
+    Rule(bg)
+    Row(Modifier.fillMaxWidth().then(if (v != null) Modifier.tap { actions.openInvestor(p.id) } else Modifier).padding(vertical = 11.dp), verticalAlignment = Alignment.CenterVertically) {
+        Column(Modifier.weight(1f)) {
+            T(listOfNotNull(if (led) "Lead investor" else "Investor", v?.let { Text.plural(it.rounds.size, "round", "rounds") + " on the radar" }).joinToString(" · ").uppercase(), Type.Caps, ink.secondary(bg))
+            Spacer(Modifier.height(3.dp))
+            T(p.name, Type.Row, ink.reading(bg))
+        }
+        if (v != null) Ico(Icons.ChevronRight, ink.reading(bg), 18.dp)
+    }
+}
+
+/** An investor's page: what it backed on the radar, every round it joined, and who it invests with most. */
+@Composable
+fun InvestorPoster(v: Investor, radar: Radar, actions: PosterActions, lens: Lens? = null) {
+    val ink = LocalInk.current
+    val bg = ink.page("Funding")
+    val latest = v.rounds.first()
+    val first = v.rounds.last()
+    val company = v.company
+    Poster(
+        bg = bg, title = v.name, onClose = actions.close,
+        meta = {
+            Faces(v.portfolio.take(3).map { it.name }.ifEmpty { listOf(v.name) }, ink.chip(bg), ink.reading(ink.chip(bg)))
+            MetaText(listOfNotNull(Text.plural(v.rounds.size, "round", "rounds"), v.led.size.takeIf { it > 0 }?.let { "led $it" }).joinToString(" · "), bg)
+        },
+        panel = {
+            FigurePanel(
+                bg, "Funding", if (company != null) "Investor" else Investors.kindLabel(v), v.total?.let { Text.money(it) } ?: v.rounds.size.toString(),
+                if (v.total != null) "raised in the rounds it joined" else if (v.rounds.size == 1) "round" else "rounds",
+                "Latest round · ${Text.dayYear(latest.date)}",
+            )
+        },
+        tile1 = Tile("Latest\nRound", Icons.ArrowOut, ink.tile(bg), ink.onTile(bg)) { actions.openMoves(v.rounds, 0) },
+        tile2 = when {
+            company != null -> Tile("Open\n${company.name}", Icons.ChevronRight, ink.panel(bg), ink.onPanel(bg)) { actions.openCompany(company.id) }
+            v.website != null -> Tile("Website\n${Text.host(v.website)}", Icons.ArrowOut, ink.panel(bg), ink.onPanel(bg)) { actions.openUrl(v.website) }
+            else -> Tile("Every\nRound", Icons.Grid, ink.panel(bg), ink.onPanel(bg)) { actions.openMoves(v.rounds, 0) }
+        },
+        label = Investors.kindLabel(v), lead = Investors.summary(v),
+        timeline = { Timeline(v.rounds, null, bg) { list, i -> actions.openMoves(list, i) } },
+    ) {
+        val rivals = Investors.rivalsBacked(v, lens)
+        if (rivals.isNotEmpty() && lens != null) {
+            AxonPanel(
+                bg, "For AXON", null,
+                (if (rivals.size == 1) "Backs one of AXON's rivals: " else "Backs ${rivals.size} of AXON's rivals, the biggest threats first: ") +
+                    rivals.joinToString(", ") { h -> "${h.name} (${lens.stance(h.companyId)?.threat ?: "none"})" } + ".",
+                listOf("Rivals backed" to rivals.size.toString(), "Led their rounds" to rivals.count { it.led }.toString()),
+            )
+            Spacer(Modifier.height(26.dp))
+        }
+        Facts(bg, listOfNotNull(
+            "Kind" to Investors.kindLabel(v),
+            v.country?.let { "Headquarters" to it },
+            "Rounds" to (v.rounds.size.toString() + if (v.led.isNotEmpty()) ", ${v.led.size} as lead" else ""),
+            v.total?.let { "Raised in them" to "${Text.money(it)}, in the rounds with a disclosed size" },
+            if (latest === first) ("Round" to Text.long(latest.date, latest.precision)) else ("First and latest" to "${Text.dayYear(first.date)} and ${Text.dayYear(latest.date)}"),
+            v.website?.let { "Website" to Text.host(it) },
+        ))
+        Spacer(Modifier.height(26.dp))
+        T("Portfolio", Type.display(30f), ink.display(bg))
+        Spacer(Modifier.height(10.dp))
+        v.portfolio.forEach { h ->
+            val m = h.rounds.first()
+            val st = lens?.stance(h.companyId)
+            Rule(bg)
+            Row(
+                Modifier.fillMaxWidth().tap { if (h.companyId != null) actions.openCompany(h.companyId) else actions.openMoves(h.rounds, 0) }.padding(vertical = 11.dp),
+                verticalAlignment = Alignment.Top,
+            ) {
+                Column(Modifier.weight(1f)) {
+                    T(listOfNotNull(m.round?.stage, Text.dayYear(m.date)).joinToString(" · ").uppercase(), Type.Caps, ink.secondary(bg))
+                    Spacer(Modifier.height(3.dp))
+                    T(h.name + (if (h.led) " · led" else "") + (if (h.rounds.size > 1) " · ${h.rounds.size} rounds" else ""), Type.Row, ink.reading(bg))
+                    if (st != null && st.rival) {
+                        Spacer(Modifier.height(4.dp))
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            MarkSign("threat", ink.reading(bg), 8.dp)
+                            Spacer(Modifier.width(5.dp))
+                            T("AXON RIVAL · ${Lens.threatLabel(st.threat).uppercase()}", Type.Caps, ink.reading(bg), maxLines = 1)
+                        }
+                    }
+                }
+                Text.money(m.amount)?.let { Spacer(Modifier.width(10.dp)); T(it, Type.Name, ink.reading(bg)) }
+            }
+        }
+        Spacer(Modifier.height(26.dp))
+        T("Rounds", Type.display(30f), ink.display(bg))
+        Spacer(Modifier.height(10.dp))
+        v.rounds.forEachIndexed { i, m ->
+            Rule(bg)
+            Row(Modifier.fillMaxWidth().tap { actions.openMoves(v.rounds, i) }.padding(vertical = 11.dp), verticalAlignment = Alignment.Top) {
+                Column(Modifier.weight(1f)) {
+                    T(listOfNotNull(m.round?.stage, Text.dayYear(m.date)).joinToString(" · ").uppercase(), Type.Caps, ink.secondary(bg))
+                    Spacer(Modifier.height(3.dp))
+                    T((m.companyName ?: m.title) + if (m.id in v.led) " · led" else "", Type.Row, ink.reading(bg))
+                }
+                Spacer(Modifier.width(10.dp))
+                T(Text.money(m.amount) ?: "Undisclosed", Type.Name, ink.reading(bg))
+            }
+        }
+        if (v.with.isNotEmpty()) {
+            Spacer(Modifier.height(26.dp))
+            T("Invests alongside", Type.display(30f), ink.display(bg))
+            Spacer(Modifier.height(10.dp))
+            v.with.take(10).forEach { w ->
+                Rule(bg)
+                Row(Modifier.fillMaxWidth().tap { actions.openInvestor(w.id) }.padding(vertical = 11.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Column(Modifier.weight(1f)) {
+                        T(Text.plural(w.rounds, "round together", "rounds together").uppercase(), Type.Caps, ink.secondary(bg))
+                        Spacer(Modifier.height(3.dp))
+                        T(w.name, Type.Row, ink.reading(bg))
+                    }
+                    Ico(Icons.ChevronRight, ink.reading(bg), 18.dp)
+                }
+            }
         }
     }
 }

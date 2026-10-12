@@ -35,6 +35,7 @@ object Icons {
     val ChevronDown = icon("down", "M6 9.5l6 6 6-6", width = 2f)
     val ChevronUp = icon("up", "M6 14.5l6-6 6 6", width = 2f)
     val ChevronLeft = icon("left", "M14.5 6l-6 6 6 6", width = 2f)
+    val ChevronRight = icon("right", "M9.5 6l6 6-6 6", width = 2f)
     val ArrowOut = icon("out", "M7 17L17 7M9 7h8v8", width = 2f)
     val Plus = icon("plus", "M12 6v12M6 12h12", width = 2.2f)
     val Check = icon("check", "M5.5 12.5l4.2 4.2L18.5 8", width = 2.2f)
