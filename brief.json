@@ -1,38 +1,33 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-11T07:00:00+03:00",
-  "next_run": "2026-10-12T06:54:00+03:00",
-  "window_start": "2026-10-05",
-  "window_end": "2026-10-11",
-  "week": 41,
-  "count": 30,
+  "updated_at": "2026-10-12T07:00:42+03:00",
+  "next_run": "2026-10-13T06:54:00+03:00",
+  "window_start": "2026-10-06",
+  "window_end": "2026-10-12",
+  "week": 42,
+  "count": 23,
   "new_today": 2,
-  "headline": "**Samsung Wallet will add USDC transfers** for US Galaxy users while more crypto firms sought OCC trust charters and Anchorage bought Routable. In Europe, ESMA gave licensed firms **three months to drop unauthorised stablecoins**.",
+  "headline": "Samsung Wallet will open **USDC transfers to US Galaxy users** and Anchorage bought Routable, while Circle, Ripple and Standard Chartered bought into **OKX at a $25bn valuation**. In Europe, ESMA gave licensed platforms three months to drop unauthorised stablecoins.",
   "mix": [
     {
-      "type": "Partnership",
-      "n": 9,
-      "label": "partnerships"
-    },
-    {
       "type": "Launch",
-      "n": 8,
+      "n": 7,
       "label": "launches"
     },
     {
-      "type": "Regulation",
-      "n": 6,
-      "label": "regulatory actions"
+      "type": "Partnership",
+      "n": 7,
+      "label": "partnerships"
     },
     {
       "type": "Funding",
-      "n": 3,
+      "n": 4,
       "label": "funding rounds"
     },
     {
-      "type": "License",
-      "n": 3,
-      "label": "licences"
+      "type": "Regulation",
+      "n": 4,
+      "label": "regulatory actions"
     },
     {
       "type": "M&A",
@@ -40,19 +35,31 @@
       "label": "M&A deal"
     }
   ],
-  "mix_text": "9 partnerships · 8 launches · 6 regulatory actions · 3 funding rounds · 3 licences · 1 M&A deal",
+  "mix_text": "7 launches · 7 partnerships · 4 funding rounds · 4 regulatory actions · 1 M&A deal",
   "regions": {
-    "Europe": 7,
-    "Middle East": 7,
-    "North America": 8,
-    "Global": 8
+    "Europe": 5,
+    "Middle East": 4,
+    "North America": 5,
+    "Global": 9
   },
   "groups": {
-    "regulatory": 9,
-    "capital": 4,
-    "commercial": 17
+    "regulatory": 4,
+    "capital": 5,
+    "commercial": 14
   },
   "moves": [
+    {
+      "id": "oobit-ai-payments-2026-10-09",
+      "date": "2026-10-09",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Oobit",
+      "title": "Oobit lets AI assistants spend users' stablecoins via one-time cards",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/oobit-launches-ai-payments-for-stablecoin-spending-via-ai-assistants"
+    },
     {
       "id": "ncua-call-report-stablecoin-2026-10-09",
       "date": "2026-10-09",
@@ -112,22 +119,22 @@
       "title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
       "source_name": "The Paypers",
       "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
-    },
-    {
-      "id": "esma-unauthorised-stablecoins-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "ESMA",
-      "company": "ESMA",
-      "title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
-      "source_name": "ESMA",
-      "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     }
   ],
   "latest": [
     {
+      "id": "oobit-ai-payments-2026-10-09",
+      "date": "2026-10-09",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Oobit",
+      "title": "Oobit lets AI assistants spend users' stablecoins via one-time cards",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/oobit-launches-ai-payments-for-stablecoin-spending-via-ai-assistants"
+    },
+    {
       "id": "ncua-call-report-stablecoin-2026-10-09",
       "date": "2026-10-09",
       "type": "Regulation",
@@ -200,28 +207,16 @@
       "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     },
     {
-      "id": "coinbase-yuno-checkout-2026-10-07",
+      "id": "okx-strategic-2026-10-07",
       "date": "2026-10-07",
-      "type": "Partnership",
-      "type_label": "Partnership",
+      "type": "Funding",
+      "type_label": "Funding",
       "region": "Global",
       "regulator": null,
-      "company": "Coinbase",
-      "title": "Yuno adds Coinbase stablecoin checkout for its merchants",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/yuno-partners-with-coinbase-to-add-stablecoin-checkout-for-merchants"
-    },
-    {
-      "id": "polygon-tron-open-money-stack-2026-10-07",
-      "date": "2026-10-07",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Polygon Labs",
-      "title": "Polygon adds TRON's USDT to its Open Money Stack payments platform",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/business/2026/10/07/polygon-and-tron-partner-to-bridge-usd94-billion-usdt-ecosystem-with-u-s-banking-rails"
+      "company": "OKX",
+      "title": "Circle, Ripple and StanChart buy into OKX at a $25bn valuation",
+      "source_name": "Fintech Futures",
+      "source_url": "https://www.fintechfutures.com/venture-capital-funding/okx-locks-in-25bn-valuation-with-fresh-investments-from-circle-qrt-ripple-and-standard-chartered"
     }
   ],
   "companies": [
@@ -237,6 +232,17 @@
       "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/yuno-partners-with-coinbase-to-add-stablecoin-checkout-for-merchants"
     },
     {
+      "id": "circle",
+      "name": "Circle",
+      "segment": "Issuer",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 5,
+      "last_date": "2026-10-07",
+      "last_title": "Circle, Ripple and StanChart buy into OKX at a $25bn valuation",
+      "last_url": "https://www.fintechfutures.com/venture-capital-funding/okx-locks-in-25bn-valuation-with-fresh-investments-from-circle-qrt-ripple-and-standard-chartered"
+    },
+    {
       "id": "visa",
       "name": "Visa",
       "segment": "Settlement rails",
@@ -246,17 +252,6 @@
       "last_date": "2026-10-08",
       "last_title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
       "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
-    },
-    {
-      "id": "circle",
-      "name": "Circle",
-      "segment": "Issuer",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 4,
-      "last_date": "2026-10-07",
-      "last_title": "Circle and SAP-backed Tereina to bring USDC and EURC to SAP Pay",
-      "last_url": "https://www.circle.com/pressroom/tereina-an-sap-backed-company-and-circle-bring-usdc-and-eurc-into-enterprise-workflows-starting-with-the-sap-ecosystem-behind-84-of-global-commerce"
     },
     {
       "id": "tether",
@@ -275,7 +270,7 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 2,
+      "moves_30d": 3,
       "last_date": "2026-10-08",
       "last_title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
       "last_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
@@ -400,11 +395,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 479,
+    "total": 481,
     "licences": 62,
     "regulatory_actions": 58,
-    "commercial": 233,
-    "capital": 126,
+    "commercial": 234,
+    "capital": 127,
     "months": [
       {
         "m": "2025-10",
@@ -456,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 33
+        "n": 35
       }
     ],
     "partial_last": true
