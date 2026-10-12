@@ -5,13 +5,13 @@
   "window_start": "2026-10-06",
   "window_end": "2026-10-12",
   "week": 42,
-  "count": 23,
+  "count": 24,
   "new_today": 2,
   "headline": "Samsung Wallet will open **USDC transfers to US Galaxy users** and Anchorage bought Routable, while Circle, Ripple and Standard Chartered bought into **OKX at a $25bn valuation**. In Europe, ESMA gave licensed platforms three months to drop unauthorised stablecoins.",
   "mix": [
     {
       "type": "Launch",
-      "n": 7,
+      "n": 8,
       "label": "launches"
     },
     {
@@ -35,17 +35,17 @@
       "label": "M&A deal"
     }
   ],
-  "mix_text": "7 launches · 7 partnerships · 4 funding rounds · 4 regulatory actions · 1 M&A deal",
+  "mix_text": "8 launches · 7 partnerships · 4 funding rounds · 4 regulatory actions · 1 M&A deal",
   "regions": {
     "Europe": 5,
     "Middle East": 4,
     "North America": 5,
-    "Global": 9
+    "Global": 10
   },
   "groups": {
     "regulatory": 4,
     "capital": 5,
-    "commercial": 14
+    "commercial": 15
   },
   "moves": [
     {
@@ -395,10 +395,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 483,
+    "total": 486,
     "licences": 64,
     "regulatory_actions": 58,
-    "commercial": 234,
+    "commercial": 237,
     "capital": 127,
     "months": [
       {
@@ -427,7 +427,7 @@
       },
       {
         "m": "2026-04",
-        "n": 31
+        "n": 33
       },
       {
         "m": "2026-05",
@@ -451,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 35
+        "n": 36
       }
     ],
     "partial_last": true

@@ -14833,7 +14833,7 @@
    "type": "License",
    "region": "Europe",
    "title": "Latvia licenses Nodu under MiCA and as a payment institution",
-   "summary": "Latvijas Banka's Supervision Committee decided to license Nodu Digital SIA for crypto-asset services (exchanging crypto-assets for funds and transferring them for clients) and as a payment institution. It was the tenth MiCA licence the bank has granted, and the authorisation can be passported across the EU.",
+   "summary": "Latvijas Banka licensed Nodu Digital SIA for crypto-asset services (exchange for funds and transfers for clients) and as a payment institution, its tenth MiCA licence; the authorisation can be passported across the EU.",
    "amount_usd_m": null,
    "regulator": "Latvijas Banka",
    "jurisdiction": "Latvia",
@@ -14844,6 +14844,139 @@
    "themes": [
     "mica"
    ],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "lightnet-scb-stablecoin-2024-10",
+   "date": "2024-10",
+   "date_precision": "month",
+   "company_id": "lightnet",
+   "company_name": "Lightnet",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "SCB launches stablecoin remittances on Lightnet, with Fireblocks",
+   "summary": "Siam Commercial Bank, Thailand's oldest bank, began offering round-the-clock stablecoin cross-border payments and remittances through Lightnet, on Fireblocks infrastructure, after testing the service in the Bank of Thailand's regulatory sandbox.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Thailand",
+   "source_name": "International Business Times",
+   "source_url": "https://www.ibtimes.com/thailands-scb-announces-24-7-stablecoin-remittances-lightnet-partnership-powered-fireblocks-3746979",
+   "related": [
+    "fireblocks"
+   ],
+   "parties": [
+    {
+     "id": "scb",
+     "name": "Siam Commercial Bank",
+     "role": "client"
+    },
+    {
+     "id": "fireblocks",
+     "name": "Fireblocks",
+     "role": "supplier"
+    }
+   ],
+   "themes": [],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "partior-emirates-nbd-2024-10-22",
+   "date": "2024-10-22",
+   "date_precision": "day",
+   "company_id": "partior",
+   "company_name": "Partior",
+   "type": "Partnership",
+   "region": "Middle East",
+   "title": "Emirates NBD to join Partior for dirham, riyal and rupee settlement",
+   "summary": "Emirates NBD agreed to join Partior's blockchain clearing and settlement network as its first UAE dirham, Saudi riyal and Indian rupee settlement bank, also acting for major foreign currencies, and is weighing an equity investment through its innovation fund.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United Arab Emirates",
+   "source_name": "GCC Business News",
+   "source_url": "https://www.gccbusinessnews.com/emirates-nbd-partners-with-partior/",
+   "related": [],
+   "parties": [
+    {
+     "id": "emirates-nbd",
+     "name": "Emirates NBD",
+     "role": "client"
+    }
+   ],
+   "themes": [],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "thunes-cpn-2026-04-08",
+   "date": "2026-04-08",
+   "date_precision": "day",
+   "company_id": "thunes",
+   "company_name": "Thunes",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "Thunes joins Circle Payments Network's managed payments",
+   "summary": "Thunes joined Circle Payments Network Managed Payments, so its customers can settle with stablecoins while keeping their fiat workflows.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.aap.com.au/aapreleases/cision20260408ae29624/",
+   "related": [
+    "circle"
+   ],
+   "parties": [
+    {
+     "id": "circle",
+     "name": "Circle",
+     "role": "partner"
+    }
+   ],
+   "themes": [],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "lightnet-kucoin-2026-04-29",
+   "date": "2026-04-29",
+   "date_precision": "day",
+   "company_id": "lightnet",
+   "company_name": "Lightnet",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "KuCoin and Lightnet explore a South-East Asia payments tie-up",
+   "summary": "KuCoin and Lightnet said they are exploring collaboration that would combine KuCoin's trading ecosystem with Lightnet's licensed cross-border settlement network across South-East Asia, within local regulatory frameworks.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "PR Newswire",
+   "source_url": "https://www.prnewswire.com/apac/news-releases/kucoin-and-lightnet-explore-collaboration-to-advance-digital-asset-and-payment-infrastructure-across-southeast-asia-302755559.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "kucoin",
+     "name": "KuCoin",
+     "role": "partner"
+    }
+   ],
+   "themes": [],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "kora-one-rail-2026-10-06",
+   "date": "2026-10-06",
+   "date_precision": "day",
+   "company_id": "kora",
+   "company_name": "Kora",
+   "type": "Launch",
+   "region": "Global",
+   "title": "Dubai-based Kora adds stablecoin payments for African businesses",
+   "summary": "Kora, a Dubai-headquartered payments provider serving African markets, added USDT and USDC to its platform: merchants can receive, hold, exchange and settle stablecoins alongside fiat and pay out to local bank accounts through its existing network.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "FinTech Global",
+   "source_url": "https://fintech.global/2026/10/06/kora-launches-stablecoin-rail-for-african-cross-border-payments/",
+   "related": [],
+   "parties": [],
+   "themes": [],
    "added": "2026-10-13"
   }
  ]

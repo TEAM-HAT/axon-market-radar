@@ -1,5 +1,5 @@
 {
- "version": "2026-10-11",
+ "version": "2026-10-13",
  "orgs": {
   "1kx": {
    "id": "1kx",
@@ -3395,6 +3395,20 @@
    "kind": "bank",
    "hq_country": "Switzerland",
    "website": null
+  },
+  "emirates-nbd": {
+   "id": "emirates-nbd",
+   "name": "Emirates NBD",
+   "kind": "bank",
+   "hq_country": "United Arab Emirates",
+   "website": "https://www.emiratesnbd.com"
+  },
+  "kucoin": {
+   "id": "kucoin",
+   "name": "KuCoin",
+   "kind": "exchange",
+   "hq_country": null,
+   "website": "https://www.kucoin.com"
   }
  }
 }

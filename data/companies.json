@@ -1337,7 +1337,7 @@
    "segment": "Settlement rails",
    "founded": 2025,
    "website": "https://nodu.fi",
-   "blurb": "London start-up founded in 2025 by the Crassula team, giving banks, fintechs and payment firms one API for stablecoin pay-ins, payouts and wallets; licensed under MiCA in Latvia.",
+   "blurb": "London start-up from the Crassula team giving banks, fintechs and payment firms one API for stablecoin pay-ins and payouts; MiCA-licensed in Latvia.",
    "licenses": [
     {
      "regulator": "Latvijas Banka",
@@ -2172,6 +2172,278 @@
     "https://www.bcbgroup.com/insights/bcb-group-secures-european-presence-with-emi-and-dasp-licence-in-france/",
     "https://www.bcbgroup.com/insights/theblock-bcb-group-raises-60m-series-a-round",
     "https://www.bcbgroup.com/about/our-licences-and-regulations/"
+   ]
+  },
+  "lightnet": {
+   "id": "lightnet",
+   "name": "Lightnet",
+   "hq_city": "Bangkok",
+   "hq_country": "Thailand",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.lightnet.io",
+   "blurb": "Bangkok-based licensed settlement network for banks, fintechs and Web3 firms in Asia, using stablecoins with local rails; runs SCB's stablecoin remittances.",
+   "licenses": [
+    {
+     "regulator": "MAS",
+     "jurisdiction": "Singapore",
+     "type": "Major payment institution: account issuance and cross-border money transfer (Lightnet (Singapore) Pte. Ltd.)",
+     "year": null
+    },
+    {
+     "regulator": "Customs and Excise Department",
+     "jurisdiction": "Hong Kong",
+     "type": "Money service operator licence",
+     "year": null
+    },
+    {
+     "regulator": "BSP",
+     "jurisdiction": "Philippines",
+     "type": "One licence (type not stated on its site)",
+     "year": null
+    },
+    {
+     "regulator": "Bank of Thailand, SEC and Ministry of Finance",
+     "jurisdiction": "Thailand",
+     "type": "Eight licences (types not stated on its site); first fintech to complete the Bank of Thailand's sandbox",
+     "year": null
+    },
+    {
+     "regulator": "Bank Indonesia",
+     "jurisdiction": "Indonesia",
+     "type": "One licence (type not stated on its site)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": "Capital commitment",
+    "last_round_usd_m": 50,
+    "last_round_date": "2022-08-30",
+    "lead": "LDA Capital",
+    "valuation_usd_m": null,
+    "investors": [
+     "LDA Capital"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.lightnet.io/",
+    "https://www.lightnet.io/legal",
+    "https://www.lightnet.io/about-us",
+    "https://capitalmarkets.sg/remittance/lightnet-singapore-pte-ltd/mas-licence/",
+    "https://fintechnews.sg/35974/thailand/lightnet-raises-31-2-million-in-new-series-a-financing/",
+    "https://fintech.global/2022/08/30/lightnet-bags-50m-for-its-cross-border-remittance-infrastructure/"
+   ]
+  },
+  "thunes": {
+   "id": "thunes",
+   "name": "Thunes",
+   "hq_city": "Singapore",
+   "hq_country": "Singapore",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.thunes.com",
+   "blurb": "Singapore-based payout network linking banks, transfer operators and payment firms to bank accounts, mobile and stablecoin wallets; offices in Dubai and Riyadh.",
+   "licenses": [
+    {
+     "regulator": "State regulators",
+     "jurisdiction": "United States",
+     "type": "Money transmission (Thunes Financial Services LLC, NMLS 2450368)",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.thunes.com/about-us/",
+    "https://www.aap.com.au/aapreleases/cision20260408ae29624/"
+   ]
+  },
+  "partior": {
+   "id": "partior",
+   "name": "Partior",
+   "hq_city": "Singapore",
+   "hq_country": "Singapore",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 2021,
+   "website": "https://partior.com",
+   "blurb": "Bank-backed Singapore network for 24/7 cross-border settlement and FX on a shared ledger; Emirates NBD agreed in 2024 to settle dirhams and riyals on it.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "DBS Bank",
+     "J.P. Morgan",
+     "Standard Chartered",
+     "Temasek",
+     "Peak XV"
+    ]
+   },
+   "status": "Consortium",
+   "sources": [
+    "https://partior.com/",
+    "https://www.gccbusinessnews.com/emirates-nbd-partners-with-partior/"
+   ]
+  },
+  "yellow-card": {
+   "id": "yellow-card",
+   "name": "Yellow Card",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://yellowcard.io",
+   "blurb": "Pan-African stablecoin infrastructure for banks and businesses: ramps, accounts and payments in 50+ currencies across 60+ countries; Mastercard partner.",
+   "licenses": [
+    {
+     "regulator": "FSCA",
+     "jurisdiction": "South Africa",
+     "type": "Crypto-asset service provider licence",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": 85,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://yellowcard.io/",
+    "https://yellowcard.io/about-us",
+    "https://www.gccbusinessnews.com/mastercard-and-yellow-card-partnership"
+   ]
+  },
+  "nium": {
+   "id": "nium",
+   "name": "Nium",
+   "hq_city": "Singapore",
+   "hq_country": "Singapore",
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 2014,
+   "website": "https://www.nium.com",
+   "blurb": "Singapore and San Francisco payments infrastructure licensed in 40+ markets, with payouts to 190+ countries, now adding stablecoin payouts and cards.",
+   "licenses": [
+    {
+     "regulator": "MAS",
+     "jurisdiction": "Singapore",
+     "type": "Major payment institution",
+     "year": null
+    },
+    {
+     "regulator": "FCA",
+     "jurisdiction": "United Kingdom",
+     "type": "Authorisation",
+     "year": null
+    },
+    {
+     "regulator": "ASIC",
+     "jurisdiction": "Australia",
+     "type": "Australian financial services licence",
+     "year": null
+    },
+    {
+     "regulator": "FINTRAC",
+     "jurisdiction": "Canada",
+     "type": "Registration",
+     "year": null
+    },
+    {
+     "regulator": "AUSTRAC",
+     "jurisdiction": "Australia",
+     "type": "Registration",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.nium.com/about-us",
+    "https://www.nium.com/"
+   ]
+  },
+  "capital-layer": {
+   "id": "capital-layer",
+   "name": "Capital Layer",
+   "hq_city": null,
+   "hq_country": null,
+   "region": "Global",
+   "segment": "Settlement rails",
+   "founded": 2025,
+   "website": "https://www.capitallayer.com",
+   "blurb": "Stablecoin operations layer for Asian banks, founded in 2025: custody on the bank's own hardware, screening, approvals and clearing; starting in Taiwan.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.capitallayer.com/",
+    "https://www.blockhead.co/2026/09/02/licensed-to-shill-taiwans-banks-ai-hardware-makers-could-fuel-asias-largest-stablecoin-corridor-justin-wang-capital-layer/",
+    "https://www.pymnts.com/newswire-announcements/capital-layer-partners-with-stark-technology-twse-2480-to-modernise-taiwans-bank-settlement/"
+   ]
+  },
+  "kora": {
+   "id": "kora",
+   "name": "Kora",
+   "hq_city": "Dubai",
+   "hq_country": "United Arab Emirates",
+   "region": "Middle East",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.korahq.com",
+   "blurb": "Dubai-headquartered payments infrastructure for African markets, with Lagos roots; added USDT and USDC payments in October 2026.",
+   "licenses": [],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.korahq.com/",
+    "https://fintech.global/2026/10/06/kora-launches-stablecoin-rail-for-african-cross-border-payments/"
    ]
   }
  }

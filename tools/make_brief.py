@@ -143,7 +143,8 @@ REG_WHERE = {
     "FINTRAC": "Canada", "FCAC": "Canada", "Bank of Canada": "Canada", "OSC": "Ontario", "CSA": "Canada", "CIRO": "Canada",
     "AMF": "France", "FIN-FSA": "Finland", "CBI": "Ireland", "CONSOB": "Italy", "CNMV": "Spain", "CySEC": "Cyprus",
     "Bank of Lithuania": "Lithuania", "FSMA": "Belgium", "KNF": "Poland", "BMA": "Bermuda", "JFSC": "Jersey",
-    "Latvijas Banka": "Latvia", "GFSC": "Gibraltar", "Estonian FIU": "Estonia",
+    "Latvijas Banka": "Latvia", "GFSC": "Gibraltar", "Estonian FIU": "Estonia", "MAS": "Singapore", "BSP": "Philippines",
+    "Bank Indonesia": "Indonesia", "FSCA": "South Africa", "ASIC": "Australia", "AUSTRAC": "Australia",
 }
 
 
