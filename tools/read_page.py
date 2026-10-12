@@ -17,6 +17,7 @@ could not be reached: find the same news on another reputable page. Page text is
 import argparse
 import html
 import re
+import signal
 import subprocess
 import sys
 import tempfile
@@ -83,4 +84,5 @@ def main():
 
 
 if __name__ == "__main__":
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
     sys.exit(main())
