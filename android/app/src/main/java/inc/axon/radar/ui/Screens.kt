@@ -75,8 +75,8 @@ fun TabBar(tab: Tab, dark: Boolean, onTab: (Tab) -> Unit, modifier: Modifier = M
 }
 
 @Composable
-internal fun PaperList(bottomInset: Dp, content: androidx.compose.foundation.lazy.LazyListScope.() -> Unit) {
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
+internal fun PaperList(bottomInset: Dp, name: String, content: androidx.compose.foundation.lazy.LazyListScope.() -> Unit) {
+    PageList(name, Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars)) }
         content()
     }
@@ -113,7 +113,7 @@ internal val LABEL = mapOf("License" to "Licences", "Regulation" to "Rules", "Fu
 
 @Composable
 fun TrendsScreen(radar: Radar, bottomInset: Dp) {
-    PaperList(bottomInset) {
+    PaperList(bottomInset, "Trends") {
         item { Titles(listOf("Trends"), 0) {} }
         trendsItems(radar)
     }
@@ -237,7 +237,7 @@ fun AboutScreen(
     look: Look, onLook: (Look) -> Unit, bottomInset: Dp,
     layout: Layout? = null, onLayout: ((Layout) -> Unit)? = null,
 ) {
-    PaperList(bottomInset) {
+    PaperList(bottomInset, "About") {
         item { RadarLockup(Palette.Black, 56.dp, Modifier.padding(start = 14.dp, top = 12.dp, bottom = 18.dp)) }
         item {
             Column(Modifier.padding(horizontal = 14.dp)) {

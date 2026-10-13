@@ -52,14 +52,14 @@ fun T(
     align: TextAlign? = null,
 ) {
     BasicText(
-        text, modifier, style.copy(color = color, textAlign = align ?: style.textAlign),
+        text, if (LocalPrint.current == null) modifier else modifier.keepWhole(), style.copy(color = color, textAlign = align ?: style.textAlign),
         overflow = TextOverflow.Ellipsis, maxLines = maxLines,
     )
 }
 
 @Composable
 fun T(text: AnnotatedString, style: TextStyle, color: Color, modifier: Modifier = Modifier, maxLines: Int = Int.MAX_VALUE) {
-    BasicText(text, modifier, style.copy(color = color), overflow = TextOverflow.Ellipsis, maxLines = maxLines)
+    BasicText(text, if (LocalPrint.current == null) modifier else modifier.keepWhole(), style.copy(color = color), overflow = TextOverflow.Ellipsis, maxLines = maxLines)
 }
 
 /** The sweep's headline with its **key phrases** set heavier. */
@@ -181,5 +181,7 @@ fun SupLabel(label: String, count: Int?, color: Color, modifier: Modifier = Modi
 }
 
 fun Modifier.tap(onClick: () -> Unit): Modifier = composed {
-    clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, onClick = onClick)
+    val c = clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, onClick = onClick)
+    // On paper, whatever can be tapped (a row, a tile, a chip) is kept whole on one page.
+    if (LocalPrint.current == null) c else c.keepWhole()
 }

@@ -171,7 +171,7 @@ private fun AllMoves(radar: Radar, lens: Lens?, onBack: () -> Unit, onOpen: (Lis
     val t = KINDS[kind].second
     val r = REGIONS[region].takeIf { region > 0 }
     val shown = base.filter { (m == null || lens?.mark(it.id)?.mark == m) && (t == null || it.type == t) && (r == null || it.region == r) }
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 24.dp)) {
+    PageList("All moves", Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 24.dp)) {
         item { Top() }
         item { Titles(listOf("All moves", "Today"), 0) { if (it == 1) onBack() } }
         stickyHeader {
@@ -243,7 +243,7 @@ fun CompetitorsArea(
     var second by rememberSaveable { mutableStateOf("") }
     val list = rememberLazyListState()
     LaunchedEffect(section) { list.scrollToItem(0) }
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
+    PageList("Competitors - " + listOf("Rivals", "Map", "Companies", "Compare")[section.coerceIn(0, 3)], Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Top() }
         item { Titles(listOf("Rivals", "Map", "Companies", "Compare"), section, onSection) }
         when (section) {
@@ -662,7 +662,7 @@ fun DealsArea(
     var invQuery by rememberSaveable { mutableStateOf("") }
     val list = rememberLazyListState()
     LaunchedEffect(section) { list.scrollToItem(0) }
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
+    PageList("Deals - " + DEALS_SECTIONS[section.coerceIn(0, DEALS_SECTIONS.lastIndex)], Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Top() }
         item { Titles(DEALS_SECTIONS, section, onSection) }
         when (section) {
@@ -909,7 +909,7 @@ fun MarketArea(radar: Radar, section: Int, onSection: (Int) -> Unit, onOpenMoves
     var region by rememberSaveable { mutableStateOf(0) }
     val list = rememberLazyListState()
     LaunchedEffect(section) { list.scrollToItem(0) }
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
+    PageList("Market - " + listOf("Trends", "Licences")[section.coerceIn(0, 1)], Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Top() }
         item { Titles(listOf("Trends", "Licences"), section, onSection) }
         if (section == 0) trendsItems(radar)
@@ -938,12 +938,12 @@ val AXON_SECTIONS = listOf("Watching", "Next steps", "Settings")
 
 @Composable
 fun AxonNextSteps(radar: Radar, lens: Lens?, onSection: (Int) -> Unit, onOpenMoves: (List<Move>, Int) -> Unit, onAddKey: () -> Unit, bottomInset: Dp) {
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
+    PageList("AXON - Next steps", Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Top() }
         item { Titles(AXON_SECTIONS, 1, onSection) }
         if (lens == null) {
             item { KeyPrompt("The open steps for AXON, each tied to the move that prompted it, and the decisions taken, come from AXON's private view.", onAddKey) }
-            return@LazyColumn
+            return@PageList
         }
         val steps = lens.steps.mapNotNull { (id, mk) -> radar.moveById[id]?.let { it to mk } }.sortedByDescending { it.first.date }
         item { Intro("${Text.plural(steps.size, "open step", "open steps")} for AXON, each tied to the move that prompted it. Newest first within each owner.") }
@@ -989,7 +989,7 @@ fun AxonNextSteps(radar: Radar, lens: Lens?, onSection: (Int) -> Unit, onOpenMov
 
 @Composable
 fun AxonSettingsPage(radar: Radar, lens: Lens?, s: AxonSettings, onSection: (Int) -> Unit, bottomInset: Dp) {
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
+    PageList("AXON - Settings", Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Top() }
         item { Titles(AXON_SECTIONS, 2, onSection) }
         item { Heading("Private view") }

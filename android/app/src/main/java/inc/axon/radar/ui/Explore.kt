@@ -64,7 +64,7 @@ fun Explore(
     var seg by rememberSaveable { mutableStateOf(0) }
     var licKind by rememberSaveable { mutableStateOf(0) }
     LaunchedEffect(section) { list.scrollToItem(0) }
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 24.dp)) {
+    PageList(section.title, Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), state = list, contentPadding = PaddingValues(bottom = bottomInset + 24.dp)) {
         item { Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars)) }
         item { Titles(Section.entries.map { it.title }, section.ordinal) { onSection(Section.entries[it]) } }
         when (section) {

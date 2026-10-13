@@ -5,6 +5,7 @@ import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.gestures.detectVerticalDragGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -53,8 +54,11 @@ import kotlin.math.roundToInt
 @Composable
 fun Deck(
     radar: Radar, start: Int, onOpen: (List<Move>, Int) -> Unit, onExplore: () -> Unit, onFocus: (Int) -> Unit, bottomInset: Dp,
-    moves: List<Move> = radar.deck, marks: Map<String, Mark> = emptyMap(),
+    moves: List<Move> = radar.deck, marks: Map<String, Mark> = emptyMap(), pdfName: String = "Today",
 ) {
+    val pdf = LocalPdf.current
+    // The link that saves the deck as a PDF sits on a black strip under the cards, above the bar.
+    val foot = if (pdf != null) 40.dp else 0.dp
     val scope = rememberCoroutineScope()
     val pos = remember { Animatable(start.coerceIn(0, (moves.size - 1).coerceAtLeast(0)).toFloat()) }
     val density = LocalDensity.current
@@ -131,7 +135,7 @@ fun Deck(
                 // One mark per card on the right edge, level with each card's top: a dot in the move's colour,
                 // or in black and white its glyph, hollow for the second kind of each family.
                 moves.forEachIndexed { i, m ->
-                    val y = (ys[i] + 16f).coerceIn(shift + 6f, fullH.value - bottomInset.value - 24)
+                    val y = (ys[i] + 16f).coerceIn(shift + 6f, fullH.value - bottomInset.value - foot.value - 24)
                     val on = i == focus
                     if (ink.mono) {
                         val s = if (on) 11.dp else 7.dp
@@ -163,7 +167,7 @@ fun Deck(
 
         // Left edge controls, as in the inspiration: up, down and a grid that opens the directory.
         Column(
-            Modifier.align(Alignment.BottomStart).padding(start = 10.dp, bottom = bottomInset + 18.dp).zIndex(600f),
+            Modifier.align(Alignment.BottomStart).padding(start = 10.dp, bottom = bottomInset + foot + 18.dp).zIndex(600f),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Box(Modifier.size(34.dp).tap { go(focus - 1) }, contentAlignment = Alignment.Center) { Ico(Icons.ChevronUp, Palette.White.copy(alpha = 0.8f), 18.dp) }
@@ -172,6 +176,43 @@ fun Deck(
         }
         Box(Modifier.align(Alignment.CenterStart).padding(start = 10.dp).size(34.dp).zIndex(600f).tap { go(focus - 1) }, contentAlignment = Alignment.Center) {
             Ico(Icons.ChevronLeft, Palette.White.copy(alpha = 0.55f), 20.dp)
+        }
+        if (pdf != null) {
+            Box(
+                Modifier.align(Alignment.BottomCenter).padding(bottom = bottomInset).fillMaxWidth().height(foot).background(Palette.Black).zIndex(700f),
+                contentAlignment = Alignment.Center,
+            ) {
+                PdfLink(Palette.White) { pdf.save(pdfName, Palette.Black, widthDp = 602) { DeckPrint(radar, moves, marks) } }
+            }
+        }
+    }
+}
+
+/** The deck on paper: every card open, two to a row at the size the phone shows them, after the date line. */
+@Composable
+internal fun DeckPrint(radar: Radar, moves: List<Move>, marks: Map<String, Mark>) {
+    BoxWithConstraints(Modifier.fillMaxWidth().background(Palette.Black)) {
+        val gap = 8.dp
+        val w = (maxWidth - 28.dp - gap) / 2
+        val h = w * 1.36f
+        Column(Modifier.fillMaxWidth().padding(horizontal = 14.dp)) {
+            Spacer(Modifier.height(18.dp))
+            Row(Modifier.fillMaxWidth().keepWhole(), verticalAlignment = Alignment.CenterVertically) {
+                RadarMark(Palette.White, 18.dp)
+                Spacer(Modifier.width(10.dp))
+                T("${Text.dowDay(radar.windowEnd)} · ${Text.plural(radar.count, "move", "moves")} in 7 days".uppercase(), Type.Caps, Palette.White.copy(alpha = 0.75f), Modifier.weight(1f), maxLines = 1)
+                if (radar.newToday > 0) {
+                    T("+${radar.newToday} NEW", Type.Caps, Palette.Black, Modifier.background(Palette.White, RoundedCornerShape(2.dp)).padding(horizontal = 6.dp, vertical = 2.dp))
+                }
+            }
+            Spacer(Modifier.height(16.dp))
+            moves.chunked(2).forEach { row ->
+                Row(Modifier.fillMaxWidth().keepWhole(), horizontalArrangement = Arrangement.spacedBy(gap)) {
+                    row.forEach { m -> Card(m, w, h, Modifier, marks[m.id]?.takeIf { it.mark != "none" }) }
+                }
+                Spacer(Modifier.height(gap))
+            }
+            Spacer(Modifier.height(10.dp))
         }
     }
 }

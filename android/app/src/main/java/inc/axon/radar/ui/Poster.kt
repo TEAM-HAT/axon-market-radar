@@ -128,6 +128,7 @@ fun MovePoster(m: Move, radar: Radar, watched: Set<String>, actions: PosterActio
         },
         label = m.typeLabel, lead = m.title,
         timeline = { Timeline(radar.timelineFor(m), m, bg) { list, i -> actions.openMoves(list, i) } },
+        pdfName = "${m.subject} - ${m.typeLabel} - ${Text.dayYear(m.date)}", again = { MovePoster(m, radar, watched, actions, lens) },
     ) {
         T(m.summary, Type.Body.copy(fontSize = 17.sp, lineHeight = 25.sp), ink.reading(bg))
         lens?.mark(m.id)?.let { mk ->
@@ -206,6 +207,7 @@ fun CompanyPoster(c: Company, radar: Radar, watched: Set<String>, actions: Poste
         tile2 = Tile(if (on) "Watching" else "Watch\nCompany", if (on) Icons.Check else Icons.Plus, ink.panel(bg), ink.onPanel(bg)) { actions.toggleWatch(c.id) },
         label = c.segment ?: "About", lead = c.blurb ?: "",
         timeline = { Timeline(moves, null, bg) { list, i -> actions.openMoves(list, i) } },
+        pdfName = c.name, again = { CompanyPoster(c, radar, watched, actions, lens) },
     ) {
         if (stance != null) {
             AxonPanel(
@@ -384,6 +386,7 @@ fun InvestorPoster(v: Investor, radar: Radar, actions: PosterActions, lens: Lens
         },
         label = Investors.kindLabel(v), lead = Investors.summary(v),
         timeline = { Timeline(v.rounds, null, bg) { list, i -> actions.openMoves(list, i) } },
+        pdfName = v.name, again = { InvestorPoster(v, radar, actions, lens) },
     ) {
         val rivals = Investors.rivalsBacked(v, lens)
         if (rivals.isNotEmpty() && lens != null) {
@@ -475,24 +478,28 @@ private fun Poster(
     bg: Color, title: String, onClose: () -> Unit,
     meta: @Composable () -> Unit, panel: @Composable () -> Unit, tile1: Tile, tile2: Tile,
     label: String, lead: String, timeline: @Composable () -> Unit,
+    pdfName: String, again: @Composable () -> Unit,
     details: @Composable ColumnScope.() -> Unit,
 ) {
     val ink = LocalInk.current
-    BoxWithConstraints(Modifier.fillMaxSize().background(bg)) {
+    // On paper the page is laid out in full, without its close button.
+    val printing = LocalPrint.current != null
+    val pdf = LocalPdf.current
+    BoxWithConstraints(if (printing) Modifier.fillMaxWidth().background(bg) else Modifier.fillMaxSize().background(bg)) {
         val content = maxWidth - 28.dp
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 14.dp)) {
-            Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars))
+        Column(if (printing) Modifier.padding(horizontal = 14.dp) else Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 14.dp)) {
+            if (printing) Spacer(Modifier.height(10.dp)) else Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars))
             Spacer(Modifier.height(8.dp))
             Row(verticalAlignment = Alignment.Top) {
                 FitTitle(title, ink.display(bg), Modifier.weight(1f), maxSize = 60f, minSize = 30f, maxLines = 2)
-                Box(Modifier.padding(top = 6.dp, start = 8.dp).size(36.dp).tap(onClose), contentAlignment = Alignment.TopEnd) {
-                    Ico(Icons.ChevronDown, ink.display(bg), 26.dp)
+                Box(Modifier.padding(top = 6.dp, start = 8.dp).size(36.dp).then(if (printing) Modifier else Modifier.tap(onClose)), contentAlignment = Alignment.TopEnd) {
+                    if (!printing) Ico(Icons.ChevronDown, ink.display(bg), 26.dp)
                 }
             }
             Spacer(Modifier.height(10.dp))
             Row(verticalAlignment = Alignment.CenterVertically) { meta() }
             Spacer(Modifier.height(14.dp))
-            Row(Modifier.fillMaxWidth().height(content * 0.66f)) {
+            Row(Modifier.fillMaxWidth().height(content * 0.66f).keepWhole()) {
                 Box(Modifier.weight(0.68f).fillMaxHeight()) { panel() }
                 Spacer(Modifier.width(6.dp))
                 Column(Modifier.weight(0.32f).fillMaxHeight()) {
@@ -507,11 +514,15 @@ private fun Poster(
                 T(lead, Type.Lead, ink.reading(bg), Modifier.weight(0.7f))
             }
             Spacer(Modifier.height(26.dp))
-            timeline()
+            Box(Modifier.keepWhole()) { timeline() }
             Spacer(Modifier.height(30.dp))
             details()
-            Spacer(Modifier.height(32.dp))
-            Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.navigationBars))
+            if (pdf != null && !printing) {
+                Spacer(Modifier.height(20.dp))
+                PdfLink(ink.reading(bg)) { pdf.save(pdfName, bg) { again() } }
+            }
+            Spacer(Modifier.height(if (printing) 20.dp else 32.dp))
+            if (!printing) Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.navigationBars))
         }
     }
 }

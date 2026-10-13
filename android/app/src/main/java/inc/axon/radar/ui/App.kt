@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -116,7 +118,12 @@ fun RadarApp(
         }
     }
 
-    CompositionLocalProvider(LocalInk provides Ink.of(look)) {
+    // Saving a page as a PDF: the page is laid out off screen, then the system's save dialog asks where to keep it.
+    val pdf = remember(ctx) { ctx.findActivity()?.let { PdfSaver(it, scope) } }
+    val saveAs = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/pdf")) { uri -> pdf?.picked(uri) }
+    SideEffect { pdf?.ink = Ink.of(look); pdf?.pick = { name -> saveAs.launch(name) } }
+
+    CompositionLocalProvider(LocalInk provides Ink.of(look), LocalPdf provides pdf) {
         Box(Modifier.fillMaxSize()) {
             RadarContent(link, preload, autoRefresh, look, ::switchLook, layout, ::switchLayout, preloadLens)
             before?.let { Image(it, null, Modifier.fillMaxSize().graphicsLayer { alpha = fade.value }, contentScale = ContentScale.FillBounds) }
@@ -311,7 +318,7 @@ private fun RadarContent(
         val bottom = 58.dp + WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
         if (layout == Layout.Original) {
             when (tab) {
-                Tab.Home -> key(deckKey) { Deck(r, focus, ::openMoves, onExplore = { tab = Tab.Explore }, onFocus = { focus = it }, bottomInset = bottom) }
+                Tab.Home -> key(deckKey) { Deck(r, focus, ::openMoves, onExplore = { tab = Tab.Explore }, onFocus = { focus = it }, bottomInset = bottom, pdfName = "Briefing") }
                 Tab.Explore -> Explore(r, section, { section = it }, ::openMoves, actions.openCompany, bottom)
                 Tab.Watch -> WatchScreen(
                     r, watched, actions.openCompany, ::openMoves, { tab = Tab.Explore; section = Section.Companies },
@@ -334,6 +341,7 @@ private fun RadarContent(
                         onAdd = { stack.add(Page.Picker) }, onToggle = actions.toggleWatch, bottomInset = bottom,
                         header = { Titles(AXON_SECTIONS, 0) { axonAt = it } },
                         offer = viewLens?.let { l -> { WatchlistOffer(r, l, watched) { ids -> watched = watched + ids; Store.setWatched(ctx, watched) } } },
+                        pdfName = "AXON - Watching",
                     )
                     1 -> AxonNextSteps(r, viewLens, { axonAt = it }, ::openMoves, toKey, bottom)
                     else -> AxonSettingsPage(

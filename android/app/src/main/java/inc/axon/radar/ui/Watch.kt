@@ -74,12 +74,12 @@ private val BoxHeight = 176.dp
 fun WatchScreen(
     radar: Radar, watched: Set<String>, onOpenCompany: (String) -> Unit, onOpenMoves: (List<Move>, Int) -> Unit,
     onExplore: () -> Unit, onAdd: () -> Unit, onToggle: (String) -> Unit, bottomInset: Dp,
-    header: (@Composable () -> Unit)? = null, offer: (@Composable () -> Unit)? = null,
+    header: (@Composable () -> Unit)? = null, offer: (@Composable () -> Unit)? = null, pdfName: String = "Watching",
 ) {
     // Most recently active first, so the box that changed lately leads.
     val cos = radar.companies.filter { it.id in watched }.sortedByDescending { it.lastDate ?: "" }
     val moves = radar.moves.filter { m -> cos.any { it.id == m.companyId || it.id in m.related } }
-    LazyColumn(Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
+    PageList(pdfName, Palette.Paper, Palette.Black, Modifier.fillMaxSize().background(Palette.Paper), contentPadding = PaddingValues(bottom = bottomInset + 28.dp)) {
         item { Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars)) }
         item { if (header != null) header() else Titles(listOf("Watching", "Companies"), 0) { if (it == 1) onExplore() } }
         if (offer != null) item { offer() }
