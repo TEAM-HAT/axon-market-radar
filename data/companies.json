@@ -2455,19 +2455,19 @@
    "segment": "Settlement rails",
    "founded": null,
    "website": "https://www.arpdigital.io",
-   "blurb": "Bahrain-licensed settlement desk for Gulf corridors: stablecoin conversion, cross-border settlement and OTC, with stc pay and BBK as partners.",
+   "blurb": "Bahrain settlement desk licensed by the CBB and Dubai's VARA: OTC, stablecoin conversion and Gulf corridor payouts, used by stc pay, BBK and CFI Bahrain.",
    "licenses": [
     {
      "regulator": "CBB",
      "jurisdiction": "Bahrain",
      "type": "Category 3 crypto-asset service provider",
-     "year": null
+     "year": 2024
     },
     {
-     "regulator": "FINTRAC",
-     "jurisdiction": "Canada",
-     "type": "Money services business registration (Vancouver entity)",
-     "year": null
+     "regulator": "VARA",
+     "jurisdiction": "Dubai, UAE",
+     "type": "VASP licence: broker-dealer services (institutional and qualified investors)",
+     "year": 2026
     }
    ],
    "funding": {
@@ -2483,7 +2483,9 @@
    "sources": [
     "https://www.arpdigital.io/en",
     "https://fintechnews.ae/28217/bahrain/arp-digital-and-stc-pay-announce-strategic-partnership-to-expand-cross-border-settlement-infrastructure/",
-    "https://gulfnews.com/business/corporate-news/arp-digital-bbk-announce-strategic-partnership-to-expand-cross-border-settlement-infrastructure-1.500316875"
+    "https://gulfnews.com/business/corporate-news/arp-digital-bbk-announce-strategic-partnership-to-expand-cross-border-settlement-infrastructure-1.500316875",
+    "https://www.vara.ae/en/licenses-and-register/public-register/arp-digital-fzco/",
+    "https://docs.platform.arpdigital.io/"
    ]
   },
   "lean-technologies": {
@@ -4418,6 +4420,116 @@
    "status": "Independent",
    "sources": [
     "https://www.nilos.io/"
+   ]
+  },
+  "terrapay": {
+   "id": "terrapay",
+   "name": "TerraPay",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": 2015,
+   "website": "https://www.terrapay.com",
+   "blurb": "London cross-border payments network for banks, money transfer firms and wallets, regulated in 30 markets, now funding and paying out in stablecoins.",
+   "licenses": [
+    {
+     "regulator": "FCA",
+     "jurisdiction": "United Kingdom",
+     "type": "Authorised payment institution",
+     "year": null
+    },
+    {
+     "regulator": "Bank of Italy",
+     "jurisdiction": "Italy",
+     "type": "Authorised e-money institution",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": [
+     "IFC"
+    ]
+   },
+   "status": "Independent",
+   "sources": [
+    "https://thepaypers.com/payments/company-information/terrapay",
+    "https://www.crowdfundinsider.com/2025/10/254191-global-payments-fintech-terrapay-adopts-stablecoin-native-flows-with-fipto/",
+    "https://cfotech.co.uk/story/terrapay-palwallet-partner-on-stablecoin-settlement"
+   ]
+  },
+  "wise": {
+   "id": "wise",
+   "name": "Wise",
+   "hq_city": "London",
+   "hq_country": "United Kingdom",
+   "region": "Europe",
+   "segment": "Settlement rails",
+   "founded": 2011,
+   "website": "https://wise.com",
+   "blurb": "London money-transfer network with 70+ licences that sells its rails to banks through Wise Platform; licensed in the UAE in 2025 and exploring stablecoins.",
+   "licenses": [
+    {
+     "regulator": "CBUAE",
+     "jurisdiction": "United Arab Emirates",
+     "type": "Stored value facilities; retail payment services (category 2)",
+     "year": 2025
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Public",
+   "sources": [
+    "https://newsroom.wise.com/en-CEU/255401-wise-secures-central-bank-final-approval-for-stored-value-facilities-and-retail-payment-services-licenses-in-the-uae",
+    "https://wise.com/platform/",
+    "https://cointelegraph.com/news/wise-digital-asset-lead-stablecoin-hiring-crypto-expansion"
+   ]
+  },
+  "artoh": {
+   "id": "artoh",
+   "name": "Artoh",
+   "hq_city": "New York",
+   "hq_country": "United States",
+   "region": "North America",
+   "segment": "Settlement rails",
+   "founded": null,
+   "website": "https://www.artoh.com",
+   "blurb": "Stablecoin-based dollar liquidity and settlement for banks, payment platforms and companies in dollar-short markets of Africa and Latin America.",
+   "licenses": [
+    {
+     "regulator": "FinCEN",
+     "jurisdiction": "United States",
+     "type": "Money services business registration",
+     "year": null
+    }
+   ],
+   "funding": {
+    "total_usd_m": null,
+    "last_round_type": null,
+    "last_round_usd_m": null,
+    "last_round_date": null,
+    "lead": null,
+    "valuation_usd_m": null,
+    "investors": []
+   },
+   "status": "Independent",
+   "sources": [
+    "https://www.artoh.com/",
+    "https://www.artoh.com/about",
+    "https://partners.circle.com/partner/artoh"
    ]
   }
  }

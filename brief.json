@@ -5,13 +5,13 @@
   "window_start": "2026-10-07",
   "window_end": "2026-10-13",
   "week": 42,
-  "count": 17,
+  "count": 18,
   "new_today": 3,
   "headline": "Standard Chartered began **custody of Ripple's RLUSD in Dubai** and Kraken won full VARA approval, capping a week in which Circle, Ripple and StanChart bought into **OKX at a $25bn valuation**. In Europe, ESMA gave licensed platforms three months to drop unauthorised stablecoins.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 6,
+      "n": 7,
       "label": "partnerships"
     },
     {
@@ -35,17 +35,17 @@
       "label": "licence"
     }
   ],
-  "mix_text": "6 partnerships · 4 launches · 3 funding rounds · 3 regulatory actions · 1 licence",
+  "mix_text": "7 partnerships · 4 launches · 3 funding rounds · 3 regulatory actions · 1 licence",
   "regions": {
     "Europe": 4,
-    "Middle East": 3,
+    "Middle East": 4,
     "North America": 2,
     "Global": 8
   },
   "groups": {
     "regulatory": 4,
     "capital": 3,
-    "commercial": 10
+    "commercial": 11
   },
   "moves": [
     {
@@ -85,6 +85,18 @@
       "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
     },
     {
+      "id": "arp-digital-cfi-bahrain-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Middle East",
+      "regulator": null,
+      "company": "ARP Digital",
+      "title": "CFI Bahrain takes USDT and USDC deposits through ARP Digital",
+      "source_name": "ARP Digital",
+      "source_url": "https://www.arpdigital.io/en/resources/news-insights/cfi-bahrain-stablecoin-funding-arp-digital"
+    },
+    {
       "id": "oobit-ai-payments-2026-10-09",
       "date": "2026-10-09",
       "type": "Launch",
@@ -107,18 +119,6 @@
       "title": "NCUA proposes stablecoin data fields for credit union call reports",
       "source_name": "Bitcoin.com News",
       "source_url": "https://news.bitcoin.com/regulation-and-legal/credit-unions-could-face-26-new-stablecoin-reporting-fields"
-    },
-    {
-      "id": "nium-redotpay-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Nium",
-      "title": "Nium to run fiat payouts for RedotPay's stablecoin users",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/nium-and-redotpay-partner-on-stablecoin-off-ramp-payouts"
     }
   ],
   "latest": [
@@ -157,6 +157,18 @@
       "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
+    },
+    {
+      "id": "arp-digital-cfi-bahrain-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Middle East",
+      "regulator": null,
+      "company": "ARP Digital",
+      "title": "CFI Bahrain takes USDT and USDC deposits through ARP Digital",
+      "source_name": "ARP Digital",
+      "source_url": "https://www.arpdigital.io/en/resources/news-insights/cfi-bahrain-stablecoin-funding-arp-digital"
     },
     {
       "id": "oobit-ai-payments-2026-10-09",
@@ -205,18 +217,6 @@
       "title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
       "source_name": "EU-Startups",
       "source_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
-    },
-    {
-      "id": "bringin-business-beta-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Bringin",
-      "title": "Bringin opens beta of euro business accounts taking stablecoins",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/bringin-opens-beta-for-bitcoin-and-stablecoin-business-accounts"
     }
   ],
   "companies": [
@@ -387,23 +387,23 @@
       "actions": 3
     },
     {
-      "name": "CSSF",
-      "where": "Luxembourg",
-      "licences": 5,
-      "actions": 0
+      "name": "VARA",
+      "where": "Dubai",
+      "licences": 4,
+      "actions": 2
     }
   ],
   "trends": {
     "since": "2025-10",
-    "total": 491,
-    "licences": 65,
+    "total": 495,
+    "licences": 66,
     "regulatory_actions": 59,
-    "commercial": 240,
+    "commercial": 243,
     "capital": 127,
     "months": [
       {
         "m": "2025-10",
-        "n": 49
+        "n": 50
       },
       {
         "m": "2025-11",
@@ -443,15 +443,15 @@
       },
       {
         "m": "2026-08",
-        "n": 29
+        "n": 30
       },
       {
         "m": "2026-09",
-        "n": 48
+        "n": 49
       },
       {
         "m": "2026-10",
-        "n": 39
+        "n": 40
       }
     ],
     "partial_last": true

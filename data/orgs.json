@@ -3423,6 +3423,13 @@
    "kind": "bank",
    "hq_country": "Bahrain",
    "website": null
+  },
+  "cfi-financial": {
+   "id": "cfi-financial",
+   "name": "CFI Financial Group",
+   "kind": "online trading broker",
+   "hq_country": null,
+   "website": null
   }
  }
 }

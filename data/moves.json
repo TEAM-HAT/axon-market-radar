@@ -12996,7 +12996,7 @@
    "id": "wise-genius-charter-plan-2026-07-24",
    "date": "2026-07-24",
    "date_precision": "day",
-   "company_id": null,
+   "company_id": "wise",
    "company_name": "Wise",
    "type": "License",
    "region": "North America",
@@ -15036,6 +15036,121 @@
    "themes": [
     "business-payments",
     "bank-tokens"
+   ],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "arp-digital-vara-licence-2026-08-07",
+   "date": "2026-08-07",
+   "date_precision": "day",
+   "company_id": "arp-digital",
+   "company_name": "ARP Digital",
+   "type": "License",
+   "region": "Middle East",
+   "title": "ARP Digital wins a VARA broker-dealer licence in Dubai",
+   "summary": "VARA's register lists ARP Digital FZCO as licensed for broker-dealer services from 7 August 2026, for institutional and qualified investors. The CBB-licensed Bahrain firm will convert digital assets and stablecoins into dirhams.",
+   "amount_usd_m": null,
+   "regulator": "VARA",
+   "jurisdiction": "Dubai, UAE",
+   "source_name": "VARA public register",
+   "source_url": "https://www.vara.ae/en/licenses-and-register/public-register/arp-digital-fzco/",
+   "related": [],
+   "parties": [],
+   "themes": [
+    "gulf-rules"
+   ],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "arp-digital-ax-coin-2026-09-29",
+   "date": "2026-09-29",
+   "date_precision": "day",
+   "company_id": "arp-digital",
+   "company_name": "ARP Digital",
+   "type": "Partnership",
+   "region": "Middle East",
+   "title": "AX Coin teams up with ARP Digital on liquidity and settlement",
+   "summary": "AX Coin, Solowin's CBB-licensed stablecoin issuer in Bahrain, will connect its token with ARP Digital's OTC desk, on- and off-ramps and corridor settlement rails, starting in Bahrain and the UAE.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Zawya",
+   "source_url": "https://www.zawya.com/en/press-release/companies-news/ax-coin-a-subsidiary-of-solowin-holdings-axg-partners-with-arp-digital-on-institutional-liquidity-and-settlement-1427032",
+   "related": [
+    "ax-coin"
+   ],
+   "parties": [
+    {
+     "id": "ax-coin",
+     "name": "AX Coin",
+     "role": "partner"
+    }
+   ],
+   "kind": "Infrastructure supply",
+   "themes": [
+    "gulf-tokens",
+    "business-payments"
+   ],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "arp-digital-cfi-bahrain-2026-10-12",
+   "date": "2026-10-12",
+   "date_precision": "day",
+   "company_id": "arp-digital",
+   "company_name": "ARP Digital",
+   "type": "Partnership",
+   "region": "Middle East",
+   "title": "CFI Bahrain takes USDT and USDC deposits through ARP Digital",
+   "summary": "CFI Financial's Bahrain arm won CBB approval to let clients fund trading accounts in USDT and USDC. ARP Digital runs the wallets, transaction screening, risk scoring and conversion of the stablecoins into fiat.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "ARP Digital",
+   "source_url": "https://www.arpdigital.io/en/resources/news-insights/cfi-bahrain-stablecoin-funding-arp-digital",
+   "related": [],
+   "parties": [
+    {
+     "id": "cfi-financial",
+     "name": "CFI Financial Group",
+     "role": "client"
+    }
+   ],
+   "kind": "Infrastructure supply",
+   "themes": [
+    "gulf-rules",
+    "checkout"
+   ],
+   "added": "2026-10-13"
+  },
+  {
+   "id": "terrapay-fipto-stablecoin-2025-10-08",
+   "date": "2025-10-08",
+   "date_precision": "day",
+   "company_id": "terrapay",
+   "company_name": "TerraPay",
+   "type": "Partnership",
+   "region": "Global",
+   "title": "TerraPay adds stablecoin funding and payouts with Fipto",
+   "summary": "TerraPay launched stablecoin-native flows with Paris-based Fipto: clients can fund in stablecoins and payout partners can receive them where regulators allow, after a year of testing fiat-stablecoin-fiat transfers.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Crowdfund Insider",
+   "source_url": "https://www.crowdfundinsider.com/2025/10/254191-global-payments-fintech-terrapay-adopts-stablecoin-native-flows-with-fipto/",
+   "related": [
+    "fipto"
+   ],
+   "parties": [
+    {
+     "id": "fipto",
+     "name": "Fipto",
+     "role": "supplier"
+    }
+   ],
+   "kind": "Infrastructure supply",
+   "themes": [
+    "business-payments"
    ],
    "added": "2026-10-13"
   }
