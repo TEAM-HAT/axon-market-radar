@@ -1,5 +1,5 @@
 {
- "version": "2026-10-13",
+ "version": "2026-10-13b",
  "orgs": {
   "1kx": {
    "id": "1kx",
@@ -3428,6 +3428,258 @@
    "id": "cfi-financial",
    "name": "CFI Financial Group",
    "kind": "online trading broker",
+   "hq_country": null,
+   "website": null
+  },
+  "duquesne-family-office": {
+   "id": "duquesne-family-office",
+   "name": "Duquesne Family Office",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "arbor-ventures": {
+   "id": "arbor-ventures",
+   "name": "Arbor Ventures",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "jimco": {
+   "id": "jimco",
+   "name": "JIMCO",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "apis-partners": {
+   "id": "apis-partners",
+   "name": "Apis Partners",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "vitruvian-partners": {
+   "id": "vitruvian-partners",
+   "name": "Vitruvian Partners",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "blockchain-coinvestors": {
+   "id": "blockchain-coinvestors",
+   "name": "Blockchain Coinvestors",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "hutt-capital": {
+   "id": "hutt-capital",
+   "name": "Hutt Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "winklevoss-capital": {
+   "id": "winklevoss-capital",
+   "name": "Winklevoss Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "ntt-docomo": {
+   "id": "ntt-docomo",
+   "name": "NTT DOCOMO",
+   "kind": "corporate",
+   "hq_country": "Japan",
+   "website": null
+  },
+  "semantic-ventures": {
+   "id": "semantic-ventures",
+   "name": "Semantic Ventures",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "lava": {
+   "id": "lava",
+   "name": "Lava",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "tlcom-capital": {
+   "id": "tlcom-capital",
+   "name": "TLcom Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "antler": {
+   "id": "antler",
+   "name": "Antler",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "musha-ventures": {
+   "id": "musha-ventures",
+   "name": "Musha Ventures",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "4dx-ventures": {
+   "id": "4dx-ventures",
+   "name": "4DX Ventures",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "stellar-development-foundation": {
+   "id": "stellar-development-foundation",
+   "name": "Stellar Development Foundation",
+   "kind": "other",
+   "hq_country": null,
+   "website": null
+  },
+  "eastern-bell-capital": {
+   "id": "eastern-bell-capital",
+   "name": "Eastern Bell Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "sky9-capital": {
+   "id": "sky9-capital",
+   "name": "Sky9 Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "freshwave-fund": {
+   "id": "freshwave-fund",
+   "name": "Freshwave Fund",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "beingboom-capital": {
+   "id": "beingboom-capital",
+   "name": "Beingboom Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "hillhouse-investment": {
+   "id": "hillhouse-investment",
+   "name": "Hillhouse Investment",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "enlight-capital": {
+   "id": "enlight-capital",
+   "name": "Enlight Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "shoplazza": {
+   "id": "shoplazza",
+   "name": "Shoplazza",
+   "kind": "technology firm",
+   "hq_country": null,
+   "website": null
+  },
+  "za-global": {
+   "id": "za-global",
+   "name": "ZA Global",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "china-harbour": {
+   "id": "china-harbour",
+   "name": "China Harbour",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "bright-venture": {
+   "id": "bright-venture",
+   "name": "Bright Venture",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "hivemind-capital": {
+   "id": "hivemind-capital",
+   "name": "Hivemind Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "hsg": {
+   "id": "hsg",
+   "name": "HSG",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "eternal-digital": {
+   "id": "eternal-digital",
+   "name": "Eternal Digital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "cmsc-partners": {
+   "id": "cmsc-partners",
+   "name": "CMSC Partners",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "guotai-junan-international": {
+   "id": "guotai-junan-international",
+   "name": "Guotai Junan International",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "za-bank": {
+   "id": "za-bank",
+   "name": "ZA Bank",
+   "kind": "bank",
+   "hq_country": "Hong Kong",
+   "website": null
+  },
+  "gobi-partners": {
+   "id": "gobi-partners",
+   "name": "Gobi Partners",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "oak-hc-ft": {
+   "id": "oak-hc-ft",
+   "name": "Oak HC/FT",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "lux-capital": {
+   "id": "lux-capital",
+   "name": "Lux Capital",
+   "kind": "investor",
+   "hq_country": null,
+   "website": null
+  },
+  "8vc": {
+   "id": "8vc",
+   "name": "8VC",
+   "kind": "investor",
    "hq_country": null,
    "website": null
   }

@@ -1,5 +1,5 @@
 {
- "version": "2026-10-13",
+ "version": "2026-10-13b",
  "moves": {
   "tempo-series-a-2025-10-17": {
    "parties": [
@@ -181,7 +181,7 @@
     {
      "id": "binance",
      "name": "Binance",
-     "role": "investor"
+     "role": "lead investor"
     }
    ],
    "round": {
@@ -270,7 +270,8 @@
    },
    "themes": [
     "consolidation"
-   ]
+   ],
+   "amount_usd_m": 2000
   },
   "paxos-fordefi-2025-11-25": {
    "parties": [
@@ -289,7 +290,11 @@
    },
    "themes": [
     "consolidation"
-   ]
+   ],
+   "amount_usd_m": 100,
+   "source_name": "SiliconANGLE",
+   "source_url": "https://siliconangle.com/2025/11/26/paxos-acquires-crypto-wallet-startup-fordefi-100m/",
+   "summary": "Paxos bought Fordefi, an MPC crypto wallet platform used by more than 200 institutional investors, for more than $100m according to Fortune, above the $83m valuation of Fordefi's last round, in which Paxos took part."
   },
   "bvnk-mastercard-agreement-2026-03-17": {
    "amount_usd_m": 1800,

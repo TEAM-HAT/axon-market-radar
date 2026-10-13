@@ -1,5 +1,5 @@
 {
- "version": "2026-10-13",
+ "version": "2026-10-13b",
  "moves": [
   {
    "id": "stripe-bridge-agreement-2024-10-21",
@@ -415,12 +415,12 @@
    "type": "M&A",
    "region": "North America",
    "title": "Circle buys Hashnote, issuer of the USYC tokenised money fund",
-   "summary": "Circle acquired Hashnote, issuer of USYC, then the largest tokenised treasury and money market fund with $1.52bn deployed, and agreed a strategic partnership with DRW affiliate Cumberland.",
-   "amount_usd_m": null,
+   "summary": "Circle bought Hashnote, issuer of the USYC tokenised Treasury fund. Filings for its IPO later showed it paid about $99.8m: $9.9m in cash and some 2.9 million fully vested Circle shares.",
+   "amount_usd_m": 99.8,
    "regulator": null,
    "jurisdiction": "United States",
-   "source_name": "Circle",
-   "source_url": "https://www.circle.com/pressroom/circle-announces-acquisition-of-hashnote-and-usyc-tokenized-money-market-fund-alongside-strategic-partnership-with-global-trading-firm-drw",
+   "source_name": "DiarioBitcoin",
+   "source_url": "https://www.diariobitcoin.com/empresas/circle-pago-cerca-de-usd-100-millones-por-la-compra-de-hashnote-informes/",
    "related": [],
    "parties": [
     {
@@ -781,7 +781,7 @@
     {
      "id": "mgx",
      "name": "MGX",
-     "role": "investor"
+     "role": "lead investor"
     }
    ],
    "themes": [
@@ -3785,7 +3785,7 @@
     {
      "id": "m2-capital",
      "name": "M2 Capital",
-     "role": "investor"
+     "role": "lead investor"
     }
    ],
    "themes": [
@@ -3931,8 +3931,8 @@
    "company_name": "Fasset",
    "type": "License",
    "region": "Global",
-   "title": "Labuan FSA gives Fasset conditional approval for a stablecoin Islamic digital bank",
-   "summary": "Labuan's regulator gave Fasset Islamic Digital Bank Limited a conditional approval in its Islamic digital bank sandbox; it may not start business until it meets every operational and prudential requirement. Fasset had described it as a Malaysian banking licence.",
+   "title": "Labuan FSA gives Fasset conditional Islamic digital bank approval",
+   "summary": "Labuan's regulator gave Fasset Islamic Digital Bank Limited conditional approval in its Islamic digital bank sandbox; it cannot start business until it meets every operational and prudential requirement. Fasset called it a Malaysian banking licence.",
    "amount_usd_m": null,
    "regulator": "Labuan FSA",
    "jurisdiction": "Malaysia (Labuan)",
@@ -6282,12 +6282,12 @@
    "type": "M&A",
    "region": "Global",
    "title": "Exodus agrees to buy W3C, parent of card firms Baanx and Monavate",
-   "summary": "Wallet company Exodus agreed to buy W3C Corp, parent of Baanx and Monavate, gaining card issuing and processing to issue cards on Visa, Mastercard and Discover in the US, UK and EU with stablecoin support. Terms were not disclosed.",
-   "amount_usd_m": null,
+   "summary": "Wallet company Exodus agreed to buy W3C Corp, parent of crypto card and payments firms Baanx and Monavate, for $175m in cash and Galaxy Digital financing secured on its bitcoin, to issue cards on Visa, Mastercard and Discover in the US, UK and EU.",
+   "amount_usd_m": 175,
    "regulator": null,
    "jurisdiction": null,
-   "source_name": "Stock Titan",
-   "source_url": "https://www.stocktitan.net/news/EXOD/exodus-enters-next-phase-as-a-crypto-payments-company-with-agreement-a4nkbrycg2vo.html",
+   "source_name": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com/news/crypto-wallet-firm-exodus-buys-210000340.html",
    "related": [],
    "parties": [
     {
@@ -7659,7 +7659,28 @@
    "source_name": "Ohio Tech News",
    "source_url": "https://www.ohiotechnews.com/erebor-hits-4b-valuation-report/",
    "related": [],
-   "parties": [],
+   "parties": [
+    {
+     "id": "lux-capital",
+     "name": "Lux Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "founders-fund",
+     "name": "Founders Fund",
+     "role": "investor"
+    },
+    {
+     "id": "8vc",
+     "name": "8VC",
+     "role": "investor"
+    },
+    {
+     "id": "haun-ventures",
+     "name": "Haun Ventures",
+     "role": "investor"
+    }
+   ],
    "themes": [
     "capital",
     "bank-tokens"
@@ -8558,19 +8579,19 @@
    "amount_usd_m": 4,
    "regulator": null,
    "jurisdiction": null,
-   "source_name": "Tech Funding News",
-   "source_url": "https://techfundingnews.com/superset-raises-4m-to-build-the-unified-liquidity-layer-for-the-300b-stablecoin-economy/",
+   "source_name": "crypto.news",
+   "source_url": "https://crypto.news/superset-targets-stablecoin-liquidity-gap-with-4m-funding-round/",
    "related": [],
    "parties": [
     {
      "id": "7ridge",
      "name": "7RIDGE",
-     "role": "investor"
+     "role": "lead investor"
     },
     {
      "id": "exponential-science-capital",
      "name": "Exponential Science Capital",
-     "role": "investor"
+     "role": "lead investor"
     }
    ],
    "themes": [
@@ -9135,7 +9156,33 @@
    "source_name": "Blockhead",
    "source_url": "https://www.blockhead.co/2026/03/10/kast-raises-80-million-for-stablecoin-neobank-at-600-million-valuation/",
    "related": [],
-   "parties": [],
+   "parties": [
+    {
+     "id": "qed-investors",
+     "name": "QED Investors",
+     "role": "lead investor"
+    },
+    {
+     "id": "left-lane-capital",
+     "name": "Left Lane Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "peak-xv",
+     "name": "Peak XV Partners",
+     "role": "investor"
+    },
+    {
+     "id": "hsg",
+     "name": "HSG",
+     "role": "investor"
+    },
+    {
+     "id": "dst-global",
+     "name": "DST Global",
+     "role": "investor"
+    }
+   ],
    "themes": [
     "capital",
     "apps-and-wallets"
@@ -11207,28 +11254,28 @@
    "type": "Funding",
    "region": "Global",
    "title": "Checker raises $8m seed for institutional stablecoin infrastructure",
-   "summary": "Checker, a stablecoin infrastructure start-up, closed an $8m seed round with Galaxy Ventures, Framework Ventures and Al Mada Ventures.",
+   "summary": "Checker raised an $8m seed round led by Galaxy Ventures, Al Mada Ventures and Framework Ventures to take its stablecoin payment infrastructure across Africa, Asia and Latin America; it has processed $3bn in total volume.",
    "amount_usd_m": 8,
    "regulator": null,
    "jurisdiction": null,
-   "source_name": "Crypto Briefing",
-   "source_url": "https://cryptobriefing.com/checker-raises-8m-stablecoin-infrastructure/",
+   "source_name": "Daba Finance",
+   "source_url": "https://dabafinance.com/en/news/checker-raises-8-million-stablecoin-payment-rails",
    "related": [],
    "parties": [
     {
      "id": "galaxy",
      "name": "Galaxy Ventures",
-     "role": "investor"
-    },
-    {
-     "id": "framework-ventures",
-     "name": "Framework Ventures",
-     "role": "investor"
+     "role": "lead investor"
     },
     {
      "id": "al-mada-ventures",
      "name": "Al Mada Ventures",
-     "role": "investor"
+     "role": "lead investor"
+    },
+    {
+     "id": "framework-ventures",
+     "name": "Framework Ventures",
+     "role": "lead investor"
     }
    ],
    "themes": [
@@ -14023,7 +14070,33 @@
    "source_name": "Fortune",
    "source_url": "https://fortune.com/2026/09/09/exclusive-latitude-stripe-uber-alums-35-million-stablecoins-local-payments/",
    "related": [],
-   "parties": [],
+   "parties": [
+    {
+     "id": "oak-hc-ft",
+     "name": "Oak HC/FT",
+     "role": "lead investor"
+    },
+    {
+     "id": "nea",
+     "name": "NEA",
+     "role": "investor"
+    },
+    {
+     "id": "coinbase",
+     "name": "Coinbase",
+     "role": "investor"
+    },
+    {
+     "id": "lightspeed",
+     "name": "Lightspeed Faction",
+     "role": "investor"
+    },
+    {
+     "id": "openfx",
+     "name": "OpenFX",
+     "role": "investor"
+    }
+   ],
    "themes": [
     "capital",
     "business-payments"
@@ -15153,6 +15226,763 @@
     "business-payments"
    ],
    "added": "2026-10-13"
+  },
+  {
+   "id": "lean-technologies-series-b-2024-11-10",
+   "date": "2024-11-10",
+   "date_precision": "day",
+   "company_id": "lean-technologies",
+   "company_name": "Lean Technologies",
+   "type": "Funding",
+   "region": "Middle East",
+   "title": "Lean Technologies raises $67.5m Series B led by General Catalyst",
+   "summary": "Lean Technologies, an open banking and account-to-account payments platform regulated by ADGM and working in SAMA's sandbox, raised a $67.5m Series B led by General Catalyst, taking its funding past $100m.",
+   "amount_usd_m": 67.5,
+   "regulator": null,
+   "jurisdiction": "Saudi Arabia",
+   "source_name": "Lean Technologies",
+   "source_url": "https://www2.leantech.me/blog/lean-technologies-secures-67-5m-in-series-b-funding-led-by-general-catalyst-solidifying-its-position-as-the-leading-fintech-infrastructure-platform-in-the-middle-east",
+   "related": [],
+   "parties": [
+    {
+     "id": "general-catalyst",
+     "name": "General Catalyst",
+     "role": "lead investor"
+    },
+    {
+     "id": "bain-capital",
+     "name": "Bain Capital Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "duquesne-family-office",
+     "name": "Duquesne Family Office",
+     "role": "investor"
+    },
+    {
+     "id": "arbor-ventures",
+     "name": "Arbor Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "jimco",
+     "name": "JIMCO",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Series B",
+    "valuation_usd_m": null,
+    "use_of_funds": "expanding its payment and data products"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "partior-deutsche-bank-2024-11-27",
+   "date": "2024-11-27",
+   "date_precision": "day",
+   "company_id": "partior",
+   "company_name": "Partior",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Deutsche Bank invests $20m in blockchain payment network Partior",
+   "summary": "Deutsche Bank invested $20m in Partior's DLT payment network, extending a Series B whose first $60m close in July 2024 was led by Peak XV Partners with Valor Capital Group and Jump Trading.",
+   "amount_usd_m": 20,
+   "regulator": null,
+   "jurisdiction": "Singapore",
+   "source_name": "Ledger Insights",
+   "source_url": "https://www.ledgerinsights.com/deutsche-bank-invests-20m-in-dlt-payment-infrastructure-partior/",
+   "related": [],
+   "parties": [
+    {
+     "id": "deutsche-bank",
+     "name": "Deutsche Bank",
+     "role": "lead investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "bank-tokens",
+    "payment-chains"
+   ],
+   "round": {
+    "stage": "Series B",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "thunes-series-d-2025-04-28",
+   "date": "2025-04-28",
+   "date_precision": "day",
+   "company_id": "thunes",
+   "company_name": "Thunes",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Thunes raises $150m Series D led by Apis and Vitruvian",
+   "summary": "Payments network Thunes, now profitable, raised a $150m Series D led by private equity firms Apis Partners and Vitruvian Partners, mainly to expand in the United States, where it recently gained licences across 50 states.",
+   "amount_usd_m": 150,
+   "regulator": null,
+   "jurisdiction": "Singapore",
+   "source_name": "Crowdfund Insider",
+   "source_url": "https://www.crowdfundinsider.com/2025/04/238980-fintech-thunes-reports-150m-series-d-led-by-apis-partners-and-vitruvian-partners/",
+   "related": [],
+   "parties": [
+    {
+     "id": "apis-partners",
+     "name": "Apis Partners",
+     "role": "lead investor"
+    },
+    {
+     "id": "vitruvian-partners",
+     "name": "Vitruvian Partners",
+     "role": "lead investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Series D",
+    "valuation_usd_m": null,
+    "use_of_funds": "expansion in the United States"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "yellow-card-series-c-2024-10-17",
+   "date": "2024-10-17",
+   "date_precision": "day",
+   "company_id": "yellow-card",
+   "company_name": "Yellow Card",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Blockchain Capital leads $33m Series C in Yellow Card",
+   "summary": "African stablecoin platform Yellow Card raised a $33m Series C led by Blockchain Capital, with Polychain, Third Prime, Castle Island, Block and Galaxy Ventures, to grow the API and widget products businesses use to reach Africa.",
+   "amount_usd_m": 33,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "The Block",
+   "source_url": "https://www.theblock.co/news/deals/2024-10-17-blockchain-capital-leads-33-million-series-c-in-african-stablecoin-exchange-yellow-card-321804",
+   "related": [],
+   "parties": [
+    {
+     "id": "blockchain-capital",
+     "name": "Blockchain Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "polychain",
+     "name": "Polychain Capital",
+     "role": "investor"
+    },
+    {
+     "id": "third-prime",
+     "name": "Third Prime Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "castle-island-ventures",
+     "name": "Castle Island Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "block",
+     "name": "Block, Inc.",
+     "role": "investor"
+    },
+    {
+     "id": "galaxy",
+     "name": "Galaxy Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "blockchain-coinvestors",
+     "name": "Blockchain Coinvestors",
+     "role": "investor"
+    },
+    {
+     "id": "hutt-capital",
+     "name": "Hutt Capital",
+     "role": "investor"
+    },
+    {
+     "id": "winklevoss-capital",
+     "name": "Winklevoss Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Series C",
+    "valuation_usd_m": null,
+    "use_of_funds": "API and widget products for businesses entering Africa"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "yellow-card-strategic-2026-08-05",
+   "date": "2026-08-05",
+   "date_precision": "day",
+   "company_id": "yellow-card",
+   "company_name": "Yellow Card",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Yellow Card raises $40m from SC Ventures, Sony and Polychain",
+   "summary": "Yellow Card raised a $40m strategic round from SC Ventures by Standard Chartered, Sony Innovation Fund, Polychain Capital, Blockchain Capital and others, taking its equity funding past $120m, to grow its Global USD Accounts.",
+   "amount_usd_m": 40,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Techeconomy",
+   "source_url": "https://techeconomy.ng/yellow-card-secures-40m-raise-accelerates-global-growth",
+   "related": [],
+   "parties": [
+    {
+     "id": "standard-chartered",
+     "name": "SC Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "sony",
+     "name": "Sony Innovation Fund",
+     "role": "investor"
+    },
+    {
+     "id": "polychain",
+     "name": "Polychain Capital",
+     "role": "investor"
+    },
+    {
+     "id": "blockchain-capital",
+     "name": "Blockchain Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": "Global USD Accounts and its stablecoin rails"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "sphere-funding-2024-12-11",
+   "date": "2024-12-11",
+   "date_precision": "day",
+   "company_id": "sphere",
+   "company_name": "Sphere",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Sphere raises $5m led by Coinbase Ventures and Kraken Ventures",
+   "summary": "Sphere, a stablecoin company founded in 2022 for cross-border payments, closed a $5m round led by Coinbase Ventures and Kraken Ventures and plans to spend it on regulatory compliance and risk management.",
+   "amount_usd_m": 5,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "Fortune",
+   "source_url": "https://fortune.com/crypto/2024/12/11/sphere-crypto-fundraising-round-cross-border-payment-stablecoin-coinbase-kraken/",
+   "related": [],
+   "parties": [
+    {
+     "id": "coinbase",
+     "name": "Coinbase Ventures",
+     "role": "lead investor"
+    },
+    {
+     "id": "kraken",
+     "name": "Kraken Ventures",
+     "role": "lead investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "regulatory compliance and risk management"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "bastion-ntt-docomo-2026-02-17",
+   "date": "2026-02-17",
+   "date_precision": "day",
+   "company_id": "bastion",
+   "company_name": "Bastion",
+   "type": "Funding",
+   "region": "North America",
+   "title": "NTT DOCOMO Ventures invests in stablecoin platform Bastion",
+   "summary": "NTT DOCOMO Ventures invested an undisclosed sum in Bastion Platforms, a regulated stablecoin infrastructure provider for global enterprises, and will explore working with it in digital finance and payments.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "NTT DOCOMO Ventures",
+   "source_url": "https://www.nttdocomo-v.com/en/news/08fnsfe9f9/",
+   "related": [],
+   "parties": [
+    {
+     "id": "ntt-docomo",
+     "name": "NTT DOCOMO Ventures",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "due-seed-extension-2025-07-30",
+   "date": "2025-07-30",
+   "date_precision": "day",
+   "company_id": "due",
+   "company_name": "Due",
+   "type": "Funding",
+   "region": "Europe",
+   "title": "Due extends its seed round to $7.3m, led by Speedinvest",
+   "summary": "London payments start-up Due, founded by Revolut alumni, added about $4m to take its seed round to $7.3m, led by Speedinvest with Semantic, Fabric Ventures, Strobe Ventures and Polymorphic Capital, and launched a stablecoin API.",
+   "amount_usd_m": 4,
+   "regulator": null,
+   "jurisdiction": "United Kingdom",
+   "source_name": "Tech.eu",
+   "source_url": "https://tech.eu/2025/07/30/due-raises-73m-seed-extension-and-launches-stablecoin-api/",
+   "related": [],
+   "parties": [
+    {
+     "id": "speedinvest",
+     "name": "Speedinvest",
+     "role": "lead investor"
+    },
+    {
+     "id": "semantic-ventures",
+     "name": "Semantic",
+     "role": "investor"
+    },
+    {
+     "id": "fabric-ventures",
+     "name": "Fabric Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "strobe-ventures",
+     "name": "Strobe Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "polymorphic-capital",
+     "name": "Polymorphic Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Seed extension",
+    "valuation_usd_m": null,
+    "use_of_funds": "scaling its borderless payment infrastructure"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "honeycoin-seed-2025-08-12",
+   "date": "2025-08-12",
+   "date_precision": "day",
+   "company_id": "honeycoin",
+   "company_name": "HoneyCoin",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Kenya's HoneyCoin raises $4.9m seed led by Flourish Ventures",
+   "summary": "Kenyan fintech HoneyCoin raised a $4.9m seed round led by Flourish Ventures, with Visa Ventures, TLcom, Antler, 4DX Ventures and the Stellar Development Foundation, for stablecoin cross-border payments handling over $150m a month.",
+   "amount_usd_m": 4.9,
+   "regulator": null,
+   "jurisdiction": "Kenya",
+   "source_name": "Condia",
+   "source_url": "https://thecondia.com/honeycoin-4-9m-seed-stablecoins-africa/",
+   "related": [],
+   "parties": [
+    {
+     "id": "flourish-ventures",
+     "name": "Flourish Ventures",
+     "role": "lead investor"
+    },
+    {
+     "id": "visa",
+     "name": "Visa Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "lava",
+     "name": "Lava",
+     "role": "investor"
+    },
+    {
+     "id": "tlcom-capital",
+     "name": "TLcom",
+     "role": "investor"
+    },
+    {
+     "id": "antler",
+     "name": "Antler",
+     "role": "investor"
+    },
+    {
+     "id": "musha-ventures",
+     "name": "Musha Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "4dx-ventures",
+     "name": "4DX Ventures",
+     "role": "investor"
+    },
+    {
+     "id": "stellar-development-foundation",
+     "name": "Stellar Development Foundation",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Seed",
+    "valuation_usd_m": null,
+    "use_of_funds": "expanding its stablecoin payment platform"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "metacomp-pre-series-a-2025-12-09",
+   "date": "2025-12-09",
+   "date_precision": "day",
+   "company_id": "metacomp",
+   "company_name": "MetaComp",
+   "type": "Funding",
+   "region": "Global",
+   "title": "MetaComp raises $22m pre-Series A for stablecoin payments",
+   "summary": "Singapore's MetaComp raised a $22m pre-Series A with Eastern Bell Capital, Sky9 Capital, Freshwave Fund and Beingboom Capital to scale its StableX and VisionX fiat and stablecoin payment network, which moves over $1bn a month.",
+   "amount_usd_m": 22,
+   "regulator": null,
+   "jurisdiction": "Singapore",
+   "source_name": "Fintech News Singapore",
+   "source_url": "https://fintechnews.sg/123277/funding/metacomp-raises-us22-million-to-scale-stablecoin-payment-network/",
+   "related": [],
+   "parties": [
+    {
+     "id": "eastern-bell-capital",
+     "name": "Eastern Bell Capital",
+     "role": "investor"
+    },
+    {
+     "id": "sky9-capital",
+     "name": "Sky9 Capital",
+     "role": "investor"
+    },
+    {
+     "id": "freshwave-fund",
+     "name": "Freshwave Fund",
+     "role": "investor"
+    },
+    {
+     "id": "beingboom-capital",
+     "name": "Beingboom Capital",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Pre-Series A",
+    "valuation_usd_m": null,
+    "use_of_funds": "scaling StableX and VisionX across South-East Asia"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "metacomp-pre-series-a-plus-2026-03-13",
+   "date": "2026-03-13",
+   "date_precision": "day",
+   "company_id": "metacomp",
+   "company_name": "MetaComp",
+   "type": "Funding",
+   "region": "Global",
+   "title": "MetaComp tops up its pre-Series A to $35m with Alibaba backing",
+   "summary": "MetaComp closed a Pre-A+ round backed by Alibaba, bringing its pre-Series A funding to $35m across two rounds in three months; its group platform handled over $10bn of payments and OTC volume in 13+ stablecoins in 2025.",
+   "amount_usd_m": 13,
+   "regulator": null,
+   "jurisdiction": "Singapore",
+   "source_name": "MetaComp via Bolsamania",
+   "source_url": "https://www.bolsamania.com/nota-de-prensa/mercados/singapores-metacomp-raises-pre-a-round-backed-by-alibaba-closing-total-us35-million-pre-a-funding-in-3-months-to-accelerate-asias-regulated-web25-pay-and-wealth1-group-level-platform--22033484.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "alibaba",
+     "name": "Alibaba",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Pre-Series A",
+    "valuation_usd_m": null,
+    "use_of_funds": "fiat and stablecoin hybrid payments"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "n3xt-funding-2025-12-05",
+   "date": "2025-12-05",
+   "date_precision": "day",
+   "company_id": "n3xt",
+   "company_name": "N3XT",
+   "type": "Funding",
+   "region": "North America",
+   "title": "Blockchain bank N3XT has raised $72m over three rounds",
+   "summary": "N3XT, the blockchain-based bank set up by Signature Bank founder Scott Shay, said it has raised $72m in three rounds, the latest completed in October, with Paradigm among its backers; Jeffrey Wallis takes over as chief executive.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "United States",
+   "source_name": "ChainCatcher",
+   "source_url": "https://www.chaincatcher.com/en/article/2226750",
+   "related": [],
+   "parties": [
+    {
+     "id": "paradigm",
+     "name": "Paradigm",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "bank-tokens"
+   ],
+   "round": {
+    "stage": "Undisclosed",
+    "valuation_usd_m": null,
+    "use_of_funds": null
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "parfin-tether-2025-11-20",
+   "date": "2025-11-20",
+   "date_precision": "day",
+   "company_id": "parfin",
+   "company_name": "Parfin",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Tether makes a strategic investment in Latin America's Parfin",
+   "summary": "Tether made a strategic investment of undisclosed size in Parfin, a Latin American platform for institutional digital asset custody, tokenisation and trading, to push USDT as a settlement asset for institutions in the region.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": "Brazil",
+   "source_name": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com/news/tether-invests-parfin-target-institutional-164625549.html",
+   "related": [],
+   "parties": [
+    {
+     "id": "tether",
+     "name": "Tether",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": "institutional USDT settlement and tokenisation"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "photonpay-series-b-2026-01-09",
+   "date": "2026-01-09",
+   "date_precision": "day",
+   "company_id": "photonpay",
+   "company_name": "PhotonPay",
+   "type": "Funding",
+   "region": "Global",
+   "title": "PhotonPay raises tens of millions in Series B led by IDG Capital",
+   "summary": "PhotonPay raised a Series B of tens of millions of dollars led by IDG Capital, with Hillhouse Investment, Enlight Capital, Lightspeed Faction and Shoplazza, for its stablecoin-native clearing network handling $30bn+ a year.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Financial IT",
+   "source_url": "https://financialit.net/news/fundraising-news/photonpay-raises-tens-millions-series-b-pioneer-stablecoin-centric-financial",
+   "related": [],
+   "parties": [
+    {
+     "id": "idg-capital",
+     "name": "IDG Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "hillhouse-investment",
+     "name": "Hillhouse Investment",
+     "role": "investor"
+    },
+    {
+     "id": "enlight-capital",
+     "name": "Enlight Capital",
+     "role": "investor"
+    },
+    {
+     "id": "lightspeed",
+     "name": "Lightspeed Faction",
+     "role": "investor"
+    },
+    {
+     "id": "shoplazza",
+     "name": "Shoplazza",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "business-payments"
+   ],
+   "round": {
+    "stage": "Series B",
+    "valuation_usd_m": null,
+    "use_of_funds": "stablecoin-centric financial infrastructure"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "rd-technologies-series-a2-2025-07-30",
+   "date": "2025-07-30",
+   "date_precision": "day",
+   "company_id": "rd-technologies",
+   "company_name": "RD Technologies",
+   "type": "Funding",
+   "region": "Global",
+   "title": "RD Technologies raises $40m Series A2 ahead of Hong Kong licensing",
+   "summary": "Hong Kong's RD Technologies, which plans the HKDR stablecoin, raised about $40m in a Series A2 jointly led by ZA Global, China Harbour, Bright Venture and Hivemind Capital, and signed an MoU with ZA Bank on reserve custody and distribution.",
+   "amount_usd_m": 40,
+   "regulator": null,
+   "jurisdiction": "Hong Kong",
+   "source_name": "RD Technologies",
+   "source_url": "https://rd.group/news/press-releases/rd-technologies-secures-40-million-us-dollars-in-series-a2-financing/",
+   "related": [],
+   "parties": [
+    {
+     "id": "za-global",
+     "name": "ZA Global",
+     "role": "lead investor"
+    },
+    {
+     "id": "china-harbour",
+     "name": "China Harbour",
+     "role": "lead investor"
+    },
+    {
+     "id": "bright-venture",
+     "name": "Bright Venture",
+     "role": "lead investor"
+    },
+    {
+     "id": "hivemind-capital",
+     "name": "Hivemind Capital",
+     "role": "lead investor"
+    },
+    {
+     "id": "hsg",
+     "name": "HSG",
+     "role": "investor"
+    },
+    {
+     "id": "eternal-digital",
+     "name": "Eternal Digital",
+     "role": "investor"
+    },
+    {
+     "id": "cmsc-partners",
+     "name": "CMSC Partners",
+     "role": "investor"
+    },
+    {
+     "id": "guotai-junan-international",
+     "name": "Guotai Junan International",
+     "role": "investor"
+    },
+    {
+     "id": "za-bank",
+     "name": "ZA Bank",
+     "role": "partner"
+    }
+   ],
+   "themes": [
+    "capital",
+    "non-dollar"
+   ],
+   "round": {
+    "stage": "Series A",
+    "valuation_usd_m": null,
+    "use_of_funds": "regulated stablecoin infrastructure in Hong Kong"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
+  },
+  {
+   "id": "transak-gobi-2026-04-08",
+   "date": "2026-04-08",
+   "date_precision": "day",
+   "company_id": "transak",
+   "company_name": "Transak",
+   "type": "Funding",
+   "region": "Global",
+   "title": "Gobi Partners invests in Transak to grow stablecoin payments in Asia",
+   "summary": "Venture firm Gobi Partners invested in on- and off-ramp provider Transak to expand compliant stablecoin and digital-asset payments in Asia; Transak says it works in 64+ countries with 21+ regulatory approvals and 600+ apps.",
+   "amount_usd_m": null,
+   "regulator": null,
+   "jurisdiction": null,
+   "source_name": "Crypto Economy",
+   "source_url": "https://crypto-economy.com/gobi-backs-transak-to-expand-crypto-payments/",
+   "related": [],
+   "parties": [
+    {
+     "id": "gobi-partners",
+     "name": "Gobi Partners",
+     "role": "investor"
+    }
+   ],
+   "themes": [
+    "capital",
+    "apps-and-wallets"
+   ],
+   "round": {
+    "stage": "Strategic",
+    "valuation_usd_m": null,
+    "use_of_funds": "stablecoin payments in Asia"
+   },
+   "added": "2026-10-13T18:27:43+03:00"
   }
  ]
 }
