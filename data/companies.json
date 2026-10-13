@@ -2524,19 +2524,24 @@
    ],
    "funding": {
     "total_usd_m": null,
-    "last_round_type": null,
+    "last_round_type": "Seed",
     "last_round_usd_m": null,
-    "last_round_date": null,
-    "lead": null,
+    "last_round_date": "2019-09-23",
+    "lead": "Panache Ventures",
     "valuation_usd_m": null,
-    "investors": []
+    "investors": [
+     "Techstars Toronto Accelerator",
+     "Ramen Ventures",
+     "Panache Ventures"
+    ]
    },
    "status": "Independent",
    "sources": [
     "https://www.korahq.com/",
     "https://fintech.global/2026/10/06/kora-launches-stablecoin-rail-for-african-cross-border-payments/",
     "https://www.cbinsights.com/company/korapay/financials",
-    "https://en.wikipedia.org/wiki/Kora_(Fintech_company)"
+    "https://en.wikipedia.org/wiki/Kora_(Fintech_company)",
+    "https://www.startuplist.africa/startups/korapay/fundings"
    ]
   },
   "arp-digital": {
@@ -2667,7 +2672,7 @@
    "hq_country": "United Arab Emirates",
    "region": "Middle East",
    "segment": "Settlement rails",
-   "founded": null,
+   "founded": 2020,
    "website": "https://buna.co",
    "blurb": "The Arab Monetary Fund's cross-border payment system, which lets banks and financial institutions in the Arab region and beyond pay each other directly.",
    "licenses": [],
@@ -2693,8 +2698,8 @@
    "hq_country": "Bahrain",
    "region": "Middle East",
    "segment": "Settlement rails",
-   "founded": null,
-   "website": null,
+   "founded": 2024,
+   "website": "https://www.sgb.com",
    "blurb": "Bahrain-licensed bank whose SGB Net clears dollars around the clock for institutions in Asia and the Gulf; corporate clients can mint USDC and USDT.",
    "licenses": [
     {
@@ -2717,7 +2722,8 @@
    "sources": [
     "https://www.cryptotimes.io/2026/10/05/payward-partners-with-singapore-gulf-bank-for-24-7-usd-settlement/",
     "https://technext24.com/2025/12/12/singapore-zero-fee-stablecoin-solana/",
-    "https://www.mumtalakat.bh/news-media/press-releases/mumtalakat-invests-alongside-whampoa-group-in-singapore-gulf-bank"
+    "https://www.mumtalakat.bh/news-media/press-releases/mumtalakat-invests-alongside-whampoa-group-in-singapore-gulf-bank",
+    "https://tracxn.com/d/companies/sgb/__YIF5IbsLLCPwYsODB33oA3tOxbCNEUgcZNarc1Pm45o"
    ]
   },
   "progmat": {
@@ -2727,7 +2733,7 @@
    "hq_country": "Japan",
    "region": "Global",
    "segment": "Settlement rails",
-   "founded": null,
+   "founded": 2023,
    "website": "https://progmat.co.jp/en/",
    "blurb": "Japanese platform for issuing stablecoins and tokens; with Datachain it leads Project Pax, a pilot sending stablecoins between banks on Swift instructions.",
    "licenses": [],
@@ -2744,7 +2750,8 @@
    "sources": [
     "https://progmat.co.jp/en/",
     "https://www.datachain.jp/news/progmat-and-datachain-launch-project-pax",
-    "https://www.theblock.co/post/315058/japans-three-major-banks-to-test-cross-border-stablecoin-transfer-platform"
+    "https://www.theblock.co/post/315058/japans-three-major-banks-to-test-cross-border-stablecoin-transfer-platform",
+    "https://www.jpx.co.jp/english/corporate/news/news-releases/0060/20230911-01.html"
    ]
   },
   "metacomp": {
