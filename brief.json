@@ -1,53 +1,89 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-12T07:00:42+03:00",
-  "next_run": "2026-10-13T06:54:00+03:00",
-  "window_start": "2026-10-06",
-  "window_end": "2026-10-12",
+  "updated_at": "2026-10-13T07:00:32+03:00",
+  "next_run": "2026-10-14T06:54:00+03:00",
+  "window_start": "2026-10-07",
+  "window_end": "2026-10-13",
   "week": 42,
-  "count": 24,
-  "new_today": 2,
-  "headline": "Samsung Wallet will open **USDC transfers to US Galaxy users** and Anchorage bought Routable, while Circle, Ripple and Standard Chartered bought into **OKX at a $25bn valuation**. In Europe, ESMA gave licensed platforms three months to drop unauthorised stablecoins.",
+  "count": 17,
+  "new_today": 3,
+  "headline": "Standard Chartered began **custody of Ripple's RLUSD in Dubai** and Kraken won full VARA approval, capping a week in which Circle, Ripple and StanChart bought into **OKX at a $25bn valuation**. In Europe, ESMA gave licensed platforms three months to drop unauthorised stablecoins.",
   "mix": [
     {
-      "type": "Launch",
-      "n": 8,
-      "label": "launches"
-    },
-    {
       "type": "Partnership",
-      "n": 7,
+      "n": 6,
       "label": "partnerships"
     },
     {
-      "type": "Funding",
+      "type": "Launch",
       "n": 4,
+      "label": "launches"
+    },
+    {
+      "type": "Funding",
+      "n": 3,
       "label": "funding rounds"
     },
     {
       "type": "Regulation",
-      "n": 4,
+      "n": 3,
       "label": "regulatory actions"
     },
     {
-      "type": "M&A",
+      "type": "License",
       "n": 1,
-      "label": "M&A deal"
+      "label": "licence"
     }
   ],
-  "mix_text": "8 launches · 7 partnerships · 4 funding rounds · 4 regulatory actions · 1 M&A deal",
+  "mix_text": "6 partnerships · 4 launches · 3 funding rounds · 3 regulatory actions · 1 licence",
   "regions": {
-    "Europe": 5,
-    "Middle East": 4,
-    "North America": 5,
-    "Global": 10
+    "Europe": 4,
+    "Middle East": 3,
+    "North America": 2,
+    "Global": 8
   },
   "groups": {
     "regulatory": 4,
-    "capital": 5,
-    "commercial": 15
+    "capital": 3,
+    "commercial": 10
   },
   "moves": [
+    {
+      "id": "standard-chartered-rlusd-custody-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Middle East",
+      "regulator": null,
+      "company": "Standard Chartered",
+      "title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
+    },
+    {
+      "id": "kraken-vara-full-2026-10-12",
+      "date": "2026-10-12",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "Middle East",
+      "regulator": "VARA",
+      "company": "Kraken (Payward)",
+      "title": "Kraken's parent Payward wins full VARA approval for the UAE",
+      "source_name": "Blockhead",
+      "source_url": "https://www.blockhead.co/2026/10/13/kraken-wins-full-vara-approval-targets-uae-launch-with-dirham-trading-within-weeks/"
+    },
+    {
+      "id": "fsb-stablecoin-crisis-report-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Global",
+      "regulator": "FSB",
+      "company": "Financial Stability Board",
+      "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
+    },
     {
       "id": "oobit-ai-payments-2026-10-09",
       "date": "2026-10-09",
@@ -83,46 +119,46 @@
       "title": "Nium to run fiat payouts for RedotPay's stablecoin users",
       "source_name": "The Paypers",
       "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/nium-and-redotpay-partner-on-stablecoin-off-ramp-payouts"
-    },
-    {
-      "id": "immix-funding-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Europe",
-      "regulator": null,
-      "company": "IMMIX",
-      "title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
-      "source_name": "EU-Startups",
-      "source_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
-    },
-    {
-      "id": "bringin-business-beta-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Bringin",
-      "title": "Bringin opens beta of euro business accounts taking stablecoins",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/bringin-opens-beta-for-bitcoin-and-stablecoin-business-accounts"
-    },
-    {
-      "id": "visa-adi-foundation-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Middle East",
-      "regulator": null,
-      "company": "Visa",
-      "title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
     }
   ],
   "latest": [
     {
+      "id": "standard-chartered-rlusd-custody-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Middle East",
+      "regulator": null,
+      "company": "Standard Chartered",
+      "title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
+    },
+    {
+      "id": "kraken-vara-full-2026-10-12",
+      "date": "2026-10-12",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "Middle East",
+      "regulator": "VARA",
+      "company": "Kraken (Payward)",
+      "title": "Kraken's parent Payward wins full VARA approval for the UAE",
+      "source_name": "Blockhead",
+      "source_url": "https://www.blockhead.co/2026/10/13/kraken-wins-full-vara-approval-targets-uae-launch-with-dirham-trading-within-weeks/"
+    },
+    {
+      "id": "fsb-stablecoin-crisis-report-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Global",
+      "regulator": "FSB",
+      "company": "Financial Stability Board",
+      "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
+    },
+    {
       "id": "oobit-ai-payments-2026-10-09",
       "date": "2026-10-09",
       "type": "Launch",
@@ -181,42 +217,6 @@
       "title": "Bringin opens beta of euro business accounts taking stablecoins",
       "source_name": "The Paypers",
       "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/bringin-opens-beta-for-bitcoin-and-stablecoin-business-accounts"
-    },
-    {
-      "id": "visa-adi-foundation-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Middle East",
-      "regulator": null,
-      "company": "Visa",
-      "title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
-    },
-    {
-      "id": "esma-unauthorised-stablecoins-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "ESMA",
-      "company": "ESMA",
-      "title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
-      "source_name": "ESMA",
-      "source_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
-    },
-    {
-      "id": "okx-strategic-2026-10-07",
-      "date": "2026-10-07",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "OKX",
-      "title": "Circle, Ripple and StanChart buy into OKX at a $25bn valuation",
-      "source_name": "Fintech Futures",
-      "source_url": "https://www.fintechfutures.com/venture-capital-funding/okx-locks-in-25bn-valuation-with-fresh-investments-from-circle-qrt-ripple-and-standard-chartered"
     }
   ],
   "companies": [
@@ -243,6 +243,17 @@
       "last_url": "https://www.fintechfutures.com/venture-capital-funding/okx-locks-in-25bn-valuation-with-fresh-investments-from-circle-qrt-ripple-and-standard-chartered"
     },
     {
+      "id": "ripple",
+      "name": "Ripple",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 4,
+      "last_date": "2026-10-12",
+      "last_title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
+      "last_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
+    },
+    {
       "id": "visa",
       "name": "Visa",
       "segment": "Settlement rails",
@@ -265,29 +276,42 @@
       "last_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
     },
     {
-      "id": "ripple",
-      "name": "Ripple",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 3,
-      "last_date": "2026-10-08",
-      "last_title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
-      "last_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
-    },
-    {
-      "id": "bastion",
-      "name": "Bastion",
+      "id": "standard-chartered",
+      "name": "Standard Chartered",
       "segment": "Custody & wallets",
-      "country": "United States",
-      "region": "North America",
+      "country": "United Kingdom",
+      "region": "Global",
       "moves_30d": 2,
-      "last_date": "2026-10-07",
-      "last_title": "Samsung Wallet to add USDC transfers for 82m US Galaxy devices",
-      "last_url": "https://unchainedcrypto.com/samsung-wallet-brings-usdc-transfers-to-82-million-us-galaxy-devices-in-late-october/"
+      "last_date": "2026-10-12",
+      "last_title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
+      "last_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
     }
   ],
   "licences": [
+    {
+      "id": "kraken-vara-full-2026-10-12",
+      "date": "2026-10-12",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "Middle East",
+      "regulator": "VARA",
+      "company": "Kraken (Payward)",
+      "title": "Kraken's parent Payward wins full VARA approval for the UAE",
+      "source_name": "Blockhead",
+      "source_url": "https://www.blockhead.co/2026/10/13/kraken-wins-full-vara-approval-targets-uae-launch-with-dirham-trading-within-weeks/"
+    },
+    {
+      "id": "fsb-stablecoin-crisis-report-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Global",
+      "regulator": "FSB",
+      "company": "Financial Stability Board",
+      "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
+    },
     {
       "id": "ncua-call-report-stablecoin-2026-10-09",
       "date": "2026-10-09",
@@ -335,30 +359,6 @@
       "title": "ADGM FSRA consults on DeFi risk management guidance",
       "source_name": "ADGM",
       "source_url": "https://www.adgm.com/media/announcements/adgm-fsra-invites-industry-feedback-on-proposed-defi-risk-management-guidance"
-    },
-    {
-      "id": "rain-us-occ-charter-2026-10-05",
-      "date": "2026-10-05",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Rain",
-      "title": "US stablecoin card firm Rain seeks OCC trust bank charter",
-      "source_name": "Crypto Briefing",
-      "source_url": "https://cryptobriefing.com/rain-occ-national-trust-bank-application/"
-    },
-    {
-      "id": "modern-treasury-occ-charter-2026-10-05",
-      "date": "2026-10-05",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Modern Treasury",
-      "title": "Modern Treasury applies to the OCC for a national trust bank",
-      "source_name": "Crypto Briefing",
-      "source_url": "https://cryptobriefing.com/modern-treasury-occ-trust-bank-charter/"
     }
   ],
   "regulators": [
@@ -395,10 +395,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 488,
-    "licences": 64,
-    "regulatory_actions": 58,
-    "commercial": 239,
+    "total": 491,
+    "licences": 65,
+    "regulatory_actions": 59,
+    "commercial": 240,
     "capital": 127,
     "months": [
       {
@@ -451,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 36
+        "n": 39
       }
     ],
     "partial_last": true
