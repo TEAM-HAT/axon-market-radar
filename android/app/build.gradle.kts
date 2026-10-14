@@ -11,8 +11,8 @@ android {
         applicationId = "inc.axon.radar"
         minSdk = 26
         targetSdk = 34
-        versionCode = 17
-        versionName = "4.3"
+        versionCode = 18
+        versionName = "4.4"
     }
 
     signingConfigs {

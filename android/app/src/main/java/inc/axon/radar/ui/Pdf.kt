@@ -85,6 +85,9 @@ fun Modifier.keepWhole(): Modifier = composed {
     }
 }
 
+/** Each side of a PDF page is left empty: 15% of the page's width, in the page's own colour. */
+const val PDF_SIDE = 0.15f
+
 /** Where each A4 page of a laid-out page starts and ends: as full as it can be without cutting a block that fits on one page. */
 fun pdfPages(height: Float, page: Float, padTop: Float, padBottom: Float, blocks: List<FloatArray>): List<Pair<Float, Float>> {
     val n = kotlin.math.ceil(height).toInt() + 2
@@ -218,13 +221,15 @@ class PdfSaver internal constructor(private val activity: Activity, private val 
                 check(height > 0f) { "the page did not lay out" }
                 val pageW = 595
                 val pageH = 842
-                val k = pageW.toFloat() / width
+                val side = pageW * PDF_SIDE
+                val k = (pageW - 2 * side) / width
                 val padTop = 18 * density
                 val cuts = pdfPages(height, pageH / k, padTop, 14 * density, marks.all())
                 cuts.forEachIndexed { i, (s, e) ->
                     doc.page(pageW, pageH) { c ->
                         c.drawColor(bg.toArgb())
                         c.save()
+                        c.translate(side, 0f)
                         c.scale(k, k)
                         c.translate(0f, (if (i == 0) 0f else padTop) - s)
                         c.clipRect(0f, s, width.toFloat(), e)

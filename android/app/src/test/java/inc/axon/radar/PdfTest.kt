@@ -16,6 +16,7 @@ import androidx.compose.ui.test.performScrollToNode
 import inc.axon.radar.data.Radar
 import inc.axon.radar.ui.Layout
 import inc.axon.radar.ui.Link
+import inc.axon.radar.ui.PDF_SIDE
 import inc.axon.radar.ui.PdfSaver
 import inc.axon.radar.ui.PdfSink
 import inc.axon.radar.ui.RadarApp
@@ -72,11 +73,16 @@ class PdfTest {
     /** Draws each page as a picture, as Android's PDF writer would draw it, and keeps them for review. */
     private class PictureSink(private val tag: String) : PdfSink {
         var pages = 0
+        /** Pixels drawn in the empty strips at the sides, which should hold only the page's colour. */
+        var stray = 0
         override fun page(width: Int, height: Int, draw: (android.graphics.Canvas) -> Unit) {
             val bmp = android.graphics.Bitmap.createBitmap(width * 2, height * 2, android.graphics.Bitmap.Config.ARGB_8888)
             val c = android.graphics.Canvas(bmp)
             c.scale(2f, 2f)
             draw(c)
+            val paper = bmp.getPixel(0, 0)
+            val strip = (bmp.width * PDF_SIDE).toInt() - 2
+            for (y in 0 until bmp.height step 3) for (x in (0 until strip step 2) + (bmp.width - strip until bmp.width step 2)) if (bmp.getPixel(x, y) != paper) stray++
             pages++
             val dir = File("build/pdf-previews").apply { mkdirs() }
             java.io.FileOutputStream(File(dir, "$tag-${"%02d".format(pages)}.png")).use { bmp.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, it) }
@@ -96,7 +102,8 @@ class PdfTest {
     }
 
     private fun saveFrom(dest: String, name: String, id: String? = null) {
-        PdfSaver.testSink = { PictureSink(if (id != null) "$dest-$id" else dest) }
+        val sinks = ArrayList<PictureSink>()
+        PdfSaver.testSink = { PictureSink(if (id != null) "$dest-$id" else dest).also { sinks += it } }
         val link = mutableStateOf<Link?>(Link(dest, id))
         rule.setContent { RadarApp(link, preload = radar, autoRefresh = false, startLayout = Layout.Areas, preloadLens = privateLens()) }
         rule.waitForIdle()
@@ -121,6 +128,8 @@ class PdfTest {
         val pages = Regex("pictures (\\d+)").find(String(head))?.groupValues?.get(1)?.toInt() ?: 0
         assertTrue("no pages", pages >= 1)
         println("PDFPAGES $dest $pages")
+        // A margin of 15% of the page's width is left empty on each side.
+        assertEquals("ink in the side margins of $dest", 0, sinks.sumOf { it.stray })
         // The system's save dialog was asked for, with the file name.
         assertTrue("no save dialog for $dest", pump(10_000) { shadowOf(rule.activity).peekNextStartedActivityForResult() != null })
         val asked = shadowOf(rule.activity).nextStartedActivityForResult.intent
