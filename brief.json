@@ -1,33 +1,33 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-13T07:00:32+03:00",
-  "next_run": "2026-10-14T06:54:00+03:00",
-  "window_start": "2026-10-07",
-  "window_end": "2026-10-13",
+  "updated_at": "2026-10-14T07:02:30+03:00",
+  "next_run": "2026-10-15T06:54:00+03:00",
+  "window_start": "2026-10-08",
+  "window_end": "2026-10-14",
   "week": 42,
-  "count": 18,
-  "new_today": 3,
-  "headline": "Standard Chartered began **custody of Ripple's RLUSD in Dubai** and Kraken won full VARA approval, capping a week in which Circle, Ripple and StanChart bought into **OKX at a $25bn valuation**. In Europe, ESMA gave licensed platforms three months to drop unauthorised stablecoins.",
+  "count": 19,
+  "new_today": 8,
+  "headline": "Custody was the week's theme: **Standard Chartered and BNY widened bank-grade stablecoin custody** into Dubai, Singapore and the EU, while **Kraken won full VARA approval** and ESMA set a three-month exit for unauthorised stablecoins.",
   "mix": [
     {
-      "type": "Partnership",
-      "n": 7,
-      "label": "partnerships"
-    },
-    {
       "type": "Launch",
-      "n": 4,
+      "n": 7,
       "label": "launches"
     },
     {
-      "type": "Funding",
-      "n": 3,
-      "label": "funding rounds"
+      "type": "Partnership",
+      "n": 6,
+      "label": "partnerships"
     },
     {
       "type": "Regulation",
-      "n": 3,
+      "n": 4,
       "label": "regulatory actions"
+    },
+    {
+      "type": "Funding",
+      "n": 1,
+      "label": "funding round"
     },
     {
       "type": "License",
@@ -35,19 +35,79 @@
       "label": "licence"
     }
   ],
-  "mix_text": "7 partnerships · 4 launches · 3 funding rounds · 3 regulatory actions · 1 licence",
+  "mix_text": "7 launches · 6 partnerships · 4 regulatory actions · 1 funding round · 1 licence",
   "regions": {
-    "Europe": 4,
+    "Europe": 6,
     "Middle East": 4,
-    "North America": 2,
-    "Global": 8
+    "North America": 3,
+    "Global": 6
   },
   "groups": {
-    "regulatory": 4,
-    "capital": 3,
-    "commercial": 11
+    "regulatory": 5,
+    "capital": 1,
+    "commercial": 13
   },
   "moves": [
+    {
+      "id": "trustlinq-ripple-rlusd-payouts-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Europe",
+      "regulator": null,
+      "company": "TrustLinq",
+      "title": "TrustLinq lets RLUSD holders pay bank accounts in 190+ countries",
+      "source_name": "Chainwire",
+      "source_url": "https://chainwire.org/2026/10/13/trustlinq-expands-ripple-partnership-enabling-rlusd-funded-bank-payments-to-190-countries/"
+    },
+    {
+      "id": "rain-embedded-wallets-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "Rain",
+      "title": "Rain adds embedded stablecoin wallets for its partners",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/blockchain/2026/rain-rolls-out-embedded-stablecoin-wallets/"
+    },
+    {
+      "id": "privy-ripple-xrpl-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Privy",
+      "title": "Stripe's Privy brings its embedded wallets to Ripple's XRP Ledger",
+      "source_name": "24/7 Wall St.",
+      "source_url": "https://247wallst.com/investing/cryptocurrency/2026/10/13/a-stripe-company-is-bringing-its-wallets-to-the-xrp-ledger-and-ripple-says-ai-agents-already-make-one-in-four-payments-on-the-network/"
+    },
+    {
+      "id": "bakkt-thredd-stablecoin-card-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Bakkt",
+      "title": "Bakkt picks Thredd for a US card programme settling in stablecoins",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/bakkt-picks-thredd-launch-stablecoin-card-program/"
+    },
+    {
+      "id": "yellow-card-global-accounts-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Yellow Card",
+      "title": "Yellow Card launches Global Accounts for business payments",
+      "source_name": "TechAfrica News",
+      "source_url": "https://techafricanews.com/2026/10/12/yellow-card-launches-global-accounts-cross-border-payments-stablecoins/"
+    },
     {
       "id": "standard-chartered-rlusd-custody-2026-10-12",
       "date": "2026-10-12",
@@ -59,70 +119,70 @@
       "title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
-    },
-    {
-      "id": "kraken-vara-full-2026-10-12",
-      "date": "2026-10-12",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "Kraken (Payward)",
-      "title": "Kraken's parent Payward wins full VARA approval for the UAE",
-      "source_name": "Blockhead",
-      "source_url": "https://www.blockhead.co/2026/10/13/kraken-wins-full-vara-approval-targets-uae-launch-with-dirham-trading-within-weeks/"
-    },
-    {
-      "id": "fsb-stablecoin-crisis-report-2026-10-12",
-      "date": "2026-10-12",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Global",
-      "regulator": "FSB",
-      "company": "Financial Stability Board",
-      "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
-    },
-    {
-      "id": "arp-digital-cfi-bahrain-2026-10-12",
-      "date": "2026-10-12",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Middle East",
-      "regulator": null,
-      "company": "ARP Digital",
-      "title": "CFI Bahrain takes USDT and USDC deposits through ARP Digital",
-      "source_name": "ARP Digital",
-      "source_url": "https://www.arpdigital.io/en/resources/news-insights/cfi-bahrain-stablecoin-funding-arp-digital"
-    },
-    {
-      "id": "oobit-ai-payments-2026-10-09",
-      "date": "2026-10-09",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Oobit",
-      "title": "Oobit lets AI assistants spend users' stablecoins via one-time cards",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/oobit-launches-ai-payments-for-stablecoin-spending-via-ai-assistants"
-    },
-    {
-      "id": "ncua-call-report-stablecoin-2026-10-09",
-      "date": "2026-10-09",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "NCUA",
-      "company": "NCUA",
-      "title": "NCUA proposes stablecoin data fields for credit union call reports",
-      "source_name": "Bitcoin.com News",
-      "source_url": "https://news.bitcoin.com/regulation-and-legal/credit-unions-could-face-26-new-stablecoin-reporting-fields"
     }
   ],
   "latest": [
     {
+      "id": "trustlinq-ripple-rlusd-payouts-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Europe",
+      "regulator": null,
+      "company": "TrustLinq",
+      "title": "TrustLinq lets RLUSD holders pay bank accounts in 190+ countries",
+      "source_name": "Chainwire",
+      "source_url": "https://chainwire.org/2026/10/13/trustlinq-expands-ripple-partnership-enabling-rlusd-funded-bank-payments-to-190-countries/"
+    },
+    {
+      "id": "rain-embedded-wallets-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "Rain",
+      "title": "Rain adds embedded stablecoin wallets for its partners",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/blockchain/2026/rain-rolls-out-embedded-stablecoin-wallets/"
+    },
+    {
+      "id": "privy-ripple-xrpl-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Privy",
+      "title": "Stripe's Privy brings its embedded wallets to Ripple's XRP Ledger",
+      "source_name": "24/7 Wall St.",
+      "source_url": "https://247wallst.com/investing/cryptocurrency/2026/10/13/a-stripe-company-is-bringing-its-wallets-to-the-xrp-ledger-and-ripple-says-ai-agents-already-make-one-in-four-payments-on-the-network/"
+    },
+    {
+      "id": "bakkt-thredd-stablecoin-card-2026-10-13",
+      "date": "2026-10-13",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Bakkt",
+      "title": "Bakkt picks Thredd for a US card programme settling in stablecoins",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/bakkt-picks-thredd-launch-stablecoin-card-program/"
+    },
+    {
+      "id": "yellow-card-global-accounts-2026-10-12",
+      "date": "2026-10-12",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Yellow Card",
+      "title": "Yellow Card launches Global Accounts for business payments",
+      "source_name": "TechAfrica News",
+      "source_url": "https://techafricanews.com/2026/10/12/yellow-card-launches-global-accounts-cross-border-payments-stablecoins/"
+    },
+    {
       "id": "standard-chartered-rlusd-custody-2026-10-12",
       "date": "2026-10-12",
       "type": "Launch",
@@ -157,69 +217,31 @@
       "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
-    },
-    {
-      "id": "arp-digital-cfi-bahrain-2026-10-12",
-      "date": "2026-10-12",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Middle East",
-      "regulator": null,
-      "company": "ARP Digital",
-      "title": "CFI Bahrain takes USDT and USDC deposits through ARP Digital",
-      "source_name": "ARP Digital",
-      "source_url": "https://www.arpdigital.io/en/resources/news-insights/cfi-bahrain-stablecoin-funding-arp-digital"
-    },
-    {
-      "id": "oobit-ai-payments-2026-10-09",
-      "date": "2026-10-09",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Oobit",
-      "title": "Oobit lets AI assistants spend users' stablecoins via one-time cards",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/oobit-launches-ai-payments-for-stablecoin-spending-via-ai-assistants"
-    },
-    {
-      "id": "ncua-call-report-stablecoin-2026-10-09",
-      "date": "2026-10-09",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "NCUA",
-      "company": "NCUA",
-      "title": "NCUA proposes stablecoin data fields for credit union call reports",
-      "source_name": "Bitcoin.com News",
-      "source_url": "https://news.bitcoin.com/regulation-and-legal/credit-unions-could-face-26-new-stablecoin-reporting-fields"
-    },
-    {
-      "id": "nium-redotpay-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Nium",
-      "title": "Nium to run fiat payouts for RedotPay's stablecoin users",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/nium-and-redotpay-partner-on-stablecoin-off-ramp-payouts"
-    },
-    {
-      "id": "immix-funding-2026-10-08",
-      "date": "2026-10-08",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Europe",
-      "regulator": null,
-      "company": "IMMIX",
-      "title": "London's IMMIX raises about €3.1m for non-dollar stablecoin FX",
-      "source_name": "EU-Startups",
-      "source_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar"
     }
   ],
   "companies": [
+    {
+      "id": "ripple",
+      "name": "Ripple",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 6,
+      "last_date": "2026-10-13",
+      "last_title": "TrustLinq lets RLUSD holders pay bank accounts in 190+ countries",
+      "last_url": "https://chainwire.org/2026/10/13/trustlinq-expands-ripple-partnership-enabling-rlusd-funded-bank-payments-to-190-countries/"
+    },
+    {
+      "id": "visa",
+      "name": "Visa",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "Global",
+      "moves_30d": 5,
+      "last_date": "2026-10-12",
+      "last_title": "Yellow Card launches Global Accounts for business payments",
+      "last_url": "https://techafricanews.com/2026/10/12/yellow-card-launches-global-accounts-cross-border-payments-stablecoins/"
+    },
     {
       "id": "coinbase",
       "name": "Coinbase",
@@ -243,26 +265,15 @@
       "last_url": "https://www.fintechfutures.com/venture-capital-funding/okx-locks-in-25bn-valuation-with-fresh-investments-from-circle-qrt-ripple-and-standard-chartered"
     },
     {
-      "id": "ripple",
-      "name": "Ripple",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 4,
+      "id": "standard-chartered",
+      "name": "Standard Chartered",
+      "segment": "Custody & wallets",
+      "country": "United Kingdom",
+      "region": "Global",
+      "moves_30d": 3,
       "last_date": "2026-10-12",
       "last_title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
       "last_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
-    },
-    {
-      "id": "visa",
-      "name": "Visa",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "Global",
-      "moves_30d": 4,
-      "last_date": "2026-10-08",
-      "last_title": "Visa and Abu Dhabi's ADI Foundation agree to explore on-chain payments",
-      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/visa-and-adi-foundation-partner-to-explore-blockchain-based-payments"
     },
     {
       "id": "tether",
@@ -274,17 +285,6 @@
       "last_date": "2026-10-08",
       "last_title": "ESMA sets three-month wind-down for unauthorised stablecoin services",
       "last_url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-supervisory-expectations-services-related-unauthorised"
-    },
-    {
-      "id": "standard-chartered",
-      "name": "Standard Chartered",
-      "segment": "Custody & wallets",
-      "country": "United Kingdom",
-      "region": "Global",
-      "moves_30d": 2,
-      "last_date": "2026-10-12",
-      "last_title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
-      "last_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
     }
   ],
   "licences": [
@@ -311,6 +311,18 @@
       "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
+    },
+    {
+      "id": "eu-council-casp-supervision-2026-10-09",
+      "date": "2026-10-09",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Council of the EU",
+      "title": "EU ministers limit direct ESMA supervision to significant crypto firms",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/eu-council-wants-only-significant-crypto-firms-supervised-by-esma/"
     },
     {
       "id": "ncua-call-report-stablecoin-2026-10-09",
@@ -347,18 +359,6 @@
       "title": "VARA sets tougher standards for audits of VASP reserves",
       "source_name": "VARA",
       "source_url": "https://media.umbraco.io/dwtc/p1zdm1ig/circular-regarding-reserve-assets-audit-report.pdf"
-    },
-    {
-      "id": "adgm-defi-guidance-consultation-2026-10-06",
-      "date": "2026-10-06",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "ADGM FSRA",
-      "company": "ADGM FSRA",
-      "title": "ADGM FSRA consults on DeFi risk management guidance",
-      "source_name": "ADGM",
-      "source_url": "https://www.adgm.com/media/announcements/adgm-fsra-invites-industry-feedback-on-proposed-defi-risk-management-guidance"
     }
   ],
   "regulators": [
@@ -367,6 +367,12 @@
       "where": "United States",
       "licences": 18,
       "actions": 2
+    },
+    {
+      "name": "Other",
+      "where": "",
+      "licences": 5,
+      "actions": 4
     },
     {
       "name": "CBUAE",
@@ -381,12 +387,6 @@
       "actions": 4
     },
     {
-      "name": "Other",
-      "where": "",
-      "licences": 5,
-      "actions": 3
-    },
-    {
       "name": "VARA",
       "where": "Dubai",
       "licences": 4,
@@ -395,10 +395,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 503,
+    "total": 511,
     "licences": 66,
-    "regulatory_actions": 59,
-    "commercial": 243,
+    "regulatory_actions": 60,
+    "commercial": 250,
     "capital": 135,
     "months": [
       {
@@ -451,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 40
+        "n": 48
       }
     ],
     "partial_last": true
