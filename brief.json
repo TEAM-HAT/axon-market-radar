@@ -1,28 +1,23 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-15T07:30:00+03:00",
-  "next_run": "2026-10-16T06:54:00+03:00",
-  "window_start": "2026-10-09",
-  "window_end": "2026-10-15",
+  "updated_at": "2026-10-16T07:15:00+03:00",
+  "next_run": "2026-10-17T06:54:00+03:00",
+  "window_start": "2026-10-10",
+  "window_end": "2026-10-16",
   "week": 42,
-  "count": 18,
-  "new_today": 6,
-  "headline": "European bank-run stablecoins moved a step closer as **Qivalis won its Dutch e-money licence**, while the EBA put **USDC under direct EU supervision** as a significant token.",
+  "count": 22,
+  "new_today": 7,
+  "headline": "**Mastercard and BVNK** launched a white-label fiat and stablecoin platform for banks and fintechs on the same day **Visa Direct took USDC prefunding live**, while Europe's regime tightened as the EBA classed USDC as significant and Qivalis won its Dutch e-money licence.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 6,
+      "n": 8,
       "label": "partnerships"
     },
     {
       "type": "Launch",
-      "n": 4,
+      "n": 7,
       "label": "launches"
-    },
-    {
-      "type": "Regulation",
-      "n": 4,
-      "label": "regulatory actions"
     },
     {
       "type": "License",
@@ -33,21 +28,91 @@
       "type": "M&A",
       "n": 2,
       "label": "M&A deals"
+    },
+    {
+      "type": "Regulation",
+      "n": 2,
+      "label": "regulatory actions"
+    },
+    {
+      "type": "Funding",
+      "n": 1,
+      "label": "funding round"
     }
   ],
-  "mix_text": "6 partnerships · 4 launches · 4 regulatory actions · 2 licences · 2 M&A deals",
+  "mix_text": "8 partnerships · 7 launches · 2 licences · 2 M&A deals · 2 regulatory actions · 1 funding round",
   "regions": {
-    "Europe": 6,
-    "Middle East": 4,
+    "Europe": 5,
+    "Middle East": 6,
     "North America": 4,
-    "Global": 4
+    "Global": 7
   },
   "groups": {
-    "regulatory": 6,
-    "capital": 2,
-    "commercial": 10
+    "regulatory": 4,
+    "capital": 3,
+    "commercial": 15
   },
   "moves": [
+    {
+      "id": "partior-nbb-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Middle East",
+      "regulator": null,
+      "company": "Partior",
+      "title": "National Bank of Bahrain studies dinar settlement on Partior",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/bahrains-nbb-explores-blockchain-settlement-of-local-currency-via-partior/"
+    },
+    {
+      "id": "visa-direct-inyo-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Visa",
+      "title": "Visa Direct takes USDC prefunding live, with Inyo Global first",
+      "source_name": "Visa",
+      "source_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22851.html"
+    },
+    {
+      "id": "stripe-plasma-cards-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Stripe",
+      "title": "Stripe and Plasma unveil multi-currency stablecoin cards",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/news/payment-methods/2026/stripe-teams-with-plasma-to-unveil-multi-currency-stablecoin-cards/"
+    },
+    {
+      "id": "ripple-cross-river-rlusd-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Cross River Bank adds Ripple's RLUSD to its core banking platform",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
+    },
+    {
+      "id": "bvnk-mastercard-global-money-platform-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "BVNK",
+      "title": "Mastercard and BVNK launch white-label Global Money Platform",
+      "source_name": "BVNK",
+      "source_url": "https://www.bvnk.com/press/mastercard-and-bvnk-launch-global-money-platform-to-power-a-multi-money-world"
+    },
     {
       "id": "terrapay-nbb-2026-10-14",
       "date": "2026-10-14",
@@ -59,70 +124,70 @@
       "title": "National Bank of Bahrain taps TerraPay for cross-border payouts",
       "source_name": "FinTech Global",
       "source_url": "https://fintech.global/2026/10/14/nbb-taps-terrapay-to-bypass-costly-cross-border-integrations/"
-    },
-    {
-      "id": "ripple-drivewealth-2026-10-14",
-      "date": "2026-10-14",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "DriveWealth adopts Ripple's RLUSD settlement and custody in Europe",
-      "source_name": "DriveWealth",
-      "source_url": "https://www.drivewealth.com/2026/10/drivewealth-and-ripple-partner-to-bring-institutional-digital-asset-infrastructure-to-global-investing/"
-    },
-    {
-      "id": "qivalis-dnb-emi-2026-10-14",
-      "date": "2026-10-14",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Europe",
-      "regulator": "DNB",
-      "company": "Qivalis",
-      "title": "Qivalis wins Dutch e-money licence for bank-backed euro stablecoin",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/14/dutch-regulator-approves-qivalis-as-electronic-money-institution-under-mica-rules"
-    },
-    {
-      "id": "polygon-labs-coinme-close-2026-10-14",
-      "date": "2026-10-14",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "North America",
-      "regulator": null,
-      "company": "Polygon Labs",
-      "title": "Polygon Labs completes Coinme purchase for US-regulated payments",
-      "source_name": "Polygon",
-      "source_url": "https://polygon.technology/blog"
-    },
-    {
-      "id": "kraken-saldo-bank-2026-10-14",
-      "date": "2026-10-14",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Kraken (Payward)",
-      "title": "Kraken's parent Payward agrees to buy Lithuania's Saldo Bank",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/business/2026/10/14/kraken-parent-payward-to-become-first-crypto-firm-to-buy-a-eu-bank-as-it-expands-into-deposits-lending"
-    },
-    {
-      "id": "eba-usdc-significant-2026-10-14",
-      "date": "2026-10-14",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "EBA",
-      "company": "European Banking Authority",
-      "title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
     }
   ],
   "latest": [
     {
+      "id": "partior-nbb-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Middle East",
+      "regulator": null,
+      "company": "Partior",
+      "title": "National Bank of Bahrain studies dinar settlement on Partior",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/bahrains-nbb-explores-blockchain-settlement-of-local-currency-via-partior/"
+    },
+    {
+      "id": "visa-direct-inyo-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Visa",
+      "title": "Visa Direct takes USDC prefunding live, with Inyo Global first",
+      "source_name": "Visa",
+      "source_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22851.html"
+    },
+    {
+      "id": "stripe-plasma-cards-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Stripe",
+      "title": "Stripe and Plasma unveil multi-currency stablecoin cards",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/news/payment-methods/2026/stripe-teams-with-plasma-to-unveil-multi-currency-stablecoin-cards/"
+    },
+    {
+      "id": "ripple-cross-river-rlusd-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Cross River Bank adds Ripple's RLUSD to its core banking platform",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
+    },
+    {
+      "id": "bvnk-mastercard-global-money-platform-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "BVNK",
+      "title": "Mastercard and BVNK launch white-label Global Money Platform",
+      "source_name": "BVNK",
+      "source_url": "https://www.bvnk.com/press/mastercard-and-bvnk-launch-global-money-platform-to-power-a-multi-money-world"
+    },
+    {
       "id": "terrapay-nbb-2026-10-14",
       "date": "2026-10-14",
       "type": "Partnership",
@@ -157,66 +222,6 @@
       "title": "Qivalis wins Dutch e-money licence for bank-backed euro stablecoin",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/14/dutch-regulator-approves-qivalis-as-electronic-money-institution-under-mica-rules"
-    },
-    {
-      "id": "polygon-labs-coinme-close-2026-10-14",
-      "date": "2026-10-14",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "North America",
-      "regulator": null,
-      "company": "Polygon Labs",
-      "title": "Polygon Labs completes Coinme purchase for US-regulated payments",
-      "source_name": "Polygon",
-      "source_url": "https://polygon.technology/blog"
-    },
-    {
-      "id": "kraken-saldo-bank-2026-10-14",
-      "date": "2026-10-14",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Kraken (Payward)",
-      "title": "Kraken's parent Payward agrees to buy Lithuania's Saldo Bank",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/business/2026/10/14/kraken-parent-payward-to-become-first-crypto-firm-to-buy-a-eu-bank-as-it-expands-into-deposits-lending"
-    },
-    {
-      "id": "eba-usdc-significant-2026-10-14",
-      "date": "2026-10-14",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "EBA",
-      "company": "European Banking Authority",
-      "title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
-    },
-    {
-      "id": "trustlinq-ripple-rlusd-payouts-2026-10-13",
-      "date": "2026-10-13",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Europe",
-      "regulator": null,
-      "company": "TrustLinq",
-      "title": "TrustLinq lets RLUSD holders pay bank accounts in 190+ countries",
-      "source_name": "Chainwire",
-      "source_url": "https://chainwire.org/2026/10/13/trustlinq-expands-ripple-partnership-enabling-rlusd-funded-bank-payments-to-190-countries/"
-    },
-    {
-      "id": "rain-embedded-wallets-2026-10-13",
-      "date": "2026-10-13",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "Rain",
-      "title": "Rain adds embedded stablecoin wallets for its partners",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/blockchain/2026/rain-rolls-out-embedded-stablecoin-wallets/"
     }
   ],
   "companies": [
@@ -226,21 +231,10 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 6,
-      "last_date": "2026-10-14",
-      "last_title": "DriveWealth adopts Ripple's RLUSD settlement and custody in Europe",
-      "last_url": "https://www.drivewealth.com/2026/10/drivewealth-and-ripple-partner-to-bring-institutional-digital-asset-infrastructure-to-global-investing/"
-    },
-    {
-      "id": "circle",
-      "name": "Circle",
-      "segment": "Issuer",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 5,
-      "last_date": "2026-10-14",
-      "last_title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
-      "last_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
+      "moves_30d": 7,
+      "last_date": "2026-10-15",
+      "last_title": "Cross River Bank adds Ripple's RLUSD to its core banking platform",
+      "last_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
     },
     {
       "id": "coinbase",
@@ -260,31 +254,42 @@
       "country": "United States",
       "region": "Global",
       "moves_30d": 4,
-      "last_date": "2026-10-12",
-      "last_title": "Yellow Card launches Global Accounts for business payments",
-      "last_url": "https://techafricanews.com/2026/10/12/yellow-card-launches-global-accounts-cross-border-payments-stablecoins/"
+      "last_date": "2026-10-15",
+      "last_title": "Visa Direct takes USDC prefunding live, with Inyo Global first",
+      "last_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22851.html"
     },
     {
-      "id": "kraken",
-      "name": "Kraken (Payward)",
-      "segment": "On/off-ramp",
+      "id": "circle",
+      "name": "Circle",
+      "segment": "Issuer",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 3,
+      "moves_30d": 4,
       "last_date": "2026-10-14",
-      "last_title": "Kraken's parent Payward agrees to buy Lithuania's Saldo Bank",
-      "last_url": "https://www.coindesk.com/business/2026/10/14/kraken-parent-payward-to-become-first-crypto-firm-to-buy-a-eu-bank-as-it-expands-into-deposits-lending"
+      "last_title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
+      "last_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
     },
     {
-      "id": "standard-chartered",
-      "name": "Standard Chartered",
-      "segment": "Custody & wallets",
-      "country": "United Kingdom",
+      "id": "tether",
+      "name": "Tether",
+      "segment": "Issuer",
+      "country": "El Salvador",
+      "region": "Global",
+      "moves_30d": 4,
+      "last_date": "2026-10-13",
+      "last_title": "Tether invests in Latin American stablecoin payments firm EFY Finance",
+      "last_url": "https://tether.io/news/tether-invests-in-efy-finance-to-accelerate-institutional-stablecoin-usage-in-latam/"
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "segment": "Merchant gateway",
+      "country": "United States",
       "region": "Global",
       "moves_30d": 3,
-      "last_date": "2026-10-12",
-      "last_title": "Standard Chartered offers custody of Ripple's RLUSD from Dubai",
-      "last_url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link"
+      "last_date": "2026-10-15",
+      "last_title": "Stripe and Plasma unveil multi-currency stablecoin cards",
+      "last_url": "https://www.pymnts.com/news/payment-methods/2026/stripe-teams-with-plasma-to-unveil-multi-currency-stablecoin-cards/"
     }
   ],
   "licences": [
@@ -395,11 +400,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 517,
+    "total": 525,
     "licences": 67,
     "regulatory_actions": 61,
-    "commercial": 252,
-    "capital": 137,
+    "commercial": 259,
+    "capital": 138,
     "months": [
       {
         "m": "2025-10",
@@ -447,11 +452,11 @@
       },
       {
         "m": "2026-09",
-        "n": 49
+        "n": 50
       },
       {
         "m": "2026-10",
-        "n": 54
+        "n": 61
       }
     ],
     "partial_last": true
