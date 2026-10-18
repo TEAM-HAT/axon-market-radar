@@ -1,28 +1,33 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-17T07:03:00+03:00",
-  "next_run": "2026-10-18T06:54:00+03:00",
-  "window_start": "2026-10-11",
-  "window_end": "2026-10-17",
+  "updated_at": "2026-10-18T07:06:00+03:00",
+  "next_run": "2026-10-19T06:54:00+03:00",
+  "window_start": "2026-10-12",
+  "window_end": "2026-10-18",
   "week": 42,
-  "count": 26,
-  "new_today": 4,
-  "headline": "Card networks pushed deeper into stablecoin plumbing as **Mastercard and BVNK launched a white-label Global Money Platform** and Visa Direct took USDC prefunding live, while Europe's **Qivalis bank consortium won its Dutch e-money licence** and the EBA classed USDC as significant.",
+  "count": 31,
+  "new_today": 5,
+  "headline": "Card networks and bank rails led the week: **Mastercard and BVNK launched a white-label money platform** while Visa Direct took USDC prefunding live, and **the EBA named USDC the EU's first significant e-money token** as Qivalis won its Dutch licence.",
   "mix": [
+    {
+      "type": "Partnership",
+      "n": 12,
+      "label": "partnerships"
+    },
     {
       "type": "Launch",
       "n": 9,
       "label": "launches"
     },
     {
-      "type": "Partnership",
-      "n": 9,
-      "label": "partnerships"
+      "type": "License",
+      "n": 4,
+      "label": "licences"
     },
     {
-      "type": "License",
-      "n": 3,
-      "label": "licences"
+      "type": "Funding",
+      "n": 2,
+      "label": "funding rounds"
     },
     {
       "type": "M&A",
@@ -33,26 +38,33 @@
       "type": "Regulation",
       "n": 2,
       "label": "regulatory actions"
-    },
-    {
-      "type": "Funding",
-      "n": 1,
-      "label": "funding round"
     }
   ],
-  "mix_text": "9 launches · 9 partnerships · 3 licences · 2 M&A deals · 2 regulatory actions · 1 funding round",
+  "mix_text": "12 partnerships · 9 launches · 4 licences · 2 funding rounds · 2 M&A deals · 2 regulatory actions",
   "regions": {
-    "Europe": 5,
+    "Europe": 6,
     "Middle East": 7,
     "North America": 5,
-    "Global": 9
+    "Global": 13
   },
   "groups": {
-    "regulatory": 5,
-    "capital": 3,
-    "commercial": 18
+    "regulatory": 6,
+    "capital": 4,
+    "commercial": 21
   },
   "moves": [
+    {
+      "id": "straitsx-visa-cards-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "StraitsX",
+      "title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
+    },
     {
       "id": "coinbase-marqeta-cards-2026-10-16",
       "date": "2026-10-16",
@@ -78,56 +90,56 @@
       "source_url": "https://www.ledgerinsights.com/bahrains-nbb-explores-blockchain-settlement-of-local-currency-via-partior/"
     },
     {
-      "id": "versabank-vusd-us-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "VersaBank",
-      "title": "VersaBank starts US commercial phase of VUSD tokenised deposits",
-      "source_name": "VersaBank (Newsfile)",
-      "source_url": "https://www.financialcontent.com/article/newsfile-2026-10-15-versabank-initiates-commercial-phase-of-tokenized-deposit-program-in-the-united-states"
-    },
-    {
-      "id": "fireblocks-liquidity-market-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Fireblocks",
-      "title": "Fireblocks opens a multi-desk stablecoin Liquidity Market for PSPs",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.prnewswire.com/news-releases/fireblocks-launches-liquidity-market-bringing-streaming-otc-pricing-into-stablecoin-payments-302909484.html"
-    },
-    {
-      "id": "ant-international-cbuae-licences-2026-10-15",
+      "id": "noah-eu-casp-pi-2026-10-15",
       "date": "2026-10-15",
       "type": "License",
       "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "CBUAE",
-      "company": "Ant International",
-      "title": "Ant International wins two CBUAE payments licences in the UAE",
-      "source_name": "Fintech News Middle East",
-      "source_url": "https://fintechnews.ae/34269/payments/ant-international-expands-uae-payment-services/"
+      "region": "Europe",
+      "regulator": null,
+      "company": "Noah",
+      "title": "Noah wins MiCA CASP and payment institution licences for the EU",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/noah-secures-mica-casp-and-psd2-payment-institution-licences-in-the-eu"
     },
     {
-      "id": "visa-direct-inyo-2026-10-15",
+      "id": "mesh-tokenstore-2026-10-15",
       "date": "2026-10-15",
-      "type": "Launch",
-      "type_label": "Launch",
+      "type": "Partnership",
+      "type_label": "Partnership",
       "region": "Global",
       "regulator": null,
-      "company": "Visa",
-      "title": "Visa Direct takes USDC prefunding live, with Inyo Global first",
-      "source_name": "Visa",
-      "source_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22851.html"
+      "company": "Mesh",
+      "title": "Mesh brings crypto and stablecoin checkout to marketplace Tokenstore",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.prnewswire.com/news-releases/mesh-powers-tokenstores-global-expansion-bringing-crypto-and-stablecoin-checkout-to-shoppers-globally-302909106.html"
+    },
+    {
+      "id": "aisa-tether-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "AIsa",
+      "title": "Tether Capital invests in AIsa, a payments hub for AI agents",
+      "source_name": "Tether",
+      "source_url": "https://tether.io/news/tether-invests-in-aisa-to-expand-its-push-into-ai-powered-payments-and-programmable-money/"
     }
   ],
   "latest": [
     {
+      "id": "straitsx-visa-cards-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "StraitsX",
+      "title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
+    },
+    {
       "id": "coinbase-marqeta-cards-2026-10-16",
       "date": "2026-10-16",
       "type": "Partnership",
@@ -152,6 +164,42 @@
       "source_url": "https://www.ledgerinsights.com/bahrains-nbb-explores-blockchain-settlement-of-local-currency-via-partior/"
     },
     {
+      "id": "noah-eu-casp-pi-2026-10-15",
+      "date": "2026-10-15",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Noah",
+      "title": "Noah wins MiCA CASP and payment institution licences for the EU",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/noah-secures-mica-casp-and-psd2-payment-institution-licences-in-the-eu"
+    },
+    {
+      "id": "mesh-tokenstore-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Mesh",
+      "title": "Mesh brings crypto and stablecoin checkout to marketplace Tokenstore",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.prnewswire.com/news-releases/mesh-powers-tokenstores-global-expansion-bringing-crypto-and-stablecoin-checkout-to-shoppers-globally-302909106.html"
+    },
+    {
+      "id": "aisa-tether-2026-10-15",
+      "date": "2026-10-15",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "AIsa",
+      "title": "Tether Capital invests in AIsa, a payments hub for AI agents",
+      "source_name": "Tether",
+      "source_url": "https://tether.io/news/tether-invests-in-aisa-to-expand-its-push-into-ai-powered-payments-and-programmable-money/"
+    },
+    {
       "id": "versabank-vusd-us-2026-10-15",
       "date": "2026-10-15",
       "type": "Launch",
@@ -174,57 +222,20 @@
       "title": "Fireblocks opens a multi-desk stablecoin Liquidity Market for PSPs",
       "source_name": "PR Newswire",
       "source_url": "https://www.prnewswire.com/news-releases/fireblocks-launches-liquidity-market-bringing-streaming-otc-pricing-into-stablecoin-payments-302909484.html"
-    },
-    {
-      "id": "ant-international-cbuae-licences-2026-10-15",
-      "date": "2026-10-15",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "CBUAE",
-      "company": "Ant International",
-      "title": "Ant International wins two CBUAE payments licences in the UAE",
-      "source_name": "Fintech News Middle East",
-      "source_url": "https://fintechnews.ae/34269/payments/ant-international-expands-uae-payment-services/"
-    },
-    {
-      "id": "visa-direct-inyo-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Visa",
-      "title": "Visa Direct takes USDC prefunding live, with Inyo Global first",
-      "source_name": "Visa",
-      "source_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22851.html"
-    },
-    {
-      "id": "stripe-plasma-cards-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Stripe",
-      "title": "Stripe and Plasma unveil multi-currency stablecoin cards",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/news/payment-methods/2026/stripe-teams-with-plasma-to-unveil-multi-currency-stablecoin-cards/"
-    },
-    {
-      "id": "ripple-cross-river-rlusd-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "Cross River Bank adds Ripple's RLUSD to its core banking platform",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
     }
   ],
   "companies": [
+    {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "segment": "Custody & wallets",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 7,
+      "last_date": "2026-10-16",
+      "last_title": "Coinbase to power stablecoin-backed cards for Marqeta's clients",
+      "last_url": "https://www.pymnts.com/blockchain/2026/marqeta-and-coinbase-take-stablecoin-spending-mainstream/"
+    },
     {
       "id": "ripple",
       "name": "Ripple",
@@ -237,26 +248,26 @@
       "last_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
     },
     {
-      "id": "coinbase",
-      "name": "Coinbase",
-      "segment": "Custody & wallets",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 6,
-      "last_date": "2026-10-16",
-      "last_title": "Coinbase to power stablecoin-backed cards for Marqeta's clients",
-      "last_url": "https://www.pymnts.com/blockchain/2026/marqeta-and-coinbase-take-stablecoin-spending-mainstream/"
-    },
-    {
       "id": "visa",
       "name": "Visa",
       "segment": "Settlement rails",
       "country": "United States",
       "region": "Global",
-      "moves_30d": 4,
+      "moves_30d": 6,
+      "last_date": "2026-10-16",
+      "last_title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
+      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
+    },
+    {
+      "id": "tether",
+      "name": "Tether",
+      "segment": "Issuer",
+      "country": "El Salvador",
+      "region": "Global",
+      "moves_30d": 5,
       "last_date": "2026-10-15",
-      "last_title": "Visa Direct takes USDC prefunding live, with Inyo Global first",
-      "last_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22851.html"
+      "last_title": "Tether Capital invests in AIsa, a payments hub for AI agents",
+      "last_url": "https://tether.io/news/tether-invests-in-aisa-to-expand-its-push-into-ai-powered-payments-and-programmable-money/"
     },
     {
       "id": "circle",
@@ -268,17 +279,6 @@
       "last_date": "2026-10-14",
       "last_title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
       "last_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
-    },
-    {
-      "id": "tether",
-      "name": "Tether",
-      "segment": "Issuer",
-      "country": "El Salvador",
-      "region": "Global",
-      "moves_30d": 4,
-      "last_date": "2026-10-13",
-      "last_title": "Tether invests in Latin American stablecoin payments firm EFY Finance",
-      "last_url": "https://tether.io/news/tether-invests-in-efy-finance-to-accelerate-institutional-stablecoin-usage-in-latam/"
     },
     {
       "id": "stripe",
@@ -293,6 +293,18 @@
     }
   ],
   "licences": [
+    {
+      "id": "noah-eu-casp-pi-2026-10-15",
+      "date": "2026-10-15",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Noah",
+      "title": "Noah wins MiCA CASP and payment institution licences for the EU",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/noah-secures-mica-casp-and-psd2-payment-institution-licences-in-the-eu"
+    },
     {
       "id": "ant-international-cbuae-licences-2026-10-15",
       "date": "2026-10-15",
@@ -352,18 +364,6 @@
       "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
-    },
-    {
-      "id": "eu-council-casp-supervision-2026-10-09",
-      "date": "2026-10-09",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Council of the EU",
-      "title": "EU ministers limit direct ESMA supervision to significant crypto firms",
-      "source_name": "Ledger Insights",
-      "source_url": "https://www.ledgerinsights.com/eu-council-wants-only-significant-crypto-firms-supervised-by-esma/"
     }
   ],
   "regulators": [
@@ -374,16 +374,16 @@
       "actions": 2
     },
     {
+      "name": "Other",
+      "where": "",
+      "licences": 6,
+      "actions": 4
+    },
+    {
       "name": "CBUAE",
       "where": "UAE",
       "licences": 6,
       "actions": 3
-    },
-    {
-      "name": "Other",
-      "where": "",
-      "licences": 5,
-      "actions": 4
     },
     {
       "name": "FCA",
@@ -400,11 +400,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 529,
-    "licences": 68,
+    "total": 534,
+    "licences": 69,
     "regulatory_actions": 61,
-    "commercial": 262,
-    "capital": 138,
+    "commercial": 265,
+    "capital": 139,
     "months": [
       {
         "m": "2025-10",
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 65
+        "n": 70
       }
     ],
     "partial_last": true
