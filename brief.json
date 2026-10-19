@@ -1,27 +1,27 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-18T07:06:00+03:00",
-  "next_run": "2026-10-19T06:54:00+03:00",
-  "window_start": "2026-10-12",
-  "window_end": "2026-10-18",
-  "week": 42,
-  "count": 31,
-  "new_today": 5,
-  "headline": "Card networks and bank rails led the week: **Mastercard and BVNK launched a white-label money platform** while Visa Direct took USDC prefunding live, and **the EBA named USDC the EU's first significant e-money token** as Qivalis won its Dutch licence.",
+  "updated_at": "2026-10-19T07:40:00+03:00",
+  "next_run": "2026-10-20T06:54:00+03:00",
+  "window_start": "2026-10-13",
+  "window_end": "2026-10-19",
+  "week": 43,
+  "count": 27,
+  "new_today": 1,
+  "headline": "Card networks pushed deeper into stablecoin plumbing this week, with **Mastercard and BVNK launching a white-label Global Money Platform** and Visa Direct taking USDC prefunding live. In Europe, **Qivalis won its Dutch e-money licence** and the EBA classed USDC as a significant token.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 12,
+      "n": 11,
       "label": "partnerships"
     },
     {
       "type": "Launch",
-      "n": 9,
+      "n": 8,
       "label": "launches"
     },
     {
       "type": "License",
-      "n": 4,
+      "n": 3,
       "label": "licences"
     },
     {
@@ -36,23 +36,35 @@
     },
     {
       "type": "Regulation",
-      "n": 2,
-      "label": "regulatory actions"
+      "n": 1,
+      "label": "regulatory action"
     }
   ],
-  "mix_text": "12 partnerships · 9 launches · 4 licences · 2 funding rounds · 2 M&A deals · 2 regulatory actions",
+  "mix_text": "11 partnerships · 8 launches · 3 licences · 2 funding rounds · 2 M&A deals · 1 regulatory action",
   "regions": {
     "Europe": 6,
-    "Middle East": 7,
+    "Middle East": 4,
     "North America": 5,
-    "Global": 13
+    "Global": 12
   },
   "groups": {
-    "regulatory": 6,
+    "regulatory": 4,
     "capital": 4,
-    "commercial": 21
+    "commercial": 19
   },
   "moves": [
+    {
+      "id": "circle-40-markets-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle",
+      "title": "Circle plans to enter about 40 new markets as USDC demand grows",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
+    },
     {
       "id": "straitsx-visa-cards-2026-10-16",
       "date": "2026-10-16",
@@ -112,21 +124,21 @@
       "title": "Mesh brings crypto and stablecoin checkout to marketplace Tokenstore",
       "source_name": "PR Newswire",
       "source_url": "https://www.prnewswire.com/news-releases/mesh-powers-tokenstores-global-expansion-bringing-crypto-and-stablecoin-checkout-to-shoppers-globally-302909106.html"
-    },
-    {
-      "id": "aisa-tether-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "AIsa",
-      "title": "Tether Capital invests in AIsa, a payments hub for AI agents",
-      "source_name": "Tether",
-      "source_url": "https://tether.io/news/tether-invests-in-aisa-to-expand-its-push-into-ai-powered-payments-and-programmable-money/"
     }
   ],
   "latest": [
+    {
+      "id": "circle-40-markets-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle",
+      "title": "Circle plans to enter about 40 new markets as USDC demand grows",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
+    },
     {
       "id": "straitsx-visa-cards-2026-10-16",
       "date": "2026-10-16",
@@ -210,18 +222,6 @@
       "title": "VersaBank starts US commercial phase of VUSD tokenised deposits",
       "source_name": "VersaBank (Newsfile)",
       "source_url": "https://www.financialcontent.com/article/newsfile-2026-10-15-versabank-initiates-commercial-phase-of-tokenized-deposit-program-in-the-united-states"
-    },
-    {
-      "id": "fireblocks-liquidity-market-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Fireblocks",
-      "title": "Fireblocks opens a multi-desk stablecoin Liquidity Market for PSPs",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.prnewswire.com/news-releases/fireblocks-launches-liquidity-market-bringing-streaming-otc-pricing-into-stablecoin-payments-302909484.html"
     }
   ],
   "companies": [
@@ -259,6 +259,17 @@
       "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
     },
     {
+      "id": "circle",
+      "name": "Circle",
+      "segment": "Issuer",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 5,
+      "last_date": "2026-10-16",
+      "last_title": "Circle plans to enter about 40 new markets as USDC demand grows",
+      "last_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
+    },
+    {
       "id": "tether",
       "name": "Tether",
       "segment": "Issuer",
@@ -268,17 +279,6 @@
       "last_date": "2026-10-15",
       "last_title": "Tether Capital invests in AIsa, a payments hub for AI agents",
       "last_url": "https://tether.io/news/tether-invests-in-aisa-to-expand-its-push-into-ai-powered-payments-and-programmable-money/"
-    },
-    {
-      "id": "circle",
-      "name": "Circle",
-      "segment": "Issuer",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 4,
-      "last_date": "2026-10-14",
-      "last_title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
-      "last_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
     },
     {
       "id": "stripe",
@@ -400,10 +400,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 534,
+    "total": 536,
     "licences": 69,
     "regulatory_actions": 61,
-    "commercial": 265,
+    "commercial": 267,
     "capital": 139,
     "months": [
       {
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 70
+        "n": 72
       }
     ],
     "partial_last": true
