@@ -1,23 +1,23 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-19T07:40:00+03:00",
-  "next_run": "2026-10-20T06:54:00+03:00",
-  "window_start": "2026-10-13",
-  "window_end": "2026-10-19",
+  "updated_at": "2026-10-20T07:10:00+03:00",
+  "next_run": "2026-10-21T06:54:00+03:00",
+  "window_start": "2026-10-14",
+  "window_end": "2026-10-20",
   "week": 43,
-  "count": 27,
-  "new_today": 1,
-  "headline": "Card networks pushed deeper into stablecoin plumbing this week, with **Mastercard and BVNK launching a white-label Global Money Platform** and Visa Direct taking USDC prefunding live. In Europe, **Qivalis won its Dutch e-money licence** and the EBA classed USDC as a significant token.",
+  "count": 26,
+  "new_today": 6,
+  "headline": "Money20/20 USA turned into a stablecoin launch pad: **Mastercard added pre-settlement risk scoring** to its BVNK stack and **Coinbase teamed up with Thunes** to pair stablecoins with fiat payouts, while J.P. Morgan took JPM Coin to Ethereum.",
   "mix": [
     {
-      "type": "Partnership",
-      "n": 11,
-      "label": "partnerships"
+      "type": "Launch",
+      "n": 9,
+      "label": "launches"
     },
     {
-      "type": "Launch",
-      "n": 8,
-      "label": "launches"
+      "type": "Partnership",
+      "n": 9,
+      "label": "partnerships"
     },
     {
       "type": "License",
@@ -40,188 +40,188 @@
       "label": "regulatory action"
     }
   ],
-  "mix_text": "11 partnerships · 8 launches · 3 licences · 2 funding rounds · 2 M&A deals · 1 regulatory action",
+  "mix_text": "9 launches · 9 partnerships · 3 licences · 2 funding rounds · 2 M&A deals · 1 regulatory action",
   "regions": {
-    "Europe": 6,
-    "Middle East": 4,
-    "North America": 5,
+    "Europe": 5,
+    "Middle East": 3,
+    "North America": 6,
     "Global": 12
   },
   "groups": {
     "regulatory": 4,
     "capital": 4,
-    "commercial": 19
+    "commercial": 18
   },
   "moves": [
     {
-      "id": "circle-40-markets-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Circle",
-      "title": "Circle plans to enter about 40 new markets as USDC demand grows",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
-    },
-    {
-      "id": "straitsx-visa-cards-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "StraitsX",
-      "title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
-    },
-    {
-      "id": "coinbase-marqeta-cards-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Coinbase",
-      "title": "Coinbase to power stablecoin-backed cards for Marqeta's clients",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/blockchain/2026/marqeta-and-coinbase-take-stablecoin-spending-mainstream/"
-    },
-    {
-      "id": "partior-nbb-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Middle East",
-      "regulator": null,
-      "company": "Partior",
-      "title": "National Bank of Bahrain studies dinar settlement on Partior",
-      "source_name": "Ledger Insights",
-      "source_url": "https://www.ledgerinsights.com/bahrains-nbb-explores-blockchain-settlement-of-local-currency-via-partior/"
-    },
-    {
-      "id": "noah-eu-casp-pi-2026-10-15",
-      "date": "2026-10-15",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Noah",
-      "title": "Noah wins MiCA CASP and payment institution licences for the EU",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/noah-secures-mica-casp-and-psd2-payment-institution-licences-in-the-eu"
-    },
-    {
-      "id": "mesh-tokenstore-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Mesh",
-      "title": "Mesh brings crypto and stablecoin checkout to marketplace Tokenstore",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.prnewswire.com/news-releases/mesh-powers-tokenstores-global-expansion-bringing-crypto-and-stablecoin-checkout-to-shoppers-globally-302909106.html"
-    }
-  ],
-  "latest": [
-    {
-      "id": "circle-40-markets-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Circle",
-      "title": "Circle plans to enter about 40 new markets as USDC demand grows",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
-    },
-    {
-      "id": "straitsx-visa-cards-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "StraitsX",
-      "title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
-    },
-    {
-      "id": "coinbase-marqeta-cards-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Coinbase",
-      "title": "Coinbase to power stablecoin-backed cards for Marqeta's clients",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/blockchain/2026/marqeta-and-coinbase-take-stablecoin-spending-mainstream/"
-    },
-    {
-      "id": "partior-nbb-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Middle East",
-      "regulator": null,
-      "company": "Partior",
-      "title": "National Bank of Bahrain studies dinar settlement on Partior",
-      "source_name": "Ledger Insights",
-      "source_url": "https://www.ledgerinsights.com/bahrains-nbb-explores-blockchain-settlement-of-local-currency-via-partior/"
-    },
-    {
-      "id": "noah-eu-casp-pi-2026-10-15",
-      "date": "2026-10-15",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Noah",
-      "title": "Noah wins MiCA CASP and payment institution licences for the EU",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/noah-secures-mica-casp-and-psd2-payment-institution-licences-in-the-eu"
-    },
-    {
-      "id": "mesh-tokenstore-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Mesh",
-      "title": "Mesh brings crypto and stablecoin checkout to marketplace Tokenstore",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.prnewswire.com/news-releases/mesh-powers-tokenstores-global-expansion-bringing-crypto-and-stablecoin-checkout-to-shoppers-globally-302909106.html"
-    },
-    {
-      "id": "aisa-tether-2026-10-15",
-      "date": "2026-10-15",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "AIsa",
-      "title": "Tether Capital invests in AIsa, a payments hub for AI agents",
-      "source_name": "Tether",
-      "source_url": "https://tether.io/news/tether-invests-in-aisa-to-expand-its-push-into-ai-powered-payments-and-programmable-money/"
-    },
-    {
-      "id": "versabank-vusd-us-2026-10-15",
-      "date": "2026-10-15",
+      "id": "zerohash-auth-2026-10-19",
+      "date": "2026-10-19",
       "type": "Launch",
       "type_label": "Launch",
       "region": "North America",
       "regulator": null,
-      "company": "VersaBank",
-      "title": "VersaBank starts US commercial phase of VUSD tokenised deposits",
-      "source_name": "VersaBank (Newsfile)",
-      "source_url": "https://www.financialcontent.com/article/newsfile-2026-10-15-versabank-initiates-commercial-phase-of-tokenized-deposit-program-in-the-united-states"
+      "company": "zerohash",
+      "title": "zerohash launches AUTH for transfers between linked wallets",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/business/2026/10/19/zerohash-rolls-out-a-new-tool-to-move-crypto-without-copying-wallet-addresses"
+    },
+    {
+      "id": "thunes-coinbase-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Thunes",
+      "title": "Thunes and Coinbase pair fiat payouts with stablecoin infrastructure",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.morningstar.com/news/pr-newswire/20261019ln75146/thunes-and-coinbase-join-forces-to-drive-next-generation-global-payments"
+    },
+    {
+      "id": "saber-money-strategic-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "Saber Money",
+      "title": "Saber Money takes strategic funding from Tether and CMCC Global",
+      "source_name": "ACCESS Newswire",
+      "source_url": "https://www.morningstar.com/news/accesswire/1238706msn/saber-money-raises-strategic-investment-from-tether-and-cmcc-globals-titan-fund-to-scale-stablecoin-powered-payments"
+    },
+    {
+      "id": "mesh-visa-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Mesh",
+      "title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
+      "source_name": "Mesh",
+      "source_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
+    },
+    {
+      "id": "mastercard-stablecoin-security-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "Mastercard",
+      "title": "Mastercard launches Stablecoin Security to screen stablecoin payments",
+      "source_name": "FinanceFeeds",
+      "source_url": "https://financefeeds.com/mastercard-launches-stablecoin-security-as-banks-face-new-fraud-and-compliance-risks/"
+    },
+    {
+      "id": "jpmorgan-jpm-coin-ethereum-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "J.P. Morgan (Kinexys)",
+      "title": "J.P. Morgan deploys its JPM Coin deposit token on Ethereum",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg"
+    }
+  ],
+  "latest": [
+    {
+      "id": "zerohash-auth-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "zerohash",
+      "title": "zerohash launches AUTH for transfers between linked wallets",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/business/2026/10/19/zerohash-rolls-out-a-new-tool-to-move-crypto-without-copying-wallet-addresses"
+    },
+    {
+      "id": "thunes-coinbase-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Thunes",
+      "title": "Thunes and Coinbase pair fiat payouts with stablecoin infrastructure",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.morningstar.com/news/pr-newswire/20261019ln75146/thunes-and-coinbase-join-forces-to-drive-next-generation-global-payments"
+    },
+    {
+      "id": "saber-money-strategic-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "Saber Money",
+      "title": "Saber Money takes strategic funding from Tether and CMCC Global",
+      "source_name": "ACCESS Newswire",
+      "source_url": "https://www.morningstar.com/news/accesswire/1238706msn/saber-money-raises-strategic-investment-from-tether-and-cmcc-globals-titan-fund-to-scale-stablecoin-powered-payments"
+    },
+    {
+      "id": "mesh-visa-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Mesh",
+      "title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
+      "source_name": "Mesh",
+      "source_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
+    },
+    {
+      "id": "mastercard-stablecoin-security-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "Mastercard",
+      "title": "Mastercard launches Stablecoin Security to screen stablecoin payments",
+      "source_name": "FinanceFeeds",
+      "source_url": "https://financefeeds.com/mastercard-launches-stablecoin-security-as-banks-face-new-fraud-and-compliance-risks/"
+    },
+    {
+      "id": "jpmorgan-jpm-coin-ethereum-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "J.P. Morgan (Kinexys)",
+      "title": "J.P. Morgan deploys its JPM Coin deposit token on Ethereum",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg"
+    },
+    {
+      "id": "circle-40-markets-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle",
+      "title": "Circle plans to enter about 40 new markets as USDC demand grows",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
+    },
+    {
+      "id": "straitsx-visa-cards-2026-10-16",
+      "date": "2026-10-16",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "StraitsX",
+      "title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
     }
   ],
   "companies": [
@@ -231,10 +231,21 @@
       "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
+      "moves_30d": 9,
+      "last_date": "2026-10-19",
+      "last_title": "zerohash launches AUTH for transfers between linked wallets",
+      "last_url": "https://www.coindesk.com/business/2026/10/19/zerohash-rolls-out-a-new-tool-to-move-crypto-without-copying-wallet-addresses"
+    },
+    {
+      "id": "visa",
+      "name": "Visa",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "Global",
       "moves_30d": 7,
-      "last_date": "2026-10-16",
-      "last_title": "Coinbase to power stablecoin-backed cards for Marqeta's clients",
-      "last_url": "https://www.pymnts.com/blockchain/2026/marqeta-and-coinbase-take-stablecoin-spending-mainstream/"
+      "last_date": "2026-10-19",
+      "last_title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
+      "last_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
     },
     {
       "id": "ripple",
@@ -248,15 +259,15 @@
       "last_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
     },
     {
-      "id": "visa",
-      "name": "Visa",
-      "segment": "Settlement rails",
-      "country": "United States",
+      "id": "tether",
+      "name": "Tether",
+      "segment": "Issuer",
+      "country": "El Salvador",
       "region": "Global",
       "moves_30d": 6,
-      "last_date": "2026-10-16",
-      "last_title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
-      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
+      "last_date": "2026-10-19",
+      "last_title": "Saber Money takes strategic funding from Tether and CMCC Global",
+      "last_url": "https://www.morningstar.com/news/accesswire/1238706msn/saber-money-raises-strategic-investment-from-tether-and-cmcc-globals-titan-fund-to-scale-stablecoin-powered-payments"
     },
     {
       "id": "circle",
@@ -270,26 +281,15 @@
       "last_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
     },
     {
-      "id": "tether",
-      "name": "Tether",
-      "segment": "Issuer",
-      "country": "El Salvador",
-      "region": "Global",
-      "moves_30d": 5,
-      "last_date": "2026-10-15",
-      "last_title": "Tether Capital invests in AIsa, a payments hub for AI agents",
-      "last_url": "https://tether.io/news/tether-invests-in-aisa-to-expand-its-push-into-ai-powered-payments-and-programmable-money/"
-    },
-    {
-      "id": "stripe",
-      "name": "Stripe",
-      "segment": "Merchant gateway",
+      "id": "mesh",
+      "name": "Mesh",
+      "segment": "Settlement rails",
       "country": "United States",
-      "region": "Global",
+      "region": "North America",
       "moves_30d": 3,
-      "last_date": "2026-10-15",
-      "last_title": "Stripe and Plasma unveil multi-currency stablecoin cards",
-      "last_url": "https://www.pymnts.com/news/payment-methods/2026/stripe-teams-with-plasma-to-unveil-multi-currency-stablecoin-cards/"
+      "last_date": "2026-10-19",
+      "last_title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
+      "last_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
     }
   ],
   "licences": [
@@ -400,11 +400,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 536,
+    "total": 542,
     "licences": 69,
     "regulatory_actions": 61,
-    "commercial": 267,
-    "capital": 139,
+    "commercial": 272,
+    "capital": 140,
     "months": [
       {
         "m": "2025-10",
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 72
+        "n": 78
       }
     ],
     "partial_last": true
