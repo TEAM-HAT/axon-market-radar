@@ -1,58 +1,108 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-20T07:10:00+03:00",
-  "next_run": "2026-10-21T06:54:00+03:00",
-  "window_start": "2026-10-14",
-  "window_end": "2026-10-20",
+  "updated_at": "2026-10-21T07:03:12+03:00",
+  "next_run": "2026-10-22T06:54:00+03:00",
+  "window_start": "2026-10-15",
+  "window_end": "2026-10-21",
   "week": 43,
-  "count": 26,
-  "new_today": 6,
-  "headline": "Money20/20 USA turned into a stablecoin launch pad: **Mastercard added pre-settlement risk scoring** to its BVNK stack and **Coinbase teamed up with Thunes** to pair stablecoins with fiat payouts, while J.P. Morgan took JPM Coin to Ethereum.",
+  "count": 25,
+  "new_today": 5,
+  "headline": "Card networks led the week: **Mastercard and BVNK launched a white-label Global Money Platform** and Visa Direct took USDC prefunding live, while **J.P. Morgan put JPM Coin on Ethereum** and Ant International won two CBUAE payments licences.",
   "mix": [
     {
       "type": "Launch",
-      "n": 9,
+      "n": 10,
       "label": "launches"
     },
     {
       "type": "Partnership",
-      "n": 9,
+      "n": 10,
       "label": "partnerships"
     },
     {
-      "type": "License",
-      "n": 3,
-      "label": "licences"
-    },
-    {
       "type": "Funding",
-      "n": 2,
+      "n": 3,
       "label": "funding rounds"
     },
     {
-      "type": "M&A",
+      "type": "License",
       "n": 2,
-      "label": "M&A deals"
-    },
-    {
-      "type": "Regulation",
-      "n": 1,
-      "label": "regulatory action"
+      "label": "licences"
     }
   ],
-  "mix_text": "9 launches · 9 partnerships · 3 licences · 2 funding rounds · 2 M&A deals · 1 regulatory action",
+  "mix_text": "10 launches · 10 partnerships · 3 funding rounds · 2 licences",
   "regions": {
-    "Europe": 5,
-    "Middle East": 3,
-    "North America": 6,
-    "Global": 12
+    "Europe": 1,
+    "Middle East": 2,
+    "North America": 7,
+    "Global": 15
   },
   "groups": {
-    "regulatory": 4,
-    "capital": 4,
-    "commercial": 18
+    "regulatory": 2,
+    "capital": 3,
+    "commercial": 20
   },
   "moves": [
+    {
+      "id": "mural-series-a-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "North America",
+      "regulator": null,
+      "company": "Mural",
+      "title": "Mural raises $15m Series A led by Tether for fintech money rails",
+      "source_name": "Mural",
+      "source_url": "https://muralpay.com/blog/28-million-raised"
+    },
+    {
+      "id": "moonpay-dunamu-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "MoonPay",
+      "title": "MoonPay and Upbit owner Dunamu explore stablecoin payments together",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.prnewswire.com/news-releases/moonpay-and-dunamu-to-collaborate-on-global-digital-asset-financial-infrastructure-302914516.html"
+    },
+    {
+      "id": "mastercard-agent-pay-machines-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Mastercard",
+      "title": "Mastercard opens early access to Agent Pay for Machines",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
+    },
+    {
+      "id": "fuze-modern-treasury-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Fuze",
+      "title": "Fuze picks Modern Treasury's PSP platform for its US expansion",
+      "source_name": "Modern Treasury",
+      "source_url": "https://www.moderntreasury.com/newsroom/press-releases/fuze-finance-partners-with-modern-treasury-s-payments-infrastructure-for-u-s-expansion"
+    },
+    {
+      "id": "fireblocks-euronet-cards-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Fireblocks",
+      "title": "Euronet and Fireblocks bring stablecoin-funded cards to bank issuers",
+      "source_name": "GlobeNewswire",
+      "source_url": "https://www.manilatimes.net/2026/10/19/tmt-newswire/globenewswire/euronet-and-fireblocks-power-the-next-era-of-mainstream-payments-with-stablecoin-funded-card-issuing/2448795"
+    },
     {
       "id": "zerohash-auth-2026-10-19",
       "date": "2026-10-19",
@@ -64,70 +114,70 @@
       "title": "zerohash launches AUTH for transfers between linked wallets",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/business/2026/10/19/zerohash-rolls-out-a-new-tool-to-move-crypto-without-copying-wallet-addresses"
-    },
-    {
-      "id": "thunes-coinbase-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Thunes",
-      "title": "Thunes and Coinbase pair fiat payouts with stablecoin infrastructure",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.morningstar.com/news/pr-newswire/20261019ln75146/thunes-and-coinbase-join-forces-to-drive-next-generation-global-payments"
-    },
-    {
-      "id": "saber-money-strategic-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "Saber Money",
-      "title": "Saber Money takes strategic funding from Tether and CMCC Global",
-      "source_name": "ACCESS Newswire",
-      "source_url": "https://www.morningstar.com/news/accesswire/1238706msn/saber-money-raises-strategic-investment-from-tether-and-cmcc-globals-titan-fund-to-scale-stablecoin-powered-payments"
-    },
-    {
-      "id": "mesh-visa-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Mesh",
-      "title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
-      "source_name": "Mesh",
-      "source_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
-    },
-    {
-      "id": "mastercard-stablecoin-security-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "Mastercard",
-      "title": "Mastercard launches Stablecoin Security to screen stablecoin payments",
-      "source_name": "FinanceFeeds",
-      "source_url": "https://financefeeds.com/mastercard-launches-stablecoin-security-as-banks-face-new-fraud-and-compliance-risks/"
-    },
-    {
-      "id": "jpmorgan-jpm-coin-ethereum-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "J.P. Morgan (Kinexys)",
-      "title": "J.P. Morgan deploys its JPM Coin deposit token on Ethereum",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg"
     }
   ],
   "latest": [
     {
+      "id": "mural-series-a-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "North America",
+      "regulator": null,
+      "company": "Mural",
+      "title": "Mural raises $15m Series A led by Tether for fintech money rails",
+      "source_name": "Mural",
+      "source_url": "https://muralpay.com/blog/28-million-raised"
+    },
+    {
+      "id": "moonpay-dunamu-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "MoonPay",
+      "title": "MoonPay and Upbit owner Dunamu explore stablecoin payments together",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.prnewswire.com/news-releases/moonpay-and-dunamu-to-collaborate-on-global-digital-asset-financial-infrastructure-302914516.html"
+    },
+    {
+      "id": "mastercard-agent-pay-machines-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Mastercard",
+      "title": "Mastercard opens early access to Agent Pay for Machines",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
+    },
+    {
+      "id": "fuze-modern-treasury-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Fuze",
+      "title": "Fuze picks Modern Treasury's PSP platform for its US expansion",
+      "source_name": "Modern Treasury",
+      "source_url": "https://www.moderntreasury.com/newsroom/press-releases/fuze-finance-partners-with-modern-treasury-s-payments-infrastructure-for-u-s-expansion"
+    },
+    {
+      "id": "fireblocks-euronet-cards-2026-10-19",
+      "date": "2026-10-19",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Fireblocks",
+      "title": "Euronet and Fireblocks bring stablecoin-funded cards to bank issuers",
+      "source_name": "GlobeNewswire",
+      "source_url": "https://www.manilatimes.net/2026/10/19/tmt-newswire/globenewswire/euronet-and-fireblocks-power-the-next-era-of-mainstream-payments-with-stablecoin-funded-card-issuing/2448795"
+    },
+    {
       "id": "zerohash-auth-2026-10-19",
       "date": "2026-10-19",
       "type": "Launch",
@@ -162,66 +212,6 @@
       "title": "Saber Money takes strategic funding from Tether and CMCC Global",
       "source_name": "ACCESS Newswire",
       "source_url": "https://www.morningstar.com/news/accesswire/1238706msn/saber-money-raises-strategic-investment-from-tether-and-cmcc-globals-titan-fund-to-scale-stablecoin-powered-payments"
-    },
-    {
-      "id": "mesh-visa-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Mesh",
-      "title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
-      "source_name": "Mesh",
-      "source_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
-    },
-    {
-      "id": "mastercard-stablecoin-security-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "Mastercard",
-      "title": "Mastercard launches Stablecoin Security to screen stablecoin payments",
-      "source_name": "FinanceFeeds",
-      "source_url": "https://financefeeds.com/mastercard-launches-stablecoin-security-as-banks-face-new-fraud-and-compliance-risks/"
-    },
-    {
-      "id": "jpmorgan-jpm-coin-ethereum-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "J.P. Morgan (Kinexys)",
-      "title": "J.P. Morgan deploys its JPM Coin deposit token on Ethereum",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg"
-    },
-    {
-      "id": "circle-40-markets-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Circle",
-      "title": "Circle plans to enter about 40 new markets as USDC demand grows",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
-    },
-    {
-      "id": "straitsx-visa-cards-2026-10-16",
-      "date": "2026-10-16",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "StraitsX",
-      "title": "StraitsX and Visa take stablecoin card issuing to over 100 markets",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/straitsx-and-visa-expand-stablecoin-card-issuing-to-100-markets"
     }
   ],
   "companies": [
@@ -231,10 +221,21 @@
       "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 9,
-      "last_date": "2026-10-19",
-      "last_title": "zerohash launches AUTH for transfers between linked wallets",
-      "last_url": "https://www.coindesk.com/business/2026/10/19/zerohash-rolls-out-a-new-tool-to-move-crypto-without-copying-wallet-addresses"
+      "moves_30d": 10,
+      "last_date": "2026-10-20",
+      "last_title": "Mastercard opens early access to Agent Pay for Machines",
+      "last_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
+    },
+    {
+      "id": "tether",
+      "name": "Tether",
+      "segment": "Issuer",
+      "country": "El Salvador",
+      "region": "Global",
+      "moves_30d": 7,
+      "last_date": "2026-10-20",
+      "last_title": "Mural raises $15m Series A led by Tether for fintech money rails",
+      "last_url": "https://muralpay.com/blog/28-million-raised"
     },
     {
       "id": "visa",
@@ -259,17 +260,6 @@
       "last_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
     },
     {
-      "id": "tether",
-      "name": "Tether",
-      "segment": "Issuer",
-      "country": "El Salvador",
-      "region": "Global",
-      "moves_30d": 6,
-      "last_date": "2026-10-19",
-      "last_title": "Saber Money takes strategic funding from Tether and CMCC Global",
-      "last_url": "https://www.morningstar.com/news/accesswire/1238706msn/saber-money-raises-strategic-investment-from-tether-and-cmcc-globals-titan-fund-to-scale-stablecoin-powered-payments"
-    },
-    {
       "id": "circle",
       "name": "Circle",
       "segment": "Issuer",
@@ -281,15 +271,15 @@
       "last_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
     },
     {
-      "id": "mesh",
-      "name": "Mesh",
+      "id": "mastercard",
+      "name": "Mastercard",
       "segment": "Settlement rails",
       "country": "United States",
-      "region": "North America",
-      "moves_30d": 3,
-      "last_date": "2026-10-19",
-      "last_title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
-      "last_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
+      "region": "Global",
+      "moves_30d": 4,
+      "last_date": "2026-10-20",
+      "last_title": "Mastercard opens early access to Agent Pay for Machines",
+      "last_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
     }
   ],
   "licences": [
@@ -400,11 +390,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 542,
+    "total": 547,
     "licences": 69,
     "regulatory_actions": 61,
-    "commercial": 272,
-    "capital": 140,
+    "commercial": 276,
+    "capital": 141,
     "months": [
       {
         "m": "2025-10",
@@ -456,7 +446,7 @@
       },
       {
         "m": "2026-10",
-        "n": 78
+        "n": 83
       }
     ],
     "partial_last": true
