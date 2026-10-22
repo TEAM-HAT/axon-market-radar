@@ -1,23 +1,23 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-21T07:03:12+03:00",
-  "next_run": "2026-10-22T06:54:00+03:00",
-  "window_start": "2026-10-15",
-  "window_end": "2026-10-21",
+  "updated_at": "2026-10-22T07:40:00+03:00",
+  "next_run": "2026-10-23T06:54:00+03:00",
+  "window_start": "2026-10-16",
+  "window_end": "2026-10-22",
   "week": 43,
-  "count": 25,
-  "new_today": 5,
-  "headline": "Card networks led the week: **Mastercard and BVNK launched a white-label Global Money Platform** and Visa Direct took USDC prefunding live, while **J.P. Morgan put JPM Coin on Ethereum** and Ant International won two CBUAE payments licences.",
+  "count": 19,
+  "new_today": 4,
+  "headline": "The US moved from proposals to rules as the **OCC finalised its GENIUS Act framework**, effective in January, while card issuers and processors kept turning stablecoins into everyday spending, with **Euronet, Coinbase, StraitsX and Mesh all widening stablecoin-funded card programmes**.",
   "mix": [
     {
-      "type": "Launch",
-      "n": 10,
-      "label": "launches"
+      "type": "Partnership",
+      "n": 9,
+      "label": "partnerships"
     },
     {
-      "type": "Partnership",
-      "n": 10,
-      "label": "partnerships"
+      "type": "Launch",
+      "n": 5,
+      "label": "launches"
     },
     {
       "type": "Funding",
@@ -25,24 +25,77 @@
       "label": "funding rounds"
     },
     {
-      "type": "License",
-      "n": 2,
-      "label": "licences"
+      "type": "M&A",
+      "n": 1,
+      "label": "M&A deal"
+    },
+    {
+      "type": "Regulation",
+      "n": 1,
+      "label": "regulatory action"
     }
   ],
-  "mix_text": "10 launches · 10 partnerships · 3 funding rounds · 2 licences",
+  "mix_text": "9 partnerships · 5 launches · 3 funding rounds · 1 M&A deal · 1 regulatory action",
   "regions": {
-    "Europe": 1,
-    "Middle East": 2,
-    "North America": 7,
-    "Global": 15
+    "Europe": 0,
+    "Middle East": 1,
+    "North America": 6,
+    "Global": 12
   },
   "groups": {
-    "regulatory": 2,
-    "capital": 3,
-    "commercial": 20
+    "regulatory": 1,
+    "capital": 4,
+    "commercial": 14
   },
   "moves": [
+    {
+      "id": "zodia-custody-standard-chartered-deal-2026-10-21",
+      "date": "2026-10-21",
+      "type": "M&A",
+      "type_label": "M&A",
+      "region": "Global",
+      "regulator": null,
+      "company": "Zodia Custody",
+      "title": "Standard Chartered signs deal to buy all of Zodia Custody",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/standard-chartered-acquire-zodia-custody-uk"
+    },
+    {
+      "id": "peso-tether-pre-seed-2026-10-21",
+      "date": "2026-10-21",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "Peso",
+      "title": "Tether leads pre-seed round in Bolivian USDT payments app Peso",
+      "source_name": "TokenPost",
+      "source_url": "https://www.tokenpost.com/news/business/37256"
+    },
+    {
+      "id": "occ-genius-final-rule-2026-10-21",
+      "date": "2026-10-21",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "OCC",
+      "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
+    },
+    {
+      "id": "circle-allaria-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle",
+      "title": "Circle signs Argentine broker Allaria to quote USDC against the peso",
+      "source_name": "Crypto Briefing",
+      "source_url": "https://cryptobriefing.com/circle-allaria-usdc-liquidity-argentina/"
+    },
     {
       "id": "mural-series-a-2026-10-20",
       "date": "2026-10-20",
@@ -66,58 +119,58 @@
       "title": "MoonPay and Upbit owner Dunamu explore stablecoin payments together",
       "source_name": "PR Newswire",
       "source_url": "https://www.prnewswire.com/news-releases/moonpay-and-dunamu-to-collaborate-on-global-digital-asset-financial-infrastructure-302914516.html"
-    },
-    {
-      "id": "mastercard-agent-pay-machines-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Mastercard",
-      "title": "Mastercard opens early access to Agent Pay for Machines",
-      "source_name": "Ledger Insights",
-      "source_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
-    },
-    {
-      "id": "fuze-modern-treasury-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Fuze",
-      "title": "Fuze picks Modern Treasury's PSP platform for its US expansion",
-      "source_name": "Modern Treasury",
-      "source_url": "https://www.moderntreasury.com/newsroom/press-releases/fuze-finance-partners-with-modern-treasury-s-payments-infrastructure-for-u-s-expansion"
-    },
-    {
-      "id": "fireblocks-euronet-cards-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Fireblocks",
-      "title": "Euronet and Fireblocks bring stablecoin-funded cards to bank issuers",
-      "source_name": "GlobeNewswire",
-      "source_url": "https://www.manilatimes.net/2026/10/19/tmt-newswire/globenewswire/euronet-and-fireblocks-power-the-next-era-of-mainstream-payments-with-stablecoin-funded-card-issuing/2448795"
-    },
-    {
-      "id": "zerohash-auth-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "zerohash",
-      "title": "zerohash launches AUTH for transfers between linked wallets",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/business/2026/10/19/zerohash-rolls-out-a-new-tool-to-move-crypto-without-copying-wallet-addresses"
     }
   ],
   "latest": [
     {
+      "id": "zodia-custody-standard-chartered-deal-2026-10-21",
+      "date": "2026-10-21",
+      "type": "M&A",
+      "type_label": "M&A",
+      "region": "Global",
+      "regulator": null,
+      "company": "Zodia Custody",
+      "title": "Standard Chartered signs deal to buy all of Zodia Custody",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/standard-chartered-acquire-zodia-custody-uk"
+    },
+    {
+      "id": "peso-tether-pre-seed-2026-10-21",
+      "date": "2026-10-21",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "Peso",
+      "title": "Tether leads pre-seed round in Bolivian USDT payments app Peso",
+      "source_name": "TokenPost",
+      "source_url": "https://www.tokenpost.com/news/business/37256"
+    },
+    {
+      "id": "occ-genius-final-rule-2026-10-21",
+      "date": "2026-10-21",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "OCC",
+      "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
+    },
+    {
+      "id": "circle-allaria-2026-10-20",
+      "date": "2026-10-20",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle",
+      "title": "Circle signs Argentine broker Allaria to quote USDC against the peso",
+      "source_name": "Crypto Briefing",
+      "source_url": "https://cryptobriefing.com/circle-allaria-usdc-liquidity-argentina/"
+    },
+    {
       "id": "mural-series-a-2026-10-20",
       "date": "2026-10-20",
       "type": "Funding",
@@ -164,54 +217,6 @@
       "title": "Fuze picks Modern Treasury's PSP platform for its US expansion",
       "source_name": "Modern Treasury",
       "source_url": "https://www.moderntreasury.com/newsroom/press-releases/fuze-finance-partners-with-modern-treasury-s-payments-infrastructure-for-u-s-expansion"
-    },
-    {
-      "id": "fireblocks-euronet-cards-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Fireblocks",
-      "title": "Euronet and Fireblocks bring stablecoin-funded cards to bank issuers",
-      "source_name": "GlobeNewswire",
-      "source_url": "https://www.manilatimes.net/2026/10/19/tmt-newswire/globenewswire/euronet-and-fireblocks-power-the-next-era-of-mainstream-payments-with-stablecoin-funded-card-issuing/2448795"
-    },
-    {
-      "id": "zerohash-auth-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "zerohash",
-      "title": "zerohash launches AUTH for transfers between linked wallets",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/business/2026/10/19/zerohash-rolls-out-a-new-tool-to-move-crypto-without-copying-wallet-addresses"
-    },
-    {
-      "id": "thunes-coinbase-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Thunes",
-      "title": "Thunes and Coinbase pair fiat payouts with stablecoin infrastructure",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.morningstar.com/news/pr-newswire/20261019ln75146/thunes-and-coinbase-join-forces-to-drive-next-generation-global-payments"
-    },
-    {
-      "id": "saber-money-strategic-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "Saber Money",
-      "title": "Saber Money takes strategic funding from Tether and CMCC Global",
-      "source_name": "ACCESS Newswire",
-      "source_url": "https://www.morningstar.com/news/accesswire/1238706msn/saber-money-raises-strategic-investment-from-tether-and-cmcc-globals-titan-fund-to-scale-stablecoin-powered-payments"
     }
   ],
   "companies": [
@@ -232,10 +237,10 @@
       "segment": "Issuer",
       "country": "El Salvador",
       "region": "Global",
-      "moves_30d": 7,
-      "last_date": "2026-10-20",
-      "last_title": "Mural raises $15m Series A led by Tether for fintech money rails",
-      "last_url": "https://muralpay.com/blog/28-million-raised"
+      "moves_30d": 8,
+      "last_date": "2026-10-21",
+      "last_title": "Tether leads pre-seed round in Bolivian USDT payments app Peso",
+      "last_url": "https://www.tokenpost.com/news/business/37256"
     },
     {
       "id": "visa",
@@ -266,23 +271,35 @@
       "country": "United States",
       "region": "North America",
       "moves_30d": 5,
-      "last_date": "2026-10-16",
-      "last_title": "Circle plans to enter about 40 new markets as USDC demand grows",
-      "last_url": "https://www.pymnts.com/cryptocurrency/2026/circle-targets-40-new-markets-capture-surging-stablecoin-demand/"
+      "last_date": "2026-10-20",
+      "last_title": "Circle signs Argentine broker Allaria to quote USDC against the peso",
+      "last_url": "https://cryptobriefing.com/circle-allaria-usdc-liquidity-argentina/"
     },
     {
-      "id": "mastercard",
-      "name": "Mastercard",
-      "segment": "Settlement rails",
-      "country": "United States",
+      "id": "standard-chartered",
+      "name": "Standard Chartered",
+      "segment": "Custody & wallets",
+      "country": "United Kingdom",
       "region": "Global",
       "moves_30d": 4,
-      "last_date": "2026-10-20",
-      "last_title": "Mastercard opens early access to Agent Pay for Machines",
-      "last_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
+      "last_date": "2026-10-21",
+      "last_title": "Standard Chartered signs deal to buy all of Zodia Custody",
+      "last_url": "https://cointelegraph.com/news/standard-chartered-acquire-zodia-custody-uk"
     }
   ],
   "licences": [
+    {
+      "id": "occ-genius-final-rule-2026-10-21",
+      "date": "2026-10-21",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "OCC",
+      "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
+    },
     {
       "id": "noah-eu-casp-pi-2026-10-15",
       "date": "2026-10-15",
@@ -342,18 +359,6 @@
       "title": "Kraken's parent Payward wins full VARA approval for the UAE",
       "source_name": "Blockhead",
       "source_url": "https://www.blockhead.co/2026/10/13/kraken-wins-full-vara-approval-targets-uae-launch-with-dirham-trading-within-weeks/"
-    },
-    {
-      "id": "fsb-stablecoin-crisis-report-2026-10-12",
-      "date": "2026-10-12",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Global",
-      "regulator": "FSB",
-      "company": "Financial Stability Board",
-      "title": "FSB warns stablecoin rules are untested in a crisis ahead of G20",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/12/global-financial-watchdog-calls-for-cross-border-information-sharing-planning-for-stablecoin-crisis"
     }
   ],
   "regulators": [
@@ -361,7 +366,7 @@
       "name": "OCC",
       "where": "United States",
       "licences": 17,
-      "actions": 2
+      "actions": 3
     },
     {
       "name": "Other",
@@ -390,11 +395,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 547,
+    "total": 552,
     "licences": 69,
-    "regulatory_actions": 61,
-    "commercial": 276,
-    "capital": 141,
+    "regulatory_actions": 62,
+    "commercial": 278,
+    "capital": 143,
     "months": [
       {
         "m": "2025-10",
@@ -446,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 83
+        "n": 88
       }
     ],
     "partial_last": true
