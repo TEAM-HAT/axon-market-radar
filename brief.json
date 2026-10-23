@@ -1,22 +1,22 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-22T07:40:00+03:00",
-  "next_run": "2026-10-23T06:54:00+03:00",
-  "window_start": "2026-10-16",
-  "window_end": "2026-10-22",
+  "updated_at": "2026-10-23T07:00:13+03:00",
+  "next_run": "2026-10-24T06:54:00+03:00",
+  "window_start": "2026-10-17",
+  "window_end": "2026-10-23",
   "week": 43,
-  "count": 19,
-  "new_today": 4,
-  "headline": "The US moved from proposals to rules as the **OCC finalised its GENIUS Act framework**, effective in January, while card issuers and processors kept turning stablecoins into everyday spending, with **Euronet, Coinbase, StraitsX and Mesh all widening stablecoin-funded card programmes**.",
+  "count": 24,
+  "new_today": 9,
+  "headline": "**Western Union picked Noah** to run its stablecoin payouts while a report that **Visa is in talks to buy Fireblocks** for $2.5bn, denied by Fireblocks, capped a week of card-network and money-transfer moves into stablecoins.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 9,
+      "n": 11,
       "label": "partnerships"
     },
     {
       "type": "Launch",
-      "n": 5,
+      "n": 6,
       "label": "launches"
     },
     {
@@ -26,8 +26,13 @@
     },
     {
       "type": "M&A",
+      "n": 2,
+      "label": "M&A deals"
+    },
+    {
+      "type": "License",
       "n": 1,
-      "label": "M&A deal"
+      "label": "licence"
     },
     {
       "type": "Regulation",
@@ -35,19 +40,67 @@
       "label": "regulatory action"
     }
   ],
-  "mix_text": "9 partnerships · 5 launches · 3 funding rounds · 1 M&A deal · 1 regulatory action",
+  "mix_text": "11 partnerships · 6 launches · 3 funding rounds · 2 M&A deals · 1 licence · 1 regulatory action",
   "regions": {
     "Europe": 0,
-    "Middle East": 1,
-    "North America": 6,
-    "Global": 12
+    "Middle East": 0,
+    "North America": 10,
+    "Global": 14
   },
   "groups": {
-    "regulatory": 1,
-    "capital": 4,
-    "commercial": 14
+    "regulatory": 2,
+    "capital": 5,
+    "commercial": 17
   },
   "moves": [
+    {
+      "id": "zerohash-underdog-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "zerohash",
+      "title": "Underdog taps zerohash for crypto and stablecoin deposits",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/underdog-taps-zerohash-to-bring-crypto-deposits-to-prediction-markets"
+    },
+    {
+      "id": "sofi-sofie-tokenised-deposit-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "SoFi",
+      "title": "SoFi launches SOFIE, an FDIC-insured tokenised deposit paying 4.4%",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/sofi-launches-retail-tokenized-deposits-paying-4-4/"
+    },
+    {
+      "id": "ripple-arf-rlusd-liquidity-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Ripple and Arf offer RLUSD settlement loans on the XRP Ledger",
+      "source_name": "crypto.news",
+      "source_url": "https://crypto.news/ripple-arf-rlusd-settlement-liquidity-xrpl/"
+    },
+    {
+      "id": "fireblocks-visa-talks-2026-10-22",
+      "date": "2026-10-22",
+      "type": "M&A",
+      "type_label": "M&A",
+      "region": "Global",
+      "regulator": null,
+      "company": "Fireblocks",
+      "title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
+      "source_name": "The Block",
+      "source_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
+    },
     {
       "id": "zodia-custody-standard-chartered-deal-2026-10-21",
       "date": "2026-10-21",
@@ -71,58 +124,58 @@
       "title": "Tether leads pre-seed round in Bolivian USDT payments app Peso",
       "source_name": "TokenPost",
       "source_url": "https://www.tokenpost.com/news/business/37256"
-    },
-    {
-      "id": "occ-genius-final-rule-2026-10-21",
-      "date": "2026-10-21",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "OCC",
-      "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
-    },
-    {
-      "id": "circle-allaria-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Circle",
-      "title": "Circle signs Argentine broker Allaria to quote USDC against the peso",
-      "source_name": "Crypto Briefing",
-      "source_url": "https://cryptobriefing.com/circle-allaria-usdc-liquidity-argentina/"
-    },
-    {
-      "id": "mural-series-a-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "North America",
-      "regulator": null,
-      "company": "Mural",
-      "title": "Mural raises $15m Series A led by Tether for fintech money rails",
-      "source_name": "Mural",
-      "source_url": "https://muralpay.com/blog/28-million-raised"
-    },
-    {
-      "id": "moonpay-dunamu-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "MoonPay",
-      "title": "MoonPay and Upbit owner Dunamu explore stablecoin payments together",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.prnewswire.com/news-releases/moonpay-and-dunamu-to-collaborate-on-global-digital-asset-financial-infrastructure-302914516.html"
     }
   ],
   "latest": [
     {
+      "id": "zerohash-underdog-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "zerohash",
+      "title": "Underdog taps zerohash for crypto and stablecoin deposits",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/underdog-taps-zerohash-to-bring-crypto-deposits-to-prediction-markets"
+    },
+    {
+      "id": "sofi-sofie-tokenised-deposit-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "SoFi",
+      "title": "SoFi launches SOFIE, an FDIC-insured tokenised deposit paying 4.4%",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/sofi-launches-retail-tokenized-deposits-paying-4-4/"
+    },
+    {
+      "id": "ripple-arf-rlusd-liquidity-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Ripple and Arf offer RLUSD settlement loans on the XRP Ledger",
+      "source_name": "crypto.news",
+      "source_url": "https://crypto.news/ripple-arf-rlusd-settlement-liquidity-xrpl/"
+    },
+    {
+      "id": "fireblocks-visa-talks-2026-10-22",
+      "date": "2026-10-22",
+      "type": "M&A",
+      "type_label": "M&A",
+      "region": "Global",
+      "regulator": null,
+      "company": "Fireblocks",
+      "title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
+      "source_name": "The Block",
+      "source_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
+    },
+    {
       "id": "zodia-custody-standard-chartered-deal-2026-10-21",
       "date": "2026-10-21",
       "type": "M&A",
@@ -159,64 +212,16 @@
       "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
     },
     {
-      "id": "circle-allaria-2026-10-20",
+      "id": "noah-western-union-2026-10-20",
       "date": "2026-10-20",
       "type": "Partnership",
       "type_label": "Partnership",
       "region": "Global",
       "regulator": null,
-      "company": "Circle",
-      "title": "Circle signs Argentine broker Allaria to quote USDC against the peso",
-      "source_name": "Crypto Briefing",
-      "source_url": "https://cryptobriefing.com/circle-allaria-usdc-liquidity-argentina/"
-    },
-    {
-      "id": "mural-series-a-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "North America",
-      "regulator": null,
-      "company": "Mural",
-      "title": "Mural raises $15m Series A led by Tether for fintech money rails",
-      "source_name": "Mural",
-      "source_url": "https://muralpay.com/blog/28-million-raised"
-    },
-    {
-      "id": "moonpay-dunamu-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "MoonPay",
-      "title": "MoonPay and Upbit owner Dunamu explore stablecoin payments together",
-      "source_name": "PR Newswire",
-      "source_url": "https://www.prnewswire.com/news-releases/moonpay-and-dunamu-to-collaborate-on-global-digital-asset-financial-infrastructure-302914516.html"
-    },
-    {
-      "id": "mastercard-agent-pay-machines-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Mastercard",
-      "title": "Mastercard opens early access to Agent Pay for Machines",
-      "source_name": "Ledger Insights",
-      "source_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
-    },
-    {
-      "id": "fuze-modern-treasury-2026-10-19",
-      "date": "2026-10-19",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Fuze",
-      "title": "Fuze picks Modern Treasury's PSP platform for its US expansion",
-      "source_name": "Modern Treasury",
-      "source_url": "https://www.moderntreasury.com/newsroom/press-releases/fuze-finance-partners-with-modern-treasury-s-payments-infrastructure-for-u-s-expansion"
+      "company": "Noah",
+      "title": "Western Union picks Noah to run its stablecoin Receiver Redirect",
+      "source_name": "Noah",
+      "source_url": "https://noah.com/blog/noah-western-union-partnership"
     }
   ],
   "companies": [
@@ -232,6 +237,28 @@
       "last_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
     },
     {
+      "id": "visa",
+      "name": "Visa",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "Global",
+      "moves_30d": 8,
+      "last_date": "2026-10-22",
+      "last_title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
+      "last_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
+    },
+    {
+      "id": "ripple",
+      "name": "Ripple",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 8,
+      "last_date": "2026-10-22",
+      "last_title": "Ripple and Arf offer RLUSD settlement loans on the XRP Ledger",
+      "last_url": "https://crypto.news/ripple-arf-rlusd-settlement-liquidity-xrpl/"
+    },
+    {
       "id": "tether",
       "name": "Tether",
       "segment": "Issuer",
@@ -243,26 +270,15 @@
       "last_url": "https://www.tokenpost.com/news/business/37256"
     },
     {
-      "id": "visa",
-      "name": "Visa",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "Global",
-      "moves_30d": 7,
-      "last_date": "2026-10-19",
-      "last_title": "Mesh and Visa let wallet users spend stablecoin balances at merchants",
-      "last_url": "https://www.meshpay.com/press-releases/mesh-visa-partnership"
-    },
-    {
-      "id": "ripple",
-      "name": "Ripple",
-      "segment": "Settlement rails",
+      "id": "fireblocks",
+      "name": "Fireblocks",
+      "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 7,
-      "last_date": "2026-10-15",
-      "last_title": "Cross River Bank adds Ripple's RLUSD to its core banking platform",
-      "last_url": "https://www.pymnts.com/news/banking/2026/cross-river-adds-ripple-usd-stablecoin-to-power-24-7-global-money-transfers/"
+      "moves_30d": 5,
+      "last_date": "2026-10-22",
+      "last_title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
+      "last_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
     },
     {
       "id": "circle",
@@ -274,17 +290,6 @@
       "last_date": "2026-10-20",
       "last_title": "Circle signs Argentine broker Allaria to quote USDC against the peso",
       "last_url": "https://cryptobriefing.com/circle-allaria-usdc-liquidity-argentina/"
-    },
-    {
-      "id": "standard-chartered",
-      "name": "Standard Chartered",
-      "segment": "Custody & wallets",
-      "country": "United Kingdom",
-      "region": "Global",
-      "moves_30d": 4,
-      "last_date": "2026-10-21",
-      "last_title": "Standard Chartered signs deal to buy all of Zodia Custody",
-      "last_url": "https://cointelegraph.com/news/standard-chartered-acquire-zodia-custody-uk"
     }
   ],
   "licences": [
@@ -299,6 +304,18 @@
       "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
       "source_name": "PYMNTS",
       "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
+    },
+    {
+      "id": "ramp-occ-trust-charter-2026-10-19",
+      "date": "2026-10-19",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Ramp",
+      "title": "Ramp applies to the OCC for a national trust bank charter",
+      "source_name": "Payments Dive",
+      "source_url": "https://www.paymentsdive.com/news/ramp-applies-national-trust-bank-charter-occ-fintech-icba/833467/"
     },
     {
       "id": "noah-eu-casp-pi-2026-10-15",
@@ -347,25 +364,13 @@
       "title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
       "source_name": "Cointelegraph",
       "source_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
-    },
-    {
-      "id": "kraken-vara-full-2026-10-12",
-      "date": "2026-10-12",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "Kraken (Payward)",
-      "title": "Kraken's parent Payward wins full VARA approval for the UAE",
-      "source_name": "Blockhead",
-      "source_url": "https://www.blockhead.co/2026/10/13/kraken-wins-full-vara-approval-targets-uae-launch-with-dirham-trading-within-weeks/"
     }
   ],
   "regulators": [
     {
       "name": "OCC",
       "where": "United States",
-      "licences": 17,
+      "licences": 18,
       "actions": 3
     },
     {
@@ -395,11 +400,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 552,
-    "licences": 69,
+    "total": 561,
+    "licences": 70,
     "regulatory_actions": 62,
-    "commercial": 278,
-    "capital": 143,
+    "commercial": 285,
+    "capital": 144,
     "months": [
       {
         "m": "2025-10",
@@ -451,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 88
+        "n": 97
       }
     ],
     "partial_last": true
