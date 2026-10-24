@@ -1,17 +1,17 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-23T07:00:13+03:00",
-  "next_run": "2026-10-24T06:54:00+03:00",
-  "window_start": "2026-10-17",
-  "window_end": "2026-10-23",
+  "updated_at": "2026-10-24T07:00:25+03:00",
+  "next_run": "2026-10-25T06:54:00+03:00",
+  "window_start": "2026-10-18",
+  "window_end": "2026-10-24",
   "week": 43,
-  "count": 24,
-  "new_today": 9,
-  "headline": "**Western Union picked Noah** to run its stablecoin payouts while a report that **Visa is in talks to buy Fireblocks** for $2.5bn, denied by Fireblocks, capped a week of card-network and money-transfer moves into stablecoins.",
+  "count": 28,
+  "new_today": 4,
+  "headline": "The OCC's **final GENIUS Act rules** and Standard Chartered's deal to buy Zodia Custody led the week, while **Visa's reported Fireblocks talks** and Singapore's widened BLOOM network showed card networks pushing deeper into stablecoin settlement.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 11,
+      "n": 12,
       "label": "partnerships"
     },
     {
@@ -21,8 +21,13 @@
     },
     {
       "type": "Funding",
-      "n": 3,
+      "n": 4,
       "label": "funding rounds"
+    },
+    {
+      "type": "License",
+      "n": 2,
+      "label": "licences"
     },
     {
       "type": "M&A",
@@ -30,29 +35,48 @@
       "label": "M&A deals"
     },
     {
-      "type": "License",
-      "n": 1,
-      "label": "licence"
-    },
-    {
       "type": "Regulation",
-      "n": 1,
-      "label": "regulatory action"
+      "n": 2,
+      "label": "regulatory actions"
     }
   ],
-  "mix_text": "11 partnerships · 6 launches · 3 funding rounds · 2 M&A deals · 1 licence · 1 regulatory action",
+  "mix_text": "12 partnerships · 6 launches · 4 funding rounds · 2 licences · 2 M&A deals · 2 regulatory actions",
   "regions": {
-    "Europe": 0,
-    "Middle East": 0,
-    "North America": 10,
-    "Global": 14
+    "Europe": 1,
+    "Middle East": 1,
+    "North America": 11,
+    "Global": 15
   },
   "groups": {
-    "regulatory": 2,
-    "capital": 5,
-    "commercial": 17
+    "regulatory": 4,
+    "capital": 6,
+    "commercial": 18
   },
   "moves": [
+    {
+      "id": "mas-bloom-expansion-2026-10-23",
+      "date": "2026-10-23",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": "MAS",
+      "company": "Monetary Authority of Singapore",
+      "title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
+      "source_name": "MAS",
+      "source_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
+    },
+    {
+      "id": "cbi-coinbase-ireland-fine-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "CBI",
+      "company": "Central Bank of Ireland",
+      "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
+    },
     {
       "id": "zerohash-underdog-2026-10-22",
       "date": "2026-10-22",
@@ -100,34 +124,34 @@
       "title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
       "source_name": "The Block",
       "source_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
-    },
-    {
-      "id": "zodia-custody-standard-chartered-deal-2026-10-21",
-      "date": "2026-10-21",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Global",
-      "regulator": null,
-      "company": "Zodia Custody",
-      "title": "Standard Chartered signs deal to buy all of Zodia Custody",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/standard-chartered-acquire-zodia-custody-uk"
-    },
-    {
-      "id": "peso-tether-pre-seed-2026-10-21",
-      "date": "2026-10-21",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "Peso",
-      "title": "Tether leads pre-seed round in Bolivian USDT payments app Peso",
-      "source_name": "TokenPost",
-      "source_url": "https://www.tokenpost.com/news/business/37256"
     }
   ],
   "latest": [
     {
+      "id": "mas-bloom-expansion-2026-10-23",
+      "date": "2026-10-23",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": "MAS",
+      "company": "Monetary Authority of Singapore",
+      "title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
+      "source_name": "MAS",
+      "source_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
+    },
+    {
+      "id": "cbi-coinbase-ireland-fine-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "CBI",
+      "company": "Central Bank of Ireland",
+      "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
+    },
+    {
       "id": "zerohash-underdog-2026-10-22",
       "date": "2026-10-22",
       "type": "Partnership",
@@ -176,6 +200,18 @@
       "source_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
     },
     {
+      "id": "erebor-robinhood-ventures-2026-10-21",
+      "date": "2026-10-21",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "North America",
+      "regulator": null,
+      "company": "Erebor",
+      "title": "Robinhood Ventures Fund I buys $30m of Erebor Bank preferred stock",
+      "source_name": "Robinhood",
+      "source_url": "https://robinhood.com/newsroom/rvi-invests-in-erebor/"
+    },
+    {
       "id": "zodia-custody-standard-chartered-deal-2026-10-21",
       "date": "2026-10-21",
       "type": "M&A",
@@ -186,42 +222,6 @@
       "title": "Standard Chartered signs deal to buy all of Zodia Custody",
       "source_name": "Cointelegraph",
       "source_url": "https://cointelegraph.com/news/standard-chartered-acquire-zodia-custody-uk"
-    },
-    {
-      "id": "peso-tether-pre-seed-2026-10-21",
-      "date": "2026-10-21",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "Peso",
-      "title": "Tether leads pre-seed round in Bolivian USDT payments app Peso",
-      "source_name": "TokenPost",
-      "source_url": "https://www.tokenpost.com/news/business/37256"
-    },
-    {
-      "id": "occ-genius-final-rule-2026-10-21",
-      "date": "2026-10-21",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "OCC",
-      "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
-    },
-    {
-      "id": "noah-western-union-2026-10-20",
-      "date": "2026-10-20",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Noah",
-      "title": "Western Union picks Noah to run its stablecoin Receiver Redirect",
-      "source_name": "Noah",
-      "source_url": "https://noah.com/blog/noah-western-union-partnership"
     }
   ],
   "companies": [
@@ -231,10 +231,10 @@
       "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 10,
-      "last_date": "2026-10-20",
-      "last_title": "Mastercard opens early access to Agent Pay for Machines",
-      "last_url": "https://www.ledgerinsights.com/mastercard-launches-early-access-for-agent-pay-for-machines/"
+      "moves_30d": 11,
+      "last_date": "2026-10-22",
+      "last_title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
+      "last_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
     },
     {
       "id": "visa",
@@ -242,10 +242,10 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "Global",
-      "moves_30d": 8,
-      "last_date": "2026-10-22",
-      "last_title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
-      "last_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
+      "moves_30d": 9,
+      "last_date": "2026-10-23",
+      "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
+      "last_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
     },
     {
       "id": "ripple",
@@ -253,10 +253,10 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 8,
-      "last_date": "2026-10-22",
-      "last_title": "Ripple and Arf offer RLUSD settlement loans on the XRP Ledger",
-      "last_url": "https://crypto.news/ripple-arf-rlusd-settlement-liquidity-xrpl/"
+      "moves_30d": 9,
+      "last_date": "2026-10-23",
+      "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
+      "last_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
     },
     {
       "id": "tether",
@@ -270,6 +270,17 @@
       "last_url": "https://www.tokenpost.com/news/business/37256"
     },
     {
+      "id": "mastercard",
+      "name": "Mastercard",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "Global",
+      "moves_30d": 5,
+      "last_date": "2026-10-23",
+      "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
+      "last_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
+    },
+    {
       "id": "fireblocks",
       "name": "Fireblocks",
       "segment": "Custody & wallets",
@@ -279,20 +290,21 @@
       "last_date": "2026-10-22",
       "last_title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
       "last_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
-    },
-    {
-      "id": "circle",
-      "name": "Circle",
-      "segment": "Issuer",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 5,
-      "last_date": "2026-10-20",
-      "last_title": "Circle signs Argentine broker Allaria to quote USDC against the peso",
-      "last_url": "https://cryptobriefing.com/circle-allaria-usdc-liquidity-argentina/"
     }
   ],
   "licences": [
+    {
+      "id": "cbi-coinbase-ireland-fine-2026-10-22",
+      "date": "2026-10-22",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "CBI",
+      "company": "Central Bank of Ireland",
+      "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
+    },
     {
       "id": "occ-genius-final-rule-2026-10-21",
       "date": "2026-10-21",
@@ -304,6 +316,18 @@
       "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
       "source_name": "PYMNTS",
       "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
+    },
+    {
+      "id": "bybit-vara-licence-2026-10-20",
+      "date": "2026-10-20",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "Middle East",
+      "regulator": "VARA",
+      "company": "Bybit",
+      "title": "Bybit wins a full VARA licence for exchange services in Dubai",
+      "source_name": "VARA",
+      "source_url": "https://www.vara.ae/en/licenses-and-register/public-register/bybit-fintech-fze-bybit/"
     },
     {
       "id": "ramp-occ-trust-charter-2026-10-19",
@@ -340,30 +364,6 @@
       "title": "Ant International wins two CBUAE payments licences in the UAE",
       "source_name": "Fintech News Middle East",
       "source_url": "https://fintechnews.ae/34269/payments/ant-international-expands-uae-payment-services/"
-    },
-    {
-      "id": "qivalis-dnb-emi-2026-10-14",
-      "date": "2026-10-14",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Europe",
-      "regulator": "DNB",
-      "company": "Qivalis",
-      "title": "Qivalis wins Dutch e-money licence for bank-backed euro stablecoin",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/14/dutch-regulator-approves-qivalis-as-electronic-money-institution-under-mica-rules"
-    },
-    {
-      "id": "eba-usdc-significant-2026-10-14",
-      "date": "2026-10-14",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "EBA",
-      "company": "European Banking Authority",
-      "title": "EBA classes Circle's USDC as a significant e-money token under MiCA",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica"
     }
   ],
   "regulators": [
@@ -394,17 +394,17 @@
     {
       "name": "VARA",
       "where": "Dubai",
-      "licences": 4,
+      "licences": 5,
       "actions": 2
     }
   ],
   "trends": {
     "since": "2025-10",
-    "total": 561,
-    "licences": 70,
-    "regulatory_actions": 62,
-    "commercial": 285,
-    "capital": 144,
+    "total": 565,
+    "licences": 71,
+    "regulatory_actions": 63,
+    "commercial": 286,
+    "capital": 145,
     "months": [
       {
         "m": "2025-10",
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 97
+        "n": 101
       }
     ],
     "partial_last": true
