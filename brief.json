@@ -1,13 +1,13 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-24T07:00:25+03:00",
-  "next_run": "2026-10-25T06:54:00+03:00",
-  "window_start": "2026-10-18",
-  "window_end": "2026-10-24",
+  "updated_at": "2026-10-25T07:20:00+03:00",
+  "next_run": "2026-10-26T06:54:00+03:00",
+  "window_start": "2026-10-19",
+  "window_end": "2026-10-25",
   "week": 43,
-  "count": 28,
+  "count": 32,
   "new_today": 4,
-  "headline": "The OCC's **final GENIUS Act rules** and Standard Chartered's deal to buy Zodia Custody led the week, while **Visa's reported Fireblocks talks** and Singapore's widened BLOOM network showed card networks pushing deeper into stablecoin settlement.",
+  "headline": "The **OCC finalised its GENIUS Act rules** and **Standard Chartered agreed to buy all of Zodia Custody**, while reported Visa talks for Fireblocks and Western Union's pick of Noah showed incumbents buying stablecoin plumbing.",
   "mix": [
     {
       "type": "Partnership",
@@ -16,7 +16,7 @@
     },
     {
       "type": "Launch",
-      "n": 6,
+      "n": 7,
       "label": "launches"
     },
     {
@@ -25,34 +25,70 @@
       "label": "funding rounds"
     },
     {
-      "type": "License",
-      "n": 2,
-      "label": "licences"
+      "type": "Regulation",
+      "n": 4,
+      "label": "regulatory actions"
     },
     {
       "type": "M&A",
-      "n": 2,
+      "n": 3,
       "label": "M&A deals"
     },
     {
-      "type": "Regulation",
+      "type": "License",
       "n": 2,
-      "label": "regulatory actions"
+      "label": "licences"
     }
   ],
-  "mix_text": "12 partnerships · 6 launches · 4 funding rounds · 2 licences · 2 M&A deals · 2 regulatory actions",
+  "mix_text": "12 partnerships · 7 launches · 4 funding rounds · 4 regulatory actions · 3 M&A deals · 2 licences",
   "regions": {
-    "Europe": 1,
+    "Europe": 3,
     "Middle East": 1,
-    "North America": 11,
-    "Global": 15
+    "North America": 12,
+    "Global": 16
   },
   "groups": {
-    "regulatory": 4,
-    "capital": 6,
-    "commercial": 18
+    "regulatory": 6,
+    "capital": 7,
+    "commercial": 19
   },
   "moves": [
+    {
+      "id": "canada-stablecoin-regulations-2026-10-24",
+      "date": "2026-10-24",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "Bank of Canada",
+      "company": "Department of Finance Canada",
+      "title": "Canada publishes draft Stablecoin Regulations under Bank of Canada",
+      "source_name": "Canada Gazette",
+      "source_url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-10-24/html/reg1-eng.html"
+    },
+    {
+      "id": "libeara-zodia-markets-jersey-2026-10-23",
+      "date": "2026-10-23",
+      "type": "M&A",
+      "type_label": "M&A",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Libeara",
+      "title": "Libeara agrees to buy Zodia Markets' Jersey-licensed dealer",
+      "source_name": "Blockhead",
+      "source_url": "https://www.blockhead.co/2026/10/23/libeara-to-buy-zodia-markets-jersey-arm-adding-a-second-regulated-dealer/"
+    },
+    {
+      "id": "hsbc-redcoin-launch-2026-10-23",
+      "date": "2026-10-23",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": "HKMA",
+      "company": "HSBC",
+      "title": "HSBC launches RedCoin, a Hong Kong dollar stablecoin, inside PayMe",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/blockchain/2026/hsbc-launches-hong-kong-dollar-stablecoin-for-everyday-payments/"
+    },
     {
       "id": "mas-bloom-expansion-2026-10-23",
       "date": "2026-10-23",
@@ -88,46 +124,46 @@
       "title": "Underdog taps zerohash for crypto and stablecoin deposits",
       "source_name": "Cointelegraph",
       "source_url": "https://cointelegraph.com/news/underdog-taps-zerohash-to-bring-crypto-deposits-to-prediction-markets"
-    },
-    {
-      "id": "sofi-sofie-tokenised-deposit-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "SoFi",
-      "title": "SoFi launches SOFIE, an FDIC-insured tokenised deposit paying 4.4%",
-      "source_name": "Ledger Insights",
-      "source_url": "https://www.ledgerinsights.com/sofi-launches-retail-tokenized-deposits-paying-4-4/"
-    },
-    {
-      "id": "ripple-arf-rlusd-liquidity-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "Ripple and Arf offer RLUSD settlement loans on the XRP Ledger",
-      "source_name": "crypto.news",
-      "source_url": "https://crypto.news/ripple-arf-rlusd-settlement-liquidity-xrpl/"
-    },
-    {
-      "id": "fireblocks-visa-talks-2026-10-22",
-      "date": "2026-10-22",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Global",
-      "regulator": null,
-      "company": "Fireblocks",
-      "title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
-      "source_name": "The Block",
-      "source_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
     }
   ],
   "latest": [
     {
+      "id": "canada-stablecoin-regulations-2026-10-24",
+      "date": "2026-10-24",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "Bank of Canada",
+      "company": "Department of Finance Canada",
+      "title": "Canada publishes draft Stablecoin Regulations under Bank of Canada",
+      "source_name": "Canada Gazette",
+      "source_url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-10-24/html/reg1-eng.html"
+    },
+    {
+      "id": "libeara-zodia-markets-jersey-2026-10-23",
+      "date": "2026-10-23",
+      "type": "M&A",
+      "type_label": "M&A",
+      "region": "Europe",
+      "regulator": null,
+      "company": "Libeara",
+      "title": "Libeara agrees to buy Zodia Markets' Jersey-licensed dealer",
+      "source_name": "Blockhead",
+      "source_url": "https://www.blockhead.co/2026/10/23/libeara-to-buy-zodia-markets-jersey-arm-adding-a-second-regulated-dealer/"
+    },
+    {
+      "id": "hsbc-redcoin-launch-2026-10-23",
+      "date": "2026-10-23",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": "HKMA",
+      "company": "HSBC",
+      "title": "HSBC launches RedCoin, a Hong Kong dollar stablecoin, inside PayMe",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/blockchain/2026/hsbc-launches-hong-kong-dollar-stablecoin-for-everyday-payments/"
+    },
+    {
       "id": "mas-bloom-expansion-2026-10-23",
       "date": "2026-10-23",
       "type": "Partnership",
@@ -186,42 +222,6 @@
       "title": "Ripple and Arf offer RLUSD settlement loans on the XRP Ledger",
       "source_name": "crypto.news",
       "source_url": "https://crypto.news/ripple-arf-rlusd-settlement-liquidity-xrpl/"
-    },
-    {
-      "id": "fireblocks-visa-talks-2026-10-22",
-      "date": "2026-10-22",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Global",
-      "regulator": null,
-      "company": "Fireblocks",
-      "title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
-      "source_name": "The Block",
-      "source_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
-    },
-    {
-      "id": "erebor-robinhood-ventures-2026-10-21",
-      "date": "2026-10-21",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "North America",
-      "regulator": null,
-      "company": "Erebor",
-      "title": "Robinhood Ventures Fund I buys $30m of Erebor Bank preferred stock",
-      "source_name": "Robinhood",
-      "source_url": "https://robinhood.com/newsroom/rvi-invests-in-erebor/"
-    },
-    {
-      "id": "zodia-custody-standard-chartered-deal-2026-10-21",
-      "date": "2026-10-21",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Global",
-      "regulator": null,
-      "company": "Zodia Custody",
-      "title": "Standard Chartered signs deal to buy all of Zodia Custody",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/standard-chartered-acquire-zodia-custody-uk"
     }
   ],
   "companies": [
@@ -270,6 +270,17 @@
       "last_url": "https://www.tokenpost.com/news/business/37256"
     },
     {
+      "id": "standard-chartered",
+      "name": "Standard Chartered",
+      "segment": "Custody & wallets",
+      "country": "United Kingdom",
+      "region": "Global",
+      "moves_30d": 5,
+      "last_date": "2026-10-23",
+      "last_title": "Libeara agrees to buy Zodia Markets' Jersey-licensed dealer",
+      "last_url": "https://www.blockhead.co/2026/10/23/libeara-to-buy-zodia-markets-jersey-arm-adding-a-second-regulated-dealer/"
+    },
+    {
       "id": "mastercard",
       "name": "Mastercard",
       "segment": "Settlement rails",
@@ -279,20 +290,21 @@
       "last_date": "2026-10-23",
       "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
       "last_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
-    },
-    {
-      "id": "fireblocks",
-      "name": "Fireblocks",
-      "segment": "Custody & wallets",
-      "country": "United States",
-      "region": "North America",
-      "moves_30d": 5,
-      "last_date": "2026-10-22",
-      "last_title": "Visa reported in talks to buy Fireblocks for $2.5bn; Fireblocks denies",
-      "last_url": "https://www.theblock.co/news/deals/2026-10-22-visa-in-talks-acquire-crypto-custody-firm-fireblocks-around-2-5-billion-axios-421926"
     }
   ],
   "licences": [
+    {
+      "id": "canada-stablecoin-regulations-2026-10-24",
+      "date": "2026-10-24",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "Bank of Canada",
+      "company": "Department of Finance Canada",
+      "title": "Canada publishes draft Stablecoin Regulations under Bank of Canada",
+      "source_name": "Canada Gazette",
+      "source_url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-10-24/html/reg1-eng.html"
+    },
     {
       "id": "cbi-coinbase-ireland-fine-2026-10-22",
       "date": "2026-10-22",
@@ -304,6 +316,18 @@
       "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
+    },
+    {
+      "id": "fca-cryptoasset-perimeter-cp26-36-2026-10-21",
+      "date": "2026-10-21",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "FCA",
+      "company": "Financial Conduct Authority",
+      "title": "FCA consults on new exclusions from the UK cryptoasset perimeter",
+      "source_name": "FCA",
+      "source_url": "https://www.fca.org.uk/publications/consultation-papers/cp26-36-cryptoasset-perimeter-guidance"
     },
     {
       "id": "occ-genius-final-rule-2026-10-21",
@@ -340,30 +364,6 @@
       "title": "Ramp applies to the OCC for a national trust bank charter",
       "source_name": "Payments Dive",
       "source_url": "https://www.paymentsdive.com/news/ramp-applies-national-trust-bank-charter-occ-fintech-icba/833467/"
-    },
-    {
-      "id": "noah-eu-casp-pi-2026-10-15",
-      "date": "2026-10-15",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Noah",
-      "title": "Noah wins MiCA CASP and payment institution licences for the EU",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/noah-secures-mica-casp-and-psd2-payment-institution-licences-in-the-eu"
-    },
-    {
-      "id": "ant-international-cbuae-licences-2026-10-15",
-      "date": "2026-10-15",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "CBUAE",
-      "company": "Ant International",
-      "title": "Ant International wins two CBUAE payments licences in the UAE",
-      "source_name": "Fintech News Middle East",
-      "source_url": "https://fintechnews.ae/34269/payments/ant-international-expands-uae-payment-services/"
     }
   ],
   "regulators": [
@@ -389,7 +389,7 @@
       "name": "FCA",
       "where": "United Kingdom",
       "licences": 4,
-      "actions": 4
+      "actions": 5
     },
     {
       "name": "VARA",
@@ -400,11 +400,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 565,
+    "total": 569,
     "licences": 71,
-    "regulatory_actions": 63,
-    "commercial": 286,
-    "capital": 145,
+    "regulatory_actions": 65,
+    "commercial": 287,
+    "capital": 146,
     "months": [
       {
         "m": "2025-10",
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 101
+        "n": 105
       }
     ],
     "partial_last": true
