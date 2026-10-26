@@ -1,33 +1,33 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-25T07:20:00+03:00",
-  "next_run": "2026-10-26T06:54:00+03:00",
-  "window_start": "2026-10-19",
-  "window_end": "2026-10-25",
-  "week": 43,
-  "count": 32,
-  "new_today": 4,
-  "headline": "The **OCC finalised its GENIUS Act rules** and **Standard Chartered agreed to buy all of Zodia Custody**, while reported Visa talks for Fireblocks and Western Union's pick of Noah showed incumbents buying stablecoin plumbing.",
+  "updated_at": "2026-10-26T07:00:00+03:00",
+  "next_run": "2026-10-27T06:54:00+03:00",
+  "window_start": "2026-10-20",
+  "window_end": "2026-10-26",
+  "week": 44,
+  "count": 22,
+  "new_today": 1,
+  "headline": "Rule-making set the week's tone: the **OCC finalised its GENIUS Act rules** and Canada published draft stablecoin regulations, while **Standard Chartered agreed to buy all of Zodia Custody** and HSBC put a Hong Kong dollar stablecoin in front of PayMe's users.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 12,
+      "n": 7,
       "label": "partnerships"
     },
     {
       "type": "Launch",
-      "n": 7,
-      "label": "launches"
-    },
-    {
-      "type": "Funding",
       "n": 4,
-      "label": "funding rounds"
+      "label": "launches"
     },
     {
       "type": "Regulation",
       "n": 4,
       "label": "regulatory actions"
+    },
+    {
+      "type": "Funding",
+      "n": 3,
+      "label": "funding rounds"
     },
     {
       "type": "M&A",
@@ -36,21 +36,21 @@
     },
     {
       "type": "License",
-      "n": 2,
-      "label": "licences"
+      "n": 1,
+      "label": "licence"
     }
   ],
-  "mix_text": "12 partnerships · 7 launches · 4 funding rounds · 4 regulatory actions · 3 M&A deals · 2 licences",
+  "mix_text": "7 partnerships · 4 launches · 4 regulatory actions · 3 funding rounds · 3 M&A deals · 1 licence",
   "regions": {
     "Europe": 3,
     "Middle East": 1,
-    "North America": 12,
-    "Global": 16
+    "North America": 7,
+    "Global": 11
   },
   "groups": {
-    "regulatory": 6,
-    "capital": 7,
-    "commercial": 19
+    "regulatory": 5,
+    "capital": 6,
+    "commercial": 11
   },
   "moves": [
     {
@@ -400,10 +400,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 569,
+    "total": 570,
     "licences": 71,
     "regulatory_actions": 65,
-    "commercial": 287,
+    "commercial": 288,
     "capital": 146,
     "months": [
       {
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 105
+        "n": 106
       }
     ],
     "partial_last": true
