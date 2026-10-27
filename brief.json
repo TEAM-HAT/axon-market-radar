@@ -1,33 +1,23 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-26T07:00:00+03:00",
-  "next_run": "2026-10-27T06:54:00+03:00",
-  "window_start": "2026-10-20",
-  "window_end": "2026-10-26",
+  "updated_at": "2026-10-27T07:00:00+03:00",
+  "next_run": "2026-10-28T06:54:00+03:00",
+  "window_start": "2026-10-21",
+  "window_end": "2026-10-27",
   "week": 44,
-  "count": 22,
-  "new_today": 1,
-  "headline": "Rule-making set the week's tone: the **OCC finalised its GENIUS Act rules** and Canada published draft stablecoin regulations, while **Standard Chartered agreed to buy all of Zodia Custody** and HSBC put a Hong Kong dollar stablecoin in front of PayMe's users.",
+  "count": 17,
+  "new_today": 3,
+  "headline": "US rule-makers set the pace: the OCC finalised its GENIUS Act rule and is now **urging community banks to issue stablecoins**, while **Ripple won final approval for its national trust bank**.",
   "mix": [
     {
-      "type": "Partnership",
-      "n": 7,
-      "label": "partnerships"
-    },
-    {
-      "type": "Launch",
-      "n": 4,
-      "label": "launches"
-    },
-    {
       "type": "Regulation",
-      "n": 4,
+      "n": 5,
       "label": "regulatory actions"
     },
     {
-      "type": "Funding",
+      "type": "Launch",
       "n": 3,
-      "label": "funding rounds"
+      "label": "launches"
     },
     {
       "type": "M&A",
@@ -35,24 +25,70 @@
       "label": "M&A deals"
     },
     {
+      "type": "Partnership",
+      "n": 3,
+      "label": "partnerships"
+    },
+    {
+      "type": "Funding",
+      "n": 2,
+      "label": "funding rounds"
+    },
+    {
       "type": "License",
       "n": 1,
       "label": "licence"
     }
   ],
-  "mix_text": "7 partnerships · 4 launches · 4 regulatory actions · 3 funding rounds · 3 M&A deals · 1 licence",
+  "mix_text": "5 regulatory actions · 3 launches · 3 M&A deals · 3 partnerships · 2 funding rounds · 1 licence",
   "regions": {
     "Europe": 3,
-    "Middle East": 1,
+    "Middle East": 0,
     "North America": 7,
-    "Global": 11
+    "Global": 7
   },
   "groups": {
-    "regulatory": 5,
-    "capital": 6,
-    "commercial": 11
+    "regulatory": 6,
+    "capital": 5,
+    "commercial": 6
   },
   "moves": [
+    {
+      "id": "ripple-treasury-24-7-returns-2026-10-26",
+      "date": "2026-10-26",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Ripple Treasury adds round-the-clock returns on idle corporate cash",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/news/b2b-payments/2026/ripple-equips-its-treasury-tool-with-new-capabilities/"
+    },
+    {
+      "id": "ripple-occ-final-trust-2026-10-26",
+      "date": "2026-10-26",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Ripple",
+      "title": "Ripple wins final OCC approval for its national trust bank",
+      "source_name": "Ripple",
+      "source_url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank/"
+    },
+    {
+      "id": "occ-community-banks-stablecoins-2026-10-26",
+      "date": "2026-10-26",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "OCC",
+      "title": "OCC urges community banks to apply to issue payment stablecoins",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/26/occ-calls-on-community-banks-to-enter-the-stablecoin-payments-market"
+    },
     {
       "id": "canada-stablecoin-regulations-2026-10-24",
       "date": "2026-10-24",
@@ -88,46 +124,46 @@
       "title": "HSBC launches RedCoin, a Hong Kong dollar stablecoin, inside PayMe",
       "source_name": "PYMNTS",
       "source_url": "https://www.pymnts.com/blockchain/2026/hsbc-launches-hong-kong-dollar-stablecoin-for-everyday-payments/"
-    },
-    {
-      "id": "mas-bloom-expansion-2026-10-23",
-      "date": "2026-10-23",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": "MAS",
-      "company": "Monetary Authority of Singapore",
-      "title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
-      "source_name": "MAS",
-      "source_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
-    },
-    {
-      "id": "cbi-coinbase-ireland-fine-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "CBI",
-      "company": "Central Bank of Ireland",
-      "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
-    },
-    {
-      "id": "zerohash-underdog-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "zerohash",
-      "title": "Underdog taps zerohash for crypto and stablecoin deposits",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/underdog-taps-zerohash-to-bring-crypto-deposits-to-prediction-markets"
     }
   ],
   "latest": [
     {
+      "id": "ripple-treasury-24-7-returns-2026-10-26",
+      "date": "2026-10-26",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Ripple Treasury adds round-the-clock returns on idle corporate cash",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/news/b2b-payments/2026/ripple-equips-its-treasury-tool-with-new-capabilities/"
+    },
+    {
+      "id": "ripple-occ-final-trust-2026-10-26",
+      "date": "2026-10-26",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Ripple",
+      "title": "Ripple wins final OCC approval for its national trust bank",
+      "source_name": "Ripple",
+      "source_url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank/"
+    },
+    {
+      "id": "occ-community-banks-stablecoins-2026-10-26",
+      "date": "2026-10-26",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "OCC",
+      "title": "OCC urges community banks to apply to issue payment stablecoins",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/26/occ-calls-on-community-banks-to-enter-the-stablecoin-payments-market"
+    },
+    {
       "id": "canada-stablecoin-regulations-2026-10-24",
       "date": "2026-10-24",
       "type": "Regulation",
@@ -186,45 +222,20 @@
       "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
-    },
-    {
-      "id": "zerohash-underdog-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "zerohash",
-      "title": "Underdog taps zerohash for crypto and stablecoin deposits",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/underdog-taps-zerohash-to-bring-crypto-deposits-to-prediction-markets"
-    },
-    {
-      "id": "sofi-sofie-tokenised-deposit-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "SoFi",
-      "title": "SoFi launches SOFIE, an FDIC-insured tokenised deposit paying 4.4%",
-      "source_name": "Ledger Insights",
-      "source_url": "https://www.ledgerinsights.com/sofi-launches-retail-tokenized-deposits-paying-4-4/"
-    },
-    {
-      "id": "ripple-arf-rlusd-liquidity-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "Ripple and Arf offer RLUSD settlement loans on the XRP Ledger",
-      "source_name": "crypto.news",
-      "source_url": "https://crypto.news/ripple-arf-rlusd-settlement-liquidity-xrpl/"
     }
   ],
   "companies": [
+    {
+      "id": "ripple",
+      "name": "Ripple",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 11,
+      "last_date": "2026-10-26",
+      "last_title": "Ripple Treasury adds round-the-clock returns on idle corporate cash",
+      "last_url": "https://www.pymnts.com/news/b2b-payments/2026/ripple-equips-its-treasury-tool-with-new-capabilities/"
+    },
     {
       "id": "coinbase",
       "name": "Coinbase",
@@ -242,17 +253,6 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "Global",
-      "moves_30d": 9,
-      "last_date": "2026-10-23",
-      "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
-      "last_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
-    },
-    {
-      "id": "ripple",
-      "name": "Ripple",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "North America",
       "moves_30d": 9,
       "last_date": "2026-10-23",
       "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
@@ -293,6 +293,30 @@
     }
   ],
   "licences": [
+    {
+      "id": "ripple-occ-final-trust-2026-10-26",
+      "date": "2026-10-26",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Ripple",
+      "title": "Ripple wins final OCC approval for its national trust bank",
+      "source_name": "Ripple",
+      "source_url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank/"
+    },
+    {
+      "id": "occ-community-banks-stablecoins-2026-10-26",
+      "date": "2026-10-26",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "OCC",
+      "title": "OCC urges community banks to apply to issue payment stablecoins",
+      "source_name": "CoinDesk",
+      "source_url": "https://www.coindesk.com/policy/2026/10/26/occ-calls-on-community-banks-to-enter-the-stablecoin-payments-market"
+    },
     {
       "id": "canada-stablecoin-regulations-2026-10-24",
       "date": "2026-10-24",
@@ -340,38 +364,14 @@
       "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
       "source_name": "PYMNTS",
       "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
-    },
-    {
-      "id": "bybit-vara-licence-2026-10-20",
-      "date": "2026-10-20",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "Bybit",
-      "title": "Bybit wins a full VARA licence for exchange services in Dubai",
-      "source_name": "VARA",
-      "source_url": "https://www.vara.ae/en/licenses-and-register/public-register/bybit-fintech-fze-bybit/"
-    },
-    {
-      "id": "ramp-occ-trust-charter-2026-10-19",
-      "date": "2026-10-19",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Ramp",
-      "title": "Ramp applies to the OCC for a national trust bank charter",
-      "source_name": "Payments Dive",
-      "source_url": "https://www.paymentsdive.com/news/ramp-applies-national-trust-bank-charter-occ-fintech-icba/833467/"
     }
   ],
   "regulators": [
     {
       "name": "OCC",
       "where": "United States",
-      "licences": 18,
-      "actions": 3
+      "licences": 19,
+      "actions": 4
     },
     {
       "name": "Other",
@@ -400,10 +400,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 570,
-    "licences": 71,
-    "regulatory_actions": 65,
-    "commercial": 288,
+    "total": 574,
+    "licences": 72,
+    "regulatory_actions": 66,
+    "commercial": 290,
     "capital": 146,
     "months": [
       {
@@ -456,7 +456,7 @@
       },
       {
         "m": "2026-10",
-        "n": 106
+        "n": 110
       }
     ],
     "partial_last": true
