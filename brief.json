@@ -1,18 +1,18 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-27T07:00:00+03:00",
-  "next_run": "2026-10-28T06:54:00+03:00",
-  "window_start": "2026-10-21",
-  "window_end": "2026-10-27",
+  "updated_at": "2026-10-28T07:20:00+03:00",
+  "next_run": "2026-10-29T06:54:00+03:00",
+  "window_start": "2026-10-22",
+  "window_end": "2026-10-28",
   "week": 44,
   "count": 17,
-  "new_today": 3,
-  "headline": "US rule-makers set the pace: the OCC finalised its GENIUS Act rule and is now **urging community banks to issue stablecoins**, while **Ripple won final approval for its national trust bank**.",
+  "new_today": 5,
+  "headline": "Ripple led the week, winning **final OCC approval for its national trust bank** and then signing Robinhood and BNY to RLUSD at its Swell conference. Canada published **draft Stablecoin Regulations** under the Bank of Canada, and HSBC launched its RedCoin stablecoin in Hong Kong.",
   "mix": [
     {
-      "type": "Regulation",
-      "n": 5,
-      "label": "regulatory actions"
+      "type": "Partnership",
+      "n": 8,
+      "label": "partnerships"
     },
     {
       "type": "Launch",
@@ -20,19 +20,14 @@
       "label": "launches"
     },
     {
+      "type": "Regulation",
+      "n": 3,
+      "label": "regulatory actions"
+    },
+    {
       "type": "M&A",
-      "n": 3,
-      "label": "M&A deals"
-    },
-    {
-      "type": "Partnership",
-      "n": 3,
-      "label": "partnerships"
-    },
-    {
-      "type": "Funding",
       "n": 2,
-      "label": "funding rounds"
+      "label": "M&A deals"
     },
     {
       "type": "License",
@@ -40,19 +35,79 @@
       "label": "licence"
     }
   ],
-  "mix_text": "5 regulatory actions · 3 launches · 3 M&A deals · 3 partnerships · 2 funding rounds · 1 licence",
+  "mix_text": "8 partnerships · 3 launches · 3 regulatory actions · 2 M&A deals · 1 licence",
   "regions": {
-    "Europe": 3,
+    "Europe": 2,
     "Middle East": 0,
-    "North America": 7,
+    "North America": 8,
     "Global": 7
   },
   "groups": {
-    "regulatory": 6,
-    "capital": 5,
-    "commercial": 6
+    "regulatory": 4,
+    "capital": 2,
+    "commercial": 11
   },
   "moves": [
+    {
+      "id": "ripple-robinhood-rlusd-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Robinhood adopts RLUSD, Ripple Treasury and Ripple Prime in wide deal",
+      "source_name": "Ripple",
+      "source_url": "https://ripple.com/ripple-press/ripple-and-robinhood-partner-to-power-the-next-generation-of-finance/"
+    },
+    {
+      "id": "ripple-c2fo-instant-pay-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "C2FO to settle supplier Instant Pay in RLUSD on the XRP Ledger",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
+    },
+    {
+      "id": "ripple-bny-rlusd-custody-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "BNY adds XRP and RLUSD custody and plans RLUSD minting for clients",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
+    },
+    {
+      "id": "circle-aci-worldwide-colombia-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle",
+      "title": "ACI Worldwide and Circle bring USDC settlement into bank payment hubs",
+      "source_name": "Business Wire",
+      "source_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
+    },
+    {
+      "id": "anchorage-digital-bitso-mxnb-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Anchorage Digital",
+      "title": "Anchorage takes custody of Bitso's MXNB peso token on six chains",
+      "source_name": "Bitcoin.com News",
+      "source_url": "https://news.bitcoin.com/stablecoins/mexican-peso-stablecoin-gains-anchorage-custody-ethereum/"
+    },
     {
       "id": "ripple-treasury-24-7-returns-2026-10-26",
       "date": "2026-10-26",
@@ -64,70 +119,70 @@
       "title": "Ripple Treasury adds round-the-clock returns on idle corporate cash",
       "source_name": "PYMNTS",
       "source_url": "https://www.pymnts.com/news/b2b-payments/2026/ripple-equips-its-treasury-tool-with-new-capabilities/"
-    },
-    {
-      "id": "ripple-occ-final-trust-2026-10-26",
-      "date": "2026-10-26",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Ripple",
-      "title": "Ripple wins final OCC approval for its national trust bank",
-      "source_name": "Ripple",
-      "source_url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank/"
-    },
-    {
-      "id": "occ-community-banks-stablecoins-2026-10-26",
-      "date": "2026-10-26",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "OCC",
-      "title": "OCC urges community banks to apply to issue payment stablecoins",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/26/occ-calls-on-community-banks-to-enter-the-stablecoin-payments-market"
-    },
-    {
-      "id": "canada-stablecoin-regulations-2026-10-24",
-      "date": "2026-10-24",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "Bank of Canada",
-      "company": "Department of Finance Canada",
-      "title": "Canada publishes draft Stablecoin Regulations under Bank of Canada",
-      "source_name": "Canada Gazette",
-      "source_url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-10-24/html/reg1-eng.html"
-    },
-    {
-      "id": "libeara-zodia-markets-jersey-2026-10-23",
-      "date": "2026-10-23",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Libeara",
-      "title": "Libeara agrees to buy Zodia Markets' Jersey-licensed dealer",
-      "source_name": "Blockhead",
-      "source_url": "https://www.blockhead.co/2026/10/23/libeara-to-buy-zodia-markets-jersey-arm-adding-a-second-regulated-dealer/"
-    },
-    {
-      "id": "hsbc-redcoin-launch-2026-10-23",
-      "date": "2026-10-23",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": "HKMA",
-      "company": "HSBC",
-      "title": "HSBC launches RedCoin, a Hong Kong dollar stablecoin, inside PayMe",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/blockchain/2026/hsbc-launches-hong-kong-dollar-stablecoin-for-everyday-payments/"
     }
   ],
   "latest": [
     {
+      "id": "ripple-robinhood-rlusd-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "Robinhood adopts RLUSD, Ripple Treasury and Ripple Prime in wide deal",
+      "source_name": "Ripple",
+      "source_url": "https://ripple.com/ripple-press/ripple-and-robinhood-partner-to-power-the-next-generation-of-finance/"
+    },
+    {
+      "id": "ripple-c2fo-instant-pay-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "C2FO to settle supplier Instant Pay in RLUSD on the XRP Ledger",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
+    },
+    {
+      "id": "ripple-bny-rlusd-custody-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Ripple",
+      "title": "BNY adds XRP and RLUSD custody and plans RLUSD minting for clients",
+      "source_name": "Cointelegraph",
+      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
+    },
+    {
+      "id": "circle-aci-worldwide-colombia-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Circle",
+      "title": "ACI Worldwide and Circle bring USDC settlement into bank payment hubs",
+      "source_name": "Business Wire",
+      "source_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
+    },
+    {
+      "id": "anchorage-digital-bitso-mxnb-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Anchorage Digital",
+      "title": "Anchorage takes custody of Bitso's MXNB peso token on six chains",
+      "source_name": "Bitcoin.com News",
+      "source_url": "https://news.bitcoin.com/stablecoins/mexican-peso-stablecoin-gains-anchorage-custody-ethereum/"
+    },
+    {
       "id": "ripple-treasury-24-7-returns-2026-10-26",
       "date": "2026-10-26",
       "type": "Launch",
@@ -162,66 +217,6 @@
       "title": "OCC urges community banks to apply to issue payment stablecoins",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/26/occ-calls-on-community-banks-to-enter-the-stablecoin-payments-market"
-    },
-    {
-      "id": "canada-stablecoin-regulations-2026-10-24",
-      "date": "2026-10-24",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "Bank of Canada",
-      "company": "Department of Finance Canada",
-      "title": "Canada publishes draft Stablecoin Regulations under Bank of Canada",
-      "source_name": "Canada Gazette",
-      "source_url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-10-24/html/reg1-eng.html"
-    },
-    {
-      "id": "libeara-zodia-markets-jersey-2026-10-23",
-      "date": "2026-10-23",
-      "type": "M&A",
-      "type_label": "M&A",
-      "region": "Europe",
-      "regulator": null,
-      "company": "Libeara",
-      "title": "Libeara agrees to buy Zodia Markets' Jersey-licensed dealer",
-      "source_name": "Blockhead",
-      "source_url": "https://www.blockhead.co/2026/10/23/libeara-to-buy-zodia-markets-jersey-arm-adding-a-second-regulated-dealer/"
-    },
-    {
-      "id": "hsbc-redcoin-launch-2026-10-23",
-      "date": "2026-10-23",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": "HKMA",
-      "company": "HSBC",
-      "title": "HSBC launches RedCoin, a Hong Kong dollar stablecoin, inside PayMe",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/blockchain/2026/hsbc-launches-hong-kong-dollar-stablecoin-for-everyday-payments/"
-    },
-    {
-      "id": "mas-bloom-expansion-2026-10-23",
-      "date": "2026-10-23",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": "MAS",
-      "company": "Monetary Authority of Singapore",
-      "title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
-      "source_name": "MAS",
-      "source_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
-    },
-    {
-      "id": "cbi-coinbase-ireland-fine-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "CBI",
-      "company": "Central Bank of Ireland",
-      "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
     }
   ],
   "companies": [
@@ -231,10 +226,10 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 11,
-      "last_date": "2026-10-26",
-      "last_title": "Ripple Treasury adds round-the-clock returns on idle corporate cash",
-      "last_url": "https://www.pymnts.com/news/b2b-payments/2026/ripple-equips-its-treasury-tool-with-new-capabilities/"
+      "moves_30d": 14,
+      "last_date": "2026-10-27",
+      "last_title": "Robinhood adopts RLUSD, Ripple Treasury and Ripple Prime in wide deal",
+      "last_url": "https://ripple.com/ripple-press/ripple-and-robinhood-partner-to-power-the-next-generation-of-finance/"
     },
     {
       "id": "coinbase",
@@ -242,7 +237,7 @@
       "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 11,
+      "moves_30d": 10,
       "last_date": "2026-10-22",
       "last_title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
       "last_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
@@ -265,9 +260,20 @@
       "country": "El Salvador",
       "region": "Global",
       "moves_30d": 8,
-      "last_date": "2026-10-21",
-      "last_title": "Tether leads pre-seed round in Bolivian USDT payments app Peso",
-      "last_url": "https://www.tokenpost.com/news/business/37256"
+      "last_date": "2026-10-27",
+      "last_title": "Anchorage takes custody of Bitso's MXNB peso token on six chains",
+      "last_url": "https://news.bitcoin.com/stablecoins/mexican-peso-stablecoin-gains-anchorage-custody-ethereum/"
+    },
+    {
+      "id": "circle",
+      "name": "Circle",
+      "segment": "Issuer",
+      "country": "United States",
+      "region": "North America",
+      "moves_30d": 6,
+      "last_date": "2026-10-27",
+      "last_title": "ACI Worldwide and Circle bring USDC settlement into bank payment hubs",
+      "last_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
     },
     {
       "id": "standard-chartered",
@@ -279,17 +285,6 @@
       "last_date": "2026-10-23",
       "last_title": "Libeara agrees to buy Zodia Markets' Jersey-licensed dealer",
       "last_url": "https://www.blockhead.co/2026/10/23/libeara-to-buy-zodia-markets-jersey-arm-adding-a-second-regulated-dealer/"
-    },
-    {
-      "id": "mastercard",
-      "name": "Mastercard",
-      "segment": "Settlement rails",
-      "country": "United States",
-      "region": "Global",
-      "moves_30d": 5,
-      "last_date": "2026-10-23",
-      "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
-      "last_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
     }
   ],
   "licences": [
@@ -400,10 +395,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 574,
+    "total": 579,
     "licences": 72,
     "regulatory_actions": 66,
-    "commercial": 290,
+    "commercial": 295,
     "capital": 146,
     "months": [
       {
@@ -456,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 110
+        "n": 115
       }
     ],
     "partial_last": true
