@@ -1,13 +1,13 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-28T07:20:00+03:00",
-  "next_run": "2026-10-29T06:54:00+03:00",
-  "window_start": "2026-10-22",
-  "window_end": "2026-10-28",
+  "updated_at": "2026-10-29T07:30:00+03:00",
+  "next_run": "2026-10-30T06:54:00+03:00",
+  "window_start": "2026-10-23",
+  "window_end": "2026-10-29",
   "week": 44,
-  "count": 17,
-  "new_today": 5,
-  "headline": "Ripple led the week, winning **final OCC approval for its national trust bank** and then signing Robinhood and BNY to RLUSD at its Swell conference. Canada published **draft Stablecoin Regulations** under the Bank of Canada, and HSBC launched its RedCoin stablecoin in Hong Kong.",
+  "count": 15,
+  "new_today": 3,
+  "headline": "Ripple dominated the week: **final OCC approval for its national trust bank**, followed by RLUSD deals with BNY, Robinhood and now a **Coinbase listing**. Canada's draft stablecoin rules and the OCC's push for community-bank issuers widened the North American rulebook.",
   "mix": [
     {
       "type": "Partnership",
@@ -21,34 +21,58 @@
     },
     {
       "type": "Regulation",
-      "n": 3,
-      "label": "regulatory actions"
-    },
-    {
-      "type": "M&A",
       "n": 2,
-      "label": "M&A deals"
+      "label": "regulatory actions"
     },
     {
       "type": "License",
       "n": 1,
       "label": "licence"
+    },
+    {
+      "type": "M&A",
+      "n": 1,
+      "label": "M&A deal"
     }
   ],
-  "mix_text": "8 partnerships · 3 launches · 3 regulatory actions · 2 M&A deals · 1 licence",
+  "mix_text": "8 partnerships · 3 launches · 2 regulatory actions · 1 licence · 1 M&A deal",
   "regions": {
-    "Europe": 2,
+    "Europe": 1,
     "Middle East": 0,
-    "North America": 8,
-    "Global": 7
+    "North America": 9,
+    "Global": 5
   },
   "groups": {
-    "regulatory": 4,
-    "capital": 2,
+    "regulatory": 3,
+    "capital": 1,
     "commercial": 11
   },
   "moves": [
     {
+      "id": "coinbase-rlusd-listing-2026-10-28",
+      "date": "2026-10-28",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Coinbase",
+      "title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
+      "source_name": "Crypto Briefing",
+      "source_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
+    },
+    {
+      "id": "zerohash-ousd-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "zerohash",
+      "title": "zerohash makes Open USD available to all the partners it powers",
+      "source_name": "GlobeNewswire",
+      "source_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
+    },
+    {
       "id": "ripple-robinhood-rlusd-2026-10-27",
       "date": "2026-10-27",
       "type": "Partnership",
@@ -95,34 +119,34 @@
       "title": "ACI Worldwide and Circle bring USDC settlement into bank payment hubs",
       "source_name": "Business Wire",
       "source_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
-    },
-    {
-      "id": "anchorage-digital-bitso-mxnb-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Anchorage Digital",
-      "title": "Anchorage takes custody of Bitso's MXNB peso token on six chains",
-      "source_name": "Bitcoin.com News",
-      "source_url": "https://news.bitcoin.com/stablecoins/mexican-peso-stablecoin-gains-anchorage-custody-ethereum/"
-    },
-    {
-      "id": "ripple-treasury-24-7-returns-2026-10-26",
-      "date": "2026-10-26",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "Ripple Treasury adds round-the-clock returns on idle corporate cash",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/news/b2b-payments/2026/ripple-equips-its-treasury-tool-with-new-capabilities/"
     }
   ],
   "latest": [
     {
+      "id": "coinbase-rlusd-listing-2026-10-28",
+      "date": "2026-10-28",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "Coinbase",
+      "title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
+      "source_name": "Crypto Briefing",
+      "source_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
+    },
+    {
+      "id": "zerohash-ousd-2026-10-27",
+      "date": "2026-10-27",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "zerohash",
+      "title": "zerohash makes Open USD available to all the partners it powers",
+      "source_name": "GlobeNewswire",
+      "source_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
+    },
+    {
       "id": "ripple-robinhood-rlusd-2026-10-27",
       "date": "2026-10-27",
       "type": "Partnership",
@@ -183,40 +207,16 @@
       "source_url": "https://news.bitcoin.com/stablecoins/mexican-peso-stablecoin-gains-anchorage-custody-ethereum/"
     },
     {
-      "id": "ripple-treasury-24-7-returns-2026-10-26",
+      "id": "zerohash-majority-2026-10-26",
       "date": "2026-10-26",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
       "regulator": null,
-      "company": "Ripple",
-      "title": "Ripple Treasury adds round-the-clock returns on idle corporate cash",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/news/b2b-payments/2026/ripple-equips-its-treasury-tool-with-new-capabilities/"
-    },
-    {
-      "id": "ripple-occ-final-trust-2026-10-26",
-      "date": "2026-10-26",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Ripple",
-      "title": "Ripple wins final OCC approval for its national trust bank",
-      "source_name": "Ripple",
-      "source_url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank/"
-    },
-    {
-      "id": "occ-community-banks-stablecoins-2026-10-26",
-      "date": "2026-10-26",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "OCC",
-      "title": "OCC urges community banks to apply to issue payment stablecoins",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/26/occ-calls-on-community-banks-to-enter-the-stablecoin-payments-market"
+      "company": "zerohash",
+      "title": "MAJORITY launches US-to-Latin America USDC transfers on zerohash",
+      "source_name": "GlobeNewswire",
+      "source_url": "https://www.manilatimes.net/2026/10/26/tmt-newswire/globenewswire/majority-launches-cross-border-stablecoin-payments-powered-by-zerohash/2454061"
     }
   ],
   "companies": [
@@ -226,10 +226,10 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 14,
-      "last_date": "2026-10-27",
-      "last_title": "Robinhood adopts RLUSD, Ripple Treasury and Ripple Prime in wide deal",
-      "last_url": "https://ripple.com/ripple-press/ripple-and-robinhood-partner-to-power-the-next-generation-of-finance/"
+      "moves_30d": 15,
+      "last_date": "2026-10-28",
+      "last_title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
+      "last_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
     },
     {
       "id": "coinbase",
@@ -238,9 +238,9 @@
       "country": "United States",
       "region": "North America",
       "moves_30d": 10,
-      "last_date": "2026-10-22",
-      "last_title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
-      "last_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
+      "last_date": "2026-10-28",
+      "last_title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
+      "last_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
     },
     {
       "id": "visa",
@@ -248,10 +248,10 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "Global",
-      "moves_30d": 9,
-      "last_date": "2026-10-23",
-      "last_title": "Malaysia, Thailand, Ripple, Visa and Mastercard join MAS's BLOOM",
-      "last_url": "https://www.mas.gov.sg/news/media-releases/2026/mas-bnm-and-bot-partner-with-industry-to-advance-cross-border-settlement-in-digital-money"
+      "moves_30d": 10,
+      "last_date": "2026-10-27",
+      "last_title": "zerohash makes Open USD available to all the partners it powers",
+      "last_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
     },
     {
       "id": "tether",
@@ -276,15 +276,15 @@
       "last_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
     },
     {
-      "id": "standard-chartered",
-      "name": "Standard Chartered",
-      "segment": "Custody & wallets",
-      "country": "United Kingdom",
-      "region": "Global",
+      "id": "zerohash",
+      "name": "zerohash",
+      "segment": "Settlement rails",
+      "country": "United States",
+      "region": "North America",
       "moves_30d": 5,
-      "last_date": "2026-10-23",
-      "last_title": "Libeara agrees to buy Zodia Markets' Jersey-licensed dealer",
-      "last_url": "https://www.blockhead.co/2026/10/23/libeara-to-buy-zodia-markets-jersey-arm-adding-a-second-regulated-dealer/"
+      "last_date": "2026-10-27",
+      "last_title": "zerohash makes Open USD available to all the partners it powers",
+      "last_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
     }
   ],
   "licences": [
@@ -395,10 +395,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 579,
+    "total": 582,
     "licences": 72,
     "regulatory_actions": 66,
-    "commercial": 295,
+    "commercial": 298,
     "capital": 146,
     "months": [
       {
@@ -451,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 115
+        "n": 118
       }
     ],
     "partial_last": true
