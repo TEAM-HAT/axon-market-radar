@@ -1,17 +1,17 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-29T07:30:00+03:00",
-  "next_run": "2026-10-30T06:54:00+03:00",
-  "window_start": "2026-10-23",
-  "window_end": "2026-10-29",
+  "updated_at": "2026-10-30T07:06:00+03:00",
+  "next_run": "2026-10-31T06:54:00+03:00",
+  "window_start": "2026-10-24",
+  "window_end": "2026-10-30",
   "week": 44,
-  "count": 15,
-  "new_today": 3,
-  "headline": "Ripple dominated the week: **final OCC approval for its national trust bank**, followed by RLUSD deals with BNY, Robinhood and now a **Coinbase listing**. Canada's draft stablecoin rules and the OCC's push for community-bank issuers widened the North American rulebook.",
+  "count": 20,
+  "new_today": 8,
+  "headline": "**Ripple's final OCC trust bank charter** and a run of RLUSD deals with BNY, Robinhood and Coinbase led the week, while **Canada published draft Stablecoin Regulations** and the OCC urged community banks to issue.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 8,
+      "n": 10,
       "label": "partnerships"
     },
     {
@@ -21,33 +21,93 @@
     },
     {
       "type": "Regulation",
-      "n": 2,
+      "n": 3,
       "label": "regulatory actions"
     },
     {
-      "type": "License",
-      "n": 1,
-      "label": "licence"
+      "type": "Funding",
+      "n": 2,
+      "label": "funding rounds"
     },
     {
-      "type": "M&A",
-      "n": 1,
-      "label": "M&A deal"
+      "type": "License",
+      "n": 2,
+      "label": "licences"
     }
   ],
-  "mix_text": "8 partnerships · 3 launches · 2 regulatory actions · 1 licence · 1 M&A deal",
+  "mix_text": "10 partnerships · 3 launches · 3 regulatory actions · 2 funding rounds · 2 licences",
   "regions": {
     "Europe": 1,
     "Middle East": 0,
-    "North America": 9,
-    "Global": 5
+    "North America": 10,
+    "Global": 9
   },
   "groups": {
-    "regulatory": 3,
-    "capital": 1,
-    "commercial": 11
+    "regulatory": 5,
+    "capital": 2,
+    "commercial": 13
   },
   "moves": [
+    {
+      "id": "moonpay-nh-nonghyup-finger-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "MoonPay",
+      "title": "MoonPay, NH NongHyup Bank and Finger plan a settlement model",
+      "source_name": "Bloomingbit",
+      "source_url": "https://en.bloomingbit.io/feed/news/123258"
+    },
+    {
+      "id": "polygon-labs-oms-solana-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Polygon Labs",
+      "title": "Polygon Open Money Stack adds Solana for bank-to-stablecoin payments",
+      "source_name": "Polygon",
+      "source_url": "https://polygon.technology/blog/polygon-oms-supports-solana"
+    },
+    {
+      "id": "photonpay-series-c-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "PhotonPay",
+      "title": "PhotonPay raises $40m Series C led by Blockchain Capital",
+      "source_name": "PhotonPay",
+      "source_url": "https://www.photonpay.com/hk/news/article/photonpay-raises-40m-series-c-funding-financial-os"
+    },
+    {
+      "id": "bvnk-airtm-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "BVNK",
+      "title": "Airtm links its wallets to BVNK and Mastercard's Global Money Platform",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/airtm-and-bvnk-partner-on-wallet-native-payments-for-emerging-markets"
+    },
+    {
+      "id": "bank-of-england-ccp-tokenised-collateral-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "Bank of England",
+      "company": "Bank of England",
+      "title": "Bank of England consults on tokenised collateral at UK clearing houses",
+      "source_name": "Bank of England",
+      "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
+    },
     {
       "id": "coinbase-rlusd-listing-2026-10-28",
       "date": "2026-10-28",
@@ -59,70 +119,70 @@
       "title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
       "source_name": "Crypto Briefing",
       "source_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
-    },
-    {
-      "id": "zerohash-ousd-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "zerohash",
-      "title": "zerohash makes Open USD available to all the partners it powers",
-      "source_name": "GlobeNewswire",
-      "source_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
-    },
-    {
-      "id": "ripple-robinhood-rlusd-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "Robinhood adopts RLUSD, Ripple Treasury and Ripple Prime in wide deal",
-      "source_name": "Ripple",
-      "source_url": "https://ripple.com/ripple-press/ripple-and-robinhood-partner-to-power-the-next-generation-of-finance/"
-    },
-    {
-      "id": "ripple-c2fo-instant-pay-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "C2FO to settle supplier Instant Pay in RLUSD on the XRP Ledger",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
-    },
-    {
-      "id": "ripple-bny-rlusd-custody-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "BNY adds XRP and RLUSD custody and plans RLUSD minting for clients",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
-    },
-    {
-      "id": "circle-aci-worldwide-colombia-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Circle",
-      "title": "ACI Worldwide and Circle bring USDC settlement into bank payment hubs",
-      "source_name": "Business Wire",
-      "source_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
     }
   ],
   "latest": [
     {
+      "id": "moonpay-nh-nonghyup-finger-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "MoonPay",
+      "title": "MoonPay, NH NongHyup Bank and Finger plan a settlement model",
+      "source_name": "Bloomingbit",
+      "source_url": "https://en.bloomingbit.io/feed/news/123258"
+    },
+    {
+      "id": "polygon-labs-oms-solana-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "Global",
+      "regulator": null,
+      "company": "Polygon Labs",
+      "title": "Polygon Open Money Stack adds Solana for bank-to-stablecoin payments",
+      "source_name": "Polygon",
+      "source_url": "https://polygon.technology/blog/polygon-oms-supports-solana"
+    },
+    {
+      "id": "photonpay-series-c-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "Global",
+      "regulator": null,
+      "company": "PhotonPay",
+      "title": "PhotonPay raises $40m Series C led by Blockchain Capital",
+      "source_name": "PhotonPay",
+      "source_url": "https://www.photonpay.com/hk/news/article/photonpay-raises-40m-series-c-funding-financial-os"
+    },
+    {
+      "id": "bvnk-airtm-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "BVNK",
+      "title": "Airtm links its wallets to BVNK and Mastercard's Global Money Platform",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/airtm-and-bvnk-partner-on-wallet-native-payments-for-emerging-markets"
+    },
+    {
+      "id": "bank-of-england-ccp-tokenised-collateral-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "Bank of England",
+      "company": "Bank of England",
+      "title": "Bank of England consults on tokenised collateral at UK clearing houses",
+      "source_name": "Bank of England",
+      "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
+    },
+    {
       "id": "coinbase-rlusd-listing-2026-10-28",
       "date": "2026-10-28",
       "type": "Partnership",
@@ -135,88 +195,28 @@
       "source_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
     },
     {
-      "id": "zerohash-ousd-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "North America",
-      "regulator": null,
-      "company": "zerohash",
-      "title": "zerohash makes Open USD available to all the partners it powers",
-      "source_name": "GlobeNewswire",
-      "source_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
-    },
-    {
-      "id": "ripple-robinhood-rlusd-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "Robinhood adopts RLUSD, Ripple Treasury and Ripple Prime in wide deal",
-      "source_name": "Ripple",
-      "source_url": "https://ripple.com/ripple-press/ripple-and-robinhood-partner-to-power-the-next-generation-of-finance/"
-    },
-    {
-      "id": "ripple-c2fo-instant-pay-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "C2FO to settle supplier Instant Pay in RLUSD on the XRP Ledger",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
-    },
-    {
-      "id": "ripple-bny-rlusd-custody-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Ripple",
-      "title": "BNY adds XRP and RLUSD custody and plans RLUSD minting for clients",
-      "source_name": "Cointelegraph",
-      "source_url": "https://cointelegraph.com/news/ripple-robinhood-expand-partnership-rlusd-retail-institutional-markets"
-    },
-    {
-      "id": "circle-aci-worldwide-colombia-2026-10-27",
+      "id": "noah-bitget-wallet-2026-10-27",
       "date": "2026-10-27",
       "type": "Partnership",
       "type_label": "Partnership",
       "region": "Global",
       "regulator": null,
-      "company": "Circle",
-      "title": "ACI Worldwide and Circle bring USDC settlement into bank payment hubs",
-      "source_name": "Business Wire",
-      "source_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
+      "company": "Noah",
+      "title": "Noah supplies USD and EUR account numbers to Bitget Wallet users",
+      "source_name": "Unchained",
+      "source_url": "https://unchainedcrypto.com/bitget-wallet-gives-users-usd-and-eur-account-numbers-that-convert-deposits-to-stablecoins/"
     },
     {
-      "id": "anchorage-digital-bitso-mxnb-2026-10-27",
+      "id": "loon-cadc-osc-2026-10-27",
       "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Anchorage Digital",
-      "title": "Anchorage takes custody of Bitso's MXNB peso token on six chains",
-      "source_name": "Bitcoin.com News",
-      "source_url": "https://news.bitcoin.com/stablecoins/mexican-peso-stablecoin-gains-anchorage-custody-ethereum/"
-    },
-    {
-      "id": "zerohash-majority-2026-10-26",
-      "date": "2026-10-26",
-      "type": "Partnership",
-      "type_label": "Partnership",
+      "type": "License",
+      "type_label": "Licence",
       "region": "North America",
-      "regulator": null,
-      "company": "zerohash",
-      "title": "MAJORITY launches US-to-Latin America USDC transfers on zerohash",
-      "source_name": "GlobeNewswire",
-      "source_url": "https://www.manilatimes.net/2026/10/26/tmt-newswire/globenewswire/majority-launches-cross-border-stablecoin-payments-powered-by-zerohash/2454061"
+      "regulator": "OSC",
+      "company": "Loon",
+      "title": "Loon wins OSC prospectus receipt to issue CADC in Canada",
+      "source_name": "BetaKit",
+      "source_url": "https://betakit.com/loon-clears-key-regulatory-hurdle-to-offer-canadian-dollar-backed-stablecoin/"
     }
   ],
   "companies": [
@@ -237,7 +237,7 @@
       "segment": "Custody & wallets",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 10,
+      "moves_30d": 9,
       "last_date": "2026-10-28",
       "last_title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
       "last_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
@@ -248,7 +248,7 @@
       "segment": "Settlement rails",
       "country": "United States",
       "region": "Global",
-      "moves_30d": 10,
+      "moves_30d": 9,
       "last_date": "2026-10-27",
       "last_title": "zerohash makes Open USD available to all the partners it powers",
       "last_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
@@ -270,24 +270,48 @@
       "segment": "Issuer",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 6,
+      "moves_30d": 7,
       "last_date": "2026-10-27",
-      "last_title": "ACI Worldwide and Circle bring USDC settlement into bank payment hubs",
-      "last_url": "https://www.financialcontent.com/article/bizwire-2026-10-27-aci-worldwide-and-circle-collaborate-to-bring-usdc-settlement-to-existing-payments-infrastructure-in-latin-america"
+      "last_title": "Circle Ventures invests in South African payments firm CrissCross",
+      "last_url": "https://techcabal.com/2026/10/27/crisscross-raises-funds/"
     },
     {
-      "id": "zerohash",
-      "name": "zerohash",
+      "id": "mastercard",
+      "name": "Mastercard",
       "segment": "Settlement rails",
       "country": "United States",
-      "region": "North America",
+      "region": "Global",
       "moves_30d": 5,
-      "last_date": "2026-10-27",
-      "last_title": "zerohash makes Open USD available to all the partners it powers",
-      "last_url": "https://www.financialcontent.com/article/gnwcq-2026-10-27-zerohash-brings-open-usd-ousd-stablecoin-live-across-its-network"
+      "last_date": "2026-10-29",
+      "last_title": "Airtm links its wallets to BVNK and Mastercard's Global Money Platform",
+      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/airtm-and-bvnk-partner-on-wallet-native-payments-for-emerging-markets"
     }
   ],
   "licences": [
+    {
+      "id": "bank-of-england-ccp-tokenised-collateral-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "Bank of England",
+      "company": "Bank of England",
+      "title": "Bank of England consults on tokenised collateral at UK clearing houses",
+      "source_name": "Bank of England",
+      "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
+    },
+    {
+      "id": "loon-cadc-osc-2026-10-27",
+      "date": "2026-10-27",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OSC",
+      "company": "Loon",
+      "title": "Loon wins OSC prospectus receipt to issue CADC in Canada",
+      "source_name": "BetaKit",
+      "source_url": "https://betakit.com/loon-clears-key-regulatory-hurdle-to-offer-canadian-dollar-backed-stablecoin/"
+    },
     {
       "id": "ripple-occ-final-trust-2026-10-26",
       "date": "2026-10-26",
@@ -335,30 +359,6 @@
       "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
       "source_name": "CoinDesk",
       "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
-    },
-    {
-      "id": "fca-cryptoasset-perimeter-cp26-36-2026-10-21",
-      "date": "2026-10-21",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "FCA",
-      "company": "Financial Conduct Authority",
-      "title": "FCA consults on new exclusions from the UK cryptoasset perimeter",
-      "source_name": "FCA",
-      "source_url": "https://www.fca.org.uk/publications/consultation-papers/cp26-36-cryptoasset-perimeter-guidance"
-    },
-    {
-      "id": "occ-genius-final-rule-2026-10-21",
-      "date": "2026-10-21",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "OCC",
-      "title": "OCC finalises its GENIUS Act rules for payment stablecoin issuers",
-      "source_name": "PYMNTS",
-      "source_url": "https://www.pymnts.com/legal/2026/occ-finalizes-stablecoin-framework-as-january-compliance-date-approaches/"
     }
   ],
   "regulators": [
@@ -395,11 +395,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 582,
-    "licences": 72,
-    "regulatory_actions": 66,
-    "commercial": 298,
-    "capital": 146,
+    "total": 590,
+    "licences": 73,
+    "regulatory_actions": 67,
+    "commercial": 302,
+    "capital": 148,
     "months": [
       {
         "m": "2025-10",
@@ -451,7 +451,7 @@
       },
       {
         "m": "2026-10",
-        "n": 118
+        "n": 126
       }
     ],
     "partial_last": true
