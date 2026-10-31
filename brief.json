@@ -1,22 +1,22 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-30T07:06:00+03:00",
-  "next_run": "2026-10-31T06:54:00+03:00",
-  "window_start": "2026-10-24",
-  "window_end": "2026-10-30",
+  "updated_at": "2026-10-31T07:00:29+03:00",
+  "next_run": "2026-11-01T06:54:00+03:00",
+  "window_start": "2026-10-25",
+  "window_end": "2026-10-31",
   "week": 44,
-  "count": 20,
-  "new_today": 8,
-  "headline": "**Ripple's final OCC trust bank charter** and a run of RLUSD deals with BNY, Robinhood and Coinbase led the week, while **Canada published draft Stablecoin Regulations** and the OCC urged community banks to issue.",
+  "count": 23,
+  "new_today": 4,
+  "headline": "**Ripple's final OCC trust bank charter** and its RLUSD deals with BNY, Robinhood and Coinbase led the week, while **the Bank of England opened the door to tokenised collateral** and SBI moved to put its yen stablecoin on Cross River's platform.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 10,
+      "n": 12,
       "label": "partnerships"
     },
     {
       "type": "Launch",
-      "n": 3,
+      "n": 4,
       "label": "launches"
     },
     {
@@ -35,19 +35,31 @@
       "label": "licences"
     }
   ],
-  "mix_text": "10 partnerships · 3 launches · 3 regulatory actions · 2 funding rounds · 2 licences",
+  "mix_text": "12 partnerships · 4 launches · 3 regulatory actions · 2 funding rounds · 2 licences",
   "regions": {
-    "Europe": 1,
-    "Middle East": 0,
-    "North America": 10,
-    "Global": 9
+    "Europe": 2,
+    "Middle East": 1,
+    "North America": 9,
+    "Global": 11
   },
   "groups": {
     "regulatory": 5,
     "capital": 2,
-    "commercial": 13
+    "commercial": 16
   },
   "moves": [
+    {
+      "id": "cross-river-sbi-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Cross River",
+      "title": "SBI to invest in Cross River's parent and add its yen stablecoin",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/sbi-holdings-partners-crb-group-plans-joint-venture-in-japan"
+    },
     {
       "id": "moonpay-nh-nonghyup-finger-2026-10-30",
       "date": "2026-10-30",
@@ -59,6 +71,18 @@
       "title": "MoonPay, NH NongHyup Bank and Finger plan a settlement model",
       "source_name": "Bloomingbit",
       "source_url": "https://en.bloomingbit.io/feed/news/123258"
+    },
+    {
+      "id": "bridge-ipx-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Bridge",
+      "title": "IPX to turn creator revenue into USDC through Stripe's Bridge",
+      "source_name": "Bloomingbit",
+      "source_url": "https://en.bloomingbit.io/feed/news/123189"
     },
     {
       "id": "polygon-labs-oms-solana-2026-10-29",
@@ -95,34 +119,22 @@
       "title": "Airtm links its wallets to BVNK and Mastercard's Global Money Platform",
       "source_name": "The Paypers",
       "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/airtm-and-bvnk-partner-on-wallet-native-payments-for-emerging-markets"
-    },
-    {
-      "id": "bank-of-england-ccp-tokenised-collateral-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "Bank of England",
-      "company": "Bank of England",
-      "title": "Bank of England consults on tokenised collateral at UK clearing houses",
-      "source_name": "Bank of England",
-      "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
-    },
-    {
-      "id": "coinbase-rlusd-listing-2026-10-28",
-      "date": "2026-10-28",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Coinbase",
-      "title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
-      "source_name": "Crypto Briefing",
-      "source_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
     }
   ],
   "latest": [
     {
+      "id": "cross-river-sbi-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Cross River",
+      "title": "SBI to invest in Cross River's parent and add its yen stablecoin",
+      "source_name": "The Paypers",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/sbi-holdings-partners-crb-group-plans-joint-venture-in-japan"
+    },
+    {
       "id": "moonpay-nh-nonghyup-finger-2026-10-30",
       "date": "2026-10-30",
       "type": "Partnership",
@@ -133,6 +145,18 @@
       "title": "MoonPay, NH NongHyup Bank and Finger plan a settlement model",
       "source_name": "Bloomingbit",
       "source_url": "https://en.bloomingbit.io/feed/news/123258"
+    },
+    {
+      "id": "bridge-ipx-2026-10-29",
+      "date": "2026-10-29",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Bridge",
+      "title": "IPX to turn creator revenue into USDC through Stripe's Bridge",
+      "source_name": "Bloomingbit",
+      "source_url": "https://en.bloomingbit.io/feed/news/123189"
     },
     {
       "id": "polygon-labs-oms-solana-2026-10-29",
@@ -183,40 +207,16 @@
       "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
     },
     {
-      "id": "coinbase-rlusd-listing-2026-10-28",
+      "id": "vara-public-disclosures-circular-2026-10-28",
       "date": "2026-10-28",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "North America",
-      "regulator": null,
-      "company": "Coinbase",
-      "title": "Coinbase lists Ripple's RLUSD across Prime, Exchange and retail app",
-      "source_name": "Crypto Briefing",
-      "source_url": "https://cryptobriefing.com/coinbase-adds-ripple-rlusd-stablecoin/"
-    },
-    {
-      "id": "noah-bitget-wallet-2026-10-27",
-      "date": "2026-10-27",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Noah",
-      "title": "Noah supplies USD and EUR account numbers to Bitget Wallet users",
-      "source_name": "Unchained",
-      "source_url": "https://unchainedcrypto.com/bitget-wallet-gives-users-usd-and-eur-account-numbers-that-convert-deposits-to-stablecoins/"
-    },
-    {
-      "id": "loon-cadc-osc-2026-10-27",
-      "date": "2026-10-27",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OSC",
-      "company": "Loon",
-      "title": "Loon wins OSC prospectus receipt to issue CADC in Canada",
-      "source_name": "BetaKit",
-      "source_url": "https://betakit.com/loon-clears-key-regulatory-hurdle-to-offer-canadian-dollar-backed-stablecoin/"
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Middle East",
+      "regulator": "VARA",
+      "company": "VARA",
+      "title": "VARA sets out good practice for licensed firms' public disclosures",
+      "source_name": "VARA",
+      "source_url": "https://media.umbraco.io/dwtc/dczjo4qp/public-disclosure-circular-for-vasps-final.pdf"
     }
   ],
   "companies": [
@@ -270,7 +270,7 @@
       "segment": "Issuer",
       "country": "United States",
       "region": "North America",
-      "moves_30d": 7,
+      "moves_30d": 8,
       "last_date": "2026-10-27",
       "last_title": "Circle Ventures invests in South African payments firm CrissCross",
       "last_url": "https://techcabal.com/2026/10/27/crisscross-raises-funds/"
@@ -299,6 +299,18 @@
       "title": "Bank of England consults on tokenised collateral at UK clearing houses",
       "source_name": "Bank of England",
       "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
+    },
+    {
+      "id": "vara-public-disclosures-circular-2026-10-28",
+      "date": "2026-10-28",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Middle East",
+      "regulator": "VARA",
+      "company": "VARA",
+      "title": "VARA sets out good practice for licensed firms' public disclosures",
+      "source_name": "VARA",
+      "source_url": "https://media.umbraco.io/dwtc/dczjo4qp/public-disclosure-circular-for-vasps-final.pdf"
     },
     {
       "id": "loon-cadc-osc-2026-10-27",
@@ -347,18 +359,6 @@
       "title": "Canada publishes draft Stablecoin Regulations under Bank of Canada",
       "source_name": "Canada Gazette",
       "source_url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-10-24/html/reg1-eng.html"
-    },
-    {
-      "id": "cbi-coinbase-ireland-fine-2026-10-22",
-      "date": "2026-10-22",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "CBI",
-      "company": "Central Bank of Ireland",
-      "title": "Central Bank of Ireland fines Coinbase Ireland €3.25m on safeguarding",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/22/irish-central-bank-fines-coinbase-ireland-usd3-6-million-over-fund-safeguarding-failures"
     }
   ],
   "regulators": [
@@ -390,15 +390,15 @@
       "name": "VARA",
       "where": "Dubai",
       "licences": 5,
-      "actions": 2
+      "actions": 3
     }
   ],
   "trends": {
     "since": "2025-10",
-    "total": 590,
+    "total": 594,
     "licences": 73,
-    "regulatory_actions": 67,
-    "commercial": 302,
+    "regulatory_actions": 68,
+    "commercial": 305,
     "capital": 148,
     "months": [
       {
@@ -451,10 +451,10 @@
       },
       {
         "m": "2026-10",
-        "n": 126
+        "n": 130
       }
     ],
-    "partial_last": true
+    "partial_last": false
   },
   "radar_url": "https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei"
 }
