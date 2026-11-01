@@ -1,53 +1,77 @@
 {
   "schema": 2,
-  "updated_at": "2026-10-31T07:00:29+03:00",
-  "next_run": "2026-11-01T06:54:00+03:00",
-  "window_start": "2026-10-25",
-  "window_end": "2026-10-31",
+  "updated_at": "2026-11-01T07:05:00+03:00",
+  "next_run": "2026-11-02T06:54:00+03:00",
+  "window_start": "2026-10-26",
+  "window_end": "2026-11-01",
   "week": 44,
-  "count": 23,
-  "new_today": 4,
-  "headline": "**Ripple's final OCC trust bank charter** and its RLUSD deals with BNY, Robinhood and Coinbase led the week, while **the Bank of England opened the door to tokenised collateral** and SBI moved to put its yen stablecoin on Cross River's platform.",
+  "count": 28,
+  "new_today": 5,
+  "headline": "Ripple dominated the week, winning **final OCC approval for its trust bank** and landing RLUSD deals with Robinhood, BNY, Coinbase and C2FO, while **the OCC urged community banks to issue stablecoins** under its new GENIUS rules.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 12,
+      "n": 13,
       "label": "partnerships"
     },
     {
       "type": "Launch",
-      "n": 4,
+      "n": 5,
       "label": "launches"
     },
     {
+      "type": "License",
+      "n": 4,
+      "label": "licences"
+    },
+    {
       "type": "Regulation",
-      "n": 3,
+      "n": 4,
       "label": "regulatory actions"
     },
     {
       "type": "Funding",
       "n": 2,
       "label": "funding rounds"
-    },
-    {
-      "type": "License",
-      "n": 2,
-      "label": "licences"
     }
   ],
-  "mix_text": "12 partnerships · 4 launches · 3 regulatory actions · 2 funding rounds · 2 licences",
+  "mix_text": "13 partnerships · 5 launches · 4 licences · 4 regulatory actions · 2 funding rounds",
   "regions": {
-    "Europe": 2,
+    "Europe": 4,
     "Middle East": 1,
-    "North America": 9,
-    "Global": 11
+    "North America": 10,
+    "Global": 13
   },
   "groups": {
-    "regulatory": 5,
+    "regulatory": 8,
     "capital": 2,
-    "commercial": 16
+    "commercial": 18
   },
   "moves": [
+    {
+      "id": "ecb-appia-tokenised-deposits-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "ECB",
+      "company": "European Central Bank",
+      "title": "ECB to open tokenised deposits and payments workstream under Appia",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/ecb-to-launch-tokenized-deposits-securities-workstreams-as-appia-takes-shape/"
+    },
+    {
+      "id": "anchorpoint-hkdap-solana-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Anchorpoint",
+      "title": "Standard Chartered-backed Anchorpoint takes HKDAP to Solana",
+      "source_name": "Unlock Blockchain",
+      "source_url": "https://www.unlock-bc.com/en/standard-chartered-backed-anchorpoint-targets-retail-adoption-of-hkdap-with-solana"
+    },
     {
       "id": "cross-river-sbi-2026-10-30",
       "date": "2026-10-30",
@@ -73,6 +97,18 @@
       "source_url": "https://en.bloomingbit.io/feed/news/123258"
     },
     {
+      "id": "galaxy-occ-trust-charter-2026-10-29",
+      "date": "2026-10-29",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Galaxy",
+      "title": "Galaxy applies to the OCC for a national trust bank charter",
+      "source_name": "Banking Dive",
+      "source_url": "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
+    },
+    {
       "id": "bridge-ipx-2026-10-29",
       "date": "2026-10-29",
       "type": "Partnership",
@@ -83,46 +119,34 @@
       "title": "IPX to turn creator revenue into USDC through Stripe's Bridge",
       "source_name": "Bloomingbit",
       "source_url": "https://en.bloomingbit.io/feed/news/123189"
-    },
-    {
-      "id": "polygon-labs-oms-solana-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Polygon Labs",
-      "title": "Polygon Open Money Stack adds Solana for bank-to-stablecoin payments",
-      "source_name": "Polygon",
-      "source_url": "https://polygon.technology/blog/polygon-oms-supports-solana"
-    },
-    {
-      "id": "photonpay-series-c-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "PhotonPay",
-      "title": "PhotonPay raises $40m Series C led by Blockchain Capital",
-      "source_name": "PhotonPay",
-      "source_url": "https://www.photonpay.com/hk/news/article/photonpay-raises-40m-series-c-funding-financial-os"
-    },
-    {
-      "id": "bvnk-airtm-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "BVNK",
-      "title": "Airtm links its wallets to BVNK and Mastercard's Global Money Platform",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/airtm-and-bvnk-partner-on-wallet-native-payments-for-emerging-markets"
     }
   ],
   "latest": [
     {
+      "id": "ecb-appia-tokenised-deposits-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "ECB",
+      "company": "European Central Bank",
+      "title": "ECB to open tokenised deposits and payments workstream under Appia",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/ecb-to-launch-tokenized-deposits-securities-workstreams-as-appia-takes-shape/"
+    },
+    {
+      "id": "anchorpoint-hkdap-solana-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "Anchorpoint",
+      "title": "Standard Chartered-backed Anchorpoint takes HKDAP to Solana",
+      "source_name": "Unlock Blockchain",
+      "source_url": "https://www.unlock-bc.com/en/standard-chartered-backed-anchorpoint-targets-retail-adoption-of-hkdap-with-solana"
+    },
+    {
       "id": "cross-river-sbi-2026-10-30",
       "date": "2026-10-30",
       "type": "Partnership",
@@ -145,6 +169,18 @@
       "title": "MoonPay, NH NongHyup Bank and Finger plan a settlement model",
       "source_name": "Bloomingbit",
       "source_url": "https://en.bloomingbit.io/feed/news/123258"
+    },
+    {
+      "id": "galaxy-occ-trust-charter-2026-10-29",
+      "date": "2026-10-29",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Galaxy",
+      "title": "Galaxy applies to the OCC for a national trust bank charter",
+      "source_name": "Banking Dive",
+      "source_url": "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
     },
     {
       "id": "bridge-ipx-2026-10-29",
@@ -181,42 +217,6 @@
       "title": "PhotonPay raises $40m Series C led by Blockchain Capital",
       "source_name": "PhotonPay",
       "source_url": "https://www.photonpay.com/hk/news/article/photonpay-raises-40m-series-c-funding-financial-os"
-    },
-    {
-      "id": "bvnk-airtm-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "BVNK",
-      "title": "Airtm links its wallets to BVNK and Mastercard's Global Money Platform",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/airtm-and-bvnk-partner-on-wallet-native-payments-for-emerging-markets"
-    },
-    {
-      "id": "bank-of-england-ccp-tokenised-collateral-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Europe",
-      "regulator": "Bank of England",
-      "company": "Bank of England",
-      "title": "Bank of England consults on tokenised collateral at UK clearing houses",
-      "source_name": "Bank of England",
-      "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
-    },
-    {
-      "id": "vara-public-disclosures-circular-2026-10-28",
-      "date": "2026-10-28",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "Middle East",
-      "regulator": "VARA",
-      "company": "VARA",
-      "title": "VARA sets out good practice for licensed firms' public disclosures",
-      "source_name": "VARA",
-      "source_url": "https://media.umbraco.io/dwtc/dczjo4qp/public-disclosure-circular-for-vasps-final.pdf"
     }
   ],
   "companies": [
@@ -276,18 +276,42 @@
       "last_url": "https://techcabal.com/2026/10/27/crisscross-raises-funds/"
     },
     {
-      "id": "mastercard",
-      "name": "Mastercard",
-      "segment": "Settlement rails",
-      "country": "United States",
+      "id": "standard-chartered",
+      "name": "Standard Chartered",
+      "segment": "Custody & wallets",
+      "country": "United Kingdom",
       "region": "Global",
-      "moves_30d": 5,
-      "last_date": "2026-10-29",
-      "last_title": "Airtm links its wallets to BVNK and Mastercard's Global Money Platform",
-      "last_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/airtm-and-bvnk-partner-on-wallet-native-payments-for-emerging-markets"
+      "moves_30d": 6,
+      "last_date": "2026-10-30",
+      "last_title": "Standard Chartered-backed Anchorpoint takes HKDAP to Solana",
+      "last_url": "https://www.unlock-bc.com/en/standard-chartered-backed-anchorpoint-targets-retail-adoption-of-hkdap-with-solana"
     }
   ],
   "licences": [
+    {
+      "id": "ecb-appia-tokenised-deposits-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Regulation",
+      "type_label": "Regulation",
+      "region": "Europe",
+      "regulator": "ECB",
+      "company": "European Central Bank",
+      "title": "ECB to open tokenised deposits and payments workstream under Appia",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/ecb-to-launch-tokenized-deposits-securities-workstreams-as-appia-takes-shape/"
+    },
+    {
+      "id": "galaxy-occ-trust-charter-2026-10-29",
+      "date": "2026-10-29",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "North America",
+      "regulator": "OCC",
+      "company": "Galaxy",
+      "title": "Galaxy applies to the OCC for a national trust bank charter",
+      "source_name": "Banking Dive",
+      "source_url": "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
+    },
     {
       "id": "bank-of-england-ccp-tokenised-collateral-2026-10-29",
       "date": "2026-10-29",
@@ -299,6 +323,18 @@
       "title": "Bank of England consults on tokenised collateral at UK clearing houses",
       "source_name": "Bank of England",
       "source_url": "https://www.bankofengland.co.uk/paper/2026/cp/supervisory-expectations-for-ccps-seeking-to-accept-tokenised-collateral"
+    },
+    {
+      "id": "solidgate-cysec-casp-2026-10-28",
+      "date": "2026-10-28",
+      "type": "License",
+      "type_label": "Licence",
+      "region": "Europe",
+      "regulator": "CySEC",
+      "company": "Solidgate",
+      "title": "Payment orchestrator Solidgate wins MiCA CASP licence from CySEC",
+      "source_name": "Solidgate",
+      "source_url": "https://solidgate.com/blog/solidgate-mica-casp-license/"
     },
     {
       "id": "vara-public-disclosures-circular-2026-10-28",
@@ -323,49 +359,13 @@
       "title": "Loon wins OSC prospectus receipt to issue CADC in Canada",
       "source_name": "BetaKit",
       "source_url": "https://betakit.com/loon-clears-key-regulatory-hurdle-to-offer-canadian-dollar-backed-stablecoin/"
-    },
-    {
-      "id": "ripple-occ-final-trust-2026-10-26",
-      "date": "2026-10-26",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Ripple",
-      "title": "Ripple wins final OCC approval for its national trust bank",
-      "source_name": "Ripple",
-      "source_url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank/"
-    },
-    {
-      "id": "occ-community-banks-stablecoins-2026-10-26",
-      "date": "2026-10-26",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "OCC",
-      "title": "OCC urges community banks to apply to issue payment stablecoins",
-      "source_name": "CoinDesk",
-      "source_url": "https://www.coindesk.com/policy/2026/10/26/occ-calls-on-community-banks-to-enter-the-stablecoin-payments-market"
-    },
-    {
-      "id": "canada-stablecoin-regulations-2026-10-24",
-      "date": "2026-10-24",
-      "type": "Regulation",
-      "type_label": "Regulation",
-      "region": "North America",
-      "regulator": "Bank of Canada",
-      "company": "Department of Finance Canada",
-      "title": "Canada publishes draft Stablecoin Regulations under Bank of Canada",
-      "source_name": "Canada Gazette",
-      "source_url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-10-24/html/reg1-eng.html"
     }
   ],
   "regulators": [
     {
       "name": "OCC",
       "where": "United States",
-      "licences": 19,
+      "licences": 20,
       "actions": 4
     },
     {
@@ -375,16 +375,16 @@
       "actions": 4
     },
     {
-      "name": "CBUAE",
-      "where": "UAE",
-      "licences": 6,
-      "actions": 3
-    },
-    {
       "name": "FCA",
       "where": "United Kingdom",
       "licences": 4,
       "actions": 5
+    },
+    {
+      "name": "CBUAE",
+      "where": "UAE",
+      "licences": 6,
+      "actions": 2
     },
     {
       "name": "VARA",
@@ -395,16 +395,12 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 594,
-    "licences": 73,
-    "regulatory_actions": 68,
-    "commercial": 305,
+    "total": 599,
+    "licences": 75,
+    "regulatory_actions": 69,
+    "commercial": 307,
     "capital": 148,
     "months": [
-      {
-        "m": "2025-10",
-        "n": 50
-      },
       {
         "m": "2025-11",
         "n": 51
@@ -451,10 +447,14 @@
       },
       {
         "m": "2026-10",
-        "n": 130
+        "n": 135
+      },
+      {
+        "m": "2026-11",
+        "n": 0
       }
     ],
-    "partial_last": false
+    "partial_last": true
   },
   "radar_url": "https://claude.ai/artifact/ApmPVY9n2xQFf4yP4qMbei"
 }
