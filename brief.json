@@ -1,32 +1,32 @@
 {
   "schema": 2,
-  "updated_at": "2026-11-01T07:05:00+03:00",
-  "next_run": "2026-11-02T06:54:00+03:00",
-  "window_start": "2026-10-26",
-  "window_end": "2026-11-01",
-  "week": 44,
-  "count": 28,
-  "new_today": 5,
-  "headline": "Ripple dominated the week, winning **final OCC approval for its trust bank** and landing RLUSD deals with Robinhood, BNY, Coinbase and C2FO, while **the OCC urged community banks to issue stablecoins** under its new GENIUS rules.",
+  "updated_at": "2026-11-02T07:01:18+03:00",
+  "next_run": "2026-11-03T06:54:00+03:00",
+  "window_start": "2026-10-27",
+  "window_end": "2026-11-02",
+  "week": 45,
+  "count": 25,
+  "new_today": 2,
+  "headline": "Ripple's RLUSD had its busiest week yet, adding **BNY custody, Robinhood and a Coinbase listing**, while **Galaxy filed for an OCC trust charter** and the Bank of England and ECB opened doors to tokenised collateral and deposits.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 13,
+      "n": 14,
       "label": "partnerships"
     },
     {
       "type": "Launch",
-      "n": 5,
+      "n": 3,
       "label": "launches"
     },
     {
       "type": "License",
-      "n": 4,
+      "n": 3,
       "label": "licences"
     },
     {
       "type": "Regulation",
-      "n": 4,
+      "n": 3,
       "label": "regulatory actions"
     },
     {
@@ -35,19 +35,31 @@
       "label": "funding rounds"
     }
   ],
-  "mix_text": "13 partnerships · 5 launches · 4 licences · 4 regulatory actions · 2 funding rounds",
+  "mix_text": "14 partnerships · 3 launches · 3 licences · 3 regulatory actions · 2 funding rounds",
   "regions": {
-    "Europe": 4,
+    "Europe": 3,
     "Middle East": 1,
-    "North America": 10,
+    "North America": 8,
     "Global": 13
   },
   "groups": {
-    "regulatory": 8,
+    "regulatory": 6,
     "capital": 2,
-    "commercial": 18
+    "commercial": 17
   },
   "moves": [
+    {
+      "id": "rd-technologies-ghana-asia-2026-11-01",
+      "date": "2026-11-01",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "Global",
+      "regulator": null,
+      "company": "RD Technologies",
+      "title": "RD Technologies widens Ghana–Asia stablecoin trade settlement push",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.prnewswire.com/news-releases/rd-technologies-upgrades-its-cross-border-payments-and-digital-finance-ecosystem-302925736.html"
+    },
     {
       "id": "ecb-appia-tokenised-deposits-2026-10-30",
       "date": "2026-10-30",
@@ -107,21 +119,21 @@
       "title": "Galaxy applies to the OCC for a national trust bank charter",
       "source_name": "Banking Dive",
       "source_url": "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
-    },
+    }
+  ],
+  "latest": [
     {
-      "id": "bridge-ipx-2026-10-29",
-      "date": "2026-10-29",
+      "id": "rd-technologies-ghana-asia-2026-11-01",
+      "date": "2026-11-01",
       "type": "Partnership",
       "type_label": "Partnership",
       "region": "Global",
       "regulator": null,
-      "company": "Bridge",
-      "title": "IPX to turn creator revenue into USDC through Stripe's Bridge",
-      "source_name": "Bloomingbit",
-      "source_url": "https://en.bloomingbit.io/feed/news/123189"
-    }
-  ],
-  "latest": [
+      "company": "RD Technologies",
+      "title": "RD Technologies widens Ghana–Asia stablecoin trade settlement push",
+      "source_name": "PR Newswire",
+      "source_url": "https://www.prnewswire.com/news-releases/rd-technologies-upgrades-its-cross-border-payments-and-digital-finance-ecosystem-302925736.html"
+    },
     {
       "id": "ecb-appia-tokenised-deposits-2026-10-30",
       "date": "2026-10-30",
@@ -205,18 +217,6 @@
       "title": "Polygon Open Money Stack adds Solana for bank-to-stablecoin payments",
       "source_name": "Polygon",
       "source_url": "https://polygon.technology/blog/polygon-oms-supports-solana"
-    },
-    {
-      "id": "photonpay-series-c-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Funding",
-      "type_label": "Funding",
-      "region": "Global",
-      "regulator": null,
-      "company": "PhotonPay",
-      "title": "PhotonPay raises $40m Series C led by Blockchain Capital",
-      "source_name": "PhotonPay",
-      "source_url": "https://www.photonpay.com/hk/news/article/photonpay-raises-40m-series-c-funding-financial-os"
     }
   ],
   "companies": [
@@ -395,10 +395,10 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 599,
+    "total": 601,
     "licences": 75,
     "regulatory_actions": 69,
-    "commercial": 307,
+    "commercial": 309,
     "capital": 148,
     "months": [
       {
@@ -447,11 +447,11 @@
       },
       {
         "m": "2026-10",
-        "n": 135
+        "n": 136
       },
       {
         "m": "2026-11",
-        "n": 0
+        "n": 1
       }
     ],
     "partial_last": true
