@@ -1,28 +1,23 @@
 {
   "schema": 2,
-  "updated_at": "2026-11-02T07:01:18+03:00",
-  "next_run": "2026-11-03T06:54:00+03:00",
-  "window_start": "2026-10-27",
-  "window_end": "2026-11-02",
+  "updated_at": "2026-11-03T07:30:00+03:00",
+  "next_run": "2026-11-04T06:54:00+03:00",
+  "window_start": "2026-10-28",
+  "window_end": "2026-11-03",
   "week": 45,
-  "count": 25,
-  "new_today": 2,
-  "headline": "Ripple's RLUSD had its busiest week yet, adding **BNY custody, Robinhood and a Coinbase listing**, while **Galaxy filed for an OCC trust charter** and the Bank of England and ECB opened doors to tokenised collateral and deposits.",
+  "count": 19,
+  "new_today": 3,
+  "headline": "US charters and bank tokens led the week: **Galaxy applied for an OCC trust charter** as Ripple's RLUSD reached Coinbase, while **HSBC ran 24/7 corporate treasury for Uber on tokenised deposits** and the ECB and Bank of England moved on tokenised money.",
   "mix": [
     {
       "type": "Partnership",
-      "n": 14,
+      "n": 9,
       "label": "partnerships"
     },
     {
       "type": "Launch",
       "n": 3,
       "label": "launches"
-    },
-    {
-      "type": "License",
-      "n": 3,
-      "label": "licences"
     },
     {
       "type": "Regulation",
@@ -33,21 +28,50 @@
       "type": "Funding",
       "n": 2,
       "label": "funding rounds"
+    },
+    {
+      "type": "License",
+      "n": 2,
+      "label": "licences"
     }
   ],
-  "mix_text": "14 partnerships · 3 launches · 3 licences · 3 regulatory actions · 2 funding rounds",
+  "mix_text": "9 partnerships · 3 launches · 3 regulatory actions · 2 funding rounds · 2 licences",
   "regions": {
     "Europe": 3,
     "Middle East": 1,
-    "North America": 8,
-    "Global": 13
+    "North America": 6,
+    "Global": 9
   },
   "groups": {
-    "regulatory": 6,
+    "regulatory": 5,
     "capital": 2,
-    "commercial": 17
+    "commercial": 12
   },
   "moves": [
+    {
+      "id": "okx-card-us-2026-11-02",
+      "date": "2026-11-02",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "OKX",
+      "title": "OKX brings its Mastercard stablecoin card to most US states",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/okx-and-mastercard-bring-stablecoin-card-to-most-us-states/"
+    },
+    {
+      "id": "erebor-sbi-investment-2026-11-02",
+      "date": "2026-11-02",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "North America",
+      "regulator": null,
+      "company": "Erebor",
+      "title": "SBI Holdings to put $100m into US stablecoin-friendly bank Erebor",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/sbi-invests-100m-in-erebor-the-thiel-backed-stablecoin-bank/"
+    },
     {
       "id": "rd-technologies-ghana-asia-2026-11-01",
       "date": "2026-11-01",
@@ -59,6 +83,18 @@
       "title": "RD Technologies widens Ghana–Asia stablecoin trade settlement push",
       "source_name": "PR Newswire",
       "source_url": "https://www.prnewswire.com/news-releases/rd-technologies-upgrades-its-cross-border-payments-and-digital-finance-ecosystem-302925736.html"
+    },
+    {
+      "id": "hsbc-uber-canton-pilot-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "HSBC",
+      "title": "Uber pilots HSBC tokenised deposits for 24/7 treasury on Canton",
+      "source_name": "Canton Network",
+      "source_url": "https://www.canton.network/canton-network-press-releases/uber-completes-pilot-of-a-first-ever-on-chain-liquidity-and-settlement-solution-on-a-public-network"
     },
     {
       "id": "ecb-appia-tokenised-deposits-2026-10-30",
@@ -83,46 +119,34 @@
       "title": "Standard Chartered-backed Anchorpoint takes HKDAP to Solana",
       "source_name": "Unlock Blockchain",
       "source_url": "https://www.unlock-bc.com/en/standard-chartered-backed-anchorpoint-targets-retail-adoption-of-hkdap-with-solana"
-    },
-    {
-      "id": "cross-river-sbi-2026-10-30",
-      "date": "2026-10-30",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Cross River",
-      "title": "SBI to invest in Cross River's parent and add its yen stablecoin",
-      "source_name": "The Paypers",
-      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/sbi-holdings-partners-crb-group-plans-joint-venture-in-japan"
-    },
-    {
-      "id": "moonpay-nh-nonghyup-finger-2026-10-30",
-      "date": "2026-10-30",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "MoonPay",
-      "title": "MoonPay, NH NongHyup Bank and Finger plan a settlement model",
-      "source_name": "Bloomingbit",
-      "source_url": "https://en.bloomingbit.io/feed/news/123258"
-    },
-    {
-      "id": "galaxy-occ-trust-charter-2026-10-29",
-      "date": "2026-10-29",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Galaxy",
-      "title": "Galaxy applies to the OCC for a national trust bank charter",
-      "source_name": "Banking Dive",
-      "source_url": "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
     }
   ],
   "latest": [
     {
+      "id": "okx-card-us-2026-11-02",
+      "date": "2026-11-02",
+      "type": "Launch",
+      "type_label": "Launch",
+      "region": "North America",
+      "regulator": null,
+      "company": "OKX",
+      "title": "OKX brings its Mastercard stablecoin card to most US states",
+      "source_name": "PYMNTS",
+      "source_url": "https://www.pymnts.com/cryptocurrency/2026/okx-and-mastercard-bring-stablecoin-card-to-most-us-states/"
+    },
+    {
+      "id": "erebor-sbi-investment-2026-11-02",
+      "date": "2026-11-02",
+      "type": "Funding",
+      "type_label": "Funding",
+      "region": "North America",
+      "regulator": null,
+      "company": "Erebor",
+      "title": "SBI Holdings to put $100m into US stablecoin-friendly bank Erebor",
+      "source_name": "Ledger Insights",
+      "source_url": "https://www.ledgerinsights.com/sbi-invests-100m-in-erebor-the-thiel-backed-stablecoin-bank/"
+    },
+    {
       "id": "rd-technologies-ghana-asia-2026-11-01",
       "date": "2026-11-01",
       "type": "Partnership",
@@ -133,6 +157,18 @@
       "title": "RD Technologies widens Ghana–Asia stablecoin trade settlement push",
       "source_name": "PR Newswire",
       "source_url": "https://www.prnewswire.com/news-releases/rd-technologies-upgrades-its-cross-border-payments-and-digital-finance-ecosystem-302925736.html"
+    },
+    {
+      "id": "hsbc-uber-canton-pilot-2026-10-30",
+      "date": "2026-10-30",
+      "type": "Partnership",
+      "type_label": "Partnership",
+      "region": "North America",
+      "regulator": null,
+      "company": "HSBC",
+      "title": "Uber pilots HSBC tokenised deposits for 24/7 treasury on Canton",
+      "source_name": "Canton Network",
+      "source_url": "https://www.canton.network/canton-network-press-releases/uber-completes-pilot-of-a-first-ever-on-chain-liquidity-and-settlement-solution-on-a-public-network"
     },
     {
       "id": "ecb-appia-tokenised-deposits-2026-10-30",
@@ -181,42 +217,6 @@
       "title": "MoonPay, NH NongHyup Bank and Finger plan a settlement model",
       "source_name": "Bloomingbit",
       "source_url": "https://en.bloomingbit.io/feed/news/123258"
-    },
-    {
-      "id": "galaxy-occ-trust-charter-2026-10-29",
-      "date": "2026-10-29",
-      "type": "License",
-      "type_label": "Licence",
-      "region": "North America",
-      "regulator": "OCC",
-      "company": "Galaxy",
-      "title": "Galaxy applies to the OCC for a national trust bank charter",
-      "source_name": "Banking Dive",
-      "source_url": "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
-    },
-    {
-      "id": "bridge-ipx-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Partnership",
-      "type_label": "Partnership",
-      "region": "Global",
-      "regulator": null,
-      "company": "Bridge",
-      "title": "IPX to turn creator revenue into USDC through Stripe's Bridge",
-      "source_name": "Bloomingbit",
-      "source_url": "https://en.bloomingbit.io/feed/news/123189"
-    },
-    {
-      "id": "polygon-labs-oms-solana-2026-10-29",
-      "date": "2026-10-29",
-      "type": "Launch",
-      "type_label": "Launch",
-      "region": "Global",
-      "regulator": null,
-      "company": "Polygon Labs",
-      "title": "Polygon Open Money Stack adds Solana for bank-to-stablecoin payments",
-      "source_name": "Polygon",
-      "source_url": "https://polygon.technology/blog/polygon-oms-supports-solana"
     }
   ],
   "companies": [
@@ -276,15 +276,15 @@
       "last_url": "https://techcabal.com/2026/10/27/crisscross-raises-funds/"
     },
     {
-      "id": "standard-chartered",
-      "name": "Standard Chartered",
-      "segment": "Custody & wallets",
-      "country": "United Kingdom",
+      "id": "mastercard",
+      "name": "Mastercard",
+      "segment": "Settlement rails",
+      "country": "United States",
       "region": "Global",
       "moves_30d": 6,
-      "last_date": "2026-10-30",
-      "last_title": "Standard Chartered-backed Anchorpoint takes HKDAP to Solana",
-      "last_url": "https://www.unlock-bc.com/en/standard-chartered-backed-anchorpoint-targets-retail-adoption-of-hkdap-with-solana"
+      "last_date": "2026-11-02",
+      "last_title": "OKX brings its Mastercard stablecoin card to most US states",
+      "last_url": "https://www.pymnts.com/cryptocurrency/2026/okx-and-mastercard-bring-stablecoin-card-to-most-us-states/"
     }
   ],
   "licences": [
@@ -395,11 +395,11 @@
   ],
   "trends": {
     "since": "2025-10",
-    "total": 601,
+    "total": 604,
     "licences": 75,
     "regulatory_actions": 69,
-    "commercial": 309,
-    "capital": 148,
+    "commercial": 311,
+    "capital": 149,
     "months": [
       {
         "m": "2025-11",
@@ -447,11 +447,11 @@
       },
       {
         "m": "2026-10",
-        "n": 136
+        "n": 137
       },
       {
         "m": "2026-11",
-        "n": 1
+        "n": 3
       }
     ],
     "partial_last": true
